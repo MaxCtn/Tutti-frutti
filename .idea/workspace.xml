@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="bd186031-5654-42d1-856e-28bcb73a51d9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/Tutti-Frutti/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Tutti-Frutti" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;MaxCtn&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/MaxCtn/Tutti-frutti.git&quot;,
+    &quot;accountId&quot;: &quot;b503cb41-2294-4212-b162-b22eea703d16&quot;
+  }
+}</component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\Users\Maxime\Desktop\php\php-8.3.13-nts-Win32-vs16-x64\php.exe">
+    <include_path>
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/security-bundle" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/validator" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/browser-kit" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/http-client-contracts" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/masterminds/html5" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/property-access" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/monolog-bundle" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/polyfill-intl-icu" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/options-resolver" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/doctrine-bridge" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/asset-mapper" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/twig-bundle" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/doctrine-messenger" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/clock" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/mailer" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/phpunit-bridge" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/security-csrf" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/sebastian/cli-parser" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/expression-language" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/sebastian/code-unit" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/maker-bundle" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/security-core" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/security-http" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/sebastian/complexity" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/web-link" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/web-profiler-bundle" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/serializer" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/doctrine/collections" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/ux-turbo" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/sebastian/lines-of-code" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/stimulus-bundle" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/doctrine/deprecations" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/type-info" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/doctrine/doctrine-bundle" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/debug-bundle" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/doctrine/doctrine-migrations-bundle" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/notifier" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/property-info" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/password-hasher" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/intl" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/doctrine/migrations" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/twig-bridge" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/doctrine/orm" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/http-client" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/doctrine/persistence" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/form" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/doctrine/sql-formatter" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/messenger" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/monolog-bridge" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/asset" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/stopwatch" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/composer" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/phpstan/phpdoc-parser" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/cache-contracts" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/runtime" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/polyfill-php83" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/cache" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/var-exporter" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/dependency-injection" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/config" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/flex" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/twig/extra-bundle" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/framework-bundle" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/phpunit/php-invoker" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/dotenv" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/psr/link" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/psr/clock" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/Tutti-Frutti/vendor/monolog/monolog" />
+    </include_path>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2oCZSCF7qaIufb1kT5AZNDrB5ni" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="Main" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner configuration_file="$PROJECT_DIR$/Tutti-Frutti/phpunit.xml.dist" scope="XML" use_alternative_configuration_file="true" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-PS-242.23726.107" />
+        <option value="bundled-php-predefined-a98d8de5180a-90914f2295cb-com.jetbrains.php.sharedIndexes-PS-242.23726.107" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bd186031-5654-42d1-856e-28bcb73a51d9" name="Changes" comment="" />
+      <created>1730375516267</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1730375516267</updated>
+      <workItem from="1730375517905" duration="814000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
