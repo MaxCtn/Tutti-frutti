@@ -2,64 +2,114 @@
 
 namespace App\Entity;
 
-use App\Repository\DiscogsArtistRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 
-#[ORM\Entity(repositoryClass: DiscogsArtistRepository::class)]
+#[ORM\Entity]
 class DiscogsArtist
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
-    #[ORM\Column]
-    private ?int $id = null;
+    #[ORM\Column(type: 'integer')]
+    private int $id;
 
-    #[ORM\Column(length: 255)]
-    private ?string $name = null;
+    #[ORM\Column(type: 'string', length: 255)]
+    private string $name;
 
-    #[ORM\Column(length: 255)]
-    private ?string $description = null;
+    #[ORM\Column(type: 'string', length: 100, nullable: true)]
+    private ?string $genre = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $images = null;
+    #[ORM\Column(type: 'string', length: 100, nullable: true)]
+    private ?string $country = null;
 
-    public function getId(): ?int
+    #[ORM\Column(type: 'text', nullable: true)]
+    private ?string $profile = null;
+
+    #[ORM\OneToMany(mappedBy: 'artist', targetEntity: DiscogsMaster::class)]
+    private Collection $masters;
+
+    public function __construct()
+    {
+        $this->masters = new ArrayCollection();
+    }
+
+    // Getters et Setters
+
+    public function getId(): int
     {
         return $this->id;
     }
 
-    public function getName(): ?string
+    public function getName(): string
     {
         return $this->name;
     }
 
-    public function setName(string $name): static
+    public function setName(string $name): self
     {
         $this->name = $name;
-
         return $this;
     }
 
-    public function getDescription(): ?string
+    public function getGenre(): ?string
     {
-        return $this->description;
+        return $this->genre;
     }
 
-    public function setDescription(string $description): static
+    public function setGenre(?string $genre): self
     {
-        $this->description = $description;
-
+        $this->genre = $genre;
         return $this;
     }
 
-    public function getImages(): ?string
+    public function getCountry(): ?string
     {
-        return $this->images;
+        return $this->country;
     }
 
-    public function setImages(?string $images): static
+    public function setCountry(?string $country): self
     {
-        $this->images = $images;
+        $this->country = $country;
+        return $this;
+    }
 
+    public function getProfile(): ?string
+    {
+        return $this->profile;
+    }
+
+    public function setProfile(?string $profile): self
+    {
+        $this->profile = $profile;
+        return $this;
+    }
+
+    /**
+     * @return Collection|DiscogsMaster[]
+     */
+    public function getMasters(): Collection
+    {
+        return $this->masters;
+    }
+
+    public function addMaster(DiscogsMaster $master): self
+    {
+        if (!$this->masters->contains($master)) {
+            $this->masters[] = $master;
+            $master->setArtist($this);
+        }
+        return $this;
+    }
+
+    public function removeMaster(DiscogsMaster $master): self
+    {
+        if ($this->masters->removeElement($master)) {
+            // Set the owning side to null (unless already changed)
+            if ($master->getArtist() === $this) {
+                $master->setArtist(null);
+            }
+        }
         return $this;
     }
 }
