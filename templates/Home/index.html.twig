@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Recherche de Morceaux{% endblock %}
+
+{% block content %}
+    <h1>Rechercher des morceaux par fruit</h1>
+    <form method="get" action="{{ path('search') }}">
+        <label for="keyword">Fruit :</label>
+        <input type="text" id="keyword" name="keyword" required>
+        <button type="submit">Rechercher</button>
+    </form>
+
+    {% if keyword %}
+        <h2>Résultats pour "{{ keyword }}"</h2>
+        {% if results is not empty %}
+            <ul>
+                {% for result in results %}
+                    <li>
+                        {{ result.title }} - {{ result.artist }}
+                        <a href="{{ path('add_to_favorites', { 'id': result.id }) }}">Ajouter aux favoris</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Aucun résultat trouvé.</p>
+        {% endif %}
+    {% endif %}
+{% endblock %}

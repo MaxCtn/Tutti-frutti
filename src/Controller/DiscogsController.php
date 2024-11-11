@@ -3,16 +3,22 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\Routing\Annotation\Route;
 
 class DiscogsController extends AbstractController
 {
-    #[Route('/discogs', name: 'app_discogs')]
-    public function index(): Response
+    #[Route('/', name: 'search')]
+    public function search(Request $request): Response
     {
-        return $this->render('discogs/index.html.twig', [
-            'controller_name' => 'DiscogsController',
+        $keyword = $request->query->get('keyword');
+        $results = [];
+
+        return $this->render('home/index.html.twig', [
+            'keyword' => $keyword,
+            'results' => $results,
         ]);
     }
 }
+

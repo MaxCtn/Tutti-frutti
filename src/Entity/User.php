@@ -3,50 +3,29 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 #[ORM\Entity]
-class User
+class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column(type: 'integer')]
     private int $id;
 
-    #[ORM\Column(type: 'string', length: 50)]
-    private string $username;
-
-    #[ORM\Column(type: 'string', length: 100)]
+    #[ORM\Column(type: 'string', length: 180, unique: true)]
     private string $email;
+
+    #[ORM\Column(type: 'string', length: 50, unique: true)]
+    private string $username;
 
     #[ORM\Column(type: 'string')]
     private string $password;
 
-    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Favorite::class, cascade: ['persist', 'remove'])]
-    private Collection $favorites;
-
-    public function __construct()
-    {
-        $this->favorites = new ArrayCollection();
-    }
-
-    // Getters et Setters
-
     public function getId(): int
     {
         return $this->id;
-    }
-
-    public function getUsername(): string
-    {
-        return $this->username;
-    }
-
-    public function setUsername(string $username): self
-    {
-        $this->username = $username;
-        return $this;
     }
 
     public function getEmail(): string
@@ -57,6 +36,17 @@ class User
     public function setEmail(string $email): self
     {
         $this->email = $email;
+        return $this;
+    }
+
+    public function getUsername(): string
+    {
+        return $this->username;
+    }
+
+    public function setUsername(string $username): self
+    {
+        $this->username = $username;
         return $this;
     }
 
@@ -71,31 +61,18 @@ class User
         return $this;
     }
 
-    /**
-     * @return Collection|Favorite[]
-     */
-    public function getFavorites(): Collection
+    public function getRoles(): array
     {
-        return $this->favorites;
+        return ['ROLE_USER'];
     }
 
-    public function addFavorite(Favorite $favorite): self
+    public function eraseCredentials(): void
     {
-        if (!$this->favorites->contains($favorite)) {
-            $this->favorites[] = $favorite;
-            $favorite->setUser($this);
-        }
-        return $this;
+
     }
 
-    public function removeFavorite(Favorite $favorite): self
+    public function getUserIdentifier(): string
     {
-        if ($this->favorites->removeElement($favorite)) {
-            // Set the owning side to null (unless already changed)
-            if ($favorite->getUser() === $this) {
-                $favorite->setUser(null);
-            }
-        }
-        return $this;
+        return $this->email;
     }
 }
