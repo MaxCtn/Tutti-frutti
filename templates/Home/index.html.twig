@@ -4,25 +4,30 @@
 
 {% block content %}
     <h1>Rechercher des morceaux par fruit</h1>
+
     <form method="get" action="{{ path('search') }}">
         <label for="keyword">Fruit :</label>
-        <input type="text" id="keyword" name="keyword" required>
+        <input type="text" id="keyword" name="keyword" placeholder="Entrez un fruit, ex: banane" required value="{{ app.request.get('keyword') }}">
         <button type="submit">Rechercher</button>
     </form>
 
-    {% if keyword %}
+    {% if keyword is defined and keyword %}
         <h2>Résultats pour "{{ keyword }}"</h2>
-        {% if results is not empty %}
+
+        {% if results is defined and results is not empty %}
             <ul>
                 {% for result in results %}
                     <li>
-                        {{ result.title }} - {{ result.artist }}
+                        <strong>{{ result.title }}</strong> - {{ result.artist | default('Artiste inconnu') }}
+                        {% if result.uri is defined %}
+                            <a href="https://www.discogs.com{{ result.uri }}" target="_blank">Voir sur Discogs</a>
+                        {% endif %}
                         <a href="{{ path('add_to_favorites', { 'id': result.id }) }}">Ajouter aux favoris</a>
                     </li>
                 {% endfor %}
             </ul>
         {% else %}
-            <p>Aucun résultat trouvé.</p>
+            <p>Aucun résultat trouvé pour "{{ keyword }}".</p>
         {% endif %}
     {% endif %}
 {% endblock %}
