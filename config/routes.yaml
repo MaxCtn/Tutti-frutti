@@ -1,5 +1,8 @@
 controllers:
-    resource:
-        path: ../src/Controller/
-        namespace: App\Controller
-    type: attribute
+  resource: ../src/Controller/
+  type: attribute
+
+search_fruit:
+  path: /search-fruit
+  controller: App\Controller\DiscogsController::searchByFruit
+  methods: [GET, POST]

@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détails de l'Album: {{ album.title|default('Information indisponible') }}{% endblock %}
+
+{% block body %}
+    <div class="container album-details">
+        <h1 class="album-title">{{ album.title|default('Titre indisponible') }}</h1>
+
+        {% if album.images and album.images|length > 0 %}
+            <img src="{{ album.images|first.resource_url }}" alt="Couverture de l'album {{ album.title }}" class="album-cover-image">
+        {% else %}
+            <p class="no-image">Pas d'image de couverture disponible.</p>
+        {% endif %}
+
+        <h2 class="section-title">Fruits associés</h2>
+        <ul class="fruit-list">
+            {% if album.fruits is defined and album.fruits|length > 0 %}
+                {% for fruit in album.fruits %}
+                    <li>{{ fruit.name }}</li>
+                {% endfor %}
+            {% else %}
+                <li>Aucun fruit associé à cet album.</li>
+            {% endif %}
+        </ul>
+
+        <h2 class="section-title">Liste des pistes</h2>
+        <ul class="tracklist">
+            {% for track in album.tracklist %}
+                <li class="track-item">
+                    <div class="track-info">
+                        <strong>{{ track.title|default('Titre indisponible') }}</strong>
+                        <span class="track-duration">{{ track.duration|default('Durée indisponible') }}</span>
+                    </div>
+                </li>
+            {% else %}
+                <li>Aucune piste disponible pour cet album.</li>
+            {% endfor %}
+        </ul>
+
+        <div class="action-buttons">
+            <a href="https://www.discogs.com/release/{{ album.id }}" target="_blank" class="btn btn-primary">
+                En savoir plus sur Discogs
+            </a>
+            <a href="{{ path('profile') }}" class="btn btn-secondary">
+                Revenir aux favoris
+            </a>
+        </div>
+    </div>
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/album-details.css') }}">
+{% endblock %}

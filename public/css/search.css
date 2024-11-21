@@ -1,0 +1,133 @@
+/* Style général pour le body */
+body {
+    background-image: url('../images/fruit.png');
+    background-size: cover; /* L'image couvre tout l'écran */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+    background-position: center center; /* Centre l'image */
+    background-attachment: fixed; /* L'image reste fixe */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Conteneur principal */
+.container {
+    max-width: 1200px; /* Largeur du conteneur augmentée */
+    margin: 80px auto; /* Espace au-dessus du conteneur */
+    padding: 30px;
+    background: #ffffff; /* Fond blanc */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Ombre élégante */
+    border-radius: 12px; /* Coins arrondis */
+}
+
+/* Style du titre principal */
+.page-title {
+    text-align: center;
+    font-size: 3em; /* Titre plus grand */
+    color: #2c3e50;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2); /* Ombre douce */
+    margin-bottom: 40px;
+    font-weight: bold;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Animation d'apparition du titre */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Conteneur de recherche */
+.search-container {
+    text-align: center;
+    margin-bottom: 40px; /* Espace sous la barre de recherche */
+}
+
+.search-container h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #34495e;
+}
+
+.search-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+}
+
+/* Grille de résultats */
+.results-container {
+    margin-top: 30px;
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Trois colonnes */
+    gap: 30px; /* Espace entre les cartes */
+    margin: 0 auto;
+}
+
+/* Style des cartes */
+.result-card {
+    text-align: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 12px; /* Coins arrondis */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15); /* Ombre légère */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation fluide */
+}
+
+.result-card:hover {
+    transform: translateY(-10px); /* Effet de survol */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Ombre plus marquée */
+}
+
+/* Images des albums */
+.cover-image {
+    max-width: 100%; /* Largeur maximale */
+    height: 250px; /* Augmente la taille des images */
+    object-fit: cover; /* Garde le ratio des images */
+    border-radius: 8px; /* Coins arrondis */
+    margin-bottom: 10px;
+}
+
+/* Titre des albums */
+.album-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-top: 10px;
+}
+
+/* Bouton pour ajouter aux favoris */
+.add-button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    font-size: 0.9em;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+    background-color: #218838;
+}

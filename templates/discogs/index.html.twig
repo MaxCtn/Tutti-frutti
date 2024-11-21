@@ -1,0 +1,25 @@
+{# templates/album/search.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Recherche d'Albums{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Recherche d'Albums</h1>
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button type="submit" class="btn btn-primary">Chercher</button>
+    {{ form_end(form) }}
+
+    {% if results is not empty %}
+        <h2>Résultats :</h2>
+        <ul>
+            {% for album in results %}
+                <li>{{ album.title }} par {{ album.artist }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</div>
+{% endblock %}
+

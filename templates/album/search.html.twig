@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Recherche d'Albums{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="page-title">Recherche d'Albums</h1>
+
+        <div class="search-container">
+            <h2>Rechercher un album ou un fruit</h2>
+            {{ form_start(form) }}
+            {{ form_widget(form.searchTerm, {'attr': {'placeholder': 'Entrez un titre ou un fruit...'}}) }}
+            <button type="submit" class="btn btn-primary search-button">Rechercher</button>
+            {{ form_end(form) }}
+        </div>
+
+        <div class="results-container">
+            {% if results is not empty %}
+                <div class="results-grid">
+                    {% for result in results %}
+                        <div class="result-card">
+                            {% if result.cover_image %}
+                                <a href="{{ path('album_details', {'id': result.id}) }}">
+                                    <img src="{{ result.cover_image }}" alt="Couverture d'album" class="cover-image">
+                                </a>
+                            {% else %}
+                                <div class="no-cover-image">Pas d'image</div>
+                            {% endif %}
+                            <div class="album-title">{{ result.title|default('Titre indisponible') }}</div>
+                            <button class="add-button btn btn-success" data-id="{{ result.id }}">Ajouter aux favoris</button>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <p>Aucun résultat trouvé. Essayez une autre recherche.</p>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/search.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.add-button').on('click', function(event) {
+                event.preventDefault();
+                const albumId = $(this).data('id');
+
+                $.ajax({
+                    url: '{{ path("add_to_favorites", {"id": "ID_PLACEHOLDER"}) }}'.replace('ID_PLACEHOLDER', albumId),
+                    method: 'POST',
+                    success: function(response) {
+                        if (response.success) {
+                            alert('Album ajouté aux favoris !');
+                        } else {
+                            alert('Erreur : ' + (response.error || 'Impossible d\'ajouter l\'album.'));
+                        }
+                    },
+                    error: function(xhr) {
+                        alert('Erreur lors de l\'ajout de l\'album aux favoris.');
+                        console.error(xhr);
+                    }
+                });
+            });
+        });
+    </script>
+{% endblock %}

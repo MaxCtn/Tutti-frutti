@@ -1,0 +1,115 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon Profil{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/profile.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <!-- Header -->
+        <header class="d-flex align-items-center justify-content-between bg-light p-4 rounded shadow-sm">
+            <div class="d-flex align-items-center">
+                <div class="profile-picture-container">
+                    {% if app.user.profilePicture %}
+                        <img src="{{ asset('uploads/profile_pictures/' ~ app.user.profilePicture) }}"
+                             alt="Photo de profil"
+                             style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 2px solid #007bff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+                    {% else %}
+                        <img src="{{ asset('uploads/profile_pictures/default.jpg') }}"
+                             alt="Photo de profil par défaut"
+                             class="profile-picture-circle">
+                    {% endif %}
+                </div>
+                <div class="profile-info ms-3">
+                    <h4 class="mb-0">{{ app.user.email }}</h4>
+                    <p class="text-muted">Bienvenue sur votre profil</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Barre de filtre -->
+        <section class="filters mt-5 mb-4">
+            <form method="get" action="{{ path('profile') }}" class="d-flex flex-column align-items-center">
+                <div class="row mb-3 justify-content-center">
+                    {% for field, placeholder in {
+                        'fruit': 'Fruit',
+                        'year': 'Année',
+                        'title': 'Titre',
+                        'label': 'Label'
+                    } %}
+                        <div class="col-md-3">
+                            <input type="text" name="{{ field }}" class="form-control"
+                                   placeholder="{{ placeholder }}" value="{{ app.request.get(field) }}">
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="row mb-3 justify-content-center">
+                    {% for field, placeholder in {
+                        'genre': 'Genre',
+                        'format': 'Format'
+                    } %}
+                        <div class="col-md-3">
+                            <input type="text" name="{{ field }}" class="form-control"
+                                   placeholder="{{ placeholder }}" value="{{ app.request.get(field) }}">
+                        </div>
+                    {% endfor %}
+                    <div class="col-md-3">
+                        <select name="sortBy" class="form-control">
+                            <option value="title" {% if app.request.get('sortBy') == 'title' %}selected{% endif %}>Titre</option>
+                            <option value="year" {% if app.request.get('sortBy') == 'year' %}selected{% endif %}>Année</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <select name="order" class="form-control">
+                            <option value="ASC" {% if app.request.get('order') == 'ASC' %}selected{% endif %}>Croissant</option>
+                            <option value="DESC" {% if app.request.get('order') == 'DESC' %}selected{% endif %}>Décroissant</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-primary">Filtrer</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Séparateur -->
+        <div class="separator"></div>
+
+        <!-- Albums favoris -->
+        <section class="favorites">
+            <h2 class="text-center mb-4">Vos Albums Favoris</h2>
+            <div class="row">
+                {% for favorite in favorites %}
+                    <div class="col-md-4 mb-4">
+                        <div class="card shadow-sm">
+                            <img src="{{ favorite.coverImage }}" class="card-img-top" alt="Couverture de l'album">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ favorite.title }}</h5>
+                                <p class="card-text text-muted">
+                                    Label : {{ favorite.label.name|default('Non renseigné') }}
+                                </p>
+                                <p class="card-text text-muted">
+                                    Fruits :
+                                    {% if favorite.fruits|length > 0 %}
+                                        {% for fruit in favorite.fruits %}
+                                            <span class="badge bg-success">{{ fruit.name }}</span>
+                                        {% endfor %}
+                                    {% else %}
+                                        <span class="text-muted">Aucun fruit associé</span>
+                                    {% endif %}
+                                </p>
+                                <a href="{{ path('album_details', {'id': favorite.albumId}) }}" class="btn btn-primary btn-sm">Détails</a>
+
+                            </div>
+                        </div>
+                    </div>
+                {% else %}
+                    <p class="text-center text-muted">Vous n'avez encore ajouté aucun album favori.</p>
+                {% endfor %}
+            </div>
+        </section>
+    </div>
+{% endblock %}
