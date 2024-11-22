@@ -16,6 +16,20 @@ class FruitRepository extends ServiceEntityRepository
         parent::__construct($registry, Fruit::class);
     }
 
+    public function findOrCreate(string $fruitName): Fruit
+    {
+        $fruit = $this->findOneBy(['name' => $fruitName]);
+
+        if (!$fruit) {
+            $fruit = new Fruit();
+            $fruit->setName($fruitName);
+            $this->getEntityManager()->persist($fruit);
+            $this->getEntityManager()->flush();
+        }
+
+        return $fruit;
+    }
+
     //    /**
     //     * @return Fruit[] Returns an array of Fruit objects
     //     */

@@ -6,7 +6,7 @@
     <div class="container album-details">
         <h1 class="album-title">{{ album.title|default('Titre indisponible') }}</h1>
 
-        {% if album.images and album.images|length > 0 %}
+        {% if album.images is defined and album.images|length > 0 %}
             <img src="{{ album.images|first.resource_url }}" alt="Couverture de l'album {{ album.title }}" class="album-cover-image">
         {% else %}
             <p class="no-image">Pas d'image de couverture disponible.</p>
@@ -16,7 +16,7 @@
         <ul class="fruit-list">
             {% if album.fruits is defined and album.fruits|length > 0 %}
                 {% for fruit in album.fruits %}
-                    <li>{{ fruit.name }}</li>
+                    <li>{{ fruit }}</li>
                 {% endfor %}
             {% else %}
                 <li>Aucun fruit associé à cet album.</li>
@@ -25,19 +25,24 @@
 
         <h2 class="section-title">Liste des pistes</h2>
         <ul class="tracklist">
-            {% for track in album.tracklist %}
-                <li class="track-item">
-                    <div class="track-info">
-                        <strong>{{ track.title|default('Titre indisponible') }}</strong>
-                        <span class="track-duration">{{ track.duration|default('Durée indisponible') }}</span>
-                    </div>
-                </li>
+            {% if album.tracklist is defined and album.tracklist|length > 0 %}
+                {% for track in album.tracklist %}
+                    <li class="track-item">
+                        <div class="track-info">
+                            <strong>{{ track.title|default('Titre indisponible') }}</strong>
+                            <span class="track-duration">{{ track.duration|default('Durée indisponible') }}</span>
+                            {% if track.fruits is defined and track.fruits|length > 0 %}
+                                <p class="track-fruits">Fruits associés : {{ track.fruits|join(', ') }}</p>
+                            {% endif %}
+                        </div>
+                    </li>
+                {% endfor %}
             {% else %}
                 <li>Aucune piste disponible pour cet album.</li>
-            {% endfor %}
+            {% endif %}
         </ul>
 
-        <div class="action-buttons">
+        <div class="action-buttons mt-4">
             <a href="https://www.discogs.com/release/{{ album.id }}" target="_blank" class="btn btn-primary">
                 En savoir plus sur Discogs
             </a>

@@ -1,38 +1,68 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Recherche d'Albums{% endblock %}
+{% block title %}Recherche d'Albums par Fruits{% endblock %}
 
 {% block body %}
     <div class="container">
-        <h1 class="page-title">Recherche d'Albums</h1>
+        <h1 class="page-title">Recherche d'Albums par Fruits</h1>
 
+        <!-- Formulaire de recherche -->
         <div class="search-container">
-            <h2>Rechercher un album ou un fruit</h2>
+            <h2 class="search-title">Rechercher un fruit dans un album</h2>
             {{ form_start(form) }}
-            {{ form_widget(form.searchTerm, {'attr': {'placeholder': 'Entrez un titre ou un fruit...'}}) }}
-            <button type="submit" class="btn btn-primary search-button">Rechercher</button>
+            <div class="form-group">
+                {{ form_widget(form.searchTerm, {'attr': {'placeholder': 'Entrez un fruit (ex : banane, pomme)...', 'class': 'form-control'}}) }}
+            </div>
+            <div class="form-group text-center mt-3">
+            </div>
             {{ form_end(form) }}
         </div>
 
-        <div class="results-container">
+        <!-- Affichage des résultats -->
+        <div class="results-container mt-5">
             {% if results is not empty %}
                 <div class="results-grid">
                     {% for result in results %}
                         <div class="result-card">
-                            {% if result.cover_image %}
+                            <!-- Image et lien vers les détails -->
+                            <a href="{{ path('album_details', {'id': result.id}) }}">
+                                {% if result.cover_image %}
+                                    <img src="{{ result.cover_image }}" alt="Couverture de l'album {{ result.title|default('Indisponible') }}" class="cover-image">
+                                {% else %}
+                                    <div class="no-cover-image">Pas d'image</div>
+                                {% endif %}
+                            </a>
+
+                            <!-- Titre avec lien vers les détails -->
+                            <div class="album-title">
                                 <a href="{{ path('album_details', {'id': result.id}) }}">
-                                    <img src="{{ result.cover_image }}" alt="Couverture d'album" class="cover-image">
+                                    {{ result.title|default('Titre indisponible') }}
                                 </a>
-                            {% else %}
-                                <div class="no-cover-image">Pas d'image</div>
-                            {% endif %}
-                            <div class="album-title">{{ result.title|default('Titre indisponible') }}</div>
-                            <button class="add-button btn btn-success" data-id="{{ result.id }}">Ajouter aux favoris</button>
+                            </div>
+
+                            <!-- Indicateur de fruits associés -->
+                            <div class="fruit-tags mt-2">
+                                {% if result.fruits is defined and result.fruits|length > 0 %}
+                                    <strong>Fruits associés :</strong>
+                                    {% for fruit in result.fruits %}
+                                        <span class="badge bg-success">{{ fruit }}</span>
+                                    {% endfor %}
+                                {% else %}
+                                    <span class="badge bg-secondary">Aucun fruit associé</span>
+                                {% endif %}
+                            </div>
+
+                            <!-- Bouton Ajouter aux favoris -->
+                            <div class="text-center mt-3">
+                                <button class="add-button btn btn-success" data-id="{{ result.id }}" aria-label="Ajouter l'album {{ result.title|default('sans titre') }} aux favoris">
+                                    Ajouter aux favoris
+                                </button>
+                            </div>
                         </div>
                     {% endfor %}
                 </div>
             {% else %}
-                <p>Aucun résultat trouvé. Essayez une autre recherche.</p>
+                <p class="text-center text-muted mt-4">Aucun résultat trouvé. Essayez un autre terme.</p>
             {% endif %}
         </div>
     </div>
@@ -48,6 +78,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function() {
+            // Gérer l'ajout aux favoris
             $('.add-button').on('click', function(event) {
                 event.preventDefault();
                 const albumId = $(this).data('id');

@@ -4,17 +4,14 @@ namespace App\Controller;
 
 use App\Entity\FavoriteAlbum;
 use App\Entity\Fruit;
-use App\Entity\Label;
-use App\Entity\Genre;
-use App\Entity\Format;
-use App\Service\DiscogsService;
-use Symfony\Component\HttpFoundation\Request;
 use App\Form\AlbumSearchType;
+use App\Service\DiscogsService;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\HttpFoundation\JsonResponse;
-use Doctrine\ORM\EntityManagerInterface;
 
 class AlbumSearchController extends AbstractController
 {
@@ -36,10 +33,12 @@ class AlbumSearchController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $searchTerm = $form->get('searchTerm')->getData();
-            try {
-                $results = $this->discogsService->searchAlbums($searchTerm);
-            } catch (\Exception $e) {
-                $this->addFlash('error', 'Une erreur est survenue lors de la recherche. Veuillez réessayer.');
+
+            // Recherchez tous les albums correspondant au terme
+            $results = $this->discogsService->searchAlbums($searchTerm);
+
+            if (empty($results)) {
+                $this->addFlash('warning', "Aucun album trouvé pour : \"$searchTerm\".");
             }
         }
 
@@ -49,24 +48,25 @@ class AlbumSearchController extends AbstractController
         ]);
     }
 
+
     #[Route('/album/details/{id}', name: 'album_details')]
     public function showDetails(int $id): Response
     {
         try {
             $albumDetails = $this->discogsService->getAlbumDetails($id);
 
-            // Associer les fruits au titre de l'album s'ils existent
-            $fruits = $this->findFruitsInText($albumDetails['title'] ?? '');
-            $albumDetails['fruits'] = $fruits; // Ajouter les fruits à l'objet de détails
+            if (empty($albumDetails['fruits'])) {
+                throw $this->createNotFoundException('Cet album ne contient aucun fruit pertinent.');
+            }
         } catch (\Exception $e) {
-            throw $this->createNotFoundException('Détails de l\'album introuvables.');
+            $this->addFlash('error', 'Impossible de récupérer les détails de cet album.');
+            return $this->redirectToRoute('album_search');
         }
 
         return $this->render('album/details.html.twig', [
             'album' => $albumDetails,
         ]);
     }
-
 
     #[Route('/album/add-to-favorites/{id}', name: 'add_to_favorites', methods: ['POST'])]
     public function addToFavorites(int $id): JsonResponse
@@ -79,62 +79,38 @@ class AlbumSearchController extends AbstractController
 
         try {
             $albumDetails = $this->discogsService->getAlbumDetails($id);
-        } catch (\Exception $e) {
-            return new JsonResponse(['error' => 'Erreur lors de la récupération des détails de l\'album'], 500);
-        }
 
-        if (empty($albumDetails['id']) || empty($albumDetails['title'])) {
-            return new JsonResponse(['error' => 'Données d\'album invalides'], 400);
-        }
-
-        $existingAlbum = $this->entityManager->getRepository(FavoriteAlbum::class)
-            ->findOneBy(['user' => $user, 'albumId' => $albumDetails['id']]);
-
-        if ($existingAlbum) {
-            return new JsonResponse(['error' => 'Cet album est déjà dans vos favoris'], 409);
-        }
-
-        $favoriteAlbum = new FavoriteAlbum();
-        $favoriteAlbum->setUser($user);
-        $favoriteAlbum->setAlbumId($albumDetails['id']);
-        $favoriteAlbum->setTitle($albumDetails['title']);
-        $favoriteAlbum->setYear($albumDetails['year'] ?? null);
-        $favoriteAlbum->setCoverImage($albumDetails['images'][0]['uri'] ?? null);
-
-        $fruits = $this->findFruitsInText($albumDetails['title']);
-        foreach ($fruits as $fruitName) {
-            $fruit = $this->findOrCreateEntity(Fruit::class, ['name' => $fruitName]);
-            $favoriteAlbum->addFruit($fruit);
-        }
-
-        $label = $this->findOrCreateEntity(Label::class, ['name' => $albumDetails['labels'][0]['name'] ?? '']);
-        $genre = $this->findOrCreateEntity(Genre::class, ['name' => $albumDetails['genres'][0] ?? '']);
-        $format = $this->findOrCreateEntity(Format::class, ['name' => $albumDetails['formats'][0]['name'] ?? '']);
-
-        $favoriteAlbum->setLabel($label);
-        $favoriteAlbum->setGenre($genre);
-        $favoriteAlbum->setFormat($format);
-
-        $this->entityManager->persist($favoriteAlbum);
-        $this->entityManager->flush();
-
-        return new JsonResponse(['success' => true]);
-    }
-
-    private function findFruitsInText(string $text): array
-    {
-        $fruitKeywords = ['banane', 'pomme', 'fraise', 'orange', 'raisin', 'citron', 'cerise', 'mangue', 'kiwi'];
-        $foundFruits = [];
-
-        foreach ($fruitKeywords as $fruit) {
-            if (stripos($text, $fruit) !== false) {
-                $foundFruits[] = ['name' => ucfirst($fruit)];
+            if (empty($albumDetails['fruits'])) {
+                return new JsonResponse(['error' => 'Cet album ne contient aucun fruit pertinent.'], 400);
             }
+
+            $existingAlbum = $this->entityManager->getRepository(FavoriteAlbum::class)
+                ->findOneBy(['user' => $user, 'albumId' => $albumDetails['id']]);
+
+            if ($existingAlbum) {
+                return new JsonResponse(['error' => 'Cet album est déjà dans vos favoris'], 409);
+            }
+
+            $favoriteAlbum = new FavoriteAlbum();
+            $favoriteAlbum->setUser($user);
+            $favoriteAlbum->setAlbumId($albumDetails['id']);
+            $favoriteAlbum->setTitle($albumDetails['title']);
+            $favoriteAlbum->setYear($albumDetails['year'] ?? null);
+            $favoriteAlbum->setCoverImage($albumDetails['images'][0]['uri'] ?? null);
+
+            foreach ($albumDetails['fruits'] as $fruitName) {
+                $fruit = $this->findOrCreateEntity(Fruit::class, ['name' => $fruitName]);
+                $favoriteAlbum->addFruit($fruit);
+            }
+
+            $this->entityManager->persist($favoriteAlbum);
+            $this->entityManager->flush();
+
+            return new JsonResponse(['success' => true]);
+        } catch (\Exception $e) {
+            return new JsonResponse(['error' => 'Erreur lors de l\'ajout de l\'album'], 500);
         }
-
-        return $foundFruits;
     }
-
 
     private function findOrCreateEntity(string $entityClass, array $criteria)
     {

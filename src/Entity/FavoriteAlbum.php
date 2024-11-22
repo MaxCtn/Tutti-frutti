@@ -49,9 +49,13 @@ class FavoriteAlbum
     #[ORM\JoinTable(name: 'favorite_album_fruit')]
     private Collection $fruits;
 
+    #[ORM\OneToMany(mappedBy: 'album', targetEntity: Track::class, cascade: ['persist', 'remove'])]
+    private Collection $tracks;
+
     public function __construct()
     {
         $this->fruits = new ArrayCollection();
+        $this->tracks = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -148,7 +152,7 @@ class FavoriteAlbum
     }
 
     /**
-     * @return Collection|Fruit[]
+     * @return Collection<int, Fruit>
      */
     public function getFruits(): Collection
     {
@@ -169,5 +173,53 @@ class FavoriteAlbum
         $this->fruits->removeElement($fruit);
 
         return $this;
+    }
+
+    /**
+     * @return Collection<int, Track>
+     */
+    public function getTracks(): Collection
+    {
+        return $this->tracks;
+    }
+
+    public function addTrack(Track $track): self
+    {
+        if (!$this->tracks->contains($track)) {
+            $this->tracks[] = $track;
+            $track->setAlbum($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTrack(Track $track): self
+    {
+        if ($this->tracks->removeElement($track)) {
+            // Set the owning side to null (unless already changed)
+            if ($track->getAlbum() === $this) {
+                $track->setAlbum(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Récupère tous les fruits associés à l'album et à ses morceaux.
+     */
+    public function getAllFruits(): array
+    {
+        $allFruits = $this->fruits->toArray();
+
+        foreach ($this->tracks as $track) {
+            foreach ($track->getFruits() as $fruit) {
+                if (!in_array($fruit, $allFruits, true)) {
+                    $allFruits[] = $fruit;
+                }
+            }
+        }
+
+        return $allFruits;
     }
 }

@@ -12,6 +12,13 @@ class DiscogsService
     private string $consumerKey;
     private string $consumerSecret;
 
+    // Liste enrichie de mots-clés de fruits
+    private array $fruitKeywords = [
+        'banane', 'pomme', 'fraise', 'orange', 'raisin', 'citron', 'cerise', 'mangue',
+        'kiwi', 'poire', 'pastèque', 'ananas', 'prune', 'abricot', 'figue', 'grenade',
+        'melon', 'framboise', 'cassis', 'groseille', 'myrtille', 'papaye', 'litchi', 'coco'
+    ];
+
     public function __construct(HttpClientInterface $client, string $consumerKey, string $consumerSecret)
     {
         $this->client = $client;
@@ -20,7 +27,7 @@ class DiscogsService
     }
 
     /**
-     * Effectue une recherche d'albums sur Discogs.
+     * Effectue une recherche d'albums sur Discogs basée sur un fruit.
      */
     public function searchAlbums(string $searchTerm): array
     {
@@ -36,11 +43,20 @@ class DiscogsService
             ]);
 
             $data = $this->handleResponse($response);
-            return $data['results'] ?? [];
+
+            // Ajoutez les fruits associés à chaque résultat
+            foreach ($data['results'] as &$result) {
+                $result['fruits'] = $this->findFruitsInText($result['title'] ?? '');
+            }
+
+            return $data['results'];
         } catch (TransportExceptionInterface $e) {
             throw new \RuntimeException('Erreur lors de la communication avec l\'API Discogs : ' . $e->getMessage());
         }
     }
+
+
+
 
     /**
      * Récupère les détails d'un album spécifique à partir de son ID.
@@ -61,12 +77,47 @@ class DiscogsService
                 throw new \RuntimeException('Détails de l\'album introuvables pour l\'ID fourni.');
             }
 
+            // Détecter les fruits dans le titre de l'album
+            $data['fruits'] = $this->findFruitsInText($data['title'] ?? '');
+
+            // Associer les fruits détectés à chaque morceau
+            if (!empty($data['tracklist'])) {
+                $data['tracklist'] = $this->associateFruitsWithTracks($data['tracklist']);
+            }
+
             return $data;
         } catch (\Exception $e) {
             throw new \RuntimeException('Erreur lors de la récupération des détails de l\'album : ' . $e->getMessage());
         }
     }
 
+    /**
+     * Analyse la liste des morceaux pour détecter les fruits associés.
+     */
+    private function associateFruitsWithTracks(array $tracklist): array
+    {
+        foreach ($tracklist as &$track) {
+            $track['fruits'] = $this->findFruitsInText($track['title'] ?? '');
+        }
+
+        return $tracklist;
+    }
+
+    /**
+     * Trouve les fruits dans un texte donné.
+     */
+    private function findFruitsInText(string $text): array
+    {
+        $foundFruits = [];
+
+        foreach ($this->fruitKeywords as $fruit) {
+            if (stripos($text, $fruit) !== false) {
+                $foundFruits[] = ucfirst($fruit);
+            }
+        }
+
+        return array_unique($foundFruits); // Supprime les doublons
+    }
 
     /**
      * Traite la réponse HTTP et retourne les données.
@@ -85,5 +136,4 @@ class DiscogsService
 
         return $data;
     }
-
 }

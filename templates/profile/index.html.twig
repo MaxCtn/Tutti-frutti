@@ -9,18 +9,14 @@
 
 {% block body %}
     <div class="container mt-5">
-        <!-- Header -->
+        <!-- Header du profil -->
         <header class="d-flex align-items-center justify-content-between bg-light p-4 rounded shadow-sm">
             <div class="d-flex align-items-center">
                 <div class="profile-picture-container">
                     {% if app.user.profilePicture %}
-                        <img src="{{ asset('uploads/profile_pictures/' ~ app.user.profilePicture) }}"
-                             alt="Photo de profil"
-                             style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 2px solid #007bff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+                        <img src="{{ asset('uploads/profile_pictures/' ~ app.user.profilePicture) }}" alt="Photo de profil" class="profile-picture">
                     {% else %}
-                        <img src="{{ asset('uploads/profile_pictures/default.jpg') }}"
-                             alt="Photo de profil par défaut"
-                             class="profile-picture-circle">
+                        <img src="{{ asset('uploads/profile_pictures/default.jpg') }}" alt="Photo de profil par défaut" class="profile-picture">
                     {% endif %}
                 </div>
                 <div class="profile-info ms-3">
@@ -30,7 +26,7 @@
             </div>
         </header>
 
-        <!-- Barre de filtre -->
+        <!-- Barre de filtres -->
         <section class="filters mt-5 mb-4">
             <form method="get" action="{{ path('profile') }}" class="d-flex flex-column align-items-center">
                 <div class="row mb-3 justify-content-center">
@@ -41,8 +37,7 @@
                         'label': 'Label'
                     } %}
                         <div class="col-md-3">
-                            <input type="text" name="{{ field }}" class="form-control"
-                                   placeholder="{{ placeholder }}" value="{{ app.request.get(field) }}">
+                            <input type="text" name="{{ field }}" class="form-control" placeholder="{{ placeholder }}" value="{{ app.request.get(field) }}">
                         </div>
                     {% endfor %}
                 </div>
@@ -52,8 +47,7 @@
                         'format': 'Format'
                     } %}
                         <div class="col-md-3">
-                            <input type="text" name="{{ field }}" class="form-control"
-                                   placeholder="{{ placeholder }}" value="{{ app.request.get(field) }}">
+                            <input type="text" name="{{ field }}" class="form-control" placeholder="{{ placeholder }}" value="{{ app.request.get(field) }}">
                         </div>
                     {% endfor %}
                     <div class="col-md-3">
@@ -79,36 +73,43 @@
         <div class="separator"></div>
 
         <!-- Albums favoris -->
-        <section class="favorites">
+        <section class="favorites mt-5">
             <h2 class="text-center mb-4">Vos Albums Favoris</h2>
             <div class="row">
-                {% for favorite in favorites %}
-                    <div class="col-md-4 mb-4">
-                        <div class="card shadow-sm">
-                            <img src="{{ favorite.coverImage }}" class="card-img-top" alt="Couverture de l'album">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ favorite.title }}</h5>
-                                <p class="card-text text-muted">
-                                    Label : {{ favorite.label.name|default('Non renseigné') }}
-                                </p>
-                                <p class="card-text text-muted">
-                                    Fruits :
-                                    {% if favorite.fruits|length > 0 %}
-                                        {% for fruit in favorite.fruits %}
-                                            <span class="badge bg-success">{{ fruit.name }}</span>
-                                        {% endfor %}
-                                    {% else %}
-                                        <span class="text-muted">Aucun fruit associé</span>
-                                    {% endif %}
-                                </p>
-                                <a href="{{ path('album_details', {'id': favorite.albumId}) }}" class="btn btn-primary btn-sm">Détails</a>
+                {% if favorites is defined and favorites|length > 0 %}
+                    {% for favorite in favorites %}
+                        <div class="col-md-4 mb-4">
+                            <div class="card shadow-sm">
+                                {% if favorite.coverImage %}
+                                    <img src="{{ favorite.coverImage }}" class="card-img-top" alt="Couverture de l'album {{ favorite.title }}">
+                                {% else %}
+                                    <div class="no-cover text-center p-4 text-muted">Pas d'image disponible</div>
+                                {% endif %}
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ favorite.title|default('Titre indisponible') }}</h5>
+                                    <p class="card-text text-muted">Année : {{ favorite.year|default('Non renseignée') }}</p>
 
+                                    <p class="card-text text-muted">
+                                        Fruits associés :
+                                        {% if favorite.fruits|length > 0 %}
+                                            {% for fruit in favorite.fruits %}
+                                                <span class="badge bg-success">{{ fruit.name }}</span>
+                                            {% endfor %}
+                                        {% else %}
+                                            <span class="text-muted">Aucun fruit associé</span>
+                                        {% endif %}
+                                    </p>
+
+                                    <div class="text-center mt-3">
+                                        <a href="{{ path('album_details', {'id': favorite.albumId}) }}" class="btn btn-primary btn-sm">Voir détails</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    {% endfor %}
                 {% else %}
                     <p class="text-center text-muted">Vous n'avez encore ajouté aucun album favori.</p>
-                {% endfor %}
+                {% endif %}
             </div>
         </section>
     </div>
