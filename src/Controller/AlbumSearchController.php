@@ -96,7 +96,8 @@ class AlbumSearchController extends AbstractController
             $favoriteAlbum->setAlbumId($albumDetails['id']);
             $favoriteAlbum->setTitle($albumDetails['title']);
             $favoriteAlbum->setYear($albumDetails['year'] ?? null);
-            $favoriteAlbum->setCoverImage($albumDetails['images'][0]['uri'] ?? null);
+            $favoriteAlbum->setCoverImage($albumDetails['cover_image'] ?? 'https://via.placeholder.com/150'); // Ajoutez une image par défaut si aucune image n'est trouvée
+
 
             foreach ($albumDetails['fruits'] as $fruitName) {
                 $fruit = $this->findOrCreateEntity(Fruit::class, ['name' => $fruitName]);
@@ -111,6 +112,9 @@ class AlbumSearchController extends AbstractController
             return new JsonResponse(['error' => 'Erreur lors de l\'ajout de l\'album'], 500);
         }
     }
+
+
+
 
     private function findOrCreateEntity(string $entityClass, array $criteria)
     {
@@ -130,4 +134,5 @@ class AlbumSearchController extends AbstractController
 
         return $entity;
     }
+
 }

@@ -11,6 +11,7 @@ class DiscogsService
     private HttpClientInterface $client;
     private string $consumerKey;
     private string $consumerSecret;
+    private string $imageDirectory;
 
     // Liste enrichie de mots-clés de fruits
     private array $fruitKeywords = [
@@ -19,11 +20,12 @@ class DiscogsService
         'melon', 'framboise', 'cassis', 'groseille', 'myrtille', 'papaye', 'litchi', 'coco'
     ];
 
-    public function __construct(HttpClientInterface $client, string $consumerKey, string $consumerSecret)
+    public function __construct(HttpClientInterface $client, string $consumerKey, string $consumerSecret, string $imageDirectory)
     {
         $this->client = $client;
         $this->consumerKey = $consumerKey;
         $this->consumerSecret = $consumerSecret;
+        $this->imageDirectory = $imageDirectory;
     }
 
     /**
@@ -55,17 +57,13 @@ class DiscogsService
         }
     }
 
-
-
-
     /**
      * Récupère les détails d'un album spécifique à partir de son ID.
      */
     public function getAlbumDetails(int $id): array
     {
         try {
-            $url = "https://api.discogs.com/releases/{$id}";
-            $response = $this->client->request('GET', $url, [
+            $response = $this->client->request('GET', "https://api.discogs.com/releases/{$id}", [
                 'headers' => [
                     'Authorization' => "Discogs key={$this->consumerKey}, secret={$this->consumerSecret}",
                 ],
@@ -80,9 +78,11 @@ class DiscogsService
             // Détecter les fruits dans le titre de l'album
             $data['fruits'] = $this->findFruitsInText($data['title'] ?? '');
 
-            // Associer les fruits détectés à chaque morceau
-            if (!empty($data['tracklist'])) {
-                $data['tracklist'] = $this->associateFruitsWithTracks($data['tracklist']);
+            // Téléchargement de l'image de couverture
+            if (!empty($data['images'][0]['uri'])) {
+                $data['local_cover_image'] = $this->downloadImage($data['images'][0]['uri'], $id);
+            } else {
+                $data['local_cover_image'] = 'https://via.placeholder.com/150';
             }
 
             return $data;
@@ -92,15 +92,28 @@ class DiscogsService
     }
 
     /**
-     * Analyse la liste des morceaux pour détecter les fruits associés.
+     * Télécharge et enregistre une image localement.
      */
-    private function associateFruitsWithTracks(array $tracklist): array
+    private function downloadImage(string $url, int $albumId): string
     {
-        foreach ($tracklist as &$track) {
-            $track['fruits'] = $this->findFruitsInText($track['title'] ?? '');
+        try {
+            $response = $this->client->request('GET', $url, [
+                'headers' => [
+                    'User-Agent' => 'DiscogsAPI/1.0',
+                ],
+            ]);
+
+            if ($response->getStatusCode() === 200) {
+                $imagePath = "{$this->imageDirectory}/{$albumId}.jpg";
+                file_put_contents($imagePath, $response->getContent());
+
+                return "/images/{$albumId}.jpg";
+            }
+        } catch (\Exception $e) {
+            throw new \RuntimeException('Erreur lors du téléchargement de l\'image : ' . $e->getMessage());
         }
 
-        return $tracklist;
+        return 'https://via.placeholder.com/150';
     }
 
     /**
@@ -116,7 +129,7 @@ class DiscogsService
             }
         }
 
-        return array_unique($foundFruits); // Supprime les doublons
+        return array_unique($foundFruits);
     }
 
     /**

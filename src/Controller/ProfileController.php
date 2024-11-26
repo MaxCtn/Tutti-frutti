@@ -33,11 +33,26 @@ class ProfileController extends AbstractController
         $sortBy = $request->query->get('sortBy', 'title'); // Par défaut, tri par titre
         $order = $request->query->get('order', 'ASC'); // Par défaut, ordre croissant
 
-        // Récupération des albums favoris avec filtres et tri
-        $favorites = $favoriteAlbumRepository->findByCriteria(array_filter($criteria), $sortBy, $order);
+        // Récupération des albums favoris spécifiques à l'utilisateur
+        $favorites = $favoriteAlbumRepository->findByUser(
+            $user, // On filtre par utilisateur connecté
+            array_filter($criteria), // Filtrer les critères non vides
+            $sortBy,
+            strtoupper($order) === 'ASC' ? 'ASC' : 'DESC' // Validation du tri (ASC ou DESC)
+        );
+
+        // Gestion des cas où les images pourraient ne pas exister
+        foreach ($favorites as $favorite) {
+            if (!$favorite->getCoverImage() || $favorite->getCoverImage() === '') {
+                $favorite->setCoverImage('https://via.placeholder.com/150');
+            }
+        }
+
 
         return $this->render('profile/index.html.twig', [
             'favorites' => $favorites,
         ]);
     }
+    
+
 }

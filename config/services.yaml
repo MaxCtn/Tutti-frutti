@@ -1,11 +1,17 @@
 parameters:
+    # Répertoire pour les photos de profil
     profile_pictures_directory: '%kernel.project_dir%/public/uploads/profile_pictures'
 
+    # Répertoire pour les images récupérées depuis Discogs
+    discogs_image_directory: '%kernel.project_dir%/public/images'
+
 services:
+    # Configuration par défaut pour tous les services
     _defaults:
         autowire: true
         autoconfigure: true
 
+    # Configuration pour toutes les classes dans le répertoire App\
     App\:
         resource: '../src/'
         exclude:
@@ -13,8 +19,10 @@ services:
             - '../src/Entity/'
             - '../src/Kernel.php'
 
+    # Configuration explicite pour le service DiscogsService
     App\Service\DiscogsService:
         arguments:
             $client: '@Symfony\Contracts\HttpClient\HttpClientInterface'
             $consumerKey: '%env(DISCOGS_CONSUMER_KEY)%'
             $consumerSecret: '%env(DISCOGS_CONSUMER_SECRET)%'
+            $imageDirectory: '%discogs_image_directory%'

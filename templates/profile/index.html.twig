@@ -30,22 +30,14 @@
         <section class="filters mt-5 mb-4">
             <form method="get" action="{{ path('profile') }}" class="d-flex flex-column align-items-center">
                 <div class="row mb-3 justify-content-center">
-                    {% for field, placeholder in {
-                        'fruit': 'Fruit',
-                        'year': 'Année',
-                        'title': 'Titre',
-                        'label': 'Label'
-                    } %}
+                    {% for field, placeholder in {'fruit': 'Fruit', 'year': 'Année', 'title': 'Titre', 'label': 'Label'} %}
                         <div class="col-md-3">
                             <input type="text" name="{{ field }}" class="form-control" placeholder="{{ placeholder }}" value="{{ app.request.get(field) }}">
                         </div>
                     {% endfor %}
                 </div>
                 <div class="row mb-3 justify-content-center">
-                    {% for field, placeholder in {
-                        'genre': 'Genre',
-                        'format': 'Format'
-                    } %}
+                    {% for field, placeholder in {'genre': 'Genre', 'format': 'Format'} %}
                         <div class="col-md-3">
                             <input type="text" name="{{ field }}" class="form-control" placeholder="{{ placeholder }}" value="{{ app.request.get(field) }}">
                         </div>
@@ -75,41 +67,37 @@
         <!-- Albums favoris -->
         <section class="favorites mt-5">
             <h2 class="text-center mb-4">Vos Albums Favoris</h2>
-            <div class="row">
-                {% if favorites is defined and favorites|length > 0 %}
-                    {% for favorite in favorites %}
-                        <div class="col-md-4 mb-4">
-                            <div class="card shadow-sm">
-                                {% if favorite.coverImage %}
-                                    <img src="{{ favorite.coverImage }}" class="card-img-top" alt="Couverture de l'album {{ favorite.title }}">
-                                {% else %}
-                                    <div class="no-cover text-center p-4 text-muted">Pas d'image disponible</div>
-                                {% endif %}
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ favorite.title|default('Titre indisponible') }}</h5>
-                                    <p class="card-text text-muted">Année : {{ favorite.year|default('Non renseignée') }}</p>
+            <div class="results-grid">
+                {% for favorite in favorites %}
+                    <div class="result-card">
+                        <!-- Image et lien vers les détails -->
+                        <a href="{{ path('album_details', {'id': favorite.albumId}) }}">
+                            {% if favorite.coverImage and favorite.coverImage != 'https://via.placeholder.com/150' %}
+                                <img src="{{ asset(favorite.coverImage) }}" alt="Couverture de l'album {{ favorite.title|default('Indisponible') }}" class="cover-image">
+                            {% else %}
+                                <img src="https://via.placeholder.com/150" alt="Pas d'image disponible" class="cover-image">
+                            {% endif %}
+                        </a>
 
-                                    <p class="card-text text-muted">
-                                        Fruits associés :
-                                        {% if favorite.fruits|length > 0 %}
-                                            {% for fruit in favorite.fruits %}
-                                                <span class="badge bg-success">{{ fruit.name }}</span>
-                                            {% endfor %}
-                                        {% else %}
-                                            <span class="text-muted">Aucun fruit associé</span>
-                                        {% endif %}
-                                    </p>
-
-                                    <div class="text-center mt-3">
-                                        <a href="{{ path('album_details', {'id': favorite.albumId}) }}" class="btn btn-primary btn-sm">Voir détails</a>
-                                    </div>
-                                </div>
-                            </div>
+                        <!-- Titre avec lien vers les détails -->
+                        <div class="album-title">
+                            <a href="{{ path('album_details', {'id': favorite.albumId}) }}">
+                                {{ favorite.title|default('Titre indisponible') }}
+                            </a>
                         </div>
-                    {% endfor %}
+
+                        <!-- Année de l'album -->
+                        <div class="album-year">Année : {{ favorite.year|default('Non renseignée') }}</div>
+
+                        <!-- Boutons -->
+                        <div class="buttons mt-3">
+                            <a href="{{ path('album_details', {'id': favorite.albumId}) }}" class="btn btn-primary btn-sm">Voir détails</a>
+                            <a href="https://www.discogs.com/release/{{ favorite.albumId }}" class="btn btn-secondary btn-sm" target="_blank">En savoir plus</a>
+                        </div>
+                    </div>
                 {% else %}
-                    <p class="text-center text-muted">Vous n'avez encore ajouté aucun album favori.</p>
-                {% endif %}
+                    <p class="text-center text-muted mt-4">Vous n'avez encore ajouté aucun album favori.</p>
+                {% endfor %}
             </div>
         </section>
     </div>

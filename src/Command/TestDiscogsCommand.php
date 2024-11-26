@@ -12,12 +12,19 @@ use Symfony\Contracts\HttpClient\HttpClientInterface;
 class TestDiscogsCommand extends Command
 {
     private HttpClientInterface $httpClient;
-    private string $discogsApiKey;
+    private string $discogsConsumerKey;
+    private string $discogsConsumerSecret;
 
     public function __construct(HttpClientInterface $httpClient)
     {
         $this->httpClient = $httpClient;
-        $this->discogsApiKey = $_ENV['DISCOGS_API_KEY'];
+        $this->discogsConsumerKey = $_ENV['DISCOGS_CONSUMER_KEY'] ?? getenv('DISCOGS_CONSUMER_KEY') ?? '';
+        $this->discogsConsumerSecret = $_ENV['DISCOGS_CONSUMER_SECRET'] ?? getenv('DISCOGS_CONSUMER_SECRET') ?? '';
+
+        if (!$this->discogsConsumerKey || !$this->discogsConsumerSecret) {
+            throw new \RuntimeException('Les clés API Discogs (DISCOGS_CONSUMER_KEY et DISCOGS_CONSUMER_SECRET) ne sont pas définies.');
+        }
+
         parent::__construct();
     }
 
@@ -32,31 +39,37 @@ class TestDiscogsCommand extends Command
         $page = (int) $input->getArgument('page');
         $perPage = 10; // Nombre de résultats par page
 
-        $response = $this->httpClient->request('GET', 'https://api.discogs.com/database/search', [
-            'query' => [
-                'q' => 'banana',  // Exemple de mot-clé pour tester
-                'token' => $this->discogsApiKey,
-                'page' => $page,
-                'per_page' => $perPage,
-            ],
-        ]);
+        try {
+            $response = $this->httpClient->request('GET', 'https://api.discogs.com/database/search', [
+                'query' => [
+                    'q' => 'banana',  // Exemple de mot-clé pour tester
+                    'key' => $this->discogsConsumerKey,
+                    'secret' => $this->discogsConsumerSecret,
+                    'page' => $page,
+                    'per_page' => $perPage,
+                ],
+            ]);
 
-        $data = $response->toArray();
+            $data = $response->toArray();
 
-        $output->writeln("Résultats de recherche pour 'banana' - Page $page:");
-        foreach ($data['results'] as $result) {
-            $output->writeln($result['title']);
+            $output->writeln("Résultats de recherche pour 'banana' - Page $page:");
+            foreach ($data['results'] as $result) {
+                $output->writeln($result['title']);
+            }
+
+            // Affiche les informations de pagination
+            $output->writeln("\nPage $page sur " . $data['pagination']['pages']);
+            if ($page < $data['pagination']['pages']) {
+                $output->writeln('Pour voir la page suivante, lancez :');
+                $output->writeln('php bin/console app:test-discogs ' . ($page + 1));
+            } else {
+                $output->writeln("Fin des résultats.");
+            }
+
+            return Command::SUCCESS;
+        } catch (\Exception $e) {
+            $output->writeln('<error>Erreur lors de la communication avec l\'API Discogs : ' . $e->getMessage() . '</error>');
+            return Command::FAILURE;
         }
-
-        // Affiche les informations de pagination
-        $output->writeln("\nPage $page sur " . $data['pagination']['pages']);
-        if ($page < $data['pagination']['pages']) {
-            $output->writeln('Pour voir la page suivante, lancez :');
-            $output->writeln('php bin/console app:test-discogs ' . ($page + 1));
-        } else {
-            $output->writeln("Fin des résultats.");
-        }
-
-        return Command::SUCCESS;
     }
 }
