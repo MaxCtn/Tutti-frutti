@@ -13,24 +13,24 @@ class DiscogsService
     private string $consumerSecret;
     private string $imageDirectory;
 
-    // Liste enrichie de mots-clés de fruits
     private array $fruitKeywords = [
         'banane', 'pomme', 'fraise', 'orange', 'raisin', 'citron', 'cerise', 'mangue',
         'kiwi', 'poire', 'pastèque', 'ananas', 'prune', 'abricot', 'figue', 'grenade',
-        'melon', 'framboise', 'cassis', 'groseille', 'myrtille', 'papaye', 'litchi', 'coco'
+        'melon', 'framboise', 'cassis', 'groseille', 'myrtille', 'papaye', 'litchi', 'coco',
+        'nectarine', 'pêche', 'goyave', 'carambole', 'kaki', 'longane', 'mûre', 'physalis',
+        'fruit de la passion', 'pomelo', 'tamarin', 'quetsche', 'ramboutan', 'canneberge',
+        'prunelle', 'sureau', 'mandarine', 'clémentine', 'kumquat', 'citron vert', 'pamplemousse'
     ];
+
 
     public function __construct(HttpClientInterface $client, string $consumerKey, string $consumerSecret, string $imageDirectory)
     {
         $this->client = $client;
         $this->consumerKey = $consumerKey;
         $this->consumerSecret = $consumerSecret;
-        $this->imageDirectory = $imageDirectory;
+        $this->imageDirectory = rtrim($imageDirectory, '/'); // Supprime un éventuel "/" final pour éviter des doublons dans les chemins.
     }
 
-    /**
-     * Effectue une recherche d'albums sur Discogs basée sur un fruit.
-     */
     public function searchAlbums(string $searchTerm): array
     {
         try {
@@ -46,7 +46,6 @@ class DiscogsService
 
             $data = $this->handleResponse($response);
 
-            // Ajoutez les fruits associés à chaque résultat
             foreach ($data['results'] as &$result) {
                 $result['fruits'] = $this->findFruitsInText($result['title'] ?? '');
             }
@@ -57,9 +56,6 @@ class DiscogsService
         }
     }
 
-    /**
-     * Récupère les détails d'un album spécifique à partir de son ID.
-     */
     public function getAlbumDetails(int $id): array
     {
         try {
@@ -75,15 +71,9 @@ class DiscogsService
                 throw new \RuntimeException('Détails de l\'album introuvables pour l\'ID fourni.');
             }
 
-            // Détecter les fruits dans le titre de l'album
             $data['fruits'] = $this->findFruitsInText($data['title'] ?? '');
 
-            // Téléchargement de l'image de couverture
-            if (!empty($data['images'][0]['uri'])) {
-                $data['local_cover_image'] = $this->downloadImage($data['images'][0]['uri'], $id);
-            } else {
-                $data['local_cover_image'] = 'https://via.placeholder.com/150';
-            }
+            $data['local_cover_image'] = $this->downloadImage($data['images'][0]['uri'] ?? null, $id);
 
             return $data;
         } catch (\Exception $e) {
@@ -91,11 +81,12 @@ class DiscogsService
         }
     }
 
-    /**
-     * Télécharge et enregistre une image localement.
-     */
-    private function downloadImage(string $url, int $albumId): string
+    private function downloadImage(?string $url, int $albumId): string
     {
+        if (!$url) {
+            return '/images/placeholder.jpg'; // Utilisez une image de placeholder locale.
+        }
+
         try {
             $response = $this->client->request('GET', $url, [
                 'headers' => [
@@ -105,20 +96,23 @@ class DiscogsService
 
             if ($response->getStatusCode() === 200) {
                 $imagePath = "{$this->imageDirectory}/{$albumId}.jpg";
+
+                // S'assure que le répertoire existe
+                if (!is_dir($this->imageDirectory)) {
+                    mkdir($this->imageDirectory, 0755, true);
+                }
+
                 file_put_contents($imagePath, $response->getContent());
 
                 return "/images/{$albumId}.jpg";
             }
         } catch (\Exception $e) {
-            throw new \RuntimeException('Erreur lors du téléchargement de l\'image : ' . $e->getMessage());
+            return '/images/placeholder.jpg'; // Retourne une image par défaut en cas d'échec.
         }
 
-        return 'https://via.placeholder.com/150';
+        return '/images/placeholder.jpg';
     }
 
-    /**
-     * Trouve les fruits dans un texte donné.
-     */
     private function findFruitsInText(string $text): array
     {
         $foundFruits = [];
@@ -132,9 +126,6 @@ class DiscogsService
         return array_unique($foundFruits);
     }
 
-    /**
-     * Traite la réponse HTTP et retourne les données.
-     */
     private function handleResponse(ResponseInterface $response): array
     {
         if ($response->getStatusCode() !== 200) {

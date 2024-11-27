@@ -41,6 +41,7 @@ class FavoriteAlbum
     #[ORM\JoinColumn(nullable: true, onDelete: 'SET NULL')]
     private ?Format $format = null;
 
+
     #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'favoriteAlbums')]
     #[ORM\JoinColumn(nullable: false, onDelete: 'CASCADE')]
     private ?User $user = null;
@@ -57,6 +58,8 @@ class FavoriteAlbum
         $this->fruits = new ArrayCollection();
         $this->tracks = new ArrayCollection();
     }
+
+    // Getters and setters
 
     public function getId(): ?int
     {
@@ -164,14 +167,12 @@ class FavoriteAlbum
         if (!$this->fruits->contains($fruit)) {
             $this->fruits[] = $fruit;
         }
-
         return $this;
     }
 
     public function removeFruit(Fruit $fruit): self
     {
         $this->fruits->removeElement($fruit);
-
         return $this;
     }
 
@@ -189,19 +190,16 @@ class FavoriteAlbum
             $this->tracks[] = $track;
             $track->setAlbum($this);
         }
-
         return $this;
     }
 
     public function removeTrack(Track $track): self
     {
         if ($this->tracks->removeElement($track)) {
-            // Set the owning side to null (unless already changed)
             if ($track->getAlbum() === $this) {
                 $track->setAlbum(null);
             }
         }
-
         return $this;
     }
 

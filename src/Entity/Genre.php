@@ -17,7 +17,6 @@ class Genre
 
     #[ORM\Column(type: 'string', length: 255)]
     private ?string $name = null;
-
     #[ORM\OneToMany(mappedBy: 'genre', targetEntity: FavoriteAlbum::class)]
     private Collection $favoriteAlbums;
 

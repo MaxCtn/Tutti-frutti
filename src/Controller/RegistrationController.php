@@ -1,5 +1,4 @@
 <?php
-// src/Controller/RegistrationController.php
 
 namespace App\Controller;
 
@@ -33,49 +32,77 @@ class RegistrationController extends AbstractController
         $form = $this->createForm(RegistrationFormType::class, $user);
 
         $form->handleRequest($request);
+
         if ($form->isSubmitted() && $form->isValid()) {
             // Vérifier si l'utilisateur existe déjà
-            $existingUser = $entityManager->getRepository(User::class)->findOneBy(['email' => $user->getEmail()]);
-            if ($existingUser) {
+            if ($this->isEmailAlreadyUsed($user->getEmail(), $entityManager)) {
                 $form->get('email')->addError(new FormError('Cette adresse e-mail est déjà utilisée.'));
             } else {
-                // Gérer le mot de passe
-                $hashedPassword = $passwordHasher->hashPassword($user, $user->getPassword());
-                $user->setPassword($hashedPassword);
+                try {
+                    // Hashage du mot de passe
+                    $hashedPassword = $passwordHasher->hashPassword($user, $user->getPassword());
+                    $user->setPassword($hashedPassword);
 
-                // Gérer la photo de profil
-                $profilePictureFile = $form->get('profilePicture')->getData();
-                if ($profilePictureFile) {
-                    $originalFilename = pathinfo($profilePictureFile->getClientOriginalName(), PATHINFO_FILENAME);
-                    $safeFilename = $slugger->slug($originalFilename);
-                    $newFilename = $safeFilename . '-' . uniqid() . '.' . $profilePictureFile->guessExtension();
+                    // Gestion de l'upload de la photo de profil
+                    $this->handleProfilePicture($form->get('profilePicture')->getData(), $user, $slugger);
 
-                    try {
-                        $profilePictureFile->move(
-                            $this->getParameter('profile_pictures_directory'),
-                            $newFilename
-                        );
-                        $user->setProfilePicture($newFilename);
-                    } catch (FileException $e) {
-                        $this->addFlash('error', 'Erreur lors de l\'upload de la photo.');
-                    }
+                    // Sauvegarder l'utilisateur dans la base
+                    $entityManager->persist($user);
+                    $entityManager->flush();
+
+                    // Authentifier automatiquement l'utilisateur
+                    $this->authenticateUser($user, $tokenStorage, $session);
+
+                    // Redirection après inscription réussie
+                    return $this->redirectToRoute('album_search');
+                } catch (\Exception $e) {
+                    $this->addFlash('error', 'Une erreur est survenue lors de votre inscription.');
                 }
-
-                // Sauvegarder l'utilisateur dans la base
-                $entityManager->persist($user);
-                $entityManager->flush();
-
-                // Authentifier automatiquement l'utilisateur
-                $token = new UsernamePasswordToken($user, 'main', $user->getRoles());
-                $tokenStorage->setToken($token);
-                $session->set('_security_main', serialize($token));
-
-                return $this->redirectToRoute('album_search');
             }
         }
 
         return $this->render('registration/index.html.twig', [
             'form' => $form->createView(),
         ]);
+    }
+
+    /**
+     * Vérifie si l'e-mail est déjà utilisé par un autre utilisateur.
+     */
+    private function isEmailAlreadyUsed(string $email, EntityManagerInterface $entityManager): bool
+    {
+        return (bool) $entityManager->getRepository(User::class)->findOneBy(['email' => $email]);
+    }
+
+    /**
+     * Gère l'upload de la photo de profil.
+     */
+    private function handleProfilePicture($profilePictureFile, User $user, SluggerInterface $slugger): void
+    {
+        if ($profilePictureFile) {
+            $originalFilename = pathinfo($profilePictureFile->getClientOriginalName(), PATHINFO_FILENAME);
+            $safeFilename = $slugger->slug($originalFilename);
+            $newFilename = $safeFilename . '-' . uniqid() . '.' . $profilePictureFile->guessExtension();
+
+            try {
+                $profilePictureFile->move(
+                    $this->getParameter('profile_pictures_directory'),
+                    $newFilename
+                );
+                $user->setProfilePicture($newFilename);
+            } catch (FileException $e) {
+                throw new \RuntimeException('Erreur lors de l\'upload de la photo : ' . $e->getMessage());
+            }
+        }
+    }
+
+    /**
+     * Authentifie l'utilisateur automatiquement après inscription.
+     */
+    private function authenticateUser(User $user, TokenStorageInterface $tokenStorage, SessionInterface $session): void
+    {
+        $token = new UsernamePasswordToken($user, 'main', $user->getRoles());
+        $tokenStorage->setToken($token);
+        $session->set('_security_main', serialize($token));
     }
 }

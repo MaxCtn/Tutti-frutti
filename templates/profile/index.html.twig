@@ -71,17 +71,17 @@
                 {% for favorite in favorites %}
                     <div class="result-card">
                         <!-- Image et lien vers les détails -->
-                        <a href="{{ path('album_details', {'id': favorite.albumId}) }}">
+                        <a href="{{ path('album_details', { 'id': favorite.albumId, 'origin': 'profile' }) }}">
                             {% if favorite.coverImage and favorite.coverImage != 'https://via.placeholder.com/150' %}
-                                <img src="{{ asset(favorite.coverImage) }}" alt="Couverture de l'album {{ favorite.title|default('Indisponible') }}" class="cover-image">
+                                <img src="{{ favorite.coverImage|default('/images/placeholder.jpg') }}" alt="Couverture de l'album {{ favorite.title|default('Indisponible') }}" class="cover-image">
                             {% else %}
-                                <img src="https://via.placeholder.com/150" alt="Pas d'image disponible" class="cover-image">
+                                <img src="{{ asset('images/placeholder.jpg') }}" alt="Pas d'image disponible" class="cover-image">
                             {% endif %}
                         </a>
 
                         <!-- Titre avec lien vers les détails -->
                         <div class="album-title">
-                            <a href="{{ path('album_details', {'id': favorite.albumId}) }}">
+                            <a href="{{ path('album_details', { 'id': favorite.albumId, 'origin': 'profile' }) }}">
                                 {{ favorite.title|default('Titre indisponible') }}
                             </a>
                         </div>
@@ -91,8 +91,9 @@
 
                         <!-- Boutons -->
                         <div class="buttons mt-3">
-                            <a href="{{ path('album_details', {'id': favorite.albumId}) }}" class="btn btn-primary btn-sm">Voir détails</a>
+                            <a href="{{ path('album_details', { 'id': favorite.albumId, 'origin': 'profile' }) }}" class="btn btn-primary btn-sm">Voir détails</a>
                             <a href="https://www.discogs.com/release/{{ favorite.albumId }}" class="btn btn-secondary btn-sm" target="_blank">En savoir plus</a>
+
                         </div>
                     </div>
                 {% else %}

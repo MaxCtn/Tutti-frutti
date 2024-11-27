@@ -18,7 +18,7 @@ class Fruit
     #[ORM\Column(length: 255, unique: true)]
     private ?string $name = null;
 
-    #[ORM\ManyToMany(targetEntity: FavoriteAlbum::class, mappedBy: 'fruits')]
+    #[ORM\ManyToMany(mappedBy: 'fruits', targetEntity: FavoriteAlbum::class)]
     private Collection $albums;
 
     public function __construct()

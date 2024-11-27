@@ -46,9 +46,20 @@
             <a href="https://www.discogs.com/release/{{ album.id }}" target="_blank" class="btn btn-primary">
                 En savoir plus sur Discogs
             </a>
-            <a href="{{ path('profile') }}" class="btn btn-secondary">
-                Revenir aux favoris
-            </a>
+            {% if origin == 'profile' %}
+                <a href="{{ path('profile') }}" class="btn btn-secondary">
+                    Revenir aux favoris
+                </a>
+            {% elseif origin == 'search' %}
+                <a href="{{ path('album_search') }}" class="btn btn-secondary">
+                    Revenir aux recherches
+                </a>
+            {% endif %}
+            <form action="{{ path('remove_from_favorites', { 'id': album.id }) }}" method="post" class="d-inline">
+                <button type="submit" class="btn btn-danger">
+                    Supprimer des favoris
+                </button>
+            </form>
         </div>
     </div>
 {% endblock %}

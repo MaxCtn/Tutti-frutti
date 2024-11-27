@@ -34,7 +34,6 @@ class AlbumSearchController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $searchTerm = $form->get('searchTerm')->getData();
 
-            // Recherchez tous les albums correspondant au terme
             $results = $this->discogsService->searchAlbums($searchTerm);
 
             if (empty($results)) {
@@ -48,9 +47,8 @@ class AlbumSearchController extends AbstractController
         ]);
     }
 
-
     #[Route('/album/details/{id}', name: 'album_details')]
-    public function showDetails(int $id): Response
+    public function showDetails(int $id, Request $request): Response
     {
         try {
             $albumDetails = $this->discogsService->getAlbumDetails($id);
@@ -58,6 +56,10 @@ class AlbumSearchController extends AbstractController
             if (empty($albumDetails['fruits'])) {
                 throw $this->createNotFoundException('Cet album ne contient aucun fruit pertinent.');
             }
+
+            // Récupérer l'origine de la navigation
+            $origin = $request->query->get('origin', 'search');
+
         } catch (\Exception $e) {
             $this->addFlash('error', 'Impossible de récupérer les détails de cet album.');
             return $this->redirectToRoute('album_search');
@@ -65,6 +67,7 @@ class AlbumSearchController extends AbstractController
 
         return $this->render('album/details.html.twig', [
             'album' => $albumDetails,
+            'origin' => $origin, // Passer l'origine à la vue
         ]);
     }
 
@@ -96,8 +99,7 @@ class AlbumSearchController extends AbstractController
             $favoriteAlbum->setAlbumId($albumDetails['id']);
             $favoriteAlbum->setTitle($albumDetails['title']);
             $favoriteAlbum->setYear($albumDetails['year'] ?? null);
-            $favoriteAlbum->setCoverImage($albumDetails['cover_image'] ?? 'https://via.placeholder.com/150'); // Ajoutez une image par défaut si aucune image n'est trouvée
-
+            $favoriteAlbum->setCoverImage($albumDetails['cover_image'] ?? 'https://via.placeholder.com/150');
 
             foreach ($albumDetails['fruits'] as $fruitName) {
                 $fruit = $this->findOrCreateEntity(Fruit::class, ['name' => $fruitName]);
@@ -113,8 +115,25 @@ class AlbumSearchController extends AbstractController
         }
     }
 
+    #[Route('/album/remove-from-favorites/{id}', name: 'remove_from_favorites', methods: ['POST'])]
+    public function removeFromFavorites(int $id): Response
+    {
+        $user = $this->getUser();
 
+        if ($user) {
+            $favoriteAlbum = $this->entityManager->getRepository(FavoriteAlbum::class)
+                ->findOneBy(['user' => $user, 'albumId' => $id]);
 
+            if ($favoriteAlbum) {
+                $this->entityManager->remove($favoriteAlbum);
+                $this->entityManager->flush();
+
+                $this->addFlash('success', 'L\'album a été retiré de vos favoris.');
+            }
+        }
+
+        return $this->redirectToRoute('profile');
+    }
 
     private function findOrCreateEntity(string $entityClass, array $criteria)
     {
@@ -134,5 +153,4 @@ class AlbumSearchController extends AbstractController
 
         return $entity;
     }
-
 }
