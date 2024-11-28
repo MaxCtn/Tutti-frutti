@@ -9,12 +9,12 @@
 
 {% block body %}
     <div class="container mt-5">
-        <!-- Header du profil -->
+        <!-- Profil utilisateur -->
         <header class="d-flex align-items-center justify-content-between bg-light p-4 rounded shadow-sm">
             <div class="d-flex align-items-center">
                 <div class="profile-picture-container">
                     {% if app.user.profilePicture %}
-                        <img src="{{ asset('uploads/profile_pictures/' ~ app.user.profilePicture) }}" alt="Photo de profil" class="profile-picture">
+                        <img src="{{ asset('uploads/profile_pictures/' ~ app.user.profilePicture) }}" alt="Photo de profil de {{ app.user.email }}" class="profile-picture">
                     {% else %}
                         <img src="{{ asset('uploads/profile_pictures/default.jpg') }}" alt="Photo de profil par défaut" class="profile-picture">
                     {% endif %}
@@ -26,30 +26,42 @@
             </div>
         </header>
 
-        <!-- Barre de filtres -->
+        <!-- Formulaire de filtres -->
         <section class="filters mt-5 mb-4">
             <form method="get" action="{{ path('profile') }}" class="d-flex flex-column align-items-center">
                 <div class="row mb-3 justify-content-center">
                     {% for field, placeholder in {'fruit': 'Fruit', 'year': 'Année', 'title': 'Titre', 'label': 'Label'} %}
                         <div class="col-md-3">
-                            <input type="text" name="{{ field }}" class="form-control" placeholder="{{ placeholder }}" value="{{ app.request.get(field) }}">
+                            <input
+                                    type="text"
+                                    name="{{ field }}"
+                                    class="form-control"
+                                    placeholder="{{ placeholder }}"
+                                    value="{{ app.request.get(field) }}"
+                                    aria-label="{{ placeholder }}">
                         </div>
                     {% endfor %}
                 </div>
                 <div class="row mb-3 justify-content-center">
                     {% for field, placeholder in {'genre': 'Genre', 'format': 'Format'} %}
                         <div class="col-md-3">
-                            <input type="text" name="{{ field }}" class="form-control" placeholder="{{ placeholder }}" value="{{ app.request.get(field) }}">
+                            <input
+                                    type="text"
+                                    name="{{ field }}"
+                                    class="form-control"
+                                    placeholder="{{ placeholder }}"
+                                    value="{{ app.request.get(field) }}"
+                                    aria-label="{{ placeholder }}">
                         </div>
                     {% endfor %}
                     <div class="col-md-3">
-                        <select name="sortBy" class="form-control">
+                        <select name="sortBy" class="form-control" aria-label="Trier par">
                             <option value="title" {% if app.request.get('sortBy') == 'title' %}selected{% endif %}>Titre</option>
                             <option value="year" {% if app.request.get('sortBy') == 'year' %}selected{% endif %}>Année</option>
                         </select>
                     </div>
                     <div class="col-md-3">
-                        <select name="order" class="form-control">
+                        <select name="order" class="form-control" aria-label="Ordre de tri">
                             <option value="ASC" {% if app.request.get('order') == 'ASC' %}selected{% endif %}>Croissant</option>
                             <option value="DESC" {% if app.request.get('order') == 'DESC' %}selected{% endif %}>Décroissant</option>
                         </select>
@@ -71,29 +83,27 @@
                 {% for favorite in favorites %}
                     <div class="result-card">
                         <!-- Image et lien vers les détails -->
-                        <a href="{{ path('album_details', { 'id': favorite.albumId, 'origin': 'profile' }) }}">
-                            {% if favorite.coverImage and favorite.coverImage != 'https://via.placeholder.com/150' %}
-                                <img src="{{ favorite.coverImage|default('/images/placeholder.jpg') }}" alt="Couverture de l'album {{ favorite.title|default('Indisponible') }}" class="cover-image">
-                            {% else %}
-                                <img src="{{ asset('images/placeholder.jpg') }}" alt="Pas d'image disponible" class="cover-image">
-                            {% endif %}
+                        <a href="{{ path('album_details', { 'id': favorite.albumId, 'origin': 'profile' }) }}" class="favorite-link">
+                            <img
+                                    src="{{ favorite.coverImage ?: asset('images/placeholder.jpg') }}"
+                                    alt="Couverture de l'album {{ favorite.title|default('Titre indisponible') }}"
+                                    class="cover-image">
                         </a>
 
-                        <!-- Titre avec lien vers les détails -->
-                        <div class="album-title">
-                            <a href="{{ path('album_details', { 'id': favorite.albumId, 'origin': 'profile' }) }}">
-                                {{ favorite.title|default('Titre indisponible') }}
-                            </a>
+                        <!-- Détails de l'album -->
+                        <div class="album-details">
+                            <div class="album-title">
+                                <a href="{{ path('album_details', { 'id': favorite.albumId, 'origin': 'profile' }) }}">
+                                    {{ favorite.title|default('Titre indisponible') }}
+                                </a>
+                            </div>
+                            <div class="album-year">Année : {{ favorite.year|default('Non renseignée') }}</div>
                         </div>
-
-                        <!-- Année de l'album -->
-                        <div class="album-year">Année : {{ favorite.year|default('Non renseignée') }}</div>
 
                         <!-- Boutons -->
                         <div class="buttons mt-3">
                             <a href="{{ path('album_details', { 'id': favorite.albumId, 'origin': 'profile' }) }}" class="btn btn-primary btn-sm">Voir détails</a>
                             <a href="https://www.discogs.com/release/{{ favorite.albumId }}" class="btn btn-secondary btn-sm" target="_blank">En savoir plus</a>
-
                         </div>
                     </div>
                 {% else %}

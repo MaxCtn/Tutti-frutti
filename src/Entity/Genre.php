@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -7,7 +8,7 @@ use Doctrine\Common\Collections\Collection;
 use App\Repository\GenreRepository;
 
 #[ORM\Entity(repositoryClass: GenreRepository::class)]
-    
+
 class Genre
 {
     #[ORM\Id]
@@ -65,8 +66,8 @@ class Genre
             // set the owning side to null (unless already changed)
             if ($favoriteAlbum->getGenre() === $this) {
                 $favoriteAlbum->setGenre(null);
-                }
+            }
         }
-                return $this;
+        return $this;
     }
 }

@@ -11,7 +11,6 @@ class DiscogsService
     private HttpClientInterface $client;
     private string $consumerKey;
     private string $consumerSecret;
-    private string $imageDirectory;
 
     private array $fruitKeywords = [
         'banane', 'pomme', 'fraise', 'orange', 'raisin', 'citron', 'cerise', 'mangue',
@@ -22,97 +21,64 @@ class DiscogsService
         'prunelle', 'sureau', 'mandarine', 'clémentine', 'kumquat', 'citron vert', 'pamplemousse'
     ];
 
-
-    public function __construct(HttpClientInterface $client, string $consumerKey, string $consumerSecret, string $imageDirectory)
+    public function __construct(HttpClientInterface $client, string $consumerKey, string $consumerSecret)
     {
         $this->client = $client;
         $this->consumerKey = $consumerKey;
         $this->consumerSecret = $consumerSecret;
-        $this->imageDirectory = rtrim($imageDirectory, '/'); // Supprime un éventuel "/" final pour éviter des doublons dans les chemins.
     }
 
+    /**
+     * Recherche des albums correspondant à un terme.
+     */
     public function searchAlbums(string $searchTerm): array
     {
         try {
-            $response = $this->client->request('GET', 'https://api.discogs.com/database/search', [
-                'query' => [
-                    'q' => $searchTerm,
-                    'type' => 'release',
-                ],
-                'headers' => [
-                    'Authorization' => "Discogs key={$this->consumerKey}, secret={$this->consumerSecret}",
-                ],
+            $response = $this->makeRequest('https://api.discogs.com/database/search', [
+                'q' => $searchTerm,
+                'type' => 'release',
             ]);
 
-            $data = $this->handleResponse($response);
+            $albums = $response['results'] ?? [];
 
-            foreach ($data['results'] as &$result) {
-                $result['fruits'] = $this->findFruitsInText($result['title'] ?? '');
-            }
-
-            return $data['results'];
+            return array_map([$this, 'processAlbumData'], $albums);
         } catch (TransportExceptionInterface $e) {
             throw new \RuntimeException('Erreur lors de la communication avec l\'API Discogs : ' . $e->getMessage());
         }
     }
 
+    /**
+     * Récupère les détails d'un album par son ID.
+     */
     public function getAlbumDetails(int $id): array
     {
         try {
-            $response = $this->client->request('GET', "https://api.discogs.com/releases/{$id}", [
-                'headers' => [
-                    'Authorization' => "Discogs key={$this->consumerKey}, secret={$this->consumerSecret}",
-                ],
-            ]);
+            $response = $this->makeRequest("https://api.discogs.com/releases/{$id}");
 
-            $data = $this->handleResponse($response);
-
-            if (!isset($data['id'])) {
+            if (!isset($response['id'])) {
                 throw new \RuntimeException('Détails de l\'album introuvables pour l\'ID fourni.');
             }
 
-            $data['fruits'] = $this->findFruitsInText($data['title'] ?? '');
-
-            $data['local_cover_image'] = $this->downloadImage($data['images'][0]['uri'] ?? null, $id);
-
-            return $data;
+            return $this->processAlbumData($response);
         } catch (\Exception $e) {
             throw new \RuntimeException('Erreur lors de la récupération des détails de l\'album : ' . $e->getMessage());
         }
     }
 
-    private function downloadImage(?string $url, int $albumId): string
+    /**
+     * Traite les données d'un album pour ajouter des fruits et une image de couverture.
+     */
+    private function processAlbumData(array $album): array
     {
-        if (!$url) {
-            return '/images/placeholder.jpg'; // Utilisez une image de placeholder locale.
-        }
+        $album['fruits'] = $this->findFruitsInText($album['title'] ?? '');
+        $album['coverImage'] = $album['images'][0]['uri'] ?? '/images/placeholder.jpg';
 
-        try {
-            $response = $this->client->request('GET', $url, [
-                'headers' => [
-                    'User-Agent' => 'DiscogsAPI/1.0',
-                ],
-            ]);
-
-            if ($response->getStatusCode() === 200) {
-                $imagePath = "{$this->imageDirectory}/{$albumId}.jpg";
-
-                // S'assure que le répertoire existe
-                if (!is_dir($this->imageDirectory)) {
-                    mkdir($this->imageDirectory, 0755, true);
-                }
-
-                file_put_contents($imagePath, $response->getContent());
-
-                return "/images/{$albumId}.jpg";
-            }
-        } catch (\Exception $e) {
-            return '/images/placeholder.jpg'; // Retourne une image par défaut en cas d'échec.
-        }
-
-        return '/images/placeholder.jpg';
+        return $album;
     }
 
+    /**
+     * Recherche les mots-clés de fruits dans un texte donné.
+     */
     private function findFruitsInText(string $text): array
     {
         $foundFruits = [];
@@ -126,6 +92,24 @@ class DiscogsService
         return array_unique($foundFruits);
     }
 
+    /**
+     * Effectue une requête HTTP vers l'API Discogs.
+     */
+    private function makeRequest(string $url, array $query = []): array
+    {
+        $response = $this->client->request('GET', $url, [
+            'query' => $query,
+            'headers' => [
+                'Authorization' => "Discogs key={$this->consumerKey}, secret={$this->consumerSecret}",
+            ],
+        ]);
+
+        return $this->handleResponse($response);
+    }
+
+    /**
+     * Gère et valide la réponse de l'API Discogs.
+     */
     private function handleResponse(ResponseInterface $response): array
     {
         if ($response->getStatusCode() !== 200) {

@@ -33,7 +33,6 @@ class AlbumSearchController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $searchTerm = $form->get('searchTerm')->getData();
-
             $results = $this->discogsService->searchAlbums($searchTerm);
 
             if (empty($results)) {
@@ -47,7 +46,7 @@ class AlbumSearchController extends AbstractController
         ]);
     }
 
-    #[Route('/album/details/{id}', name: 'album_details')]
+    #[Route('/album/details/{id}', name: 'album_details', methods: ['GET'])]
     public function showDetails(int $id, Request $request): Response
     {
         try {
@@ -59,7 +58,6 @@ class AlbumSearchController extends AbstractController
 
             // Récupérer l'origine de la navigation
             $origin = $request->query->get('origin', 'search');
-
         } catch (\Exception $e) {
             $this->addFlash('error', 'Impossible de récupérer les détails de cet album.');
             return $this->redirectToRoute('album_search');
@@ -87,27 +85,13 @@ class AlbumSearchController extends AbstractController
                 return new JsonResponse(['error' => 'Cet album ne contient aucun fruit pertinent.'], 400);
             }
 
-            $existingAlbum = $this->entityManager->getRepository(FavoriteAlbum::class)
-                ->findOneBy(['user' => $user, 'albumId' => $albumDetails['id']]);
+            $existingAlbum = $this->getFavoriteAlbumByUserAndId($user, $albumDetails['id']);
 
             if ($existingAlbum) {
                 return new JsonResponse(['error' => 'Cet album est déjà dans vos favoris'], 409);
             }
 
-            $favoriteAlbum = new FavoriteAlbum();
-            $favoriteAlbum->setUser($user);
-            $favoriteAlbum->setAlbumId($albumDetails['id']);
-            $favoriteAlbum->setTitle($albumDetails['title']);
-            $favoriteAlbum->setYear($albumDetails['year'] ?? null);
-            $favoriteAlbum->setCoverImage($albumDetails['cover_image'] ?? 'https://via.placeholder.com/150');
-
-            foreach ($albumDetails['fruits'] as $fruitName) {
-                $fruit = $this->findOrCreateEntity(Fruit::class, ['name' => $fruitName]);
-                $favoriteAlbum->addFruit($fruit);
-            }
-
-            $this->entityManager->persist($favoriteAlbum);
-            $this->entityManager->flush();
+            $this->createFavoriteAlbum($user, $albumDetails);
 
             return new JsonResponse(['success' => true]);
         } catch (\Exception $e) {
@@ -121,8 +105,7 @@ class AlbumSearchController extends AbstractController
         $user = $this->getUser();
 
         if ($user) {
-            $favoriteAlbum = $this->entityManager->getRepository(FavoriteAlbum::class)
-                ->findOneBy(['user' => $user, 'albumId' => $id]);
+            $favoriteAlbum = $this->getFavoriteAlbumByUserAndId($user, $id);
 
             if ($favoriteAlbum) {
                 $this->entityManager->remove($favoriteAlbum);
@@ -135,6 +118,39 @@ class AlbumSearchController extends AbstractController
         return $this->redirectToRoute('profile');
     }
 
+    /**
+     * Récupère un album favori par utilisateur et ID d'album.
+     */
+    private function getFavoriteAlbumByUserAndId($user, int $albumId): ?FavoriteAlbum
+    {
+        return $this->entityManager->getRepository(FavoriteAlbum::class)
+            ->findOneBy(['user' => $user, 'albumId' => $albumId]);
+    }
+
+    /**
+     * Crée un album favori pour l'utilisateur.
+     */
+    private function createFavoriteAlbum($user, array $albumDetails): void
+    {
+        $favoriteAlbum = new FavoriteAlbum();
+        $favoriteAlbum->setUser($user);
+        $favoriteAlbum->setAlbumId($albumDetails['id']);
+        $favoriteAlbum->setTitle($albumDetails['title']);
+        $favoriteAlbum->setYear($albumDetails['year'] ?? null);
+        $favoriteAlbum->setCoverImage($albumDetails['coverImage'] ?? '/images/placeholder.jpg');
+
+        foreach ($albumDetails['fruits'] as $fruitName) {
+            $fruit = $this->findOrCreateEntity(Fruit::class, ['name' => $fruitName]);
+            $favoriteAlbum->addFruit($fruit);
+        }
+
+        $this->entityManager->persist($favoriteAlbum);
+        $this->entityManager->flush();
+    }
+
+    /**
+     * Trouve ou crée une entité en fonction des critères donnés.
+     */
     private function findOrCreateEntity(string $entityClass, array $criteria)
     {
         $entity = $this->entityManager->getRepository($entityClass)->findOneBy($criteria);

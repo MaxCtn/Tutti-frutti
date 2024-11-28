@@ -1,5 +1,7 @@
 <?php
+
 // src/Repository/LabelRepository.php
+
 namespace App\Repository;
 
 use App\Entity\Label;

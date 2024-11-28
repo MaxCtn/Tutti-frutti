@@ -19,7 +19,27 @@ class ProfileController extends AbstractController
             return $this->redirectToRoute('app_login');
         }
 
-        // Récupération des critères depuis la requête
+        // Récupérer les albums favoris en fonction des critères de filtrage
+        $favorites = $this->getFilteredFavorites(
+            $favoriteAlbumRepository,
+            $user,
+            $request
+        );
+
+        return $this->render('profile/index.html.twig', [
+            'favorites' => $favorites,
+        ]);
+    }
+
+    /**
+     * Filtre les albums favoris en fonction des critères de l'utilisateur.
+     */
+    private function getFilteredFavorites(
+        FavoriteAlbumRepository $favoriteAlbumRepository,
+                                $user,
+        Request $request
+    ): array {
+        // Critères de filtrage depuis la requête
         $criteria = [
             'fruit' => $request->query->get('fruit'),
             'year' => $request->query->get('year'),
@@ -30,29 +50,14 @@ class ProfileController extends AbstractController
         ];
 
         // Paramètres de tri
-        $sortBy = $request->query->get('sortBy', 'title'); // Par défaut, tri par titre
-        $order = $request->query->get('order', 'ASC'); // Par défaut, ordre croissant
+        $sortBy = $request->query->get('sortBy', 'title'); // Tri par titre par défaut
+        $order = strtoupper($request->query->get('order', 'ASC')) === 'ASC' ? 'ASC' : 'DESC';
 
-        // Récupération des albums favoris spécifiques à l'utilisateur
-        $favorites = $favoriteAlbumRepository->findByUser(
-            $user, // On filtre par utilisateur connecté
-            array_filter($criteria), // Filtrer les critères non vides
-            $sortBy,
-            strtoupper($order) === 'ASC' ? 'ASC' : 'DESC' // Validation du tri (ASC ou DESC)
+        return $favoriteAlbumRepository->findByUser(
+            $user,               // Filtre par utilisateur connecté
+            array_filter($criteria), // Supprime les critères vides ou nuls
+            $sortBy,             // Colonne de tri
+            $order               // Ordre de tri
         );
-
-        // Gestion des cas où les images pourraient ne pas exister
-        foreach ($favorites as $favorite) {
-            if (!$favorite->getCoverImage() || $favorite->getCoverImage() === '') {
-                $favorite->setCoverImage('https://via.placeholder.com/150');
-            }
-        }
-
-
-        return $this->render('profile/index.html.twig', [
-            'favorites' => $favorites,
-        ]);
     }
-    
-
 }

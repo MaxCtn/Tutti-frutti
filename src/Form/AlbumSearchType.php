@@ -1,4 +1,5 @@
 <?php
+
 // src/Form/AlbumSearchType.php
 
 namespace App\Form;

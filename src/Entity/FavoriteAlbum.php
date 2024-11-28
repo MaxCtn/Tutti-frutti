@@ -26,8 +26,12 @@ class FavoriteAlbum
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private ?string $year = null;
 
-    #[ORM\Column(type: 'text', nullable: true)]
-    private ?string $coverImage = null;
+    /**
+     * URL de l'image de couverture de l'album.
+     * Si aucune URL n'est disponible, utilise une image par défaut.
+     */
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private ?string $coverImage = '/images/placeholder.jpg';
 
     #[ORM\ManyToOne(targetEntity: Label::class)]
     #[ORM\JoinColumn(nullable: true, onDelete: 'SET NULL')]
@@ -40,7 +44,6 @@ class FavoriteAlbum
     #[ORM\ManyToOne(targetEntity: Format::class)]
     #[ORM\JoinColumn(nullable: true, onDelete: 'SET NULL')]
     private ?Format $format = null;
-
 
     #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'favoriteAlbums')]
     #[ORM\JoinColumn(nullable: false, onDelete: 'CASCADE')]
@@ -59,7 +62,7 @@ class FavoriteAlbum
         $this->tracks = new ArrayCollection();
     }
 
-    // Getters and setters
+    // Getters et setters avec documentation
 
     public function getId(): ?int
     {
@@ -99,11 +102,18 @@ class FavoriteAlbum
         return $this;
     }
 
+    /**
+     * Obtient l'URL de l'image de couverture.
+     * Si aucune URL n'est définie, retourne une image par défaut.
+     */
     public function getCoverImage(): ?string
     {
-        return $this->coverImage;
+        return $this->coverImage ?? '/images/placeholder.jpg';
     }
 
+    /**
+     * Définit l'URL de l'image de couverture.
+     */
     public function setCoverImage(?string $coverImage): self
     {
         $this->coverImage = $coverImage;
