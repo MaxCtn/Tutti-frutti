@@ -7,8 +7,8 @@ Bienvenue sur **Tutti-frutti**, une application web dédiée à la gestion d'une
 - **Documentation générée par Doxygen** : [Accéder à la documentation](https://maxctn.github.io/Tutti-frutti/html/index.html)
 - **Site de l'application** : [Visiter le site Tutti-frutti](https://tutti-frutti.alwaysdata.net/)
 - **Google Doc de présentation** : [Voir le document](https://docs.google.com/document/d/17o6K_-SxA7zYoV1XBzsaOudstsvKMiuFAszArBmOIz4/edit?usp=sharing)
-- **Lien du Téléchargement de mon essaie avec turbo stimulus ** : [Voir le document](https://fromsmash.com/ttfr2-turbo)
-- 
+- **Lien du Téléchargement de mon essaie avec turbo stimulus** : [Voir le document](https://fromsmash.com/ttfr2-turbo)
+  
 ## 🚀 Fonctionnalités principales
 
 - Recherche d'albums en lien avec des fruits via l'API Discogs.
