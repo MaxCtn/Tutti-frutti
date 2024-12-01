@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_app_1_1_controller_1_1_profile_controller" xml:lang="fr">
+<title>Référence de la classe ProfileController</title>
+<indexterm><primary>ProfileController</primary></indexterm>
+Graphe d&apos;héritage de ProfileController:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_app_1_1_controller_1_1_profile_controller__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Graphe de collaboration de ProfileController:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_app_1_1_controller_1_1_profile_controller__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Fonctions membres publiques    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_app_1_1_controller_1_1_profile_controller_1ae1226a5f7b95e179ae1de18af8d815cd">userProfile</link> (Request $request, <link linkend="_class_app_1_1_repository_1_1_favorite_album_repository">FavoriteAlbumRepository</link> $favoriteAlbumRepository)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Description détaillée</title>
+
+<para>Contrôleur gérant le profil utilisateur et l&apos;affichage des albums favoris. </para>
+<para>
+Définition à la ligne <link linkend="__profile_controller_8php_source_1l00014">14</link> du fichier <link linkend="__profile_controller_8php_source">ProfileController.php</link>.</para>
+</section>
+<section>
+<title>Documentation des fonctions membres</title>
+<anchor xml:id="_class_app_1_1_controller_1_1_profile_controller_1ae1226a5f7b95e179ae1de18af8d815cd"/><section>
+    <title>userProfile()</title>
+<indexterm><primary>userProfile</primary><secondary>ProfileController</secondary></indexterm>
+<indexterm><primary>ProfileController</primary><secondary>userProfile</secondary></indexterm>
+<para><computeroutput>userProfile (Request $request, <link linkend="_class_app_1_1_repository_1_1_favorite_album_repository">FavoriteAlbumRepository</link> $favoriteAlbumRepository)</computeroutput></para>
+<para>Affiche le profil de l&apos;utilisateur et ses albums favoris, avec possibilité de filtrage et de tri.</para>
+
+<para>@Route(&quot;/profile&quot;, name=&quot;profile&quot;, methods={&quot;GET&quot;})</para>
+
+<para>
+                <formalpara>
+                    <title>
+Paramètres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>Request</entry><entry>$request</entry><entry>
+<para>La requête HTTP. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>FavoriteAlbumRepository</entry><entry>$favoriteAlbumRepository</entry><entry>
+<para>Le dépôt des albums favoris.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Renvoie</title>
+
+<para>Response La réponse HTTP contenant la page du profil utilisateur. </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__profile_controller_8php_source_1l00027">27</link> du fichier <link linkend="__profile_controller_8php_source">ProfileController.php</link>.</para>
+</section>
+<para>
+La documentation de cette classe a été générée à partir du fichier suivant :</para>
+Controller/<link linkend="__profile_controller_8php">ProfileController.php</link></section>
+</section>

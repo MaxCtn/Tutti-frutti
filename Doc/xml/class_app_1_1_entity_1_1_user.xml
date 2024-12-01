@@ -1,0 +1,512 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="fr">
+  <compounddef id="class_app_1_1_entity_1_1_user" kind="class" language="PHP" prot="public">
+    <compoundname>App::Entity::User</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">UserInterface</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">PasswordAuthenticatedUserInterface</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_app_1_1_entity_1_1_user_1a3587bd00e5602c1800515b6f9ffbebc5" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int $id</definition>
+        <argsstring></argsstring>
+        <name>$id</name>
+        <qualifiedname>App\Entity\User\$id</qualifiedname>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/User.php" line="32" column="17" bodyfile="Entity/User.php" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_app_1_1_entity_1_1_user_1aa5809edde76526314aef4529d7d285e9" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string $email</definition>
+        <argsstring></argsstring>
+        <name>$email</name>
+        <qualifiedname>App\Entity\User\$email</qualifiedname>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/User.php" line="42" column="20" bodyfile="Entity/User.php" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_app_1_1_entity_1_1_user_1a43fc0494afc8bab25b913274b9411089" prot="private" static="no" mutable="no">
+        <type>array</type>
+        <definition>array $roles</definition>
+        <argsstring></argsstring>
+        <name>$roles</name>
+        <qualifiedname>App\Entity\User\$roles</qualifiedname>
+        <initializer>= []</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/User.php" line="52" column="19" bodyfile="Entity/User.php" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_app_1_1_entity_1_1_user_1a99f6264ab0c9eac3199f38350ea0703d" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string $password</definition>
+        <argsstring></argsstring>
+        <name>$password</name>
+        <qualifiedname>App\Entity\User\$password</qualifiedname>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/User.php" line="62" column="20" bodyfile="Entity/User.php" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_app_1_1_entity_1_1_user_1ae6275ae0662406a8a3f5117ba0984467" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string $profilePicture</definition>
+        <argsstring></argsstring>
+        <name>$profilePicture</name>
+        <qualifiedname>App\Entity\User\$profilePicture</qualifiedname>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/User.php" line="72" column="20" bodyfile="Entity/User.php" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_app_1_1_entity_1_1_user_1a2b309438ce1715af608981bc378c8103" prot="private" static="no" mutable="no">
+        <type>Collection</type>
+        <definition>Collection $favoriteAlbums</definition>
+        <argsstring></argsstring>
+        <name>$favoriteAlbums</name>
+        <qualifiedname>App\Entity\User\$favoriteAlbums</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/User.php" line="82" column="24" bodyfile="Entity/User.php" bodystart="82" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_user_1a095c5d389db211932136b53f25f39685" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>__construct</definition>
+        <argsstring>()</argsstring>
+        <name>__construct</name>
+        <qualifiedname>App\Entity\User\__construct</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructeur de la classe User. Initialise la collection des albums favoris. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/User.php" line="88" column="21" bodyfile="Entity/User.php" bodystart="88" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_user_1a12251d0c022e9e21c137a105ff683f13" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>getId</definition>
+        <argsstring>()</argsstring>
+        <name>getId</name>
+        <qualifiedname>App\Entity\User\getId</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Obtient l&apos;identifiant unique de l&apos;utilisateur.</para>
+<para><simplesect kind="return"><para>int|null L&apos;identifiant de l&apos;utilisateur. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/User.php" line="98" column="21" bodyfile="Entity/User.php" bodystart="98" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_user_1a02a01849f28e2535e888ae4ec87b20f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>getEmail</definition>
+        <argsstring>()</argsstring>
+        <name>getEmail</name>
+        <qualifiedname>App\Entity\User\getEmail</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Obtient l&apos;adresse e-mail de l&apos;utilisateur.</para>
+<para><simplesect kind="return"><para>string|null L&apos;adresse e-mail. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/User.php" line="108" column="21" bodyfile="Entity/User.php" bodystart="108" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_user_1a2d22391fa86fa0eaf3b9d2a3c29880bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>setEmail</definition>
+        <argsstring>(string $email)</argsstring>
+        <name>setEmail</name>
+        <qualifiedname>App\Entity\User\setEmail</qualifiedname>
+        <param>
+          <type>string</type>
+          <declname>$email</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Définit l&apos;adresse e-mail de l&apos;utilisateur.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$email</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>L&apos;adresse e-mail.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>self </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/User.php" line="120" column="21" bodyfile="Entity/User.php" bodystart="120" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_user_1a189038d671f9143e20141026f1aa7969" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>getUserIdentifier</definition>
+        <argsstring>()</argsstring>
+        <name>getUserIdentifier</name>
+        <qualifiedname>App\Entity\User\getUserIdentifier</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Obtient l&apos;identifiant unique de l&apos;utilisateur (utilisé par le composant de sécurité).</para>
+<para><simplesect kind="return"><para>string L&apos;identifiant unique (adresse e-mail). </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/User.php" line="132" column="21" bodyfile="Entity/User.php" bodystart="132" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_user_1aa676cae5ee8d7fb6862a8724adc2660d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>getRoles</definition>
+        <argsstring>()</argsstring>
+        <name>getRoles</name>
+        <qualifiedname>App\Entity\User\getRoles</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Obtient les rôles de l&apos;utilisateur.</para>
+<para><simplesect kind="return"><para>array Les rôles uniques de l&apos;utilisateur. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/User.php" line="142" column="21" bodyfile="Entity/User.php" bodystart="142" bodyend="148"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_user_1aa3236c9c6688d04df16ea0ab3065530e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>setRoles</definition>
+        <argsstring>(array $roles)</argsstring>
+        <name>setRoles</name>
+        <qualifiedname>App\Entity\User\setRoles</qualifiedname>
+        <param>
+          <type>array</type>
+          <declname>$roles</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Définit les rôles de l&apos;utilisateur.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>array</parametertype>
+<parametername>$roles</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Les rôles de l&apos;utilisateur.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>self </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/User.php" line="157" column="21" bodyfile="Entity/User.php" bodystart="157" bodyend="162"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_user_1a04e0957baeb7acde9c0c86556da2d43f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>getPassword</definition>
+        <argsstring>()</argsstring>
+        <name>getPassword</name>
+        <qualifiedname>App\Entity\User\getPassword</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Obtient le mot de passe hashé de l&apos;utilisateur.</para>
+<para><simplesect kind="return"><para>string Le mot de passe hashé. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/User.php" line="169" column="21" bodyfile="Entity/User.php" bodystart="169" bodyend="172"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_user_1a81e0f429784973551fb5417d5b92b0db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>setPassword</definition>
+        <argsstring>(string $password)</argsstring>
+        <name>setPassword</name>
+        <qualifiedname>App\Entity\User\setPassword</qualifiedname>
+        <param>
+          <type>string</type>
+          <declname>$password</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Définit le mot de passe hashé de l&apos;utilisateur.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$password</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Le mot de passe hashé.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>self </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/User.php" line="181" column="21" bodyfile="Entity/User.php" bodystart="181" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_user_1ac565b8c00fe93ce673f8237849f072a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>eraseCredentials</definition>
+        <argsstring>()</argsstring>
+        <name>eraseCredentials</name>
+        <qualifiedname>App\Entity\User\eraseCredentials</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Efface les données sensibles de l&apos;utilisateur (non utilisé ici). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/User.php" line="191" column="21" bodyfile="Entity/User.php" bodystart="191" bodyend="194"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_user_1ab755e2969ce6dd5719e19029a1f0ea98" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>getFavoriteAlbums</definition>
+        <argsstring>()</argsstring>
+        <name>getFavoriteAlbums</name>
+        <qualifiedname>App\Entity\User\getFavoriteAlbums</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Obtient la collection des albums favoris de l&apos;utilisateur.</para>
+<para><simplesect kind="return"><para>Collection&lt;int, FavoriteAlbum&gt; La collection des albums favoris. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/User.php" line="201" column="21" bodyfile="Entity/User.php" bodystart="201" bodyend="204"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_user_1a352415541a6239312cd6abffdd2d3801" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>addFavoriteAlbum</definition>
+        <argsstring>(FavoriteAlbum $favoriteAlbum)</argsstring>
+        <name>addFavoriteAlbum</name>
+        <qualifiedname>App\Entity\User\addFavoriteAlbum</qualifiedname>
+        <param>
+          <type><ref refid="class_app_1_1_entity_1_1_favorite_album" kindref="compound">FavoriteAlbum</ref></type>
+          <declname>$favoriteAlbum</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Ajoute un album favori à la collection de l&apos;utilisateur.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>FavoriteAlbum</parametertype>
+<parametername>$favoriteAlbum</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>L&apos;album favori à ajouter.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>self </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/User.php" line="213" column="21" bodyfile="Entity/User.php" bodystart="213" bodyend="221"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_user_1a7e1f5b5a1259dcb9c2be49ae4e715a4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>removeFavoriteAlbum</definition>
+        <argsstring>(FavoriteAlbum $favoriteAlbum)</argsstring>
+        <name>removeFavoriteAlbum</name>
+        <qualifiedname>App\Entity\User\removeFavoriteAlbum</qualifiedname>
+        <param>
+          <type><ref refid="class_app_1_1_entity_1_1_favorite_album" kindref="compound">FavoriteAlbum</ref></type>
+          <declname>$favoriteAlbum</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Retire un album favori de la collection de l&apos;utilisateur.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>FavoriteAlbum</parametertype>
+<parametername>$favoriteAlbum</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>L&apos;album favori à retirer.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>self </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/User.php" line="230" column="21" bodyfile="Entity/User.php" bodystart="230" bodyend="239"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_user_1a7ca895ce8dc567b19e85a982429c7c77" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>getProfilePicture</definition>
+        <argsstring>()</argsstring>
+        <name>getProfilePicture</name>
+        <qualifiedname>App\Entity\User\getProfilePicture</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Obtient l&apos;URL de la photo de profil de l&apos;utilisateur.</para>
+<para><simplesect kind="return"><para>string|null L&apos;URL de la photo de profil. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/User.php" line="246" column="21" bodyfile="Entity/User.php" bodystart="246" bodyend="249"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_user_1ab308055ea70f8f94a14d35a611a2086e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>setProfilePicture</definition>
+        <argsstring>(?string $profilePicture)</argsstring>
+        <name>setProfilePicture</name>
+        <qualifiedname>App\Entity\User\setProfilePicture</qualifiedname>
+        <param>
+          <type>?string</type>
+          <declname>$profilePicture</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Définit l&apos;URL de la photo de profil de l&apos;utilisateur.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametertype>null</parametertype>
+<parametername>$profilePicture</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>L&apos;URL de la photo de profil.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>self </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/User.php" line="258" column="21" bodyfile="Entity/User.php" bodystart="258" bodyend="263"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Entité représentant un utilisateur de l&apos;application.</para>
+<para>@ORM\Entity(repositoryClass=UserRepository::class) </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>PasswordAuthenticatedUserInterface</label>
+      </node>
+      <node id="2">
+        <label>UserInterface</label>
+      </node>
+      <node id="1">
+        <label>User</label>
+        <link refid="class_app_1_1_entity_1_1_user"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>PasswordAuthenticatedUserInterface</label>
+      </node>
+      <node id="2">
+        <label>UserInterface</label>
+      </node>
+      <node id="1">
+        <label>User</label>
+        <link refid="class_app_1_1_entity_1_1_user"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Entity/User.php" line="18" column="1" bodyfile="Entity/User.php" bodystart="19" bodyend="264"/>
+    <listofallmembers>
+      <member refid="class_app_1_1_entity_1_1_user_1aa5809edde76526314aef4529d7d285e9" prot="private" virt="non-virtual"><scope>App::Entity::User</scope><name>$email</name></member>
+      <member refid="class_app_1_1_entity_1_1_user_1a2b309438ce1715af608981bc378c8103" prot="private" virt="non-virtual"><scope>App::Entity::User</scope><name>$favoriteAlbums</name></member>
+      <member refid="class_app_1_1_entity_1_1_user_1a3587bd00e5602c1800515b6f9ffbebc5" prot="private" virt="non-virtual"><scope>App::Entity::User</scope><name>$id</name></member>
+      <member refid="class_app_1_1_entity_1_1_user_1a99f6264ab0c9eac3199f38350ea0703d" prot="private" virt="non-virtual"><scope>App::Entity::User</scope><name>$password</name></member>
+      <member refid="class_app_1_1_entity_1_1_user_1ae6275ae0662406a8a3f5117ba0984467" prot="private" virt="non-virtual"><scope>App::Entity::User</scope><name>$profilePicture</name></member>
+      <member refid="class_app_1_1_entity_1_1_user_1a43fc0494afc8bab25b913274b9411089" prot="private" virt="non-virtual"><scope>App::Entity::User</scope><name>$roles</name></member>
+      <member refid="class_app_1_1_entity_1_1_user_1a095c5d389db211932136b53f25f39685" prot="public" virt="non-virtual"><scope>App::Entity::User</scope><name>__construct</name></member>
+      <member refid="class_app_1_1_entity_1_1_user_1a352415541a6239312cd6abffdd2d3801" prot="public" virt="non-virtual"><scope>App::Entity::User</scope><name>addFavoriteAlbum</name></member>
+      <member refid="class_app_1_1_entity_1_1_user_1ac565b8c00fe93ce673f8237849f072a6" prot="public" virt="non-virtual"><scope>App::Entity::User</scope><name>eraseCredentials</name></member>
+      <member refid="class_app_1_1_entity_1_1_user_1a02a01849f28e2535e888ae4ec87b20f2" prot="public" virt="non-virtual"><scope>App::Entity::User</scope><name>getEmail</name></member>
+      <member refid="class_app_1_1_entity_1_1_user_1ab755e2969ce6dd5719e19029a1f0ea98" prot="public" virt="non-virtual"><scope>App::Entity::User</scope><name>getFavoriteAlbums</name></member>
+      <member refid="class_app_1_1_entity_1_1_user_1a12251d0c022e9e21c137a105ff683f13" prot="public" virt="non-virtual"><scope>App::Entity::User</scope><name>getId</name></member>
+      <member refid="class_app_1_1_entity_1_1_user_1a04e0957baeb7acde9c0c86556da2d43f" prot="public" virt="non-virtual"><scope>App::Entity::User</scope><name>getPassword</name></member>
+      <member refid="class_app_1_1_entity_1_1_user_1a7ca895ce8dc567b19e85a982429c7c77" prot="public" virt="non-virtual"><scope>App::Entity::User</scope><name>getProfilePicture</name></member>
+      <member refid="class_app_1_1_entity_1_1_user_1aa676cae5ee8d7fb6862a8724adc2660d" prot="public" virt="non-virtual"><scope>App::Entity::User</scope><name>getRoles</name></member>
+      <member refid="class_app_1_1_entity_1_1_user_1a189038d671f9143e20141026f1aa7969" prot="public" virt="non-virtual"><scope>App::Entity::User</scope><name>getUserIdentifier</name></member>
+      <member refid="class_app_1_1_entity_1_1_user_1a7e1f5b5a1259dcb9c2be49ae4e715a4c" prot="public" virt="non-virtual"><scope>App::Entity::User</scope><name>removeFavoriteAlbum</name></member>
+      <member refid="class_app_1_1_entity_1_1_user_1a2d22391fa86fa0eaf3b9d2a3c29880bc" prot="public" virt="non-virtual"><scope>App::Entity::User</scope><name>setEmail</name></member>
+      <member refid="class_app_1_1_entity_1_1_user_1a81e0f429784973551fb5417d5b92b0db" prot="public" virt="non-virtual"><scope>App::Entity::User</scope><name>setPassword</name></member>
+      <member refid="class_app_1_1_entity_1_1_user_1ab308055ea70f8f94a14d35a611a2086e" prot="public" virt="non-virtual"><scope>App::Entity::User</scope><name>setProfilePicture</name></member>
+      <member refid="class_app_1_1_entity_1_1_user_1aa3236c9c6688d04df16ea0ab3065530e" prot="public" virt="non-virtual"><scope>App::Entity::User</scope><name>setRoles</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="fr">
+  <compounddef id="class_app_1_1_kernel" kind="class" language="PHP" prot="public">
+    <compoundname>App::Kernel</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">BaseKernel</basecompoundref>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Classe Kernel principale de l&apos;application Symfony.</para>
+<para>Elle utilise le trait <computeroutput>MicroKernelTrait</computeroutput> pour gérer une configuration simplifiée et fournit le point d&apos;entrée principal pour l&apos;exécution de l&apos;application. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>BaseKernel</label>
+      </node>
+      <node id="1">
+        <label>Kernel</label>
+        <link refid="class_app_1_1_kernel"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>BaseKernel</label>
+      </node>
+      <node id="1">
+        <label>Kernel</label>
+        <link refid="class_app_1_1_kernel"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Kernel.php" line="14" column="1" bodyfile="Kernel.php" bodystart="15" bodyend="17"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,840 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="fr">
+  <compounddef id="class_app_1_1_entity_1_1_favorite_album" kind="class" language="PHP" prot="public">
+    <compoundname>App::Entity::FavoriteAlbum</compoundname>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_app_1_1_entity_1_1_favorite_album_1a3587bd00e5602c1800515b6f9ffbebc5" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int $id</definition>
+        <argsstring></argsstring>
+        <name>$id</name>
+        <qualifiedname>App\Entity\FavoriteAlbum\$id</qualifiedname>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/FavoriteAlbum.php" line="34" column="17" bodyfile="Entity/FavoriteAlbum.php" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_app_1_1_entity_1_1_favorite_album_1afccf8b41bcc8d8cae21caf4c2dc4b0d7" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int $albumId</definition>
+        <argsstring></argsstring>
+        <name>$albumId</name>
+        <qualifiedname>App\Entity\FavoriteAlbum\$albumId</qualifiedname>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/FavoriteAlbum.php" line="45" column="17" bodyfile="Entity/FavoriteAlbum.php" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_app_1_1_entity_1_1_favorite_album_1a5ef02115477cfad473df2455da5a908e" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string $title</definition>
+        <argsstring></argsstring>
+        <name>$title</name>
+        <qualifiedname>App\Entity\FavoriteAlbum\$title</qualifiedname>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/FavoriteAlbum.php" line="55" column="20" bodyfile="Entity/FavoriteAlbum.php" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_app_1_1_entity_1_1_favorite_album_1a7e74723ffa758165f367cac6a1076bcf" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string $year</definition>
+        <argsstring></argsstring>
+        <name>$year</name>
+        <qualifiedname>App\Entity\FavoriteAlbum\$year</qualifiedname>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/FavoriteAlbum.php" line="65" column="20" bodyfile="Entity/FavoriteAlbum.php" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_app_1_1_entity_1_1_favorite_album_1a37aded84c1e67e6e4d4193b64bcce0bf" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string $coverImage</definition>
+        <argsstring></argsstring>
+        <name>$coverImage</name>
+        <qualifiedname>App\Entity\FavoriteAlbum\$coverImage</qualifiedname>
+        <initializer>= &apos;/images/placeholder.jpg&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/FavoriteAlbum.php" line="76" column="20" bodyfile="Entity/FavoriteAlbum.php" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_app_1_1_entity_1_1_favorite_album_1abe61fe2e4d1565224b5dd35179523ae7" prot="private" static="no" mutable="no">
+        <type><ref refid="class_app_1_1_entity_1_1_label" kindref="compound">Label</ref></type>
+        <definition>Label $label</definition>
+        <argsstring></argsstring>
+        <name>$label</name>
+        <qualifiedname>App\Entity\FavoriteAlbum\$label</qualifiedname>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/FavoriteAlbum.php" line="88" column="19" bodyfile="Entity/FavoriteAlbum.php" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_app_1_1_entity_1_1_favorite_album_1a43a7131911adccf24c35d0e6fbcaf658" prot="private" static="no" mutable="no">
+        <type><ref refid="class_app_1_1_entity_1_1_genre" kindref="compound">Genre</ref></type>
+        <definition>Genre $genre</definition>
+        <argsstring></argsstring>
+        <name>$genre</name>
+        <qualifiedname>App\Entity\FavoriteAlbum\$genre</qualifiedname>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/FavoriteAlbum.php" line="101" column="19" bodyfile="Entity/FavoriteAlbum.php" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_app_1_1_entity_1_1_favorite_album_1a3495330829518fe0d2bbbd96eb821f20" prot="private" static="no" mutable="no">
+        <type><ref refid="class_app_1_1_entity_1_1_format" kindref="compound">Format</ref></type>
+        <definition>Format $format</definition>
+        <argsstring></argsstring>
+        <name>$format</name>
+        <qualifiedname>App\Entity\FavoriteAlbum\$format</qualifiedname>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/FavoriteAlbum.php" line="114" column="20" bodyfile="Entity/FavoriteAlbum.php" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_app_1_1_entity_1_1_favorite_album_1a35c45cc33d8d420da794514df59466b7" prot="private" static="no" mutable="no">
+        <type><ref refid="class_app_1_1_entity_1_1_user" kindref="compound">User</ref></type>
+        <definition>User $user</definition>
+        <argsstring></argsstring>
+        <name>$user</name>
+        <qualifiedname>App\Entity\FavoriteAlbum\$user</qualifiedname>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/FavoriteAlbum.php" line="127" column="18" bodyfile="Entity/FavoriteAlbum.php" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_app_1_1_entity_1_1_favorite_album_1af3cf6e874ed7547d0371eea4733d3f8b" prot="private" static="no" mutable="no">
+        <type>Collection</type>
+        <definition>Collection $fruits</definition>
+        <argsstring></argsstring>
+        <name>$fruits</name>
+        <qualifiedname>App\Entity\FavoriteAlbum\$fruits</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/FavoriteAlbum.php" line="139" column="24" bodyfile="Entity/FavoriteAlbum.php" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_app_1_1_entity_1_1_favorite_album_1a74f5148f4946184ed830b1ab4207cbf6" prot="private" static="no" mutable="no">
+        <type>Collection</type>
+        <definition>Collection $tracks</definition>
+        <argsstring></argsstring>
+        <name>$tracks</name>
+        <qualifiedname>App\Entity\FavoriteAlbum\$tracks</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/FavoriteAlbum.php" line="150" column="24" bodyfile="Entity/FavoriteAlbum.php" bodystart="150" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_favorite_album_1a095c5d389db211932136b53f25f39685" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>__construct</definition>
+        <argsstring>()</argsstring>
+        <name>__construct</name>
+        <qualifiedname>App\Entity\FavoriteAlbum\__construct</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructeur de la classe FavoriteAlbum. Initialise les collections de fruits et de pistes. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/FavoriteAlbum.php" line="156" column="21" bodyfile="Entity/FavoriteAlbum.php" bodystart="156" bodyend="160"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_favorite_album_1a12251d0c022e9e21c137a105ff683f13" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>getId</definition>
+        <argsstring>()</argsstring>
+        <name>getId</name>
+        <qualifiedname>App\Entity\FavoriteAlbum\getId</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Obtient l&apos;identifiant unique de l&apos;album favori.</para>
+<para><simplesect kind="return"><para>int|null L&apos;identifiant de l&apos;album favori. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/FavoriteAlbum.php" line="169" column="21" bodyfile="Entity/FavoriteAlbum.php" bodystart="169" bodyend="172"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_favorite_album_1af25659d3cdc12b0faf5a2322241bf69a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>getAlbumId</definition>
+        <argsstring>()</argsstring>
+        <name>getAlbumId</name>
+        <qualifiedname>App\Entity\FavoriteAlbum\getAlbumId</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Obtient l&apos;identifiant de l&apos;album dans le système externe.</para>
+<para><simplesect kind="return"><para>int|null L&apos;identifiant de l&apos;album. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/FavoriteAlbum.php" line="179" column="21" bodyfile="Entity/FavoriteAlbum.php" bodystart="179" bodyend="182"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_favorite_album_1a5616f9d98d68c2597046ef7d04d84f6f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>setAlbumId</definition>
+        <argsstring>(int $albumId)</argsstring>
+        <name>setAlbumId</name>
+        <qualifiedname>App\Entity\FavoriteAlbum\setAlbumId</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>$albumId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Définit l&apos;identifiant de l&apos;album dans le système externe.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$albumId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>L&apos;identifiant de l&apos;album.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>self </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/FavoriteAlbum.php" line="191" column="21" bodyfile="Entity/FavoriteAlbum.php" bodystart="191" bodyend="195"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_favorite_album_1a95e859a4588a39a1824b717378a84c29" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>getTitle</definition>
+        <argsstring>()</argsstring>
+        <name>getTitle</name>
+        <qualifiedname>App\Entity\FavoriteAlbum\getTitle</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Obtient le titre de l&apos;album.</para>
+<para><simplesect kind="return"><para>string|null Le titre de l&apos;album. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/FavoriteAlbum.php" line="202" column="21" bodyfile="Entity/FavoriteAlbum.php" bodystart="202" bodyend="205"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_favorite_album_1ac698bca9a4f3d5d9355ff023eee17285" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>setTitle</definition>
+        <argsstring>(?string $title)</argsstring>
+        <name>setTitle</name>
+        <qualifiedname>App\Entity\FavoriteAlbum\setTitle</qualifiedname>
+        <param>
+          <type>?string</type>
+          <declname>$title</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Définit le titre de l&apos;album.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametertype>null</parametertype>
+<parametername>$title</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Le titre de l&apos;album.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>self </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/FavoriteAlbum.php" line="214" column="21" bodyfile="Entity/FavoriteAlbum.php" bodystart="214" bodyend="218"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_favorite_album_1ad0a298a1c3d30a5dff3278f1f5bb7d86" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>getYear</definition>
+        <argsstring>()</argsstring>
+        <name>getYear</name>
+        <qualifiedname>App\Entity\FavoriteAlbum\getYear</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Obtient l&apos;année de sortie de l&apos;album.</para>
+<para><simplesect kind="return"><para>string|null L&apos;année de sortie. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/FavoriteAlbum.php" line="225" column="21" bodyfile="Entity/FavoriteAlbum.php" bodystart="225" bodyend="228"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_favorite_album_1a380136d26548fcfb8b3130250a42b9c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>setYear</definition>
+        <argsstring>(?string $year)</argsstring>
+        <name>setYear</name>
+        <qualifiedname>App\Entity\FavoriteAlbum\setYear</qualifiedname>
+        <param>
+          <type>?string</type>
+          <declname>$year</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Définit l&apos;année de sortie de l&apos;album.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametertype>null</parametertype>
+<parametername>$year</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>L&apos;année de sortie.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>self </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/FavoriteAlbum.php" line="237" column="21" bodyfile="Entity/FavoriteAlbum.php" bodystart="237" bodyend="241"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_favorite_album_1af68dead1965a2a3240f96ae558e355f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>getCoverImage</definition>
+        <argsstring>()</argsstring>
+        <name>getCoverImage</name>
+        <qualifiedname>App\Entity\FavoriteAlbum\getCoverImage</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Obtient l&apos;URL de l&apos;image de couverture. Si aucune URL n&apos;est définie, retourne une image par défaut.</para>
+<para><simplesect kind="return"><para>string|null L&apos;URL de l&apos;image de couverture. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/FavoriteAlbum.php" line="249" column="21" bodyfile="Entity/FavoriteAlbum.php" bodystart="249" bodyend="252"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_favorite_album_1a32e0a6523167ed7e60e5c30711dfe1fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>setCoverImage</definition>
+        <argsstring>(?string $coverImage)</argsstring>
+        <name>setCoverImage</name>
+        <qualifiedname>App\Entity\FavoriteAlbum\setCoverImage</qualifiedname>
+        <param>
+          <type>?string</type>
+          <declname>$coverImage</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Définit l&apos;URL de l&apos;image de couverture.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametertype>null</parametertype>
+<parametername>$coverImage</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>L&apos;URL de l&apos;image.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>self </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/FavoriteAlbum.php" line="261" column="21" bodyfile="Entity/FavoriteAlbum.php" bodystart="261" bodyend="265"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_favorite_album_1a14c4e7420d903d3e40342266333d2ecf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>getLabel</definition>
+        <argsstring>()</argsstring>
+        <name>getLabel</name>
+        <qualifiedname>App\Entity\FavoriteAlbum\getLabel</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Obtient le label de l&apos;album.</para>
+<para><simplesect kind="return"><para>Label|null Le label de l&apos;album. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/FavoriteAlbum.php" line="272" column="21" bodyfile="Entity/FavoriteAlbum.php" bodystart="272" bodyend="275"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_favorite_album_1a2a7c7c3195c43a32ab55f2fea78ba318" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>setLabel</definition>
+        <argsstring>(?Label $label)</argsstring>
+        <name>setLabel</name>
+        <qualifiedname>App\Entity\FavoriteAlbum\setLabel</qualifiedname>
+        <param>
+          <type>?<ref refid="class_app_1_1_entity_1_1_label" kindref="compound">Label</ref></type>
+          <declname>$label</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Définit le label de l&apos;album.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>Label</parametertype>
+<parametertype>null</parametertype>
+<parametername>$label</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Le label.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>self </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/FavoriteAlbum.php" line="284" column="21" bodyfile="Entity/FavoriteAlbum.php" bodystart="284" bodyend="288"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_favorite_album_1adc6f217756d49edbac6975e1f69485d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>getGenre</definition>
+        <argsstring>()</argsstring>
+        <name>getGenre</name>
+        <qualifiedname>App\Entity\FavoriteAlbum\getGenre</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Obtient le genre musical de l&apos;album.</para>
+<para><simplesect kind="return"><para>Genre|null Le genre musical. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/FavoriteAlbum.php" line="295" column="21" bodyfile="Entity/FavoriteAlbum.php" bodystart="295" bodyend="298"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_favorite_album_1a6fcf7c3ce3de45970b6f384c6c2c1e8c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>setGenre</definition>
+        <argsstring>(?Genre $genre)</argsstring>
+        <name>setGenre</name>
+        <qualifiedname>App\Entity\FavoriteAlbum\setGenre</qualifiedname>
+        <param>
+          <type>?<ref refid="class_app_1_1_entity_1_1_genre" kindref="compound">Genre</ref></type>
+          <declname>$genre</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Définit le genre musical de l&apos;album.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>Genre</parametertype>
+<parametertype>null</parametertype>
+<parametername>$genre</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Le genre musical.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>self </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/FavoriteAlbum.php" line="307" column="21" bodyfile="Entity/FavoriteAlbum.php" bodystart="307" bodyend="311"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_favorite_album_1ae3c4fbe3e8eb0d6755694bc597d6c52f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>getFormat</definition>
+        <argsstring>()</argsstring>
+        <name>getFormat</name>
+        <qualifiedname>App\Entity\FavoriteAlbum\getFormat</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Obtient le format de l&apos;album (vinyle, CD, etc.).</para>
+<para><simplesect kind="return"><para>Format|null Le format de l&apos;album. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/FavoriteAlbum.php" line="318" column="21" bodyfile="Entity/FavoriteAlbum.php" bodystart="318" bodyend="321"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_favorite_album_1ab8f9ee51eb3a4b472abe80f921676a8c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>setFormat</definition>
+        <argsstring>(?Format $format)</argsstring>
+        <name>setFormat</name>
+        <qualifiedname>App\Entity\FavoriteAlbum\setFormat</qualifiedname>
+        <param>
+          <type>?<ref refid="class_app_1_1_entity_1_1_format" kindref="compound">Format</ref></type>
+          <declname>$format</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Définit le format de l&apos;album.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>Format</parametertype>
+<parametertype>null</parametertype>
+<parametername>$format</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Le format.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>self </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/FavoriteAlbum.php" line="330" column="21" bodyfile="Entity/FavoriteAlbum.php" bodystart="330" bodyend="334"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_favorite_album_1ae81b7186fb97a7c6457edcc68c9aa2ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>getUser</definition>
+        <argsstring>()</argsstring>
+        <name>getUser</name>
+        <qualifiedname>App\Entity\FavoriteAlbum\getUser</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Obtient l&apos;utilisateur propriétaire de l&apos;album favori.</para>
+<para><simplesect kind="return"><para>User|null L&apos;utilisateur. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/FavoriteAlbum.php" line="341" column="21" bodyfile="Entity/FavoriteAlbum.php" bodystart="341" bodyend="344"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_favorite_album_1a406a111868b45aad6d4c8ab5b0c5bcb9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>setUser</definition>
+        <argsstring>(?User $user)</argsstring>
+        <name>setUser</name>
+        <qualifiedname>App\Entity\FavoriteAlbum\setUser</qualifiedname>
+        <param>
+          <type>?<ref refid="class_app_1_1_entity_1_1_user" kindref="compound">User</ref></type>
+          <declname>$user</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Définit l&apos;utilisateur propriétaire de l&apos;album favori.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>User</parametertype>
+<parametertype>null</parametertype>
+<parametername>$user</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>L&apos;utilisateur.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>self </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/FavoriteAlbum.php" line="353" column="21" bodyfile="Entity/FavoriteAlbum.php" bodystart="353" bodyend="357"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_favorite_album_1a6c52b5b67bd8eb098d0bc259e86312ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>getFruits</definition>
+        <argsstring>()</argsstring>
+        <name>getFruits</name>
+        <qualifiedname>App\Entity\FavoriteAlbum\getFruits</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Obtient la collection des fruits associés à l&apos;album.</para>
+<para><simplesect kind="return"><para>Collection&lt;int, Fruit&gt; La collection de fruits. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/FavoriteAlbum.php" line="364" column="21" bodyfile="Entity/FavoriteAlbum.php" bodystart="364" bodyend="367"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_favorite_album_1ab593ea8c6876813ebec46d18c928ee00" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>addFruit</definition>
+        <argsstring>(Fruit $fruit)</argsstring>
+        <name>addFruit</name>
+        <qualifiedname>App\Entity\FavoriteAlbum\addFruit</qualifiedname>
+        <param>
+          <type><ref refid="class_app_1_1_entity_1_1_fruit" kindref="compound">Fruit</ref></type>
+          <declname>$fruit</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Ajoute un fruit à la collection des fruits associés.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>Fruit</parametertype>
+<parametername>$fruit</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Le fruit à ajouter.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>self </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/FavoriteAlbum.php" line="376" column="21" bodyfile="Entity/FavoriteAlbum.php" bodystart="376" bodyend="382"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_favorite_album_1a41fda8af5652dd1f6a9af3c9886695d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>removeFruit</definition>
+        <argsstring>(Fruit $fruit)</argsstring>
+        <name>removeFruit</name>
+        <qualifiedname>App\Entity\FavoriteAlbum\removeFruit</qualifiedname>
+        <param>
+          <type><ref refid="class_app_1_1_entity_1_1_fruit" kindref="compound">Fruit</ref></type>
+          <declname>$fruit</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Retire un fruit de la collection des fruits associés.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>Fruit</parametertype>
+<parametername>$fruit</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Le fruit à retirer.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>self </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/FavoriteAlbum.php" line="391" column="21" bodyfile="Entity/FavoriteAlbum.php" bodystart="391" bodyend="395"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_favorite_album_1a8dc1c9e8edd1295fd956a4eb3af053b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>getTracks</definition>
+        <argsstring>()</argsstring>
+        <name>getTracks</name>
+        <qualifiedname>App\Entity\FavoriteAlbum\getTracks</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Obtient la collection des pistes associées à l&apos;album.</para>
+<para><simplesect kind="return"><para>Collection&lt;int, Track&gt; La collection de pistes. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/FavoriteAlbum.php" line="402" column="21" bodyfile="Entity/FavoriteAlbum.php" bodystart="402" bodyend="405"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_favorite_album_1af6a5b20e58074d84acb01c009b10d014" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>addTrack</definition>
+        <argsstring>(Track $track)</argsstring>
+        <name>addTrack</name>
+        <qualifiedname>App\Entity\FavoriteAlbum\addTrack</qualifiedname>
+        <param>
+          <type><ref refid="class_app_1_1_entity_1_1_track" kindref="compound">Track</ref></type>
+          <declname>$track</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Ajoute une piste à la collection des pistes associées.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>Track</parametertype>
+<parametername>$track</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>La piste à ajouter.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>self </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/FavoriteAlbum.php" line="414" column="21" bodyfile="Entity/FavoriteAlbum.php" bodystart="414" bodyend="421"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_favorite_album_1a13b62bd4ee7d72e4c46354bdda6bcdf0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>removeTrack</definition>
+        <argsstring>(Track $track)</argsstring>
+        <name>removeTrack</name>
+        <qualifiedname>App\Entity\FavoriteAlbum\removeTrack</qualifiedname>
+        <param>
+          <type><ref refid="class_app_1_1_entity_1_1_track" kindref="compound">Track</ref></type>
+          <declname>$track</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Retire une piste de la collection des pistes associées.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>Track</parametertype>
+<parametername>$track</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>La piste à retirer.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>self </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/FavoriteAlbum.php" line="430" column="21" bodyfile="Entity/FavoriteAlbum.php" bodystart="430" bodyend="439"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_favorite_album_1ab2f077a347becc5f1c0446c975dec551" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>getAllFruits</definition>
+        <argsstring>()</argsstring>
+        <name>getAllFruits</name>
+        <qualifiedname>App\Entity\FavoriteAlbum\getAllFruits</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Récupère tous les fruits associés à l&apos;album et à ses morceaux.</para>
+<para><simplesect kind="return"><para>array La liste de tous les fruits associés. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/FavoriteAlbum.php" line="446" column="21" bodyfile="Entity/FavoriteAlbum.php" bodystart="446" bodyend="459"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Entité représentant un album favori d&apos;un utilisateur.</para>
+<para>@ORM\Entity(repositoryClass=FavoriteAlbumRepository::class) @Broadcast </para>
+    </detaileddescription>
+    <location file="Entity/FavoriteAlbum.php" line="20" column="1" bodyfile="Entity/FavoriteAlbum.php" bodystart="21" bodyend="460"/>
+    <listofallmembers>
+      <member refid="class_app_1_1_entity_1_1_favorite_album_1afccf8b41bcc8d8cae21caf4c2dc4b0d7" prot="private" virt="non-virtual"><scope>App::Entity::FavoriteAlbum</scope><name>$albumId</name></member>
+      <member refid="class_app_1_1_entity_1_1_favorite_album_1a37aded84c1e67e6e4d4193b64bcce0bf" prot="private" virt="non-virtual"><scope>App::Entity::FavoriteAlbum</scope><name>$coverImage</name></member>
+      <member refid="class_app_1_1_entity_1_1_favorite_album_1a3495330829518fe0d2bbbd96eb821f20" prot="private" virt="non-virtual"><scope>App::Entity::FavoriteAlbum</scope><name>$format</name></member>
+      <member refid="class_app_1_1_entity_1_1_favorite_album_1af3cf6e874ed7547d0371eea4733d3f8b" prot="private" virt="non-virtual"><scope>App::Entity::FavoriteAlbum</scope><name>$fruits</name></member>
+      <member refid="class_app_1_1_entity_1_1_favorite_album_1a43a7131911adccf24c35d0e6fbcaf658" prot="private" virt="non-virtual"><scope>App::Entity::FavoriteAlbum</scope><name>$genre</name></member>
+      <member refid="class_app_1_1_entity_1_1_favorite_album_1a3587bd00e5602c1800515b6f9ffbebc5" prot="private" virt="non-virtual"><scope>App::Entity::FavoriteAlbum</scope><name>$id</name></member>
+      <member refid="class_app_1_1_entity_1_1_favorite_album_1abe61fe2e4d1565224b5dd35179523ae7" prot="private" virt="non-virtual"><scope>App::Entity::FavoriteAlbum</scope><name>$label</name></member>
+      <member refid="class_app_1_1_entity_1_1_favorite_album_1a5ef02115477cfad473df2455da5a908e" prot="private" virt="non-virtual"><scope>App::Entity::FavoriteAlbum</scope><name>$title</name></member>
+      <member refid="class_app_1_1_entity_1_1_favorite_album_1a74f5148f4946184ed830b1ab4207cbf6" prot="private" virt="non-virtual"><scope>App::Entity::FavoriteAlbum</scope><name>$tracks</name></member>
+      <member refid="class_app_1_1_entity_1_1_favorite_album_1a35c45cc33d8d420da794514df59466b7" prot="private" virt="non-virtual"><scope>App::Entity::FavoriteAlbum</scope><name>$user</name></member>
+      <member refid="class_app_1_1_entity_1_1_favorite_album_1a7e74723ffa758165f367cac6a1076bcf" prot="private" virt="non-virtual"><scope>App::Entity::FavoriteAlbum</scope><name>$year</name></member>
+      <member refid="class_app_1_1_entity_1_1_favorite_album_1a095c5d389db211932136b53f25f39685" prot="public" virt="non-virtual"><scope>App::Entity::FavoriteAlbum</scope><name>__construct</name></member>
+      <member refid="class_app_1_1_entity_1_1_favorite_album_1ab593ea8c6876813ebec46d18c928ee00" prot="public" virt="non-virtual"><scope>App::Entity::FavoriteAlbum</scope><name>addFruit</name></member>
+      <member refid="class_app_1_1_entity_1_1_favorite_album_1af6a5b20e58074d84acb01c009b10d014" prot="public" virt="non-virtual"><scope>App::Entity::FavoriteAlbum</scope><name>addTrack</name></member>
+      <member refid="class_app_1_1_entity_1_1_favorite_album_1af25659d3cdc12b0faf5a2322241bf69a" prot="public" virt="non-virtual"><scope>App::Entity::FavoriteAlbum</scope><name>getAlbumId</name></member>
+      <member refid="class_app_1_1_entity_1_1_favorite_album_1ab2f077a347becc5f1c0446c975dec551" prot="public" virt="non-virtual"><scope>App::Entity::FavoriteAlbum</scope><name>getAllFruits</name></member>
+      <member refid="class_app_1_1_entity_1_1_favorite_album_1af68dead1965a2a3240f96ae558e355f8" prot="public" virt="non-virtual"><scope>App::Entity::FavoriteAlbum</scope><name>getCoverImage</name></member>
+      <member refid="class_app_1_1_entity_1_1_favorite_album_1ae3c4fbe3e8eb0d6755694bc597d6c52f" prot="public" virt="non-virtual"><scope>App::Entity::FavoriteAlbum</scope><name>getFormat</name></member>
+      <member refid="class_app_1_1_entity_1_1_favorite_album_1a6c52b5b67bd8eb098d0bc259e86312ff" prot="public" virt="non-virtual"><scope>App::Entity::FavoriteAlbum</scope><name>getFruits</name></member>
+      <member refid="class_app_1_1_entity_1_1_favorite_album_1adc6f217756d49edbac6975e1f69485d5" prot="public" virt="non-virtual"><scope>App::Entity::FavoriteAlbum</scope><name>getGenre</name></member>
+      <member refid="class_app_1_1_entity_1_1_favorite_album_1a12251d0c022e9e21c137a105ff683f13" prot="public" virt="non-virtual"><scope>App::Entity::FavoriteAlbum</scope><name>getId</name></member>
+      <member refid="class_app_1_1_entity_1_1_favorite_album_1a14c4e7420d903d3e40342266333d2ecf" prot="public" virt="non-virtual"><scope>App::Entity::FavoriteAlbum</scope><name>getLabel</name></member>
+      <member refid="class_app_1_1_entity_1_1_favorite_album_1a95e859a4588a39a1824b717378a84c29" prot="public" virt="non-virtual"><scope>App::Entity::FavoriteAlbum</scope><name>getTitle</name></member>
+      <member refid="class_app_1_1_entity_1_1_favorite_album_1a8dc1c9e8edd1295fd956a4eb3af053b2" prot="public" virt="non-virtual"><scope>App::Entity::FavoriteAlbum</scope><name>getTracks</name></member>
+      <member refid="class_app_1_1_entity_1_1_favorite_album_1ae81b7186fb97a7c6457edcc68c9aa2ef" prot="public" virt="non-virtual"><scope>App::Entity::FavoriteAlbum</scope><name>getUser</name></member>
+      <member refid="class_app_1_1_entity_1_1_favorite_album_1ad0a298a1c3d30a5dff3278f1f5bb7d86" prot="public" virt="non-virtual"><scope>App::Entity::FavoriteAlbum</scope><name>getYear</name></member>
+      <member refid="class_app_1_1_entity_1_1_favorite_album_1a41fda8af5652dd1f6a9af3c9886695d1" prot="public" virt="non-virtual"><scope>App::Entity::FavoriteAlbum</scope><name>removeFruit</name></member>
+      <member refid="class_app_1_1_entity_1_1_favorite_album_1a13b62bd4ee7d72e4c46354bdda6bcdf0" prot="public" virt="non-virtual"><scope>App::Entity::FavoriteAlbum</scope><name>removeTrack</name></member>
+      <member refid="class_app_1_1_entity_1_1_favorite_album_1a5616f9d98d68c2597046ef7d04d84f6f" prot="public" virt="non-virtual"><scope>App::Entity::FavoriteAlbum</scope><name>setAlbumId</name></member>
+      <member refid="class_app_1_1_entity_1_1_favorite_album_1a32e0a6523167ed7e60e5c30711dfe1fa" prot="public" virt="non-virtual"><scope>App::Entity::FavoriteAlbum</scope><name>setCoverImage</name></member>
+      <member refid="class_app_1_1_entity_1_1_favorite_album_1ab8f9ee51eb3a4b472abe80f921676a8c" prot="public" virt="non-virtual"><scope>App::Entity::FavoriteAlbum</scope><name>setFormat</name></member>
+      <member refid="class_app_1_1_entity_1_1_favorite_album_1a6fcf7c3ce3de45970b6f384c6c2c1e8c" prot="public" virt="non-virtual"><scope>App::Entity::FavoriteAlbum</scope><name>setGenre</name></member>
+      <member refid="class_app_1_1_entity_1_1_favorite_album_1a2a7c7c3195c43a32ab55f2fea78ba318" prot="public" virt="non-virtual"><scope>App::Entity::FavoriteAlbum</scope><name>setLabel</name></member>
+      <member refid="class_app_1_1_entity_1_1_favorite_album_1ac698bca9a4f3d5d9355ff023eee17285" prot="public" virt="non-virtual"><scope>App::Entity::FavoriteAlbum</scope><name>setTitle</name></member>
+      <member refid="class_app_1_1_entity_1_1_favorite_album_1a406a111868b45aad6d4c8ab5b0c5bcb9" prot="public" virt="non-virtual"><scope>App::Entity::FavoriteAlbum</scope><name>setUser</name></member>
+      <member refid="class_app_1_1_entity_1_1_favorite_album_1a380136d26548fcfb8b3130250a42b9c2" prot="public" virt="non-virtual"><scope>App::Entity::FavoriteAlbum</scope><name>setYear</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

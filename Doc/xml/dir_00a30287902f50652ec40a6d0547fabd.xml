@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="fr">
+  <compounddef id="dir_00a30287902f50652ec40a6d0547fabd" kind="dir">
+    <compoundname>DataFixtures</compoundname>
+    <innerfile refid="_app_fixtures_8php">AppFixtures.php</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DataFixtures/"/>
+  </compounddef>
+</doxygen>

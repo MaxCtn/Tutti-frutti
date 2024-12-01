@@ -1,0 +1,105 @@
+\doxysection{Registration\+Controller.\+php}
+\hypertarget{_registration_controller_8php_source}{}\label{_registration_controller_8php_source}\index{Controller/RegistrationController.php@{Controller/RegistrationController.php}}
+\mbox{\hyperlink{_registration_controller_8php}{Aller à la documentation de ce fichier.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00001}00001\ <?php}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00003}00003\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_app_1_1_controller}{App\(\backslash\)Controller}};}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00005}00005\ use\ \mbox{\hyperlink{class_app_1_1_entity_1_1_user}{App\(\backslash\)Entity\(\backslash\)User}};}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00006}00006\ use\ \mbox{\hyperlink{class_app_1_1_form_1_1_registration_form_type}{App\(\backslash\)Form\(\backslash\)RegistrationFormType}};}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00007}00007\ use\ Doctrine\(\backslash\)ORM\(\backslash\)EntityManagerInterface;}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00008}00008\ use\ Symfony\(\backslash\)Bundle\(\backslash\)FrameworkBundle\(\backslash\)Controller\(\backslash\)AbstractController;}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00009}00009\ use\ Symfony\(\backslash\)Component\(\backslash\)HttpFoundation\(\backslash\)Request;}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00010}00010\ use\ Symfony\(\backslash\)Component\(\backslash\)HttpFoundation\(\backslash\)Response;}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00011}00011\ use\ Symfony\(\backslash\)Component\(\backslash\)Routing\(\backslash\)Annotation\(\backslash\)Route;}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00012}00012\ use\ Symfony\(\backslash\)Component\(\backslash\)PasswordHasher\(\backslash\)Hasher\(\backslash\)UserPasswordHasherInterface;}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00013}00013\ use\ Symfony\(\backslash\)Component\(\backslash\)Security\(\backslash\)Core\(\backslash\)Authentication\(\backslash\)Token\(\backslash\)Storage\(\backslash\)TokenStorageInterface;}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00014}00014\ use\ Symfony\(\backslash\)Component\(\backslash\)HttpFoundation\(\backslash\)Session\(\backslash\)SessionInterface;}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00015}00015\ use\ Symfony\(\backslash\)Component\(\backslash\)Security\(\backslash\)Core\(\backslash\)Authentication\(\backslash\)Token\(\backslash\)UsernamePasswordToken;}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00016}00016\ use\ Symfony\(\backslash\)Component\(\backslash\)Form\(\backslash\)FormError;}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00017}00017\ use\ Symfony\(\backslash\)Component\(\backslash\)HttpFoundation\(\backslash\)File\(\backslash\)Exception\(\backslash\)FileException;}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00018}00018\ use\ Symfony\(\backslash\)Component\(\backslash\)String\(\backslash\)Slugger\(\backslash\)SluggerInterface;}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00020}\mbox{\hyperlink{class_app_1_1_controller_1_1_registration_controller}{00020}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_app_1_1_controller_1_1_registration_controller}{RegistrationController}}\ \textcolor{keyword}{extends}\ AbstractController}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00021}00021\ \{}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00022}00022\ \textcolor{preprocessor}{\ \ \ \ \#[Route('/registration',\ name:\ 'app\_registration')]}}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00023}\mbox{\hyperlink{class_app_1_1_controller_1_1_registration_controller_a1548eef83bb4e0124f29edf8e8d19664}{00023}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{class_app_1_1_controller_1_1_registration_controller_a1548eef83bb4e0124f29edf8e8d19664}{index}}(}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00024}00024\ \ \ \ \ \ \ \ \ Request\ \$request,}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00025}00025\ \ \ \ \ \ \ \ \ EntityManagerInterface\ \$entityManager,}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00026}00026\ \ \ \ \ \ \ \ \ UserPasswordHasherInterface\ \$passwordHasher,}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00027}00027\ \ \ \ \ \ \ \ \ TokenStorageInterface\ \$tokenStorage,}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00028}00028\ \ \ \ \ \ \ \ \ SessionInterface\ \$session,}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00029}00029\ \ \ \ \ \ \ \ \ SluggerInterface\ \$slugger}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00030}00030\ \ \ \ \ ):\ Response\ \{}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00031}00031\ \ \ \ \ \ \ \ \ \$user\ =\ new\ \mbox{\hyperlink{class_app_1_1_entity_1_1_user}{User}}();}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00032}00032\ \ \ \ \ \ \ \ \ \$form\ =\ \$this-\/>createForm(RegistrationFormType::class,\ \$user);}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00034}00034\ \ \ \ \ \ \ \ \ \$form-\/>handleRequest(\$request);}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$form-\/>isSubmitted()\ \&\&\ \$form-\/>isValid())\ \{}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Vérifier\ si\ l'utilisateur\ existe\ déjà}}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$this-\/>isEmailAlreadyUsed(\$user-\/>getEmail(),\ \$entityManager))\ \{}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$form-\/>get(\textcolor{stringliteral}{'email'})-\/>addError(\textcolor{keyword}{new}\ FormError(\textcolor{stringliteral}{'Cette\ adresse\ e-\/mail\ est\ déjà\ utilisée.'}));}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Hashage\ du\ mot\ de\ passe}}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$hashedPassword\ =\ \$passwordHasher-\/>hashPassword(\$user,\ \$user-\/>getPassword());}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$user-\/>setPassword(\$hashedPassword);}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Gestion\ de\ l'upload\ de\ la\ photo\ de\ profil}}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$this-\/>handleProfilePicture(\$form-\/>get(\textcolor{stringliteral}{'profilePicture'})-\/>getData(),\ \$user,\ \$slugger);}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Sauvegarder\ l'utilisateur\ dans\ la\ base}}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$entityManager-\/>persist(\$user);}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$entityManager-\/>flush();}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Authentifier\ automatiquement\ l'utilisateur}}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$this-\/>authenticateUser(\$user,\ \$tokenStorage,\ \$session);}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Redirection\ après\ inscription\ réussie}}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$this-\/>redirectToRoute(\textcolor{stringliteral}{'album\_search'});}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\(\backslash\)Exception\ \$e)\ \{}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$this-\/>addFlash(\textcolor{stringliteral}{'error'},\ \textcolor{stringliteral}{'Une\ erreur\ est\ survenue\ lors\ de\ votre\ inscription.'});}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00062}00062\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$this-\/>render(\textcolor{stringliteral}{'registration/index.html.twig'},\ [}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'form'}\ =>\ \$form-\/>createView(),}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00066}00066\ \ \ \ \ \ \ \ \ ]);}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00067}00067\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00072}00072\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{function}\ isEmailAlreadyUsed(\textcolor{keywordtype}{string}\ \$email,\ EntityManagerInterface\ \$entityManager):\ bool}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00073}00073\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00074}00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keywordtype}{bool})\ \$entityManager-\/>getRepository(User::class)-\/>findOneBy([\textcolor{stringliteral}{'email'}\ =>\ \$email]);}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00075}00075\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00080}00080\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{function}\ handleProfilePicture(\$profilePictureFile,\ User\ \$user,\ SluggerInterface\ \$slugger):\ void}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00081}00081\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00082}00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$profilePictureFile)\ \{}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \$originalFilename\ =\ pathinfo(\$profilePictureFile-\/>getClientOriginalName(),\ PATHINFO\_FILENAME);}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \$safeFilename\ =\ \$slugger-\/>slug(\$originalFilename);}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \$newFilename\ =\ \$safeFilename\ .\ \textcolor{charliteral}{'-\/'}\ .\ uniqid()\ .\ \textcolor{charliteral}{'.'}\ .\ \$profilePictureFile-\/>guessExtension();}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$profilePictureFile-\/>move(}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$this-\/>getParameter(\textcolor{stringliteral}{'profile\_pictures\_directory'}),}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$newFilename}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$user-\/>setProfilePicture(\$newFilename);}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (FileException\ \$e)\ \{}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ new\ \(\backslash\)RuntimeException(\textcolor{stringliteral}{'Erreur\ lors\ de\ l\(\backslash\)'upload\ de\ la\ photo\ :\ '}\ .\ \$e-\/>getMessage());}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00096}00096\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00097}00097\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00102}00102\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{function}\ authenticateUser(User\ \$user,\ TokenStorageInterface\ \$tokenStorage,\ SessionInterface\ \$session):\ void}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00103}00103\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00104}00104\ \ \ \ \ \ \ \ \ \$token\ =\ \textcolor{keyword}{new}\ UsernamePasswordToken(\$user,\ \textcolor{stringliteral}{'main'},\ \$user-\/>getRoles());}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00105}00105\ \ \ \ \ \ \ \ \ \$tokenStorage-\/>setToken(\$token);}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00106}00106\ \ \ \ \ \ \ \ \ \$session-\/>set(\textcolor{stringliteral}{'\_security\_main'},\ serialize(\$token));}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00107}00107\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_registration_controller_8php_source_l00108}00108\ \}}
+
+\end{DoxyCode}

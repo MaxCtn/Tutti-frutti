@@ -49,6 +49,7 @@ class Label
     #[ORM\OneToMany(mappedBy: 'label', targetEntity: FavoriteAlbum::class)]
     private Collection $favoriteAlbums;
 
+
     /**
      * Constructeur de la classe Label.
      * Initialise la collection des albums favoris.

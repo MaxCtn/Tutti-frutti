@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="fr">
+  <compounddef id="_profile_controller_8php" kind="file" language="PHP">
+    <compoundname>ProfileController.php</compoundname>
+    <innerclass refid="class_app_1_1_controller_1_1_profile_controller" prot="public">App::Controller::ProfileController</innerclass>
+    <innernamespace refid="namespace_app_1_1_controller">App::Controller</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;?php</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_app_1_1_controller" kindref="compound">App\Controller</ref>;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal">use<sp/>Symfony\Bundle\FrameworkBundle\Controller\AbstractController;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal">use<sp/>Symfony\Component\Routing\Annotation\Route;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal">use<sp/>Symfony\Component\HttpFoundation\Request;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal">use<sp/>Symfony\Component\HttpFoundation\Response;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal">use<sp/><ref refid="class_app_1_1_repository_1_1_favorite_album_repository" kindref="compound">App\Repository\FavoriteAlbumRepository</ref>;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="class_app_1_1_controller_1_1_profile_controller" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_app_1_1_controller_1_1_profile_controller" kindref="compound">ProfileController</ref><sp/></highlight><highlight class="keyword">extends</highlight><highlight class="normal"><sp/>AbstractController</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#[Route(&apos;/profile&apos;,<sp/>name:<sp/>&apos;profile&apos;)]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="class_app_1_1_controller_1_1_profile_controller_1ae1226a5f7b95e179ae1de18af8d815cd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="class_app_1_1_controller_1_1_profile_controller_1ae1226a5f7b95e179ae1de18af8d815cd" kindref="member">userProfile</ref>(Request<sp/>$request,<sp/><ref refid="class_app_1_1_repository_1_1_favorite_album_repository" kindref="compound">FavoriteAlbumRepository</ref><sp/>$favoriteAlbumRepository):<sp/>Response</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$user<sp/>=<sp/>$this-&gt;getUser();</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!$user)<sp/>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>$this-&gt;redirectToRoute(</highlight><highlight class="stringliteral">&apos;app_login&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Récupérer<sp/>les<sp/>albums<sp/>favoris<sp/>en<sp/>fonction<sp/>des<sp/>critères<sp/>de<sp/>filtrage</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$favorites<sp/>=<sp/>$this-&gt;getFilteredFavorites(</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$favoriteAlbumRepository,</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$user,</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$request</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>$this-&gt;render(</highlight><highlight class="stringliteral">&apos;profile/index.html.twig&apos;</highlight><highlight class="normal">,<sp/>[</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;favorites&apos;</highlight><highlight class="normal"><sp/>=&gt;<sp/>$favorites,</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>]);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>getFilteredFavorites(</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_app_1_1_repository_1_1_favorite_album_repository" kindref="compound">FavoriteAlbumRepository</ref><sp/>$favoriteAlbumRepository,</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$user,</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Request<sp/>$request</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>):<sp/>array<sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Critères<sp/>de<sp/>filtrage<sp/>depuis<sp/>la<sp/>requête</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$criteria<sp/>=<sp/>[</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;fruit&apos;</highlight><highlight class="normal"><sp/><sp/>=&gt;<sp/>$request-&gt;query-&gt;get(</highlight><highlight class="stringliteral">&apos;fruit&apos;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;year&apos;</highlight><highlight class="normal"><sp/><sp/><sp/>=&gt;<sp/>$request-&gt;query-&gt;get(</highlight><highlight class="stringliteral">&apos;year&apos;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;title&apos;</highlight><highlight class="normal"><sp/><sp/>=&gt;<sp/>$request-&gt;query-&gt;get(</highlight><highlight class="stringliteral">&apos;title&apos;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;label&apos;</highlight><highlight class="normal"><sp/><sp/>=&gt;<sp/>$request-&gt;query-&gt;get(</highlight><highlight class="stringliteral">&apos;label&apos;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;genre&apos;</highlight><highlight class="normal"><sp/><sp/>=&gt;<sp/>$request-&gt;query-&gt;get(</highlight><highlight class="stringliteral">&apos;genre&apos;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;format&apos;</highlight><highlight class="normal"><sp/>=&gt;<sp/>$request-&gt;query-&gt;get(</highlight><highlight class="stringliteral">&apos;format&apos;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>];</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Paramètres<sp/>de<sp/>tri</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$sortBy<sp/>=<sp/>$request-&gt;query-&gt;get(</highlight><highlight class="stringliteral">&apos;sortBy&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;title&apos;</highlight><highlight class="normal">);<sp/></highlight><highlight class="comment">//<sp/>Tri<sp/>par<sp/>titre<sp/>par<sp/>défaut</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$order<sp/>=<sp/>strtoupper($request-&gt;query-&gt;get(</highlight><highlight class="stringliteral">&apos;order&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;ASC&apos;</highlight><highlight class="normal">))<sp/>===<sp/></highlight><highlight class="stringliteral">&apos;ASC&apos;</highlight><highlight class="normal"><sp/>?<sp/></highlight><highlight class="stringliteral">&apos;ASC&apos;</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="stringliteral">&apos;DESC&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>$favoriteAlbumRepository-&gt;<ref refid="class_app_1_1_repository_1_1_favorite_album_repository_1a1e89bed821646ae540cc6c84f28cd05b" kindref="member">findByUser</ref>(</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$user,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Filtre<sp/>par<sp/>utilisateur<sp/>connecté</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>array_filter($criteria),<sp/></highlight><highlight class="comment">//<sp/>Supprime<sp/>les<sp/>critères<sp/>vides<sp/>ou<sp/>nuls</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$sortBy,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Colonne<sp/>de<sp/>tri</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$order<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Ordre<sp/>de<sp/>tri</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Controller/ProfileController.php"/>
+  </compounddef>
+</doxygen>

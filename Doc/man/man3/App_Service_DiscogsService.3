@@ -1,0 +1,46 @@
+.TH "DiscogsService" 3 "Tutti-frutti" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DiscogsService
+.SH SYNOPSIS
+.br
+.PP
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fB__construct\fP (HttpClientInterface $client, string $consumerKey, string $consumerSecret)"
+.br
+.ti -1c
+.RI "\fBsearchAlbums\fP (string $searchTerm)"
+.br
+.ti -1c
+.RI "\fBgetAlbumDetails\fP (int $id)"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Service pour interagir avec l'API Discogs\&. 
+.PP
+Définition à la ligne \fB12\fP du fichier \fBDiscogsService\&.php\fP\&.
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "__construct (HttpClientInterface $client, string $consumerKey, string $consumerSecret)"
+Constructeur du service Discogs\&. 
+.PP
+Définition à la ligne \fB33\fP du fichier \fBDiscogsService\&.php\fP\&.
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "getAlbumDetails (int $id)"
+Récupère les détails d'un album par son ID\&. 
+.PP
+Définition à la ligne \fB62\fP du fichier \fBDiscogsService\&.php\fP\&.
+.SS "searchAlbums (string $searchTerm)"
+Recherche des albums correspondant à un terme\&. 
+.PP
+Définition à la ligne \fB43\fP du fichier \fBDiscogsService\&.php\fP\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Tutti-frutti à partir du code source\&.

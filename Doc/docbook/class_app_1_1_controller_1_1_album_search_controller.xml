@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_app_1_1_controller_1_1_album_search_controller" xml:lang="fr">
+<title>Référence de la classe AlbumSearchController</title>
+<indexterm><primary>AlbumSearchController</primary></indexterm>
+Graphe d&apos;héritage de AlbumSearchController:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_app_1_1_controller_1_1_album_search_controller__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Graphe de collaboration de AlbumSearchController:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_app_1_1_controller_1_1_album_search_controller__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Fonctions membres publiques    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_app_1_1_controller_1_1_album_search_controller_1ae684060a647ec21f30e4cde445b19e61">__construct</link> (<link linkend="_class_app_1_1_service_1_1_discogs_service">DiscogsService</link> $discogsService, EntityManagerInterface $entityManager)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_controller_1_1_album_search_controller_1a32c26085cd6825224689fb8e12587e93">search</link> (Request $request)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_controller_1_1_album_search_controller_1a5f1ab14d454cb3fa1e76a480f999c5c9">showDetails</link> (int $id, Request $request)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_controller_1_1_album_search_controller_1a6c1bfe7b2f2ffe8e8e690e4172a381ed">addToFavorites</link> (int $id)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_controller_1_1_album_search_controller_1af2a9aa2a4c124597835da76a98d258a1">removeFromFavorites</link> (int $id)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Description détaillée</title>
+<para>
+Définition à la ligne <link linkend="__album_search_controller_8php_source_1l00019">19</link> du fichier <link linkend="__album_search_controller_8php_source">AlbumSearchController.php</link>.</para>
+</section>
+<section>
+<title>Documentation des constructeurs et destructeur</title>
+<anchor xml:id="_class_app_1_1_controller_1_1_album_search_controller_1ae684060a647ec21f30e4cde445b19e61"/><section>
+    <title>__construct()</title>
+<indexterm><primary>__construct</primary><secondary>AlbumSearchController</secondary></indexterm>
+<indexterm><primary>AlbumSearchController</primary><secondary>__construct</secondary></indexterm>
+<para><computeroutput>__construct (<link linkend="_class_app_1_1_service_1_1_discogs_service">DiscogsService</link> $discogsService, EntityManagerInterface $entityManager)</computeroutput></para><para>
+Définition à la ligne <link linkend="__album_search_controller_8php_source_1l00024">24</link> du fichier <link linkend="__album_search_controller_8php_source">AlbumSearchController.php</link>.</para>
+</section>
+</section>
+<section>
+<title>Documentation des fonctions membres</title>
+<anchor xml:id="_class_app_1_1_controller_1_1_album_search_controller_1a6c1bfe7b2f2ffe8e8e690e4172a381ed"/><section>
+    <title>addToFavorites()</title>
+<indexterm><primary>addToFavorites</primary><secondary>AlbumSearchController</secondary></indexterm>
+<indexterm><primary>AlbumSearchController</primary><secondary>addToFavorites</secondary></indexterm>
+<para><computeroutput>addToFavorites (int $id)</computeroutput></para><para>
+Définition à la ligne <link linkend="__album_search_controller_8php_source_1l00089">89</link> du fichier <link linkend="__album_search_controller_8php_source">AlbumSearchController.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_controller_1_1_album_search_controller_1af2a9aa2a4c124597835da76a98d258a1"/><section>
+    <title>removeFromFavorites()</title>
+<indexterm><primary>removeFromFavorites</primary><secondary>AlbumSearchController</secondary></indexterm>
+<indexterm><primary>AlbumSearchController</primary><secondary>removeFromFavorites</secondary></indexterm>
+<para><computeroutput>removeFromFavorites (int $id)</computeroutput></para><para>
+Définition à la ligne <link linkend="__album_search_controller_8php_source_1l00117">117</link> du fichier <link linkend="__album_search_controller_8php_source">AlbumSearchController.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_controller_1_1_album_search_controller_1a32c26085cd6825224689fb8e12587e93"/><section>
+    <title>search()</title>
+<indexterm><primary>search</primary><secondary>AlbumSearchController</secondary></indexterm>
+<indexterm><primary>AlbumSearchController</primary><secondary>search</secondary></indexterm>
+<para><computeroutput>search (Request $request)</computeroutput></para><para>
+Définition à la ligne <link linkend="__album_search_controller_8php_source_1l00031">31</link> du fichier <link linkend="__album_search_controller_8php_source">AlbumSearchController.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_controller_1_1_album_search_controller_1a5f1ab14d454cb3fa1e76a480f999c5c9"/><section>
+    <title>showDetails()</title>
+<indexterm><primary>showDetails</primary><secondary>AlbumSearchController</secondary></indexterm>
+<indexterm><primary>AlbumSearchController</primary><secondary>showDetails</secondary></indexterm>
+<para><computeroutput>showDetails (int $id, Request $request)</computeroutput></para><para>
+Définition à la ligne <link linkend="__album_search_controller_8php_source_1l00067">67</link> du fichier <link linkend="__album_search_controller_8php_source">AlbumSearchController.php</link>.</para>
+</section>
+<para>
+La documentation de cette classe a été générée à partir du fichier suivant :</para>
+Controller/<link linkend="__album_search_controller_8php">AlbumSearchController.php</link></section>
+</section>

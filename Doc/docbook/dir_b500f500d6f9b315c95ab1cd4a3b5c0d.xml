@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_b500f500d6f9b315c95ab1cd4a3b5c0d" xml:lang="fr">
+<title>Répertoire de référence de Controller</title>
+<indexterm><primary>Répertoire de référence de Controller</primary></indexterm>
+<simplesect>
+    <title>Fichiers    </title>
+        <itemizedlist>
+            <listitem><para>fichier <link linkend="__album_search_controller_8php">AlbumSearchController.php</link></para>
+</listitem>
+            <listitem><para>fichier <link linkend="__connexion_controller_8php">ConnexionController.php</link></para>
+</listitem>
+            <listitem><para>fichier <link linkend="__discogs_test_controller_8php">DiscogsTestController.php</link></para>
+</listitem>
+            <listitem><para>fichier <link linkend="__home_controller_8php">HomeController.php</link></para>
+</listitem>
+            <listitem><para>fichier <link linkend="__profile_controller_8php">ProfileController.php</link></para>
+</listitem>
+            <listitem><para>fichier <link linkend="__registration_controller_8php">RegistrationController.php</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

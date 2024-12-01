@@ -1,0 +1,54 @@
+\doxysection{Référence de la classe Profile\+Controller}
+\hypertarget{class_app_1_1_controller_1_1_profile_controller}{}\label{class_app_1_1_controller_1_1_profile_controller}\index{ProfileController@{ProfileController}}
+
+
+Graphe d\textquotesingle{}héritage de Profile\+Controller\+:
+% FIG 0
+
+
+Graphe de collaboration de Profile\+Controller\+:
+% FIG 1
+\doxysubsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_app_1_1_controller_1_1_profile_controller_ae1226a5f7b95e179ae1de18af8d815cd}{user\+Profile}} (Request \$request, \mbox{\hyperlink{class_app_1_1_repository_1_1_favorite_album_repository}{Favorite\+Album\+Repository}} \$favorite\+Album\+Repository)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Contrôleur gérant le profil utilisateur et l\textquotesingle{}affichage des albums favoris. 
+
+Définition à la ligne \mbox{\hyperlink{_profile_controller_8php_source_l00014}{14}} du fichier \mbox{\hyperlink{_profile_controller_8php_source}{Profile\+Controller.\+php}}.
+
+
+
+\doxysubsection{Documentation des fonctions membres}
+\Hypertarget{class_app_1_1_controller_1_1_profile_controller_ae1226a5f7b95e179ae1de18af8d815cd}\index{ProfileController@{ProfileController}!userProfile@{userProfile}}
+\index{userProfile@{userProfile}!ProfileController@{ProfileController}}
+\doxysubsubsection{\texorpdfstring{userProfile()}{userProfile()}}
+{\footnotesize\ttfamily \label{class_app_1_1_controller_1_1_profile_controller_ae1226a5f7b95e179ae1de18af8d815cd} 
+user\+Profile (\begin{DoxyParamCaption}\item[{Request}]{\$request}{, }\item[{\mbox{\hyperlink{class_app_1_1_repository_1_1_favorite_album_repository}{Favorite\+Album\+Repository}}}]{\$favorite\+Album\+Repository}{}\end{DoxyParamCaption})}
+
+Affiche le profil de l\textquotesingle{}utilisateur et ses albums favoris, avec possibilité de filtrage et de tri.
+
+@\+Route("{}/profile"{}, name="{}profile"{}, methods=\{"{}\+GET"{}\})
+
+
+\begin{DoxyParams}[1]{Paramètres}
+Request & {\em \$request} & La requête HTTP. \\
+\hline
+Favorite\+Album\+Repository & {\em \$favorite\+Album\+Repository} & Le dépôt des albums favoris.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Response La réponse HTTP contenant la page du profil utilisateur. 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_profile_controller_8php_source_l00027}{27}} du fichier \mbox{\hyperlink{_profile_controller_8php_source}{Profile\+Controller.\+php}}.
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+Controller/\mbox{\hyperlink{_profile_controller_8php}{Profile\+Controller.\+php}}\end{DoxyCompactItemize}

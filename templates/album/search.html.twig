@@ -4,16 +4,22 @@
 
 {% block body %}
     <div class="container">
-        <h1 class="page-title">Recherche d'Albums par Fruits</h1>
+        <h1 class="page-title text-center">Recherche d'Albums par Fruits</h1>
 
         <!-- Formulaire de recherche -->
-        <div class="search-container">
-            <h2 class="search-title">Rechercher un fruit dans un album</h2>
+        <div class="search-container mt-4">
+            <h2 class="search-title text-center">Rechercher un fruit dans un album</h2>
             {{ form_start(form) }}
             <div class="form-group">
-                {{ form_widget(form.searchTerm, {'attr': {'placeholder': 'Entrez un fruit (ex : banane, pomme)...', 'class': 'form-control'}}) }}
+                {{ form_widget(form.searchTerm, {
+                    'attr': {
+                        'placeholder': 'Entrez un fruit (ex : banane, pomme)...',
+                        'class': 'form-control form-control-lg'
+                    }
+                }) }}
             </div>
             <div class="form-group text-center mt-3">
+                <button type="submit" class="btn btn-primary btn-lg">Rechercher</button>
             </div>
             {{ form_end(form) }}
         </div>
@@ -34,8 +40,8 @@
                             </a>
 
                             <!-- Titre avec lien vers les détails -->
-                            <div class="album-title">
-                                <a href="{{ path('album_details', {'id': result.id}) }}">
+                            <div class="album-title mt-2">
+                                <a href="{{ path('album_details', {'id': result.id}) }}" class="text-decoration-none">
                                     {{ result.title|default('Titre indisponible') }}
                                 </a>
                             </div>
@@ -54,13 +60,40 @@
 
                             <!-- Bouton Ajouter aux favoris -->
                             <div class="text-center mt-3">
-                                <button class="add-button btn btn-success" data-id="{{ result.id }}" aria-label="Ajouter l'album {{ result.title|default('sans titre') }} aux favoris">
+                                <button class="add-button btn btn-outline-success" data-id="{{ result.id }}" aria-label="Ajouter l'album {{ result.title|default('sans titre') }} aux favoris">
                                     Ajouter aux favoris
                                 </button>
                             </div>
                         </div>
                     {% endfor %}
                 </div>
+
+                <!-- Pagination -->
+                <nav aria-label="Pagination" class="mt-4">
+                    <ul class="pagination justify-content-center">
+                        {% if page > 1 %}
+                            <li class="page-item">
+                                <a class="page-link" href="{{ path('album_search', { 'page': page - 1, 'searchTerm': searchTerm }) }}" aria-label="Précédent">
+                                    &laquo;
+                                </a>
+                            </li>
+                        {% endif %}
+
+                        {% for i in 1..total_pages %}
+                            <li class="page-item {% if i == page %}active{% endif %}">
+                                <a class="page-link" href="{{ path('album_search', { 'page': i, 'searchTerm': searchTerm }) }}">{{ i }}</a>
+                            </li>
+                        {% endfor %}
+
+                        {% if page < total_pages %}
+                            <li class="page-item">
+                                <a class="page-link" href="{{ path('album_search', { 'page': page + 1, 'searchTerm': searchTerm }) }}" aria-label="Suivant">
+                                    &raquo;
+                                </a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </nav>
             {% else %}
                 <p class="text-center text-muted mt-4">Aucun résultat trouvé. Essayez un autre terme.</p>
             {% endif %}

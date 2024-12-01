@@ -30,12 +30,6 @@ class AlbumSearchType extends AbstractType
                     'placeholder' => 'Entrez un fruit (ex : banane, pomme, etc.)',
                     'class' => 'form-control'
                 ]
-            ])
-            ->add('search', SubmitType::class, [
-                'label' => 'Rechercher',
-                'attr' => [
-                    'class' => 'btn btn-primary'
-                ]
             ]);
     }
 

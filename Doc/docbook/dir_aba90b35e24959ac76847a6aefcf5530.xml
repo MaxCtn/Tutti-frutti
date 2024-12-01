@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_aba90b35e24959ac76847a6aefcf5530" xml:lang="fr">
+<title>Répertoire de référence de Repository</title>
+<indexterm><primary>Répertoire de référence de Repository</primary></indexterm>
+<simplesect>
+    <title>Fichiers    </title>
+        <itemizedlist>
+            <listitem><para>fichier <link linkend="__favorite_album_repository_8php">FavoriteAlbumRepository.php</link></para>
+</listitem>
+            <listitem><para>fichier <link linkend="__format_repository_8php">FormatRepository.php</link></para>
+</listitem>
+            <listitem><para>fichier <link linkend="__fruit_repository_8php">FruitRepository.php</link></para>
+</listitem>
+            <listitem><para>fichier <link linkend="__genre_repository_8php">GenreRepository.php</link></para>
+</listitem>
+            <listitem><para>fichier <link linkend="__label_repository_8php">LabelRepository.php</link></para>
+</listitem>
+            <listitem><para>fichier <link linkend="__track_repository_8php">TrackRepository.php</link></para>
+</listitem>
+            <listitem><para>fichier <link linkend="__user_repository_8php">UserRepository.php</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

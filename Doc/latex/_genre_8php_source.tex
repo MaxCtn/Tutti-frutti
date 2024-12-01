@@ -1,0 +1,77 @@
+\doxysection{Genre.\+php}
+\hypertarget{_genre_8php_source}{}\label{_genre_8php_source}\index{Entity/Genre.php@{Entity/Genre.php}}
+\mbox{\hyperlink{_genre_8php}{Aller à la documentation de ce fichier.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00001}00001\ <?php}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00003}00003\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_app_1_1_entity}{App\(\backslash\)Entity}};}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00005}00005\ use\ Doctrine\(\backslash\)ORM\(\backslash\)Mapping\ as\ ORM;}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00006}00006\ use\ Doctrine\(\backslash\)Common\(\backslash\)Collections\(\backslash\)ArrayCollection;}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00007}00007\ use\ Doctrine\(\backslash\)Common\(\backslash\)Collections\(\backslash\)Collection;}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00008}00008\ use\ \mbox{\hyperlink{class_app_1_1_repository_1_1_genre_repository}{App\(\backslash\)Repository\(\backslash\)GenreRepository}};}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00015}00015\ \textcolor{preprocessor}{\#[ORM\(\backslash\)Entity(repositoryClass:\ GenreRepository::class)]}}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00016}\mbox{\hyperlink{class_app_1_1_entity_1_1_genre}{00016}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_app_1_1_entity_1_1_genre}{Genre}}}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00017}00017\ \{}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00027}00027\ \textcolor{preprocessor}{\ \ \ \ \#[ORM\(\backslash\)Id]}}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00028}00028\ \textcolor{preprocessor}{\ \ \ \ \#[ORM\(\backslash\)GeneratedValue]}}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00029}00029\ \textcolor{preprocessor}{\ \ \ \ \#[ORM\(\backslash\)Column(type:\ 'integer')]}}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00030}00030\ \ \ \ \ \textcolor{keyword}{private}\ ?\textcolor{keywordtype}{int}\ \$id\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00039}00039\ \textcolor{preprocessor}{\ \ \ \ \#[ORM\(\backslash\)Column(type:\ 'string',\ length:\ 255)]}}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00040}00040\ \ \ \ \ \textcolor{keyword}{private}\ ?\textcolor{keywordtype}{string}\ \$name\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00049}00049\ \textcolor{preprocessor}{\ \ \ \ \#[ORM\(\backslash\)OneToMany(mappedBy:\ 'genre',\ targetEntity:\ FavoriteAlbum::class)]}}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00050}00050\ \ \ \ \ \textcolor{keyword}{private}\ Collection\ \$favoriteAlbums;}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00057}\mbox{\hyperlink{class_app_1_1_entity_1_1_genre_a095c5d389db211932136b53f25f39685}{00057}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{class_app_1_1_entity_1_1_genre_a095c5d389db211932136b53f25f39685}{\_\_construct}}()}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00058}00058\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00059}00059\ \ \ \ \ \ \ \ \ \$this-\/>favoriteAlbums\ =\ \textcolor{keyword}{new}\ ArrayCollection();}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00060}00060\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00067}\mbox{\hyperlink{class_app_1_1_entity_1_1_genre_a12251d0c022e9e21c137a105ff683f13}{00067}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{class_app_1_1_entity_1_1_genre_a12251d0c022e9e21c137a105ff683f13}{getId}}():\ ?int}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00068}00068\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$this-\/>id;}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00070}00070\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00077}\mbox{\hyperlink{class_app_1_1_entity_1_1_genre_a3d0963e68bb313b163a73f2803c64600}{00077}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{class_app_1_1_entity_1_1_genre_a3d0963e68bb313b163a73f2803c64600}{getName}}():\ ?string}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00078}00078\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00079}00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$this-\/>name;}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00080}00080\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00089}\mbox{\hyperlink{class_app_1_1_entity_1_1_genre_a392752b62c4f6aacea5c269690921ef3}{00089}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{class_app_1_1_entity_1_1_genre_a392752b62c4f6aacea5c269690921ef3}{setName}}(\textcolor{keywordtype}{string}\ \$name):\ self}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00090}00090\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00091}00091\ \ \ \ \ \ \ \ \ \$this-\/>name\ =\ \$name;}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00092}00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$this;}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00093}00093\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00100}\mbox{\hyperlink{class_app_1_1_entity_1_1_genre_ab755e2969ce6dd5719e19029a1f0ea98}{00100}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{class_app_1_1_entity_1_1_genre_ab755e2969ce6dd5719e19029a1f0ea98}{getFavoriteAlbums}}():\ Collection}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00101}00101\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00102}00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$this-\/>favoriteAlbums;}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00103}00103\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00112}\mbox{\hyperlink{class_app_1_1_entity_1_1_genre_a352415541a6239312cd6abffdd2d3801}{00112}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{class_app_1_1_entity_1_1_genre_a352415541a6239312cd6abffdd2d3801}{addFavoriteAlbum}}(\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album}{FavoriteAlbum}}\ \$favoriteAlbum):\ self}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00113}00113\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00114}00114\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\$this-\/>favoriteAlbums-\/>contains(\$favoriteAlbum))\ \{}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \$this-\/>favoriteAlbums[]\ =\ \$favoriteAlbum;}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \$favoriteAlbum-\/>\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album_a6fcf7c3ce3de45970b6f384c6c2c1e8c}{setGenre}}(\$this);}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00117}00117\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00119}00119\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$this;}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00120}00120\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00129}\mbox{\hyperlink{class_app_1_1_entity_1_1_genre_a7e1f5b5a1259dcb9c2be49ae4e715a4c}{00129}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{class_app_1_1_entity_1_1_genre_a7e1f5b5a1259dcb9c2be49ae4e715a4c}{removeFavoriteAlbum}}(\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album}{FavoriteAlbum}}\ \$favoriteAlbum):\ self}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00130}00130\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00131}00131\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$this-\/>favoriteAlbums-\/>removeElement(\$favoriteAlbum))\ \{}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Définir\ le\ côté\ propriétaire\ de\ la\ relation\ à\ null}}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$favoriteAlbum-\/>\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album_adc6f217756d49edbac6975e1f69485d5}{getGenre}}()\ ===\ \$this)\ \{}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$favoriteAlbum-\/>\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album_a6fcf7c3ce3de45970b6f384c6c2c1e8c}{setGenre}}(\textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00136}00136\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00137}00137\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$this;}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00138}00138\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_genre_8php_source_l00139}00139\ \}}
+
+\end{DoxyCode}

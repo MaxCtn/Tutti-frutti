@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_app_1_1_service_1_1_discogs_service" xml:lang="fr">
+<title>Référence de la classe DiscogsService</title>
+<indexterm><primary>DiscogsService</primary></indexterm>
+<simplesect>
+    <title>Fonctions membres publiques    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_app_1_1_service_1_1_discogs_service_1ae1ee3eddd2a921ac5d35f71614386307">__construct</link> (HttpClientInterface $client, string $consumerKey, string $consumerSecret)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_service_1_1_discogs_service_1a14e1e0b11d4e2976862f1f60e6a20b64">searchAlbums</link> (string $searchTerm)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_service_1_1_discogs_service_1a59651c916adba385563e3ae914057b48">getAlbumDetails</link> (int $id)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Description détaillée</title>
+
+<para>Service pour interagir avec l&apos;API Discogs. </para>
+<para>
+Définition à la ligne <link linkend="__discogs_service_8php_source_1l00012">12</link> du fichier <link linkend="__discogs_service_8php_source">DiscogsService.php</link>.</para>
+</section>
+<section>
+<title>Documentation des constructeurs et destructeur</title>
+<anchor xml:id="_class_app_1_1_service_1_1_discogs_service_1ae1ee3eddd2a921ac5d35f71614386307"/><section>
+    <title>__construct()</title>
+<indexterm><primary>__construct</primary><secondary>DiscogsService</secondary></indexterm>
+<indexterm><primary>DiscogsService</primary><secondary>__construct</secondary></indexterm>
+<para><computeroutput>__construct (HttpClientInterface $client, string $consumerKey, string $consumerSecret)</computeroutput></para>
+<para>Constructeur du service Discogs. </para>
+<para>
+Définition à la ligne <link linkend="__discogs_service_8php_source_1l00033">33</link> du fichier <link linkend="__discogs_service_8php_source">DiscogsService.php</link>.</para>
+</section>
+</section>
+<section>
+<title>Documentation des fonctions membres</title>
+<anchor xml:id="_class_app_1_1_service_1_1_discogs_service_1a59651c916adba385563e3ae914057b48"/><section>
+    <title>getAlbumDetails()</title>
+<indexterm><primary>getAlbumDetails</primary><secondary>DiscogsService</secondary></indexterm>
+<indexterm><primary>DiscogsService</primary><secondary>getAlbumDetails</secondary></indexterm>
+<para><computeroutput>getAlbumDetails (int $id)</computeroutput></para>
+<para>Récupère les détails d&apos;un album par son ID. </para>
+<para>
+Définition à la ligne <link linkend="__discogs_service_8php_source_1l00062">62</link> du fichier <link linkend="__discogs_service_8php_source">DiscogsService.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_service_1_1_discogs_service_1a14e1e0b11d4e2976862f1f60e6a20b64"/><section>
+    <title>searchAlbums()</title>
+<indexterm><primary>searchAlbums</primary><secondary>DiscogsService</secondary></indexterm>
+<indexterm><primary>DiscogsService</primary><secondary>searchAlbums</secondary></indexterm>
+<para><computeroutput>searchAlbums (string $searchTerm)</computeroutput></para>
+<para>Recherche des albums correspondant à un terme. </para>
+<para>
+Définition à la ligne <link linkend="__discogs_service_8php_source_1l00043">43</link> du fichier <link linkend="__discogs_service_8php_source">DiscogsService.php</link>.</para>
+</section>
+<para>
+La documentation de cette classe a été générée à partir du fichier suivant :</para>
+Service/<link linkend="__discogs_service_8php">DiscogsService.php</link></section>
+</section>

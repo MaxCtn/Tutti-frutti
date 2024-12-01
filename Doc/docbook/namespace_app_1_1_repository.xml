@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespace_app_1_1_repository" xml:lang="fr">
+<title>Référence de l&apos;espace de nommage App\Repository</title>
+<indexterm><primary>App\Repository</primary></indexterm>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_class_app_1_1_repository_1_1_favorite_album_repository">FavoriteAlbumRepository</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_class_app_1_1_repository_1_1_format_repository">FormatRepository</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_class_app_1_1_repository_1_1_fruit_repository">FruitRepository</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_class_app_1_1_repository_1_1_genre_repository">GenreRepository</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_class_app_1_1_repository_1_1_label_repository">LabelRepository</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_class_app_1_1_repository_1_1_track_repository">TrackRepository</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_class_app_1_1_repository_1_1_user_repository">UserRepository</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

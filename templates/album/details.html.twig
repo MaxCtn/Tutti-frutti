@@ -12,6 +12,13 @@
             <p class="no-image">Pas d'image de couverture disponible.</p>
         {% endif %}
 
+        <!-- Affichage des informations supplémentaires -->
+        <div class="album-info mt-3">
+            <p><strong>Label :</strong> {{ album.label|default('Non renseigné') }}</p>
+            <p><strong>Format :</strong> {{ album.format|default('Non renseigné') }}</p>
+            <p><strong>Genre :</strong> {{ album.genre|default('Non renseigné') }}</p>
+        </div>
+
         <h2 class="section-title">Fruits associés</h2>
         <ul class="fruit-list">
             {% if album.fruits is defined and album.fruits|length > 0 %}

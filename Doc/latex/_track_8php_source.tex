@@ -1,0 +1,72 @@
+\doxysection{Track.\+php}
+\hypertarget{_track_8php_source}{}\label{_track_8php_source}\index{Entity/Track.php@{Entity/Track.php}}
+\mbox{\hyperlink{_track_8php}{Aller à la documentation de ce fichier.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00001}00001\ <?php}
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00003}00003\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_app_1_1_entity}{App\(\backslash\)Entity}};}
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00005}00005\ use\ \mbox{\hyperlink{class_app_1_1_repository_1_1_track_repository}{App\(\backslash\)Repository\(\backslash\)TrackRepository}};}
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00006}00006\ use\ Doctrine\(\backslash\)ORM\(\backslash\)Mapping\ as\ ORM;}
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00013}00013\ \textcolor{preprocessor}{\#[ORM\(\backslash\)Entity(repositoryClass:\ TrackRepository::class)]}}
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00014}\mbox{\hyperlink{class_app_1_1_entity_1_1_track}{00014}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_app_1_1_entity_1_1_track}{Track}}}
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00015}00015\ \{}
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00025}00025\ \textcolor{preprocessor}{\ \ \ \ \#[ORM\(\backslash\)Id]}}
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00026}00026\ \textcolor{preprocessor}{\ \ \ \ \#[ORM\(\backslash\)GeneratedValue]}}
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00027}00027\ \textcolor{preprocessor}{\ \ \ \ \#[ORM\(\backslash\)Column]}}
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00028}00028\ \ \ \ \ \textcolor{keyword}{private}\ ?\textcolor{keywordtype}{int}\ \$id\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00037}00037\ \textcolor{preprocessor}{\ \ \ \ \#[ORM\(\backslash\)Column(length:\ 255)]}}
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00038}00038\ \ \ \ \ \textcolor{keyword}{private}\ ?\textcolor{keywordtype}{string}\ \$title\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00047}00047\ \textcolor{preprocessor}{\ \ \ \ \#[ORM\(\backslash\)Column(length:\ 10,\ nullable:\ true)]}}
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00048}00048\ \ \ \ \ \textcolor{keyword}{private}\ ?\textcolor{keywordtype}{string}\ \$duration\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00058}00058\ \textcolor{preprocessor}{\ \ \ \ \#[ORM\(\backslash\)ManyToOne(targetEntity:\ FavoriteAlbum::class,\ inversedBy:\ 'tracks')]}}
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00059}00059\ \textcolor{preprocessor}{\ \ \ \ \#[ORM\(\backslash\)JoinColumn(nullable:\ false)]}}
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00060}00060\ \ \ \ \ \textcolor{keyword}{private}\ ?\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album}{FavoriteAlbum}}\ \$album\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00067}\mbox{\hyperlink{class_app_1_1_entity_1_1_track_a12251d0c022e9e21c137a105ff683f13}{00067}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{class_app_1_1_entity_1_1_track_a12251d0c022e9e21c137a105ff683f13}{getId}}():\ ?int}
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00068}00068\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$this-\/>id;}
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00070}00070\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00077}\mbox{\hyperlink{class_app_1_1_entity_1_1_track_a95e859a4588a39a1824b717378a84c29}{00077}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{class_app_1_1_entity_1_1_track_a95e859a4588a39a1824b717378a84c29}{getTitle}}():\ ?string}
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00078}00078\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00079}00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$this-\/>title;}
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00080}00080\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00089}\mbox{\hyperlink{class_app_1_1_entity_1_1_track_a754ef3032cc3ffb25ad2d1a13720fc29}{00089}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{class_app_1_1_entity_1_1_track_a754ef3032cc3ffb25ad2d1a13720fc29}{setTitle}}(\textcolor{keywordtype}{string}\ \$title):\ self}
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00090}00090\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00091}00091\ \ \ \ \ \ \ \ \ \$this-\/>title\ =\ \$title;}
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00093}00093\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$this;}
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00094}00094\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00101}\mbox{\hyperlink{class_app_1_1_entity_1_1_track_ab46fe3d2750728c84bd71ae1bfd08ee8}{00101}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{class_app_1_1_entity_1_1_track_ab46fe3d2750728c84bd71ae1bfd08ee8}{getDuration}}():\ ?string}
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00102}00102\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00103}00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$this-\/>duration;}
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00104}00104\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00113}\mbox{\hyperlink{class_app_1_1_entity_1_1_track_a65287da7b5aac781a43f0ed59b067985}{00113}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{class_app_1_1_entity_1_1_track_a65287da7b5aac781a43f0ed59b067985}{setDuration}}(?\textcolor{keywordtype}{string}\ \$duration):\ self}
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00114}00114\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00115}00115\ \ \ \ \ \ \ \ \ \$this-\/>duration\ =\ \$duration;}
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00117}00117\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$this;}
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00118}00118\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00125}\mbox{\hyperlink{class_app_1_1_entity_1_1_track_aee148d665bb21d0319499d90186605b2}{00125}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{class_app_1_1_entity_1_1_track_aee148d665bb21d0319499d90186605b2}{getAlbum}}():\ ?\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album}{FavoriteAlbum}}}
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00126}00126\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00127}00127\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$this-\/>album;}
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00128}00128\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00137}\mbox{\hyperlink{class_app_1_1_entity_1_1_track_a030b2e5bdc870ee346358efc28a59640}{00137}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{class_app_1_1_entity_1_1_track_a030b2e5bdc870ee346358efc28a59640}{setAlbum}}(?\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album}{FavoriteAlbum}}\ \$album):\ self}
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00138}00138\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00139}00139\ \ \ \ \ \ \ \ \ \$this-\/>album\ =\ \$album;}
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00140}00140\ }
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00141}00141\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$this;}
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00142}00142\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_track_8php_source_l00143}00143\ \}}
+
+\end{DoxyCode}

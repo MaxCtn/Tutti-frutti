@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_app_1_1_controller_1_1_registration_controller" xml:lang="fr">
+<title>Référence de la classe RegistrationController</title>
+<indexterm><primary>RegistrationController</primary></indexterm>
+Graphe d&apos;héritage de RegistrationController:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_app_1_1_controller_1_1_registration_controller__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Graphe de collaboration de RegistrationController:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_app_1_1_controller_1_1_registration_controller__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Fonctions membres publiques    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_app_1_1_controller_1_1_registration_controller_1a1548eef83bb4e0124f29edf8e8d19664">index</link> (Request $request, EntityManagerInterface $entityManager, UserPasswordHasherInterface $passwordHasher, TokenStorageInterface $tokenStorage, SessionInterface $session, SluggerInterface $slugger)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Description détaillée</title>
+<para>
+Définition à la ligne <link linkend="__registration_controller_8php_source_1l00020">20</link> du fichier <link linkend="__registration_controller_8php_source">RegistrationController.php</link>.</para>
+</section>
+<section>
+<title>Documentation des fonctions membres</title>
+<anchor xml:id="_class_app_1_1_controller_1_1_registration_controller_1a1548eef83bb4e0124f29edf8e8d19664"/><section>
+    <title>index()</title>
+<indexterm><primary>index</primary><secondary>RegistrationController</secondary></indexterm>
+<indexterm><primary>RegistrationController</primary><secondary>index</secondary></indexterm>
+<para><computeroutput>index (Request $request, EntityManagerInterface $entityManager, UserPasswordHasherInterface $passwordHasher, TokenStorageInterface $tokenStorage, SessionInterface $session, SluggerInterface $slugger)</computeroutput></para><para>
+Définition à la ligne <link linkend="__registration_controller_8php_source_1l00023">23</link> du fichier <link linkend="__registration_controller_8php_source">RegistrationController.php</link>.</para>
+</section>
+<para>
+La documentation de cette classe a été générée à partir du fichier suivant :</para>
+Controller/<link linkend="__registration_controller_8php">RegistrationController.php</link></section>
+</section>

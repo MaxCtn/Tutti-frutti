@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Tutti-frutti:  Fichier source de Command/UpdateFavoriteCoversCommand.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="IconFraise.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Tutti-frutti
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_308c8686e6bb6a50475f85d5ec3ea9a1.html">Command</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">UpdateFavoriteCoversCommand.php</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_update_favorite_covers_command_8php.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>&lt;?php</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_app_1_1_command.html">App\Command</a>;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>use Doctrine\ORM\EntityManagerInterface;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>use Symfony\Component\Console\Attribute\AsCommand;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>use Symfony\Component\Console\Command\Command;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>use Symfony\Component\Console\Input\InputInterface;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>use Symfony\Component\Console\Output\OutputInterface;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#[AsCommand(</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="namespace_app_1_1_command.html#a36342860613418f919ffbf3aa4246442">   15</a></span>    name: <span class="stringliteral">&#39;app:update-favorite-covers&#39;</span>,</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="namespace_app_1_1_command.html#a019d6bb8fecdb887367f54757fa14d4d">   16</a></span>    <a class="code hl_variable" href="namespace_app_1_1_command.html#a019d6bb8fecdb887367f54757fa14d4d">description</a>: <span class="stringliteral">&#39;Met à jour les images par défaut pour les albums favoris sans image.&#39;</span>,</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>)]</div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="};">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_app_1_1_command_1_1_update_favorite_covers_command.html">   18</a></span><span class="keyword">class</span> <a class="code hl_class" href="class_app_1_1_command_1_1_update_favorite_covers_command.html">UpdateFavoriteCoversCommand</a> extends Command</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>{</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">private</span> EntityManagerInterface $entityManager;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="foldopen" id="foldopen00032" data-start="{" data-end="}">
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="class_app_1_1_command_1_1_update_favorite_covers_command.html#abb5fb9a65dd8a81e7482dddbf71c5177">   32</a></span>    <span class="keyword">public</span> <span class="keyword">function</span> <a class="code hl_function" href="class_app_1_1_command_1_1_update_favorite_covers_command.html#abb5fb9a65dd8a81e7482dddbf71c5177">__construct</a>(EntityManagerInterface $entityManager)</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        parent::__construct();</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        $this-&gt;entityManager = $entityManager;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    }</div>
+</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="foldopen" id="foldopen00046" data-start="{" data-end="}">
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="class_app_1_1_command_1_1_update_favorite_covers_command.html#ab31c72b72ddaf7116db5d84c055d3c0b">   46</a></span>    <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code hl_function" href="class_app_1_1_command_1_1_update_favorite_covers_command.html#ab31c72b72ddaf7116db5d84c055d3c0b">execute</a>(InputInterface $input, OutputInterface $output): int</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="comment">// URL de l&#39;image par défaut à utiliser pour les albums sans image</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        $defaultCoverImage = <span class="stringliteral">&#39;https://via.placeholder.com/150&#39;</span>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="comment">// Sélectionner les albums favoris sans image ou avec une image vide</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        $query = $this-&gt;entityManager-&gt;createQuery(</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            <span class="stringliteral">&#39;SELECT fa.id, fa.albumId, fa.title, fa.coverImage </span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="stringliteral">             FROM App\Entity\FavoriteAlbum fa </span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="stringliteral">             WHERE fa.coverImage IS NULL OR TRIM(fa.coverImage) = \&#39;\&#39;&#39;</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        );</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        $albumsWithoutCovers = $query-&gt;getResult();</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keywordflow">if</span> (empty($albumsWithoutCovers)) {</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            $output-&gt;writeln(<span class="stringliteral">&#39;&lt;info&gt;Aucune ligne à mettre à jour.&lt;/info&gt;&#39;</span>);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            <span class="keywordflow">return</span> Command::SUCCESS;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        }</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="comment">// Afficher les albums affectés avant la mise à jour</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        $output-&gt;writeln(<span class="stringliteral">&#39;&lt;info&gt;Albums sans image :&lt;/info&gt;&#39;</span>);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="keywordflow">foreach</span> ($albumsWithoutCovers as $album) {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            $output-&gt;writeln(sprintf(</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                <span class="stringliteral">&#39;ID: %d | Album ID: %d | Titre: %s | Image: %s&#39;</span>,</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                $album[<span class="stringliteral">&#39;id&#39;</span>],</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                $album[<span class="stringliteral">&#39;albumId&#39;</span>],</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                $album[<span class="stringliteral">&#39;title&#39;</span>] ?? <span class="stringliteral">&#39;Titre inconnu&#39;</span>,</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                $album[<span class="stringliteral">&#39;coverImage&#39;</span>] ?? <span class="stringliteral">&#39;NULL&#39;</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            ));</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        }</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <span class="comment">// Mettre à jour les albums avec l&#39;image par défaut</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        $updateQuery = $this-&gt;entityManager-&gt;createQuery(</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            <span class="stringliteral">&#39;UPDATE App\Entity\FavoriteAlbum fa </span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="stringliteral">             SET fa.coverImage = :defaultImage </span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="stringliteral">             WHERE fa.coverImage IS NULL OR TRIM(fa.coverImage) = \&#39;\&#39;&#39;</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        )-&gt;setParameter(<span class="stringliteral">&#39;defaultImage&#39;</span>, $defaultCoverImage);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        $rowsUpdated = $updateQuery-&gt;execute();</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        $output-&gt;writeln(sprintf(<span class="stringliteral">&#39;&lt;info&gt;Mise à jour terminée. Nombre de lignes mises à jour : %d&lt;/info&gt;&#39;</span>, $rowsUpdated));</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        <span class="keywordflow">return</span> Command::SUCCESS;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    }</div>
+</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>}</div>
+</div>
+<div class="ttc" id="aclass_app_1_1_command_1_1_update_favorite_covers_command_html"><div class="ttname"><a href="class_app_1_1_command_1_1_update_favorite_covers_command.html">App\Command\UpdateFavoriteCoversCommand</a></div><div class="ttdef"><b>Definition</b> <a href="#l00018">UpdateFavoriteCoversCommand.php:19</a></div></div>
+<div class="ttc" id="aclass_app_1_1_command_1_1_update_favorite_covers_command_html_ab31c72b72ddaf7116db5d84c055d3c0b"><div class="ttname"><a href="class_app_1_1_command_1_1_update_favorite_covers_command.html#ab31c72b72ddaf7116db5d84c055d3c0b">App\Command\UpdateFavoriteCoversCommand\execute</a></div><div class="ttdeci">execute(InputInterface $input, OutputInterface $output)</div><div class="ttdef"><b>Definition</b> <a href="#l00046">UpdateFavoriteCoversCommand.php:46</a></div></div>
+<div class="ttc" id="aclass_app_1_1_command_1_1_update_favorite_covers_command_html_abb5fb9a65dd8a81e7482dddbf71c5177"><div class="ttname"><a href="class_app_1_1_command_1_1_update_favorite_covers_command.html#abb5fb9a65dd8a81e7482dddbf71c5177">App\Command\UpdateFavoriteCoversCommand\__construct</a></div><div class="ttdeci">__construct(EntityManagerInterface $entityManager)</div><div class="ttdef"><b>Definition</b> <a href="#l00032">UpdateFavoriteCoversCommand.php:32</a></div></div>
+<div class="ttc" id="anamespace_app_1_1_command_html"><div class="ttname"><a href="namespace_app_1_1_command.html">App\Command</a></div><div class="ttdef"><b>Definition</b> <a href="_test_discogs_command_8php_source.html#l00003">TestDiscogsCommand.php:3</a></div></div>
+<div class="ttc" id="anamespace_app_1_1_command_html_a019d6bb8fecdb887367f54757fa14d4d"><div class="ttname"><a href="namespace_app_1_1_command.html#a019d6bb8fecdb887367f54757fa14d4d">App\Command\description</a></div><div class="ttdeci">name description</div><div class="ttdef"><b>Definition</b> <a href="#l00016">UpdateFavoriteCoversCommand.php:16</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

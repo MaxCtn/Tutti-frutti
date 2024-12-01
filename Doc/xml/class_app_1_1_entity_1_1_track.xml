@@ -1,0 +1,260 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="fr">
+  <compounddef id="class_app_1_1_entity_1_1_track" kind="class" language="PHP" prot="public">
+    <compoundname>App::Entity::Track</compoundname>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_app_1_1_entity_1_1_track_1a3587bd00e5602c1800515b6f9ffbebc5" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int $id</definition>
+        <argsstring></argsstring>
+        <name>$id</name>
+        <qualifiedname>App\Entity\Track\$id</qualifiedname>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/Track.php" line="28" column="17" bodyfile="Entity/Track.php" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_app_1_1_entity_1_1_track_1a5ef02115477cfad473df2455da5a908e" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string $title</definition>
+        <argsstring></argsstring>
+        <name>$title</name>
+        <qualifiedname>App\Entity\Track\$title</qualifiedname>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/Track.php" line="38" column="20" bodyfile="Entity/Track.php" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_app_1_1_entity_1_1_track_1ae540bfd1b3033e6ba55b5f42df843af3" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string $duration</definition>
+        <argsstring></argsstring>
+        <name>$duration</name>
+        <qualifiedname>App\Entity\Track\$duration</qualifiedname>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/Track.php" line="48" column="20" bodyfile="Entity/Track.php" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_app_1_1_entity_1_1_track_1ac56949ecef6d1b57b2f4be2ba05e2d11" prot="private" static="no" mutable="no">
+        <type><ref refid="class_app_1_1_entity_1_1_favorite_album" kindref="compound">FavoriteAlbum</ref></type>
+        <definition>FavoriteAlbum $album</definition>
+        <argsstring></argsstring>
+        <name>$album</name>
+        <qualifiedname>App\Entity\Track\$album</qualifiedname>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/Track.php" line="60" column="27" bodyfile="Entity/Track.php" bodystart="60" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_track_1a12251d0c022e9e21c137a105ff683f13" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>getId</definition>
+        <argsstring>()</argsstring>
+        <name>getId</name>
+        <qualifiedname>App\Entity\Track\getId</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Obtient l&apos;identifiant unique de la piste.</para>
+<para><simplesect kind="return"><para>int|null L&apos;identifiant de la piste. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/Track.php" line="67" column="21" bodyfile="Entity/Track.php" bodystart="67" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_track_1a95e859a4588a39a1824b717378a84c29" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>getTitle</definition>
+        <argsstring>()</argsstring>
+        <name>getTitle</name>
+        <qualifiedname>App\Entity\Track\getTitle</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Obtient le titre de la piste.</para>
+<para><simplesect kind="return"><para>string|null Le titre de la piste. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/Track.php" line="77" column="21" bodyfile="Entity/Track.php" bodystart="77" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_track_1a754ef3032cc3ffb25ad2d1a13720fc29" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>setTitle</definition>
+        <argsstring>(string $title)</argsstring>
+        <name>setTitle</name>
+        <qualifiedname>App\Entity\Track\setTitle</qualifiedname>
+        <param>
+          <type>string</type>
+          <declname>$title</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Définit le titre de la piste.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$title</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Le titre de la piste.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>self </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/Track.php" line="89" column="21" bodyfile="Entity/Track.php" bodystart="89" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_track_1ab46fe3d2750728c84bd71ae1bfd08ee8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>getDuration</definition>
+        <argsstring>()</argsstring>
+        <name>getDuration</name>
+        <qualifiedname>App\Entity\Track\getDuration</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Obtient la durée de la piste au format &quot;mm:ss&quot;.</para>
+<para><simplesect kind="return"><para>string|null La durée de la piste. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/Track.php" line="101" column="21" bodyfile="Entity/Track.php" bodystart="101" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_track_1a65287da7b5aac781a43f0ed59b067985" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>setDuration</definition>
+        <argsstring>(?string $duration)</argsstring>
+        <name>setDuration</name>
+        <qualifiedname>App\Entity\Track\setDuration</qualifiedname>
+        <param>
+          <type>?string</type>
+          <declname>$duration</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Définit la durée de la piste au format &quot;mm:ss&quot;.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametertype>null</parametertype>
+<parametername>$duration</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>La durée de la piste.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>self </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/Track.php" line="113" column="21" bodyfile="Entity/Track.php" bodystart="113" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_track_1aee148d665bb21d0319499d90186605b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>getAlbum</definition>
+        <argsstring>()</argsstring>
+        <name>getAlbum</name>
+        <qualifiedname>App\Entity\Track\getAlbum</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Obtient l&apos;album favori auquel appartient la piste.</para>
+<para><simplesect kind="return"><para>FavoriteAlbum|null L&apos;album favori. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/Track.php" line="125" column="21" bodyfile="Entity/Track.php" bodystart="125" bodyend="128"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_track_1a030b2e5bdc870ee346358efc28a59640" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>setAlbum</definition>
+        <argsstring>(?FavoriteAlbum $album)</argsstring>
+        <name>setAlbum</name>
+        <qualifiedname>App\Entity\Track\setAlbum</qualifiedname>
+        <param>
+          <type>?<ref refid="class_app_1_1_entity_1_1_favorite_album" kindref="compound">FavoriteAlbum</ref></type>
+          <declname>$album</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Définit l&apos;album favori auquel appartient la piste.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>FavoriteAlbum</parametertype>
+<parametertype>null</parametertype>
+<parametername>$album</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>L&apos;album favori.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>self </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/Track.php" line="137" column="21" bodyfile="Entity/Track.php" bodystart="137" bodyend="142"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Entité représentant une piste (track) d&apos;un album favori.</para>
+<para>@ORM\Entity(repositoryClass=TrackRepository::class) </para>
+    </detaileddescription>
+    <location file="Entity/Track.php" line="14" column="1" bodyfile="Entity/Track.php" bodystart="15" bodyend="143"/>
+    <listofallmembers>
+      <member refid="class_app_1_1_entity_1_1_track_1ac56949ecef6d1b57b2f4be2ba05e2d11" prot="private" virt="non-virtual"><scope>App::Entity::Track</scope><name>$album</name></member>
+      <member refid="class_app_1_1_entity_1_1_track_1ae540bfd1b3033e6ba55b5f42df843af3" prot="private" virt="non-virtual"><scope>App::Entity::Track</scope><name>$duration</name></member>
+      <member refid="class_app_1_1_entity_1_1_track_1a3587bd00e5602c1800515b6f9ffbebc5" prot="private" virt="non-virtual"><scope>App::Entity::Track</scope><name>$id</name></member>
+      <member refid="class_app_1_1_entity_1_1_track_1a5ef02115477cfad473df2455da5a908e" prot="private" virt="non-virtual"><scope>App::Entity::Track</scope><name>$title</name></member>
+      <member refid="class_app_1_1_entity_1_1_track_1aee148d665bb21d0319499d90186605b2" prot="public" virt="non-virtual"><scope>App::Entity::Track</scope><name>getAlbum</name></member>
+      <member refid="class_app_1_1_entity_1_1_track_1ab46fe3d2750728c84bd71ae1bfd08ee8" prot="public" virt="non-virtual"><scope>App::Entity::Track</scope><name>getDuration</name></member>
+      <member refid="class_app_1_1_entity_1_1_track_1a12251d0c022e9e21c137a105ff683f13" prot="public" virt="non-virtual"><scope>App::Entity::Track</scope><name>getId</name></member>
+      <member refid="class_app_1_1_entity_1_1_track_1a95e859a4588a39a1824b717378a84c29" prot="public" virt="non-virtual"><scope>App::Entity::Track</scope><name>getTitle</name></member>
+      <member refid="class_app_1_1_entity_1_1_track_1a030b2e5bdc870ee346358efc28a59640" prot="public" virt="non-virtual"><scope>App::Entity::Track</scope><name>setAlbum</name></member>
+      <member refid="class_app_1_1_entity_1_1_track_1a65287da7b5aac781a43f0ed59b067985" prot="public" virt="non-virtual"><scope>App::Entity::Track</scope><name>setDuration</name></member>
+      <member refid="class_app_1_1_entity_1_1_track_1a754ef3032cc3ffb25ad2d1a13720fc29" prot="public" virt="non-virtual"><scope>App::Entity::Track</scope><name>setTitle</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

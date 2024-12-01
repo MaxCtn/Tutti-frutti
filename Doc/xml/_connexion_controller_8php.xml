@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="fr">
+  <compounddef id="_connexion_controller_8php" kind="file" language="PHP">
+    <compoundname>ConnexionController.php</compoundname>
+    <innerclass refid="class_app_1_1_controller_1_1_connexion_controller" prot="public">App::Controller::ConnexionController</innerclass>
+    <innernamespace refid="namespace_app_1_1_controller">App::Controller</innernamespace>
+    <innernamespace refid="namespace_symfony_1_1_component_1_1_security_1_1_http_1_1_authentication_1_1_authentication_utils">Symfony::Component::Security::Http::Authentication::AuthenticationUtils</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;?php</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_app_1_1_controller" kindref="compound">App\Controller</ref>;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal">use<sp/>Symfony\Bundle\FrameworkBundle\Controller\AbstractController;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal">use<sp/>Symfony\Component\HttpFoundation\Response;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal">use<sp/>Symfony\Component\Routing\Annotation\Route;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal">use<sp/>Symfony\Component\Security\Http\Authentication\AuthenticationUtils;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="class_app_1_1_controller_1_1_connexion_controller" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_app_1_1_controller_1_1_connexion_controller" kindref="compound">ConnexionController</ref><sp/></highlight><highlight class="keyword">extends</highlight><highlight class="normal"><sp/>AbstractController</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#[Route(path:<sp/>&apos;/login&apos;,<sp/>name:<sp/>&apos;app_login&apos;)]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="class_app_1_1_controller_1_1_connexion_controller_1a0c05ef8ddb2188649a9972a35f3c3512" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="class_app_1_1_controller_1_1_connexion_controller_1a0c05ef8ddb2188649a9972a35f3c3512" kindref="member">login</ref>(AuthenticationUtils<sp/>$authenticationUtils):<sp/>Response</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Récupérer<sp/>l&apos;e-mail<sp/>à<sp/>partir<sp/>de<sp/>la<sp/>session</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$lastEmail<sp/>=<sp/>$authenticationUtils-&gt;getLastUsername();</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Récupérer<sp/>l&apos;erreur<sp/>de<sp/>connexion,<sp/>le<sp/>cas<sp/>échéant</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$error<sp/>=<sp/>$authenticationUtils-&gt;getLastAuthenticationError();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>$this-&gt;render(</highlight><highlight class="stringliteral">&apos;security/login.html.twig&apos;</highlight><highlight class="normal">,<sp/>[</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;last_email&apos;</highlight><highlight class="normal"><sp/>=&gt;<sp/>$lastEmail,</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;error&apos;</highlight><highlight class="normal"><sp/>=&gt;<sp/>$error</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>]);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#[Route(path:<sp/>&apos;/logout&apos;,<sp/>name:<sp/>&apos;app_logout&apos;)]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="class_app_1_1_controller_1_1_connexion_controller_1a082405d89acd6835c3a7c7a08a7adbab" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="class_app_1_1_controller_1_1_connexion_controller_1a082405d89acd6835c3a7c7a08a7adbab" kindref="member">logout</ref>():<sp/>void</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Cette<sp/>méthode<sp/>peut<sp/>être<sp/>laissée<sp/>vide,<sp/>car<sp/>elle<sp/>est<sp/>interceptée<sp/>par<sp/>le<sp/>pare-feu<sp/>de<sp/>sécurité</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>new<sp/>\LogicException(</highlight><highlight class="stringliteral">&apos;Cette<sp/>méthode<sp/>peut<sp/>être<sp/>vide<sp/>-<sp/>elle<sp/>sera<sp/>interceptée<sp/>par<sp/>la<sp/>clé<sp/>logout<sp/>de<sp/>votre<sp/>pare-feu.&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Controller/ConnexionController.php"/>
+  </compounddef>
+</doxygen>

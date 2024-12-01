@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__home_controller_8php_source" xml:lang="fr">
+<title>HomeController.php</title>
+<indexterm><primary>Controller/HomeController.php</primary></indexterm>
+Aller à la documentation de ce fichier.<programlisting linenumbering="unnumbered"><anchor xml:id="__home_controller_8php_source_1l00001"/>00001 &lt;?php
+<anchor xml:id="__home_controller_8php_source_1l00002"/>00002 
+<anchor xml:id="__home_controller_8php_source_1l00003"/>00003 <emphasis role="comment">//&#32;src/Controller/HomeController.php</emphasis>
+<anchor xml:id="__home_controller_8php_source_1l00004"/>00004 
+<anchor xml:id="__home_controller_8php_source_1l00005"/>00005 <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespace_app_1_1_controller">App\Controller</link>;
+<anchor xml:id="__home_controller_8php_source_1l00006"/>00006 
+<anchor xml:id="__home_controller_8php_source_1l00007"/>00007 use&#32;Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+<anchor xml:id="__home_controller_8php_source_1l00008"/>00008 use&#32;Symfony\Component\HttpFoundation\Response;
+<anchor xml:id="__home_controller_8php_source_1l00009"/>00009 use&#32;Symfony\Component\Routing\Annotation\Route;
+<anchor xml:id="__home_controller_8php_source_1l00010"/>00010 
+<anchor xml:id="__home_controller_8php_source_1l00014"/><link linkend="_class_app_1_1_controller_1_1_home_controller">00014</link> <emphasis role="keyword">class&#32;</emphasis><link linkend="_class_app_1_1_controller_1_1_home_controller">HomeController</link>&#32;<emphasis role="keyword">extends</emphasis>&#32;AbstractController
+<anchor xml:id="__home_controller_8php_source_1l00015"/>00015 {
+<anchor xml:id="__home_controller_8php_source_1l00023"/>00023 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;#[Route(&apos;/&apos;,&#32;name:&#32;&apos;app_home&apos;)]</emphasis>
+<anchor xml:id="__home_controller_8php_source_1l00024"/><link linkend="_class_app_1_1_controller_1_1_home_controller_1a149eb92716c1084a935e04a8d95f7347">00024</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_controller_1_1_home_controller_1a149eb92716c1084a935e04a8d95f7347">index</link>():&#32;Response
+<anchor xml:id="__home_controller_8php_source_1l00025"/>00025 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__home_controller_8php_source_1l00026"/>00026 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this-&gt;render(<emphasis role="stringliteral">&apos;home/index.html.twig&apos;</emphasis>);
+<anchor xml:id="__home_controller_8php_source_1l00027"/>00027 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__home_controller_8php_source_1l00028"/>00028 }
+</programlisting></section>

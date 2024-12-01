@@ -1,0 +1,140 @@
+.TH "Fruit" 3 "Tutti-frutti" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Fruit
+.SH SYNOPSIS
+.br
+.PP
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fB__construct\fP ()"
+.br
+.ti -1c
+.RI "\fBgetId\fP ()"
+.br
+.ti -1c
+.RI "\fBgetName\fP ()"
+.br
+.ti -1c
+.RI "\fBsetName\fP (string $name)"
+.br
+.ti -1c
+.RI "\fBgetAlbums\fP ()"
+.br
+.ti -1c
+.RI "\fBaddAlbum\fP (\fBFavoriteAlbum\fP $album)"
+.br
+.ti -1c
+.RI "\fBremoveAlbum\fP (\fBFavoriteAlbum\fP $album)"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Entité représentant un fruit associé à des albums favoris\&.
+
+.PP
+@ORM\\Entity(repositoryClass=FruitRepository::class) 
+.PP
+Définition à la ligne \fB16\fP du fichier \fBFruit\&.php\fP\&.
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "__construct ()"
+Constructeur de la classe Fruit\&. Initialise la collection des albums favoris\&. 
+.PP
+Définition à la ligne \fB56\fP du fichier \fBFruit\&.php\fP\&.
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "addAlbum (\fBFavoriteAlbum\fP $album)"
+Ajoute un album favori à la collection associée à ce fruit\&.
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$album\fP L'album favori à ajouter\&.
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+self 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB112\fP du fichier \fBFruit\&.php\fP\&.
+.SS "getAlbums ()"
+Obtient la collection des albums favoris associés à ce fruit\&.
+
+.PP
+\fBRenvoie\fP
+.RS 4
+Collection<int, FavoriteAlbum> La collection des albums favoris\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB100\fP du fichier \fBFruit\&.php\fP\&.
+.SS "getId ()"
+Obtient l'identifiant unique du fruit\&.
+
+.PP
+\fBRenvoie\fP
+.RS 4
+int|null L'identifiant du fruit\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB66\fP du fichier \fBFruit\&.php\fP\&.
+.SS "getName ()"
+Obtient le nom du fruit\&.
+
+.PP
+\fBRenvoie\fP
+.RS 4
+string|null Le nom du fruit\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB76\fP du fichier \fBFruit\&.php\fP\&.
+.SS "removeAlbum (\fBFavoriteAlbum\fP $album)"
+Retire un album favori de la collection associée à ce fruit\&.
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$album\fP L'album favori à retirer\&.
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+self 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB129\fP du fichier \fBFruit\&.php\fP\&.
+.SS "setName (string $name)"
+Définit le nom du fruit\&.
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$name\fP Le nom du fruit\&.
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+self 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB88\fP du fichier \fBFruit\&.php\fP\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Tutti-frutti à partir du code source\&.

@@ -46,7 +46,7 @@ class Fruit
      *
      * @ORM\ManyToMany(mappedBy="fruits", targetEntity=FavoriteAlbum::class)
      */
-    #[ORM\ManyToMany(mappedBy: 'fruits', targetEntity: FavoriteAlbum::class)]
+    #[ORM\ManyToMany(targetEntity: FavoriteAlbum::class, mappedBy: 'fruits')]
     private Collection $albums;
 
     /**

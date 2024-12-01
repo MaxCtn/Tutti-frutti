@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_app_1_1_data_fixtures_1_1_app_fixtures" xml:lang="fr">
+<title>Référence de la classe AppFixtures</title>
+<indexterm><primary>AppFixtures</primary></indexterm>
+Graphe d&apos;héritage de AppFixtures:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_app_1_1_data_fixtures_1_1_app_fixtures__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Graphe de collaboration de AppFixtures:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_app_1_1_data_fixtures_1_1_app_fixtures__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Fonctions membres publiques    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_app_1_1_data_fixtures_1_1_app_fixtures_1acb7929747e63056fbc9e2892615c18b2">load</link> (ObjectManager $manager)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Description détaillée</title>
+
+<para>Classe AppFixtures utilisée pour charger des données factices (fixtures) dans la base de données. Elle est exécutée lors de la commande <computeroutput>php bin/console doctrine:fixtures:load</computeroutput>. </para>
+<para>
+Définition à la ligne <link linkend="__app_fixtures_8php_source_1l00012">12</link> du fichier <link linkend="__app_fixtures_8php_source">AppFixtures.php</link>.</para>
+</section>
+<section>
+<title>Documentation des fonctions membres</title>
+<anchor xml:id="_class_app_1_1_data_fixtures_1_1_app_fixtures_1acb7929747e63056fbc9e2892615c18b2"/><section>
+    <title>load()</title>
+<indexterm><primary>load</primary><secondary>AppFixtures</secondary></indexterm>
+<indexterm><primary>AppFixtures</primary><secondary>load</secondary></indexterm>
+<para><computeroutput>load (ObjectManager $manager)</computeroutput></para>
+<para>Méthode chargée de créer et de persister les entités de test dans la base de données.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Paramètres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>ObjectManager</entry><entry>$manager</entry><entry>
+<para>Le gestionnaire d&apos;entités Doctrine. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Définition à la ligne <link linkend="__app_fixtures_8php_source_1l00019">19</link> du fichier <link linkend="__app_fixtures_8php_source">AppFixtures.php</link>.</para>
+</section>
+<para>
+La documentation de cette classe a été générée à partir du fichier suivant :</para>
+DataFixtures/<link linkend="__app_fixtures_8php">AppFixtures.php</link></section>
+</section>

@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="fr">
+  <compounddef id="_test_discogs_command_8php" kind="file" language="PHP">
+    <compoundname>TestDiscogsCommand.php</compoundname>
+    <innerclass refid="class_app_1_1_command_1_1_test_discogs_command" prot="public">App::Command::TestDiscogsCommand</innerclass>
+    <innernamespace refid="namespace_app_1_1_command">App::Command</innernamespace>
+    <innernamespace refid="namespace_symfony_1_1_component_1_1_console_1_1_attribute_1_1_as_command">Symfony::Component::Console::Attribute::AsCommand</innernamespace>
+    <innernamespace refid="namespace_symfony_1_1_component_1_1_console_1_1_command_1_1_command">Symfony::Component::Console::Command::Command</innernamespace>
+    <innernamespace refid="namespace_symfony_1_1_component_1_1_console_1_1_input_1_1_input_argument">Symfony::Component::Console::Input::InputArgument</innernamespace>
+    <innernamespace refid="namespace_symfony_1_1_component_1_1_console_1_1_input_1_1_input_interface">Symfony::Component::Console::Input::InputInterface</innernamespace>
+    <innernamespace refid="namespace_symfony_1_1_component_1_1_console_1_1_output_1_1_output_interface">Symfony::Component::Console::Output::OutputInterface</innernamespace>
+    <innernamespace refid="namespace_symfony_1_1_contracts_1_1_http_client_1_1_http_client_interface">Symfony::Contracts::HttpClient::HttpClientInterface</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;?php</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3" refid="namespace_app_1_1_command" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_app_1_1_command" kindref="compound">App\Command</ref>;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal">use<sp/>Symfony\Component\Console\Attribute\AsCommand;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal">use<sp/>Symfony\Component\Console\Command\Command;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal">use<sp/>Symfony\Component\Console\Input\InputArgument;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal">use<sp/>Symfony\Component\Console\Input\InputInterface;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal">use<sp/>Symfony\Component\Console\Output\OutputInterface;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal">use<sp/>Symfony\Contracts\HttpClient\HttpClientInterface;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#[AsCommand(name:<sp/>&apos;app:test-discogs&apos;)]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="class_app_1_1_command_1_1_test_discogs_command" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_app_1_1_command_1_1_test_discogs_command" kindref="compound">TestDiscogsCommand</ref><sp/></highlight><highlight class="keyword">extends</highlight><highlight class="normal"><sp/>Command</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/>HttpClientInterface<sp/>$httpClient;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>$discogsConsumerKey;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>$discogsConsumerSecret;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="class_app_1_1_command_1_1_test_discogs_command_1afa9245fce697aa62d74b949139a10612" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="class_app_1_1_command_1_1_test_discogs_command_1afa9245fce697aa62d74b949139a10612" kindref="member">__construct</ref>(HttpClientInterface<sp/>$httpClient)</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$this-&gt;httpClient<sp/>=<sp/>$httpClient;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$this-&gt;discogsConsumerKey<sp/>=<sp/>$_ENV[</highlight><highlight class="stringliteral">&apos;DISCOGS_CONSUMER_KEY&apos;</highlight><highlight class="normal">]<sp/>??<sp/>getenv(</highlight><highlight class="stringliteral">&apos;DISCOGS_CONSUMER_KEY&apos;</highlight><highlight class="normal">)<sp/>??<sp/></highlight><highlight class="stringliteral">&apos;&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$this-&gt;discogsConsumerSecret<sp/>=<sp/>$_ENV[</highlight><highlight class="stringliteral">&apos;DISCOGS_CONSUMER_SECRET&apos;</highlight><highlight class="normal">]<sp/>??<sp/>getenv(</highlight><highlight class="stringliteral">&apos;DISCOGS_CONSUMER_SECRET&apos;</highlight><highlight class="normal">)<sp/>??<sp/></highlight><highlight class="stringliteral">&apos;&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!$this-&gt;discogsConsumerKey<sp/>||<sp/>!$this-&gt;discogsConsumerSecret)<sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>new<sp/>\RuntimeException(</highlight><highlight class="stringliteral">&apos;Les<sp/>clés<sp/>API<sp/>Discogs<sp/>(DISCOGS_CONSUMER_KEY<sp/>et<sp/>DISCOGS_CONSUMER_SECRET)<sp/>ne<sp/>sont<sp/>pas<sp/>définies.&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>parent::__construct();</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="class_app_1_1_command_1_1_test_discogs_command_1a9be5e0bdb5720efed6ddb6426c5c16ee" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="class_app_1_1_command_1_1_test_discogs_command_1a9be5e0bdb5720efed6ddb6426c5c16ee" kindref="member">configure</ref>():<sp/>void</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$this</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-&gt;setDescription(</highlight><highlight class="stringliteral">&apos;Teste<sp/>la<sp/>connexion<sp/>à<sp/>l\&apos;API<sp/>Discogs<sp/>en<sp/>effectuant<sp/>une<sp/>recherche.&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-&gt;addArgument(</highlight><highlight class="stringliteral">&apos;page&apos;</highlight><highlight class="normal">,<sp/>InputArgument::OPTIONAL,<sp/></highlight><highlight class="stringliteral">&apos;Numéro<sp/>de<sp/>la<sp/>page<sp/>à<sp/>afficher&apos;</highlight><highlight class="normal">,<sp/>1);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="class_app_1_1_command_1_1_test_discogs_command_1ab31c72b72ddaf7116db5d84c055d3c0b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="class_app_1_1_command_1_1_test_discogs_command_1ab31c72b72ddaf7116db5d84c055d3c0b" kindref="member">execute</ref>(InputInterface<sp/>$input,<sp/>OutputInterface<sp/>$output):<sp/>int</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$page<sp/>=<sp/>(int)<sp/>$input-&gt;getArgument(</highlight><highlight class="stringliteral">&apos;page&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$perPage<sp/>=<sp/>10;<sp/></highlight><highlight class="comment">//<sp/>Nombre<sp/>de<sp/>résultats<sp/>par<sp/>page</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Effectue<sp/>une<sp/>requête<sp/>GET<sp/>à<sp/>l&apos;API<sp/>Discogs<sp/>pour<sp/>rechercher<sp/>le<sp/>mot-clé<sp/>&apos;banana&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$response<sp/>=<sp/>$this-&gt;httpClient-&gt;request(</highlight><highlight class="stringliteral">&apos;GET&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;https://api.discogs.com/database/search&apos;</highlight><highlight class="normal">,<sp/>[</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;query&apos;</highlight><highlight class="normal"><sp/>=&gt;<sp/>[</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="charliteral">&apos;q&apos;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&apos;banana&apos;</highlight><highlight class="normal">,<sp/><sp/></highlight><highlight class="comment">//<sp/>Mot-clé<sp/>de<sp/>recherche</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;key&apos;</highlight><highlight class="normal"><sp/>=&gt;<sp/>$this-&gt;discogsConsumerKey,</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;secret&apos;</highlight><highlight class="normal"><sp/>=&gt;<sp/>$this-&gt;discogsConsumerSecret,</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;page&apos;</highlight><highlight class="normal"><sp/>=&gt;<sp/>$page,</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;per_page&apos;</highlight><highlight class="normal"><sp/>=&gt;<sp/>$perPage,</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>],</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>]);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Convertit<sp/>la<sp/>réponse<sp/>en<sp/>tableau</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$data<sp/>=<sp/>$response-&gt;toArray();</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Affiche<sp/>les<sp/>résultats<sp/>de<sp/>la<sp/>recherche</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$output-&gt;writeln(</highlight><highlight class="stringliteral">&quot;Résultats<sp/>de<sp/>recherche<sp/>pour<sp/>&apos;banana&apos;<sp/>-<sp/>Page<sp/>$page:&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">foreach</highlight><highlight class="normal"><sp/>($data[</highlight><highlight class="stringliteral">&apos;results&apos;</highlight><highlight class="normal">]<sp/>as<sp/>$result)<sp/>{</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$output-&gt;writeln($result[</highlight><highlight class="stringliteral">&apos;title&apos;</highlight><highlight class="normal">]);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Affiche<sp/>les<sp/>informations<sp/>de<sp/>pagination</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$output-&gt;writeln(</highlight><highlight class="stringliteral">&quot;\nPage<sp/>$page<sp/>sur<sp/>&quot;</highlight><highlight class="normal"><sp/>.<sp/>$data[</highlight><highlight class="stringliteral">&apos;pagination&apos;</highlight><highlight class="normal">][</highlight><highlight class="stringliteral">&apos;pages&apos;</highlight><highlight class="normal">]);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>($page<sp/>&lt;<sp/>$data[</highlight><highlight class="stringliteral">&apos;pagination&apos;</highlight><highlight class="normal">][</highlight><highlight class="stringliteral">&apos;pages&apos;</highlight><highlight class="normal">])<sp/>{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$output-&gt;writeln(</highlight><highlight class="stringliteral">&apos;Pour<sp/>voir<sp/>la<sp/>page<sp/>suivante,<sp/>lancez<sp/>:&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$output-&gt;writeln(</highlight><highlight class="stringliteral">&apos;php<sp/>bin/console<sp/>app:test-discogs<sp/>&apos;</highlight><highlight class="normal"><sp/>.<sp/>($page<sp/>+<sp/>1));</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$output-&gt;writeln(</highlight><highlight class="stringliteral">&quot;Fin<sp/>des<sp/>résultats.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Command::SUCCESS;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(\Exception<sp/>$e)<sp/>{</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Gère<sp/>les<sp/>exceptions<sp/>et<sp/>affiche<sp/>un<sp/>message<sp/>d&apos;erreur</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$output-&gt;writeln(</highlight><highlight class="stringliteral">&apos;&lt;error&gt;Erreur<sp/>lors<sp/>de<sp/>la<sp/>communication<sp/>avec<sp/>l\&apos;API<sp/>Discogs<sp/>:<sp/>&apos;</highlight><highlight class="normal"><sp/>.<sp/>$e-&gt;getMessage()<sp/>.<sp/></highlight><highlight class="stringliteral">&apos;&lt;/error&gt;&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Command::FAILURE;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="120"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Command/TestDiscogsCommand.php"/>
+  </compounddef>
+</doxygen>

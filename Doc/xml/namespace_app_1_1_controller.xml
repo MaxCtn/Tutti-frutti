@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="fr">
+  <compounddef id="namespace_app_1_1_controller" kind="namespace" language="PHP">
+    <compoundname>App::Controller</compoundname>
+    <innerclass refid="class_app_1_1_controller_1_1_album_search_controller" prot="public">App::Controller::AlbumSearchController</innerclass>
+    <innerclass refid="class_app_1_1_controller_1_1_connexion_controller" prot="public">App::Controller::ConnexionController</innerclass>
+    <innerclass refid="class_app_1_1_controller_1_1_discogs_test_controller" prot="public">App::Controller::DiscogsTestController</innerclass>
+    <innerclass refid="class_app_1_1_controller_1_1_home_controller" prot="public">App::Controller::HomeController</innerclass>
+    <innerclass refid="class_app_1_1_controller_1_1_profile_controller" prot="public">App::Controller::ProfileController</innerclass>
+    <innerclass refid="class_app_1_1_controller_1_1_registration_controller" prot="public">App::Controller::RegistrationController</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Controller/AlbumSearchController.php" line="3" column="10"/>
+  </compounddef>
+</doxygen>

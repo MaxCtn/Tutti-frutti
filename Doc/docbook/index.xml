@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<book xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_index" xml:lang="fr">
+    <info>
+    <title>Tutti-frutti</title>
+    </info>
+<chapter>
+    <title>Documentation des espaces de nommage</title>
+<xi:include href="namespace_app.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespace_app_1_1_command.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespace_app_1_1_controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespace_app_1_1_data_fixtures.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespace_app_1_1_entity.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespace_app_1_1_form.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespace_app_1_1_repository.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespace_app_1_1_security.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespace_app_1_1_service.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<chapter>
+    <title>Documentation des classes</title>
+    <xi:include href="class_app_1_1_controller_1_1_album_search_controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_app_1_1_form_1_1_album_search_type.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_app_1_1_security_1_1_app_custom_authenticator.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_app_1_1_data_fixtures_1_1_app_fixtures.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_app_1_1_controller_1_1_connexion_controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_app_1_1_service_1_1_discogs_service.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_app_1_1_controller_1_1_discogs_test_controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_app_1_1_entity_1_1_favorite_album.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_app_1_1_repository_1_1_favorite_album_repository.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_app_1_1_entity_1_1_format.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_app_1_1_repository_1_1_format_repository.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_app_1_1_entity_1_1_fruit.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_app_1_1_repository_1_1_fruit_repository.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_app_1_1_entity_1_1_genre.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_app_1_1_repository_1_1_genre_repository.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_app_1_1_controller_1_1_home_controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_app_1_1_kernel.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_app_1_1_entity_1_1_label.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_app_1_1_repository_1_1_label_repository.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_app_1_1_controller_1_1_profile_controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_app_1_1_controller_1_1_registration_controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_app_1_1_form_1_1_registration_form_type.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_app_1_1_command_1_1_test_discogs_command.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_app_1_1_command_1_1_test_favorite_albums_command.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_app_1_1_entity_1_1_track.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_app_1_1_repository_1_1_track_repository.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_app_1_1_command_1_1_update_favorite_covers_command.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_app_1_1_entity_1_1_user.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_app_1_1_repository_1_1_user_repository.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<chapter>
+    <title>Documentation des fichiers</title>
+    <xi:include href="_test_discogs_command_8php.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_test_discogs_command_8php_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_test_favorite_albums_command_8php.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_test_favorite_albums_command_8php_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_update_favorite_covers_command_8php.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_update_favorite_covers_command_8php_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_album_search_controller_8php.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_album_search_controller_8php_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_connexion_controller_8php.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_connexion_controller_8php_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_discogs_test_controller_8php.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_discogs_test_controller_8php_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_home_controller_8php.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_home_controller_8php_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_profile_controller_8php.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_profile_controller_8php_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_registration_controller_8php.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_registration_controller_8php_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_app_fixtures_8php.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_app_fixtures_8php_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_favorite_album_8php.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_favorite_album_8php_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_format_8php.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_format_8php_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_fruit_8php.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_fruit_8php_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_genre_8php.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_genre_8php_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_label_8php.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_label_8php_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_track_8php.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_track_8php_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_user_8php.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_user_8php_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_album_search_type_8php.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_album_search_type_8php_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_registration_form_type_8php.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_registration_form_type_8php_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_kernel_8php.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_kernel_8php_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_favorite_album_repository_8php.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_favorite_album_repository_8php_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_format_repository_8php.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_format_repository_8php_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_fruit_repository_8php.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_fruit_repository_8php_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_genre_repository_8php.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_genre_repository_8php_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_label_repository_8php.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_label_repository_8php_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_track_repository_8php.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_track_repository_8php_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_user_repository_8php.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_user_repository_8php_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_app_custom_authenticator_8php.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_app_custom_authenticator_8php_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_discogs_service_8php.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_discogs_service_8php_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<index/>
+</book>

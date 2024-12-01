@@ -49,6 +49,7 @@ class Genre
     #[ORM\OneToMany(mappedBy: 'genre', targetEntity: FavoriteAlbum::class)]
     private Collection $favoriteAlbums;
 
+
     /**
      * Constructeur de la classe Genre.
      * Initialise la collection des albums favoris.

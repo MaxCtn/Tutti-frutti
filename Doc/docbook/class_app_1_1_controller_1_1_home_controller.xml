@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_app_1_1_controller_1_1_home_controller" xml:lang="fr">
+<title>Référence de la classe HomeController</title>
+<indexterm><primary>HomeController</primary></indexterm>
+Graphe d&apos;héritage de HomeController:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_app_1_1_controller_1_1_home_controller__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Graphe de collaboration de HomeController:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_app_1_1_controller_1_1_home_controller__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Fonctions membres publiques    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_app_1_1_controller_1_1_home_controller_1a149eb92716c1084a935e04a8d95f7347">index</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Description détaillée</title>
+
+<para>Contrôleur de la page d&apos;accueil de l&apos;application. </para>
+<para>
+Définition à la ligne <link linkend="__home_controller_8php_source_1l00014">14</link> du fichier <link linkend="__home_controller_8php_source">HomeController.php</link>.</para>
+</section>
+<section>
+<title>Documentation des fonctions membres</title>
+<anchor xml:id="_class_app_1_1_controller_1_1_home_controller_1a149eb92716c1084a935e04a8d95f7347"/><section>
+    <title>index()</title>
+<indexterm><primary>index</primary><secondary>HomeController</secondary></indexterm>
+<indexterm><primary>HomeController</primary><secondary>index</secondary></indexterm>
+<para><computeroutput>index ( )</computeroutput></para>
+<para>Affiche la page d&apos;accueil.</para>
+
+<para>@Route(&quot;/&quot;, name=&quot;app_home&quot;, methods={&quot;GET&quot;})</para>
+
+<para><formalpara><title>Renvoie</title>
+
+<para>Response La réponse HTTP contenant le rendu de la page d&apos;accueil. </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__home_controller_8php_source_1l00024">24</link> du fichier <link linkend="__home_controller_8php_source">HomeController.php</link>.</para>
+</section>
+<para>
+La documentation de cette classe a été générée à partir du fichier suivant :</para>
+Controller/<link linkend="__home_controller_8php">HomeController.php</link></section>
+</section>

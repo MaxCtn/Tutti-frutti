@@ -1,0 +1,146 @@
+.TH "Track" 3 "Tutti-frutti" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Track
+.SH SYNOPSIS
+.br
+.PP
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBgetId\fP ()"
+.br
+.ti -1c
+.RI "\fBgetTitle\fP ()"
+.br
+.ti -1c
+.RI "\fBsetTitle\fP (string $title)"
+.br
+.ti -1c
+.RI "\fBgetDuration\fP ()"
+.br
+.ti -1c
+.RI "\fBsetDuration\fP (?string $duration)"
+.br
+.ti -1c
+.RI "\fBgetAlbum\fP ()"
+.br
+.ti -1c
+.RI "\fBsetAlbum\fP (?\fBFavoriteAlbum\fP $album)"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Entité représentant une piste (track) d'un album favori\&.
+
+.PP
+@ORM\\Entity(repositoryClass=TrackRepository::class) 
+.PP
+Définition à la ligne \fB14\fP du fichier \fBTrack\&.php\fP\&.
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "getAlbum ()"
+Obtient l'album favori auquel appartient la piste\&.
+
+.PP
+\fBRenvoie\fP
+.RS 4
+FavoriteAlbum|null L'album favori\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB125\fP du fichier \fBTrack\&.php\fP\&.
+.SS "getDuration ()"
+Obtient la durée de la piste au format 'mm:ss'\&.
+
+.PP
+\fBRenvoie\fP
+.RS 4
+string|null La durée de la piste\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB101\fP du fichier \fBTrack\&.php\fP\&.
+.SS "getId ()"
+Obtient l'identifiant unique de la piste\&.
+
+.PP
+\fBRenvoie\fP
+.RS 4
+int|null L'identifiant de la piste\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB67\fP du fichier \fBTrack\&.php\fP\&.
+.SS "getTitle ()"
+Obtient le titre de la piste\&.
+
+.PP
+\fBRenvoie\fP
+.RS 4
+string|null Le titre de la piste\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB77\fP du fichier \fBTrack\&.php\fP\&.
+.SS "setAlbum (?\fBFavoriteAlbum\fP $album)"
+Définit l'album favori auquel appartient la piste\&.
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$album\fP L'album favori\&.
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+self 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB137\fP du fichier \fBTrack\&.php\fP\&.
+.SS "setDuration (?string $duration)"
+Définit la durée de la piste au format 'mm:ss'\&.
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$duration\fP La durée de la piste\&.
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+self 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB113\fP du fichier \fBTrack\&.php\fP\&.
+.SS "setTitle (string $title)"
+Définit le titre de la piste\&.
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$title\fP Le titre de la piste\&.
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+self 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB89\fP du fichier \fBTrack\&.php\fP\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Tutti-frutti à partir du code source\&.

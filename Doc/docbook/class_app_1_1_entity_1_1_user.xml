@@ -1,0 +1,414 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_app_1_1_entity_1_1_user" xml:lang="fr">
+<title>Référence de la classe User</title>
+<indexterm><primary>User</primary></indexterm>
+Graphe d&apos;héritage de User:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_app_1_1_entity_1_1_user__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Graphe de collaboration de User:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_app_1_1_entity_1_1_user__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Fonctions membres publiques    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_user_1a095c5d389db211932136b53f25f39685">__construct</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_user_1a12251d0c022e9e21c137a105ff683f13">getId</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_user_1a02a01849f28e2535e888ae4ec87b20f2">getEmail</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_user_1a2d22391fa86fa0eaf3b9d2a3c29880bc">setEmail</link> (string $email)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_user_1a189038d671f9143e20141026f1aa7969">getUserIdentifier</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_user_1aa676cae5ee8d7fb6862a8724adc2660d">getRoles</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_user_1aa3236c9c6688d04df16ea0ab3065530e">setRoles</link> (array $roles)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_user_1a04e0957baeb7acde9c0c86556da2d43f">getPassword</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_user_1a81e0f429784973551fb5417d5b92b0db">setPassword</link> (string $password)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_user_1ac565b8c00fe93ce673f8237849f072a6">eraseCredentials</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_user_1ab755e2969ce6dd5719e19029a1f0ea98">getFavoriteAlbums</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_user_1a352415541a6239312cd6abffdd2d3801">addFavoriteAlbum</link> (<link linkend="_class_app_1_1_entity_1_1_favorite_album">FavoriteAlbum</link> $favoriteAlbum)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_user_1a7e1f5b5a1259dcb9c2be49ae4e715a4c">removeFavoriteAlbum</link> (<link linkend="_class_app_1_1_entity_1_1_favorite_album">FavoriteAlbum</link> $favoriteAlbum)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_user_1a7ca895ce8dc567b19e85a982429c7c77">getProfilePicture</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_user_1ab308055ea70f8f94a14d35a611a2086e">setProfilePicture</link> (?string $profilePicture)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Description détaillée</title>
+
+<para>Entité représentant un utilisateur de l&apos;application.</para>
+
+<para>@ORM\Entity(repositoryClass=UserRepository::class) </para>
+<para>
+Définition à la ligne <link linkend="__user_8php_source_1l00018">18</link> du fichier <link linkend="__user_8php_source">User.php</link>.</para>
+</section>
+<section>
+<title>Documentation des constructeurs et destructeur</title>
+<anchor xml:id="_class_app_1_1_entity_1_1_user_1a095c5d389db211932136b53f25f39685"/><section>
+    <title>__construct()</title>
+<indexterm><primary>__construct</primary><secondary>User</secondary></indexterm>
+<indexterm><primary>User</primary><secondary>__construct</secondary></indexterm>
+<para><computeroutput>__construct ( )</computeroutput></para>
+<para>Constructeur de la classe User. Initialise la collection des albums favoris. </para>
+<para>
+Définition à la ligne <link linkend="__user_8php_source_1l00088">88</link> du fichier <link linkend="__user_8php_source">User.php</link>.</para>
+</section>
+</section>
+<section>
+<title>Documentation des fonctions membres</title>
+<anchor xml:id="_class_app_1_1_entity_1_1_user_1a352415541a6239312cd6abffdd2d3801"/><section>
+    <title>addFavoriteAlbum()</title>
+<indexterm><primary>addFavoriteAlbum</primary><secondary>User</secondary></indexterm>
+<indexterm><primary>User</primary><secondary>addFavoriteAlbum</secondary></indexterm>
+<para><computeroutput>addFavoriteAlbum (<link linkend="_class_app_1_1_entity_1_1_favorite_album">FavoriteAlbum</link> $favoriteAlbum)</computeroutput></para>
+<para>Ajoute un album favori à la collection de l&apos;utilisateur.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Paramètres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>FavoriteAlbum</entry><entry>$favoriteAlbum</entry><entry>
+<para>L&apos;album favori à ajouter.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Renvoie</title>
+
+<para>self </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__user_8php_source_1l00213">213</link> du fichier <link linkend="__user_8php_source">User.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_entity_1_1_user_1ac565b8c00fe93ce673f8237849f072a6"/><section>
+    <title>eraseCredentials()</title>
+<indexterm><primary>eraseCredentials</primary><secondary>User</secondary></indexterm>
+<indexterm><primary>User</primary><secondary>eraseCredentials</secondary></indexterm>
+<para><computeroutput>eraseCredentials ( )</computeroutput></para>
+<para>Efface les données sensibles de l&apos;utilisateur (non utilisé ici). </para>
+<para>
+Définition à la ligne <link linkend="__user_8php_source_1l00191">191</link> du fichier <link linkend="__user_8php_source">User.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_entity_1_1_user_1a02a01849f28e2535e888ae4ec87b20f2"/><section>
+    <title>getEmail()</title>
+<indexterm><primary>getEmail</primary><secondary>User</secondary></indexterm>
+<indexterm><primary>User</primary><secondary>getEmail</secondary></indexterm>
+<para><computeroutput>getEmail ( )</computeroutput></para>
+<para>Obtient l&apos;adresse e-mail de l&apos;utilisateur.</para>
+
+<para><formalpara><title>Renvoie</title>
+
+<para>string|null L&apos;adresse e-mail. </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__user_8php_source_1l00108">108</link> du fichier <link linkend="__user_8php_source">User.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_entity_1_1_user_1ab755e2969ce6dd5719e19029a1f0ea98"/><section>
+    <title>getFavoriteAlbums()</title>
+<indexterm><primary>getFavoriteAlbums</primary><secondary>User</secondary></indexterm>
+<indexterm><primary>User</primary><secondary>getFavoriteAlbums</secondary></indexterm>
+<para><computeroutput>getFavoriteAlbums ( )</computeroutput></para>
+<para>Obtient la collection des albums favoris de l&apos;utilisateur.</para>
+
+<para><formalpara><title>Renvoie</title>
+
+<para>Collection&lt;int, FavoriteAlbum&gt; La collection des albums favoris. </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__user_8php_source_1l00201">201</link> du fichier <link linkend="__user_8php_source">User.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_entity_1_1_user_1a12251d0c022e9e21c137a105ff683f13"/><section>
+    <title>getId()</title>
+<indexterm><primary>getId</primary><secondary>User</secondary></indexterm>
+<indexterm><primary>User</primary><secondary>getId</secondary></indexterm>
+<para><computeroutput>getId ( )</computeroutput></para>
+<para>Obtient l&apos;identifiant unique de l&apos;utilisateur.</para>
+
+<para><formalpara><title>Renvoie</title>
+
+<para>int|null L&apos;identifiant de l&apos;utilisateur. </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__user_8php_source_1l00098">98</link> du fichier <link linkend="__user_8php_source">User.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_entity_1_1_user_1a04e0957baeb7acde9c0c86556da2d43f"/><section>
+    <title>getPassword()</title>
+<indexterm><primary>getPassword</primary><secondary>User</secondary></indexterm>
+<indexterm><primary>User</primary><secondary>getPassword</secondary></indexterm>
+<para><computeroutput>getPassword ( )</computeroutput></para>
+<para>Obtient le mot de passe hashé de l&apos;utilisateur.</para>
+
+<para><formalpara><title>Renvoie</title>
+
+<para>string Le mot de passe hashé. </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__user_8php_source_1l00169">169</link> du fichier <link linkend="__user_8php_source">User.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_entity_1_1_user_1a7ca895ce8dc567b19e85a982429c7c77"/><section>
+    <title>getProfilePicture()</title>
+<indexterm><primary>getProfilePicture</primary><secondary>User</secondary></indexterm>
+<indexterm><primary>User</primary><secondary>getProfilePicture</secondary></indexterm>
+<para><computeroutput>getProfilePicture ( )</computeroutput></para>
+<para>Obtient l&apos;URL de la photo de profil de l&apos;utilisateur.</para>
+
+<para><formalpara><title>Renvoie</title>
+
+<para>string|null L&apos;URL de la photo de profil. </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__user_8php_source_1l00246">246</link> du fichier <link linkend="__user_8php_source">User.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_entity_1_1_user_1aa676cae5ee8d7fb6862a8724adc2660d"/><section>
+    <title>getRoles()</title>
+<indexterm><primary>getRoles</primary><secondary>User</secondary></indexterm>
+<indexterm><primary>User</primary><secondary>getRoles</secondary></indexterm>
+<para><computeroutput>getRoles ( )</computeroutput></para>
+<para>Obtient les rôles de l&apos;utilisateur.</para>
+
+<para><formalpara><title>Renvoie</title>
+
+<para>array Les rôles uniques de l&apos;utilisateur. </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__user_8php_source_1l00142">142</link> du fichier <link linkend="__user_8php_source">User.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_entity_1_1_user_1a189038d671f9143e20141026f1aa7969"/><section>
+    <title>getUserIdentifier()</title>
+<indexterm><primary>getUserIdentifier</primary><secondary>User</secondary></indexterm>
+<indexterm><primary>User</primary><secondary>getUserIdentifier</secondary></indexterm>
+<para><computeroutput>getUserIdentifier ( )</computeroutput></para>
+<para>Obtient l&apos;identifiant unique de l&apos;utilisateur (utilisé par le composant de sécurité).</para>
+
+<para><formalpara><title>Renvoie</title>
+
+<para>string L&apos;identifiant unique (adresse e-mail). </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__user_8php_source_1l00132">132</link> du fichier <link linkend="__user_8php_source">User.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_entity_1_1_user_1a7e1f5b5a1259dcb9c2be49ae4e715a4c"/><section>
+    <title>removeFavoriteAlbum()</title>
+<indexterm><primary>removeFavoriteAlbum</primary><secondary>User</secondary></indexterm>
+<indexterm><primary>User</primary><secondary>removeFavoriteAlbum</secondary></indexterm>
+<para><computeroutput>removeFavoriteAlbum (<link linkend="_class_app_1_1_entity_1_1_favorite_album">FavoriteAlbum</link> $favoriteAlbum)</computeroutput></para>
+<para>Retire un album favori de la collection de l&apos;utilisateur.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Paramètres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>FavoriteAlbum</entry><entry>$favoriteAlbum</entry><entry>
+<para>L&apos;album favori à retirer.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Renvoie</title>
+
+<para>self </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__user_8php_source_1l00230">230</link> du fichier <link linkend="__user_8php_source">User.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_entity_1_1_user_1a2d22391fa86fa0eaf3b9d2a3c29880bc"/><section>
+    <title>setEmail()</title>
+<indexterm><primary>setEmail</primary><secondary>User</secondary></indexterm>
+<indexterm><primary>User</primary><secondary>setEmail</secondary></indexterm>
+<para><computeroutput>setEmail (string $email)</computeroutput></para>
+<para>Définit l&apos;adresse e-mail de l&apos;utilisateur.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Paramètres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>string</entry><entry>$email</entry><entry>
+<para>L&apos;adresse e-mail.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Renvoie</title>
+
+<para>self </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__user_8php_source_1l00120">120</link> du fichier <link linkend="__user_8php_source">User.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_entity_1_1_user_1a81e0f429784973551fb5417d5b92b0db"/><section>
+    <title>setPassword()</title>
+<indexterm><primary>setPassword</primary><secondary>User</secondary></indexterm>
+<indexterm><primary>User</primary><secondary>setPassword</secondary></indexterm>
+<para><computeroutput>setPassword (string $password)</computeroutput></para>
+<para>Définit le mot de passe hashé de l&apos;utilisateur.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Paramètres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>string</entry><entry>$password</entry><entry>
+<para>Le mot de passe hashé.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Renvoie</title>
+
+<para>self </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__user_8php_source_1l00181">181</link> du fichier <link linkend="__user_8php_source">User.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_entity_1_1_user_1ab308055ea70f8f94a14d35a611a2086e"/><section>
+    <title>setProfilePicture()</title>
+<indexterm><primary>setProfilePicture</primary><secondary>User</secondary></indexterm>
+<indexterm><primary>User</primary><secondary>setProfilePicture</secondary></indexterm>
+<para><computeroutput>setProfilePicture (?string $profilePicture)</computeroutput></para>
+<para>Définit l&apos;URL de la photo de profil de l&apos;utilisateur.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Paramètres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>string | null</entry><entry>$profilePicture</entry><entry>
+<para>L&apos;URL de la photo de profil.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Renvoie</title>
+
+<para>self </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__user_8php_source_1l00258">258</link> du fichier <link linkend="__user_8php_source">User.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_entity_1_1_user_1aa3236c9c6688d04df16ea0ab3065530e"/><section>
+    <title>setRoles()</title>
+<indexterm><primary>setRoles</primary><secondary>User</secondary></indexterm>
+<indexterm><primary>User</primary><secondary>setRoles</secondary></indexterm>
+<para><computeroutput>setRoles (array $roles)</computeroutput></para>
+<para>Définit les rôles de l&apos;utilisateur.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Paramètres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>array</entry><entry>$roles</entry><entry>
+<para>Les rôles de l&apos;utilisateur.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Renvoie</title>
+
+<para>self </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__user_8php_source_1l00157">157</link> du fichier <link linkend="__user_8php_source">User.php</link>.</para>
+</section>
+<para>
+La documentation de cette classe a été générée à partir du fichier suivant :</para>
+Entity/<link linkend="__user_8php">User.php</link></section>
+</section>

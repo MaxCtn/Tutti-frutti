@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__track_8php_source" xml:lang="fr">
+<title>Track.php</title>
+<indexterm><primary>Entity/Track.php</primary></indexterm>
+Aller à la documentation de ce fichier.<programlisting linenumbering="unnumbered"><anchor xml:id="__track_8php_source_1l00001"/>00001 &lt;?php
+<anchor xml:id="__track_8php_source_1l00002"/>00002 
+<anchor xml:id="__track_8php_source_1l00003"/>00003 <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespace_app_1_1_entity">App\Entity</link>;
+<anchor xml:id="__track_8php_source_1l00004"/>00004 
+<anchor xml:id="__track_8php_source_1l00005"/>00005 use&#32;<link linkend="_class_app_1_1_repository_1_1_track_repository">App\Repository\TrackRepository</link>;
+<anchor xml:id="__track_8php_source_1l00006"/>00006 use&#32;Doctrine\ORM\Mapping&#32;as&#32;ORM;
+<anchor xml:id="__track_8php_source_1l00007"/>00007 
+<anchor xml:id="__track_8php_source_1l00013"/>00013 <emphasis role="preprocessor">#[ORM\Entity(repositoryClass:&#32;TrackRepository::class)]</emphasis>
+<anchor xml:id="__track_8php_source_1l00014"/><link linkend="_class_app_1_1_entity_1_1_track">00014</link> <emphasis role="keyword">class&#32;</emphasis><link linkend="_class_app_1_1_entity_1_1_track">Track</link>
+<anchor xml:id="__track_8php_source_1l00015"/>00015 {
+<anchor xml:id="__track_8php_source_1l00025"/>00025 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;#[ORM\Id]</emphasis>
+<anchor xml:id="__track_8php_source_1l00026"/>00026 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;#[ORM\GeneratedValue]</emphasis>
+<anchor xml:id="__track_8php_source_1l00027"/>00027 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;#[ORM\Column]</emphasis>
+<anchor xml:id="__track_8php_source_1l00028"/>00028 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;?<emphasis role="keywordtype">int</emphasis>&#32;$id&#32;=&#32;<emphasis role="keyword">null</emphasis>;
+<anchor xml:id="__track_8php_source_1l00029"/>00029 
+<anchor xml:id="__track_8php_source_1l00037"/>00037 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;#[ORM\Column(length:&#32;255)]</emphasis>
+<anchor xml:id="__track_8php_source_1l00038"/>00038 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;?<emphasis role="keywordtype">string</emphasis>&#32;$title&#32;=&#32;<emphasis role="keyword">null</emphasis>;
+<anchor xml:id="__track_8php_source_1l00039"/>00039 
+<anchor xml:id="__track_8php_source_1l00047"/>00047 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;#[ORM\Column(length:&#32;10,&#32;nullable:&#32;true)]</emphasis>
+<anchor xml:id="__track_8php_source_1l00048"/>00048 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;?<emphasis role="keywordtype">string</emphasis>&#32;$duration&#32;=&#32;<emphasis role="keyword">null</emphasis>;
+<anchor xml:id="__track_8php_source_1l00049"/>00049 
+<anchor xml:id="__track_8php_source_1l00058"/>00058 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;#[ORM\ManyToOne(targetEntity:&#32;FavoriteAlbum::class,&#32;inversedBy:&#32;&apos;tracks&apos;)]</emphasis>
+<anchor xml:id="__track_8php_source_1l00059"/>00059 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;#[ORM\JoinColumn(nullable:&#32;false)]</emphasis>
+<anchor xml:id="__track_8php_source_1l00060"/>00060 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;?<link linkend="_class_app_1_1_entity_1_1_favorite_album">FavoriteAlbum</link>&#32;$album&#32;=&#32;<emphasis role="keyword">null</emphasis>;
+<anchor xml:id="__track_8php_source_1l00061"/>00061 
+<anchor xml:id="__track_8php_source_1l00067"/><link linkend="_class_app_1_1_entity_1_1_track_1a12251d0c022e9e21c137a105ff683f13">00067</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_track_1a12251d0c022e9e21c137a105ff683f13">getId</link>():&#32;?int
+<anchor xml:id="__track_8php_source_1l00068"/>00068 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__track_8php_source_1l00069"/>00069 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this-&gt;id;
+<anchor xml:id="__track_8php_source_1l00070"/>00070 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__track_8php_source_1l00071"/>00071 
+<anchor xml:id="__track_8php_source_1l00077"/><link linkend="_class_app_1_1_entity_1_1_track_1a95e859a4588a39a1824b717378a84c29">00077</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_track_1a95e859a4588a39a1824b717378a84c29">getTitle</link>():&#32;?string
+<anchor xml:id="__track_8php_source_1l00078"/>00078 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__track_8php_source_1l00079"/>00079 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this-&gt;title;
+<anchor xml:id="__track_8php_source_1l00080"/>00080 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__track_8php_source_1l00081"/>00081 
+<anchor xml:id="__track_8php_source_1l00089"/><link linkend="_class_app_1_1_entity_1_1_track_1a754ef3032cc3ffb25ad2d1a13720fc29">00089</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_track_1a754ef3032cc3ffb25ad2d1a13720fc29">setTitle</link>(<emphasis role="keywordtype">string</emphasis>&#32;$title):&#32;self
+<anchor xml:id="__track_8php_source_1l00090"/>00090 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__track_8php_source_1l00091"/>00091 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$this-&gt;title&#32;=&#32;$title;
+<anchor xml:id="__track_8php_source_1l00092"/>00092 
+<anchor xml:id="__track_8php_source_1l00093"/>00093 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this;
+<anchor xml:id="__track_8php_source_1l00094"/>00094 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__track_8php_source_1l00095"/>00095 
+<anchor xml:id="__track_8php_source_1l00101"/><link linkend="_class_app_1_1_entity_1_1_track_1ab46fe3d2750728c84bd71ae1bfd08ee8">00101</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_track_1ab46fe3d2750728c84bd71ae1bfd08ee8">getDuration</link>():&#32;?string
+<anchor xml:id="__track_8php_source_1l00102"/>00102 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__track_8php_source_1l00103"/>00103 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this-&gt;duration;
+<anchor xml:id="__track_8php_source_1l00104"/>00104 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__track_8php_source_1l00105"/>00105 
+<anchor xml:id="__track_8php_source_1l00113"/><link linkend="_class_app_1_1_entity_1_1_track_1a65287da7b5aac781a43f0ed59b067985">00113</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_track_1a65287da7b5aac781a43f0ed59b067985">setDuration</link>(?<emphasis role="keywordtype">string</emphasis>&#32;$duration):&#32;self
+<anchor xml:id="__track_8php_source_1l00114"/>00114 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__track_8php_source_1l00115"/>00115 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$this-&gt;duration&#32;=&#32;$duration;
+<anchor xml:id="__track_8php_source_1l00116"/>00116 
+<anchor xml:id="__track_8php_source_1l00117"/>00117 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this;
+<anchor xml:id="__track_8php_source_1l00118"/>00118 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__track_8php_source_1l00119"/>00119 
+<anchor xml:id="__track_8php_source_1l00125"/><link linkend="_class_app_1_1_entity_1_1_track_1aee148d665bb21d0319499d90186605b2">00125</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_track_1aee148d665bb21d0319499d90186605b2">getAlbum</link>():&#32;?<link linkend="_class_app_1_1_entity_1_1_favorite_album">FavoriteAlbum</link>
+<anchor xml:id="__track_8php_source_1l00126"/>00126 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__track_8php_source_1l00127"/>00127 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this-&gt;album;
+<anchor xml:id="__track_8php_source_1l00128"/>00128 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__track_8php_source_1l00129"/>00129 
+<anchor xml:id="__track_8php_source_1l00137"/><link linkend="_class_app_1_1_entity_1_1_track_1a030b2e5bdc870ee346358efc28a59640">00137</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_track_1a030b2e5bdc870ee346358efc28a59640">setAlbum</link>(?<link linkend="_class_app_1_1_entity_1_1_favorite_album">FavoriteAlbum</link>&#32;$album):&#32;self
+<anchor xml:id="__track_8php_source_1l00138"/>00138 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__track_8php_source_1l00139"/>00139 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$this-&gt;album&#32;=&#32;$album;
+<anchor xml:id="__track_8php_source_1l00140"/>00140 
+<anchor xml:id="__track_8php_source_1l00141"/>00141 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this;
+<anchor xml:id="__track_8php_source_1l00142"/>00142 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__track_8php_source_1l00143"/>00143 }
+</programlisting></section>

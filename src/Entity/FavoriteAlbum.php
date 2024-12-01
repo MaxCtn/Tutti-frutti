@@ -14,6 +14,7 @@ use Symfony\UX\Turbo\Attribute\Broadcast;
  * @ORM\Entity(repositoryClass=FavoriteAlbumRepository::class)
  * @Broadcast
  */
+
 #[ORM\Entity(repositoryClass: FavoriteAlbumRepository::class)]
 #[Broadcast]
 class FavoriteAlbum
@@ -31,6 +32,7 @@ class FavoriteAlbum
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
+
 
     /**
      * Identifiant de l'album dans le système externe (par exemple, Discogs).
@@ -81,9 +83,10 @@ class FavoriteAlbum
      * @ORM\ManyToOne(targetEntity=Label::class)
      * @ORM\JoinColumn(nullable=true, onDelete="SET NULL")
      */
-    #[ORM\ManyToOne(targetEntity: Label::class)]
+    #[ORM\ManyToOne(targetEntity: Label::class, inversedBy: 'favoriteAlbums')]
     #[ORM\JoinColumn(nullable: true, onDelete: 'SET NULL')]
     private ?Label $label = null;
+
 
     /**
      * Genre musical de l'album.
@@ -93,9 +96,10 @@ class FavoriteAlbum
      * @ORM\ManyToOne(targetEntity=Genre::class)
      * @ORM\JoinColumn(nullable=true, onDelete="SET NULL")
      */
-    #[ORM\ManyToOne(targetEntity: Genre::class)]
+    #[ORM\ManyToOne(targetEntity: Genre::class, inversedBy: 'favoriteAlbums')]
     #[ORM\JoinColumn(nullable: true, onDelete: 'SET NULL')]
     private ?Genre $genre = null;
+
 
     /**
      * Format de l'album (vinyle, CD, etc.).
@@ -105,9 +109,10 @@ class FavoriteAlbum
      * @ORM\ManyToOne(targetEntity=Format::class)
      * @ORM\JoinColumn(nullable=true, onDelete="SET NULL")
      */
-    #[ORM\ManyToOne(targetEntity: Format::class)]
+    #[ORM\ManyToOne(targetEntity: Format::class, inversedBy: 'favoriteAlbums')]
     #[ORM\JoinColumn(nullable: true, onDelete: 'SET NULL')]
     private ?Format $format = null;
+
 
     /**
      * Utilisateur propriétaire de l'album favori.
@@ -129,9 +134,10 @@ class FavoriteAlbum
      * @ORM\ManyToMany(targetEntity=Fruit::class, cascade={"persist", "remove"})
      * @ORM\JoinTable(name="favorite_album_fruit")
      */
-    #[ORM\ManyToMany(targetEntity: Fruit::class, cascade: ['persist', 'remove'])]
+    #[ORM\ManyToMany(targetEntity: Fruit::class, inversedBy: 'albums', cascade: ['persist', 'remove'])]
     #[ORM\JoinTable(name: 'favorite_album_fruit')]
     private Collection $fruits;
+
 
     /**
      * Collection des pistes (tracks) associées à l'album.

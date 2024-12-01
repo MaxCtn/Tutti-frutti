@@ -1,0 +1,69 @@
+\doxysection{App\+Custom\+Authenticator.\+php}
+\hypertarget{_app_custom_authenticator_8php_source}{}\label{_app_custom_authenticator_8php_source}\index{Security/AppCustomAuthenticator.php@{Security/AppCustomAuthenticator.php}}
+\mbox{\hyperlink{_app_custom_authenticator_8php}{Aller à la documentation de ce fichier.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00001}00001\ <?php}
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00003}\mbox{\hyperlink{namespace_app_1_1_security}{00003}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_app_1_1_security}{App\(\backslash\)Security}};}
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00005}00005\ use\ Symfony\(\backslash\)Component\(\backslash\)HttpFoundation\(\backslash\)RedirectResponse;}
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00006}00006\ use\ Symfony\(\backslash\)Component\(\backslash\)HttpFoundation\(\backslash\)Request;}
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00007}00007\ use\ Symfony\(\backslash\)Component\(\backslash\)HttpFoundation\(\backslash\)Response;}
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00008}00008\ use\ Symfony\(\backslash\)Component\(\backslash\)Routing\(\backslash\)Generator\(\backslash\)UrlGeneratorInterface;}
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00009}00009\ use\ Symfony\(\backslash\)Bundle\(\backslash\)SecurityBundle\(\backslash\)Security;}
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00010}00010\ use\ Symfony\(\backslash\)Component\(\backslash\)Security\(\backslash\)Core\(\backslash\)Authentication\(\backslash\)Token\(\backslash\)TokenInterface;}
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00011}00011\ use\ Symfony\(\backslash\)Component\(\backslash\)Security\(\backslash\)Http\(\backslash\)Authenticator\(\backslash\)AbstractLoginFormAuthenticator;}
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00012}00012\ use\ Symfony\(\backslash\)Component\(\backslash\)Security\(\backslash\)Http\(\backslash\)Authenticator\(\backslash\)Passport\(\backslash\)Badge\(\backslash\)CsrfTokenBadge;}
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00013}00013\ use\ Symfony\(\backslash\)Component\(\backslash\)Security\(\backslash\)Http\(\backslash\)Authenticator\(\backslash\)Passport\(\backslash\)Badge\(\backslash\)RememberMeBadge;}
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00014}00014\ use\ Symfony\(\backslash\)Component\(\backslash\)Security\(\backslash\)Http\(\backslash\)Authenticator\(\backslash\)Passport\(\backslash\)Badge\(\backslash\)UserBadge;}
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00015}00015\ use\ Symfony\(\backslash\)Component\(\backslash\)Security\(\backslash\)Http\(\backslash\)Authenticator\(\backslash\)Passport\(\backslash\)Credentials\(\backslash\)PasswordCredentials;}
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00016}00016\ use\ Symfony\(\backslash\)Component\(\backslash\)Security\(\backslash\)Http\(\backslash\)Authenticator\(\backslash\)Passport\(\backslash\)Passport;}
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00017}00017\ use\ Symfony\(\backslash\)Component\(\backslash\)Security\(\backslash\)Http\(\backslash\)Util\(\backslash\)TargetPathTrait;}
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00022}\mbox{\hyperlink{class_app_1_1_security_1_1_app_custom_authenticator}{00022}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_app_1_1_security_1_1_app_custom_authenticator}{AppCustomAuthenticator}}\ \textcolor{keyword}{extends}\ AbstractLoginFormAuthenticator}
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00023}00023\ \{}
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00024}00024\ \ \ \ \ use\ TargetPathTrait;}
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00026}\mbox{\hyperlink{class_app_1_1_security_1_1_app_custom_authenticator_acefb6c1e88a6be21742efe1796c1b10a}{00026}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_app_1_1_security_1_1_app_custom_authenticator_acefb6c1e88a6be21742efe1796c1b10a}{LOGIN\_ROUTE}}\ =\ \textcolor{stringliteral}{'app\_login'};}
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00031}00031\ \ \ \ \ \textcolor{keyword}{private}\ UrlGeneratorInterface\ \$urlGenerator;}
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00038}\mbox{\hyperlink{class_app_1_1_security_1_1_app_custom_authenticator_aafc1eab4a8c8c05bc66d94041d739d0f}{00038}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{class_app_1_1_security_1_1_app_custom_authenticator_aafc1eab4a8c8c05bc66d94041d739d0f}{\_\_construct}}(UrlGeneratorInterface\ \$urlGenerator)}
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00039}00039\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00040}00040\ \ \ \ \ \ \ \ \ \$this-\/>urlGenerator\ =\ \$urlGenerator;}
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00041}00041\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00049}\mbox{\hyperlink{class_app_1_1_security_1_1_app_custom_authenticator_acc8752684a58a442307c274100d77faf}{00049}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{class_app_1_1_security_1_1_app_custom_authenticator_acc8752684a58a442307c274100d77faf}{authenticate}}(Request\ \$request):\ Passport}
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00050}00050\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00051}00051\ \ \ \ \ \ \ \ \ \$email\ =\ \$request-\/>request-\/>get(\textcolor{stringliteral}{'email'},\ \textcolor{stringliteral}{''});}
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Stocke\ l'email\ saisi\ dans\ la\ session\ pour\ pré-\/remplir\ le\ champ\ en\ cas\ d'erreur.}}
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00054}00054\ \ \ \ \ \ \ \ \ \$request-\/>getSession()-\/>set(\textcolor{stringliteral}{'\_security.last\_username'},\ \$email);}
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00056}00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ Passport(}
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ UserBadge(\$email),}
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ PasswordCredentials(\$request-\/>request-\/>get(\textcolor{stringliteral}{'password'},\ \textcolor{stringliteral}{''})),}
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ [}
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ CsrfTokenBadge(\textcolor{stringliteral}{'authenticate'},\ \$request-\/>request-\/>get(\textcolor{stringliteral}{'\_csrf\_token'})),}
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ RememberMeBadge(),}
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ ]}
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00063}00063\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00064}00064\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00074}\mbox{\hyperlink{class_app_1_1_security_1_1_app_custom_authenticator_a8c14d31ce5a6d2bec39798fa32dacc45}{00074}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{class_app_1_1_security_1_1_app_custom_authenticator_a8c14d31ce5a6d2bec39798fa32dacc45}{onAuthenticationSuccess}}(Request\ \$request,\ TokenInterface\ \$token,\ \textcolor{keywordtype}{string}\ \$firewallName):\ ?Response}
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00075}00075\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00076}00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$targetPath\ =\ \$this-\/>getTargetPath(\$request-\/>getSession(),\ \$firewallName))\ \{}
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ RedirectResponse(\$targetPath);}
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00078}00078\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00080}00080\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Redirection\ par\ défaut\ après\ authentification\ réussie}}
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00081}00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ RedirectResponse(\$this-\/>urlGenerator-\/>generate(\textcolor{stringliteral}{'album\_search'}));}
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00082}00082\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00090}\mbox{\hyperlink{class_app_1_1_security_1_1_app_custom_authenticator_a2ed952b0c2d4db67fb2fa26a2a01a923}{00090}}\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{class_app_1_1_security_1_1_app_custom_authenticator_a2ed952b0c2d4db67fb2fa26a2a01a923}{getLoginUrl}}(Request\ \$request):\ string}
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00091}00091\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00092}00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$this-\/>urlGenerator-\/>generate(self::LOGIN\_ROUTE);}
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00093}00093\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_app_custom_authenticator_8php_source_l00094}00094\ \}}
+
+\end{DoxyCode}

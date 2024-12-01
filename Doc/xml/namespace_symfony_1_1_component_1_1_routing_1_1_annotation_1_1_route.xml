@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="fr">
+  <compounddef id="namespace_symfony_1_1_component_1_1_routing_1_1_annotation_1_1_route" kind="namespace" language="PHP">
+    <compoundname>Symfony::Component::Routing::Annotation::Route</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Controller/AlbumSearchController.php" line="1" column="1"/>
+  </compounddef>
+</doxygen>

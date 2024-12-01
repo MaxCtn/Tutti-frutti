@@ -6,3 +6,9 @@ search_fruit:
   path: /search-fruit
   controller: App\Controller\DiscogsController::searchByFruit
   methods: [GET, POST]
+
+album_search:
+  path: /album/search
+  controller: App\Controller\AlbumSearchController::search
+  methods: [GET, POST]
+

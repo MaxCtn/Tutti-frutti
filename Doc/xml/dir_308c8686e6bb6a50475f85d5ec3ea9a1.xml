@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="fr">
+  <compounddef id="dir_308c8686e6bb6a50475f85d5ec3ea9a1" kind="dir">
+    <compoundname>Command</compoundname>
+    <innerfile refid="_test_discogs_command_8php">TestDiscogsCommand.php</innerfile>
+    <innerfile refid="_test_favorite_albums_command_8php">TestFavoriteAlbumsCommand.php</innerfile>
+    <innerfile refid="_update_favorite_covers_command_8php">UpdateFavoriteCoversCommand.php</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Command/"/>
+  </compounddef>
+</doxygen>

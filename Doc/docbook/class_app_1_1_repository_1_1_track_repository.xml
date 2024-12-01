@@ -1,0 +1,157 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_app_1_1_repository_1_1_track_repository" xml:lang="fr">
+<title>Référence de la classe TrackRepository</title>
+<indexterm><primary>TrackRepository</primary></indexterm>
+Graphe d&apos;héritage de TrackRepository:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_app_1_1_repository_1_1_track_repository__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Graphe de collaboration de TrackRepository:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_app_1_1_repository_1_1_track_repository__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Fonctions membres publiques    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_app_1_1_repository_1_1_track_repository_1a38ea33dde11163765f358f5f10a3bc03">__construct</link> (ManagerRegistry $registry)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_repository_1_1_track_repository_1a72e1e4ff53252e1b76b53b7b47178131">findByTitlePart</link> (string $titlePart)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_repository_1_1_track_repository_1ad4bfe6689e1b9adbe08de3be53c46d19">findByAlbumId</link> (int $albumId)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Description détaillée</title>
+
+<para>Repository pour l&apos;entité Track.</para>
+
+<para>Fournit des méthodes de base pour interagir avec les pistes d&apos;albums (tracks) et permet d&apos;ajouter des méthodes personnalisées pour répondre à des besoins spécifiques.</para>
+
+<para>@method Track|null find($id, $lockMode = null, $lockVersion = null) @method Track|null findOneBy(array $criteria, array $orderBy = null) @method Track[] findAll() @method Track[] findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null) </para>
+<para>
+Définition à la ligne <link linkend="__track_repository_8php_source_1l00020">20</link> du fichier <link linkend="__track_repository_8php_source">TrackRepository.php</link>.</para>
+</section>
+<section>
+<title>Documentation des constructeurs et destructeur</title>
+<anchor xml:id="_class_app_1_1_repository_1_1_track_repository_1a38ea33dde11163765f358f5f10a3bc03"/><section>
+    <title>__construct()</title>
+<indexterm><primary>__construct</primary><secondary>TrackRepository</secondary></indexterm>
+<indexterm><primary>TrackRepository</primary><secondary>__construct</secondary></indexterm>
+<para><computeroutput>__construct (ManagerRegistry $registry)</computeroutput></para>
+<para>Constructeur du repository.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Paramètres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>ManagerRegistry</entry><entry>$registry</entry><entry>
+<para>Le registre des gestionnaires d&apos;entités. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Définition à la ligne <link linkend="__track_repository_8php_source_1l00027">27</link> du fichier <link linkend="__track_repository_8php_source">TrackRepository.php</link>.</para>
+</section>
+</section>
+<section>
+<title>Documentation des fonctions membres</title>
+<anchor xml:id="_class_app_1_1_repository_1_1_track_repository_1ad4bfe6689e1b9adbe08de3be53c46d19"/><section>
+    <title>findByAlbumId()</title>
+<indexterm><primary>findByAlbumId</primary><secondary>TrackRepository</secondary></indexterm>
+<indexterm><primary>TrackRepository</primary><secondary>findByAlbumId</secondary></indexterm>
+<para><computeroutput>findByAlbumId (int $albumId)</computeroutput></para>
+<para>Recherche des pistes d&apos;un album spécifique.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Paramètres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>int</entry><entry>$albumId</entry><entry>
+<para>L&apos;identifiant de l&apos;album. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Renvoie</title>
+
+<para>Track[] La liste des pistes de l&apos;album. </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__track_repository_8php_source_1l00054">54</link> du fichier <link linkend="__track_repository_8php_source">TrackRepository.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_repository_1_1_track_repository_1a72e1e4ff53252e1b76b53b7b47178131"/><section>
+    <title>findByTitlePart()</title>
+<indexterm><primary>findByTitlePart</primary><secondary>TrackRepository</secondary></indexterm>
+<indexterm><primary>TrackRepository</primary><secondary>findByTitlePart</secondary></indexterm>
+<para><computeroutput>findByTitlePart (string $titlePart)</computeroutput></para>
+<para>Recherche des pistes par titre partiel.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Paramètres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>string</entry><entry>$titlePart</entry><entry>
+<para>Le fragment du titre à rechercher. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Renvoie</title>
+
+<para>Track[] La liste des pistes correspondantes. </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__track_repository_8php_source_1l00038">38</link> du fichier <link linkend="__track_repository_8php_source">TrackRepository.php</link>.</para>
+</section>
+<para>
+La documentation de cette classe a été générée à partir du fichier suivant :</para>
+Repository/<link linkend="__track_repository_8php">TrackRepository.php</link></section>
+</section>

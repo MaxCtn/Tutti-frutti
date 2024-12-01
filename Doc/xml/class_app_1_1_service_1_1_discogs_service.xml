@@ -1,0 +1,242 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="fr">
+  <compounddef id="class_app_1_1_service_1_1_discogs_service" kind="class" language="PHP" prot="public">
+    <compoundname>App::Service::DiscogsService</compoundname>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_app_1_1_service_1_1_discogs_service_1a83e53bbb7a9d939afc568733c72f7a53" prot="private" static="no" mutable="no">
+        <type>HttpClientInterface</type>
+        <definition>HttpClientInterface $client</definition>
+        <argsstring></argsstring>
+        <name>$client</name>
+        <qualifiedname>App\Service\DiscogsService\$client</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Service/DiscogsService.php" line="14" column="33" bodyfile="Service/DiscogsService.php" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_app_1_1_service_1_1_discogs_service_1ab90f584a514c19db3d82b9638b3efa26" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string $consumerKey</definition>
+        <argsstring></argsstring>
+        <name>$consumerKey</name>
+        <qualifiedname>App\Service\DiscogsService\$consumerKey</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Service/DiscogsService.php" line="15" column="20" bodyfile="Service/DiscogsService.php" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_app_1_1_service_1_1_discogs_service_1aaef19d2c6e2634d2556c354c4ae17b2d" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string $consumerSecret</definition>
+        <argsstring></argsstring>
+        <name>$consumerSecret</name>
+        <qualifiedname>App\Service\DiscogsService\$consumerSecret</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Service/DiscogsService.php" line="16" column="20" bodyfile="Service/DiscogsService.php" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_app_1_1_service_1_1_discogs_service_1a7040127be13abe00f2a4f152cbef129f" prot="private" static="no" mutable="no">
+        <type>array</type>
+        <definition>array $fruitKeywords</definition>
+        <argsstring></argsstring>
+        <name>$fruitKeywords</name>
+        <qualifiedname>App\Service\DiscogsService\$fruitKeywords</qualifiedname>
+        <initializer>= [
+        &apos;banane&apos;, &apos;pomme&apos;, &apos;fraise&apos;, &apos;orange&apos;, &apos;raisin&apos;, &apos;citron&apos;, &apos;cerise&apos;, &apos;mangue&apos;,
+        &apos;kiwi&apos;, &apos;poire&apos;, &apos;pastèque&apos;, &apos;ananas&apos;, &apos;prune&apos;, &apos;abricot&apos;, &apos;figue&apos;, &apos;grenade&apos;,
+        &apos;melon&apos;, &apos;framboise&apos;, &apos;cassis&apos;, &apos;groseille&apos;, &apos;myrtille&apos;, &apos;papaye&apos;, &apos;litchi&apos;, &apos;coco&apos;,
+        &apos;nectarine&apos;, &apos;pêche&apos;, &apos;goyave&apos;, &apos;carambole&apos;, &apos;kaki&apos;, &apos;longane&apos;, &apos;mûre&apos;, &apos;physalis&apos;,
+        &apos;fruit de la passion&apos;, &apos;pomelo&apos;, &apos;tamarin&apos;, &apos;quetsche&apos;, &apos;ramboutan&apos;, &apos;canneberge&apos;,
+        &apos;prunelle&apos;, &apos;sureau&apos;, &apos;mandarine&apos;, &apos;clémentine&apos;, &apos;kumquat&apos;, &apos;citron vert&apos;, &apos;pamplemousse&apos;
+    ]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Liste des mots-clés de fruits utilisés pour l&apos;analyse des titres. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Service/DiscogsService.php" line="21" column="19" bodyfile="Service/DiscogsService.php" bodystart="21" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_app_1_1_service_1_1_discogs_service_1ae1ee3eddd2a921ac5d35f71614386307" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>__construct</definition>
+        <argsstring>(HttpClientInterface $client, string $consumerKey, string $consumerSecret)</argsstring>
+        <name>__construct</name>
+        <qualifiedname>App\Service\DiscogsService\__construct</qualifiedname>
+        <param>
+          <type>HttpClientInterface</type>
+          <declname>$client</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>$consumerKey</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>$consumerSecret</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructeur du service Discogs. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Service/DiscogsService.php" line="33" column="21" bodyfile="Service/DiscogsService.php" bodystart="33" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_service_1_1_discogs_service_1a14e1e0b11d4e2976862f1f60e6a20b64" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>searchAlbums</definition>
+        <argsstring>(string $searchTerm)</argsstring>
+        <name>searchAlbums</name>
+        <qualifiedname>App\Service\DiscogsService\searchAlbums</qualifiedname>
+        <param>
+          <type>string</type>
+          <declname>$searchTerm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Recherche des albums correspondant à un terme. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Service/DiscogsService.php" line="43" column="21" bodyfile="Service/DiscogsService.php" bodystart="43" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_service_1_1_discogs_service_1a59651c916adba385563e3ae914057b48" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>getAlbumDetails</definition>
+        <argsstring>(int $id)</argsstring>
+        <name>getAlbumDetails</name>
+        <qualifiedname>App\Service\DiscogsService\getAlbumDetails</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>$id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Récupère les détails d&apos;un album par son ID. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Service/DiscogsService.php" line="62" column="21" bodyfile="Service/DiscogsService.php" bodystart="62" bodyend="75"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_app_1_1_service_1_1_discogs_service_1a989760a9b1092498cc9c2d4c432c1fa0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>processAlbumData</definition>
+        <argsstring>(array $album)</argsstring>
+        <name>processAlbumData</name>
+        <qualifiedname>App\Service\DiscogsService\processAlbumData</qualifiedname>
+        <param>
+          <type>array</type>
+          <declname>$album</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Traite les données d&apos;un album pour ajouter des fruits, une image de couverture, un label, un genre et un format. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Service/DiscogsService.php" line="80" column="22" bodyfile="Service/DiscogsService.php" bodystart="80" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_service_1_1_discogs_service_1a626605e4656b9f6cd4eca396ab08228e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>findFruitsInText</definition>
+        <argsstring>(string $text)</argsstring>
+        <name>findFruitsInText</name>
+        <qualifiedname>App\Service\DiscogsService\findFruitsInText</qualifiedname>
+        <param>
+          <type>string</type>
+          <declname>$text</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Recherche les mots-clés de fruits dans un texte donné. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Service/DiscogsService.php" line="94" column="22" bodyfile="Service/DiscogsService.php" bodystart="94" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_service_1_1_discogs_service_1a213b20a44cb9fd1c52c2962a885fbd67" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>makeRequest</definition>
+        <argsstring>(string $url, array $query=[])</argsstring>
+        <name>makeRequest</name>
+        <qualifiedname>App\Service\DiscogsService\makeRequest</qualifiedname>
+        <param>
+          <type>string</type>
+          <declname>$url</declname>
+        </param>
+        <param>
+          <type>array</type>
+          <declname>$query</declname>
+          <defval>[]</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Effectue une requête HTTP vers l&apos;API Discogs. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Service/DiscogsService.php" line="110" column="22" bodyfile="Service/DiscogsService.php" bodystart="110" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_service_1_1_discogs_service_1ab33f5219853f45610109e2065c3300e4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>handleResponse</definition>
+        <argsstring>(ResponseInterface $response)</argsstring>
+        <name>handleResponse</name>
+        <qualifiedname>App\Service\DiscogsService\handleResponse</qualifiedname>
+        <param>
+          <type>ResponseInterface</type>
+          <declname>$response</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gère et valide la réponse de l&apos;API Discogs. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Service/DiscogsService.php" line="125" column="22" bodyfile="Service/DiscogsService.php" bodystart="125" bodyend="138"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Service pour interagir avec l&apos;API Discogs. </para>
+    </detaileddescription>
+    <location file="Service/DiscogsService.php" line="12" column="1" bodyfile="Service/DiscogsService.php" bodystart="13" bodyend="139"/>
+    <listofallmembers>
+      <member refid="class_app_1_1_service_1_1_discogs_service_1a83e53bbb7a9d939afc568733c72f7a53" prot="private" virt="non-virtual"><scope>App::Service::DiscogsService</scope><name>$client</name></member>
+      <member refid="class_app_1_1_service_1_1_discogs_service_1ab90f584a514c19db3d82b9638b3efa26" prot="private" virt="non-virtual"><scope>App::Service::DiscogsService</scope><name>$consumerKey</name></member>
+      <member refid="class_app_1_1_service_1_1_discogs_service_1aaef19d2c6e2634d2556c354c4ae17b2d" prot="private" virt="non-virtual"><scope>App::Service::DiscogsService</scope><name>$consumerSecret</name></member>
+      <member refid="class_app_1_1_service_1_1_discogs_service_1a7040127be13abe00f2a4f152cbef129f" prot="private" virt="non-virtual"><scope>App::Service::DiscogsService</scope><name>$fruitKeywords</name></member>
+      <member refid="class_app_1_1_service_1_1_discogs_service_1ae1ee3eddd2a921ac5d35f71614386307" prot="public" virt="non-virtual"><scope>App::Service::DiscogsService</scope><name>__construct</name></member>
+      <member refid="class_app_1_1_service_1_1_discogs_service_1a626605e4656b9f6cd4eca396ab08228e" prot="private" virt="non-virtual"><scope>App::Service::DiscogsService</scope><name>findFruitsInText</name></member>
+      <member refid="class_app_1_1_service_1_1_discogs_service_1a59651c916adba385563e3ae914057b48" prot="public" virt="non-virtual"><scope>App::Service::DiscogsService</scope><name>getAlbumDetails</name></member>
+      <member refid="class_app_1_1_service_1_1_discogs_service_1ab33f5219853f45610109e2065c3300e4" prot="private" virt="non-virtual"><scope>App::Service::DiscogsService</scope><name>handleResponse</name></member>
+      <member refid="class_app_1_1_service_1_1_discogs_service_1a213b20a44cb9fd1c52c2962a885fbd67" prot="private" virt="non-virtual"><scope>App::Service::DiscogsService</scope><name>makeRequest</name></member>
+      <member refid="class_app_1_1_service_1_1_discogs_service_1a989760a9b1092498cc9c2d4c432c1fa0" prot="private" virt="non-virtual"><scope>App::Service::DiscogsService</scope><name>processAlbumData</name></member>
+      <member refid="class_app_1_1_service_1_1_discogs_service_1a14e1e0b11d4e2976862f1f60e6a20b64" prot="public" virt="non-virtual"><scope>App::Service::DiscogsService</scope><name>searchAlbums</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

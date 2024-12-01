@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__user_repository_8php_source" xml:lang="fr">
+<title>UserRepository.php</title>
+<indexterm><primary>Repository/UserRepository.php</primary></indexterm>
+Aller à la documentation de ce fichier.<programlisting linenumbering="unnumbered"><anchor xml:id="__user_repository_8php_source_1l00001"/>00001 &lt;?php
+<anchor xml:id="__user_repository_8php_source_1l00002"/>00002 
+<anchor xml:id="__user_repository_8php_source_1l00003"/>00003 <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespace_app_1_1_repository">App\Repository</link>;
+<anchor xml:id="__user_repository_8php_source_1l00004"/>00004 
+<anchor xml:id="__user_repository_8php_source_1l00005"/>00005 use&#32;<link linkend="_class_app_1_1_entity_1_1_user">App\Entity\User</link>;
+<anchor xml:id="__user_repository_8php_source_1l00006"/>00006 use&#32;Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+<anchor xml:id="__user_repository_8php_source_1l00007"/>00007 use&#32;Doctrine\Persistence\ManagerRegistry;
+<anchor xml:id="__user_repository_8php_source_1l00008"/>00008 use&#32;Symfony\Component\Security\Core\Exception\UnsupportedUserException;
+<anchor xml:id="__user_repository_8php_source_1l00009"/>00009 use&#32;Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
+<anchor xml:id="__user_repository_8php_source_1l00010"/>00010 use&#32;Symfony\Component\Security\Core\User\PasswordUpgraderInterface;
+<anchor xml:id="__user_repository_8php_source_1l00011"/>00011 
+<anchor xml:id="__user_repository_8php_source_1l00026"/><link linkend="_class_app_1_1_repository_1_1_user_repository">00026</link> <emphasis role="keyword">class&#32;</emphasis><link linkend="_class_app_1_1_repository_1_1_user_repository">UserRepository</link>&#32;<emphasis role="keyword">extends</emphasis>&#32;ServiceEntityRepository&#32;implements&#32;PasswordUpgraderInterface
+<anchor xml:id="__user_repository_8php_source_1l00027"/>00027 {
+<anchor xml:id="__user_repository_8php_source_1l00033"/><link linkend="_class_app_1_1_repository_1_1_user_repository_1a38ea33dde11163765f358f5f10a3bc03">00033</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_repository_1_1_user_repository_1a38ea33dde11163765f358f5f10a3bc03">__construct</link>(ManagerRegistry&#32;$registry)
+<anchor xml:id="__user_repository_8php_source_1l00034"/>00034 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__user_repository_8php_source_1l00035"/>00035 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;parent::__construct($registry,&#32;User::class);
+<anchor xml:id="__user_repository_8php_source_1l00036"/>00036 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__user_repository_8php_source_1l00037"/>00037 
+<anchor xml:id="__user_repository_8php_source_1l00046"/><link linkend="_class_app_1_1_repository_1_1_user_repository_1ac9400d686be3394bd280510b60ee642e">00046</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_repository_1_1_user_repository_1ac9400d686be3394bd280510b60ee642e">upgradePassword</link>(PasswordAuthenticatedUserInterface&#32;$user,&#32;<emphasis role="keywordtype">string</emphasis>&#32;$newHashedPassword):&#32;void
+<anchor xml:id="__user_repository_8php_source_1l00047"/>00047 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__user_repository_8php_source_1l00048"/>00048 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!$user&#32;instanceof&#32;<link linkend="_class_app_1_1_entity_1_1_user">User</link>)&#32;{
+<anchor xml:id="__user_repository_8php_source_1l00049"/>00049 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;<emphasis role="keyword">new</emphasis>&#32;UnsupportedUserException(sprintf(<emphasis role="stringliteral">&apos;Instances&#32;of&#32;&quot;%s&quot;&#32;are&#32;not&#32;supported.&apos;</emphasis>,&#32;$user::class));
+<anchor xml:id="__user_repository_8php_source_1l00050"/>00050 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__user_repository_8php_source_1l00051"/>00051 
+<anchor xml:id="__user_repository_8php_source_1l00052"/>00052 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$user-&gt;setPassword($newHashedPassword);
+<anchor xml:id="__user_repository_8php_source_1l00053"/>00053 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$this-&gt;getEntityManager()-&gt;persist($user);
+<anchor xml:id="__user_repository_8php_source_1l00054"/>00054 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$this-&gt;getEntityManager()-&gt;flush();
+<anchor xml:id="__user_repository_8php_source_1l00055"/>00055 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__user_repository_8php_source_1l00056"/>00056 
+<anchor xml:id="__user_repository_8php_source_1l00057"/>00057 
+<anchor xml:id="__user_repository_8php_source_1l00058"/>00058 }
+</programlisting></section>

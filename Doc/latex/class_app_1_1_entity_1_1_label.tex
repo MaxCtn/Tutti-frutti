@@ -1,0 +1,154 @@
+\doxysection{Référence de la classe Label}
+\hypertarget{class_app_1_1_entity_1_1_label}{}\label{class_app_1_1_entity_1_1_label}\index{Label@{Label}}
+\doxysubsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_label_a095c5d389db211932136b53f25f39685}{\+\_\+\+\_\+construct}} ()
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_label_a12251d0c022e9e21c137a105ff683f13}{get\+Id}} ()
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_label_a3d0963e68bb313b163a73f2803c64600}{get\+Name}} ()
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_label_a392752b62c4f6aacea5c269690921ef3}{set\+Name}} (string \$name)
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_label_ab755e2969ce6dd5719e19029a1f0ea98}{get\+Favorite\+Albums}} ()
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_label_a352415541a6239312cd6abffdd2d3801}{add\+Favorite\+Album}} (\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album}{Favorite\+Album}} \$favorite\+Album)
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_label_a7e1f5b5a1259dcb9c2be49ae4e715a4c}{remove\+Favorite\+Album}} (\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album}{Favorite\+Album}} \$favorite\+Album)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Entité représentant un label musical associé à des albums favoris.
+
+@\+ORM\textbackslash{}\+Entity(repository\+Class=Label\+Repository\+::class) 
+
+Définition à la ligne \mbox{\hyperlink{_label_8php_source_l00016}{16}} du fichier \mbox{\hyperlink{_label_8php_source}{Label.\+php}}.
+
+
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\Hypertarget{class_app_1_1_entity_1_1_label_a095c5d389db211932136b53f25f39685}\index{Label@{Label}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!Label@{Label}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_label_a095c5d389db211932136b53f25f39685} 
+\+\_\+\+\_\+construct (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Constructeur de la classe Label. Initialise la collection des albums favoris. 
+
+Définition à la ligne \mbox{\hyperlink{_label_8php_source_l00057}{57}} du fichier \mbox{\hyperlink{_label_8php_source}{Label.\+php}}.
+
+
+
+\doxysubsection{Documentation des fonctions membres}
+\Hypertarget{class_app_1_1_entity_1_1_label_a352415541a6239312cd6abffdd2d3801}\index{Label@{Label}!addFavoriteAlbum@{addFavoriteAlbum}}
+\index{addFavoriteAlbum@{addFavoriteAlbum}!Label@{Label}}
+\doxysubsubsection{\texorpdfstring{addFavoriteAlbum()}{addFavoriteAlbum()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_label_a352415541a6239312cd6abffdd2d3801} 
+add\+Favorite\+Album (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album}{Favorite\+Album}}}]{\$favorite\+Album}{}\end{DoxyParamCaption})}
+
+Ajoute un album favori à la collection associée à ce label.
+
+
+\begin{DoxyParams}[1]{Paramètres}
+Favorite\+Album & {\em \$favorite\+Album} & L\textquotesingle{}album favori à ajouter.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+self 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_label_8php_source_l00112}{112}} du fichier \mbox{\hyperlink{_label_8php_source}{Label.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_label_ab755e2969ce6dd5719e19029a1f0ea98}\index{Label@{Label}!getFavoriteAlbums@{getFavoriteAlbums}}
+\index{getFavoriteAlbums@{getFavoriteAlbums}!Label@{Label}}
+\doxysubsubsection{\texorpdfstring{getFavoriteAlbums()}{getFavoriteAlbums()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_label_ab755e2969ce6dd5719e19029a1f0ea98} 
+get\+Favorite\+Albums (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Obtient la collection des albums favoris associés à ce label.
+
+\begin{DoxyReturn}{Renvoie}
+Collection$<$int, Favorite\+Album$>$ La collection des albums favoris. 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_label_8php_source_l00100}{100}} du fichier \mbox{\hyperlink{_label_8php_source}{Label.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_label_a12251d0c022e9e21c137a105ff683f13}\index{Label@{Label}!getId@{getId}}
+\index{getId@{getId}!Label@{Label}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_label_a12251d0c022e9e21c137a105ff683f13} 
+get\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Obtient l\textquotesingle{}identifiant unique du label.
+
+\begin{DoxyReturn}{Renvoie}
+int\texorpdfstring{$\vert$}{|}null L\textquotesingle{}identifiant du label. 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_label_8php_source_l00067}{67}} du fichier \mbox{\hyperlink{_label_8php_source}{Label.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_label_a3d0963e68bb313b163a73f2803c64600}\index{Label@{Label}!getName@{getName}}
+\index{getName@{getName}!Label@{Label}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_label_a3d0963e68bb313b163a73f2803c64600} 
+get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Obtient le nom du label musical.
+
+\begin{DoxyReturn}{Renvoie}
+string\texorpdfstring{$\vert$}{|}null Le nom du label. 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_label_8php_source_l00077}{77}} du fichier \mbox{\hyperlink{_label_8php_source}{Label.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_label_a7e1f5b5a1259dcb9c2be49ae4e715a4c}\index{Label@{Label}!removeFavoriteAlbum@{removeFavoriteAlbum}}
+\index{removeFavoriteAlbum@{removeFavoriteAlbum}!Label@{Label}}
+\doxysubsubsection{\texorpdfstring{removeFavoriteAlbum()}{removeFavoriteAlbum()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_label_a7e1f5b5a1259dcb9c2be49ae4e715a4c} 
+remove\+Favorite\+Album (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album}{Favorite\+Album}}}]{\$favorite\+Album}{}\end{DoxyParamCaption})}
+
+Retire un album favori de la collection associée à ce label.
+
+
+\begin{DoxyParams}[1]{Paramètres}
+Favorite\+Album & {\em \$favorite\+Album} & L\textquotesingle{}album favori à retirer.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+self 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_label_8php_source_l00129}{129}} du fichier \mbox{\hyperlink{_label_8php_source}{Label.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_label_a392752b62c4f6aacea5c269690921ef3}\index{Label@{Label}!setName@{setName}}
+\index{setName@{setName}!Label@{Label}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_label_a392752b62c4f6aacea5c269690921ef3} 
+set\+Name (\begin{DoxyParamCaption}\item[{string}]{\$name}{}\end{DoxyParamCaption})}
+
+Définit le nom du label musical.
+
+
+\begin{DoxyParams}[1]{Paramètres}
+string & {\em \$name} & Le nom du label.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+self 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_label_8php_source_l00089}{89}} du fichier \mbox{\hyperlink{_label_8php_source}{Label.\+php}}.
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+Entity/\mbox{\hyperlink{_label_8php}{Label.\+php}}\end{DoxyCompactItemize}

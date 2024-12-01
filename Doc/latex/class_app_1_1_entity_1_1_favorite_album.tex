@@ -1,0 +1,505 @@
+\doxysection{Référence de la classe Favorite\+Album}
+\hypertarget{class_app_1_1_entity_1_1_favorite_album}{}\label{class_app_1_1_entity_1_1_favorite_album}\index{FavoriteAlbum@{FavoriteAlbum}}
+\doxysubsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album_a095c5d389db211932136b53f25f39685}{\+\_\+\+\_\+construct}} ()
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album_a12251d0c022e9e21c137a105ff683f13}{get\+Id}} ()
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album_af25659d3cdc12b0faf5a2322241bf69a}{get\+Album\+Id}} ()
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album_a5616f9d98d68c2597046ef7d04d84f6f}{set\+Album\+Id}} (int \$album\+Id)
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album_a95e859a4588a39a1824b717378a84c29}{get\+Title}} ()
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album_ac698bca9a4f3d5d9355ff023eee17285}{set\+Title}} (?string \$title)
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album_ad0a298a1c3d30a5dff3278f1f5bb7d86}{get\+Year}} ()
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album_a380136d26548fcfb8b3130250a42b9c2}{set\+Year}} (?string \$year)
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album_af68dead1965a2a3240f96ae558e355f8}{get\+Cover\+Image}} ()
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album_a32e0a6523167ed7e60e5c30711dfe1fa}{set\+Cover\+Image}} (?string \$cover\+Image)
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album_a14c4e7420d903d3e40342266333d2ecf}{get\+Label}} ()
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album_a2a7c7c3195c43a32ab55f2fea78ba318}{set\+Label}} (?\mbox{\hyperlink{class_app_1_1_entity_1_1_label}{Label}} \$label)
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album_adc6f217756d49edbac6975e1f69485d5}{get\+Genre}} ()
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album_a6fcf7c3ce3de45970b6f384c6c2c1e8c}{set\+Genre}} (?\mbox{\hyperlink{class_app_1_1_entity_1_1_genre}{Genre}} \$genre)
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album_ae3c4fbe3e8eb0d6755694bc597d6c52f}{get\+Format}} ()
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album_ab8f9ee51eb3a4b472abe80f921676a8c}{set\+Format}} (?\mbox{\hyperlink{class_app_1_1_entity_1_1_format}{Format}} \$format)
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album_ae81b7186fb97a7c6457edcc68c9aa2ef}{get\+User}} ()
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album_a406a111868b45aad6d4c8ab5b0c5bcb9}{set\+User}} (?\mbox{\hyperlink{class_app_1_1_entity_1_1_user}{User}} \$user)
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album_a6c52b5b67bd8eb098d0bc259e86312ff}{get\+Fruits}} ()
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album_ab593ea8c6876813ebec46d18c928ee00}{add\+Fruit}} (\mbox{\hyperlink{class_app_1_1_entity_1_1_fruit}{Fruit}} \$fruit)
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album_a41fda8af5652dd1f6a9af3c9886695d1}{remove\+Fruit}} (\mbox{\hyperlink{class_app_1_1_entity_1_1_fruit}{Fruit}} \$fruit)
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album_a8dc1c9e8edd1295fd956a4eb3af053b2}{get\+Tracks}} ()
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album_af6a5b20e58074d84acb01c009b10d014}{add\+Track}} (\mbox{\hyperlink{class_app_1_1_entity_1_1_track}{Track}} \$track)
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album_a13b62bd4ee7d72e4c46354bdda6bcdf0}{remove\+Track}} (\mbox{\hyperlink{class_app_1_1_entity_1_1_track}{Track}} \$track)
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album_ab2f077a347becc5f1c0446c975dec551}{get\+All\+Fruits}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Entité représentant un album favori d\textquotesingle{}un utilisateur.
+
+@\+ORM\textbackslash{}\+Entity(repository\+Class=Favorite\+Album\+Repository\+::class) @\+Broadcast 
+
+Définition à la ligne \mbox{\hyperlink{_favorite_album_8php_source_l00020}{20}} du fichier \mbox{\hyperlink{_favorite_album_8php_source}{Favorite\+Album.\+php}}.
+
+
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\Hypertarget{class_app_1_1_entity_1_1_favorite_album_a095c5d389db211932136b53f25f39685}\index{FavoriteAlbum@{FavoriteAlbum}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!FavoriteAlbum@{FavoriteAlbum}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_favorite_album_a095c5d389db211932136b53f25f39685} 
+\+\_\+\+\_\+construct (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Constructeur de la classe Favorite\+Album. Initialise les collections de fruits et de pistes. 
+
+Définition à la ligne \mbox{\hyperlink{_favorite_album_8php_source_l00156}{156}} du fichier \mbox{\hyperlink{_favorite_album_8php_source}{Favorite\+Album.\+php}}.
+
+
+
+\doxysubsection{Documentation des fonctions membres}
+\Hypertarget{class_app_1_1_entity_1_1_favorite_album_ab593ea8c6876813ebec46d18c928ee00}\index{FavoriteAlbum@{FavoriteAlbum}!addFruit@{addFruit}}
+\index{addFruit@{addFruit}!FavoriteAlbum@{FavoriteAlbum}}
+\doxysubsubsection{\texorpdfstring{addFruit()}{addFruit()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_favorite_album_ab593ea8c6876813ebec46d18c928ee00} 
+add\+Fruit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_app_1_1_entity_1_1_fruit}{Fruit}}}]{\$fruit}{}\end{DoxyParamCaption})}
+
+Ajoute un fruit à la collection des fruits associés.
+
+
+\begin{DoxyParams}[1]{Paramètres}
+Fruit & {\em \$fruit} & Le fruit à ajouter.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+self 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_favorite_album_8php_source_l00376}{376}} du fichier \mbox{\hyperlink{_favorite_album_8php_source}{Favorite\+Album.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_favorite_album_af6a5b20e58074d84acb01c009b10d014}\index{FavoriteAlbum@{FavoriteAlbum}!addTrack@{addTrack}}
+\index{addTrack@{addTrack}!FavoriteAlbum@{FavoriteAlbum}}
+\doxysubsubsection{\texorpdfstring{addTrack()}{addTrack()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_favorite_album_af6a5b20e58074d84acb01c009b10d014} 
+add\+Track (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_app_1_1_entity_1_1_track}{Track}}}]{\$track}{}\end{DoxyParamCaption})}
+
+Ajoute une piste à la collection des pistes associées.
+
+
+\begin{DoxyParams}[1]{Paramètres}
+Track & {\em \$track} & La piste à ajouter.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+self 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_favorite_album_8php_source_l00414}{414}} du fichier \mbox{\hyperlink{_favorite_album_8php_source}{Favorite\+Album.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_favorite_album_af25659d3cdc12b0faf5a2322241bf69a}\index{FavoriteAlbum@{FavoriteAlbum}!getAlbumId@{getAlbumId}}
+\index{getAlbumId@{getAlbumId}!FavoriteAlbum@{FavoriteAlbum}}
+\doxysubsubsection{\texorpdfstring{getAlbumId()}{getAlbumId()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_favorite_album_af25659d3cdc12b0faf5a2322241bf69a} 
+get\+Album\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Obtient l\textquotesingle{}identifiant de l\textquotesingle{}album dans le système externe.
+
+\begin{DoxyReturn}{Renvoie}
+int\texorpdfstring{$\vert$}{|}null L\textquotesingle{}identifiant de l\textquotesingle{}album. 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_favorite_album_8php_source_l00179}{179}} du fichier \mbox{\hyperlink{_favorite_album_8php_source}{Favorite\+Album.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_favorite_album_ab2f077a347becc5f1c0446c975dec551}\index{FavoriteAlbum@{FavoriteAlbum}!getAllFruits@{getAllFruits}}
+\index{getAllFruits@{getAllFruits}!FavoriteAlbum@{FavoriteAlbum}}
+\doxysubsubsection{\texorpdfstring{getAllFruits()}{getAllFruits()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_favorite_album_ab2f077a347becc5f1c0446c975dec551} 
+get\+All\+Fruits (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Récupère tous les fruits associés à l\textquotesingle{}album et à ses morceaux.
+
+\begin{DoxyReturn}{Renvoie}
+array La liste de tous les fruits associés. 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_favorite_album_8php_source_l00446}{446}} du fichier \mbox{\hyperlink{_favorite_album_8php_source}{Favorite\+Album.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_favorite_album_af68dead1965a2a3240f96ae558e355f8}\index{FavoriteAlbum@{FavoriteAlbum}!getCoverImage@{getCoverImage}}
+\index{getCoverImage@{getCoverImage}!FavoriteAlbum@{FavoriteAlbum}}
+\doxysubsubsection{\texorpdfstring{getCoverImage()}{getCoverImage()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_favorite_album_af68dead1965a2a3240f96ae558e355f8} 
+get\+Cover\+Image (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Obtient l\textquotesingle{}URL de l\textquotesingle{}image de couverture. Si aucune URL n\textquotesingle{}est définie, retourne une image par défaut.
+
+\begin{DoxyReturn}{Renvoie}
+string\texorpdfstring{$\vert$}{|}null L\textquotesingle{}URL de l\textquotesingle{}image de couverture. 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_favorite_album_8php_source_l00249}{249}} du fichier \mbox{\hyperlink{_favorite_album_8php_source}{Favorite\+Album.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_favorite_album_ae3c4fbe3e8eb0d6755694bc597d6c52f}\index{FavoriteAlbum@{FavoriteAlbum}!getFormat@{getFormat}}
+\index{getFormat@{getFormat}!FavoriteAlbum@{FavoriteAlbum}}
+\doxysubsubsection{\texorpdfstring{getFormat()}{getFormat()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_favorite_album_ae3c4fbe3e8eb0d6755694bc597d6c52f} 
+get\+Format (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Obtient le format de l\textquotesingle{}album (vinyle, CD, etc.).
+
+\begin{DoxyReturn}{Renvoie}
+Format\texorpdfstring{$\vert$}{|}null Le format de l\textquotesingle{}album. 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_favorite_album_8php_source_l00318}{318}} du fichier \mbox{\hyperlink{_favorite_album_8php_source}{Favorite\+Album.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_favorite_album_a6c52b5b67bd8eb098d0bc259e86312ff}\index{FavoriteAlbum@{FavoriteAlbum}!getFruits@{getFruits}}
+\index{getFruits@{getFruits}!FavoriteAlbum@{FavoriteAlbum}}
+\doxysubsubsection{\texorpdfstring{getFruits()}{getFruits()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_favorite_album_a6c52b5b67bd8eb098d0bc259e86312ff} 
+get\+Fruits (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Obtient la collection des fruits associés à l\textquotesingle{}album.
+
+\begin{DoxyReturn}{Renvoie}
+Collection$<$int, Fruit$>$ La collection de fruits. 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_favorite_album_8php_source_l00364}{364}} du fichier \mbox{\hyperlink{_favorite_album_8php_source}{Favorite\+Album.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_favorite_album_adc6f217756d49edbac6975e1f69485d5}\index{FavoriteAlbum@{FavoriteAlbum}!getGenre@{getGenre}}
+\index{getGenre@{getGenre}!FavoriteAlbum@{FavoriteAlbum}}
+\doxysubsubsection{\texorpdfstring{getGenre()}{getGenre()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_favorite_album_adc6f217756d49edbac6975e1f69485d5} 
+get\+Genre (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Obtient le genre musical de l\textquotesingle{}album.
+
+\begin{DoxyReturn}{Renvoie}
+Genre\texorpdfstring{$\vert$}{|}null Le genre musical. 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_favorite_album_8php_source_l00295}{295}} du fichier \mbox{\hyperlink{_favorite_album_8php_source}{Favorite\+Album.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_favorite_album_a12251d0c022e9e21c137a105ff683f13}\index{FavoriteAlbum@{FavoriteAlbum}!getId@{getId}}
+\index{getId@{getId}!FavoriteAlbum@{FavoriteAlbum}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_favorite_album_a12251d0c022e9e21c137a105ff683f13} 
+get\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Obtient l\textquotesingle{}identifiant unique de l\textquotesingle{}album favori.
+
+\begin{DoxyReturn}{Renvoie}
+int\texorpdfstring{$\vert$}{|}null L\textquotesingle{}identifiant de l\textquotesingle{}album favori. 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_favorite_album_8php_source_l00169}{169}} du fichier \mbox{\hyperlink{_favorite_album_8php_source}{Favorite\+Album.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_favorite_album_a14c4e7420d903d3e40342266333d2ecf}\index{FavoriteAlbum@{FavoriteAlbum}!getLabel@{getLabel}}
+\index{getLabel@{getLabel}!FavoriteAlbum@{FavoriteAlbum}}
+\doxysubsubsection{\texorpdfstring{getLabel()}{getLabel()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_favorite_album_a14c4e7420d903d3e40342266333d2ecf} 
+get\+Label (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Obtient le label de l\textquotesingle{}album.
+
+\begin{DoxyReturn}{Renvoie}
+Label\texorpdfstring{$\vert$}{|}null Le label de l\textquotesingle{}album. 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_favorite_album_8php_source_l00272}{272}} du fichier \mbox{\hyperlink{_favorite_album_8php_source}{Favorite\+Album.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_favorite_album_a95e859a4588a39a1824b717378a84c29}\index{FavoriteAlbum@{FavoriteAlbum}!getTitle@{getTitle}}
+\index{getTitle@{getTitle}!FavoriteAlbum@{FavoriteAlbum}}
+\doxysubsubsection{\texorpdfstring{getTitle()}{getTitle()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_favorite_album_a95e859a4588a39a1824b717378a84c29} 
+get\+Title (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Obtient le titre de l\textquotesingle{}album.
+
+\begin{DoxyReturn}{Renvoie}
+string\texorpdfstring{$\vert$}{|}null Le titre de l\textquotesingle{}album. 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_favorite_album_8php_source_l00202}{202}} du fichier \mbox{\hyperlink{_favorite_album_8php_source}{Favorite\+Album.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_favorite_album_a8dc1c9e8edd1295fd956a4eb3af053b2}\index{FavoriteAlbum@{FavoriteAlbum}!getTracks@{getTracks}}
+\index{getTracks@{getTracks}!FavoriteAlbum@{FavoriteAlbum}}
+\doxysubsubsection{\texorpdfstring{getTracks()}{getTracks()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_favorite_album_a8dc1c9e8edd1295fd956a4eb3af053b2} 
+get\+Tracks (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Obtient la collection des pistes associées à l\textquotesingle{}album.
+
+\begin{DoxyReturn}{Renvoie}
+Collection$<$int, Track$>$ La collection de pistes. 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_favorite_album_8php_source_l00402}{402}} du fichier \mbox{\hyperlink{_favorite_album_8php_source}{Favorite\+Album.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_favorite_album_ae81b7186fb97a7c6457edcc68c9aa2ef}\index{FavoriteAlbum@{FavoriteAlbum}!getUser@{getUser}}
+\index{getUser@{getUser}!FavoriteAlbum@{FavoriteAlbum}}
+\doxysubsubsection{\texorpdfstring{getUser()}{getUser()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_favorite_album_ae81b7186fb97a7c6457edcc68c9aa2ef} 
+get\+User (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Obtient l\textquotesingle{}utilisateur propriétaire de l\textquotesingle{}album favori.
+
+\begin{DoxyReturn}{Renvoie}
+User\texorpdfstring{$\vert$}{|}null L\textquotesingle{}utilisateur. 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_favorite_album_8php_source_l00341}{341}} du fichier \mbox{\hyperlink{_favorite_album_8php_source}{Favorite\+Album.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_favorite_album_ad0a298a1c3d30a5dff3278f1f5bb7d86}\index{FavoriteAlbum@{FavoriteAlbum}!getYear@{getYear}}
+\index{getYear@{getYear}!FavoriteAlbum@{FavoriteAlbum}}
+\doxysubsubsection{\texorpdfstring{getYear()}{getYear()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_favorite_album_ad0a298a1c3d30a5dff3278f1f5bb7d86} 
+get\+Year (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Obtient l\textquotesingle{}année de sortie de l\textquotesingle{}album.
+
+\begin{DoxyReturn}{Renvoie}
+string\texorpdfstring{$\vert$}{|}null L\textquotesingle{}année de sortie. 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_favorite_album_8php_source_l00225}{225}} du fichier \mbox{\hyperlink{_favorite_album_8php_source}{Favorite\+Album.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_favorite_album_a41fda8af5652dd1f6a9af3c9886695d1}\index{FavoriteAlbum@{FavoriteAlbum}!removeFruit@{removeFruit}}
+\index{removeFruit@{removeFruit}!FavoriteAlbum@{FavoriteAlbum}}
+\doxysubsubsection{\texorpdfstring{removeFruit()}{removeFruit()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_favorite_album_a41fda8af5652dd1f6a9af3c9886695d1} 
+remove\+Fruit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_app_1_1_entity_1_1_fruit}{Fruit}}}]{\$fruit}{}\end{DoxyParamCaption})}
+
+Retire un fruit de la collection des fruits associés.
+
+
+\begin{DoxyParams}[1]{Paramètres}
+Fruit & {\em \$fruit} & Le fruit à retirer.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+self 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_favorite_album_8php_source_l00391}{391}} du fichier \mbox{\hyperlink{_favorite_album_8php_source}{Favorite\+Album.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_favorite_album_a13b62bd4ee7d72e4c46354bdda6bcdf0}\index{FavoriteAlbum@{FavoriteAlbum}!removeTrack@{removeTrack}}
+\index{removeTrack@{removeTrack}!FavoriteAlbum@{FavoriteAlbum}}
+\doxysubsubsection{\texorpdfstring{removeTrack()}{removeTrack()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_favorite_album_a13b62bd4ee7d72e4c46354bdda6bcdf0} 
+remove\+Track (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_app_1_1_entity_1_1_track}{Track}}}]{\$track}{}\end{DoxyParamCaption})}
+
+Retire une piste de la collection des pistes associées.
+
+
+\begin{DoxyParams}[1]{Paramètres}
+Track & {\em \$track} & La piste à retirer.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+self 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_favorite_album_8php_source_l00430}{430}} du fichier \mbox{\hyperlink{_favorite_album_8php_source}{Favorite\+Album.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_favorite_album_a5616f9d98d68c2597046ef7d04d84f6f}\index{FavoriteAlbum@{FavoriteAlbum}!setAlbumId@{setAlbumId}}
+\index{setAlbumId@{setAlbumId}!FavoriteAlbum@{FavoriteAlbum}}
+\doxysubsubsection{\texorpdfstring{setAlbumId()}{setAlbumId()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_favorite_album_a5616f9d98d68c2597046ef7d04d84f6f} 
+set\+Album\+Id (\begin{DoxyParamCaption}\item[{int}]{\$album\+Id}{}\end{DoxyParamCaption})}
+
+Définit l\textquotesingle{}identifiant de l\textquotesingle{}album dans le système externe.
+
+
+\begin{DoxyParams}[1]{Paramètres}
+int & {\em \$album\+Id} & L\textquotesingle{}identifiant de l\textquotesingle{}album.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+self 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_favorite_album_8php_source_l00191}{191}} du fichier \mbox{\hyperlink{_favorite_album_8php_source}{Favorite\+Album.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_favorite_album_a32e0a6523167ed7e60e5c30711dfe1fa}\index{FavoriteAlbum@{FavoriteAlbum}!setCoverImage@{setCoverImage}}
+\index{setCoverImage@{setCoverImage}!FavoriteAlbum@{FavoriteAlbum}}
+\doxysubsubsection{\texorpdfstring{setCoverImage()}{setCoverImage()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_favorite_album_a32e0a6523167ed7e60e5c30711dfe1fa} 
+set\+Cover\+Image (\begin{DoxyParamCaption}\item[{?string}]{\$cover\+Image}{}\end{DoxyParamCaption})}
+
+Définit l\textquotesingle{}URL de l\textquotesingle{}image de couverture.
+
+
+\begin{DoxyParams}[1]{Paramètres}
+string | null & {\em \$cover\+Image} & L\textquotesingle{}URL de l\textquotesingle{}image.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+self 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_favorite_album_8php_source_l00261}{261}} du fichier \mbox{\hyperlink{_favorite_album_8php_source}{Favorite\+Album.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_favorite_album_ab8f9ee51eb3a4b472abe80f921676a8c}\index{FavoriteAlbum@{FavoriteAlbum}!setFormat@{setFormat}}
+\index{setFormat@{setFormat}!FavoriteAlbum@{FavoriteAlbum}}
+\doxysubsubsection{\texorpdfstring{setFormat()}{setFormat()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_favorite_album_ab8f9ee51eb3a4b472abe80f921676a8c} 
+set\+Format (\begin{DoxyParamCaption}\item[{?\mbox{\hyperlink{class_app_1_1_entity_1_1_format}{Format}}}]{\$format}{}\end{DoxyParamCaption})}
+
+Définit le format de l\textquotesingle{}album.
+
+
+\begin{DoxyParams}[1]{Paramètres}
+Format | null & {\em \$format} & Le format.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+self 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_favorite_album_8php_source_l00330}{330}} du fichier \mbox{\hyperlink{_favorite_album_8php_source}{Favorite\+Album.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_favorite_album_a6fcf7c3ce3de45970b6f384c6c2c1e8c}\index{FavoriteAlbum@{FavoriteAlbum}!setGenre@{setGenre}}
+\index{setGenre@{setGenre}!FavoriteAlbum@{FavoriteAlbum}}
+\doxysubsubsection{\texorpdfstring{setGenre()}{setGenre()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_favorite_album_a6fcf7c3ce3de45970b6f384c6c2c1e8c} 
+set\+Genre (\begin{DoxyParamCaption}\item[{?\mbox{\hyperlink{class_app_1_1_entity_1_1_genre}{Genre}}}]{\$genre}{}\end{DoxyParamCaption})}
+
+Définit le genre musical de l\textquotesingle{}album.
+
+
+\begin{DoxyParams}[1]{Paramètres}
+Genre | null & {\em \$genre} & Le genre musical.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+self 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_favorite_album_8php_source_l00307}{307}} du fichier \mbox{\hyperlink{_favorite_album_8php_source}{Favorite\+Album.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_favorite_album_a2a7c7c3195c43a32ab55f2fea78ba318}\index{FavoriteAlbum@{FavoriteAlbum}!setLabel@{setLabel}}
+\index{setLabel@{setLabel}!FavoriteAlbum@{FavoriteAlbum}}
+\doxysubsubsection{\texorpdfstring{setLabel()}{setLabel()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_favorite_album_a2a7c7c3195c43a32ab55f2fea78ba318} 
+set\+Label (\begin{DoxyParamCaption}\item[{?\mbox{\hyperlink{class_app_1_1_entity_1_1_label}{Label}}}]{\$label}{}\end{DoxyParamCaption})}
+
+Définit le label de l\textquotesingle{}album.
+
+
+\begin{DoxyParams}[1]{Paramètres}
+Label | null & {\em \$label} & Le label.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+self 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_favorite_album_8php_source_l00284}{284}} du fichier \mbox{\hyperlink{_favorite_album_8php_source}{Favorite\+Album.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_favorite_album_ac698bca9a4f3d5d9355ff023eee17285}\index{FavoriteAlbum@{FavoriteAlbum}!setTitle@{setTitle}}
+\index{setTitle@{setTitle}!FavoriteAlbum@{FavoriteAlbum}}
+\doxysubsubsection{\texorpdfstring{setTitle()}{setTitle()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_favorite_album_ac698bca9a4f3d5d9355ff023eee17285} 
+set\+Title (\begin{DoxyParamCaption}\item[{?string}]{\$title}{}\end{DoxyParamCaption})}
+
+Définit le titre de l\textquotesingle{}album.
+
+
+\begin{DoxyParams}[1]{Paramètres}
+string | null & {\em \$title} & Le titre de l\textquotesingle{}album.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+self 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_favorite_album_8php_source_l00214}{214}} du fichier \mbox{\hyperlink{_favorite_album_8php_source}{Favorite\+Album.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_favorite_album_a406a111868b45aad6d4c8ab5b0c5bcb9}\index{FavoriteAlbum@{FavoriteAlbum}!setUser@{setUser}}
+\index{setUser@{setUser}!FavoriteAlbum@{FavoriteAlbum}}
+\doxysubsubsection{\texorpdfstring{setUser()}{setUser()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_favorite_album_a406a111868b45aad6d4c8ab5b0c5bcb9} 
+set\+User (\begin{DoxyParamCaption}\item[{?\mbox{\hyperlink{class_app_1_1_entity_1_1_user}{User}}}]{\$user}{}\end{DoxyParamCaption})}
+
+Définit l\textquotesingle{}utilisateur propriétaire de l\textquotesingle{}album favori.
+
+
+\begin{DoxyParams}[1]{Paramètres}
+User | null & {\em \$user} & L\textquotesingle{}utilisateur.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+self 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_favorite_album_8php_source_l00353}{353}} du fichier \mbox{\hyperlink{_favorite_album_8php_source}{Favorite\+Album.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_favorite_album_a380136d26548fcfb8b3130250a42b9c2}\index{FavoriteAlbum@{FavoriteAlbum}!setYear@{setYear}}
+\index{setYear@{setYear}!FavoriteAlbum@{FavoriteAlbum}}
+\doxysubsubsection{\texorpdfstring{setYear()}{setYear()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_favorite_album_a380136d26548fcfb8b3130250a42b9c2} 
+set\+Year (\begin{DoxyParamCaption}\item[{?string}]{\$year}{}\end{DoxyParamCaption})}
+
+Définit l\textquotesingle{}année de sortie de l\textquotesingle{}album.
+
+
+\begin{DoxyParams}[1]{Paramètres}
+string | null & {\em \$year} & L\textquotesingle{}année de sortie.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+self 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_favorite_album_8php_source_l00237}{237}} du fichier \mbox{\hyperlink{_favorite_album_8php_source}{Favorite\+Album.\+php}}.
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+Entity/\mbox{\hyperlink{_favorite_album_8php}{Favorite\+Album.\+php}}\end{DoxyCompactItemize}

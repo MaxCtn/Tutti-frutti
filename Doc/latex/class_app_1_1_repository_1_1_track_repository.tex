@@ -1,0 +1,98 @@
+\doxysection{Référence de la classe Track\+Repository}
+\hypertarget{class_app_1_1_repository_1_1_track_repository}{}\label{class_app_1_1_repository_1_1_track_repository}\index{TrackRepository@{TrackRepository}}
+
+
+Graphe d\textquotesingle{}héritage de Track\+Repository\+:
+% FIG 0
+
+
+Graphe de collaboration de Track\+Repository\+:
+% FIG 1
+\doxysubsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_app_1_1_repository_1_1_track_repository_a38ea33dde11163765f358f5f10a3bc03}{\+\_\+\+\_\+construct}} (Manager\+Registry \$registry)
+\item 
+\mbox{\hyperlink{class_app_1_1_repository_1_1_track_repository_a72e1e4ff53252e1b76b53b7b47178131}{find\+By\+Title\+Part}} (string \$title\+Part)
+\item 
+\mbox{\hyperlink{class_app_1_1_repository_1_1_track_repository_ad4bfe6689e1b9adbe08de3be53c46d19}{find\+By\+Album\+Id}} (int \$album\+Id)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Repository pour l\textquotesingle{}entité Track.
+
+Fournit des méthodes de base pour interagir avec les pistes d\textquotesingle{}albums (tracks) et permet d\textquotesingle{}ajouter des méthodes personnalisées pour répondre à des besoins spécifiques.
+
+@method Track\texorpdfstring{$\vert$}{|}null find(\$id, \$lock\+Mode = null, \$lock\+Version = null) @method Track\texorpdfstring{$\vert$}{|}null find\+One\+By(array \$criteria, array \$order\+By = null) @method Track\mbox{[}\mbox{]} find\+All() @method Track\mbox{[}\mbox{]} find\+By(array \$criteria, array \$order\+By = null, \$limit = null, \$offset = null) 
+
+Définition à la ligne \mbox{\hyperlink{_track_repository_8php_source_l00020}{20}} du fichier \mbox{\hyperlink{_track_repository_8php_source}{Track\+Repository.\+php}}.
+
+
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\Hypertarget{class_app_1_1_repository_1_1_track_repository_a38ea33dde11163765f358f5f10a3bc03}\index{TrackRepository@{TrackRepository}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!TrackRepository@{TrackRepository}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily \label{class_app_1_1_repository_1_1_track_repository_a38ea33dde11163765f358f5f10a3bc03} 
+\+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{Manager\+Registry}]{\$registry}{}\end{DoxyParamCaption})}
+
+Constructeur du repository.
+
+
+\begin{DoxyParams}[1]{Paramètres}
+Manager\+Registry & {\em \$registry} & Le registre des gestionnaires d\textquotesingle{}entités. \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \mbox{\hyperlink{_track_repository_8php_source_l00027}{27}} du fichier \mbox{\hyperlink{_track_repository_8php_source}{Track\+Repository.\+php}}.
+
+
+
+\doxysubsection{Documentation des fonctions membres}
+\Hypertarget{class_app_1_1_repository_1_1_track_repository_ad4bfe6689e1b9adbe08de3be53c46d19}\index{TrackRepository@{TrackRepository}!findByAlbumId@{findByAlbumId}}
+\index{findByAlbumId@{findByAlbumId}!TrackRepository@{TrackRepository}}
+\doxysubsubsection{\texorpdfstring{findByAlbumId()}{findByAlbumId()}}
+{\footnotesize\ttfamily \label{class_app_1_1_repository_1_1_track_repository_ad4bfe6689e1b9adbe08de3be53c46d19} 
+find\+By\+Album\+Id (\begin{DoxyParamCaption}\item[{int}]{\$album\+Id}{}\end{DoxyParamCaption})}
+
+Recherche des pistes d\textquotesingle{}un album spécifique.
+
+
+\begin{DoxyParams}[1]{Paramètres}
+int & {\em \$album\+Id} & L\textquotesingle{}identifiant de l\textquotesingle{}album. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Track\mbox{[}\mbox{]} La liste des pistes de l\textquotesingle{}album. 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_track_repository_8php_source_l00054}{54}} du fichier \mbox{\hyperlink{_track_repository_8php_source}{Track\+Repository.\+php}}.
+
+\Hypertarget{class_app_1_1_repository_1_1_track_repository_a72e1e4ff53252e1b76b53b7b47178131}\index{TrackRepository@{TrackRepository}!findByTitlePart@{findByTitlePart}}
+\index{findByTitlePart@{findByTitlePart}!TrackRepository@{TrackRepository}}
+\doxysubsubsection{\texorpdfstring{findByTitlePart()}{findByTitlePart()}}
+{\footnotesize\ttfamily \label{class_app_1_1_repository_1_1_track_repository_a72e1e4ff53252e1b76b53b7b47178131} 
+find\+By\+Title\+Part (\begin{DoxyParamCaption}\item[{string}]{\$title\+Part}{}\end{DoxyParamCaption})}
+
+Recherche des pistes par titre partiel.
+
+
+\begin{DoxyParams}[1]{Paramètres}
+string & {\em \$title\+Part} & Le fragment du titre à rechercher. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Track\mbox{[}\mbox{]} La liste des pistes correspondantes. 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_track_repository_8php_source_l00038}{38}} du fichier \mbox{\hyperlink{_track_repository_8php_source}{Track\+Repository.\+php}}.
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+Repository/\mbox{\hyperlink{_track_repository_8php}{Track\+Repository.\+php}}\end{DoxyCompactItemize}

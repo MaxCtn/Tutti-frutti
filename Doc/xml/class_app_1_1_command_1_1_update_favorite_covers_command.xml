@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="fr">
+  <compounddef id="class_app_1_1_command_1_1_update_favorite_covers_command" kind="class" language="PHP" prot="public">
+    <compoundname>App::Command::UpdateFavoriteCoversCommand</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Command</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_app_1_1_command_1_1_update_favorite_covers_command_1ad004514ef999d76cb19ca6519b55a8c0" prot="private" static="no" mutable="no">
+        <type>EntityManagerInterface</type>
+        <definition>EntityManagerInterface $entityManager</definition>
+        <argsstring></argsstring>
+        <name>$entityManager</name>
+        <qualifiedname>App\Command\UpdateFavoriteCoversCommand\$entityManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Command/UpdateFavoriteCoversCommand.php" line="25" column="36" bodyfile="Command/UpdateFavoriteCoversCommand.php" bodystart="25" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_app_1_1_command_1_1_update_favorite_covers_command_1abb5fb9a65dd8a81e7482dddbf71c5177" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>__construct</definition>
+        <argsstring>(EntityManagerInterface $entityManager)</argsstring>
+        <name>__construct</name>
+        <qualifiedname>App\Command\UpdateFavoriteCoversCommand\__construct</qualifiedname>
+        <param>
+          <type>EntityManagerInterface</type>
+          <declname>$entityManager</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructeur de la commande.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>EntityManagerInterface</parametertype>
+<parametername>$entityManager</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Le gestionnaire d&apos;entités. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Command/UpdateFavoriteCoversCommand.php" line="32" column="21" bodyfile="Command/UpdateFavoriteCoversCommand.php" bodystart="32" bodyend="36"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_app_1_1_command_1_1_update_favorite_covers_command_1ab31c72b72ddaf7116db5d84c055d3c0b" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>execute</definition>
+        <argsstring>(InputInterface $input, OutputInterface $output)</argsstring>
+        <name>execute</name>
+        <qualifiedname>App\Command\UpdateFavoriteCoversCommand\execute</qualifiedname>
+        <param>
+          <type>InputInterface</type>
+          <declname>$input</declname>
+        </param>
+        <param>
+          <type>OutputInterface</type>
+          <declname>$output</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Exécute la commande pour mettre à jour les images par défaut des albums favoris.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>InputInterface</parametertype>
+<parametername>$input</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Interface d&apos;entrée. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>OutputInterface</parametertype>
+<parametername>$output</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Interface de sortie.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>int Code de statut de la commande. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Command/UpdateFavoriteCoversCommand.php" line="46" column="24" bodyfile="Command/UpdateFavoriteCoversCommand.php" bodystart="46" bodyend="89"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Command</label>
+      </node>
+      <node id="1">
+        <label>UpdateFavoriteCoversCommand</label>
+        <link refid="class_app_1_1_command_1_1_update_favorite_covers_command"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Command</label>
+      </node>
+      <node id="1">
+        <label>UpdateFavoriteCoversCommand</label>
+        <link refid="class_app_1_1_command_1_1_update_favorite_covers_command"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Command/UpdateFavoriteCoversCommand.php" line="18" column="1" bodyfile="Command/UpdateFavoriteCoversCommand.php" bodystart="19" bodyend="90"/>
+    <listofallmembers>
+      <member refid="class_app_1_1_command_1_1_update_favorite_covers_command_1ad004514ef999d76cb19ca6519b55a8c0" prot="private" virt="non-virtual"><scope>App::Command::UpdateFavoriteCoversCommand</scope><name>$entityManager</name></member>
+      <member refid="class_app_1_1_command_1_1_update_favorite_covers_command_1abb5fb9a65dd8a81e7482dddbf71c5177" prot="public" virt="non-virtual"><scope>App::Command::UpdateFavoriteCoversCommand</scope><name>__construct</name></member>
+      <member refid="class_app_1_1_command_1_1_update_favorite_covers_command_1ab31c72b72ddaf7116db5d84c055d3c0b" prot="protected" virt="non-virtual"><scope>App::Command::UpdateFavoriteCoversCommand</scope><name>execute</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

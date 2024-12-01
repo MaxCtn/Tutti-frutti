@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="fr">
+  <compounddef id="namespace_app_1_1_service" kind="namespace" language="PHP">
+    <compoundname>App::Service</compoundname>
+    <innerclass refid="class_app_1_1_service_1_1_discogs_service" prot="public">App::Service::DiscogsService</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Service/DiscogsService.php" line="3" column="10"/>
+  </compounddef>
+</doxygen>

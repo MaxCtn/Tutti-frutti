@@ -1,0 +1,223 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_app_1_1_security_1_1_app_custom_authenticator" xml:lang="fr">
+<title>Référence de la classe AppCustomAuthenticator</title>
+<indexterm><primary>AppCustomAuthenticator</primary></indexterm>
+Graphe d&apos;héritage de AppCustomAuthenticator:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_app_1_1_security_1_1_app_custom_authenticator__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Graphe de collaboration de AppCustomAuthenticator:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_app_1_1_security_1_1_app_custom_authenticator__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Fonctions membres publiques    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_app_1_1_security_1_1_app_custom_authenticator_1aafc1eab4a8c8c05bc66d94041d739d0f">__construct</link> (UrlGeneratorInterface $urlGenerator)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_security_1_1_app_custom_authenticator_1acc8752684a58a442307c274100d77faf">authenticate</link> (Request $request)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_security_1_1_app_custom_authenticator_1a8c14d31ce5a6d2bec39798fa32dacc45">onAuthenticationSuccess</link> (Request $request, TokenInterface $token, string $firewallName)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Attributs publics    </title>
+        <itemizedlist>
+            <listitem><para>const <link linkend="_class_app_1_1_security_1_1_app_custom_authenticator_1acefb6c1e88a6be21742efe1796c1b10a">LOGIN_ROUTE</link> = &apos;app_login&apos;</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Fonctions membres protégées    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_app_1_1_security_1_1_app_custom_authenticator_1a2ed952b0c2d4db67fb2fa26a2a01a923">getLoginUrl</link> (Request $request)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Description détaillée</title>
+
+<para>Authentificateur personnalisé pour gérer l&apos;authentification des utilisateurs. </para>
+<para>
+Définition à la ligne <link linkend="__app_custom_authenticator_8php_source_1l00022">22</link> du fichier <link linkend="__app_custom_authenticator_8php_source">AppCustomAuthenticator.php</link>.</para>
+</section>
+<section>
+<title>Documentation des constructeurs et destructeur</title>
+<anchor xml:id="_class_app_1_1_security_1_1_app_custom_authenticator_1aafc1eab4a8c8c05bc66d94041d739d0f"/><section>
+    <title>__construct()</title>
+<indexterm><primary>__construct</primary><secondary>AppCustomAuthenticator</secondary></indexterm>
+<indexterm><primary>AppCustomAuthenticator</primary><secondary>__construct</secondary></indexterm>
+<para><computeroutput>__construct (UrlGeneratorInterface $urlGenerator)</computeroutput></para>
+<para>Constructeur de l&apos;authentificateur.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Paramètres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>UrlGeneratorInterface</entry><entry>$urlGenerator</entry><entry>
+<para>Générateur d&apos;URL pour les redirections. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Définition à la ligne <link linkend="__app_custom_authenticator_8php_source_1l00038">38</link> du fichier <link linkend="__app_custom_authenticator_8php_source">AppCustomAuthenticator.php</link>.</para>
+</section>
+</section>
+<section>
+<title>Documentation des fonctions membres</title>
+<anchor xml:id="_class_app_1_1_security_1_1_app_custom_authenticator_1acc8752684a58a442307c274100d77faf"/><section>
+    <title>authenticate()</title>
+<indexterm><primary>authenticate</primary><secondary>AppCustomAuthenticator</secondary></indexterm>
+<indexterm><primary>AppCustomAuthenticator</primary><secondary>authenticate</secondary></indexterm>
+<para><computeroutput>authenticate (Request $request)</computeroutput></para>
+<para>Authentifie une requête utilisateur.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Paramètres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>Request</entry><entry>$request</entry><entry>
+<para>La requête HTTP. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Renvoie</title>
+
+<para>Passport Un objet Passport contenant les informations d&apos;identification et les badges. </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__app_custom_authenticator_8php_source_1l00049">49</link> du fichier <link linkend="__app_custom_authenticator_8php_source">AppCustomAuthenticator.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_security_1_1_app_custom_authenticator_1a2ed952b0c2d4db67fb2fa26a2a01a923"/><section>
+    <title>getLoginUrl()</title>
+<indexterm><primary>getLoginUrl</primary><secondary>AppCustomAuthenticator</secondary></indexterm>
+<indexterm><primary>AppCustomAuthenticator</primary><secondary>getLoginUrl</secondary></indexterm>
+<para><computeroutput>getLoginUrl (Request $request)<computeroutput>[protected]</computeroutput></computeroutput></para>
+<para>Renvoie l&apos;URL de connexion.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Paramètres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>Request</entry><entry>$request</entry><entry>
+<para>La requête HTTP. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Renvoie</title>
+
+<para>string L&apos;URL de la page de connexion. </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__app_custom_authenticator_8php_source_1l00090">90</link> du fichier <link linkend="__app_custom_authenticator_8php_source">AppCustomAuthenticator.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_security_1_1_app_custom_authenticator_1a8c14d31ce5a6d2bec39798fa32dacc45"/><section>
+    <title>onAuthenticationSuccess()</title>
+<indexterm><primary>onAuthenticationSuccess</primary><secondary>AppCustomAuthenticator</secondary></indexterm>
+<indexterm><primary>AppCustomAuthenticator</primary><secondary>onAuthenticationSuccess</secondary></indexterm>
+<para><computeroutput>onAuthenticationSuccess (Request $request, TokenInterface $token, string $firewallName)</computeroutput></para>
+<para>Gère la redirection après une authentification réussie.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Paramètres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>Request</entry><entry>$request</entry><entry>
+<para>La requête HTTP. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>TokenInterface</entry><entry>$token</entry><entry>
+<para>Le token d&apos;authentification. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>string</entry><entry>$firewallName</entry><entry>
+<para>Le nom du pare-feu. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Renvoie</title>
+
+<para>Response|null Une réponse HTTP ou null. </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__app_custom_authenticator_8php_source_1l00074">74</link> du fichier <link linkend="__app_custom_authenticator_8php_source">AppCustomAuthenticator.php</link>.</para>
+</section>
+</section>
+<section>
+<title>Documentation des données membres</title>
+<anchor xml:id="_class_app_1_1_security_1_1_app_custom_authenticator_1acefb6c1e88a6be21742efe1796c1b10a"/><section>
+    <title>LOGIN_ROUTE</title>
+<indexterm><primary>LOGIN_ROUTE</primary><secondary>AppCustomAuthenticator</secondary></indexterm>
+<indexterm><primary>AppCustomAuthenticator</primary><secondary>LOGIN_ROUTE</secondary></indexterm>
+<para><computeroutput>const LOGIN_ROUTE = &apos;app_login&apos;</computeroutput></para><para>
+Définition à la ligne <link linkend="__app_custom_authenticator_8php_source_1l00026">26</link> du fichier <link linkend="__app_custom_authenticator_8php_source">AppCustomAuthenticator.php</link>.</para>
+</section>
+<para>
+La documentation de cette classe a été générée à partir du fichier suivant :</para>
+Security/<link linkend="__app_custom_authenticator_8php">AppCustomAuthenticator.php</link></section>
+</section>

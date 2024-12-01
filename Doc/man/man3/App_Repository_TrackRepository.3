@@ -1,0 +1,88 @@
+.TH "TrackRepository" 3 "Tutti-frutti" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TrackRepository
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Est dérivée de ServiceEntityRepository\&.
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fB__construct\fP (ManagerRegistry $registry)"
+.br
+.ti -1c
+.RI "\fBfindByTitlePart\fP (string $titlePart)"
+.br
+.ti -1c
+.RI "\fBfindByAlbumId\fP (int $albumId)"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Repository pour l'entité Track\&.
+
+.PP
+Fournit des méthodes de base pour interagir avec les pistes d'albums (tracks) et permet d'ajouter des méthodes personnalisées pour répondre à des besoins spécifiques\&.
+
+.PP
+@method Track|null find($id, $lockMode = null, $lockVersion = null) @method Track|null findOneBy(array $criteria, array $orderBy = null) @method Track[] findAll() @method Track[] findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null) 
+.PP
+Définition à la ligne \fB20\fP du fichier \fBTrackRepository\&.php\fP\&.
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "__construct (ManagerRegistry $registry)"
+Constructeur du repository\&.
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$registry\fP Le registre des gestionnaires d'entités\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB27\fP du fichier \fBTrackRepository\&.php\fP\&.
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "findByAlbumId (int $albumId)"
+Recherche des pistes d'un album spécifique\&.
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$albumId\fP L'identifiant de l'album\&. 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+Track[] La liste des pistes de l'album\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB54\fP du fichier \fBTrackRepository\&.php\fP\&.
+.SS "findByTitlePart (string $titlePart)"
+Recherche des pistes par titre partiel\&.
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$titlePart\fP Le fragment du titre à rechercher\&. 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+Track[] La liste des pistes correspondantes\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB38\fP du fichier \fBTrackRepository\&.php\fP\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Tutti-frutti à partir du code source\&.

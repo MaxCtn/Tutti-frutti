@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="fr">
+  <compounddef id="class_app_1_1_repository_1_1_favorite_album_repository" kind="class" language="PHP" prot="public">
+    <compoundname>App::Repository::FavoriteAlbumRepository</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">ServiceEntityRepository</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">ServiceEntityRepository</basecompoundref>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_app_1_1_repository_1_1_favorite_album_repository_1a38ea33dde11163765f358f5f10a3bc03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>__construct</definition>
+        <argsstring>(ManagerRegistry $registry)</argsstring>
+        <name>__construct</name>
+        <qualifiedname>App\Repository\FavoriteAlbumRepository\__construct</qualifiedname>
+        <param>
+          <type>ManagerRegistry</type>
+          <declname>$registry</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Repository/FavoriteAlbumRepository.php" line="18" column="21" bodyfile="Repository/FavoriteAlbumRepository.php" bodystart="18" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_repository_1_1_favorite_album_repository_1a1e89bed821646ae540cc6c84f28cd05b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>findByUser</definition>
+        <argsstring>($user, array $filters=[], string $sortBy=&apos;title&apos;, string $order=&apos;ASC&apos;)</argsstring>
+        <name>findByUser</name>
+        <qualifiedname>App\Repository\FavoriteAlbumRepository\findByUser</qualifiedname>
+        <param>
+          <declname>$user</declname>
+        </param>
+        <param>
+          <type>array</type>
+          <declname>$filters</declname>
+          <defval>[]</defval>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>$sortBy</declname>
+          <defval>&apos;title&apos;</defval>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>$order</declname>
+          <defval>&apos;ASC&apos;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Récupère les albums favoris spécifiques à un utilisateur avec des options de filtrage et de tri.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>mixed</parametertype>
+<parametername>$user</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>L&apos;utilisateur pour lequel récupérer les albums favoris. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>array</parametertype>
+<parametername>$filters</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Les critères de filtrage (par exemple, &apos;title&apos;, &apos;fruit&apos;, &apos;year&apos;). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$sortBy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Le champ sur lequel trier les résultats (par défaut : &apos;title&apos;). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$order</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>L&apos;ordre du tri : &apos;ASC&apos; ou &apos;DESC&apos; (par défaut : &apos;ASC&apos;).</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>FavoriteAlbum[] La liste des albums favoris correspondant aux critères. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Repository/FavoriteAlbumRepository.php" line="33" column="21" bodyfile="Repository/FavoriteAlbumRepository.php" bodystart="33" bodyend="85"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Repository pour l&apos;entité FavoriteAlbum.</para>
+<para>Fournit des méthodes pour interagir avec les albums favoris d&apos;un utilisateur.</para>
+<para>&lt;FavoriteAlbum&gt; </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>ServiceEntityRepository</label>
+      </node>
+      <node id="1">
+        <label>FavoriteAlbumRepository</label>
+        <link refid="class_app_1_1_repository_1_1_favorite_album_repository"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>ServiceEntityRepository</label>
+      </node>
+      <node id="1">
+        <label>FavoriteAlbumRepository</label>
+        <link refid="class_app_1_1_repository_1_1_favorite_album_repository"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Repository/FavoriteAlbumRepository.php" line="16" column="1" bodyfile="Repository/FavoriteAlbumRepository.php" bodystart="17" bodyend="86"/>
+    <listofallmembers>
+      <member refid="class_app_1_1_repository_1_1_favorite_album_repository_1a38ea33dde11163765f358f5f10a3bc03" prot="public" virt="non-virtual"><scope>App::Repository::FavoriteAlbumRepository</scope><name>__construct</name></member>
+      <member refid="class_app_1_1_repository_1_1_favorite_album_repository_1a1e89bed821646ae540cc6c84f28cd05b" prot="public" virt="non-virtual"><scope>App::Repository::FavoriteAlbumRepository</scope><name>findByUser</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

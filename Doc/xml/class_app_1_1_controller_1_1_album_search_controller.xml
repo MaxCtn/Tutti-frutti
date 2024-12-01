@@ -1,0 +1,242 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="fr">
+  <compounddef id="class_app_1_1_controller_1_1_album_search_controller" kind="class" language="PHP" prot="public">
+    <compoundname>App::Controller::AlbumSearchController</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">AbstractController</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_app_1_1_controller_1_1_album_search_controller_1a509a29f2d48543f9fd118b1a7032ebe8" prot="private" static="no" mutable="no">
+        <type><ref refid="class_app_1_1_service_1_1_discogs_service" kindref="compound">DiscogsService</ref></type>
+        <definition>DiscogsService $discogsService</definition>
+        <argsstring></argsstring>
+        <name>$discogsService</name>
+        <qualifiedname>App\Controller\AlbumSearchController\$discogsService</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Controller/AlbumSearchController.php" line="21" column="28" bodyfile="Controller/AlbumSearchController.php" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_app_1_1_controller_1_1_album_search_controller_1ad004514ef999d76cb19ca6519b55a8c0" prot="private" static="no" mutable="no">
+        <type>EntityManagerInterface</type>
+        <definition>EntityManagerInterface $entityManager</definition>
+        <argsstring></argsstring>
+        <name>$entityManager</name>
+        <qualifiedname>App\Controller\AlbumSearchController\$entityManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Controller/AlbumSearchController.php" line="22" column="36" bodyfile="Controller/AlbumSearchController.php" bodystart="22" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_app_1_1_controller_1_1_album_search_controller_1ae684060a647ec21f30e4cde445b19e61" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>__construct</definition>
+        <argsstring>(DiscogsService $discogsService, EntityManagerInterface $entityManager)</argsstring>
+        <name>__construct</name>
+        <qualifiedname>App\Controller\AlbumSearchController\__construct</qualifiedname>
+        <param>
+          <type><ref refid="class_app_1_1_service_1_1_discogs_service" kindref="compound">DiscogsService</ref></type>
+          <declname>$discogsService</declname>
+        </param>
+        <param>
+          <type>EntityManagerInterface</type>
+          <declname>$entityManager</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Controller/AlbumSearchController.php" line="24" column="21" bodyfile="Controller/AlbumSearchController.php" bodystart="24" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_controller_1_1_album_search_controller_1a32c26085cd6825224689fb8e12587e93" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>search</definition>
+        <argsstring>(Request $request)</argsstring>
+        <name>search</name>
+        <qualifiedname>App\Controller\AlbumSearchController\search</qualifiedname>
+        <param>
+          <type>Request</type>
+          <declname>$request</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Controller/AlbumSearchController.php" line="31" column="21" bodyfile="Controller/AlbumSearchController.php" bodystart="31" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_controller_1_1_album_search_controller_1a5f1ab14d454cb3fa1e76a480f999c5c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>showDetails</definition>
+        <argsstring>(int $id, Request $request)</argsstring>
+        <name>showDetails</name>
+        <qualifiedname>App\Controller\AlbumSearchController\showDetails</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>$id</declname>
+        </param>
+        <param>
+          <type>Request</type>
+          <declname>$request</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Controller/AlbumSearchController.php" line="67" column="21" bodyfile="Controller/AlbumSearchController.php" bodystart="67" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_controller_1_1_album_search_controller_1a6c1bfe7b2f2ffe8e8e690e4172a381ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>addToFavorites</definition>
+        <argsstring>(int $id)</argsstring>
+        <name>addToFavorites</name>
+        <qualifiedname>App\Controller\AlbumSearchController\addToFavorites</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>$id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Controller/AlbumSearchController.php" line="89" column="21" bodyfile="Controller/AlbumSearchController.php" bodystart="89" bodyend="114"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_controller_1_1_album_search_controller_1af2a9aa2a4c124597835da76a98d258a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>removeFromFavorites</definition>
+        <argsstring>(int $id)</argsstring>
+        <name>removeFromFavorites</name>
+        <qualifiedname>App\Controller\AlbumSearchController\removeFromFavorites</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>$id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Controller/AlbumSearchController.php" line="117" column="21" bodyfile="Controller/AlbumSearchController.php" bodystart="117" bodyend="133"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_app_1_1_controller_1_1_album_search_controller_1a41edb67b5455da64a696b8b7265ce31c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>getFavoriteAlbumByUserAndId</definition>
+        <argsstring>($user, int $albumId)</argsstring>
+        <name>getFavoriteAlbumByUserAndId</name>
+        <qualifiedname>App\Controller\AlbumSearchController\getFavoriteAlbumByUserAndId</qualifiedname>
+        <param>
+          <declname>$user</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$albumId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Controller/AlbumSearchController.php" line="135" column="22" bodyfile="Controller/AlbumSearchController.php" bodystart="135" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_controller_1_1_album_search_controller_1a7956ef653347f0fa3deebbe207bcc540" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>createFavoriteAlbum</definition>
+        <argsstring>($user, array $albumDetails)</argsstring>
+        <name>createFavoriteAlbum</name>
+        <qualifiedname>App\Controller\AlbumSearchController\createFavoriteAlbum</qualifiedname>
+        <param>
+          <declname>$user</declname>
+        </param>
+        <param>
+          <type>array</type>
+          <declname>$albumDetails</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Controller/AlbumSearchController.php" line="141" column="22" bodyfile="Controller/AlbumSearchController.php" bodystart="141" bodyend="170"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_controller_1_1_album_search_controller_1a068ba1dd76954c3884d263bd5f1459f0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>findOrCreateEntity</definition>
+        <argsstring>(string $entityClass, array $criteria)</argsstring>
+        <name>findOrCreateEntity</name>
+        <qualifiedname>App\Controller\AlbumSearchController\findOrCreateEntity</qualifiedname>
+        <param>
+          <type>string</type>
+          <declname>$entityClass</declname>
+        </param>
+        <param>
+          <type>array</type>
+          <declname>$criteria</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Controller/AlbumSearchController.php" line="172" column="22" bodyfile="Controller/AlbumSearchController.php" bodystart="172" bodyend="189"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>AlbumSearchController</label>
+        <link refid="class_app_1_1_controller_1_1_album_search_controller"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>AbstractController</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>AlbumSearchController</label>
+        <link refid="class_app_1_1_controller_1_1_album_search_controller"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>AbstractController</label>
+      </node>
+    </collaborationgraph>
+    <location file="Controller/AlbumSearchController.php" line="19" column="1" bodyfile="Controller/AlbumSearchController.php" bodystart="20" bodyend="190"/>
+    <listofallmembers>
+      <member refid="class_app_1_1_controller_1_1_album_search_controller_1a509a29f2d48543f9fd118b1a7032ebe8" prot="private" virt="non-virtual"><scope>App::Controller::AlbumSearchController</scope><name>$discogsService</name></member>
+      <member refid="class_app_1_1_controller_1_1_album_search_controller_1ad004514ef999d76cb19ca6519b55a8c0" prot="private" virt="non-virtual"><scope>App::Controller::AlbumSearchController</scope><name>$entityManager</name></member>
+      <member refid="class_app_1_1_controller_1_1_album_search_controller_1ae684060a647ec21f30e4cde445b19e61" prot="public" virt="non-virtual"><scope>App::Controller::AlbumSearchController</scope><name>__construct</name></member>
+      <member refid="class_app_1_1_controller_1_1_album_search_controller_1a6c1bfe7b2f2ffe8e8e690e4172a381ed" prot="public" virt="non-virtual"><scope>App::Controller::AlbumSearchController</scope><name>addToFavorites</name></member>
+      <member refid="class_app_1_1_controller_1_1_album_search_controller_1a7956ef653347f0fa3deebbe207bcc540" prot="private" virt="non-virtual"><scope>App::Controller::AlbumSearchController</scope><name>createFavoriteAlbum</name></member>
+      <member refid="class_app_1_1_controller_1_1_album_search_controller_1a068ba1dd76954c3884d263bd5f1459f0" prot="private" virt="non-virtual"><scope>App::Controller::AlbumSearchController</scope><name>findOrCreateEntity</name></member>
+      <member refid="class_app_1_1_controller_1_1_album_search_controller_1a41edb67b5455da64a696b8b7265ce31c" prot="private" virt="non-virtual"><scope>App::Controller::AlbumSearchController</scope><name>getFavoriteAlbumByUserAndId</name></member>
+      <member refid="class_app_1_1_controller_1_1_album_search_controller_1af2a9aa2a4c124597835da76a98d258a1" prot="public" virt="non-virtual"><scope>App::Controller::AlbumSearchController</scope><name>removeFromFavorites</name></member>
+      <member refid="class_app_1_1_controller_1_1_album_search_controller_1a32c26085cd6825224689fb8e12587e93" prot="public" virt="non-virtual"><scope>App::Controller::AlbumSearchController</scope><name>search</name></member>
+      <member refid="class_app_1_1_controller_1_1_album_search_controller_1a5f1ab14d454cb3fa1e76a480f999c5c9" prot="public" virt="non-virtual"><scope>App::Controller::AlbumSearchController</scope><name>showDetails</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

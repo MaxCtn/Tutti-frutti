@@ -1,0 +1,154 @@
+\doxysection{Référence de la classe Format}
+\hypertarget{class_app_1_1_entity_1_1_format}{}\label{class_app_1_1_entity_1_1_format}\index{Format@{Format}}
+\doxysubsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_format_a095c5d389db211932136b53f25f39685}{\+\_\+\+\_\+construct}} ()
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_format_a12251d0c022e9e21c137a105ff683f13}{get\+Id}} ()
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_format_a3d0963e68bb313b163a73f2803c64600}{get\+Name}} ()
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_format_a392752b62c4f6aacea5c269690921ef3}{set\+Name}} (string \$name)
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_format_ab755e2969ce6dd5719e19029a1f0ea98}{get\+Favorite\+Albums}} ()
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_format_a352415541a6239312cd6abffdd2d3801}{add\+Favorite\+Album}} (\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album}{Favorite\+Album}} \$favorite\+Album)
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_format_a7e1f5b5a1259dcb9c2be49ae4e715a4c}{remove\+Favorite\+Album}} (\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album}{Favorite\+Album}} \$favorite\+Album)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Entité représentant un format (par exemple, vinyle, CD).
+
+@\+ORM\textbackslash{}\+Entity(repository\+Class=Format\+Repository\+::class) 
+
+Définition à la ligne \mbox{\hyperlink{_format_8php_source_l00016}{16}} du fichier \mbox{\hyperlink{_format_8php_source}{Format.\+php}}.
+
+
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\Hypertarget{class_app_1_1_entity_1_1_format_a095c5d389db211932136b53f25f39685}\index{Format@{Format}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!Format@{Format}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_format_a095c5d389db211932136b53f25f39685} 
+\+\_\+\+\_\+construct (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Constructeur de la classe Format. Initialise la collection des albums favoris. 
+
+Définition à la ligne \mbox{\hyperlink{_format_8php_source_l00056}{56}} du fichier \mbox{\hyperlink{_format_8php_source}{Format.\+php}}.
+
+
+
+\doxysubsection{Documentation des fonctions membres}
+\Hypertarget{class_app_1_1_entity_1_1_format_a352415541a6239312cd6abffdd2d3801}\index{Format@{Format}!addFavoriteAlbum@{addFavoriteAlbum}}
+\index{addFavoriteAlbum@{addFavoriteAlbum}!Format@{Format}}
+\doxysubsubsection{\texorpdfstring{addFavoriteAlbum()}{addFavoriteAlbum()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_format_a352415541a6239312cd6abffdd2d3801} 
+add\+Favorite\+Album (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album}{Favorite\+Album}}}]{\$favorite\+Album}{}\end{DoxyParamCaption})}
+
+Ajoute un album favori à la collection associée.
+
+
+\begin{DoxyParams}[1]{Paramètres}
+Favorite\+Album & {\em \$favorite\+Album} & L\textquotesingle{}album favori à ajouter.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+self 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_format_8php_source_l00111}{111}} du fichier \mbox{\hyperlink{_format_8php_source}{Format.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_format_ab755e2969ce6dd5719e19029a1f0ea98}\index{Format@{Format}!getFavoriteAlbums@{getFavoriteAlbums}}
+\index{getFavoriteAlbums@{getFavoriteAlbums}!Format@{Format}}
+\doxysubsubsection{\texorpdfstring{getFavoriteAlbums()}{getFavoriteAlbums()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_format_ab755e2969ce6dd5719e19029a1f0ea98} 
+get\+Favorite\+Albums (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Obtient la collection des albums favoris associés à ce format.
+
+\begin{DoxyReturn}{Renvoie}
+Collection$<$int, Favorite\+Album$>$ La collection des albums favoris. 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_format_8php_source_l00099}{99}} du fichier \mbox{\hyperlink{_format_8php_source}{Format.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_format_a12251d0c022e9e21c137a105ff683f13}\index{Format@{Format}!getId@{getId}}
+\index{getId@{getId}!Format@{Format}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_format_a12251d0c022e9e21c137a105ff683f13} 
+get\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Obtient l\textquotesingle{}identifiant unique du format.
+
+\begin{DoxyReturn}{Renvoie}
+int\texorpdfstring{$\vert$}{|}null L\textquotesingle{}identifiant du format. 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_format_8php_source_l00066}{66}} du fichier \mbox{\hyperlink{_format_8php_source}{Format.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_format_a3d0963e68bb313b163a73f2803c64600}\index{Format@{Format}!getName@{getName}}
+\index{getName@{getName}!Format@{Format}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_format_a3d0963e68bb313b163a73f2803c64600} 
+get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Obtient le nom du format.
+
+\begin{DoxyReturn}{Renvoie}
+string\texorpdfstring{$\vert$}{|}null Le nom du format. 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_format_8php_source_l00076}{76}} du fichier \mbox{\hyperlink{_format_8php_source}{Format.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_format_a7e1f5b5a1259dcb9c2be49ae4e715a4c}\index{Format@{Format}!removeFavoriteAlbum@{removeFavoriteAlbum}}
+\index{removeFavoriteAlbum@{removeFavoriteAlbum}!Format@{Format}}
+\doxysubsubsection{\texorpdfstring{removeFavoriteAlbum()}{removeFavoriteAlbum()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_format_a7e1f5b5a1259dcb9c2be49ae4e715a4c} 
+remove\+Favorite\+Album (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album}{Favorite\+Album}}}]{\$favorite\+Album}{}\end{DoxyParamCaption})}
+
+Retire un album favori de la collection associée.
+
+
+\begin{DoxyParams}[1]{Paramètres}
+Favorite\+Album & {\em \$favorite\+Album} & L\textquotesingle{}album favori à retirer.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+self 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_format_8php_source_l00128}{128}} du fichier \mbox{\hyperlink{_format_8php_source}{Format.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_format_a392752b62c4f6aacea5c269690921ef3}\index{Format@{Format}!setName@{setName}}
+\index{setName@{setName}!Format@{Format}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_format_a392752b62c4f6aacea5c269690921ef3} 
+set\+Name (\begin{DoxyParamCaption}\item[{string}]{\$name}{}\end{DoxyParamCaption})}
+
+Définit le nom du format.
+
+
+\begin{DoxyParams}[1]{Paramètres}
+string & {\em \$name} & Le nom du format.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+self 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_format_8php_source_l00088}{88}} du fichier \mbox{\hyperlink{_format_8php_source}{Format.\+php}}.
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+Entity/\mbox{\hyperlink{_format_8php}{Format.\+php}}\end{DoxyCompactItemize}

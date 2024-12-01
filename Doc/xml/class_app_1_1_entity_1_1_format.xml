@@ -1,0 +1,238 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="fr">
+  <compounddef id="class_app_1_1_entity_1_1_format" kind="class" language="PHP" prot="public">
+    <compoundname>App::Entity::Format</compoundname>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_app_1_1_entity_1_1_format_1a3587bd00e5602c1800515b6f9ffbebc5" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int $id</definition>
+        <argsstring></argsstring>
+        <name>$id</name>
+        <qualifiedname>App\Entity\Format\$id</qualifiedname>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/Format.php" line="30" column="17" bodyfile="Entity/Format.php" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_app_1_1_entity_1_1_format_1a58551b63ba97fb35b928f11f36b1fac6" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string $name</definition>
+        <argsstring></argsstring>
+        <name>$name</name>
+        <qualifiedname>App\Entity\Format\$name</qualifiedname>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/Format.php" line="40" column="20" bodyfile="Entity/Format.php" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_app_1_1_entity_1_1_format_1a2b309438ce1715af608981bc378c8103" prot="private" static="no" mutable="no">
+        <type>Collection</type>
+        <definition>Collection $favoriteAlbums</definition>
+        <argsstring></argsstring>
+        <name>$favoriteAlbums</name>
+        <qualifiedname>App\Entity\Format\$favoriteAlbums</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/Format.php" line="50" column="24" bodyfile="Entity/Format.php" bodystart="50" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_format_1a095c5d389db211932136b53f25f39685" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>__construct</definition>
+        <argsstring>()</argsstring>
+        <name>__construct</name>
+        <qualifiedname>App\Entity\Format\__construct</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructeur de la classe Format. Initialise la collection des albums favoris. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/Format.php" line="56" column="21" bodyfile="Entity/Format.php" bodystart="56" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_format_1a12251d0c022e9e21c137a105ff683f13" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>getId</definition>
+        <argsstring>()</argsstring>
+        <name>getId</name>
+        <qualifiedname>App\Entity\Format\getId</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Obtient l&apos;identifiant unique du format.</para>
+<para><simplesect kind="return"><para>int|null L&apos;identifiant du format. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/Format.php" line="66" column="21" bodyfile="Entity/Format.php" bodystart="66" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_format_1a3d0963e68bb313b163a73f2803c64600" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>getName</definition>
+        <argsstring>()</argsstring>
+        <name>getName</name>
+        <qualifiedname>App\Entity\Format\getName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Obtient le nom du format.</para>
+<para><simplesect kind="return"><para>string|null Le nom du format. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/Format.php" line="76" column="21" bodyfile="Entity/Format.php" bodystart="76" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_format_1a392752b62c4f6aacea5c269690921ef3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>setName</definition>
+        <argsstring>(string $name)</argsstring>
+        <name>setName</name>
+        <qualifiedname>App\Entity\Format\setName</qualifiedname>
+        <param>
+          <type>string</type>
+          <declname>$name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Définit le nom du format.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Le nom du format.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>self </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/Format.php" line="88" column="21" bodyfile="Entity/Format.php" bodystart="88" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_format_1ab755e2969ce6dd5719e19029a1f0ea98" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>getFavoriteAlbums</definition>
+        <argsstring>()</argsstring>
+        <name>getFavoriteAlbums</name>
+        <qualifiedname>App\Entity\Format\getFavoriteAlbums</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Obtient la collection des albums favoris associés à ce format.</para>
+<para><simplesect kind="return"><para>Collection&lt;int, FavoriteAlbum&gt; La collection des albums favoris. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/Format.php" line="99" column="21" bodyfile="Entity/Format.php" bodystart="99" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_format_1a352415541a6239312cd6abffdd2d3801" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>addFavoriteAlbum</definition>
+        <argsstring>(FavoriteAlbum $favoriteAlbum)</argsstring>
+        <name>addFavoriteAlbum</name>
+        <qualifiedname>App\Entity\Format\addFavoriteAlbum</qualifiedname>
+        <param>
+          <type><ref refid="class_app_1_1_entity_1_1_favorite_album" kindref="compound">FavoriteAlbum</ref></type>
+          <declname>$favoriteAlbum</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Ajoute un album favori à la collection associée.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>FavoriteAlbum</parametertype>
+<parametername>$favoriteAlbum</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>L&apos;album favori à ajouter.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>self </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/Format.php" line="111" column="21" bodyfile="Entity/Format.php" bodystart="111" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_format_1a7e1f5b5a1259dcb9c2be49ae4e715a4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>removeFavoriteAlbum</definition>
+        <argsstring>(FavoriteAlbum $favoriteAlbum)</argsstring>
+        <name>removeFavoriteAlbum</name>
+        <qualifiedname>App\Entity\Format\removeFavoriteAlbum</qualifiedname>
+        <param>
+          <type><ref refid="class_app_1_1_entity_1_1_favorite_album" kindref="compound">FavoriteAlbum</ref></type>
+          <declname>$favoriteAlbum</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Retire un album favori de la collection associée.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>FavoriteAlbum</parametertype>
+<parametername>$favoriteAlbum</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>L&apos;album favori à retirer.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>self </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/Format.php" line="128" column="21" bodyfile="Entity/Format.php" bodystart="128" bodyend="138"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Entité représentant un format (par exemple, vinyle, CD).</para>
+<para>@ORM\Entity(repositoryClass=FormatRepository::class) </para>
+    </detaileddescription>
+    <location file="Entity/Format.php" line="16" column="1" bodyfile="Entity/Format.php" bodystart="17" bodyend="139"/>
+    <listofallmembers>
+      <member refid="class_app_1_1_entity_1_1_format_1a2b309438ce1715af608981bc378c8103" prot="private" virt="non-virtual"><scope>App::Entity::Format</scope><name>$favoriteAlbums</name></member>
+      <member refid="class_app_1_1_entity_1_1_format_1a3587bd00e5602c1800515b6f9ffbebc5" prot="private" virt="non-virtual"><scope>App::Entity::Format</scope><name>$id</name></member>
+      <member refid="class_app_1_1_entity_1_1_format_1a58551b63ba97fb35b928f11f36b1fac6" prot="private" virt="non-virtual"><scope>App::Entity::Format</scope><name>$name</name></member>
+      <member refid="class_app_1_1_entity_1_1_format_1a095c5d389db211932136b53f25f39685" prot="public" virt="non-virtual"><scope>App::Entity::Format</scope><name>__construct</name></member>
+      <member refid="class_app_1_1_entity_1_1_format_1a352415541a6239312cd6abffdd2d3801" prot="public" virt="non-virtual"><scope>App::Entity::Format</scope><name>addFavoriteAlbum</name></member>
+      <member refid="class_app_1_1_entity_1_1_format_1ab755e2969ce6dd5719e19029a1f0ea98" prot="public" virt="non-virtual"><scope>App::Entity::Format</scope><name>getFavoriteAlbums</name></member>
+      <member refid="class_app_1_1_entity_1_1_format_1a12251d0c022e9e21c137a105ff683f13" prot="public" virt="non-virtual"><scope>App::Entity::Format</scope><name>getId</name></member>
+      <member refid="class_app_1_1_entity_1_1_format_1a3d0963e68bb313b163a73f2803c64600" prot="public" virt="non-virtual"><scope>App::Entity::Format</scope><name>getName</name></member>
+      <member refid="class_app_1_1_entity_1_1_format_1a7e1f5b5a1259dcb9c2be49ae4e715a4c" prot="public" virt="non-virtual"><scope>App::Entity::Format</scope><name>removeFavoriteAlbum</name></member>
+      <member refid="class_app_1_1_entity_1_1_format_1a392752b62c4f6aacea5c269690921ef3" prot="public" virt="non-virtual"><scope>App::Entity::Format</scope><name>setName</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

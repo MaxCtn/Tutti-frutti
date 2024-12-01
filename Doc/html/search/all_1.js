@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['addalbum_0',['addAlbum',['../class_app_1_1_entity_1_1_fruit.html#a79ad3ae17fa6347782039ba962fd4773',1,'App::Entity::Fruit']]],
+  ['addfavoritealbum_1',['addFavoriteAlbum',['../class_app_1_1_entity_1_1_format.html#a352415541a6239312cd6abffdd2d3801',1,'App\Entity\Format\addFavoriteAlbum()'],['../class_app_1_1_entity_1_1_genre.html#a352415541a6239312cd6abffdd2d3801',1,'App\Entity\Genre\addFavoriteAlbum()'],['../class_app_1_1_entity_1_1_label.html#a352415541a6239312cd6abffdd2d3801',1,'App\Entity\Label\addFavoriteAlbum()'],['../class_app_1_1_entity_1_1_user.html#a352415541a6239312cd6abffdd2d3801',1,'App\Entity\User\addFavoriteAlbum()']]],
+  ['addfruit_2',['addFruit',['../class_app_1_1_entity_1_1_favorite_album.html#ab593ea8c6876813ebec46d18c928ee00',1,'App::Entity::FavoriteAlbum']]],
+  ['addtofavorites_3',['addToFavorites',['../class_app_1_1_controller_1_1_album_search_controller.html#a6c1bfe7b2f2ffe8e8e690e4172a381ed',1,'App::Controller::AlbumSearchController']]],
+  ['addtrack_4',['addTrack',['../class_app_1_1_entity_1_1_favorite_album.html#af6a5b20e58074d84acb01c009b10d014',1,'App::Entity::FavoriteAlbum']]],
+  ['albumsearchcontroller_5',['AlbumSearchController',['../class_app_1_1_controller_1_1_album_search_controller.html',1,'App::Controller']]],
+  ['albumsearchcontroller_2ephp_6',['AlbumSearchController.php',['../_album_search_controller_8php.html',1,'']]],
+  ['albumsearchtype_7',['AlbumSearchType',['../class_app_1_1_form_1_1_album_search_type.html',1,'App::Form']]],
+  ['albumsearchtype_2ephp_8',['AlbumSearchType.php',['../_album_search_type_8php.html',1,'']]],
+  ['app_9',['App',['../namespace_app.html',1,'']]],
+  ['app_3a_3acommand_10',['Command',['../namespace_app_1_1_command.html',1,'App']]],
+  ['app_3a_3acontroller_11',['Controller',['../namespace_app_1_1_controller.html',1,'App']]],
+  ['app_3a_3adatafixtures_12',['DataFixtures',['../namespace_app_1_1_data_fixtures.html',1,'App']]],
+  ['app_3a_3aentity_13',['Entity',['../namespace_app_1_1_entity.html',1,'App']]],
+  ['app_3a_3aform_14',['Form',['../namespace_app_1_1_form.html',1,'App']]],
+  ['app_3a_3arepository_15',['Repository',['../namespace_app_1_1_repository.html',1,'App']]],
+  ['app_3a_3asecurity_16',['Security',['../namespace_app_1_1_security.html',1,'App']]],
+  ['app_3a_3aservice_17',['Service',['../namespace_app_1_1_service.html',1,'App']]],
+  ['appcustomauthenticator_18',['AppCustomAuthenticator',['../class_app_1_1_security_1_1_app_custom_authenticator.html',1,'App::Security']]],
+  ['appcustomauthenticator_2ephp_19',['AppCustomAuthenticator.php',['../_app_custom_authenticator_8php.html',1,'']]],
+  ['appfixtures_20',['AppFixtures',['../class_app_1_1_data_fixtures_1_1_app_fixtures.html',1,'App::DataFixtures']]],
+  ['appfixtures_2ephp_21',['AppFixtures.php',['../_app_fixtures_8php.html',1,'']]],
+  ['authenticate_22',['authenticate',['../class_app_1_1_security_1_1_app_custom_authenticator.html#acc8752684a58a442307c274100d77faf',1,'App::Security::AppCustomAuthenticator']]]
+];

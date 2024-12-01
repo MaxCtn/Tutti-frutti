@@ -1,0 +1,203 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_app_1_1_entity_1_1_label" xml:lang="fr">
+<title>Référence de la classe Label</title>
+<indexterm><primary>Label</primary></indexterm>
+<simplesect>
+    <title>Fonctions membres publiques    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_label_1a095c5d389db211932136b53f25f39685">__construct</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_label_1a12251d0c022e9e21c137a105ff683f13">getId</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_label_1a3d0963e68bb313b163a73f2803c64600">getName</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_label_1a392752b62c4f6aacea5c269690921ef3">setName</link> (string $name)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_label_1ab755e2969ce6dd5719e19029a1f0ea98">getFavoriteAlbums</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_label_1a352415541a6239312cd6abffdd2d3801">addFavoriteAlbum</link> (<link linkend="_class_app_1_1_entity_1_1_favorite_album">FavoriteAlbum</link> $favoriteAlbum)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_label_1a7e1f5b5a1259dcb9c2be49ae4e715a4c">removeFavoriteAlbum</link> (<link linkend="_class_app_1_1_entity_1_1_favorite_album">FavoriteAlbum</link> $favoriteAlbum)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Description détaillée</title>
+
+<para>Entité représentant un label musical associé à des albums favoris.</para>
+
+<para>@ORM\Entity(repositoryClass=LabelRepository::class) </para>
+<para>
+Définition à la ligne <link linkend="__label_8php_source_1l00016">16</link> du fichier <link linkend="__label_8php_source">Label.php</link>.</para>
+</section>
+<section>
+<title>Documentation des constructeurs et destructeur</title>
+<anchor xml:id="_class_app_1_1_entity_1_1_label_1a095c5d389db211932136b53f25f39685"/><section>
+    <title>__construct()</title>
+<indexterm><primary>__construct</primary><secondary>Label</secondary></indexterm>
+<indexterm><primary>Label</primary><secondary>__construct</secondary></indexterm>
+<para><computeroutput>__construct ( )</computeroutput></para>
+<para>Constructeur de la classe Label. Initialise la collection des albums favoris. </para>
+<para>
+Définition à la ligne <link linkend="__label_8php_source_1l00057">57</link> du fichier <link linkend="__label_8php_source">Label.php</link>.</para>
+</section>
+</section>
+<section>
+<title>Documentation des fonctions membres</title>
+<anchor xml:id="_class_app_1_1_entity_1_1_label_1a352415541a6239312cd6abffdd2d3801"/><section>
+    <title>addFavoriteAlbum()</title>
+<indexterm><primary>addFavoriteAlbum</primary><secondary>Label</secondary></indexterm>
+<indexterm><primary>Label</primary><secondary>addFavoriteAlbum</secondary></indexterm>
+<para><computeroutput>addFavoriteAlbum (<link linkend="_class_app_1_1_entity_1_1_favorite_album">FavoriteAlbum</link> $favoriteAlbum)</computeroutput></para>
+<para>Ajoute un album favori à la collection associée à ce label.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Paramètres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>FavoriteAlbum</entry><entry>$favoriteAlbum</entry><entry>
+<para>L&apos;album favori à ajouter.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Renvoie</title>
+
+<para>self </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__label_8php_source_1l00112">112</link> du fichier <link linkend="__label_8php_source">Label.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_entity_1_1_label_1ab755e2969ce6dd5719e19029a1f0ea98"/><section>
+    <title>getFavoriteAlbums()</title>
+<indexterm><primary>getFavoriteAlbums</primary><secondary>Label</secondary></indexterm>
+<indexterm><primary>Label</primary><secondary>getFavoriteAlbums</secondary></indexterm>
+<para><computeroutput>getFavoriteAlbums ( )</computeroutput></para>
+<para>Obtient la collection des albums favoris associés à ce label.</para>
+
+<para><formalpara><title>Renvoie</title>
+
+<para>Collection&lt;int, FavoriteAlbum&gt; La collection des albums favoris. </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__label_8php_source_1l00100">100</link> du fichier <link linkend="__label_8php_source">Label.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_entity_1_1_label_1a12251d0c022e9e21c137a105ff683f13"/><section>
+    <title>getId()</title>
+<indexterm><primary>getId</primary><secondary>Label</secondary></indexterm>
+<indexterm><primary>Label</primary><secondary>getId</secondary></indexterm>
+<para><computeroutput>getId ( )</computeroutput></para>
+<para>Obtient l&apos;identifiant unique du label.</para>
+
+<para><formalpara><title>Renvoie</title>
+
+<para>int|null L&apos;identifiant du label. </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__label_8php_source_1l00067">67</link> du fichier <link linkend="__label_8php_source">Label.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_entity_1_1_label_1a3d0963e68bb313b163a73f2803c64600"/><section>
+    <title>getName()</title>
+<indexterm><primary>getName</primary><secondary>Label</secondary></indexterm>
+<indexterm><primary>Label</primary><secondary>getName</secondary></indexterm>
+<para><computeroutput>getName ( )</computeroutput></para>
+<para>Obtient le nom du label musical.</para>
+
+<para><formalpara><title>Renvoie</title>
+
+<para>string|null Le nom du label. </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__label_8php_source_1l00077">77</link> du fichier <link linkend="__label_8php_source">Label.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_entity_1_1_label_1a7e1f5b5a1259dcb9c2be49ae4e715a4c"/><section>
+    <title>removeFavoriteAlbum()</title>
+<indexterm><primary>removeFavoriteAlbum</primary><secondary>Label</secondary></indexterm>
+<indexterm><primary>Label</primary><secondary>removeFavoriteAlbum</secondary></indexterm>
+<para><computeroutput>removeFavoriteAlbum (<link linkend="_class_app_1_1_entity_1_1_favorite_album">FavoriteAlbum</link> $favoriteAlbum)</computeroutput></para>
+<para>Retire un album favori de la collection associée à ce label.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Paramètres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>FavoriteAlbum</entry><entry>$favoriteAlbum</entry><entry>
+<para>L&apos;album favori à retirer.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Renvoie</title>
+
+<para>self </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__label_8php_source_1l00129">129</link> du fichier <link linkend="__label_8php_source">Label.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_entity_1_1_label_1a392752b62c4f6aacea5c269690921ef3"/><section>
+    <title>setName()</title>
+<indexterm><primary>setName</primary><secondary>Label</secondary></indexterm>
+<indexterm><primary>Label</primary><secondary>setName</secondary></indexterm>
+<para><computeroutput>setName (string $name)</computeroutput></para>
+<para>Définit le nom du label musical.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Paramètres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>string</entry><entry>$name</entry><entry>
+<para>Le nom du label.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Renvoie</title>
+
+<para>self </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__label_8php_source_1l00089">89</link> du fichier <link linkend="__label_8php_source">Label.php</link>.</para>
+</section>
+<para>
+La documentation de cette classe a été générée à partir du fichier suivant :</para>
+Entity/<link linkend="__label_8php">Label.php</link></section>
+</section>

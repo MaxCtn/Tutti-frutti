@@ -1,0 +1,140 @@
+.TH "Genre" 3 "Tutti-frutti" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Genre
+.SH SYNOPSIS
+.br
+.PP
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fB__construct\fP ()"
+.br
+.ti -1c
+.RI "\fBgetId\fP ()"
+.br
+.ti -1c
+.RI "\fBgetName\fP ()"
+.br
+.ti -1c
+.RI "\fBsetName\fP (string $name)"
+.br
+.ti -1c
+.RI "\fBgetFavoriteAlbums\fP ()"
+.br
+.ti -1c
+.RI "\fBaddFavoriteAlbum\fP (\fBFavoriteAlbum\fP $favoriteAlbum)"
+.br
+.ti -1c
+.RI "\fBremoveFavoriteAlbum\fP (\fBFavoriteAlbum\fP $favoriteAlbum)"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Entité représentant un genre musical associé à des albums favoris\&.
+
+.PP
+@ORM\\Entity(repositoryClass=GenreRepository::class) 
+.PP
+Définition à la ligne \fB16\fP du fichier \fBGenre\&.php\fP\&.
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "__construct ()"
+Constructeur de la classe Genre\&. Initialise la collection des albums favoris\&. 
+.PP
+Définition à la ligne \fB57\fP du fichier \fBGenre\&.php\fP\&.
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "addFavoriteAlbum (\fBFavoriteAlbum\fP $favoriteAlbum)"
+Ajoute un album favori à la collection associée à ce genre\&.
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$favoriteAlbum\fP L'album favori à ajouter\&.
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+self 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB112\fP du fichier \fBGenre\&.php\fP\&.
+.SS "getFavoriteAlbums ()"
+Obtient la collection des albums favoris associés à ce genre\&.
+
+.PP
+\fBRenvoie\fP
+.RS 4
+Collection<int, FavoriteAlbum> La collection des albums favoris\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB100\fP du fichier \fBGenre\&.php\fP\&.
+.SS "getId ()"
+Obtient l'identifiant unique du genre\&.
+
+.PP
+\fBRenvoie\fP
+.RS 4
+int|null L'identifiant du genre\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB67\fP du fichier \fBGenre\&.php\fP\&.
+.SS "getName ()"
+Obtient le nom du genre musical\&.
+
+.PP
+\fBRenvoie\fP
+.RS 4
+string|null Le nom du genre\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB77\fP du fichier \fBGenre\&.php\fP\&.
+.SS "removeFavoriteAlbum (\fBFavoriteAlbum\fP $favoriteAlbum)"
+Retire un album favori de la collection associée à ce genre\&.
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$favoriteAlbum\fP L'album favori à retirer\&.
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+self 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB129\fP du fichier \fBGenre\&.php\fP\&.
+.SS "setName (string $name)"
+Définit le nom du genre musical\&.
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$name\fP Le nom du genre\&.
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+self 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB89\fP du fichier \fBGenre\&.php\fP\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Tutti-frutti à partir du code source\&.

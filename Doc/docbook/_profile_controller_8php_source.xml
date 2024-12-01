@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__profile_controller_8php_source" xml:lang="fr">
+<title>ProfileController.php</title>
+<indexterm><primary>Controller/ProfileController.php</primary></indexterm>
+Aller à la documentation de ce fichier.<programlisting linenumbering="unnumbered"><anchor xml:id="__profile_controller_8php_source_1l00001"/>00001 &lt;?php
+<anchor xml:id="__profile_controller_8php_source_1l00002"/>00002 
+<anchor xml:id="__profile_controller_8php_source_1l00003"/>00003 <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespace_app_1_1_controller">App\Controller</link>;
+<anchor xml:id="__profile_controller_8php_source_1l00004"/>00004 
+<anchor xml:id="__profile_controller_8php_source_1l00005"/>00005 use&#32;Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+<anchor xml:id="__profile_controller_8php_source_1l00006"/>00006 use&#32;Symfony\Component\Routing\Annotation\Route;
+<anchor xml:id="__profile_controller_8php_source_1l00007"/>00007 use&#32;Symfony\Component\HttpFoundation\Request;
+<anchor xml:id="__profile_controller_8php_source_1l00008"/>00008 use&#32;Symfony\Component\HttpFoundation\Response;
+<anchor xml:id="__profile_controller_8php_source_1l00009"/>00009 use&#32;<link linkend="_class_app_1_1_repository_1_1_favorite_album_repository">App\Repository\FavoriteAlbumRepository</link>;
+<anchor xml:id="__profile_controller_8php_source_1l00010"/>00010 
+<anchor xml:id="__profile_controller_8php_source_1l00014"/><link linkend="_class_app_1_1_controller_1_1_profile_controller">00014</link> <emphasis role="keyword">class&#32;</emphasis><link linkend="_class_app_1_1_controller_1_1_profile_controller">ProfileController</link>&#32;<emphasis role="keyword">extends</emphasis>&#32;AbstractController
+<anchor xml:id="__profile_controller_8php_source_1l00015"/>00015 {
+<anchor xml:id="__profile_controller_8php_source_1l00026"/>00026 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;#[Route(&apos;/profile&apos;,&#32;name:&#32;&apos;profile&apos;)]</emphasis>
+<anchor xml:id="__profile_controller_8php_source_1l00027"/><link linkend="_class_app_1_1_controller_1_1_profile_controller_1ae1226a5f7b95e179ae1de18af8d815cd">00027</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_controller_1_1_profile_controller_1ae1226a5f7b95e179ae1de18af8d815cd">userProfile</link>(Request&#32;$request,&#32;<link linkend="_class_app_1_1_repository_1_1_favorite_album_repository">FavoriteAlbumRepository</link>&#32;$favoriteAlbumRepository):&#32;Response
+<anchor xml:id="__profile_controller_8php_source_1l00028"/>00028 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__profile_controller_8php_source_1l00029"/>00029 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$user&#32;=&#32;$this-&gt;getUser();
+<anchor xml:id="__profile_controller_8php_source_1l00030"/>00030 
+<anchor xml:id="__profile_controller_8php_source_1l00031"/>00031 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!$user)&#32;{
+<anchor xml:id="__profile_controller_8php_source_1l00032"/>00032 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this-&gt;redirectToRoute(<emphasis role="stringliteral">&apos;app_login&apos;</emphasis>);
+<anchor xml:id="__profile_controller_8php_source_1l00033"/>00033 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__profile_controller_8php_source_1l00034"/>00034 
+<anchor xml:id="__profile_controller_8php_source_1l00035"/>00035 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Récupérer&#32;les&#32;albums&#32;favoris&#32;en&#32;fonction&#32;des&#32;critères&#32;de&#32;filtrage</emphasis>
+<anchor xml:id="__profile_controller_8php_source_1l00036"/>00036 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$favorites&#32;=&#32;$this-&gt;getFilteredFavorites(
+<anchor xml:id="__profile_controller_8php_source_1l00037"/>00037 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$favoriteAlbumRepository,
+<anchor xml:id="__profile_controller_8php_source_1l00038"/>00038 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$user,
+<anchor xml:id="__profile_controller_8php_source_1l00039"/>00039 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$request
+<anchor xml:id="__profile_controller_8php_source_1l00040"/>00040 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;);
+<anchor xml:id="__profile_controller_8php_source_1l00041"/>00041 
+<anchor xml:id="__profile_controller_8php_source_1l00042"/>00042 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this-&gt;render(<emphasis role="stringliteral">&apos;profile/index.html.twig&apos;</emphasis>,&#32;[
+<anchor xml:id="__profile_controller_8php_source_1l00043"/>00043 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;favorites&apos;</emphasis>&#32;=&gt;&#32;$favorites,
+<anchor xml:id="__profile_controller_8php_source_1l00044"/>00044 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;]);
+<anchor xml:id="__profile_controller_8php_source_1l00045"/>00045 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__profile_controller_8php_source_1l00046"/>00046 
+<anchor xml:id="__profile_controller_8php_source_1l00056"/>00056 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;getFilteredFavorites(
+<anchor xml:id="__profile_controller_8php_source_1l00057"/>00057 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_app_1_1_repository_1_1_favorite_album_repository">FavoriteAlbumRepository</link>&#32;$favoriteAlbumRepository,
+<anchor xml:id="__profile_controller_8php_source_1l00058"/>00058 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$user,
+<anchor xml:id="__profile_controller_8php_source_1l00059"/>00059 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Request&#32;$request
+<anchor xml:id="__profile_controller_8php_source_1l00060"/>00060 &#32;&#32;&#32;&#32;):&#32;array&#32;{
+<anchor xml:id="__profile_controller_8php_source_1l00061"/>00061 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Critères&#32;de&#32;filtrage&#32;depuis&#32;la&#32;requête</emphasis>
+<anchor xml:id="__profile_controller_8php_source_1l00062"/>00062 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$criteria&#32;=&#32;[
+<anchor xml:id="__profile_controller_8php_source_1l00063"/>00063 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;fruit&apos;</emphasis>&#32;&#32;=&gt;&#32;$request-&gt;query-&gt;get(<emphasis role="stringliteral">&apos;fruit&apos;</emphasis>),
+<anchor xml:id="__profile_controller_8php_source_1l00064"/>00064 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;year&apos;</emphasis>&#32;&#32;&#32;=&gt;&#32;$request-&gt;query-&gt;get(<emphasis role="stringliteral">&apos;year&apos;</emphasis>),
+<anchor xml:id="__profile_controller_8php_source_1l00065"/>00065 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;title&apos;</emphasis>&#32;&#32;=&gt;&#32;$request-&gt;query-&gt;get(<emphasis role="stringliteral">&apos;title&apos;</emphasis>),
+<anchor xml:id="__profile_controller_8php_source_1l00066"/>00066 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;label&apos;</emphasis>&#32;&#32;=&gt;&#32;$request-&gt;query-&gt;get(<emphasis role="stringliteral">&apos;label&apos;</emphasis>),
+<anchor xml:id="__profile_controller_8php_source_1l00067"/>00067 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;genre&apos;</emphasis>&#32;&#32;=&gt;&#32;$request-&gt;query-&gt;get(<emphasis role="stringliteral">&apos;genre&apos;</emphasis>),
+<anchor xml:id="__profile_controller_8php_source_1l00068"/>00068 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;format&apos;</emphasis>&#32;=&gt;&#32;$request-&gt;query-&gt;get(<emphasis role="stringliteral">&apos;format&apos;</emphasis>),
+<anchor xml:id="__profile_controller_8php_source_1l00069"/>00069 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;];
+<anchor xml:id="__profile_controller_8php_source_1l00070"/>00070 
+<anchor xml:id="__profile_controller_8php_source_1l00071"/>00071 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Paramètres&#32;de&#32;tri</emphasis>
+<anchor xml:id="__profile_controller_8php_source_1l00072"/>00072 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$sortBy&#32;=&#32;$request-&gt;query-&gt;get(<emphasis role="stringliteral">&apos;sortBy&apos;</emphasis>,&#32;<emphasis role="stringliteral">&apos;title&apos;</emphasis>);&#32;<emphasis role="comment">//&#32;Tri&#32;par&#32;titre&#32;par&#32;défaut</emphasis>
+<anchor xml:id="__profile_controller_8php_source_1l00073"/>00073 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$order&#32;=&#32;strtoupper($request-&gt;query-&gt;get(<emphasis role="stringliteral">&apos;order&apos;</emphasis>,&#32;<emphasis role="stringliteral">&apos;ASC&apos;</emphasis>))&#32;===&#32;<emphasis role="stringliteral">&apos;ASC&apos;</emphasis>&#32;?&#32;<emphasis role="stringliteral">&apos;ASC&apos;</emphasis>&#32;:&#32;<emphasis role="stringliteral">&apos;DESC&apos;</emphasis>;
+<anchor xml:id="__profile_controller_8php_source_1l00074"/>00074 
+<anchor xml:id="__profile_controller_8php_source_1l00075"/>00075 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$favoriteAlbumRepository-&gt;<link linkend="_class_app_1_1_repository_1_1_favorite_album_repository_1a1e89bed821646ae540cc6c84f28cd05b">findByUser</link>(
+<anchor xml:id="__profile_controller_8php_source_1l00076"/>00076 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$user,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Filtre&#32;par&#32;utilisateur&#32;connecté</emphasis>
+<anchor xml:id="__profile_controller_8php_source_1l00077"/>00077 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;array_filter($criteria),&#32;<emphasis role="comment">//&#32;Supprime&#32;les&#32;critères&#32;vides&#32;ou&#32;nuls</emphasis>
+<anchor xml:id="__profile_controller_8php_source_1l00078"/>00078 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$sortBy,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Colonne&#32;de&#32;tri</emphasis>
+<anchor xml:id="__profile_controller_8php_source_1l00079"/>00079 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$order&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Ordre&#32;de&#32;tri</emphasis>
+<anchor xml:id="__profile_controller_8php_source_1l00080"/>00080 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;);
+<anchor xml:id="__profile_controller_8php_source_1l00081"/>00081 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__profile_controller_8php_source_1l00082"/>00082 }
+</programlisting></section>

@@ -1,0 +1,137 @@
+\doxysection{User.\+php}
+\hypertarget{_user_8php_source}{}\label{_user_8php_source}\index{Entity/User.php@{Entity/User.php}}
+\mbox{\hyperlink{_user_8php}{Aller à la documentation de ce fichier.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00001}00001\ <?php}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00003}00003\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_app_1_1_entity}{App\(\backslash\)Entity}};}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00005}00005\ use\ \mbox{\hyperlink{class_app_1_1_repository_1_1_user_repository}{App\(\backslash\)Repository\(\backslash\)UserRepository}};}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00006}00006\ use\ Doctrine\(\backslash\)ORM\(\backslash\)Mapping\ as\ ORM;}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00007}00007\ use\ Symfony\(\backslash\)Component\(\backslash\)Security\(\backslash\)Core\(\backslash\)User\(\backslash\)PasswordAuthenticatedUserInterface;}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00008}00008\ use\ Symfony\(\backslash\)Component\(\backslash\)Security\(\backslash\)Core\(\backslash\)User\(\backslash\)UserInterface;}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00009}00009\ use\ Doctrine\(\backslash\)Common\(\backslash\)Collections\(\backslash\)ArrayCollection;}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00010}00010\ use\ Doctrine\(\backslash\)Common\(\backslash\)Collections\(\backslash\)Collection;}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00017}00017\ \textcolor{preprocessor}{\#[ORM\(\backslash\)Entity(repositoryClass:\ UserRepository::class)]}}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00018}\mbox{\hyperlink{class_app_1_1_entity_1_1_user}{00018}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_app_1_1_entity_1_1_user}{User}}\ \textcolor{keyword}{implements}\ UserInterface,\ PasswordAuthenticatedUserInterface}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00019}00019\ \{}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00029}00029\ \textcolor{preprocessor}{\ \ \ \ \#[ORM\(\backslash\)Id]}}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00030}00030\ \textcolor{preprocessor}{\ \ \ \ \#[ORM\(\backslash\)GeneratedValue]}}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00031}00031\ \textcolor{preprocessor}{\ \ \ \ \#[ORM\(\backslash\)Column]}}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00032}00032\ \ \ \ \ \textcolor{keyword}{private}\ ?\textcolor{keywordtype}{int}\ \$id\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00041}00041\ \textcolor{preprocessor}{\ \ \ \ \#[ORM\(\backslash\)Column(length:\ 180,\ unique:\ true)]}}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00042}00042\ \ \ \ \ \textcolor{keyword}{private}\ ?\textcolor{keywordtype}{string}\ \$email\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00051}00051\ \textcolor{preprocessor}{\ \ \ \ \#[ORM\(\backslash\)Column]}}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00052}00052\ \ \ \ \ \textcolor{keyword}{private}\ array\ \$roles\ =\ [];}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00061}00061\ \textcolor{preprocessor}{\ \ \ \ \#[ORM\(\backslash\)Column]}}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00062}00062\ \ \ \ \ \textcolor{keyword}{private}\ ?\textcolor{keywordtype}{string}\ \$password\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00071}00071\ \textcolor{preprocessor}{\ \ \ \ \#[ORM\(\backslash\)Column(type:\ 'string',\ length:\ 255,\ nullable:\ true)]}}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00072}00072\ \ \ \ \ \textcolor{keyword}{private}\ ?\textcolor{keywordtype}{string}\ \$profilePicture\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00081}00081\ \textcolor{preprocessor}{\ \ \ \ \#[ORM\(\backslash\)OneToMany(mappedBy:\ 'user',\ targetEntity:\ FavoriteAlbum::class,\ cascade:\ ['persist'])]}}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00082}00082\ \ \ \ \ \textcolor{keyword}{private}\ Collection\ \$favoriteAlbums;}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00088}\mbox{\hyperlink{class_app_1_1_entity_1_1_user_a095c5d389db211932136b53f25f39685}{00088}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{class_app_1_1_entity_1_1_user_a095c5d389db211932136b53f25f39685}{\_\_construct}}()}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00089}00089\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00090}00090\ \ \ \ \ \ \ \ \ \$this-\/>favoriteAlbums\ =\ \textcolor{keyword}{new}\ ArrayCollection();}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00091}00091\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00098}\mbox{\hyperlink{class_app_1_1_entity_1_1_user_a12251d0c022e9e21c137a105ff683f13}{00098}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{class_app_1_1_entity_1_1_user_a12251d0c022e9e21c137a105ff683f13}{getId}}():\ ?int}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00099}00099\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00100}00100\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$this-\/>id;}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00101}00101\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00108}\mbox{\hyperlink{class_app_1_1_entity_1_1_user_a02a01849f28e2535e888ae4ec87b20f2}{00108}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{class_app_1_1_entity_1_1_user_a02a01849f28e2535e888ae4ec87b20f2}{getEmail}}():\ ?string}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00109}00109\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00110}00110\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$this-\/>email;}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00111}00111\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00120}\mbox{\hyperlink{class_app_1_1_entity_1_1_user_a2d22391fa86fa0eaf3b9d2a3c29880bc}{00120}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{class_app_1_1_entity_1_1_user_a2d22391fa86fa0eaf3b9d2a3c29880bc}{setEmail}}(\textcolor{keywordtype}{string}\ \$email):\ static}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00121}00121\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00122}00122\ \ \ \ \ \ \ \ \ \$this-\/>email\ =\ \$email;}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00124}00124\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$this;}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00125}00125\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00132}\mbox{\hyperlink{class_app_1_1_entity_1_1_user_a189038d671f9143e20141026f1aa7969}{00132}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{class_app_1_1_entity_1_1_user_a189038d671f9143e20141026f1aa7969}{getUserIdentifier}}():\ string}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00133}00133\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00134}00134\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keywordtype}{string})\ \$this-\/>email;}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00135}00135\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00136}00136\ }
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00142}\mbox{\hyperlink{class_app_1_1_entity_1_1_user_aa676cae5ee8d7fb6862a8724adc2660d}{00142}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{class_app_1_1_entity_1_1_user_aa676cae5ee8d7fb6862a8724adc2660d}{getRoles}}():\ array}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00143}00143\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00144}00144\ \ \ \ \ \ \ \ \ \$roles\ =\ \$this-\/>roles;}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00145}00145\ \ \ \ \ \ \ \ \ \$roles[]\ =\ \textcolor{stringliteral}{'ROLE\_USER'};}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00146}00146\ }
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00147}00147\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ array\_unique(\$roles);}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00148}00148\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00149}00149\ }
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00157}\mbox{\hyperlink{class_app_1_1_entity_1_1_user_aa3236c9c6688d04df16ea0ab3065530e}{00157}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{class_app_1_1_entity_1_1_user_aa3236c9c6688d04df16ea0ab3065530e}{setRoles}}(array\ \$roles):\ static}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00158}00158\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00159}00159\ \ \ \ \ \ \ \ \ \$this-\/>roles\ =\ \$roles;}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00160}00160\ }
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00161}00161\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$this;}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00162}00162\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00163}00163\ }
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00169}\mbox{\hyperlink{class_app_1_1_entity_1_1_user_a04e0957baeb7acde9c0c86556da2d43f}{00169}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{class_app_1_1_entity_1_1_user_a04e0957baeb7acde9c0c86556da2d43f}{getPassword}}():\ string}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00170}00170\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00171}00171\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$this-\/>password;}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00172}00172\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00173}00173\ }
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00181}\mbox{\hyperlink{class_app_1_1_entity_1_1_user_a81e0f429784973551fb5417d5b92b0db}{00181}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{class_app_1_1_entity_1_1_user_a81e0f429784973551fb5417d5b92b0db}{setPassword}}(\textcolor{keywordtype}{string}\ \$password):\ static}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00182}00182\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00183}00183\ \ \ \ \ \ \ \ \ \$this-\/>password\ =\ \$password;}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00184}00184\ }
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00185}00185\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$this;}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00186}00186\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00187}00187\ }
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00191}\mbox{\hyperlink{class_app_1_1_entity_1_1_user_ac565b8c00fe93ce673f8237849f072a6}{00191}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{class_app_1_1_entity_1_1_user_ac565b8c00fe93ce673f8237849f072a6}{eraseCredentials}}():\ void}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00192}00192\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00193}00193\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Implémentation\ vide\ pour\ le\ composant\ de\ sécurité.}}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00194}00194\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00195}00195\ }
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00201}\mbox{\hyperlink{class_app_1_1_entity_1_1_user_ab755e2969ce6dd5719e19029a1f0ea98}{00201}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{class_app_1_1_entity_1_1_user_ab755e2969ce6dd5719e19029a1f0ea98}{getFavoriteAlbums}}():\ Collection}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00202}00202\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00203}00203\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$this-\/>favoriteAlbums;}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00204}00204\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00205}00205\ }
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00213}\mbox{\hyperlink{class_app_1_1_entity_1_1_user_a352415541a6239312cd6abffdd2d3801}{00213}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{class_app_1_1_entity_1_1_user_a352415541a6239312cd6abffdd2d3801}{addFavoriteAlbum}}(\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album}{FavoriteAlbum}}\ \$favoriteAlbum):\ self}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00214}00214\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00215}00215\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\$this-\/>favoriteAlbums-\/>contains(\$favoriteAlbum))\ \{}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00216}00216\ \ \ \ \ \ \ \ \ \ \ \ \ \$this-\/>favoriteAlbums[]\ =\ \$favoriteAlbum;}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ \$favoriteAlbum-\/>\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album_a406a111868b45aad6d4c8ab5b0c5bcb9}{setUser}}(\$this);}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00218}00218\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00219}00219\ }
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00220}00220\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$this;}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00221}00221\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00222}00222\ }
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00230}\mbox{\hyperlink{class_app_1_1_entity_1_1_user_a7e1f5b5a1259dcb9c2be49ae4e715a4c}{00230}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{class_app_1_1_entity_1_1_user_a7e1f5b5a1259dcb9c2be49ae4e715a4c}{removeFavoriteAlbum}}(\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album}{FavoriteAlbum}}\ \$favoriteAlbum):\ self}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00231}00231\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00232}00232\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$this-\/>favoriteAlbums-\/>removeElement(\$favoriteAlbum))\ \{}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$favoriteAlbum-\/>\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album_ae81b7186fb97a7c6457edcc68c9aa2ef}{getUser}}()\ ===\ \$this)\ \{}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$favoriteAlbum-\/>\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album_a406a111868b45aad6d4c8ab5b0c5bcb9}{setUser}}(\textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00236}00236\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00237}00237\ }
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00238}00238\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$this;}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00239}00239\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00240}00240\ }
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00246}\mbox{\hyperlink{class_app_1_1_entity_1_1_user_a7ca895ce8dc567b19e85a982429c7c77}{00246}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{class_app_1_1_entity_1_1_user_a7ca895ce8dc567b19e85a982429c7c77}{getProfilePicture}}():\ ?string}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00247}00247\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00248}00248\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$this-\/>profilePicture;}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00249}00249\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00250}00250\ }
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00258}\mbox{\hyperlink{class_app_1_1_entity_1_1_user_ab308055ea70f8f94a14d35a611a2086e}{00258}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{class_app_1_1_entity_1_1_user_ab308055ea70f8f94a14d35a611a2086e}{setProfilePicture}}(?\textcolor{keywordtype}{string}\ \$profilePicture):\ static}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00259}00259\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00260}00260\ \ \ \ \ \ \ \ \ \$this-\/>profilePicture\ =\ \$profilePicture;}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00261}00261\ }
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00262}00262\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$this;}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00263}00263\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_user_8php_source_l00264}00264\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_a625c670f828dfaff80322b07e1365a6" xml:lang="fr">
+<title>Répertoire de référence de Entity</title>
+<indexterm><primary>Répertoire de référence de Entity</primary></indexterm>
+<simplesect>
+    <title>Fichiers    </title>
+        <itemizedlist>
+            <listitem><para>fichier <link linkend="__favorite_album_8php">FavoriteAlbum.php</link></para>
+</listitem>
+            <listitem><para>fichier <link linkend="__format_8php">Format.php</link></para>
+</listitem>
+            <listitem><para>fichier <link linkend="__fruit_8php">Fruit.php</link></para>
+</listitem>
+            <listitem><para>fichier <link linkend="__genre_8php">Genre.php</link></para>
+</listitem>
+            <listitem><para>fichier <link linkend="__label_8php">Label.php</link></para>
+</listitem>
+            <listitem><para>fichier <link linkend="__track_8php">Track.php</link></para>
+</listitem>
+            <listitem><para>fichier <link linkend="__user_8php">User.php</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

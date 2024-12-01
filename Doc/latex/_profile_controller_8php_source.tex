@@ -1,0 +1,66 @@
+\doxysection{Profile\+Controller.\+php}
+\hypertarget{_profile_controller_8php_source}{}\label{_profile_controller_8php_source}\index{Controller/ProfileController.php@{Controller/ProfileController.php}}
+\mbox{\hyperlink{_profile_controller_8php}{Aller à la documentation de ce fichier.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00001}00001\ <?php}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00003}00003\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_app_1_1_controller}{App\(\backslash\)Controller}};}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00005}00005\ use\ Symfony\(\backslash\)Bundle\(\backslash\)FrameworkBundle\(\backslash\)Controller\(\backslash\)AbstractController;}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00006}00006\ use\ Symfony\(\backslash\)Component\(\backslash\)Routing\(\backslash\)Annotation\(\backslash\)Route;}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00007}00007\ use\ Symfony\(\backslash\)Component\(\backslash\)HttpFoundation\(\backslash\)Request;}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00008}00008\ use\ Symfony\(\backslash\)Component\(\backslash\)HttpFoundation\(\backslash\)Response;}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00009}00009\ use\ \mbox{\hyperlink{class_app_1_1_repository_1_1_favorite_album_repository}{App\(\backslash\)Repository\(\backslash\)FavoriteAlbumRepository}};}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00014}\mbox{\hyperlink{class_app_1_1_controller_1_1_profile_controller}{00014}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_app_1_1_controller_1_1_profile_controller}{ProfileController}}\ \textcolor{keyword}{extends}\ AbstractController}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00015}00015\ \{}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00026}00026\ \textcolor{preprocessor}{\ \ \ \ \#[Route('/profile',\ name:\ 'profile')]}}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00027}\mbox{\hyperlink{class_app_1_1_controller_1_1_profile_controller_ae1226a5f7b95e179ae1de18af8d815cd}{00027}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{class_app_1_1_controller_1_1_profile_controller_ae1226a5f7b95e179ae1de18af8d815cd}{userProfile}}(Request\ \$request,\ \mbox{\hyperlink{class_app_1_1_repository_1_1_favorite_album_repository}{FavoriteAlbumRepository}}\ \$favoriteAlbumRepository):\ Response}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00028}00028\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00029}00029\ \ \ \ \ \ \ \ \ \$user\ =\ \$this-\/>getUser();}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\$user)\ \{}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$this-\/>redirectToRoute(\textcolor{stringliteral}{'app\_login'});}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00033}00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Récupérer\ les\ albums\ favoris\ en\ fonction\ des\ critères\ de\ filtrage}}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00036}00036\ \ \ \ \ \ \ \ \ \$favorites\ =\ \$this-\/>getFilteredFavorites(}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \$favoriteAlbumRepository,}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \$user,}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \$request}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00040}00040\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$this-\/>render(\textcolor{stringliteral}{'profile/index.html.twig'},\ [}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'favorites'}\ =>\ \$favorites,}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00044}00044\ \ \ \ \ \ \ \ \ ]);}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00045}00045\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00056}00056\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{function}\ getFilteredFavorites(}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00057}00057\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_app_1_1_repository_1_1_favorite_album_repository}{FavoriteAlbumRepository}}\ \$favoriteAlbumRepository,}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$user,}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00059}00059\ \ \ \ \ \ \ \ \ Request\ \$request}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00060}00060\ \ \ \ \ ):\ array\ \{}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Critères\ de\ filtrage\ depuis\ la\ requête}}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00062}00062\ \ \ \ \ \ \ \ \ \$criteria\ =\ [}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'fruit'}\ \ =>\ \$request-\/>query-\/>get(\textcolor{stringliteral}{'fruit'}),}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'year'}\ \ \ =>\ \$request-\/>query-\/>get(\textcolor{stringliteral}{'year'}),}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'title'}\ \ =>\ \$request-\/>query-\/>get(\textcolor{stringliteral}{'title'}),}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'label'}\ \ =>\ \$request-\/>query-\/>get(\textcolor{stringliteral}{'label'}),}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'genre'}\ \ =>\ \$request-\/>query-\/>get(\textcolor{stringliteral}{'genre'}),}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'format'}\ =>\ \$request-\/>query-\/>get(\textcolor{stringliteral}{'format'}),}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00069}00069\ \ \ \ \ \ \ \ \ ];}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00071}00071\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Paramètres\ de\ tri}}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00072}00072\ \ \ \ \ \ \ \ \ \$sortBy\ =\ \$request-\/>query-\/>get(\textcolor{stringliteral}{'sortBy'},\ \textcolor{stringliteral}{'title'});\ \textcolor{comment}{//\ Tri\ par\ titre\ par\ défaut}}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00073}00073\ \ \ \ \ \ \ \ \ \$order\ =\ strtoupper(\$request-\/>query-\/>get(\textcolor{stringliteral}{'order'},\ \textcolor{stringliteral}{'ASC'}))\ ===\ \textcolor{stringliteral}{'ASC'}\ ?\ \textcolor{stringliteral}{'ASC'}\ :\ \textcolor{stringliteral}{'DESC'};}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$favoriteAlbumRepository-\/>\mbox{\hyperlink{class_app_1_1_repository_1_1_favorite_album_repository_a1e89bed821646ae540cc6c84f28cd05b}{findByUser}}(}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \$user,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Filtre\ par\ utilisateur\ connecté}}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ array\_filter(\$criteria),\ \textcolor{comment}{//\ Supprime\ les\ critères\ vides\ ou\ nuls}}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \$sortBy,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Colonne\ de\ tri}}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \$order\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Ordre\ de\ tri}}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00080}00080\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00081}00081\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8php_source_l00082}00082\ \}}
+
+\end{DoxyCode}

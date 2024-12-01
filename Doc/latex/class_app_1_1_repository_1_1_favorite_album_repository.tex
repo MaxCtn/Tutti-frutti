@@ -1,0 +1,75 @@
+\doxysection{Référence de la classe Favorite\+Album\+Repository}
+\hypertarget{class_app_1_1_repository_1_1_favorite_album_repository}{}\label{class_app_1_1_repository_1_1_favorite_album_repository}\index{FavoriteAlbumRepository@{FavoriteAlbumRepository}}
+
+
+Graphe d\textquotesingle{}héritage de Favorite\+Album\+Repository\+:
+% FIG 0
+
+
+Graphe de collaboration de Favorite\+Album\+Repository\+:
+% FIG 1
+\doxysubsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_app_1_1_repository_1_1_favorite_album_repository_a38ea33dde11163765f358f5f10a3bc03}{\+\_\+\+\_\+construct}} (Manager\+Registry \$registry)
+\item 
+\mbox{\hyperlink{class_app_1_1_repository_1_1_favorite_album_repository_a1e89bed821646ae540cc6c84f28cd05b}{find\+By\+User}} (\$user, array \$filters=\mbox{[}$\,$\mbox{]}, string \$sort\+By=\textquotesingle{}title\textquotesingle{}, string \$order=\textquotesingle{}ASC\textquotesingle{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Repository pour l\textquotesingle{}entité Favorite\+Album.
+
+Fournit des méthodes pour interagir avec les albums favoris d\textquotesingle{}un utilisateur.
+
+$<$\+Favorite\+Album$>$ 
+
+Définition à la ligne \mbox{\hyperlink{_favorite_album_repository_8php_source_l00016}{16}} du fichier \mbox{\hyperlink{_favorite_album_repository_8php_source}{Favorite\+Album\+Repository.\+php}}.
+
+
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\Hypertarget{class_app_1_1_repository_1_1_favorite_album_repository_a38ea33dde11163765f358f5f10a3bc03}\index{FavoriteAlbumRepository@{FavoriteAlbumRepository}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!FavoriteAlbumRepository@{FavoriteAlbumRepository}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily \label{class_app_1_1_repository_1_1_favorite_album_repository_a38ea33dde11163765f358f5f10a3bc03} 
+\+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{Manager\+Registry}]{\$registry}{}\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_favorite_album_repository_8php_source_l00018}{18}} du fichier \mbox{\hyperlink{_favorite_album_repository_8php_source}{Favorite\+Album\+Repository.\+php}}.
+
+
+
+\doxysubsection{Documentation des fonctions membres}
+\Hypertarget{class_app_1_1_repository_1_1_favorite_album_repository_a1e89bed821646ae540cc6c84f28cd05b}\index{FavoriteAlbumRepository@{FavoriteAlbumRepository}!findByUser@{findByUser}}
+\index{findByUser@{findByUser}!FavoriteAlbumRepository@{FavoriteAlbumRepository}}
+\doxysubsubsection{\texorpdfstring{findByUser()}{findByUser()}}
+{\footnotesize\ttfamily \label{class_app_1_1_repository_1_1_favorite_album_repository_a1e89bed821646ae540cc6c84f28cd05b} 
+find\+By\+User (\begin{DoxyParamCaption}\item[{}]{\$user}{, }\item[{array}]{\$filters}{ = {\ttfamily \mbox{[}\mbox{]}}, }\item[{string}]{\$sort\+By}{ = {\ttfamily \textquotesingle{}title\textquotesingle{}}, }\item[{string}]{\$order}{ = {\ttfamily \textquotesingle{}ASC\textquotesingle{}}}\end{DoxyParamCaption})}
+
+Récupère les albums favoris spécifiques à un utilisateur avec des options de filtrage et de tri.
+
+
+\begin{DoxyParams}[1]{Paramètres}
+mixed & {\em \$user} & L\textquotesingle{}utilisateur pour lequel récupérer les albums favoris. \\
+\hline
+array & {\em \$filters} & Les critères de filtrage (par exemple, \textquotesingle{}title\textquotesingle{}, \textquotesingle{}fruit\textquotesingle{}, \textquotesingle{}year\textquotesingle{}). \\
+\hline
+string & {\em \$sort\+By} & Le champ sur lequel trier les résultats (par défaut \+: \textquotesingle{}title\textquotesingle{}). \\
+\hline
+string & {\em \$order} & L\textquotesingle{}ordre du tri \+: \textquotesingle{}ASC\textquotesingle{} ou \textquotesingle{}DESC\textquotesingle{} (par défaut \+: \textquotesingle{}ASC\textquotesingle{}).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Favorite\+Album\mbox{[}\mbox{]} La liste des albums favoris correspondant aux critères. 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_favorite_album_repository_8php_source_l00033}{33}} du fichier \mbox{\hyperlink{_favorite_album_repository_8php_source}{Favorite\+Album\+Repository.\+php}}.
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+Repository/\mbox{\hyperlink{_favorite_album_repository_8php}{Favorite\+Album\+Repository.\+php}}\end{DoxyCompactItemize}

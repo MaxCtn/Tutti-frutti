@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespace_app_1_1_entity" xml:lang="fr">
+<title>Référence de l&apos;espace de nommage App\Entity</title>
+<indexterm><primary>App\Entity</primary></indexterm>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_class_app_1_1_entity_1_1_favorite_album">FavoriteAlbum</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_class_app_1_1_entity_1_1_format">Format</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_class_app_1_1_entity_1_1_fruit">Fruit</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_class_app_1_1_entity_1_1_genre">Genre</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_class_app_1_1_entity_1_1_label">Label</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_class_app_1_1_entity_1_1_track">Track</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_class_app_1_1_entity_1_1_user">User</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

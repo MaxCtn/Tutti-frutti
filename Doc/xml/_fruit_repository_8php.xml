@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="fr">
+  <compounddef id="_fruit_repository_8php" kind="file" language="PHP">
+    <compoundname>FruitRepository.php</compoundname>
+    <innerclass refid="class_app_1_1_repository_1_1_fruit_repository" prot="public">App::Repository::FruitRepository</innerclass>
+    <innernamespace refid="namespace_app_1_1_repository">App::Repository</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;?php</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_app_1_1_repository" kindref="compound">App\Repository</ref>;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal">use<sp/><ref refid="class_app_1_1_entity_1_1_fruit" kindref="compound">App\Entity\Fruit</ref>;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal">use<sp/>Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal">use<sp/>Doctrine\Persistence\ManagerRegistry;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="class_app_1_1_repository_1_1_fruit_repository" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_app_1_1_repository_1_1_fruit_repository" kindref="compound">FruitRepository</ref><sp/></highlight><highlight class="keyword">extends</highlight><highlight class="normal"><sp/>ServiceEntityRepository</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="24" refid="class_app_1_1_repository_1_1_fruit_repository_1a38ea33dde11163765f358f5f10a3bc03" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="class_app_1_1_repository_1_1_fruit_repository_1a38ea33dde11163765f358f5f10a3bc03" kindref="member">__construct</ref>(ManagerRegistry<sp/>$registry)</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>parent::__construct($registry,<sp/>Fruit::class);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="class_app_1_1_repository_1_1_fruit_repository_1a75686a8dc64f97f7a8ea96a20997cf25" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="class_app_1_1_repository_1_1_fruit_repository_1a75686a8dc64f97f7a8ea96a20997cf25" kindref="member">findOrCreate</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>$fruitName):<sp/><ref refid="class_app_1_1_entity_1_1_fruit" kindref="compound">Fruit</ref></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$fruit<sp/>=<sp/>$this-&gt;findOneBy([</highlight><highlight class="stringliteral">&apos;name&apos;</highlight><highlight class="normal"><sp/>=&gt;<sp/>$fruitName]);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!$fruit)<sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$fruit<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_app_1_1_entity_1_1_fruit" kindref="compound">Fruit</ref>();</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$fruit-&gt;setName($fruitName);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$this-&gt;getEntityManager()-&gt;persist($fruit);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$this-&gt;getEntityManager()-&gt;flush();</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>$fruit;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Repository/FruitRepository.php"/>
+  </compounddef>
+</doxygen>

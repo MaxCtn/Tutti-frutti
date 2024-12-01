@@ -1,0 +1,50 @@
+.TH "ProfileController" 3 "Tutti-frutti" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ProfileController
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Est dérivée de AbstractController\&.
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBuserProfile\fP (Request $request, \fBFavoriteAlbumRepository\fP $favoriteAlbumRepository)"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Contrôleur gérant le profil utilisateur et l'affichage des albums favoris\&. 
+.PP
+Définition à la ligne \fB14\fP du fichier \fBProfileController\&.php\fP\&.
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "userProfile (Request $request, \fBFavoriteAlbumRepository\fP $favoriteAlbumRepository)"
+Affiche le profil de l'utilisateur et ses albums favoris, avec possibilité de filtrage et de tri\&.
+
+.PP
+@Route('/profile', name='profile', methods={'GET'})
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$request\fP La requête HTTP\&. 
+.br
+\fI$favoriteAlbumRepository\fP Le dépôt des albums favoris\&.
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+Response La réponse HTTP contenant la page du profil utilisateur\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB27\fP du fichier \fBProfileController\&.php\fP\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Tutti-frutti à partir du code source\&.

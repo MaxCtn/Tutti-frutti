@@ -1,0 +1,39 @@
+\doxysection{Connexion\+Controller.\+php}
+\hypertarget{_connexion_controller_8php_source}{}\label{_connexion_controller_8php_source}\index{Controller/ConnexionController.php@{Controller/ConnexionController.php}}
+\mbox{\hyperlink{_connexion_controller_8php}{Aller à la documentation de ce fichier.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_connexion_controller_8php_source_l00001}00001\ <?php}
+\DoxyCodeLine{\Hypertarget{_connexion_controller_8php_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_connexion_controller_8php_source_l00003}00003\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_app_1_1_controller}{App\(\backslash\)Controller}};}
+\DoxyCodeLine{\Hypertarget{_connexion_controller_8php_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_connexion_controller_8php_source_l00005}00005\ use\ Symfony\(\backslash\)Bundle\(\backslash\)FrameworkBundle\(\backslash\)Controller\(\backslash\)AbstractController;}
+\DoxyCodeLine{\Hypertarget{_connexion_controller_8php_source_l00006}00006\ use\ Symfony\(\backslash\)Component\(\backslash\)HttpFoundation\(\backslash\)Response;}
+\DoxyCodeLine{\Hypertarget{_connexion_controller_8php_source_l00007}00007\ use\ Symfony\(\backslash\)Component\(\backslash\)Routing\(\backslash\)Annotation\(\backslash\)Route;}
+\DoxyCodeLine{\Hypertarget{_connexion_controller_8php_source_l00008}00008\ use\ Symfony\(\backslash\)Component\(\backslash\)Security\(\backslash\)Http\(\backslash\)Authentication\(\backslash\)AuthenticationUtils;}
+\DoxyCodeLine{\Hypertarget{_connexion_controller_8php_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_connexion_controller_8php_source_l00013}\mbox{\hyperlink{class_app_1_1_controller_1_1_connexion_controller}{00013}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_app_1_1_controller_1_1_connexion_controller}{ConnexionController}}\ \textcolor{keyword}{extends}\ AbstractController}
+\DoxyCodeLine{\Hypertarget{_connexion_controller_8php_source_l00014}00014\ \{}
+\DoxyCodeLine{\Hypertarget{_connexion_controller_8php_source_l00024}00024\ \textcolor{preprocessor}{\ \ \ \ \#[Route(path:\ '/login',\ name:\ 'app\_login')]}}
+\DoxyCodeLine{\Hypertarget{_connexion_controller_8php_source_l00025}\mbox{\hyperlink{class_app_1_1_controller_1_1_connexion_controller_a0c05ef8ddb2188649a9972a35f3c3512}{00025}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{class_app_1_1_controller_1_1_connexion_controller_a0c05ef8ddb2188649a9972a35f3c3512}{login}}(AuthenticationUtils\ \$authenticationUtils):\ Response}
+\DoxyCodeLine{\Hypertarget{_connexion_controller_8php_source_l00026}00026\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_connexion_controller_8php_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Récupérer\ l'e-\/mail\ à\ partir\ de\ la\ session}}
+\DoxyCodeLine{\Hypertarget{_connexion_controller_8php_source_l00028}00028\ \ \ \ \ \ \ \ \ \$lastEmail\ =\ \$authenticationUtils-\/>getLastUsername();}
+\DoxyCodeLine{\Hypertarget{_connexion_controller_8php_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_connexion_controller_8php_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Récupérer\ l'erreur\ de\ connexion,\ le\ cas\ échéant}}
+\DoxyCodeLine{\Hypertarget{_connexion_controller_8php_source_l00031}00031\ \ \ \ \ \ \ \ \ \$error\ =\ \$authenticationUtils-\/>getLastAuthenticationError();}
+\DoxyCodeLine{\Hypertarget{_connexion_controller_8php_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_connexion_controller_8php_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$this-\/>render(\textcolor{stringliteral}{'security/login.html.twig'},\ [}
+\DoxyCodeLine{\Hypertarget{_connexion_controller_8php_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'last\_email'}\ =>\ \$lastEmail,}
+\DoxyCodeLine{\Hypertarget{_connexion_controller_8php_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'error'}\ =>\ \$error}
+\DoxyCodeLine{\Hypertarget{_connexion_controller_8php_source_l00036}00036\ \ \ \ \ \ \ \ \ ]);}
+\DoxyCodeLine{\Hypertarget{_connexion_controller_8php_source_l00037}00037\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_connexion_controller_8php_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_connexion_controller_8php_source_l00046}00046\ \textcolor{preprocessor}{\ \ \ \ \#[Route(path:\ '/logout',\ name:\ 'app\_logout')]}}
+\DoxyCodeLine{\Hypertarget{_connexion_controller_8php_source_l00047}\mbox{\hyperlink{class_app_1_1_controller_1_1_connexion_controller_a082405d89acd6835c3a7c7a08a7adbab}{00047}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{class_app_1_1_controller_1_1_connexion_controller_a082405d89acd6835c3a7c7a08a7adbab}{logout}}():\ void}
+\DoxyCodeLine{\Hypertarget{_connexion_controller_8php_source_l00048}00048\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_connexion_controller_8php_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Cette\ méthode\ peut\ être\ laissée\ vide,\ car\ elle\ est\ interceptée\ par\ le\ pare-\/feu\ de\ sécurité}}
+\DoxyCodeLine{\Hypertarget{_connexion_controller_8php_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ new\ \(\backslash\)LogicException(\textcolor{stringliteral}{'Cette\ méthode\ peut\ être\ vide\ -\/\ elle\ sera\ interceptée\ par\ la\ clé\ logout\ de\ votre\ pare-\/feu.'});}
+\DoxyCodeLine{\Hypertarget{_connexion_controller_8php_source_l00051}00051\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_connexion_controller_8php_source_l00052}00052\ \}}
+
+\end{DoxyCode}

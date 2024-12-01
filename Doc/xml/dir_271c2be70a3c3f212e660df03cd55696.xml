@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="fr">
+  <compounddef id="dir_271c2be70a3c3f212e660df03cd55696" kind="dir">
+    <compoundname>Security</compoundname>
+    <innerfile refid="_app_custom_authenticator_8php">AppCustomAuthenticator.php</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Security/"/>
+  </compounddef>
+</doxygen>

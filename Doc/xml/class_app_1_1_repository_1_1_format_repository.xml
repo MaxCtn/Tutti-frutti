@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="fr">
+  <compounddef id="class_app_1_1_repository_1_1_format_repository" kind="class" language="PHP" prot="public">
+    <compoundname>App::Repository::FormatRepository</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">ServiceEntityRepository</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">ServiceEntityRepository</basecompoundref>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_app_1_1_repository_1_1_format_repository_1a38ea33dde11163765f358f5f10a3bc03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>__construct</definition>
+        <argsstring>(ManagerRegistry $registry)</argsstring>
+        <name>__construct</name>
+        <qualifiedname>App\Repository\FormatRepository\__construct</qualifiedname>
+        <param>
+          <type>ManagerRegistry</type>
+          <declname>$registry</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructeur du repository.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>ManagerRegistry</parametertype>
+<parametername>$registry</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Le registre des gestionnaires d&apos;entités. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Repository/FormatRepository.php" line="26" column="21" bodyfile="Repository/FormatRepository.php" bodystart="26" bodyend="29"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Repository pour l&apos;entité Format.</para>
+<para>Fournit des méthodes de base pour interagir avec la table des formats et permet d&apos;ajouter des requêtes personnalisées si nécessaire.</para>
+<para>&lt;Format&gt; </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>ServiceEntityRepository</label>
+      </node>
+      <node id="1">
+        <label>FormatRepository</label>
+        <link refid="class_app_1_1_repository_1_1_format_repository"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>ServiceEntityRepository</label>
+      </node>
+      <node id="1">
+        <label>FormatRepository</label>
+        <link refid="class_app_1_1_repository_1_1_format_repository"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Repository/FormatRepository.php" line="19" column="1" bodyfile="Repository/FormatRepository.php" bodystart="20" bodyend="32"/>
+    <listofallmembers>
+      <member refid="class_app_1_1_repository_1_1_format_repository_1a38ea33dde11163765f358f5f10a3bc03" prot="public" virt="non-virtual"><scope>App::Repository::FormatRepository</scope><name>__construct</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

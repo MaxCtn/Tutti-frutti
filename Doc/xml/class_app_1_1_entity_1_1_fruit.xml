@@ -1,0 +1,238 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="fr">
+  <compounddef id="class_app_1_1_entity_1_1_fruit" kind="class" language="PHP" prot="public">
+    <compoundname>App::Entity::Fruit</compoundname>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_app_1_1_entity_1_1_fruit_1a3587bd00e5602c1800515b6f9ffbebc5" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int $id</definition>
+        <argsstring></argsstring>
+        <name>$id</name>
+        <qualifiedname>App\Entity\Fruit\$id</qualifiedname>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/Fruit.php" line="30" column="17" bodyfile="Entity/Fruit.php" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_app_1_1_entity_1_1_fruit_1a58551b63ba97fb35b928f11f36b1fac6" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string $name</definition>
+        <argsstring></argsstring>
+        <name>$name</name>
+        <qualifiedname>App\Entity\Fruit\$name</qualifiedname>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/Fruit.php" line="40" column="20" bodyfile="Entity/Fruit.php" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_app_1_1_entity_1_1_fruit_1abdbe36cb1ca8c15cf9556617649a658e" prot="private" static="no" mutable="no">
+        <type>Collection</type>
+        <definition>Collection $albums</definition>
+        <argsstring></argsstring>
+        <name>$albums</name>
+        <qualifiedname>App\Entity\Fruit\$albums</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/Fruit.php" line="50" column="24" bodyfile="Entity/Fruit.php" bodystart="50" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_fruit_1a095c5d389db211932136b53f25f39685" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>__construct</definition>
+        <argsstring>()</argsstring>
+        <name>__construct</name>
+        <qualifiedname>App\Entity\Fruit\__construct</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructeur de la classe Fruit. Initialise la collection des albums favoris. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/Fruit.php" line="56" column="21" bodyfile="Entity/Fruit.php" bodystart="56" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_fruit_1a12251d0c022e9e21c137a105ff683f13" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>getId</definition>
+        <argsstring>()</argsstring>
+        <name>getId</name>
+        <qualifiedname>App\Entity\Fruit\getId</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Obtient l&apos;identifiant unique du fruit.</para>
+<para><simplesect kind="return"><para>int|null L&apos;identifiant du fruit. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/Fruit.php" line="66" column="21" bodyfile="Entity/Fruit.php" bodystart="66" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_fruit_1a3d0963e68bb313b163a73f2803c64600" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>getName</definition>
+        <argsstring>()</argsstring>
+        <name>getName</name>
+        <qualifiedname>App\Entity\Fruit\getName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Obtient le nom du fruit.</para>
+<para><simplesect kind="return"><para>string|null Le nom du fruit. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/Fruit.php" line="76" column="21" bodyfile="Entity/Fruit.php" bodystart="76" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_fruit_1a392752b62c4f6aacea5c269690921ef3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>setName</definition>
+        <argsstring>(string $name)</argsstring>
+        <name>setName</name>
+        <qualifiedname>App\Entity\Fruit\setName</qualifiedname>
+        <param>
+          <type>string</type>
+          <declname>$name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Définit le nom du fruit.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Le nom du fruit.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>self </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/Fruit.php" line="88" column="21" bodyfile="Entity/Fruit.php" bodystart="88" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_fruit_1a96732906856f5d0e08852d04b3e8b9ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>getAlbums</definition>
+        <argsstring>()</argsstring>
+        <name>getAlbums</name>
+        <qualifiedname>App\Entity\Fruit\getAlbums</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Obtient la collection des albums favoris associés à ce fruit.</para>
+<para><simplesect kind="return"><para>Collection&lt;int, FavoriteAlbum&gt; La collection des albums favoris. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/Fruit.php" line="100" column="21" bodyfile="Entity/Fruit.php" bodystart="100" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_fruit_1a79ad3ae17fa6347782039ba962fd4773" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>addAlbum</definition>
+        <argsstring>(FavoriteAlbum $album)</argsstring>
+        <name>addAlbum</name>
+        <qualifiedname>App\Entity\Fruit\addAlbum</qualifiedname>
+        <param>
+          <type><ref refid="class_app_1_1_entity_1_1_favorite_album" kindref="compound">FavoriteAlbum</ref></type>
+          <declname>$album</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Ajoute un album favori à la collection associée à ce fruit.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>FavoriteAlbum</parametertype>
+<parametername>$album</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>L&apos;album favori à ajouter.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>self </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/Fruit.php" line="112" column="21" bodyfile="Entity/Fruit.php" bodystart="112" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_entity_1_1_fruit_1a8ac4b6e0389eb502c205087d8cad7645" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>removeAlbum</definition>
+        <argsstring>(FavoriteAlbum $album)</argsstring>
+        <name>removeAlbum</name>
+        <qualifiedname>App\Entity\Fruit\removeAlbum</qualifiedname>
+        <param>
+          <type><ref refid="class_app_1_1_entity_1_1_favorite_album" kindref="compound">FavoriteAlbum</ref></type>
+          <declname>$album</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Retire un album favori de la collection associée à ce fruit.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>FavoriteAlbum</parametertype>
+<parametername>$album</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>L&apos;album favori à retirer.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>self </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity/Fruit.php" line="129" column="21" bodyfile="Entity/Fruit.php" bodystart="129" bodyend="136"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Entité représentant un fruit associé à des albums favoris.</para>
+<para>@ORM\Entity(repositoryClass=FruitRepository::class) </para>
+    </detaileddescription>
+    <location file="Entity/Fruit.php" line="16" column="1" bodyfile="Entity/Fruit.php" bodystart="17" bodyend="137"/>
+    <listofallmembers>
+      <member refid="class_app_1_1_entity_1_1_fruit_1abdbe36cb1ca8c15cf9556617649a658e" prot="private" virt="non-virtual"><scope>App::Entity::Fruit</scope><name>$albums</name></member>
+      <member refid="class_app_1_1_entity_1_1_fruit_1a3587bd00e5602c1800515b6f9ffbebc5" prot="private" virt="non-virtual"><scope>App::Entity::Fruit</scope><name>$id</name></member>
+      <member refid="class_app_1_1_entity_1_1_fruit_1a58551b63ba97fb35b928f11f36b1fac6" prot="private" virt="non-virtual"><scope>App::Entity::Fruit</scope><name>$name</name></member>
+      <member refid="class_app_1_1_entity_1_1_fruit_1a095c5d389db211932136b53f25f39685" prot="public" virt="non-virtual"><scope>App::Entity::Fruit</scope><name>__construct</name></member>
+      <member refid="class_app_1_1_entity_1_1_fruit_1a79ad3ae17fa6347782039ba962fd4773" prot="public" virt="non-virtual"><scope>App::Entity::Fruit</scope><name>addAlbum</name></member>
+      <member refid="class_app_1_1_entity_1_1_fruit_1a96732906856f5d0e08852d04b3e8b9ce" prot="public" virt="non-virtual"><scope>App::Entity::Fruit</scope><name>getAlbums</name></member>
+      <member refid="class_app_1_1_entity_1_1_fruit_1a12251d0c022e9e21c137a105ff683f13" prot="public" virt="non-virtual"><scope>App::Entity::Fruit</scope><name>getId</name></member>
+      <member refid="class_app_1_1_entity_1_1_fruit_1a3d0963e68bb313b163a73f2803c64600" prot="public" virt="non-virtual"><scope>App::Entity::Fruit</scope><name>getName</name></member>
+      <member refid="class_app_1_1_entity_1_1_fruit_1a8ac4b6e0389eb502c205087d8cad7645" prot="public" virt="non-virtual"><scope>App::Entity::Fruit</scope><name>removeAlbum</name></member>
+      <member refid="class_app_1_1_entity_1_1_fruit_1a392752b62c4f6aacea5c269690921ef3" prot="public" virt="non-virtual"><scope>App::Entity::Fruit</scope><name>setName</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

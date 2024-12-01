@@ -1,0 +1,73 @@
+.TH "UserRepository" 3 "Tutti-frutti" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+UserRepository
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Est dérivée de ServiceEntityRepository, PasswordUpgraderInterface, ServiceEntityRepository, et PasswordUpgraderInterface\&.
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fB__construct\fP (ManagerRegistry $registry)"
+.br
+.ti -1c
+.RI "\fBupgradePassword\fP (PasswordAuthenticatedUserInterface $user, string $newHashedPassword)"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Repository pour l'entité User\&.
+
+.PP
+Fournit des méthodes de base pour interagir avec les utilisateurs et permet d'ajouter des fonctionnalités spécifiques à l'entité User\&.
+
+.PP
+<User> <User>
+
+.PP
+@method User|null find($id, $lockMode = null, $lockVersion = null) @method User|null findOneBy(array $criteria, array $orderBy = null) @method User[] findAll() @method User[] findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null) 
+.PP
+Définition à la ligne \fB26\fP du fichier \fBUserRepository\&.php\fP\&.
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "__construct (ManagerRegistry $registry)"
+Constructeur du repository\&.
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$registry\fP Le registre des gestionnaires d'entités\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB33\fP du fichier \fBUserRepository\&.php\fP\&.
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "upgradePassword (PasswordAuthenticatedUserInterface $user, string $newHashedPassword)"
+Met à jour automatiquement le mot de passe (rehash) de l'utilisateur\&.
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$user\fP L'utilisateur dont le mot de passe doit être mis à jour\&. 
+.br
+\fI$newHashedPassword\fP Le nouveau mot de passe hashé\&.
+.RE
+.PP
+\fBExceptions\fP
+.RS 4
+\fIUnsupportedUserException\fP Si l'utilisateur n'est pas une instance de User\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB46\fP du fichier \fBUserRepository\&.php\fP\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Tutti-frutti à partir du code source\&.

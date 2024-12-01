@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_app_1_1_command_1_1_test_discogs_command" xml:lang="fr">
+<title>Référence de la classe TestDiscogsCommand</title>
+<indexterm><primary>TestDiscogsCommand</primary></indexterm>
+Graphe d&apos;héritage de TestDiscogsCommand:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_app_1_1_command_1_1_test_discogs_command__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Graphe de collaboration de TestDiscogsCommand:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_app_1_1_command_1_1_test_discogs_command__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Fonctions membres publiques    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_app_1_1_command_1_1_test_discogs_command_1afa9245fce697aa62d74b949139a10612">__construct</link> (HttpClientInterface $httpClient)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Fonctions membres protégées    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_app_1_1_command_1_1_test_discogs_command_1a9be5e0bdb5720efed6ddb6426c5c16ee">configure</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_command_1_1_test_discogs_command_1ab31c72b72ddaf7116db5d84c055d3c0b">execute</link> (InputInterface $input, OutputInterface $output)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Description détaillée</title>
+
+<para>Cette commande permet de tester l&apos;API Discogs en effectuant une recherche simple. Elle affiche les résultats de la recherche pour un mot-clé spécifique. </para>
+<para>
+Définition à la ligne <link linkend="__test_discogs_command_8php_source_1l00017">17</link> du fichier <link linkend="__test_discogs_command_8php_source">TestDiscogsCommand.php</link>.</para>
+</section>
+<section>
+<title>Documentation des constructeurs et destructeur</title>
+<anchor xml:id="_class_app_1_1_command_1_1_test_discogs_command_1afa9245fce697aa62d74b949139a10612"/><section>
+    <title>__construct()</title>
+<indexterm><primary>__construct</primary><secondary>TestDiscogsCommand</secondary></indexterm>
+<indexterm><primary>TestDiscogsCommand</primary><secondary>__construct</secondary></indexterm>
+<para><computeroutput>__construct (HttpClientInterface $httpClient)</computeroutput></para>
+<para>Constructeur de la commande.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Paramètres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>HttpClientInterface</entry><entry>$httpClient</entry><entry>
+<para>Le client HTTP utilisé pour les requêtes.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                
+                <formalpara>
+                    <title>
+Exceptions</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry></entry>
+<entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                RuntimeException Si les clés API Discogs ne sont pas définies. </para>
+<para>
+Définition à la ligne <link linkend="__test_discogs_command_8php_source_1l00047">47</link> du fichier <link linkend="__test_discogs_command_8php_source">TestDiscogsCommand.php</link>.</para>
+</section>
+</section>
+<section>
+<title>Documentation des fonctions membres</title>
+<anchor xml:id="_class_app_1_1_command_1_1_test_discogs_command_1a9be5e0bdb5720efed6ddb6426c5c16ee"/><section>
+    <title>configure()</title>
+<indexterm><primary>configure</primary><secondary>TestDiscogsCommand</secondary></indexterm>
+<indexterm><primary>TestDiscogsCommand</primary><secondary>configure</secondary></indexterm>
+<para><computeroutput>configure ( )<computeroutput>[protected]</computeroutput></computeroutput></para>
+<para>Configure la commande en définissant ses arguments et options. </para>
+<para>
+Définition à la ligne <link linkend="__test_discogs_command_8php_source_1l00063">63</link> du fichier <link linkend="__test_discogs_command_8php_source">TestDiscogsCommand.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_command_1_1_test_discogs_command_1ab31c72b72ddaf7116db5d84c055d3c0b"/><section>
+    <title>execute()</title>
+<indexterm><primary>execute</primary><secondary>TestDiscogsCommand</secondary></indexterm>
+<indexterm><primary>TestDiscogsCommand</primary><secondary>execute</secondary></indexterm>
+<para><computeroutput>execute (InputInterface $input, OutputInterface $output)<computeroutput>[protected]</computeroutput></computeroutput></para>
+<para>Exécute la commande.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Paramètres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>InputInterface</entry><entry>$input</entry><entry>
+<para>L&apos;interface d&apos;entrée. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>OutputInterface</entry><entry>$output</entry><entry>
+<para>L&apos;interface de sortie.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Renvoie</title>
+
+<para>int Le code de statut de la commande. </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__test_discogs_command_8php_source_1l00078">78</link> du fichier <link linkend="__test_discogs_command_8php_source">TestDiscogsCommand.php</link>.</para>
+</section>
+<para>
+La documentation de cette classe a été générée à partir du fichier suivant :</para>
+Command/<link linkend="__test_discogs_command_8php">TestDiscogsCommand.php</link></section>
+</section>
