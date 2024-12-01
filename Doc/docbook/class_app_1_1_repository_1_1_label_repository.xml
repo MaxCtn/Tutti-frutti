@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_app_1_1_repository_1_1_label_repository" xml:lang="fr">
+<title>Référence de la classe LabelRepository</title>
+<indexterm><primary>LabelRepository</primary></indexterm>
+Graphe d&apos;héritage de LabelRepository:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_app_1_1_repository_1_1_label_repository__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Graphe de collaboration de LabelRepository:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_app_1_1_repository_1_1_label_repository__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Fonctions membres publiques    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_app_1_1_repository_1_1_label_repository_1a38ea33dde11163765f358f5f10a3bc03">__construct</link> (ManagerRegistry $registry)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_repository_1_1_label_repository_1a5fc8877c3cb126ea03449bedd2b92092">findByNamePart</link> (string $namePart)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Description détaillée</title>
+
+<para>Repository pour l&apos;entité Label.</para>
+
+<para>Fournit des méthodes de base pour interagir avec les labels musicaux et permet d&apos;ajouter des méthodes personnalisées pour répondre à des besoins spécifiques.</para>
+
+<para>@method Label|null find($id, $lockMode = null, $lockVersion = null) @method Label|null findOneBy(array $criteria, array $orderBy = null) @method Label[] findAll() @method Label[] findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null) </para>
+<para>
+Définition à la ligne <link linkend="__label_repository_8php_source_1l00022">22</link> du fichier <link linkend="__label_repository_8php_source">LabelRepository.php</link>.</para>
+</section>
+<section>
+<title>Documentation des constructeurs et destructeur</title>
+<anchor xml:id="_class_app_1_1_repository_1_1_label_repository_1a38ea33dde11163765f358f5f10a3bc03"/><section>
+    <title>__construct()</title>
+<indexterm><primary>__construct</primary><secondary>LabelRepository</secondary></indexterm>
+<indexterm><primary>LabelRepository</primary><secondary>__construct</secondary></indexterm>
+<para><computeroutput>__construct (ManagerRegistry $registry)</computeroutput></para>
+<para>Constructeur du repository.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Paramètres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>ManagerRegistry</entry><entry>$registry</entry><entry>
+<para>Le registre des gestionnaires d&apos;entités. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Définition à la ligne <link linkend="__label_repository_8php_source_1l00029">29</link> du fichier <link linkend="__label_repository_8php_source">LabelRepository.php</link>.</para>
+</section>
+</section>
+<section>
+<title>Documentation des fonctions membres</title>
+<anchor xml:id="_class_app_1_1_repository_1_1_label_repository_1a5fc8877c3cb126ea03449bedd2b92092"/><section>
+    <title>findByNamePart()</title>
+<indexterm><primary>findByNamePart</primary><secondary>LabelRepository</secondary></indexterm>
+<indexterm><primary>LabelRepository</primary><secondary>findByNamePart</secondary></indexterm>
+<para><computeroutput>findByNamePart (string $namePart)</computeroutput></para>
+<para>Recherche des labels par nom partiel.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Paramètres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>string</entry><entry>$namePart</entry><entry>
+<para>Le fragment du nom à rechercher. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Renvoie</title>
+
+<para>Label[] La liste des labels correspondants. </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__label_repository_8php_source_1l00040">40</link> du fichier <link linkend="__label_repository_8php_source">LabelRepository.php</link>.</para>
+</section>
+<para>
+La documentation de cette classe a été générée à partir du fichier suivant :</para>
+Repository/<link linkend="__label_repository_8php">LabelRepository.php</link></section>
+</section>

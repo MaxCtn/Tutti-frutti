@@ -1,0 +1,82 @@
+\doxysection{Référence de la classe User\+Repository}
+\hypertarget{class_app_1_1_repository_1_1_user_repository}{}\label{class_app_1_1_repository_1_1_user_repository}\index{UserRepository@{UserRepository}}
+
+
+Graphe d\textquotesingle{}héritage de User\+Repository\+:
+% FIG 0
+
+
+Graphe de collaboration de User\+Repository\+:
+% FIG 1
+\doxysubsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_app_1_1_repository_1_1_user_repository_a38ea33dde11163765f358f5f10a3bc03}{\+\_\+\+\_\+construct}} (Manager\+Registry \$registry)
+\item 
+\mbox{\hyperlink{class_app_1_1_repository_1_1_user_repository_ac9400d686be3394bd280510b60ee642e}{upgrade\+Password}} (Password\+Authenticated\+User\+Interface \$user, string \$new\+Hashed\+Password)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Repository pour l\textquotesingle{}entité User.
+
+Fournit des méthodes de base pour interagir avec les utilisateurs et permet d\textquotesingle{}ajouter des fonctionnalités spécifiques à l\textquotesingle{}entité User.
+
+$<$\+User$>$ $<$\+User$>$
+
+@method User\texorpdfstring{$\vert$}{|}null find(\$id, \$lock\+Mode = null, \$lock\+Version = null) @method User\texorpdfstring{$\vert$}{|}null find\+One\+By(array \$criteria, array \$order\+By = null) @method User\mbox{[}\mbox{]} find\+All() @method User\mbox{[}\mbox{]} find\+By(array \$criteria, array \$order\+By = null, \$limit = null, \$offset = null) 
+
+Définition à la ligne \mbox{\hyperlink{_user_repository_8php_source_l00026}{26}} du fichier \mbox{\hyperlink{_user_repository_8php_source}{User\+Repository.\+php}}.
+
+
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\Hypertarget{class_app_1_1_repository_1_1_user_repository_a38ea33dde11163765f358f5f10a3bc03}\index{UserRepository@{UserRepository}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!UserRepository@{UserRepository}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily \label{class_app_1_1_repository_1_1_user_repository_a38ea33dde11163765f358f5f10a3bc03} 
+\+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{Manager\+Registry}]{\$registry}{}\end{DoxyParamCaption})}
+
+Constructeur du repository.
+
+
+\begin{DoxyParams}[1]{Paramètres}
+Manager\+Registry & {\em \$registry} & Le registre des gestionnaires d\textquotesingle{}entités. \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \mbox{\hyperlink{_user_repository_8php_source_l00033}{33}} du fichier \mbox{\hyperlink{_user_repository_8php_source}{User\+Repository.\+php}}.
+
+
+
+\doxysubsection{Documentation des fonctions membres}
+\Hypertarget{class_app_1_1_repository_1_1_user_repository_ac9400d686be3394bd280510b60ee642e}\index{UserRepository@{UserRepository}!upgradePassword@{upgradePassword}}
+\index{upgradePassword@{upgradePassword}!UserRepository@{UserRepository}}
+\doxysubsubsection{\texorpdfstring{upgradePassword()}{upgradePassword()}}
+{\footnotesize\ttfamily \label{class_app_1_1_repository_1_1_user_repository_ac9400d686be3394bd280510b60ee642e} 
+upgrade\+Password (\begin{DoxyParamCaption}\item[{Password\+Authenticated\+User\+Interface}]{\$user}{, }\item[{string}]{\$new\+Hashed\+Password}{}\end{DoxyParamCaption})}
+
+Met à jour automatiquement le mot de passe (rehash) de l\textquotesingle{}utilisateur.
+
+
+\begin{DoxyParams}[1]{Paramètres}
+Password\+Authenticated\+User\+Interface & {\em \$user} & L\textquotesingle{}utilisateur dont le mot de passe doit être mis à jour. \\
+\hline
+string & {\em \$new\+Hashed\+Password} & Le nouveau mot de passe hashé.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Unsupported\+User\+Exception} & Si l\textquotesingle{}utilisateur n\textquotesingle{}est pas une instance de User. \\
+\hline
+\end{DoxyExceptions}
+
+
+Définition à la ligne \mbox{\hyperlink{_user_repository_8php_source_l00046}{46}} du fichier \mbox{\hyperlink{_user_repository_8php_source}{User\+Repository.\+php}}.
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+Repository/\mbox{\hyperlink{_user_repository_8php}{User\+Repository.\+php}}\end{DoxyCompactItemize}

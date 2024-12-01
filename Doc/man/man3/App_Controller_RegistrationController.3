@@ -1,0 +1,58 @@
+.TH "RegistrationController" 3 "Tutti-frutti" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RegistrationController
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Est dérivée de AbstractController\&.
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBindex\fP (Request $request, EntityManagerInterface $entityManager, UserPasswordHasherInterface $passwordHasher, UserAuthenticatorInterface $userAuthenticator, SluggerInterface $slugger, \fBAppCustomAuthenticator\fP $authenticator)"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Contrôleur gérant l'inscription des utilisateurs\&. 
+.PP
+Définition à la ligne \fB22\fP du fichier \fBRegistrationController\&.php\fP\&.
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "index (Request $request, EntityManagerInterface $entityManager, UserPasswordHasherInterface $passwordHasher, UserAuthenticatorInterface $userAuthenticator, SluggerInterface $slugger, \fBAppCustomAuthenticator\fP $authenticator)"
+Affiche le formulaire d'inscription et traite les données soumises\&.
+
+.PP
+@Route('/registration', name='app_registration', methods={'GET', 'POST'})
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$request\fP La requête HTTP\&. 
+.br
+\fI$entityManager\fP Le gestionnaire d'entités\&. 
+.br
+\fI$passwordHasher\fP Le service de hashage de mot de passe\&. 
+.br
+\fI$userAuthenticator\fP Le service d'authentification utilisateur\&. 
+.br
+\fI$slugger\fP Le service de slugification\&. 
+.br
+\fI$authenticator\fP Votre authentificateur personnalisé\&.
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+Response La réponse HTTP\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB39\fP du fichier \fBRegistrationController\&.php\fP\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Tutti-frutti à partir du code source\&.

@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__update_favorite_covers_command_8php_source" xml:lang="fr">
+<title>UpdateFavoriteCoversCommand.php</title>
+<indexterm><primary>Command/UpdateFavoriteCoversCommand.php</primary></indexterm>
+Aller à la documentation de ce fichier.<programlisting linenumbering="unnumbered"><anchor xml:id="__update_favorite_covers_command_8php_source_1l00001"/>00001 &lt;?php
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00002"/>00002 
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00003"/>00003 <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespace_app_1_1_command">App\Command</link>;
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00004"/>00004 
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00005"/>00005 use&#32;Doctrine\ORM\EntityManagerInterface;
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00006"/>00006 use&#32;Symfony\Component\Console\Attribute\AsCommand;
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00007"/>00007 use&#32;Symfony\Component\Console\Command\Command;
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00008"/>00008 use&#32;Symfony\Component\Console\Input\InputInterface;
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00009"/>00009 use&#32;Symfony\Component\Console\Output\OutputInterface;
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00010"/>00010 
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00014"/>00014 <emphasis role="preprocessor">#[AsCommand(</emphasis>
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00015"/><link linkend="_namespace_app_1_1_command_1a36342860613418f919ffbf3aa4246442">00015</link> &#32;&#32;&#32;&#32;name:&#32;<emphasis role="stringliteral">&apos;app:update-favorite-covers&apos;</emphasis>,
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00016"/><link linkend="_namespace_app_1_1_command_1a019d6bb8fecdb887367f54757fa14d4d">00016</link> &#32;&#32;&#32;&#32;<link linkend="_namespace_app_1_1_command_1a019d6bb8fecdb887367f54757fa14d4d">description</link>:&#32;<emphasis role="stringliteral">&apos;Met&#32;à&#32;jour&#32;les&#32;images&#32;par&#32;défaut&#32;pour&#32;les&#32;albums&#32;favoris&#32;sans&#32;image.&apos;</emphasis>,
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00017"/>00017 )]
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00018"/><link linkend="_class_app_1_1_command_1_1_update_favorite_covers_command">00018</link> <emphasis role="keyword">class</emphasis>&#32;<link linkend="_class_app_1_1_command_1_1_update_favorite_covers_command">UpdateFavoriteCoversCommand</link>&#32;extends&#32;Command
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00019"/>00019 {
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00025"/>00025 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;EntityManagerInterface&#32;$entityManager;
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00026"/>00026 
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00032"/><link linkend="_class_app_1_1_command_1_1_update_favorite_covers_command_1abb5fb9a65dd8a81e7482dddbf71c5177">00032</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_command_1_1_update_favorite_covers_command_1abb5fb9a65dd8a81e7482dddbf71c5177">__construct</link>(EntityManagerInterface&#32;$entityManager)
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00033"/>00033 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00034"/>00034 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;parent::__construct();
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00035"/>00035 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$this-&gt;entityManager&#32;=&#32;$entityManager;
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00036"/>00036 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00037"/>00037 
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00046"/><link linkend="_class_app_1_1_command_1_1_update_favorite_covers_command_1ab31c72b72ddaf7116db5d84c055d3c0b">00046</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">protected</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_command_1_1_update_favorite_covers_command_1ab31c72b72ddaf7116db5d84c055d3c0b">execute</link>(InputInterface&#32;$input,&#32;OutputInterface&#32;$output):&#32;int
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00047"/>00047 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00048"/>00048 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;URL&#32;de&#32;l&apos;image&#32;par&#32;défaut&#32;à&#32;utiliser&#32;pour&#32;les&#32;albums&#32;sans&#32;image</emphasis>
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00049"/>00049 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$defaultCoverImage&#32;=&#32;<emphasis role="stringliteral">&apos;https://via.placeholder.com/150&apos;</emphasis>;
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00050"/>00050 
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00051"/>00051 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Sélectionner&#32;les&#32;albums&#32;favoris&#32;sans&#32;image&#32;ou&#32;avec&#32;une&#32;image&#32;vide</emphasis>
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00052"/>00052 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$query&#32;=&#32;$this-&gt;entityManager-&gt;createQuery(
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00053"/>00053 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;SELECT&#32;fa.id,&#32;fa.albumId,&#32;fa.title,&#32;fa.coverImage&#32;</emphasis>
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00054"/>00054 <emphasis role="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;FROM&#32;App\Entity\FavoriteAlbum&#32;fa&#32;</emphasis>
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00055"/>00055 <emphasis role="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;WHERE&#32;fa.coverImage&#32;IS&#32;NULL&#32;OR&#32;TRIM(fa.coverImage)&#32;=&#32;\&apos;\&apos;&apos;</emphasis>
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00056"/>00056 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;);
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00057"/>00057 
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00058"/>00058 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$albumsWithoutCovers&#32;=&#32;$query-&gt;getResult();
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00059"/>00059 
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00060"/>00060 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(empty($albumsWithoutCovers))&#32;{
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00061"/>00061 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$output-&gt;writeln(<emphasis role="stringliteral">&apos;&lt;info&gt;Aucune&#32;ligne&#32;à&#32;mettre&#32;à&#32;jour.&lt;/info&gt;&apos;</emphasis>);
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00062"/>00062 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;Command::SUCCESS;
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00063"/>00063 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00064"/>00064 
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00065"/>00065 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Afficher&#32;les&#32;albums&#32;affectés&#32;avant&#32;la&#32;mise&#32;à&#32;jour</emphasis>
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00066"/>00066 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$output-&gt;writeln(<emphasis role="stringliteral">&apos;&lt;info&gt;Albums&#32;sans&#32;image&#32;:&lt;/info&gt;&apos;</emphasis>);
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00067"/>00067 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">foreach</emphasis>&#32;($albumsWithoutCovers&#32;as&#32;$album)&#32;{
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00068"/>00068 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$output-&gt;writeln(sprintf(
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00069"/>00069 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;ID:&#32;%d&#32;|&#32;Album&#32;ID:&#32;%d&#32;|&#32;Titre:&#32;%s&#32;|&#32;Image:&#32;%s&apos;</emphasis>,
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00070"/>00070 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$album[<emphasis role="stringliteral">&apos;id&apos;</emphasis>],
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00071"/>00071 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$album[<emphasis role="stringliteral">&apos;albumId&apos;</emphasis>],
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00072"/>00072 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$album[<emphasis role="stringliteral">&apos;title&apos;</emphasis>]&#32;??&#32;<emphasis role="stringliteral">&apos;Titre&#32;inconnu&apos;</emphasis>,
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00073"/>00073 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$album[<emphasis role="stringliteral">&apos;coverImage&apos;</emphasis>]&#32;??&#32;<emphasis role="stringliteral">&apos;NULL&apos;</emphasis>
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00074"/>00074 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;));
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00075"/>00075 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00076"/>00076 
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00077"/>00077 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Mettre&#32;à&#32;jour&#32;les&#32;albums&#32;avec&#32;l&apos;image&#32;par&#32;défaut</emphasis>
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00078"/>00078 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$updateQuery&#32;=&#32;$this-&gt;entityManager-&gt;createQuery(
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00079"/>00079 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;UPDATE&#32;App\Entity\FavoriteAlbum&#32;fa&#32;</emphasis>
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00080"/>00080 <emphasis role="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SET&#32;fa.coverImage&#32;=&#32;:defaultImage&#32;</emphasis>
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00081"/>00081 <emphasis role="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;WHERE&#32;fa.coverImage&#32;IS&#32;NULL&#32;OR&#32;TRIM(fa.coverImage)&#32;=&#32;\&apos;\&apos;&apos;</emphasis>
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00082"/>00082 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;)-&gt;setParameter(<emphasis role="stringliteral">&apos;defaultImage&apos;</emphasis>,&#32;$defaultCoverImage);
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00083"/>00083 
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00084"/>00084 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$rowsUpdated&#32;=&#32;$updateQuery-&gt;execute();
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00085"/>00085 
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00086"/>00086 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$output-&gt;writeln(sprintf(<emphasis role="stringliteral">&apos;&lt;info&gt;Mise&#32;à&#32;jour&#32;terminée.&#32;Nombre&#32;de&#32;lignes&#32;mises&#32;à&#32;jour&#32;:&#32;%d&lt;/info&gt;&apos;</emphasis>,&#32;$rowsUpdated));
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00087"/>00087 
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00088"/>00088 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;Command::SUCCESS;
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00089"/>00089 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__update_favorite_covers_command_8php_source_1l00090"/>00090 }
+</programlisting></section>

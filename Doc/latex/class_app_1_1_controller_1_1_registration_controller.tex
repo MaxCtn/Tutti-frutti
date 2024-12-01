@@ -1,0 +1,62 @@
+\doxysection{Référence de la classe Registration\+Controller}
+\hypertarget{class_app_1_1_controller_1_1_registration_controller}{}\label{class_app_1_1_controller_1_1_registration_controller}\index{RegistrationController@{RegistrationController}}
+
+
+Graphe d\textquotesingle{}héritage de Registration\+Controller\+:
+% FIG 0
+
+
+Graphe de collaboration de Registration\+Controller\+:
+% FIG 1
+\doxysubsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_app_1_1_controller_1_1_registration_controller_ac68d9d5ffe44c36291872b00abe85482}{index}} (Request \$request, Entity\+Manager\+Interface \$entity\+Manager, User\+Password\+Hasher\+Interface \$password\+Hasher, User\+Authenticator\+Interface \$user\+Authenticator, Slugger\+Interface \$slugger, \mbox{\hyperlink{class_app_1_1_security_1_1_app_custom_authenticator}{App\+Custom\+Authenticator}} \$authenticator)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Contrôleur gérant l\textquotesingle{}inscription des utilisateurs. 
+
+Définition à la ligne \mbox{\hyperlink{_registration_controller_8php_source_l00022}{22}} du fichier \mbox{\hyperlink{_registration_controller_8php_source}{Registration\+Controller.\+php}}.
+
+
+
+\doxysubsection{Documentation des fonctions membres}
+\Hypertarget{class_app_1_1_controller_1_1_registration_controller_ac68d9d5ffe44c36291872b00abe85482}\index{RegistrationController@{RegistrationController}!index@{index}}
+\index{index@{index}!RegistrationController@{RegistrationController}}
+\doxysubsubsection{\texorpdfstring{index()}{index()}}
+{\footnotesize\ttfamily \label{class_app_1_1_controller_1_1_registration_controller_ac68d9d5ffe44c36291872b00abe85482} 
+index (\begin{DoxyParamCaption}\item[{Request}]{\$request}{, }\item[{Entity\+Manager\+Interface}]{\$entity\+Manager}{, }\item[{User\+Password\+Hasher\+Interface}]{\$password\+Hasher}{, }\item[{User\+Authenticator\+Interface}]{\$user\+Authenticator}{, }\item[{Slugger\+Interface}]{\$slugger}{, }\item[{\mbox{\hyperlink{class_app_1_1_security_1_1_app_custom_authenticator}{App\+Custom\+Authenticator}}}]{\$authenticator}{}\end{DoxyParamCaption})}
+
+Affiche le formulaire d\textquotesingle{}inscription et traite les données soumises.
+
+@\+Route("{}/registration"{}, name="{}app\+\_\+registration"{}, methods=\{"{}\+GET"{}, "{}\+POST"{}\})
+
+
+\begin{DoxyParams}[1]{Paramètres}
+Request & {\em \$request} & La requête HTTP. \\
+\hline
+Entity\+Manager\+Interface & {\em \$entity\+Manager} & Le gestionnaire d\textquotesingle{}entités. \\
+\hline
+User\+Password\+Hasher\+Interface & {\em \$password\+Hasher} & Le service de hashage de mot de passe. \\
+\hline
+User\+Authenticator\+Interface & {\em \$user\+Authenticator} & Le service d\textquotesingle{}authentification utilisateur. \\
+\hline
+Slugger\+Interface & {\em \$slugger} & Le service de slugification. \\
+\hline
+App\+Custom\+Authenticator & {\em \$authenticator} & Votre authentificateur personnalisé.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Response La réponse HTTP. 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_registration_controller_8php_source_l00039}{39}} du fichier \mbox{\hyperlink{_registration_controller_8php_source}{Registration\+Controller.\+php}}.
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+Controller/\mbox{\hyperlink{_registration_controller_8php}{Registration\+Controller.\+php}}\end{DoxyCompactItemize}

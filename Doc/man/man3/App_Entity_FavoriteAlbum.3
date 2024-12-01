@@ -1,0 +1,455 @@
+.TH "FavoriteAlbum" 3 "Tutti-frutti" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+FavoriteAlbum
+.SH SYNOPSIS
+.br
+.PP
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fB__construct\fP ()"
+.br
+.ti -1c
+.RI "\fBgetId\fP ()"
+.br
+.ti -1c
+.RI "\fBgetAlbumId\fP ()"
+.br
+.ti -1c
+.RI "\fBsetAlbumId\fP (int $albumId)"
+.br
+.ti -1c
+.RI "\fBgetTitle\fP ()"
+.br
+.ti -1c
+.RI "\fBsetTitle\fP (?string $title)"
+.br
+.ti -1c
+.RI "\fBgetYear\fP ()"
+.br
+.ti -1c
+.RI "\fBsetYear\fP (?string $year)"
+.br
+.ti -1c
+.RI "\fBgetCoverImage\fP ()"
+.br
+.ti -1c
+.RI "\fBsetCoverImage\fP (?string $coverImage)"
+.br
+.ti -1c
+.RI "\fBgetLabel\fP ()"
+.br
+.ti -1c
+.RI "\fBsetLabel\fP (?\fBLabel\fP $label)"
+.br
+.ti -1c
+.RI "\fBgetGenre\fP ()"
+.br
+.ti -1c
+.RI "\fBsetGenre\fP (?\fBGenre\fP $genre)"
+.br
+.ti -1c
+.RI "\fBgetFormat\fP ()"
+.br
+.ti -1c
+.RI "\fBsetFormat\fP (?\fBFormat\fP $format)"
+.br
+.ti -1c
+.RI "\fBgetUser\fP ()"
+.br
+.ti -1c
+.RI "\fBsetUser\fP (?\fBUser\fP $user)"
+.br
+.ti -1c
+.RI "\fBgetFruits\fP ()"
+.br
+.ti -1c
+.RI "\fBaddFruit\fP (\fBFruit\fP $fruit)"
+.br
+.ti -1c
+.RI "\fBremoveFruit\fP (\fBFruit\fP $fruit)"
+.br
+.ti -1c
+.RI "\fBgetTracks\fP ()"
+.br
+.ti -1c
+.RI "\fBaddTrack\fP (\fBTrack\fP $track)"
+.br
+.ti -1c
+.RI "\fBremoveTrack\fP (\fBTrack\fP $track)"
+.br
+.ti -1c
+.RI "\fBgetAllFruits\fP ()"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Entité représentant un album favori d'un utilisateur\&.
+
+.PP
+@ORM\\Entity(repositoryClass=FavoriteAlbumRepository::class) @Broadcast 
+.PP
+Définition à la ligne \fB19\fP du fichier \fBFavoriteAlbum\&.php\fP\&.
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "__construct ()"
+Constructeur de la classe FavoriteAlbum\&. Initialise les collections de fruits et de pistes\&. 
+.PP
+Définition à la ligne \fB150\fP du fichier \fBFavoriteAlbum\&.php\fP\&.
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "addFruit (\fBFruit\fP $fruit)"
+Ajoute un fruit à la collection des fruits associés\&.
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$fruit\fP Le fruit à ajouter\&.
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+self 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB370\fP du fichier \fBFavoriteAlbum\&.php\fP\&.
+.SS "addTrack (\fBTrack\fP $track)"
+Ajoute une piste à la collection des pistes associées\&.
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$track\fP La piste à ajouter\&.
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+self 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB408\fP du fichier \fBFavoriteAlbum\&.php\fP\&.
+.SS "getAlbumId ()"
+Obtient l'identifiant de l'album dans le système externe\&.
+
+.PP
+\fBRenvoie\fP
+.RS 4
+int|null L'identifiant de l'album\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB173\fP du fichier \fBFavoriteAlbum\&.php\fP\&.
+.SS "getAllFruits ()"
+Récupère tous les fruits associés à l'album et à ses morceaux\&.
+
+.PP
+\fBRenvoie\fP
+.RS 4
+array La liste de tous les fruits associés\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB440\fP du fichier \fBFavoriteAlbum\&.php\fP\&.
+.SS "getCoverImage ()"
+Obtient l'URL de l'image de couverture\&. Si aucune URL n'est définie, retourne une image par défaut\&.
+
+.PP
+\fBRenvoie\fP
+.RS 4
+string|null L'URL de l'image de couverture\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB243\fP du fichier \fBFavoriteAlbum\&.php\fP\&.
+.SS "getFormat ()"
+Obtient le format de l'album (vinyle, CD, etc\&.)\&.
+
+.PP
+\fBRenvoie\fP
+.RS 4
+Format|null Le format de l'album\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB312\fP du fichier \fBFavoriteAlbum\&.php\fP\&.
+.SS "getFruits ()"
+Obtient la collection des fruits associés à l'album\&.
+
+.PP
+\fBRenvoie\fP
+.RS 4
+Collection<int, Fruit> La collection de fruits\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB358\fP du fichier \fBFavoriteAlbum\&.php\fP\&.
+.SS "getGenre ()"
+Obtient le genre musical de l'album\&.
+
+.PP
+\fBRenvoie\fP
+.RS 4
+Genre|null Le genre musical\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB289\fP du fichier \fBFavoriteAlbum\&.php\fP\&.
+.SS "getId ()"
+Obtient l'identifiant unique de l'album favori\&.
+
+.PP
+\fBRenvoie\fP
+.RS 4
+int|null L'identifiant de l'album favori\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB163\fP du fichier \fBFavoriteAlbum\&.php\fP\&.
+.SS "getLabel ()"
+Obtient le label de l'album\&.
+
+.PP
+\fBRenvoie\fP
+.RS 4
+Label|null Le label de l'album\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB266\fP du fichier \fBFavoriteAlbum\&.php\fP\&.
+.SS "getTitle ()"
+Obtient le titre de l'album\&.
+
+.PP
+\fBRenvoie\fP
+.RS 4
+string|null Le titre de l'album\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB196\fP du fichier \fBFavoriteAlbum\&.php\fP\&.
+.SS "getTracks ()"
+Obtient la collection des pistes associées à l'album\&.
+
+.PP
+\fBRenvoie\fP
+.RS 4
+Collection<int, Track> La collection de pistes\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB396\fP du fichier \fBFavoriteAlbum\&.php\fP\&.
+.SS "getUser ()"
+Obtient l'utilisateur propriétaire de l'album favori\&.
+
+.PP
+\fBRenvoie\fP
+.RS 4
+User|null L'utilisateur\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB335\fP du fichier \fBFavoriteAlbum\&.php\fP\&.
+.SS "getYear ()"
+Obtient l'année de sortie de l'album\&.
+
+.PP
+\fBRenvoie\fP
+.RS 4
+string|null L'année de sortie\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB219\fP du fichier \fBFavoriteAlbum\&.php\fP\&.
+.SS "removeFruit (\fBFruit\fP $fruit)"
+Retire un fruit de la collection des fruits associés\&.
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$fruit\fP Le fruit à retirer\&.
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+self 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB385\fP du fichier \fBFavoriteAlbum\&.php\fP\&.
+.SS "removeTrack (\fBTrack\fP $track)"
+Retire une piste de la collection des pistes associées\&.
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$track\fP La piste à retirer\&.
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+self 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB424\fP du fichier \fBFavoriteAlbum\&.php\fP\&.
+.SS "setAlbumId (int $albumId)"
+Définit l'identifiant de l'album dans le système externe\&.
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$albumId\fP L'identifiant de l'album\&.
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+self 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB185\fP du fichier \fBFavoriteAlbum\&.php\fP\&.
+.SS "setCoverImage (?string $coverImage)"
+Définit l'URL de l'image de couverture\&.
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$coverImage\fP L'URL de l'image\&.
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+self 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB255\fP du fichier \fBFavoriteAlbum\&.php\fP\&.
+.SS "setFormat (?\fBFormat\fP $format)"
+Définit le format de l'album\&.
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$format\fP Le format\&.
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+self 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB324\fP du fichier \fBFavoriteAlbum\&.php\fP\&.
+.SS "setGenre (?\fBGenre\fP $genre)"
+Définit le genre musical de l'album\&.
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$genre\fP Le genre musical\&.
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+self 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB301\fP du fichier \fBFavoriteAlbum\&.php\fP\&.
+.SS "setLabel (?\fBLabel\fP $label)"
+Définit le label de l'album\&.
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$label\fP Le label\&.
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+self 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB278\fP du fichier \fBFavoriteAlbum\&.php\fP\&.
+.SS "setTitle (?string $title)"
+Définit le titre de l'album\&.
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$title\fP Le titre de l'album\&.
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+self 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB208\fP du fichier \fBFavoriteAlbum\&.php\fP\&.
+.SS "setUser (?\fBUser\fP $user)"
+Définit l'utilisateur propriétaire de l'album favori\&.
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$user\fP L'utilisateur\&.
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+self 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB347\fP du fichier \fBFavoriteAlbum\&.php\fP\&.
+.SS "setYear (?string $year)"
+Définit l'année de sortie de l'album\&.
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$year\fP L'année de sortie\&.
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+self 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB231\fP du fichier \fBFavoriteAlbum\&.php\fP\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Tutti-frutti à partir du code source\&.

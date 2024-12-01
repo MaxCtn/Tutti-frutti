@@ -1,0 +1,79 @@
+.TH "TestDiscogsCommand" 3 "Tutti-frutti" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TestDiscogsCommand
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Est dérivée de Command\&.
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fB__construct\fP (HttpClientInterface $httpClient)"
+.br
+.in -1c
+.SS "Fonctions membres protégées"
+
+.in +1c
+.ti -1c
+.RI "\fBconfigure\fP ()"
+.br
+.ti -1c
+.RI "\fBexecute\fP (InputInterface $input, OutputInterface $output)"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Cette commande permet de tester l'API Discogs en effectuant une recherche simple\&. Elle affiche les résultats de la recherche pour un mot-clé spécifique\&. 
+.PP
+Définition à la ligne \fB17\fP du fichier \fBTestDiscogsCommand\&.php\fP\&.
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "__construct (HttpClientInterface $httpClient)"
+Constructeur de la commande\&.
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$httpClient\fP Le client HTTP utilisé pour les requêtes\&.
+.RE
+.PP
+\fBExceptions\fP
+.RS 4
+\fI\fP .RE
+.PP
+RuntimeException Si les clés API Discogs ne sont pas définies\&. 
+.PP
+Définition à la ligne \fB47\fP du fichier \fBTestDiscogsCommand\&.php\fP\&.
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "configure ()\fR [protected]\fP"
+Configure la commande en définissant ses arguments et options\&. 
+.PP
+Définition à la ligne \fB63\fP du fichier \fBTestDiscogsCommand\&.php\fP\&.
+.SS "execute (InputInterface $input, OutputInterface $output)\fR [protected]\fP"
+Exécute la commande\&.
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$input\fP L'interface d'entrée\&. 
+.br
+\fI$output\fP L'interface de sortie\&.
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+int Le code de statut de la commande\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB78\fP du fichier \fBTestDiscogsCommand\&.php\fP\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Tutti-frutti à partir du code source\&.

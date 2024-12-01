@@ -8,25 +8,47 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
+/**
+ * Cette commande met à jour les images par défaut pour les albums favoris qui n'ont pas d'image associée.
+ */
 #[AsCommand(
     name: 'app:update-favorite-covers',
     description: 'Met à jour les images par défaut pour les albums favoris sans image.',
 )]
 class UpdateFavoriteCoversCommand extends Command
 {
+    /**
+     * Gestionnaire d'entités Doctrine pour interagir avec la base de données.
+     *
+     * @var EntityManagerInterface
+     */
     private EntityManagerInterface $entityManager;
 
+    /**
+     * Constructeur de la commande.
+     *
+     * @param EntityManagerInterface $entityManager Le gestionnaire d'entités.
+     */
     public function __construct(EntityManagerInterface $entityManager)
     {
         parent::__construct();
         $this->entityManager = $entityManager;
     }
 
+    /**
+     * Exécute la commande pour mettre à jour les images par défaut des albums favoris.
+     *
+     * @param InputInterface  $input  Interface d'entrée.
+     * @param OutputInterface $output Interface de sortie.
+     *
+     * @return int Code de statut de la commande.
+     */
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
+        // URL de l'image par défaut à utiliser pour les albums sans image
         $defaultCoverImage = 'https://via.placeholder.com/150';
 
-        // Sélectionner les albums sans image ou avec une image vide
+        // Sélectionner les albums favoris sans image ou avec une image vide
         $query = $this->entityManager->createQuery(
             'SELECT fa.id, fa.albumId, fa.title, fa.coverImage 
              FROM App\Entity\FavoriteAlbum fa 
@@ -52,7 +74,7 @@ class UpdateFavoriteCoversCommand extends Command
             ));
         }
 
-        // Mettre à jour les albums avec une image par défaut
+        // Mettre à jour les albums avec l'image par défaut
         $updateQuery = $this->entityManager->createQuery(
             'UPDATE App\Entity\FavoriteAlbum fa 
              SET fa.coverImage = :defaultImage 

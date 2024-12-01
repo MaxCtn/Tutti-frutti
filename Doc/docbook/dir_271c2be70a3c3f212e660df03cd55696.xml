@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_271c2be70a3c3f212e660df03cd55696" xml:lang="fr">
+<title>Répertoire de référence de Security</title>
+<indexterm><primary>Répertoire de référence de Security</primary></indexterm>
+<simplesect>
+    <title>Fichiers    </title>
+        <itemizedlist>
+            <listitem><para>fichier <link linkend="__app_custom_authenticator_8php">AppCustomAuthenticator.php</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

@@ -1,0 +1,74 @@
+.TH "FavoriteAlbumRepository" 3 "Tutti-frutti" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+FavoriteAlbumRepository
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Est dérivée de ServiceEntityRepository, et ServiceEntityRepository\&.
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fB__construct\fP (ManagerRegistry $registry)"
+.br
+.ti -1c
+.RI "\fBfindByUser\fP ($user, array $filters=[], string $sortBy='title', string $order='ASC')"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Repository pour l'entité FavoriteAlbum\&.
+
+.PP
+Fournit des méthodes personnalisées pour interagir avec les albums favoris d'un utilisateur\&.
+
+.PP
+<FavoriteAlbum> 
+.PP
+Définition à la ligne \fB16\fP du fichier \fBFavoriteAlbumRepository\&.php\fP\&.
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "__construct (ManagerRegistry $registry)"
+Constructeur du repository\&.
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$registry\fP Le registre des gestionnaires d'entités\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB23\fP du fichier \fBFavoriteAlbumRepository\&.php\fP\&.
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "findByUser ( $user, array $filters = \fR[]\fP, string $sortBy = \fR'title'\fP, string $order = \fR'ASC'\fP)"
+Récupère les albums favoris spécifiques à un utilisateur avec des options de filtrage et de tri\&.
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$user\fP L'utilisateur pour lequel récupérer les albums favoris\&. 
+.br
+\fI$filters\fP Les critères de filtrage (par exemple, 'title', 'fruit', 'year')\&. 
+.br
+\fI$sortBy\fP Le champ sur lequel trier les résultats (par défaut : 'title')\&. 
+.br
+\fI$order\fP L'ordre du tri : 'ASC' ou 'DESC' (par défaut : 'ASC')\&.
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+FavoriteAlbum[] La liste des albums favoris correspondant aux critères\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB38\fP du fichier \fBFavoriteAlbumRepository\&.php\fP\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Tutti-frutti à partir du code source\&.

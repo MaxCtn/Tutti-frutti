@@ -6,12 +6,21 @@ use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 use Symfony\Contracts\HttpClient\ResponseInterface;
 
+/**
+ * Service pour interagir avec l'API Discogs.
+ * Fournit des fonctionnalités pour rechercher des albums et obtenir leurs détails.
+ */
 class DiscogsService
 {
     private HttpClientInterface $client;
     private string $consumerKey;
     private string $consumerSecret;
 
+    /**
+     * Liste des mots-clés de fruits utilisés pour l'analyse des titres.
+     *
+     * @var string[]
+     */
     private array $fruitKeywords = [
         'banane', 'pomme', 'fraise', 'orange', 'raisin', 'citron', 'cerise', 'mangue',
         'kiwi', 'poire', 'pastèque', 'ananas', 'prune', 'abricot', 'figue', 'grenade',
@@ -21,6 +30,13 @@ class DiscogsService
         'prunelle', 'sureau', 'mandarine', 'clémentine', 'kumquat', 'citron vert', 'pamplemousse'
     ];
 
+    /**
+     * Constructeur du service Discogs.
+     *
+     * @param HttpClientInterface $client         Client HTTP pour effectuer des requêtes.
+     * @param string              $consumerKey    Clé API Discogs.
+     * @param string              $consumerSecret Secret API Discogs.
+     */
     public function __construct(HttpClientInterface $client, string $consumerKey, string $consumerSecret)
     {
         $this->client = $client;
@@ -30,6 +46,9 @@ class DiscogsService
 
     /**
      * Recherche des albums correspondant à un terme.
+     *
+     * @param string $searchTerm Le terme de recherche.
+     * @return array Une liste d'albums correspondant au terme.
      */
     public function searchAlbums(string $searchTerm): array
     {
@@ -49,6 +68,9 @@ class DiscogsService
 
     /**
      * Récupère les détails d'un album par son ID.
+     *
+     * @param int $id L'identifiant de l'album.
+     * @return array Les détails de l'album.
      */
     public function getAlbumDetails(int $id): array
     {
@@ -67,6 +89,9 @@ class DiscogsService
 
     /**
      * Traite les données d'un album pour ajouter des fruits et une image de couverture.
+     *
+     * @param array $album Les données de l'album à traiter.
+     * @return array Les données enrichies de l'album.
      */
     private function processAlbumData(array $album): array
     {
@@ -78,6 +103,9 @@ class DiscogsService
 
     /**
      * Recherche les mots-clés de fruits dans un texte donné.
+     *
+     * @param string $text Le texte à analyser.
+     * @return array Les fruits trouvés dans le texte.
      */
     private function findFruitsInText(string $text): array
     {
@@ -94,6 +122,10 @@ class DiscogsService
 
     /**
      * Effectue une requête HTTP vers l'API Discogs.
+     *
+     * @param string $url   L'URL de la requête.
+     * @param array  $query Les paramètres de la requête.
+     * @return array La réponse décodée.
      */
     private function makeRequest(string $url, array $query = []): array
     {
@@ -109,6 +141,9 @@ class DiscogsService
 
     /**
      * Gère et valide la réponse de l'API Discogs.
+     *
+     * @param ResponseInterface $response La réponse HTTP.
+     * @return array Les données décodées de la réponse.
      */
     private function handleResponse(ResponseInterface $response): array
     {

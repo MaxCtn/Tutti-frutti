@@ -9,24 +9,48 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
+/**
+ * Cette commande permet de tester et d'afficher les albums favoris d'un utilisateur spécifique.
+ */
 #[AsCommand(name: 'app:test-favorite-albums')]
 class TestFavoriteAlbumsCommand extends Command
 {
+    /**
+     * Référentiel des albums favoris.
+     *
+     * @var FavoriteAlbumRepository
+     */
     private FavoriteAlbumRepository $favoriteAlbumRepository;
 
+    /**
+     * Constructeur de la commande.
+     *
+     * @param FavoriteAlbumRepository $favoriteAlbumRepository Le repository des albums favoris.
+     */
     public function __construct(FavoriteAlbumRepository $favoriteAlbumRepository)
     {
         $this->favoriteAlbumRepository = $favoriteAlbumRepository;
         parent::__construct();
     }
 
+    /**
+     * Configure la commande en définissant sa description et ses arguments.
+     */
     protected function configure(): void
     {
         $this
-            ->setDescription('Test des albums favoris d\'un utilisateur')
+            ->setDescription('Teste les albums favoris d\'un utilisateur')
             ->addArgument('userId', InputArgument::REQUIRED, 'ID de l\'utilisateur');
     }
 
+    /**
+     * Exécute la commande pour afficher les albums favoris de l'utilisateur spécifié.
+     *
+     * @param InputInterface  $input  L'interface d'entrée de la commande.
+     * @param OutputInterface $output L'interface de sortie de la commande.
+     *
+     * @return int Le code de statut de la commande (succès ou échec).
+     */
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $userId = (int) $input->getArgument('userId');
@@ -39,6 +63,7 @@ class TestFavoriteAlbumsCommand extends Command
             return Command::SUCCESS;
         }
 
+        // Affiche les détails de chaque album favori
         foreach ($favorites as $favorite) {
             $output->writeln(sprintf(
                 "Album ID: %d | Titre: %s | Année: %s | Image: %s",

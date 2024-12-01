@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="fr">
+  <compounddef id="class_app_1_1_repository_1_1_label_repository" kind="class" language="PHP" prot="public">
+    <compoundname>App::Repository::LabelRepository</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">ServiceEntityRepository</basecompoundref>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_app_1_1_repository_1_1_label_repository_1a38ea33dde11163765f358f5f10a3bc03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>__construct</definition>
+        <argsstring>(ManagerRegistry $registry)</argsstring>
+        <name>__construct</name>
+        <qualifiedname>App\Repository\LabelRepository\__construct</qualifiedname>
+        <param>
+          <type>ManagerRegistry</type>
+          <declname>$registry</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructeur du repository.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>ManagerRegistry</parametertype>
+<parametername>$registry</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Le registre des gestionnaires d&apos;entités. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Repository/LabelRepository.php" line="29" column="21" bodyfile="Repository/LabelRepository.php" bodystart="29" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_repository_1_1_label_repository_1a5fc8877c3cb126ea03449bedd2b92092" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>findByNamePart</definition>
+        <argsstring>(string $namePart)</argsstring>
+        <name>findByNamePart</name>
+        <qualifiedname>App\Repository\LabelRepository\findByNamePart</qualifiedname>
+        <param>
+          <type>string</type>
+          <declname>$namePart</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Recherche des labels par nom partiel.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$namePart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Le fragment du nom à rechercher. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Label[] La liste des labels correspondants. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Repository/LabelRepository.php" line="40" column="21" bodyfile="Repository/LabelRepository.php" bodystart="40" bodyend="48"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Repository pour l&apos;entité Label.</para>
+<para>Fournit des méthodes de base pour interagir avec les labels musicaux et permet d&apos;ajouter des méthodes personnalisées pour répondre à des besoins spécifiques.</para>
+<para>@method Label|null find($id, $lockMode = null, $lockVersion = null) @method Label|null findOneBy(array $criteria, array $orderBy = null) @method Label[] findAll() @method Label[] findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null) </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>ServiceEntityRepository</label>
+      </node>
+      <node id="1">
+        <label>LabelRepository</label>
+        <link refid="class_app_1_1_repository_1_1_label_repository"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>ServiceEntityRepository</label>
+      </node>
+      <node id="1">
+        <label>LabelRepository</label>
+        <link refid="class_app_1_1_repository_1_1_label_repository"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Repository/LabelRepository.php" line="22" column="1" bodyfile="Repository/LabelRepository.php" bodystart="23" bodyend="49"/>
+    <listofallmembers>
+      <member refid="class_app_1_1_repository_1_1_label_repository_1a38ea33dde11163765f358f5f10a3bc03" prot="public" virt="non-virtual"><scope>App::Repository::LabelRepository</scope><name>__construct</name></member>
+      <member refid="class_app_1_1_repository_1_1_label_repository_1a5fc8877c3cb126ea03449bedd2b92092" prot="public" virt="non-virtual"><scope>App::Repository::LabelRepository</scope><name>findByNamePart</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

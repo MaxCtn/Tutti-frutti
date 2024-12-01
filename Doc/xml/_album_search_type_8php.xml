@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="fr">
+  <compounddef id="_album_search_type_8php" kind="file" language="PHP">
+    <compoundname>AlbumSearchType.php</compoundname>
+    <innerclass refid="class_app_1_1_form_1_1_album_search_type" prot="public">App::Form::AlbumSearchType</innerclass>
+    <innernamespace refid="namespace_app_1_1_form">App::Form</innernamespace>
+    <innernamespace refid="namespace_symfony_1_1_component_1_1_form_1_1_abstract_type">Symfony::Component::Form::AbstractType</innernamespace>
+    <innernamespace refid="namespace_symfony_1_1_component_1_1_form_1_1_form_builder_interface">Symfony::Component::Form::FormBuilderInterface</innernamespace>
+    <innernamespace refid="namespace_symfony_1_1_component_1_1_form_1_1_extension_1_1_core_1_1_type_1_1_search_type">Symfony::Component::Form::Extension::Core::Type::SearchType</innernamespace>
+    <innernamespace refid="namespace_symfony_1_1_component_1_1_form_1_1_extension_1_1_core_1_1_type_1_1_submit_type">Symfony::Component::Form::Extension::Core::Type::SubmitType</innernamespace>
+    <innernamespace refid="namespace_symfony_1_1_component_1_1_options_resolver_1_1_options_resolver">Symfony::Component::OptionsResolver::OptionsResolver</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;?php</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>src/Form/AlbumSearchType.php</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5" refid="namespace_app_1_1_form" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_app_1_1_form" kindref="compound">App\Form</ref>;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal">use<sp/>Symfony\Component\Form\AbstractType;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal">use<sp/>Symfony\Component\Form\FormBuilderInterface;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal">use<sp/>Symfony\Component\Form\Extension\Core\Type\SearchType;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal">use<sp/>Symfony\Component\Form\Extension\Core\Type\SubmitType;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">use<sp/>Symfony\Component\OptionsResolver\OptionsResolver;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="class_app_1_1_form_1_1_album_search_type" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_app_1_1_form_1_1_album_search_type" kindref="compound">AlbumSearchType</ref><sp/></highlight><highlight class="keyword">extends</highlight><highlight class="normal"><sp/>AbstractType</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="24" refid="class_app_1_1_form_1_1_album_search_type_1a83c3745710374f9c5a1eb0686fe2dfab" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="class_app_1_1_form_1_1_album_search_type_1a83c3745710374f9c5a1eb0686fe2dfab" kindref="member">buildForm</ref>(FormBuilderInterface<sp/>$builder,<sp/>array<sp/>$options):<sp/>void</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$builder</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-&gt;add(</highlight><highlight class="stringliteral">&apos;searchTerm&apos;</highlight><highlight class="normal">,<sp/>SearchType::class,<sp/>[</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;label&apos;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&apos;Recherche<sp/>de<sp/>fruits&apos;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;attr&apos;</highlight><highlight class="normal"><sp/>=&gt;<sp/>[</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;placeholder&apos;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&apos;Entrez<sp/>un<sp/>fruit<sp/>(ex<sp/>:<sp/>banane,<sp/>pomme,<sp/>etc.)&apos;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;class&apos;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&apos;form-control&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>]</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>])</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-&gt;add(</highlight><highlight class="stringliteral">&apos;search&apos;</highlight><highlight class="normal">,<sp/>SubmitType::class,<sp/>[</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;label&apos;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&apos;Rechercher&apos;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;attr&apos;</highlight><highlight class="normal"><sp/>=&gt;<sp/>[</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;class&apos;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&apos;btn<sp/>btn-primary&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>]</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>]);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="class_app_1_1_form_1_1_album_search_type_1a8ff68a86f5090b5df973286836e46ead" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="class_app_1_1_form_1_1_album_search_type_1a8ff68a86f5090b5df973286836e46ead" kindref="member">configureOptions</ref>(OptionsResolver<sp/>$resolver):<sp/>void</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$resolver-&gt;setDefaults([</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;csrf_protection&apos;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/></highlight><highlight class="comment">//<sp/>Active<sp/>la<sp/>protection<sp/>CSRF.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>]);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Form/AlbumSearchType.php"/>
+  </compounddef>
+</doxygen>

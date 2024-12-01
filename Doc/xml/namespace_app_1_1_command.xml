@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="fr">
+  <compounddef id="namespace_app_1_1_command" kind="namespace" language="PHP">
+    <compoundname>App::Command</compoundname>
+    <innerclass refid="class_app_1_1_command_1_1_test_discogs_command" prot="public">App::Command::TestDiscogsCommand</innerclass>
+    <innerclass refid="class_app_1_1_command_1_1_test_favorite_albums_command" prot="public">App::Command::TestFavoriteAlbumsCommand</innerclass>
+    <innerclass refid="class_app_1_1_command_1_1_update_favorite_covers_command" prot="public">App::Command::UpdateFavoriteCoversCommand</innerclass>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="namespace_app_1_1_command_1a36342860613418f919ffbf3aa4246442" prot="public" static="no" mutable="no">
+        <type>name</type>
+        <definition>name __pad0__</definition>
+        <argsstring></argsstring>
+        <name>__pad0__</name>
+        <qualifiedname>App\Command\__pad0__</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Cette commande met à jour les images par défaut pour les albums favoris qui n&apos;ont pas d&apos;image associée. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Command/UpdateFavoriteCoversCommand.php" line="15" column="5" bodyfile="Command/UpdateFavoriteCoversCommand.php" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespace_app_1_1_command_1a019d6bb8fecdb887367f54757fa14d4d" prot="public" static="no" mutable="no">
+        <type>name</type>
+        <definition>name description</definition>
+        <argsstring></argsstring>
+        <name>description</name>
+        <qualifiedname>App\Command\description</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Command/UpdateFavoriteCoversCommand.php" line="16" column="5" bodyfile="Command/UpdateFavoriteCoversCommand.php" bodystart="16" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Command/TestDiscogsCommand.php" line="3" column="10"/>
+  </compounddef>
+</doxygen>

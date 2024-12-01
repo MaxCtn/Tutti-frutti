@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="fr">
+  <compounddef id="dir_aba90b35e24959ac76847a6aefcf5530" kind="dir">
+    <compoundname>Repository</compoundname>
+    <innerfile refid="_favorite_album_repository_8php">FavoriteAlbumRepository.php</innerfile>
+    <innerfile refid="_format_repository_8php">FormatRepository.php</innerfile>
+    <innerfile refid="_fruit_repository_8php">FruitRepository.php</innerfile>
+    <innerfile refid="_genre_repository_8php">GenreRepository.php</innerfile>
+    <innerfile refid="_label_repository_8php">LabelRepository.php</innerfile>
+    <innerfile refid="_track_repository_8php">TrackRepository.php</innerfile>
+    <innerfile refid="_user_repository_8php">UserRepository.php</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Repository/"/>
+  </compounddef>
+</doxygen>

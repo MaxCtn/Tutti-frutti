@@ -1,0 +1,167 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__album_search_controller_8php_source" xml:lang="fr">
+<title>AlbumSearchController.php</title>
+<indexterm><primary>Controller/AlbumSearchController.php</primary></indexterm>
+Aller à la documentation de ce fichier.<programlisting linenumbering="unnumbered"><anchor xml:id="__album_search_controller_8php_source_1l00001"/>00001 &lt;?php
+<anchor xml:id="__album_search_controller_8php_source_1l00002"/>00002 
+<anchor xml:id="__album_search_controller_8php_source_1l00003"/><link linkend="_namespace_app_1_1_controller">00003</link> <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespace_app_1_1_controller">App\Controller</link>;
+<anchor xml:id="__album_search_controller_8php_source_1l00004"/>00004 
+<anchor xml:id="__album_search_controller_8php_source_1l00005"/>00005 use&#32;<link linkend="_class_app_1_1_entity_1_1_favorite_album">App\Entity\FavoriteAlbum</link>;
+<anchor xml:id="__album_search_controller_8php_source_1l00006"/>00006 use&#32;<link linkend="_class_app_1_1_entity_1_1_fruit">App\Entity\Fruit</link>;
+<anchor xml:id="__album_search_controller_8php_source_1l00007"/>00007 use&#32;<link linkend="_class_app_1_1_form_1_1_album_search_type">App\Form\AlbumSearchType</link>;
+<anchor xml:id="__album_search_controller_8php_source_1l00008"/>00008 use&#32;<link linkend="_class_app_1_1_service_1_1_discogs_service">App\Service\DiscogsService</link>;
+<anchor xml:id="__album_search_controller_8php_source_1l00009"/>00009 use&#32;Doctrine\ORM\EntityManagerInterface;
+<anchor xml:id="__album_search_controller_8php_source_1l00010"/>00010 use&#32;Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+<anchor xml:id="__album_search_controller_8php_source_1l00011"/>00011 use&#32;Symfony\Component\HttpFoundation\JsonResponse;
+<anchor xml:id="__album_search_controller_8php_source_1l00012"/>00012 use&#32;Symfony\Component\HttpFoundation\Request;
+<anchor xml:id="__album_search_controller_8php_source_1l00013"/>00013 use&#32;Symfony\Component\HttpFoundation\Response;
+<anchor xml:id="__album_search_controller_8php_source_1l00014"/>00014 use&#32;Symfony\Component\Routing\Annotation\Route;
+<anchor xml:id="__album_search_controller_8php_source_1l00015"/>00015 
+<anchor xml:id="__album_search_controller_8php_source_1l00019"/><link linkend="_class_app_1_1_controller_1_1_album_search_controller">00019</link> <emphasis role="keyword">class&#32;</emphasis><link linkend="_class_app_1_1_controller_1_1_album_search_controller">AlbumSearchController</link>&#32;<emphasis role="keyword">extends</emphasis>&#32;AbstractController
+<anchor xml:id="__album_search_controller_8php_source_1l00020"/>00020 {
+<anchor xml:id="__album_search_controller_8php_source_1l00026"/>00026 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;<link linkend="_class_app_1_1_service_1_1_discogs_service">DiscogsService</link>&#32;$discogsService;
+<anchor xml:id="__album_search_controller_8php_source_1l00027"/>00027 
+<anchor xml:id="__album_search_controller_8php_source_1l00033"/>00033 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;EntityManagerInterface&#32;$entityManager;
+<anchor xml:id="__album_search_controller_8php_source_1l00034"/>00034 
+<anchor xml:id="__album_search_controller_8php_source_1l00041"/><link linkend="_class_app_1_1_controller_1_1_album_search_controller_1ae684060a647ec21f30e4cde445b19e61">00041</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_controller_1_1_album_search_controller_1ae684060a647ec21f30e4cde445b19e61">__construct</link>(<link linkend="_class_app_1_1_service_1_1_discogs_service">DiscogsService</link>&#32;$discogsService,&#32;EntityManagerInterface&#32;$entityManager)
+<anchor xml:id="__album_search_controller_8php_source_1l00042"/>00042 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__album_search_controller_8php_source_1l00043"/>00043 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$this-&gt;discogsService&#32;=&#32;$discogsService;
+<anchor xml:id="__album_search_controller_8php_source_1l00044"/>00044 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$this-&gt;entityManager&#32;=&#32;$entityManager;
+<anchor xml:id="__album_search_controller_8php_source_1l00045"/>00045 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__album_search_controller_8php_source_1l00046"/>00046 
+<anchor xml:id="__album_search_controller_8php_source_1l00056"/><link linkend="_class_app_1_1_controller_1_1_album_search_controller_1a32c26085cd6825224689fb8e12587e93">00056</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_controller_1_1_album_search_controller_1a32c26085cd6825224689fb8e12587e93">search</link>(Request&#32;$request):&#32;Response
+<anchor xml:id="__album_search_controller_8php_source_1l00057"/>00057 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__album_search_controller_8php_source_1l00058"/>00058 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$form&#32;=&#32;$this-&gt;createForm(AlbumSearchType::class);
+<anchor xml:id="__album_search_controller_8php_source_1l00059"/>00059 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$form-&gt;handleRequest($request);
+<anchor xml:id="__album_search_controller_8php_source_1l00060"/>00060 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$results&#32;=&#32;[];
+<anchor xml:id="__album_search_controller_8php_source_1l00061"/>00061 
+<anchor xml:id="__album_search_controller_8php_source_1l00062"/>00062 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;($form-&gt;isSubmitted()&#32;&amp;&amp;&#32;$form-&gt;isValid())&#32;{
+<anchor xml:id="__album_search_controller_8php_source_1l00063"/>00063 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$searchTerm&#32;=&#32;$form-&gt;get(<emphasis role="stringliteral">&apos;searchTerm&apos;</emphasis>)-&gt;getData();
+<anchor xml:id="__album_search_controller_8php_source_1l00064"/>00064 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$results&#32;=&#32;$this-&gt;discogsService-&gt;searchAlbums($searchTerm);
+<anchor xml:id="__album_search_controller_8php_source_1l00065"/>00065 
+<anchor xml:id="__album_search_controller_8php_source_1l00066"/>00066 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(empty($results))&#32;{
+<anchor xml:id="__album_search_controller_8php_source_1l00067"/>00067 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$this-&gt;addFlash(<emphasis role="stringliteral">&apos;warning&apos;</emphasis>,&#32;<emphasis role="stringliteral">&quot;Aucun&#32;album&#32;trouvé&#32;pour&#32;:&#32;\&quot;$searchTerm\&quot;.&quot;</emphasis>);
+<anchor xml:id="__album_search_controller_8php_source_1l00068"/>00068 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__album_search_controller_8php_source_1l00069"/>00069 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__album_search_controller_8php_source_1l00070"/>00070 
+<anchor xml:id="__album_search_controller_8php_source_1l00071"/>00071 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this-&gt;render(<emphasis role="stringliteral">&apos;album/search.html.twig&apos;</emphasis>,&#32;[
+<anchor xml:id="__album_search_controller_8php_source_1l00072"/>00072 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;form&apos;</emphasis>&#32;=&gt;&#32;$form-&gt;createView(),
+<anchor xml:id="__album_search_controller_8php_source_1l00073"/>00073 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;results&apos;</emphasis>&#32;=&gt;&#32;$results,
+<anchor xml:id="__album_search_controller_8php_source_1l00074"/>00074 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;]);
+<anchor xml:id="__album_search_controller_8php_source_1l00075"/>00075 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__album_search_controller_8php_source_1l00076"/>00076 
+<anchor xml:id="__album_search_controller_8php_source_1l00087"/><link linkend="_class_app_1_1_controller_1_1_album_search_controller_1a5f1ab14d454cb3fa1e76a480f999c5c9">00087</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_controller_1_1_album_search_controller_1a5f1ab14d454cb3fa1e76a480f999c5c9">showDetails</link>(<emphasis role="keywordtype">int</emphasis>&#32;$id,&#32;Request&#32;$request):&#32;Response
+<anchor xml:id="__album_search_controller_8php_source_1l00088"/>00088 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__album_search_controller_8php_source_1l00089"/>00089 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">try</emphasis>&#32;{
+<anchor xml:id="__album_search_controller_8php_source_1l00090"/>00090 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$albumDetails&#32;=&#32;$this-&gt;discogsService-&gt;getAlbumDetails($id);
+<anchor xml:id="__album_search_controller_8php_source_1l00091"/>00091 
+<anchor xml:id="__album_search_controller_8php_source_1l00092"/>00092 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(empty($albumDetails[<emphasis role="stringliteral">&apos;fruits&apos;</emphasis>]))&#32;{
+<anchor xml:id="__album_search_controller_8php_source_1l00093"/>00093 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;$this-&gt;createNotFoundException(<emphasis role="stringliteral">&apos;Cet&#32;album&#32;ne&#32;contient&#32;aucun&#32;fruit&#32;pertinent.&apos;</emphasis>);
+<anchor xml:id="__album_search_controller_8php_source_1l00094"/>00094 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__album_search_controller_8php_source_1l00095"/>00095 
+<anchor xml:id="__album_search_controller_8php_source_1l00096"/>00096 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Récupérer&#32;l&apos;origine&#32;de&#32;la&#32;navigation</emphasis>
+<anchor xml:id="__album_search_controller_8php_source_1l00097"/>00097 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$origin&#32;=&#32;$request-&gt;query-&gt;get(<emphasis role="stringliteral">&apos;origin&apos;</emphasis>,&#32;<emphasis role="stringliteral">&apos;search&apos;</emphasis>);
+<anchor xml:id="__album_search_controller_8php_source_1l00098"/>00098 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">catch</emphasis>&#32;(\Exception&#32;$e)&#32;{
+<anchor xml:id="__album_search_controller_8php_source_1l00099"/>00099 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$this-&gt;addFlash(<emphasis role="stringliteral">&apos;error&apos;</emphasis>,&#32;<emphasis role="stringliteral">&apos;Impossible&#32;de&#32;récupérer&#32;les&#32;détails&#32;de&#32;cet&#32;album.&apos;</emphasis>);
+<anchor xml:id="__album_search_controller_8php_source_1l00100"/>00100 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this-&gt;redirectToRoute(<emphasis role="stringliteral">&apos;album_search&apos;</emphasis>);
+<anchor xml:id="__album_search_controller_8php_source_1l00101"/>00101 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__album_search_controller_8php_source_1l00102"/>00102 
+<anchor xml:id="__album_search_controller_8php_source_1l00103"/>00103 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this-&gt;render(<emphasis role="stringliteral">&apos;album/details.html.twig&apos;</emphasis>,&#32;[
+<anchor xml:id="__album_search_controller_8php_source_1l00104"/>00104 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;album&apos;</emphasis>&#32;=&gt;&#32;$albumDetails,
+<anchor xml:id="__album_search_controller_8php_source_1l00105"/>00105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;origin&apos;</emphasis>&#32;=&gt;&#32;$origin,&#32;<emphasis role="comment">//&#32;Passer&#32;l&apos;origine&#32;à&#32;la&#32;vue</emphasis>
+<anchor xml:id="__album_search_controller_8php_source_1l00106"/>00106 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;]);
+<anchor xml:id="__album_search_controller_8php_source_1l00107"/>00107 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__album_search_controller_8php_source_1l00108"/>00108 
+<anchor xml:id="__album_search_controller_8php_source_1l00118"/><link linkend="_class_app_1_1_controller_1_1_album_search_controller_1a6c1bfe7b2f2ffe8e8e690e4172a381ed">00118</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_controller_1_1_album_search_controller_1a6c1bfe7b2f2ffe8e8e690e4172a381ed">addToFavorites</link>(<emphasis role="keywordtype">int</emphasis>&#32;$id):&#32;JsonResponse
+<anchor xml:id="__album_search_controller_8php_source_1l00119"/>00119 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__album_search_controller_8php_source_1l00120"/>00120 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$user&#32;=&#32;$this-&gt;getUser();
+<anchor xml:id="__album_search_controller_8php_source_1l00121"/>00121 
+<anchor xml:id="__album_search_controller_8php_source_1l00122"/>00122 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!$user)&#32;{
+<anchor xml:id="__album_search_controller_8php_source_1l00123"/>00123 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">new</emphasis>&#32;JsonResponse([<emphasis role="stringliteral">&apos;error&apos;</emphasis>&#32;=&gt;&#32;<emphasis role="stringliteral">&apos;Utilisateur&#32;non&#32;authentifié&apos;</emphasis>],&#32;401);
+<anchor xml:id="__album_search_controller_8php_source_1l00124"/>00124 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__album_search_controller_8php_source_1l00125"/>00125 
+<anchor xml:id="__album_search_controller_8php_source_1l00126"/>00126 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">try</emphasis>&#32;{
+<anchor xml:id="__album_search_controller_8php_source_1l00127"/>00127 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$albumDetails&#32;=&#32;$this-&gt;discogsService-&gt;getAlbumDetails($id);
+<anchor xml:id="__album_search_controller_8php_source_1l00128"/>00128 
+<anchor xml:id="__album_search_controller_8php_source_1l00129"/>00129 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(empty($albumDetails[<emphasis role="stringliteral">&apos;fruits&apos;</emphasis>]))&#32;{
+<anchor xml:id="__album_search_controller_8php_source_1l00130"/>00130 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">new</emphasis>&#32;JsonResponse([<emphasis role="stringliteral">&apos;error&apos;</emphasis>&#32;=&gt;&#32;<emphasis role="stringliteral">&apos;Cet&#32;album&#32;ne&#32;contient&#32;aucun&#32;fruit&#32;pertinent.&apos;</emphasis>],&#32;400);
+<anchor xml:id="__album_search_controller_8php_source_1l00131"/>00131 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__album_search_controller_8php_source_1l00132"/>00132 
+<anchor xml:id="__album_search_controller_8php_source_1l00133"/>00133 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$existingAlbum&#32;=&#32;$this-&gt;getFavoriteAlbumByUserAndId($user,&#32;$albumDetails[<emphasis role="stringliteral">&apos;id&apos;</emphasis>]);
+<anchor xml:id="__album_search_controller_8php_source_1l00134"/>00134 
+<anchor xml:id="__album_search_controller_8php_source_1l00135"/>00135 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;($existingAlbum)&#32;{
+<anchor xml:id="__album_search_controller_8php_source_1l00136"/>00136 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">new</emphasis>&#32;JsonResponse([<emphasis role="stringliteral">&apos;error&apos;</emphasis>&#32;=&gt;&#32;<emphasis role="stringliteral">&apos;Cet&#32;album&#32;est&#32;déjà&#32;dans&#32;vos&#32;favoris&apos;</emphasis>],&#32;409);
+<anchor xml:id="__album_search_controller_8php_source_1l00137"/>00137 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__album_search_controller_8php_source_1l00138"/>00138 
+<anchor xml:id="__album_search_controller_8php_source_1l00139"/>00139 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$this-&gt;createFavoriteAlbum($user,&#32;$albumDetails);
+<anchor xml:id="__album_search_controller_8php_source_1l00140"/>00140 
+<anchor xml:id="__album_search_controller_8php_source_1l00141"/>00141 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">new</emphasis>&#32;JsonResponse([<emphasis role="stringliteral">&apos;success&apos;</emphasis>&#32;=&gt;&#32;<emphasis role="keyword">true</emphasis>]);
+<anchor xml:id="__album_search_controller_8php_source_1l00142"/>00142 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">catch</emphasis>&#32;(\Exception&#32;$e)&#32;{
+<anchor xml:id="__album_search_controller_8php_source_1l00143"/>00143 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">new</emphasis>&#32;JsonResponse([<emphasis role="stringliteral">&apos;error&apos;</emphasis>&#32;=&gt;&#32;<emphasis role="stringliteral">&apos;Erreur&#32;lors&#32;de&#32;l\&apos;ajout&#32;de&#32;l\&apos;album&apos;</emphasis>],&#32;500);
+<anchor xml:id="__album_search_controller_8php_source_1l00144"/>00144 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__album_search_controller_8php_source_1l00145"/>00145 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__album_search_controller_8php_source_1l00146"/>00146 
+<anchor xml:id="__album_search_controller_8php_source_1l00156"/><link linkend="_class_app_1_1_controller_1_1_album_search_controller_1af2a9aa2a4c124597835da76a98d258a1">00156</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_controller_1_1_album_search_controller_1af2a9aa2a4c124597835da76a98d258a1">removeFromFavorites</link>(<emphasis role="keywordtype">int</emphasis>&#32;$id):&#32;Response
+<anchor xml:id="__album_search_controller_8php_source_1l00157"/>00157 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__album_search_controller_8php_source_1l00158"/>00158 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$user&#32;=&#32;$this-&gt;getUser();
+<anchor xml:id="__album_search_controller_8php_source_1l00159"/>00159 
+<anchor xml:id="__album_search_controller_8php_source_1l00160"/>00160 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;($user)&#32;{
+<anchor xml:id="__album_search_controller_8php_source_1l00161"/>00161 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$favoriteAlbum&#32;=&#32;$this-&gt;getFavoriteAlbumByUserAndId($user,&#32;$id);
+<anchor xml:id="__album_search_controller_8php_source_1l00162"/>00162 
+<anchor xml:id="__album_search_controller_8php_source_1l00163"/>00163 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;($favoriteAlbum)&#32;{
+<anchor xml:id="__album_search_controller_8php_source_1l00164"/>00164 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$this-&gt;entityManager-&gt;remove($favoriteAlbum);
+<anchor xml:id="__album_search_controller_8php_source_1l00165"/>00165 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$this-&gt;entityManager-&gt;flush();
+<anchor xml:id="__album_search_controller_8php_source_1l00166"/>00166 
+<anchor xml:id="__album_search_controller_8php_source_1l00167"/>00167 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$this-&gt;addFlash(<emphasis role="stringliteral">&apos;success&apos;</emphasis>,&#32;<emphasis role="stringliteral">&apos;L\&apos;album&#32;a&#32;été&#32;retiré&#32;de&#32;vos&#32;favoris.&apos;</emphasis>);
+<anchor xml:id="__album_search_controller_8php_source_1l00168"/>00168 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__album_search_controller_8php_source_1l00169"/>00169 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__album_search_controller_8php_source_1l00170"/>00170 
+<anchor xml:id="__album_search_controller_8php_source_1l00171"/>00171 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this-&gt;redirectToRoute(<emphasis role="stringliteral">&apos;profile&apos;</emphasis>);
+<anchor xml:id="__album_search_controller_8php_source_1l00172"/>00172 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__album_search_controller_8php_source_1l00173"/>00173 
+<anchor xml:id="__album_search_controller_8php_source_1l00182"/>00182 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;getFavoriteAlbumByUserAndId($user,&#32;<emphasis role="keywordtype">int</emphasis>&#32;$albumId):&#32;?<link linkend="_class_app_1_1_entity_1_1_favorite_album">FavoriteAlbum</link>
+<anchor xml:id="__album_search_controller_8php_source_1l00183"/>00183 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__album_search_controller_8php_source_1l00184"/>00184 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this-&gt;entityManager-&gt;getRepository(FavoriteAlbum::class)
+<anchor xml:id="__album_search_controller_8php_source_1l00185"/>00185 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;-&gt;findOneBy([<emphasis role="stringliteral">&apos;user&apos;</emphasis>&#32;=&gt;&#32;$user,&#32;<emphasis role="stringliteral">&apos;albumId&apos;</emphasis>&#32;=&gt;&#32;$albumId]);
+<anchor xml:id="__album_search_controller_8php_source_1l00186"/>00186 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__album_search_controller_8php_source_1l00187"/>00187 
+<anchor xml:id="__album_search_controller_8php_source_1l00194"/>00194 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;createFavoriteAlbum($user,&#32;array&#32;$albumDetails):&#32;void
+<anchor xml:id="__album_search_controller_8php_source_1l00195"/>00195 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__album_search_controller_8php_source_1l00196"/>00196 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$favoriteAlbum&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;FavoriteAlbum();
+<anchor xml:id="__album_search_controller_8php_source_1l00197"/>00197 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$favoriteAlbum-&gt;setUser($user);
+<anchor xml:id="__album_search_controller_8php_source_1l00198"/>00198 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$favoriteAlbum-&gt;setAlbumId($albumDetails[<emphasis role="stringliteral">&apos;id&apos;</emphasis>]);
+<anchor xml:id="__album_search_controller_8php_source_1l00199"/>00199 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$favoriteAlbum-&gt;setTitle($albumDetails[<emphasis role="stringliteral">&apos;title&apos;</emphasis>]);
+<anchor xml:id="__album_search_controller_8php_source_1l00200"/>00200 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$favoriteAlbum-&gt;setYear($albumDetails[<emphasis role="stringliteral">&apos;year&apos;</emphasis>]&#32;??&#32;<emphasis role="keyword">null</emphasis>);
+<anchor xml:id="__album_search_controller_8php_source_1l00201"/>00201 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$favoriteAlbum-&gt;setCoverImage($albumDetails[<emphasis role="stringliteral">&apos;coverImage&apos;</emphasis>]&#32;??&#32;<emphasis role="stringliteral">&apos;/images/placeholder.jpg&apos;</emphasis>);
+<anchor xml:id="__album_search_controller_8php_source_1l00202"/>00202 
+<anchor xml:id="__album_search_controller_8php_source_1l00203"/>00203 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Associe&#32;les&#32;fruits&#32;pertinents&#32;à&#32;l&apos;album&#32;favori</emphasis>
+<anchor xml:id="__album_search_controller_8php_source_1l00204"/>00204 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">foreach</emphasis>&#32;($albumDetails[<emphasis role="stringliteral">&apos;fruits&apos;</emphasis>]&#32;as&#32;$fruitName)&#32;{
+<anchor xml:id="__album_search_controller_8php_source_1l00205"/>00205 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$fruit&#32;=&#32;$this-&gt;findOrCreateEntity(Fruit::class,&#32;[<emphasis role="stringliteral">&apos;name&apos;</emphasis>&#32;=&gt;&#32;$fruitName]);
+<anchor xml:id="__album_search_controller_8php_source_1l00206"/>00206 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$favoriteAlbum-&gt;addFruit($fruit);
+<anchor xml:id="__album_search_controller_8php_source_1l00207"/>00207 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__album_search_controller_8php_source_1l00208"/>00208 
+<anchor xml:id="__album_search_controller_8php_source_1l00209"/>00209 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$this-&gt;entityManager-&gt;persist($favoriteAlbum);
+<anchor xml:id="__album_search_controller_8php_source_1l00210"/>00210 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$this-&gt;entityManager-&gt;flush();
+<anchor xml:id="__album_search_controller_8php_source_1l00211"/>00211 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__album_search_controller_8php_source_1l00212"/>00212 
+<anchor xml:id="__album_search_controller_8php_source_1l00221"/>00221 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;findOrCreateEntity(<emphasis role="keywordtype">string</emphasis>&#32;$entityClass,&#32;array&#32;$criteria)
+<anchor xml:id="__album_search_controller_8php_source_1l00222"/>00222 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__album_search_controller_8php_source_1l00223"/>00223 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$entity&#32;=&#32;$this-&gt;entityManager-&gt;getRepository($entityClass)-&gt;findOneBy($criteria);
+<anchor xml:id="__album_search_controller_8php_source_1l00224"/>00224 
+<anchor xml:id="__album_search_controller_8php_source_1l00225"/>00225 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!$entity)&#32;{
+<anchor xml:id="__album_search_controller_8php_source_1l00226"/>00226 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$entity&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;$entityClass();
+<anchor xml:id="__album_search_controller_8php_source_1l00227"/>00227 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">foreach</emphasis>&#32;($criteria&#32;as&#32;$property&#32;=&gt;&#32;$value)&#32;{
+<anchor xml:id="__album_search_controller_8php_source_1l00228"/>00228 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$setter&#32;=&#32;<emphasis role="stringliteral">&apos;set&apos;</emphasis>&#32;.&#32;ucfirst($property);
+<anchor xml:id="__album_search_controller_8php_source_1l00229"/>00229 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(method_exists($entity,&#32;$setter))&#32;{
+<anchor xml:id="__album_search_controller_8php_source_1l00230"/>00230 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$entity-&gt;$setter($value);
+<anchor xml:id="__album_search_controller_8php_source_1l00231"/>00231 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__album_search_controller_8php_source_1l00232"/>00232 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__album_search_controller_8php_source_1l00233"/>00233 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$this-&gt;entityManager-&gt;persist($entity);
+<anchor xml:id="__album_search_controller_8php_source_1l00234"/>00234 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$this-&gt;entityManager-&gt;flush();
+<anchor xml:id="__album_search_controller_8php_source_1l00235"/>00235 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__album_search_controller_8php_source_1l00236"/>00236 
+<anchor xml:id="__album_search_controller_8php_source_1l00237"/>00237 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$entity;
+<anchor xml:id="__album_search_controller_8php_source_1l00238"/>00238 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__album_search_controller_8php_source_1l00239"/>00239 }
+<anchor xml:id="__album_search_controller_8php_source_1l00240"/>00240 
+</programlisting></section>

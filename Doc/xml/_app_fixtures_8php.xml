@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="fr">
+  <compounddef id="_app_fixtures_8php" kind="file" language="PHP">
+    <compoundname>AppFixtures.php</compoundname>
+    <innerclass refid="class_app_1_1_data_fixtures_1_1_app_fixtures" prot="public">App::DataFixtures::AppFixtures</innerclass>
+    <innernamespace refid="namespace_app_1_1_data_fixtures">App::DataFixtures</innernamespace>
+    <innernamespace refid="namespace_doctrine_1_1_bundle_1_1_fixtures_bundle_1_1_fixture">Doctrine::Bundle::FixturesBundle::Fixture</innernamespace>
+    <innernamespace refid="namespace_doctrine_1_1_persistence_1_1_object_manager">Doctrine::Persistence::ObjectManager</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;?php</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3" refid="namespace_app_1_1_data_fixtures" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_app_1_1_data_fixtures" kindref="compound">App\DataFixtures</ref>;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal">use<sp/>Doctrine\Bundle\FixturesBundle\Fixture;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal">use<sp/>Doctrine\Persistence\ObjectManager;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="class_app_1_1_data_fixtures_1_1_app_fixtures" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_app_1_1_data_fixtures_1_1_app_fixtures" kindref="compound">AppFixtures</ref><sp/></highlight><highlight class="keyword">extends</highlight><highlight class="normal"><sp/>Fixture</highlight></codeline>
+<codeline lineno="13"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="19" refid="class_app_1_1_data_fixtures_1_1_app_fixtures_1acb7929747e63056fbc9e2892615c18b2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="class_app_1_1_data_fixtures_1_1_app_fixtures_1acb7929747e63056fbc9e2892615c18b2" kindref="member">load</ref>(ObjectManager<sp/>$manager):<sp/>void</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Exemple<sp/>d&apos;ajout<sp/>d&apos;un<sp/>nouveau<sp/>produit</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>$product<sp/>=<sp/>new<sp/>Product();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>$product-&gt;setName(&apos;Produit<sp/>de<sp/>test&apos;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>$manager-&gt;persist($product);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Valide<sp/>et<sp/>enregistre<sp/>toutes<sp/>les<sp/>entités<sp/>en<sp/>attente<sp/>de<sp/>persistance</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$manager-&gt;flush();</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="DataFixtures/AppFixtures.php"/>
+  </compounddef>
+</doxygen>

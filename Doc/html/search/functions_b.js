@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['search_0',['search',['../class_app_1_1_controller_1_1_album_search_controller.html#a32c26085cd6825224689fb8e12587e93',1,'App::Controller::AlbumSearchController']]],
+  ['searchalbums_1',['searchAlbums',['../class_app_1_1_service_1_1_discogs_service.html#a14e1e0b11d4e2976862f1f60e6a20b64',1,'App::Service::DiscogsService']]],
+  ['setalbum_2',['setAlbum',['../class_app_1_1_entity_1_1_track.html#a030b2e5bdc870ee346358efc28a59640',1,'App::Entity::Track']]],
+  ['setalbumid_3',['setAlbumId',['../class_app_1_1_entity_1_1_favorite_album.html#a5616f9d98d68c2597046ef7d04d84f6f',1,'App::Entity::FavoriteAlbum']]],
+  ['setcoverimage_4',['setCoverImage',['../class_app_1_1_entity_1_1_favorite_album.html#a32e0a6523167ed7e60e5c30711dfe1fa',1,'App::Entity::FavoriteAlbum']]],
+  ['setduration_5',['setDuration',['../class_app_1_1_entity_1_1_track.html#a65287da7b5aac781a43f0ed59b067985',1,'App::Entity::Track']]],
+  ['setemail_6',['setEmail',['../class_app_1_1_entity_1_1_user.html#a2d22391fa86fa0eaf3b9d2a3c29880bc',1,'App::Entity::User']]],
+  ['setformat_7',['setFormat',['../class_app_1_1_entity_1_1_favorite_album.html#ab8f9ee51eb3a4b472abe80f921676a8c',1,'App::Entity::FavoriteAlbum']]],
+  ['setgenre_8',['setGenre',['../class_app_1_1_entity_1_1_favorite_album.html#a6fcf7c3ce3de45970b6f384c6c2c1e8c',1,'App::Entity::FavoriteAlbum']]],
+  ['setlabel_9',['setLabel',['../class_app_1_1_entity_1_1_favorite_album.html#a2a7c7c3195c43a32ab55f2fea78ba318',1,'App::Entity::FavoriteAlbum']]],
+  ['setname_10',['setName',['../class_app_1_1_entity_1_1_format.html#a392752b62c4f6aacea5c269690921ef3',1,'App\Entity\Format\setName()'],['../class_app_1_1_entity_1_1_fruit.html#a392752b62c4f6aacea5c269690921ef3',1,'App\Entity\Fruit\setName()'],['../class_app_1_1_entity_1_1_genre.html#a392752b62c4f6aacea5c269690921ef3',1,'App\Entity\Genre\setName()'],['../class_app_1_1_entity_1_1_label.html#a392752b62c4f6aacea5c269690921ef3',1,'App\Entity\Label\setName()']]],
+  ['setpassword_11',['setPassword',['../class_app_1_1_entity_1_1_user.html#a81e0f429784973551fb5417d5b92b0db',1,'App::Entity::User']]],
+  ['setprofilepicture_12',['setProfilePicture',['../class_app_1_1_entity_1_1_user.html#ab308055ea70f8f94a14d35a611a2086e',1,'App::Entity::User']]],
+  ['setroles_13',['setRoles',['../class_app_1_1_entity_1_1_user.html#aa3236c9c6688d04df16ea0ab3065530e',1,'App::Entity::User']]],
+  ['settitle_14',['setTitle',['../class_app_1_1_entity_1_1_favorite_album.html#ac698bca9a4f3d5d9355ff023eee17285',1,'App\Entity\FavoriteAlbum\setTitle()'],['../class_app_1_1_entity_1_1_track.html#a754ef3032cc3ffb25ad2d1a13720fc29',1,'App\Entity\Track\setTitle()']]],
+  ['setuser_15',['setUser',['../class_app_1_1_entity_1_1_favorite_album.html#a406a111868b45aad6d4c8ab5b0c5bcb9',1,'App::Entity::FavoriteAlbum']]],
+  ['setyear_16',['setYear',['../class_app_1_1_entity_1_1_favorite_album.html#a380136d26548fcfb8b3130250a42b9c2',1,'App::Entity::FavoriteAlbum']]],
+  ['showdetails_17',['showDetails',['../class_app_1_1_controller_1_1_album_search_controller.html#a5f1ab14d454cb3fa1e76a480f999c5c9',1,'App::Controller::AlbumSearchController']]]
+];

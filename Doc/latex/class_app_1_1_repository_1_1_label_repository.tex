@@ -1,0 +1,76 @@
+\doxysection{Référence de la classe Label\+Repository}
+\hypertarget{class_app_1_1_repository_1_1_label_repository}{}\label{class_app_1_1_repository_1_1_label_repository}\index{LabelRepository@{LabelRepository}}
+
+
+Graphe d\textquotesingle{}héritage de Label\+Repository\+:
+% FIG 0
+
+
+Graphe de collaboration de Label\+Repository\+:
+% FIG 1
+\doxysubsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_app_1_1_repository_1_1_label_repository_a38ea33dde11163765f358f5f10a3bc03}{\+\_\+\+\_\+construct}} (Manager\+Registry \$registry)
+\item 
+\mbox{\hyperlink{class_app_1_1_repository_1_1_label_repository_a5fc8877c3cb126ea03449bedd2b92092}{find\+By\+Name\+Part}} (string \$name\+Part)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Repository pour l\textquotesingle{}entité Label.
+
+Fournit des méthodes de base pour interagir avec les labels musicaux et permet d\textquotesingle{}ajouter des méthodes personnalisées pour répondre à des besoins spécifiques.
+
+@method Label\texorpdfstring{$\vert$}{|}null find(\$id, \$lock\+Mode = null, \$lock\+Version = null) @method Label\texorpdfstring{$\vert$}{|}null find\+One\+By(array \$criteria, array \$order\+By = null) @method Label\mbox{[}\mbox{]} find\+All() @method Label\mbox{[}\mbox{]} find\+By(array \$criteria, array \$order\+By = null, \$limit = null, \$offset = null) 
+
+Définition à la ligne \mbox{\hyperlink{_label_repository_8php_source_l00022}{22}} du fichier \mbox{\hyperlink{_label_repository_8php_source}{Label\+Repository.\+php}}.
+
+
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\Hypertarget{class_app_1_1_repository_1_1_label_repository_a38ea33dde11163765f358f5f10a3bc03}\index{LabelRepository@{LabelRepository}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!LabelRepository@{LabelRepository}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily \label{class_app_1_1_repository_1_1_label_repository_a38ea33dde11163765f358f5f10a3bc03} 
+\+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{Manager\+Registry}]{\$registry}{}\end{DoxyParamCaption})}
+
+Constructeur du repository.
+
+
+\begin{DoxyParams}[1]{Paramètres}
+Manager\+Registry & {\em \$registry} & Le registre des gestionnaires d\textquotesingle{}entités. \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \mbox{\hyperlink{_label_repository_8php_source_l00029}{29}} du fichier \mbox{\hyperlink{_label_repository_8php_source}{Label\+Repository.\+php}}.
+
+
+
+\doxysubsection{Documentation des fonctions membres}
+\Hypertarget{class_app_1_1_repository_1_1_label_repository_a5fc8877c3cb126ea03449bedd2b92092}\index{LabelRepository@{LabelRepository}!findByNamePart@{findByNamePart}}
+\index{findByNamePart@{findByNamePart}!LabelRepository@{LabelRepository}}
+\doxysubsubsection{\texorpdfstring{findByNamePart()}{findByNamePart()}}
+{\footnotesize\ttfamily \label{class_app_1_1_repository_1_1_label_repository_a5fc8877c3cb126ea03449bedd2b92092} 
+find\+By\+Name\+Part (\begin{DoxyParamCaption}\item[{string}]{\$name\+Part}{}\end{DoxyParamCaption})}
+
+Recherche des labels par nom partiel.
+
+
+\begin{DoxyParams}[1]{Paramètres}
+string & {\em \$name\+Part} & Le fragment du nom à rechercher. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Label\mbox{[}\mbox{]} La liste des labels correspondants. 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_label_repository_8php_source_l00040}{40}} du fichier \mbox{\hyperlink{_label_repository_8php_source}{Label\+Repository.\+php}}.
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+Repository/\mbox{\hyperlink{_label_repository_8php}{Label\+Repository.\+php}}\end{DoxyCompactItemize}

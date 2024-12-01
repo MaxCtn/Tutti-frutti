@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespace_app_1_1_command" xml:lang="fr">
+<title>Référence de l&apos;espace de nommage App\Command</title>
+<indexterm><primary>App\Command</primary></indexterm>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_class_app_1_1_command_1_1_test_discogs_command">TestDiscogsCommand</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_class_app_1_1_command_1_1_test_favorite_albums_command">TestFavoriteAlbumsCommand</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_class_app_1_1_command_1_1_update_favorite_covers_command">UpdateFavoriteCoversCommand</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>name <link linkend="_namespace_app_1_1_command_1a36342860613418f919ffbf3aa4246442">__pad0__</link></para>
+</listitem>
+            <listitem><para>name <link linkend="_namespace_app_1_1_command_1a019d6bb8fecdb887367f54757fa14d4d">description</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Documentation des variables</title>
+<anchor xml:id="_namespace_app_1_1_command_1a36342860613418f919ffbf3aa4246442"/><section>
+    <title>__pad0__</title>
+<indexterm><primary>__pad0__</primary><secondary>App\Command</secondary></indexterm>
+<indexterm><primary>App\Command</primary><secondary>__pad0__</secondary></indexterm>
+<para><computeroutput>name __pad0__</computeroutput></para>
+<para>Cette commande met à jour les images par défaut pour les albums favoris qui n&apos;ont pas d&apos;image associée. </para>
+<para>
+Définition à la ligne <link linkend="__update_favorite_covers_command_8php_source_1l00015">15</link> du fichier <link linkend="__update_favorite_covers_command_8php_source">UpdateFavoriteCoversCommand.php</link>.</para>
+</section>
+<anchor xml:id="_namespace_app_1_1_command_1a019d6bb8fecdb887367f54757fa14d4d"/><section>
+    <title>description</title>
+<indexterm><primary>description</primary><secondary>App\Command</secondary></indexterm>
+<indexterm><primary>App\Command</primary><secondary>description</secondary></indexterm>
+<para><computeroutput>name description</computeroutput></para><para>
+Définition à la ligne <link linkend="__update_favorite_covers_command_8php_source_1l00016">16</link> du fichier <link linkend="__update_favorite_covers_command_8php_source">UpdateFavoriteCoversCommand.php</link>.</para>
+</section>
+</section>
+</section>

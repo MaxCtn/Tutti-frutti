@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="fr">
+  <compounddef id="_discogs_test_controller_8php" kind="file" language="PHP">
+    <compoundname>DiscogsTestController.php</compoundname>
+    <innerclass refid="class_app_1_1_controller_1_1_discogs_test_controller" prot="public">App::Controller::DiscogsTestController</innerclass>
+    <innernamespace refid="namespace_app_1_1_controller">App::Controller</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;?php</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_app_1_1_controller" kindref="compound">App\Controller</ref>;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal">use<sp/><ref refid="class_app_1_1_service_1_1_discogs_service" kindref="compound">App\Service\DiscogsService</ref>;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal">use<sp/>Symfony\Bundle\FrameworkBundle\Controller\AbstractController;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal">use<sp/>Symfony\Component\HttpFoundation\Response;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal">use<sp/>Symfony\Component\Routing\Annotation\Route;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="class_app_1_1_controller_1_1_discogs_test_controller" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_app_1_1_controller_1_1_discogs_test_controller" kindref="compound">DiscogsTestController</ref><sp/></highlight><highlight class="keyword">extends</highlight><highlight class="normal"><sp/>AbstractController</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#[Route(&apos;/test-discogs&apos;,<sp/>name:<sp/>&apos;test_discogs&apos;)]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="class_app_1_1_controller_1_1_discogs_test_controller_1ac820e6682701feada0217b7e052e32bf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="class_app_1_1_controller_1_1_discogs_test_controller_1ac820e6682701feada0217b7e052e32bf" kindref="member">test</ref>(<ref refid="class_app_1_1_service_1_1_discogs_service" kindref="compound">DiscogsService</ref><sp/>$discogsService):<sp/>Response</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Effectue<sp/>une<sp/>recherche<sp/>d&apos;albums<sp/>avec<sp/>le<sp/>mot-clé<sp/>&apos;banana&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$results<sp/>=<sp/>$discogsService-&gt;<ref refid="class_app_1_1_service_1_1_discogs_service_1a14e1e0b11d4e2976862f1f60e6a20b64" kindref="member">searchAlbums</ref>(</highlight><highlight class="stringliteral">&apos;banana&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Retourne<sp/>les<sp/>résultats<sp/>au<sp/>format<sp/>JSON</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>$this-&gt;json($results);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Controller/DiscogsTestController.php"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="fr">
+  <compounddef id="_home_controller_8php" kind="file" language="PHP">
+    <compoundname>HomeController.php</compoundname>
+    <innerclass refid="class_app_1_1_controller_1_1_home_controller" prot="public">App::Controller::HomeController</innerclass>
+    <innernamespace refid="namespace_app_1_1_controller">App::Controller</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;?php</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>src/Controller/HomeController.php</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_app_1_1_controller" kindref="compound">App\Controller</ref>;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal">use<sp/>Symfony\Bundle\FrameworkBundle\Controller\AbstractController;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal">use<sp/>Symfony\Component\HttpFoundation\Response;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal">use<sp/>Symfony\Component\Routing\Annotation\Route;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="class_app_1_1_controller_1_1_home_controller" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_app_1_1_controller_1_1_home_controller" kindref="compound">HomeController</ref><sp/></highlight><highlight class="keyword">extends</highlight><highlight class="normal"><sp/>AbstractController</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#[Route(&apos;/&apos;,<sp/>name:<sp/>&apos;app_home&apos;)]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="class_app_1_1_controller_1_1_home_controller_1a149eb92716c1084a935e04a8d95f7347" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="class_app_1_1_controller_1_1_home_controller_1a149eb92716c1084a935e04a8d95f7347" kindref="member">index</ref>():<sp/>Response</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>$this-&gt;render(</highlight><highlight class="stringliteral">&apos;home/index.html.twig&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Controller/HomeController.php"/>
+  </compounddef>
+</doxygen>

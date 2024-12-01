@@ -1,0 +1,206 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_app_1_1_entity_1_1_track" xml:lang="fr">
+<title>Référence de la classe Track</title>
+<indexterm><primary>Track</primary></indexterm>
+<simplesect>
+    <title>Fonctions membres publiques    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_track_1a12251d0c022e9e21c137a105ff683f13">getId</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_track_1a95e859a4588a39a1824b717378a84c29">getTitle</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_track_1a754ef3032cc3ffb25ad2d1a13720fc29">setTitle</link> (string $title)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_track_1ab46fe3d2750728c84bd71ae1bfd08ee8">getDuration</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_track_1a65287da7b5aac781a43f0ed59b067985">setDuration</link> (?string $duration)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_track_1aee148d665bb21d0319499d90186605b2">getAlbum</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_track_1a030b2e5bdc870ee346358efc28a59640">setAlbum</link> (?<link linkend="_class_app_1_1_entity_1_1_favorite_album">FavoriteAlbum</link> $album)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Description détaillée</title>
+
+<para>Entité représentant une piste (track) d&apos;un album favori.</para>
+
+<para>@ORM\Entity(repositoryClass=TrackRepository::class) </para>
+<para>
+Définition à la ligne <link linkend="__track_8php_source_1l00014">14</link> du fichier <link linkend="__track_8php_source">Track.php</link>.</para>
+</section>
+<section>
+<title>Documentation des fonctions membres</title>
+<anchor xml:id="_class_app_1_1_entity_1_1_track_1aee148d665bb21d0319499d90186605b2"/><section>
+    <title>getAlbum()</title>
+<indexterm><primary>getAlbum</primary><secondary>Track</secondary></indexterm>
+<indexterm><primary>Track</primary><secondary>getAlbum</secondary></indexterm>
+<para><computeroutput>getAlbum ( )</computeroutput></para>
+<para>Obtient l&apos;album favori auquel appartient la piste.</para>
+
+<para><formalpara><title>Renvoie</title>
+
+<para>FavoriteAlbum|null L&apos;album favori. </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__track_8php_source_1l00125">125</link> du fichier <link linkend="__track_8php_source">Track.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_entity_1_1_track_1ab46fe3d2750728c84bd71ae1bfd08ee8"/><section>
+    <title>getDuration()</title>
+<indexterm><primary>getDuration</primary><secondary>Track</secondary></indexterm>
+<indexterm><primary>Track</primary><secondary>getDuration</secondary></indexterm>
+<para><computeroutput>getDuration ( )</computeroutput></para>
+<para>Obtient la durée de la piste au format &quot;mm:ss&quot;.</para>
+
+<para><formalpara><title>Renvoie</title>
+
+<para>string|null La durée de la piste. </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__track_8php_source_1l00101">101</link> du fichier <link linkend="__track_8php_source">Track.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_entity_1_1_track_1a12251d0c022e9e21c137a105ff683f13"/><section>
+    <title>getId()</title>
+<indexterm><primary>getId</primary><secondary>Track</secondary></indexterm>
+<indexterm><primary>Track</primary><secondary>getId</secondary></indexterm>
+<para><computeroutput>getId ( )</computeroutput></para>
+<para>Obtient l&apos;identifiant unique de la piste.</para>
+
+<para><formalpara><title>Renvoie</title>
+
+<para>int|null L&apos;identifiant de la piste. </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__track_8php_source_1l00067">67</link> du fichier <link linkend="__track_8php_source">Track.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_entity_1_1_track_1a95e859a4588a39a1824b717378a84c29"/><section>
+    <title>getTitle()</title>
+<indexterm><primary>getTitle</primary><secondary>Track</secondary></indexterm>
+<indexterm><primary>Track</primary><secondary>getTitle</secondary></indexterm>
+<para><computeroutput>getTitle ( )</computeroutput></para>
+<para>Obtient le titre de la piste.</para>
+
+<para><formalpara><title>Renvoie</title>
+
+<para>string|null Le titre de la piste. </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__track_8php_source_1l00077">77</link> du fichier <link linkend="__track_8php_source">Track.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_entity_1_1_track_1a030b2e5bdc870ee346358efc28a59640"/><section>
+    <title>setAlbum()</title>
+<indexterm><primary>setAlbum</primary><secondary>Track</secondary></indexterm>
+<indexterm><primary>Track</primary><secondary>setAlbum</secondary></indexterm>
+<para><computeroutput>setAlbum (?<link linkend="_class_app_1_1_entity_1_1_favorite_album">FavoriteAlbum</link> $album)</computeroutput></para>
+<para>Définit l&apos;album favori auquel appartient la piste.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Paramètres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>FavoriteAlbum | null</entry><entry>$album</entry><entry>
+<para>L&apos;album favori.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Renvoie</title>
+
+<para>self </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__track_8php_source_1l00137">137</link> du fichier <link linkend="__track_8php_source">Track.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_entity_1_1_track_1a65287da7b5aac781a43f0ed59b067985"/><section>
+    <title>setDuration()</title>
+<indexterm><primary>setDuration</primary><secondary>Track</secondary></indexterm>
+<indexterm><primary>Track</primary><secondary>setDuration</secondary></indexterm>
+<para><computeroutput>setDuration (?string $duration)</computeroutput></para>
+<para>Définit la durée de la piste au format &quot;mm:ss&quot;.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Paramètres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>string | null</entry><entry>$duration</entry><entry>
+<para>La durée de la piste.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Renvoie</title>
+
+<para>self </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__track_8php_source_1l00113">113</link> du fichier <link linkend="__track_8php_source">Track.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_entity_1_1_track_1a754ef3032cc3ffb25ad2d1a13720fc29"/><section>
+    <title>setTitle()</title>
+<indexterm><primary>setTitle</primary><secondary>Track</secondary></indexterm>
+<indexterm><primary>Track</primary><secondary>setTitle</secondary></indexterm>
+<para><computeroutput>setTitle (string $title)</computeroutput></para>
+<para>Définit le titre de la piste.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Paramètres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>string</entry><entry>$title</entry><entry>
+<para>Le titre de la piste.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Renvoie</title>
+
+<para>self </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__track_8php_source_1l00089">89</link> du fichier <link linkend="__track_8php_source">Track.php</link>.</para>
+</section>
+<para>
+La documentation de cette classe a été générée à partir du fichier suivant :</para>
+Entity/<link linkend="__track_8php">Track.php</link></section>
+</section>

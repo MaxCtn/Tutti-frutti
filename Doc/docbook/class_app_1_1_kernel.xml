@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_app_1_1_kernel" xml:lang="fr">
+<title>Référence de la classe Kernel</title>
+<indexterm><primary>Kernel</primary></indexterm>
+Graphe d&apos;héritage de Kernel:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_app_1_1_kernel__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Graphe de collaboration de Kernel:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_app_1_1_kernel__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<section>
+<title>Description détaillée</title>
+
+<para>Classe Kernel principale de l&apos;application Symfony.</para>
+
+<para>Elle utilise le trait <computeroutput>MicroKernelTrait</computeroutput> pour gérer une configuration simplifiée et fournit le point d&apos;entrée principal pour l&apos;exécution de l&apos;application. </para>
+<para>
+Définition à la ligne <link linkend="__kernel_8php_source_1l00014">14</link> du fichier <link linkend="__kernel_8php_source">Kernel.php</link>.</para>
+<para>
+La documentation de cette classe a été générée à partir du fichier suivant :</para>
+<link linkend="__kernel_8php">Kernel.php</link></section>
+</section>

@@ -1,0 +1,269 @@
+.TH "User" 3 "Tutti-frutti" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+User
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Est dérivée de UserInterface, et PasswordAuthenticatedUserInterface\&.
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fB__construct\fP ()"
+.br
+.ti -1c
+.RI "\fBgetId\fP ()"
+.br
+.ti -1c
+.RI "\fBgetEmail\fP ()"
+.br
+.ti -1c
+.RI "\fBsetEmail\fP (string $email)"
+.br
+.ti -1c
+.RI "\fBgetUserIdentifier\fP ()"
+.br
+.ti -1c
+.RI "\fBgetRoles\fP ()"
+.br
+.ti -1c
+.RI "\fBsetRoles\fP (array $roles)"
+.br
+.ti -1c
+.RI "\fBgetPassword\fP ()"
+.br
+.ti -1c
+.RI "\fBsetPassword\fP (string $password)"
+.br
+.ti -1c
+.RI "\fBeraseCredentials\fP ()"
+.br
+.ti -1c
+.RI "\fBgetFavoriteAlbums\fP ()"
+.br
+.ti -1c
+.RI "\fBaddFavoriteAlbum\fP (\fBFavoriteAlbum\fP $favoriteAlbum)"
+.br
+.ti -1c
+.RI "\fBremoveFavoriteAlbum\fP (\fBFavoriteAlbum\fP $favoriteAlbum)"
+.br
+.ti -1c
+.RI "\fBgetProfilePicture\fP ()"
+.br
+.ti -1c
+.RI "\fBsetProfilePicture\fP (?string $profilePicture)"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Entité représentant un utilisateur de l'application\&.
+
+.PP
+@ORM\\Entity(repositoryClass=UserRepository::class) 
+.PP
+Définition à la ligne \fB18\fP du fichier \fBUser\&.php\fP\&.
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "__construct ()"
+Constructeur de la classe User\&. Initialise la collection des albums favoris\&. 
+.PP
+Définition à la ligne \fB88\fP du fichier \fBUser\&.php\fP\&.
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "addFavoriteAlbum (\fBFavoriteAlbum\fP $favoriteAlbum)"
+Ajoute un album favori à la collection de l'utilisateur\&.
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$favoriteAlbum\fP L'album favori à ajouter\&.
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+self 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB213\fP du fichier \fBUser\&.php\fP\&.
+.SS "eraseCredentials ()"
+Efface les données sensibles de l'utilisateur (non utilisé ici)\&. 
+.PP
+Définition à la ligne \fB191\fP du fichier \fBUser\&.php\fP\&.
+.SS "getEmail ()"
+Obtient l'adresse e-mail de l'utilisateur\&.
+
+.PP
+\fBRenvoie\fP
+.RS 4
+string|null L'adresse e-mail\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB108\fP du fichier \fBUser\&.php\fP\&.
+.SS "getFavoriteAlbums ()"
+Obtient la collection des albums favoris de l'utilisateur\&.
+
+.PP
+\fBRenvoie\fP
+.RS 4
+Collection<int, FavoriteAlbum> La collection des albums favoris\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB201\fP du fichier \fBUser\&.php\fP\&.
+.SS "getId ()"
+Obtient l'identifiant unique de l'utilisateur\&.
+
+.PP
+\fBRenvoie\fP
+.RS 4
+int|null L'identifiant de l'utilisateur\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB98\fP du fichier \fBUser\&.php\fP\&.
+.SS "getPassword ()"
+Obtient le mot de passe hashé de l'utilisateur\&.
+
+.PP
+\fBRenvoie\fP
+.RS 4
+string Le mot de passe hashé\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB169\fP du fichier \fBUser\&.php\fP\&.
+.SS "getProfilePicture ()"
+Obtient l'URL de la photo de profil de l'utilisateur\&.
+
+.PP
+\fBRenvoie\fP
+.RS 4
+string|null L'URL de la photo de profil\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB246\fP du fichier \fBUser\&.php\fP\&.
+.SS "getRoles ()"
+Obtient les rôles de l'utilisateur\&.
+
+.PP
+\fBRenvoie\fP
+.RS 4
+array Les rôles uniques de l'utilisateur\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB142\fP du fichier \fBUser\&.php\fP\&.
+.SS "getUserIdentifier ()"
+Obtient l'identifiant unique de l'utilisateur (utilisé par le composant de sécurité)\&.
+
+.PP
+\fBRenvoie\fP
+.RS 4
+string L'identifiant unique (adresse e-mail)\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB132\fP du fichier \fBUser\&.php\fP\&.
+.SS "removeFavoriteAlbum (\fBFavoriteAlbum\fP $favoriteAlbum)"
+Retire un album favori de la collection de l'utilisateur\&.
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$favoriteAlbum\fP L'album favori à retirer\&.
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+self 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB230\fP du fichier \fBUser\&.php\fP\&.
+.SS "setEmail (string $email)"
+Définit l'adresse e-mail de l'utilisateur\&.
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$email\fP L'adresse e-mail\&.
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+self 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB120\fP du fichier \fBUser\&.php\fP\&.
+.SS "setPassword (string $password)"
+Définit le mot de passe hashé de l'utilisateur\&.
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$password\fP Le mot de passe hashé\&.
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+self 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB181\fP du fichier \fBUser\&.php\fP\&.
+.SS "setProfilePicture (?string $profilePicture)"
+Définit l'URL de la photo de profil de l'utilisateur\&.
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$profilePicture\fP L'URL de la photo de profil\&.
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+self 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB258\fP du fichier \fBUser\&.php\fP\&.
+.SS "setRoles (array $roles)"
+Définit les rôles de l'utilisateur\&.
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$roles\fP Les rôles de l'utilisateur\&.
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+self 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB157\fP du fichier \fBUser\&.php\fP\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Tutti-frutti à partir du code source\&.

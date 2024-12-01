@@ -1,0 +1,203 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_app_1_1_entity_1_1_fruit" xml:lang="fr">
+<title>Référence de la classe Fruit</title>
+<indexterm><primary>Fruit</primary></indexterm>
+<simplesect>
+    <title>Fonctions membres publiques    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_fruit_1a095c5d389db211932136b53f25f39685">__construct</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_fruit_1a12251d0c022e9e21c137a105ff683f13">getId</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_fruit_1a3d0963e68bb313b163a73f2803c64600">getName</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_fruit_1a392752b62c4f6aacea5c269690921ef3">setName</link> (string $name)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_fruit_1a96732906856f5d0e08852d04b3e8b9ce">getAlbums</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_fruit_1a79ad3ae17fa6347782039ba962fd4773">addAlbum</link> (<link linkend="_class_app_1_1_entity_1_1_favorite_album">FavoriteAlbum</link> $album)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_fruit_1a8ac4b6e0389eb502c205087d8cad7645">removeAlbum</link> (<link linkend="_class_app_1_1_entity_1_1_favorite_album">FavoriteAlbum</link> $album)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Description détaillée</title>
+
+<para>Entité représentant un fruit associé à des albums favoris.</para>
+
+<para>@ORM\Entity(repositoryClass=FruitRepository::class) </para>
+<para>
+Définition à la ligne <link linkend="__fruit_8php_source_1l00016">16</link> du fichier <link linkend="__fruit_8php_source">Fruit.php</link>.</para>
+</section>
+<section>
+<title>Documentation des constructeurs et destructeur</title>
+<anchor xml:id="_class_app_1_1_entity_1_1_fruit_1a095c5d389db211932136b53f25f39685"/><section>
+    <title>__construct()</title>
+<indexterm><primary>__construct</primary><secondary>Fruit</secondary></indexterm>
+<indexterm><primary>Fruit</primary><secondary>__construct</secondary></indexterm>
+<para><computeroutput>__construct ( )</computeroutput></para>
+<para>Constructeur de la classe Fruit. Initialise la collection des albums favoris. </para>
+<para>
+Définition à la ligne <link linkend="__fruit_8php_source_1l00056">56</link> du fichier <link linkend="__fruit_8php_source">Fruit.php</link>.</para>
+</section>
+</section>
+<section>
+<title>Documentation des fonctions membres</title>
+<anchor xml:id="_class_app_1_1_entity_1_1_fruit_1a79ad3ae17fa6347782039ba962fd4773"/><section>
+    <title>addAlbum()</title>
+<indexterm><primary>addAlbum</primary><secondary>Fruit</secondary></indexterm>
+<indexterm><primary>Fruit</primary><secondary>addAlbum</secondary></indexterm>
+<para><computeroutput>addAlbum (<link linkend="_class_app_1_1_entity_1_1_favorite_album">FavoriteAlbum</link> $album)</computeroutput></para>
+<para>Ajoute un album favori à la collection associée à ce fruit.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Paramètres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>FavoriteAlbum</entry><entry>$album</entry><entry>
+<para>L&apos;album favori à ajouter.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Renvoie</title>
+
+<para>self </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__fruit_8php_source_1l00112">112</link> du fichier <link linkend="__fruit_8php_source">Fruit.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_entity_1_1_fruit_1a96732906856f5d0e08852d04b3e8b9ce"/><section>
+    <title>getAlbums()</title>
+<indexterm><primary>getAlbums</primary><secondary>Fruit</secondary></indexterm>
+<indexterm><primary>Fruit</primary><secondary>getAlbums</secondary></indexterm>
+<para><computeroutput>getAlbums ( )</computeroutput></para>
+<para>Obtient la collection des albums favoris associés à ce fruit.</para>
+
+<para><formalpara><title>Renvoie</title>
+
+<para>Collection&lt;int, FavoriteAlbum&gt; La collection des albums favoris. </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__fruit_8php_source_1l00100">100</link> du fichier <link linkend="__fruit_8php_source">Fruit.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_entity_1_1_fruit_1a12251d0c022e9e21c137a105ff683f13"/><section>
+    <title>getId()</title>
+<indexterm><primary>getId</primary><secondary>Fruit</secondary></indexterm>
+<indexterm><primary>Fruit</primary><secondary>getId</secondary></indexterm>
+<para><computeroutput>getId ( )</computeroutput></para>
+<para>Obtient l&apos;identifiant unique du fruit.</para>
+
+<para><formalpara><title>Renvoie</title>
+
+<para>int|null L&apos;identifiant du fruit. </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__fruit_8php_source_1l00066">66</link> du fichier <link linkend="__fruit_8php_source">Fruit.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_entity_1_1_fruit_1a3d0963e68bb313b163a73f2803c64600"/><section>
+    <title>getName()</title>
+<indexterm><primary>getName</primary><secondary>Fruit</secondary></indexterm>
+<indexterm><primary>Fruit</primary><secondary>getName</secondary></indexterm>
+<para><computeroutput>getName ( )</computeroutput></para>
+<para>Obtient le nom du fruit.</para>
+
+<para><formalpara><title>Renvoie</title>
+
+<para>string|null Le nom du fruit. </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__fruit_8php_source_1l00076">76</link> du fichier <link linkend="__fruit_8php_source">Fruit.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_entity_1_1_fruit_1a8ac4b6e0389eb502c205087d8cad7645"/><section>
+    <title>removeAlbum()</title>
+<indexterm><primary>removeAlbum</primary><secondary>Fruit</secondary></indexterm>
+<indexterm><primary>Fruit</primary><secondary>removeAlbum</secondary></indexterm>
+<para><computeroutput>removeAlbum (<link linkend="_class_app_1_1_entity_1_1_favorite_album">FavoriteAlbum</link> $album)</computeroutput></para>
+<para>Retire un album favori de la collection associée à ce fruit.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Paramètres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>FavoriteAlbum</entry><entry>$album</entry><entry>
+<para>L&apos;album favori à retirer.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Renvoie</title>
+
+<para>self </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__fruit_8php_source_1l00129">129</link> du fichier <link linkend="__fruit_8php_source">Fruit.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_entity_1_1_fruit_1a392752b62c4f6aacea5c269690921ef3"/><section>
+    <title>setName()</title>
+<indexterm><primary>setName</primary><secondary>Fruit</secondary></indexterm>
+<indexterm><primary>Fruit</primary><secondary>setName</secondary></indexterm>
+<para><computeroutput>setName (string $name)</computeroutput></para>
+<para>Définit le nom du fruit.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Paramètres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>string</entry><entry>$name</entry><entry>
+<para>Le nom du fruit.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Renvoie</title>
+
+<para>self </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__fruit_8php_source_1l00088">88</link> du fichier <link linkend="__fruit_8php_source">Fruit.php</link>.</para>
+</section>
+<para>
+La documentation de cette classe a été générée à partir du fichier suivant :</para>
+Entity/<link linkend="__fruit_8php">Fruit.php</link></section>
+</section>

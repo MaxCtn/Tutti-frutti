@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="fr">
+  <compounddef id="_app_custom_authenticator_8php" kind="file" language="PHP">
+    <compoundname>AppCustomAuthenticator.php</compoundname>
+    <innerclass refid="class_app_1_1_security_1_1_app_custom_authenticator" prot="public">App::Security::AppCustomAuthenticator</innerclass>
+    <innernamespace refid="namespace_app_1_1_security">App::Security</innernamespace>
+    <innernamespace refid="namespace_symfony_1_1_component_1_1_http_foundation_1_1_redirect_response">Symfony::Component::HttpFoundation::RedirectResponse</innernamespace>
+    <innernamespace refid="namespace_symfony_1_1_component_1_1_routing_1_1_generator_1_1_url_generator_interface">Symfony::Component::Routing::Generator::UrlGeneratorInterface</innernamespace>
+    <innernamespace refid="namespace_symfony_1_1_bundle_1_1_security_bundle_1_1_security">Symfony::Bundle::SecurityBundle::Security</innernamespace>
+    <innernamespace refid="namespace_symfony_1_1_component_1_1_security_1_1_core_1_1_authentication_1_1_token_1_1_token_interface">Symfony::Component::Security::Core::Authentication::Token::TokenInterface</innernamespace>
+    <innernamespace refid="namespace_symfony_1_1_component_1_1_security_1_1_http_1_1_authenticator_1_1_abstract_login_form_authenticator">Symfony::Component::Security::Http::Authenticator::AbstractLoginFormAuthenticator</innernamespace>
+    <innernamespace refid="namespace_symfony_1_1_component_1_1_security_1_1_http_1_1_authenticator_1_1_passport_1_1_badge_1_1_csrf_token_badge">Symfony::Component::Security::Http::Authenticator::Passport::Badge::CsrfTokenBadge</innernamespace>
+    <innernamespace refid="namespace_symfony_1_1_component_1_1_security_1_1_http_1_1_authenticator_1_1_passport_1_1_badge_1_1_remember_me_badge">Symfony::Component::Security::Http::Authenticator::Passport::Badge::RememberMeBadge</innernamespace>
+    <innernamespace refid="namespace_symfony_1_1_component_1_1_security_1_1_http_1_1_authenticator_1_1_passport_1_1_badge_1_1_user_badge">Symfony::Component::Security::Http::Authenticator::Passport::Badge::UserBadge</innernamespace>
+    <innernamespace refid="namespace_symfony_1_1_component_1_1_security_1_1_http_1_1_authenticator_1_1_passport_1_1_credentials_1_1_password_credentials">Symfony::Component::Security::Http::Authenticator::Passport::Credentials::PasswordCredentials</innernamespace>
+    <innernamespace refid="namespace_symfony_1_1_component_1_1_security_1_1_http_1_1_authenticator_1_1_passport_1_1_passport">Symfony::Component::Security::Http::Authenticator::Passport::Passport</innernamespace>
+    <innernamespace refid="namespace_symfony_1_1_component_1_1_security_1_1_http_1_1_util_1_1_target_path_trait">Symfony::Component::Security::Http::Util::TargetPathTrait</innernamespace>
+    <innernamespace refid="namespace_target_path_trait">TargetPathTrait</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;?php</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3" refid="namespace_app_1_1_security" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_app_1_1_security" kindref="compound">App\Security</ref>;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal">use<sp/>Symfony\Component\HttpFoundation\RedirectResponse;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal">use<sp/>Symfony\Component\HttpFoundation\Request;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal">use<sp/>Symfony\Component\HttpFoundation\Response;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal">use<sp/>Symfony\Component\Routing\Generator\UrlGeneratorInterface;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal">use<sp/>Symfony\Bundle\SecurityBundle\Security;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal">use<sp/>Symfony\Component\Security\Core\Authentication\Token\TokenInterface;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">use<sp/>Symfony\Component\Security\Http\Authenticator\AbstractLoginFormAuthenticator;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal">use<sp/>Symfony\Component\Security\Http\Authenticator\Passport\Badge\CsrfTokenBadge;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal">use<sp/>Symfony\Component\Security\Http\Authenticator\Passport\Badge\RememberMeBadge;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">use<sp/>Symfony\Component\Security\Http\Authenticator\Passport\Badge\UserBadge;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">use<sp/>Symfony\Component\Security\Http\Authenticator\Passport\Credentials\PasswordCredentials;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">use<sp/>Symfony\Component\Security\Http\Authenticator\Passport\Passport;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">use<sp/>Symfony\Component\Security\Http\Util\TargetPathTrait;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="class_app_1_1_security_1_1_app_custom_authenticator" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_app_1_1_security_1_1_app_custom_authenticator" kindref="compound">AppCustomAuthenticator</ref><sp/></highlight><highlight class="keyword">extends</highlight><highlight class="normal"><sp/>AbstractLoginFormAuthenticator</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>use<sp/>TargetPathTrait;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="class_app_1_1_security_1_1_app_custom_authenticator_1acefb6c1e88a6be21742efe1796c1b10a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_app_1_1_security_1_1_app_custom_authenticator_1acefb6c1e88a6be21742efe1796c1b10a" kindref="member">LOGIN_ROUTE</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;app_login&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/>UrlGeneratorInterface<sp/>$urlGenerator;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="class_app_1_1_security_1_1_app_custom_authenticator_1aafc1eab4a8c8c05bc66d94041d739d0f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="class_app_1_1_security_1_1_app_custom_authenticator_1aafc1eab4a8c8c05bc66d94041d739d0f" kindref="member">__construct</ref>(UrlGeneratorInterface<sp/>$urlGenerator)</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$this-&gt;urlGenerator<sp/>=<sp/>$urlGenerator;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="class_app_1_1_security_1_1_app_custom_authenticator_1acc8752684a58a442307c274100d77faf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="class_app_1_1_security_1_1_app_custom_authenticator_1acc8752684a58a442307c274100d77faf" kindref="member">authenticate</ref>(Request<sp/>$request):<sp/>Passport</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$email<sp/>=<sp/>$request-&gt;request-&gt;get(</highlight><highlight class="stringliteral">&apos;email&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Stocke<sp/>l&apos;email<sp/>saisi<sp/>dans<sp/>la<sp/>session<sp/>pour<sp/>pré-remplir<sp/>le<sp/>champ<sp/>en<sp/>cas<sp/>d&apos;erreur.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$request-&gt;getSession()-&gt;set(</highlight><highlight class="stringliteral">&apos;_security.last_username&apos;</highlight><highlight class="normal">,<sp/>$email);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>Passport(</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>UserBadge($email),</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>PasswordCredentials($request-&gt;request-&gt;get(</highlight><highlight class="stringliteral">&apos;password&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;&apos;</highlight><highlight class="normal">)),</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>CsrfTokenBadge(</highlight><highlight class="stringliteral">&apos;authenticate&apos;</highlight><highlight class="normal">,<sp/>$request-&gt;request-&gt;get(</highlight><highlight class="stringliteral">&apos;_csrf_token&apos;</highlight><highlight class="normal">)),</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>RememberMeBadge(),</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>]</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="class_app_1_1_security_1_1_app_custom_authenticator_1a8c14d31ce5a6d2bec39798fa32dacc45" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="class_app_1_1_security_1_1_app_custom_authenticator_1a8c14d31ce5a6d2bec39798fa32dacc45" kindref="member">onAuthenticationSuccess</ref>(Request<sp/>$request,<sp/>TokenInterface<sp/>$token,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>$firewallName):<sp/>?Response</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>($targetPath<sp/>=<sp/>$this-&gt;getTargetPath($request-&gt;getSession(),<sp/>$firewallName))<sp/>{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>RedirectResponse($targetPath);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Redirection<sp/>par<sp/>défaut<sp/>après<sp/>authentification<sp/>réussie</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>RedirectResponse($this-&gt;urlGenerator-&gt;generate(</highlight><highlight class="stringliteral">&apos;album_search&apos;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="class_app_1_1_security_1_1_app_custom_authenticator_1a2ed952b0c2d4db67fb2fa26a2a01a923" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="class_app_1_1_security_1_1_app_custom_authenticator_1a2ed952b0c2d4db67fb2fa26a2a01a923" kindref="member">getLoginUrl</ref>(Request<sp/>$request):<sp/>string</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>$this-&gt;urlGenerator-&gt;generate(self::LOGIN_ROUTE);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="94"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Security/AppCustomAuthenticator.php"/>
+  </compounddef>
+</doxygen>

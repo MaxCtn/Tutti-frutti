@@ -1,0 +1,150 @@
+\doxysection{Référence de la classe Album\+Search\+Controller}
+\hypertarget{class_app_1_1_controller_1_1_album_search_controller}{}\label{class_app_1_1_controller_1_1_album_search_controller}\index{AlbumSearchController@{AlbumSearchController}}
+
+
+Graphe d\textquotesingle{}héritage de Album\+Search\+Controller\+:
+% FIG 0
+
+
+Graphe de collaboration de Album\+Search\+Controller\+:
+% FIG 1
+\doxysubsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_app_1_1_controller_1_1_album_search_controller_ae684060a647ec21f30e4cde445b19e61}{\+\_\+\+\_\+construct}} (\mbox{\hyperlink{class_app_1_1_service_1_1_discogs_service}{Discogs\+Service}} \$discogs\+Service, Entity\+Manager\+Interface \$entity\+Manager)
+\item 
+\mbox{\hyperlink{class_app_1_1_controller_1_1_album_search_controller_a32c26085cd6825224689fb8e12587e93}{search}} (Request \$request)
+\item 
+\mbox{\hyperlink{class_app_1_1_controller_1_1_album_search_controller_a5f1ab14d454cb3fa1e76a480f999c5c9}{show\+Details}} (int \$id, Request \$request)
+\item 
+\mbox{\hyperlink{class_app_1_1_controller_1_1_album_search_controller_a6c1bfe7b2f2ffe8e8e690e4172a381ed}{add\+To\+Favorites}} (int \$id)
+\item 
+\mbox{\hyperlink{class_app_1_1_controller_1_1_album_search_controller_af2a9aa2a4c124597835da76a98d258a1}{remove\+From\+Favorites}} (int \$id)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Contrôleur pour la recherche et la gestion des albums. 
+
+Définition à la ligne \mbox{\hyperlink{_album_search_controller_8php_source_l00019}{19}} du fichier \mbox{\hyperlink{_album_search_controller_8php_source}{Album\+Search\+Controller.\+php}}.
+
+
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\Hypertarget{class_app_1_1_controller_1_1_album_search_controller_ae684060a647ec21f30e4cde445b19e61}\index{AlbumSearchController@{AlbumSearchController}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!AlbumSearchController@{AlbumSearchController}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily \label{class_app_1_1_controller_1_1_album_search_controller_ae684060a647ec21f30e4cde445b19e61} 
+\+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_app_1_1_service_1_1_discogs_service}{Discogs\+Service}}}]{\$discogs\+Service}{, }\item[{Entity\+Manager\+Interface}]{\$entity\+Manager}{}\end{DoxyParamCaption})}
+
+Constructeur du contrôleur.
+
+
+\begin{DoxyParams}[1]{Paramètres}
+Discogs\+Service & {\em \$discogs\+Service} & Service Discogs. \\
+\hline
+Entity\+Manager\+Interface & {\em \$entity\+Manager} & Gestionnaire d\textquotesingle{}entités. \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \mbox{\hyperlink{_album_search_controller_8php_source_l00041}{41}} du fichier \mbox{\hyperlink{_album_search_controller_8php_source}{Album\+Search\+Controller.\+php}}.
+
+
+
+\doxysubsection{Documentation des fonctions membres}
+\Hypertarget{class_app_1_1_controller_1_1_album_search_controller_a6c1bfe7b2f2ffe8e8e690e4172a381ed}\index{AlbumSearchController@{AlbumSearchController}!addToFavorites@{addToFavorites}}
+\index{addToFavorites@{addToFavorites}!AlbumSearchController@{AlbumSearchController}}
+\doxysubsubsection{\texorpdfstring{addToFavorites()}{addToFavorites()}}
+{\footnotesize\ttfamily \label{class_app_1_1_controller_1_1_album_search_controller_a6c1bfe7b2f2ffe8e8e690e4172a381ed} 
+add\+To\+Favorites (\begin{DoxyParamCaption}\item[{int}]{\$id}{}\end{DoxyParamCaption})}
+
+Route pour ajouter un album aux favoris de l\textquotesingle{}utilisateur.
+
+@\+Route("{}/album/add-\/to-\/favorites/\{id\}"{}, name="{}add\+\_\+to\+\_\+favorites"{}, methods=\{"{}\+POST"{}\})
+
+
+\begin{DoxyParams}[1]{Paramètres}
+int & {\em \$id} & L\textquotesingle{}ID de l\textquotesingle{}album.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Json\+Response La réponse JSON. 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_album_search_controller_8php_source_l00118}{118}} du fichier \mbox{\hyperlink{_album_search_controller_8php_source}{Album\+Search\+Controller.\+php}}.
+
+\Hypertarget{class_app_1_1_controller_1_1_album_search_controller_af2a9aa2a4c124597835da76a98d258a1}\index{AlbumSearchController@{AlbumSearchController}!removeFromFavorites@{removeFromFavorites}}
+\index{removeFromFavorites@{removeFromFavorites}!AlbumSearchController@{AlbumSearchController}}
+\doxysubsubsection{\texorpdfstring{removeFromFavorites()}{removeFromFavorites()}}
+{\footnotesize\ttfamily \label{class_app_1_1_controller_1_1_album_search_controller_af2a9aa2a4c124597835da76a98d258a1} 
+remove\+From\+Favorites (\begin{DoxyParamCaption}\item[{int}]{\$id}{}\end{DoxyParamCaption})}
+
+Route pour retirer un album des favoris de l\textquotesingle{}utilisateur.
+
+@\+Route("{}/album/remove-\/from-\/favorites/\{id\}"{}, name="{}remove\+\_\+from\+\_\+favorites"{}, methods=\{"{}\+POST"{}\})
+
+
+\begin{DoxyParams}[1]{Paramètres}
+int & {\em \$id} & L\textquotesingle{}ID de l\textquotesingle{}album.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Response La réponse HTTP. 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_album_search_controller_8php_source_l00156}{156}} du fichier \mbox{\hyperlink{_album_search_controller_8php_source}{Album\+Search\+Controller.\+php}}.
+
+\Hypertarget{class_app_1_1_controller_1_1_album_search_controller_a32c26085cd6825224689fb8e12587e93}\index{AlbumSearchController@{AlbumSearchController}!search@{search}}
+\index{search@{search}!AlbumSearchController@{AlbumSearchController}}
+\doxysubsubsection{\texorpdfstring{search()}{search()}}
+{\footnotesize\ttfamily \label{class_app_1_1_controller_1_1_album_search_controller_a32c26085cd6825224689fb8e12587e93} 
+search (\begin{DoxyParamCaption}\item[{Request}]{\$request}{}\end{DoxyParamCaption})}
+
+Route pour la recherche d\textquotesingle{}albums.
+
+@\+Route("{}/album/search"{}, name="{}album\+\_\+search"{}, methods=\{"{}\+GET"{}, "{}\+POST"{}\})
+
+
+\begin{DoxyParams}[1]{Paramètres}
+Request & {\em \$request} & La requête HTTP.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Response La réponse HTTP. 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_album_search_controller_8php_source_l00056}{56}} du fichier \mbox{\hyperlink{_album_search_controller_8php_source}{Album\+Search\+Controller.\+php}}.
+
+\Hypertarget{class_app_1_1_controller_1_1_album_search_controller_a5f1ab14d454cb3fa1e76a480f999c5c9}\index{AlbumSearchController@{AlbumSearchController}!showDetails@{showDetails}}
+\index{showDetails@{showDetails}!AlbumSearchController@{AlbumSearchController}}
+\doxysubsubsection{\texorpdfstring{showDetails()}{showDetails()}}
+{\footnotesize\ttfamily \label{class_app_1_1_controller_1_1_album_search_controller_a5f1ab14d454cb3fa1e76a480f999c5c9} 
+show\+Details (\begin{DoxyParamCaption}\item[{int}]{\$id}{, }\item[{Request}]{\$request}{}\end{DoxyParamCaption})}
+
+Route pour afficher les détails d\textquotesingle{}un album.
+
+@\+Route("{}/album/details/\{id\}"{}, name="{}album\+\_\+details"{}, methods=\{"{}\+GET"{}\})
+
+
+\begin{DoxyParams}[1]{Paramètres}
+int & {\em \$id} & L\textquotesingle{}ID de l\textquotesingle{}album. \\
+\hline
+Request & {\em \$request} & La requête HTTP.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Response La réponse HTTP. 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_album_search_controller_8php_source_l00087}{87}} du fichier \mbox{\hyperlink{_album_search_controller_8php_source}{Album\+Search\+Controller.\+php}}.
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+Controller/\mbox{\hyperlink{_album_search_controller_8php}{Album\+Search\+Controller.\+php}}\end{DoxyCompactItemize}

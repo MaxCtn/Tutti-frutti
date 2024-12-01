@@ -1,0 +1,65 @@
+.TH "ConnexionController" 3 "Tutti-frutti" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ConnexionController
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Est dérivée de AbstractController\&.
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBlogin\fP (AuthenticationUtils $authenticationUtils)"
+.br
+.ti -1c
+.RI "\fBlogout\fP ()"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Contrôleur gérant les actions de connexion et de déconnexion des utilisateurs\&. 
+.PP
+Définition à la ligne \fB13\fP du fichier \fBConnexionController\&.php\fP\&.
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "login (AuthenticationUtils $authenticationUtils)"
+Affiche le formulaire de connexion et traite les tentatives de connexion\&.
+
+.PP
+@Route('/login', name='app_login', methods={'GET', 'POST'})
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$authenticationUtils\fP Utilitaire d'authentification pour récupérer les erreurs et le dernier nom d'utilisateur saisi\&.
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+Response La réponse HTTP contenant le formulaire de connexion\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB25\fP du fichier \fBConnexionController\&.php\fP\&.
+.SS "logout ()"
+Point de déconnexion de l'application\&.
+
+.PP
+@Route('/logout', name='app_logout', methods={'GET'})
+
+.PP
+\fBExceptions\fP
+.RS 4
+\fI\fP .RE
+.PP
+LogicException Cette méthode est interceptée par le pare-feu de sécurité et ne devrait pas être exécutée\&. 
+.PP
+Définition à la ligne \fB47\fP du fichier \fBConnexionController\&.php\fP\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Tutti-frutti à partir du code source\&.

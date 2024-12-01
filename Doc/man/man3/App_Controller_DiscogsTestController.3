@@ -1,0 +1,48 @@
+.TH "DiscogsTestController" 3 "Tutti-frutti" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DiscogsTestController
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Est dérivée de AbstractController\&.
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBtest\fP (\fBDiscogsService\fP $discogsService)"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Contrôleur de test pour l'interaction avec l'API Discogs\&. 
+.PP
+Définition à la ligne \fB13\fP du fichier \fBDiscogsTestController\&.php\fP\&.
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "test (\fBDiscogsService\fP $discogsService)"
+Teste la recherche d'albums en utilisant le service Discogs\&.
+
+.PP
+@Route('/test-discogs', name='test_discogs', methods={'GET'})
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$discogsService\fP Le service Discogs pour effectuer des requêtes à l'API\&.
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+Response La réponse JSON contenant les résultats de la recherche\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB25\fP du fichier \fBDiscogsTestController\&.php\fP\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Tutti-frutti à partir du code source\&.

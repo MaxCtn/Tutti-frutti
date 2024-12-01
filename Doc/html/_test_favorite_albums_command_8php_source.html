@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Tutti-frutti:  Fichier source de Command/TestFavoriteAlbumsCommand.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="IconFraise.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Tutti-frutti
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_308c8686e6bb6a50475f85d5ec3ea9a1.html">Command</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">TestFavoriteAlbumsCommand.php</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_test_favorite_albums_command_8php.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>&lt;?php</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_app_1_1_command.html">App\Command</a>;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>use <a class="code hl_class" href="class_app_1_1_repository_1_1_favorite_album_repository.html">App\Repository\FavoriteAlbumRepository</a>;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>use Symfony\Component\Console\Attribute\AsCommand;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>use Symfony\Component\Console\Command\Command;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>use Symfony\Component\Console\Input\InputArgument;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>use Symfony\Component\Console\Input\InputInterface;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>use Symfony\Component\Console\Output\OutputInterface;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#[AsCommand(name: &#39;app:test-favorite-albums&#39;)]</span></div>
+<div class="foldopen" id="foldopen00016" data-start="{" data-end="};">
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="class_app_1_1_command_1_1_test_favorite_albums_command.html">   16</a></span><span class="keyword">class </span><a class="code hl_class" href="class_app_1_1_command_1_1_test_favorite_albums_command.html">TestFavoriteAlbumsCommand</a> <span class="keyword">extends</span> Command</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>{</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">private</span> <a class="code hl_class" href="class_app_1_1_repository_1_1_favorite_album_repository.html">FavoriteAlbumRepository</a> $favoriteAlbumRepository;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="foldopen" id="foldopen00030" data-start="{" data-end="}">
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="class_app_1_1_command_1_1_test_favorite_albums_command.html#af4472feaa287a5088cdbc624e9cf517e">   30</a></span>    <span class="keyword">public</span> <span class="keyword">function</span> <a class="code hl_function" href="class_app_1_1_command_1_1_test_favorite_albums_command.html#af4472feaa287a5088cdbc624e9cf517e">__construct</a>(<a class="code hl_class" href="class_app_1_1_repository_1_1_favorite_album_repository.html">FavoriteAlbumRepository</a> $favoriteAlbumRepository)</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        $this-&gt;favoriteAlbumRepository = $favoriteAlbumRepository;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        parent::__construct();</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    }</div>
+</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="foldopen" id="foldopen00039" data-start="{" data-end="}">
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="class_app_1_1_command_1_1_test_favorite_albums_command.html#a9be5e0bdb5720efed6ddb6426c5c16ee">   39</a></span>    <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code hl_function" href="class_app_1_1_command_1_1_test_favorite_albums_command.html#a9be5e0bdb5720efed6ddb6426c5c16ee">configure</a>(): void</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        $this</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            -&gt;setDescription(<span class="stringliteral">&#39;Teste les albums favoris d\&#39;un utilisateur&#39;</span>)</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            -&gt;addArgument(<span class="stringliteral">&#39;userId&#39;</span>, InputArgument::REQUIRED, <span class="stringliteral">&#39;ID de l\&#39;utilisateur&#39;</span>);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    }</div>
+</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="foldopen" id="foldopen00054" data-start="{" data-end="}">
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="class_app_1_1_command_1_1_test_favorite_albums_command.html#ab31c72b72ddaf7116db5d84c055d3c0b">   54</a></span>    <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code hl_function" href="class_app_1_1_command_1_1_test_favorite_albums_command.html#ab31c72b72ddaf7116db5d84c055d3c0b">execute</a>(InputInterface $input, OutputInterface $output): int</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    {</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        $userId = (int) $input-&gt;getArgument(<span class="stringliteral">&#39;userId&#39;</span>);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <span class="comment">// Récupère les albums favoris de l&#39;utilisateur</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        $favorites = $this-&gt;favoriteAlbumRepository-&gt;findBy([<span class="stringliteral">&#39;user&#39;</span> =&gt; $userId]);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keywordflow">if</span> (empty($favorites)) {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            $output-&gt;writeln(<span class="stringliteral">&quot;Aucun album favori trouvé pour l&#39;utilisateur ID $userId.&quot;</span>);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            <span class="keywordflow">return</span> Command::SUCCESS;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        }</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        <span class="comment">// Affiche les détails de chaque album favori</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="keywordflow">foreach</span> ($favorites as $favorite) {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            $output-&gt;writeln(sprintf(</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                <span class="stringliteral">&quot;Album ID: %d | Titre: %s | Année: %s | Image: %s&quot;</span>,</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                $favorite-&gt;getAlbumId(),</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                $favorite-&gt;getTitle() ?? <span class="stringliteral">&#39;Non renseigné&#39;</span>,</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                $favorite-&gt;getYear() ?? <span class="stringliteral">&#39;Non renseignée&#39;</span>,</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                $favorite-&gt;getCoverImage() ?? <span class="stringliteral">&#39;Aucune image&#39;</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            ));</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        }</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <span class="keywordflow">return</span> Command::SUCCESS;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    }</div>
+</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>}</div>
+</div>
+<div class="ttc" id="aclass_app_1_1_command_1_1_test_favorite_albums_command_html"><div class="ttname"><a href="class_app_1_1_command_1_1_test_favorite_albums_command.html">App\Command\TestFavoriteAlbumsCommand</a></div><div class="ttdef"><b>Definition</b> <a href="#l00016">TestFavoriteAlbumsCommand.php:17</a></div></div>
+<div class="ttc" id="aclass_app_1_1_command_1_1_test_favorite_albums_command_html_a9be5e0bdb5720efed6ddb6426c5c16ee"><div class="ttname"><a href="class_app_1_1_command_1_1_test_favorite_albums_command.html#a9be5e0bdb5720efed6ddb6426c5c16ee">App\Command\TestFavoriteAlbumsCommand\configure</a></div><div class="ttdeci">configure()</div><div class="ttdef"><b>Definition</b> <a href="#l00039">TestFavoriteAlbumsCommand.php:39</a></div></div>
+<div class="ttc" id="aclass_app_1_1_command_1_1_test_favorite_albums_command_html_ab31c72b72ddaf7116db5d84c055d3c0b"><div class="ttname"><a href="class_app_1_1_command_1_1_test_favorite_albums_command.html#ab31c72b72ddaf7116db5d84c055d3c0b">App\Command\TestFavoriteAlbumsCommand\execute</a></div><div class="ttdeci">execute(InputInterface $input, OutputInterface $output)</div><div class="ttdef"><b>Definition</b> <a href="#l00054">TestFavoriteAlbumsCommand.php:54</a></div></div>
+<div class="ttc" id="aclass_app_1_1_command_1_1_test_favorite_albums_command_html_af4472feaa287a5088cdbc624e9cf517e"><div class="ttname"><a href="class_app_1_1_command_1_1_test_favorite_albums_command.html#af4472feaa287a5088cdbc624e9cf517e">App\Command\TestFavoriteAlbumsCommand\__construct</a></div><div class="ttdeci">__construct(FavoriteAlbumRepository $favoriteAlbumRepository)</div><div class="ttdef"><b>Definition</b> <a href="#l00030">TestFavoriteAlbumsCommand.php:30</a></div></div>
+<div class="ttc" id="aclass_app_1_1_repository_1_1_favorite_album_repository_html"><div class="ttname"><a href="class_app_1_1_repository_1_1_favorite_album_repository.html">App\Repository\FavoriteAlbumRepository</a></div><div class="ttdef"><b>Definition</b> <a href="_favorite_album_repository_8php_source.html#l00016">FavoriteAlbumRepository.php:17</a></div></div>
+<div class="ttc" id="anamespace_app_1_1_command_html"><div class="ttname"><a href="namespace_app_1_1_command.html">App\Command</a></div><div class="ttdef"><b>Definition</b> <a href="_test_discogs_command_8php_source.html#l00003">TestDiscogsCommand.php:3</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

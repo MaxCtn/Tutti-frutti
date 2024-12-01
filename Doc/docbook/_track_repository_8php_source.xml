@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__track_repository_8php_source" xml:lang="fr">
+<title>TrackRepository.php</title>
+<indexterm><primary>Repository/TrackRepository.php</primary></indexterm>
+Aller à la documentation de ce fichier.<programlisting linenumbering="unnumbered"><anchor xml:id="__track_repository_8php_source_1l00001"/>00001 &lt;?php
+<anchor xml:id="__track_repository_8php_source_1l00002"/>00002 
+<anchor xml:id="__track_repository_8php_source_1l00003"/>00003 <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespace_app_1_1_repository">App\Repository</link>;
+<anchor xml:id="__track_repository_8php_source_1l00004"/>00004 
+<anchor xml:id="__track_repository_8php_source_1l00005"/>00005 use&#32;<link linkend="_class_app_1_1_entity_1_1_track">App\Entity\Track</link>;
+<anchor xml:id="__track_repository_8php_source_1l00006"/>00006 use&#32;Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+<anchor xml:id="__track_repository_8php_source_1l00007"/>00007 use&#32;Doctrine\Persistence\ManagerRegistry;
+<anchor xml:id="__track_repository_8php_source_1l00008"/>00008 
+<anchor xml:id="__track_repository_8php_source_1l00020"/><link linkend="_class_app_1_1_repository_1_1_track_repository">00020</link> <emphasis role="keyword">class&#32;</emphasis><link linkend="_class_app_1_1_repository_1_1_track_repository">TrackRepository</link>&#32;<emphasis role="keyword">extends</emphasis>&#32;ServiceEntityRepository
+<anchor xml:id="__track_repository_8php_source_1l00021"/>00021 {
+<anchor xml:id="__track_repository_8php_source_1l00027"/><link linkend="_class_app_1_1_repository_1_1_track_repository_1a38ea33dde11163765f358f5f10a3bc03">00027</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_repository_1_1_track_repository_1a38ea33dde11163765f358f5f10a3bc03">__construct</link>(ManagerRegistry&#32;$registry)
+<anchor xml:id="__track_repository_8php_source_1l00028"/>00028 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__track_repository_8php_source_1l00029"/>00029 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;parent::__construct($registry,&#32;Track::class);
+<anchor xml:id="__track_repository_8php_source_1l00030"/>00030 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__track_repository_8php_source_1l00031"/>00031 
+<anchor xml:id="__track_repository_8php_source_1l00038"/><link linkend="_class_app_1_1_repository_1_1_track_repository_1a72e1e4ff53252e1b76b53b7b47178131">00038</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_repository_1_1_track_repository_1a72e1e4ff53252e1b76b53b7b47178131">findByTitlePart</link>(<emphasis role="keywordtype">string</emphasis>&#32;$titlePart):&#32;array
+<anchor xml:id="__track_repository_8php_source_1l00039"/>00039 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__track_repository_8php_source_1l00040"/>00040 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this-&gt;createQueryBuilder(<emphasis role="charliteral">&apos;t&apos;</emphasis>)
+<anchor xml:id="__track_repository_8php_source_1l00041"/>00041 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;-&gt;where(<emphasis role="stringliteral">&apos;t.title&#32;LIKE&#32;:title&apos;</emphasis>)
+<anchor xml:id="__track_repository_8php_source_1l00042"/>00042 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;-&gt;setParameter(<emphasis role="stringliteral">&apos;title&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;%&apos;</emphasis>&#32;.&#32;$titlePart&#32;.&#32;<emphasis role="charliteral">&apos;%&apos;</emphasis>)
+<anchor xml:id="__track_repository_8php_source_1l00043"/>00043 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;-&gt;orderBy(<emphasis role="stringliteral">&apos;t.title&apos;</emphasis>,&#32;<emphasis role="stringliteral">&apos;ASC&apos;</emphasis>)
+<anchor xml:id="__track_repository_8php_source_1l00044"/>00044 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;-&gt;getQuery()
+<anchor xml:id="__track_repository_8php_source_1l00045"/>00045 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;-&gt;getResult();
+<anchor xml:id="__track_repository_8php_source_1l00046"/>00046 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__track_repository_8php_source_1l00047"/>00047 
+<anchor xml:id="__track_repository_8php_source_1l00054"/><link linkend="_class_app_1_1_repository_1_1_track_repository_1ad4bfe6689e1b9adbe08de3be53c46d19">00054</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_repository_1_1_track_repository_1ad4bfe6689e1b9adbe08de3be53c46d19">findByAlbumId</link>(<emphasis role="keywordtype">int</emphasis>&#32;$albumId):&#32;array
+<anchor xml:id="__track_repository_8php_source_1l00055"/>00055 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__track_repository_8php_source_1l00056"/>00056 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this-&gt;createQueryBuilder(<emphasis role="charliteral">&apos;t&apos;</emphasis>)
+<anchor xml:id="__track_repository_8php_source_1l00057"/>00057 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;-&gt;where(<emphasis role="stringliteral">&apos;t.album&#32;=&#32;:albumId&apos;</emphasis>)
+<anchor xml:id="__track_repository_8php_source_1l00058"/>00058 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;-&gt;setParameter(<emphasis role="stringliteral">&apos;albumId&apos;</emphasis>,&#32;$albumId)
+<anchor xml:id="__track_repository_8php_source_1l00059"/>00059 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;-&gt;orderBy(<emphasis role="stringliteral">&apos;t.title&apos;</emphasis>,&#32;<emphasis role="stringliteral">&apos;ASC&apos;</emphasis>)
+<anchor xml:id="__track_repository_8php_source_1l00060"/>00060 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;-&gt;getQuery()
+<anchor xml:id="__track_repository_8php_source_1l00061"/>00061 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;-&gt;getResult();
+<anchor xml:id="__track_repository_8php_source_1l00062"/>00062 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__track_repository_8php_source_1l00063"/>00063 }
+</programlisting></section>

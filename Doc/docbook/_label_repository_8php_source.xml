@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__label_repository_8php_source" xml:lang="fr">
+<title>LabelRepository.php</title>
+<indexterm><primary>Repository/LabelRepository.php</primary></indexterm>
+Aller à la documentation de ce fichier.<programlisting linenumbering="unnumbered"><anchor xml:id="__label_repository_8php_source_1l00001"/>00001 &lt;?php
+<anchor xml:id="__label_repository_8php_source_1l00002"/>00002 
+<anchor xml:id="__label_repository_8php_source_1l00003"/>00003 <emphasis role="comment">//&#32;src/Repository/LabelRepository.php</emphasis>
+<anchor xml:id="__label_repository_8php_source_1l00004"/>00004 
+<anchor xml:id="__label_repository_8php_source_1l00005"/>00005 <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespace_app_1_1_repository">App\Repository</link>;
+<anchor xml:id="__label_repository_8php_source_1l00006"/>00006 
+<anchor xml:id="__label_repository_8php_source_1l00007"/>00007 use&#32;<link linkend="_class_app_1_1_entity_1_1_label">App\Entity\Label</link>;
+<anchor xml:id="__label_repository_8php_source_1l00008"/>00008 use&#32;Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+<anchor xml:id="__label_repository_8php_source_1l00009"/>00009 use&#32;Doctrine\Persistence\ManagerRegistry;
+<anchor xml:id="__label_repository_8php_source_1l00010"/>00010 
+<anchor xml:id="__label_repository_8php_source_1l00022"/><link linkend="_class_app_1_1_repository_1_1_label_repository">00022</link> <emphasis role="keyword">class&#32;</emphasis><link linkend="_class_app_1_1_repository_1_1_label_repository">LabelRepository</link>&#32;<emphasis role="keyword">extends</emphasis>&#32;ServiceEntityRepository
+<anchor xml:id="__label_repository_8php_source_1l00023"/>00023 {
+<anchor xml:id="__label_repository_8php_source_1l00029"/><link linkend="_class_app_1_1_repository_1_1_label_repository_1a38ea33dde11163765f358f5f10a3bc03">00029</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_repository_1_1_label_repository_1a38ea33dde11163765f358f5f10a3bc03">__construct</link>(ManagerRegistry&#32;$registry)
+<anchor xml:id="__label_repository_8php_source_1l00030"/>00030 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__label_repository_8php_source_1l00031"/>00031 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;parent::__construct($registry,&#32;Label::class);
+<anchor xml:id="__label_repository_8php_source_1l00032"/>00032 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__label_repository_8php_source_1l00033"/>00033 
+<anchor xml:id="__label_repository_8php_source_1l00040"/><link linkend="_class_app_1_1_repository_1_1_label_repository_1a5fc8877c3cb126ea03449bedd2b92092">00040</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_repository_1_1_label_repository_1a5fc8877c3cb126ea03449bedd2b92092">findByNamePart</link>(<emphasis role="keywordtype">string</emphasis>&#32;$namePart):&#32;array
+<anchor xml:id="__label_repository_8php_source_1l00041"/>00041 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__label_repository_8php_source_1l00042"/>00042 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this-&gt;createQueryBuilder(<emphasis role="charliteral">&apos;l&apos;</emphasis>)
+<anchor xml:id="__label_repository_8php_source_1l00043"/>00043 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;-&gt;where(<emphasis role="stringliteral">&apos;l.name&#32;LIKE&#32;:name&apos;</emphasis>)
+<anchor xml:id="__label_repository_8php_source_1l00044"/>00044 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;-&gt;setParameter(<emphasis role="stringliteral">&apos;name&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;%&apos;</emphasis>&#32;.&#32;$namePart&#32;.&#32;<emphasis role="charliteral">&apos;%&apos;</emphasis>)
+<anchor xml:id="__label_repository_8php_source_1l00045"/>00045 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;-&gt;orderBy(<emphasis role="stringliteral">&apos;l.name&apos;</emphasis>,&#32;<emphasis role="stringliteral">&apos;ASC&apos;</emphasis>)
+<anchor xml:id="__label_repository_8php_source_1l00046"/>00046 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;-&gt;getQuery()
+<anchor xml:id="__label_repository_8php_source_1l00047"/>00047 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;-&gt;getResult();
+<anchor xml:id="__label_repository_8php_source_1l00048"/>00048 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__label_repository_8php_source_1l00049"/>00049 }
+</programlisting></section>

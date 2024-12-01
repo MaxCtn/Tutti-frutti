@@ -15,8 +15,17 @@ use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints\Email;
 
+/**
+ * Formulaire d'inscription pour un nouvel utilisateur.
+ */
 class RegistrationFormType extends AbstractType
 {
+    /**
+     * Construit le formulaire d'inscription.
+     *
+     * @param FormBuilderInterface $builder Le constructeur de formulaire.
+     * @param array $options Les options supplémentaires pour le formulaire.
+     */
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
@@ -71,6 +80,11 @@ class RegistrationFormType extends AbstractType
             ]);
     }
 
+    /**
+     * Configure les options par défaut du formulaire.
+     *
+     * @param OptionsResolver $resolver Le résolveur d'options.
+     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([

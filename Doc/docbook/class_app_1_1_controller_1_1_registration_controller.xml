@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_app_1_1_controller_1_1_registration_controller" xml:lang="fr">
+<title>Référence de la classe RegistrationController</title>
+<indexterm><primary>RegistrationController</primary></indexterm>
+Graphe d&apos;héritage de RegistrationController:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_app_1_1_controller_1_1_registration_controller__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Graphe de collaboration de RegistrationController:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_app_1_1_controller_1_1_registration_controller__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Fonctions membres publiques    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_app_1_1_controller_1_1_registration_controller_1ac68d9d5ffe44c36291872b00abe85482">index</link> (Request $request, EntityManagerInterface $entityManager, UserPasswordHasherInterface $passwordHasher, UserAuthenticatorInterface $userAuthenticator, SluggerInterface $slugger, <link linkend="_class_app_1_1_security_1_1_app_custom_authenticator">AppCustomAuthenticator</link> $authenticator)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Description détaillée</title>
+
+<para>Contrôleur gérant l&apos;inscription des utilisateurs. </para>
+<para>
+Définition à la ligne <link linkend="__registration_controller_8php_source_1l00022">22</link> du fichier <link linkend="__registration_controller_8php_source">RegistrationController.php</link>.</para>
+</section>
+<section>
+<title>Documentation des fonctions membres</title>
+<anchor xml:id="_class_app_1_1_controller_1_1_registration_controller_1ac68d9d5ffe44c36291872b00abe85482"/><section>
+    <title>index()</title>
+<indexterm><primary>index</primary><secondary>RegistrationController</secondary></indexterm>
+<indexterm><primary>RegistrationController</primary><secondary>index</secondary></indexterm>
+<para><computeroutput>index (Request $request, EntityManagerInterface $entityManager, UserPasswordHasherInterface $passwordHasher, UserAuthenticatorInterface $userAuthenticator, SluggerInterface $slugger, <link linkend="_class_app_1_1_security_1_1_app_custom_authenticator">AppCustomAuthenticator</link> $authenticator)</computeroutput></para>
+<para>Affiche le formulaire d&apos;inscription et traite les données soumises.</para>
+
+<para>@Route(&quot;/registration&quot;, name=&quot;app_registration&quot;, methods={&quot;GET&quot;, &quot;POST&quot;})</para>
+
+<para>
+                <formalpara>
+                    <title>
+Paramètres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>Request</entry><entry>$request</entry><entry>
+<para>La requête HTTP. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>EntityManagerInterface</entry><entry>$entityManager</entry><entry>
+<para>Le gestionnaire d&apos;entités. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>UserPasswordHasherInterface</entry><entry>$passwordHasher</entry><entry>
+<para>Le service de hashage de mot de passe. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>UserAuthenticatorInterface</entry><entry>$userAuthenticator</entry><entry>
+<para>Le service d&apos;authentification utilisateur. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>SluggerInterface</entry><entry>$slugger</entry><entry>
+<para>Le service de slugification. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>AppCustomAuthenticator</entry><entry>$authenticator</entry><entry>
+<para>Votre authentificateur personnalisé.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Renvoie</title>
+
+<para>Response La réponse HTTP. </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__registration_controller_8php_source_1l00039">39</link> du fichier <link linkend="__registration_controller_8php_source">RegistrationController.php</link>.</para>
+</section>
+<para>
+La documentation de cette classe a été générée à partir du fichier suivant :</para>
+Controller/<link linkend="__registration_controller_8php">RegistrationController.php</link></section>
+</section>

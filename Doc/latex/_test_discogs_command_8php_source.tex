@@ -1,0 +1,89 @@
+\doxysection{Test\+Discogs\+Command.\+php}
+\hypertarget{_test_discogs_command_8php_source}{}\label{_test_discogs_command_8php_source}\index{Command/TestDiscogsCommand.php@{Command/TestDiscogsCommand.php}}
+\mbox{\hyperlink{_test_discogs_command_8php}{Aller à la documentation de ce fichier.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00001}00001\ <?php}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00003}\mbox{\hyperlink{namespace_app_1_1_command}{00003}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_app_1_1_command}{App\(\backslash\)Command}};}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00005}00005\ use\ Symfony\(\backslash\)Component\(\backslash\)Console\(\backslash\)Attribute\(\backslash\)AsCommand;}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00006}00006\ use\ Symfony\(\backslash\)Component\(\backslash\)Console\(\backslash\)Command\(\backslash\)Command;}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00007}00007\ use\ Symfony\(\backslash\)Component\(\backslash\)Console\(\backslash\)Input\(\backslash\)InputArgument;}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00008}00008\ use\ Symfony\(\backslash\)Component\(\backslash\)Console\(\backslash\)Input\(\backslash\)InputInterface;}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00009}00009\ use\ Symfony\(\backslash\)Component\(\backslash\)Console\(\backslash\)Output\(\backslash\)OutputInterface;}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00010}00010\ use\ Symfony\(\backslash\)Contracts\(\backslash\)HttpClient\(\backslash\)HttpClientInterface;}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00016}00016\ \textcolor{preprocessor}{\#[AsCommand(name:\ 'app:test-\/discogs')]}}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00017}\mbox{\hyperlink{class_app_1_1_command_1_1_test_discogs_command}{00017}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_app_1_1_command_1_1_test_discogs_command}{TestDiscogsCommand}}\ \textcolor{keyword}{extends}\ Command}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00018}00018\ \{}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00024}00024\ \ \ \ \ \textcolor{keyword}{private}\ HttpClientInterface\ \$httpClient;}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00031}00031\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{string}\ \$discogsConsumerKey;}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00038}00038\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{string}\ \$discogsConsumerSecret;}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00047}\mbox{\hyperlink{class_app_1_1_command_1_1_test_discogs_command_afa9245fce697aa62d74b949139a10612}{00047}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{class_app_1_1_command_1_1_test_discogs_command_afa9245fce697aa62d74b949139a10612}{\_\_construct}}(HttpClientInterface\ \$httpClient)}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00048}00048\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00049}00049\ \ \ \ \ \ \ \ \ \$this-\/>httpClient\ =\ \$httpClient;}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00050}00050\ \ \ \ \ \ \ \ \ \$this-\/>discogsConsumerKey\ =\ \$\_ENV[\textcolor{stringliteral}{'DISCOGS\_CONSUMER\_KEY'}]\ ??\ getenv(\textcolor{stringliteral}{'DISCOGS\_CONSUMER\_KEY'})\ ??\ \textcolor{stringliteral}{''};}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00051}00051\ \ \ \ \ \ \ \ \ \$this-\/>discogsConsumerSecret\ =\ \$\_ENV[\textcolor{stringliteral}{'DISCOGS\_CONSUMER\_SECRET'}]\ ??\ getenv(\textcolor{stringliteral}{'DISCOGS\_CONSUMER\_SECRET'})\ ??\ \textcolor{stringliteral}{''};}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\$this-\/>discogsConsumerKey\ ||\ !\$this-\/>discogsConsumerSecret)\ \{}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ new\ \(\backslash\)RuntimeException(\textcolor{stringliteral}{'Les\ clés\ API\ Discogs\ (DISCOGS\_CONSUMER\_KEY\ et\ DISCOGS\_CONSUMER\_SECRET)\ ne\ sont\ pas\ définies.'});}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00055}00055\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00057}00057\ \ \ \ \ \ \ \ \ parent::\_\_construct();}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00058}00058\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00063}\mbox{\hyperlink{class_app_1_1_command_1_1_test_discogs_command_a9be5e0bdb5720efed6ddb6426c5c16ee}{00063}}\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{class_app_1_1_command_1_1_test_discogs_command_a9be5e0bdb5720efed6ddb6426c5c16ee}{configure}}():\ void}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00064}00064\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00065}00065\ \ \ \ \ \ \ \ \ \$this}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ -\/>setDescription(\textcolor{stringliteral}{'Teste\ la\ connexion\ à\ l\(\backslash\)'API\ Discogs\ en\ effectuant\ une\ recherche.'})}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ -\/>addArgument(\textcolor{stringliteral}{'page'},\ InputArgument::OPTIONAL,\ \textcolor{stringliteral}{'Numéro\ de\ la\ page\ à\ afficher'},\ 1);}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00068}00068\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00078}\mbox{\hyperlink{class_app_1_1_command_1_1_test_discogs_command_ab31c72b72ddaf7116db5d84c055d3c0b}{00078}}\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{class_app_1_1_command_1_1_test_discogs_command_ab31c72b72ddaf7116db5d84c055d3c0b}{execute}}(InputInterface\ \$input,\ OutputInterface\ \$output):\ int}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00079}00079\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00080}00080\ \ \ \ \ \ \ \ \ \$page\ =\ (int)\ \$input-\/>getArgument(\textcolor{stringliteral}{'page'});}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00081}00081\ \ \ \ \ \ \ \ \ \$perPage\ =\ 10;\ \textcolor{comment}{//\ Nombre\ de\ résultats\ par\ page}}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00083}00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Effectue\ une\ requête\ GET\ à\ l'API\ Discogs\ pour\ rechercher\ le\ mot-\/clé\ 'banana'}}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \$response\ =\ \$this-\/>httpClient-\/>request(\textcolor{stringliteral}{'GET'},\ \textcolor{stringliteral}{'https://api.discogs.com/database/search'},\ [}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'query'}\ =>\ [}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{charliteral}{'q'}\ =>\ \textcolor{stringliteral}{'banana'},\ \ \textcolor{comment}{//\ Mot-\/clé\ de\ recherche}}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'key'}\ =>\ \$this-\/>discogsConsumerKey,}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'secret'}\ =>\ \$this-\/>discogsConsumerSecret,}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'page'}\ =>\ \$page,}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'per\_page'}\ =>\ \$perPage,}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ],}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ ]);}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Convertit\ la\ réponse\ en\ tableau}}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \$data\ =\ \$response-\/>toArray();}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Affiche\ les\ résultats\ de\ la\ recherche}}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \$output-\/>writeln(\textcolor{stringliteral}{"{}Résultats\ de\ recherche\ pour\ 'banana'\ -\/\ Page\ \$page:"{}});}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\$data[\textcolor{stringliteral}{'results'}]\ as\ \$result)\ \{}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$output-\/>writeln(\$result[\textcolor{stringliteral}{'title'}]);}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Affiche\ les\ informations\ de\ pagination}}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \$output-\/>writeln(\textcolor{stringliteral}{"{}\(\backslash\)nPage\ \$page\ sur\ "{}}\ .\ \$data[\textcolor{stringliteral}{'pagination'}][\textcolor{stringliteral}{'pages'}]);}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$page\ <\ \$data[\textcolor{stringliteral}{'pagination'}][\textcolor{stringliteral}{'pages'}])\ \{}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$output-\/>writeln(\textcolor{stringliteral}{'Pour\ voir\ la\ page\ suivante,\ lancez\ :'});}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$output-\/>writeln(\textcolor{stringliteral}{'php\ bin/console\ app:test-\/discogs\ '}\ .\ (\$page\ +\ 1));}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$output-\/>writeln(\textcolor{stringliteral}{"{}Fin\ des\ résultats."{}});}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Command::SUCCESS;}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00114}00114\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\(\backslash\)Exception\ \$e)\ \{}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Gère\ les\ exceptions\ et\ affiche\ un\ message\ d'erreur}}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \$output-\/>writeln(\textcolor{stringliteral}{'<error>Erreur\ lors\ de\ la\ communication\ avec\ l\(\backslash\)'API\ Discogs\ :\ '}\ .\ \$e-\/>getMessage()\ .\ \textcolor{stringliteral}{'</error>'});}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Command::FAILURE;}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00118}00118\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00119}00119\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_discogs_command_8php_source_l00120}00120\ \}}
+
+\end{DoxyCode}

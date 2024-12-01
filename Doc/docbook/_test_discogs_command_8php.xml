@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__test_discogs_command_8php" xml:lang="fr">
+<title>Référence du fichier Command/TestDiscogsCommand.php</title>
+<indexterm><primary>Command/TestDiscogsCommand.php</primary></indexterm>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_class_app_1_1_command_1_1_test_discogs_command">TestDiscogsCommand</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Espaces de nommage    </title>
+        <itemizedlist>
+            <listitem><para>namespace <link linkend="_namespace_app_1_1_command">App\Command</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

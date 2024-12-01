@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_app_1_1_repository_1_1_user_repository" xml:lang="fr">
+<title>Référence de la classe UserRepository</title>
+<indexterm><primary>UserRepository</primary></indexterm>
+Graphe d&apos;héritage de UserRepository:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_app_1_1_repository_1_1_user_repository__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Graphe de collaboration de UserRepository:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_app_1_1_repository_1_1_user_repository__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Fonctions membres publiques    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_app_1_1_repository_1_1_user_repository_1a38ea33dde11163765f358f5f10a3bc03">__construct</link> (ManagerRegistry $registry)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_repository_1_1_user_repository_1ac9400d686be3394bd280510b60ee642e">upgradePassword</link> (PasswordAuthenticatedUserInterface $user, string $newHashedPassword)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Description détaillée</title>
+
+<para>Repository pour l&apos;entité User.</para>
+
+<para>Fournit des méthodes de base pour interagir avec les utilisateurs et permet d&apos;ajouter des fonctionnalités spécifiques à l&apos;entité User.</para>
+
+<para>&lt;User&gt; &lt;User&gt;</para>
+
+<para>@method User|null find($id, $lockMode = null, $lockVersion = null) @method User|null findOneBy(array $criteria, array $orderBy = null) @method User[] findAll() @method User[] findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null) </para>
+<para>
+Définition à la ligne <link linkend="__user_repository_8php_source_1l00026">26</link> du fichier <link linkend="__user_repository_8php_source">UserRepository.php</link>.</para>
+</section>
+<section>
+<title>Documentation des constructeurs et destructeur</title>
+<anchor xml:id="_class_app_1_1_repository_1_1_user_repository_1a38ea33dde11163765f358f5f10a3bc03"/><section>
+    <title>__construct()</title>
+<indexterm><primary>__construct</primary><secondary>UserRepository</secondary></indexterm>
+<indexterm><primary>UserRepository</primary><secondary>__construct</secondary></indexterm>
+<para><computeroutput>__construct (ManagerRegistry $registry)</computeroutput></para>
+<para>Constructeur du repository.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Paramètres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>ManagerRegistry</entry><entry>$registry</entry><entry>
+<para>Le registre des gestionnaires d&apos;entités. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Définition à la ligne <link linkend="__user_repository_8php_source_1l00033">33</link> du fichier <link linkend="__user_repository_8php_source">UserRepository.php</link>.</para>
+</section>
+</section>
+<section>
+<title>Documentation des fonctions membres</title>
+<anchor xml:id="_class_app_1_1_repository_1_1_user_repository_1ac9400d686be3394bd280510b60ee642e"/><section>
+    <title>upgradePassword()</title>
+<indexterm><primary>upgradePassword</primary><secondary>UserRepository</secondary></indexterm>
+<indexterm><primary>UserRepository</primary><secondary>upgradePassword</secondary></indexterm>
+<para><computeroutput>upgradePassword (PasswordAuthenticatedUserInterface $user, string $newHashedPassword)</computeroutput></para>
+<para>Met à jour automatiquement le mot de passe (rehash) de l&apos;utilisateur.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Paramètres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>PasswordAuthenticatedUserInterface</entry><entry>$user</entry><entry>
+<para>L&apos;utilisateur dont le mot de passe doit être mis à jour. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>string</entry><entry>$newHashedPassword</entry><entry>
+<para>Le nouveau mot de passe hashé.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                
+                <formalpara>
+                    <title>
+Exceptions</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>UnsupportedUserException</entry><entry>
+<para>Si l&apos;utilisateur n&apos;est pas une instance de User. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Définition à la ligne <link linkend="__user_repository_8php_source_1l00046">46</link> du fichier <link linkend="__user_repository_8php_source">UserRepository.php</link>.</para>
+</section>
+<para>
+La documentation de cette classe a été générée à partir du fichier suivant :</para>
+Repository/<link linkend="__user_repository_8php">UserRepository.php</link></section>
+</section>

@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_app_1_1_form_1_1_album_search_type" xml:lang="fr">
+<title>Référence de la classe AlbumSearchType</title>
+<indexterm><primary>AlbumSearchType</primary></indexterm>
+Graphe d&apos;héritage de AlbumSearchType:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_app_1_1_form_1_1_album_search_type__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Graphe de collaboration de AlbumSearchType:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_app_1_1_form_1_1_album_search_type__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Fonctions membres publiques    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_app_1_1_form_1_1_album_search_type_1a83c3745710374f9c5a1eb0686fe2dfab">buildForm</link> (FormBuilderInterface $builder, array $options)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_form_1_1_album_search_type_1a8ff68a86f5090b5df973286836e46ead">configureOptions</link> (OptionsResolver $resolver)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Description détaillée</title>
+
+<para>Formulaire de recherche d&apos;albums à partir de fruits. </para>
+<para>
+Définition à la ligne <link linkend="__album_search_type_8php_source_1l00016">16</link> du fichier <link linkend="__album_search_type_8php_source">AlbumSearchType.php</link>.</para>
+</section>
+<section>
+<title>Documentation des fonctions membres</title>
+<anchor xml:id="_class_app_1_1_form_1_1_album_search_type_1a83c3745710374f9c5a1eb0686fe2dfab"/><section>
+    <title>buildForm()</title>
+<indexterm><primary>buildForm</primary><secondary>AlbumSearchType</secondary></indexterm>
+<indexterm><primary>AlbumSearchType</primary><secondary>buildForm</secondary></indexterm>
+<para><computeroutput>buildForm (FormBuilderInterface $builder, array $options)</computeroutput></para>
+<para>Construit le formulaire de recherche d&apos;albums.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Paramètres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>FormBuilderInterface</entry><entry>$builder</entry><entry>
+<para>Le constructeur de formulaire. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>array</entry><entry>$options</entry><entry>
+<para>Les options supplémentaires pour le formulaire. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Définition à la ligne <link linkend="__album_search_type_8php_source_1l00024">24</link> du fichier <link linkend="__album_search_type_8php_source">AlbumSearchType.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_form_1_1_album_search_type_1a8ff68a86f5090b5df973286836e46ead"/><section>
+    <title>configureOptions()</title>
+<indexterm><primary>configureOptions</primary><secondary>AlbumSearchType</secondary></indexterm>
+<indexterm><primary>AlbumSearchType</primary><secondary>configureOptions</secondary></indexterm>
+<para><computeroutput>configureOptions (OptionsResolver $resolver)</computeroutput></para>
+<para>Configure les options par défaut du formulaire.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Paramètres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>OptionsResolver</entry><entry>$resolver</entry><entry>
+<para>Le résolveur d&apos;options. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Définition à la ligne <link linkend="__album_search_type_8php_source_1l00047">47</link> du fichier <link linkend="__album_search_type_8php_source">AlbumSearchType.php</link>.</para>
+</section>
+<para>
+La documentation de cette classe a été générée à partir du fichier suivant :</para>
+Form/<link linkend="__album_search_type_8php">AlbumSearchType.php</link></section>
+</section>

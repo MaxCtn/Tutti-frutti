@@ -1,0 +1,123 @@
+.TH "AppCustomAuthenticator" 3 "Tutti-frutti" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AppCustomAuthenticator
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Est dérivée de AbstractLoginFormAuthenticator\&.
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fB__construct\fP (UrlGeneratorInterface $urlGenerator)"
+.br
+.ti -1c
+.RI "\fBauthenticate\fP (Request $request)"
+.br
+.ti -1c
+.RI "\fBonAuthenticationSuccess\fP (Request $request, TokenInterface $token, string $firewallName)"
+.br
+.in -1c
+.SS "Attributs publics"
+
+.in +1c
+.ti -1c
+.RI "const \fBLOGIN_ROUTE\fP = 'app_login'"
+.br
+.in -1c
+.SS "Fonctions membres protégées"
+
+.in +1c
+.ti -1c
+.RI "\fBgetLoginUrl\fP (Request $request)"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Authentificateur personnalisé pour gérer l'authentification des utilisateurs\&. 
+.PP
+Définition à la ligne \fB22\fP du fichier \fBAppCustomAuthenticator\&.php\fP\&.
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "__construct (UrlGeneratorInterface $urlGenerator)"
+Constructeur de l'authentificateur\&.
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$urlGenerator\fP Générateur d'URL pour les redirections\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB38\fP du fichier \fBAppCustomAuthenticator\&.php\fP\&.
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "authenticate (Request $request)"
+Authentifie une requête utilisateur\&.
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$request\fP La requête HTTP\&. 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+Passport Un objet Passport contenant les informations d'identification et les badges\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB49\fP du fichier \fBAppCustomAuthenticator\&.php\fP\&.
+.SS "getLoginUrl (Request $request)\fR [protected]\fP"
+Renvoie l'URL de connexion\&.
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$request\fP La requête HTTP\&. 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+string L'URL de la page de connexion\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB90\fP du fichier \fBAppCustomAuthenticator\&.php\fP\&.
+.SS "onAuthenticationSuccess (Request $request, TokenInterface $token, string $firewallName)"
+Gère la redirection après une authentification réussie\&.
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$request\fP La requête HTTP\&. 
+.br
+\fI$token\fP Le token d'authentification\&. 
+.br
+\fI$firewallName\fP Le nom du pare-feu\&. 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+Response|null Une réponse HTTP ou null\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB74\fP du fichier \fBAppCustomAuthenticator\&.php\fP\&.
+.SH "Documentation des données membres"
+.PP 
+.SS "const LOGIN_ROUTE = 'app_login'"
+
+.PP
+Définition à la ligne \fB26\fP du fichier \fBAppCustomAuthenticator\&.php\fP\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Tutti-frutti à partir du code source\&.

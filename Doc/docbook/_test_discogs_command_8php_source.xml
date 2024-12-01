@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__test_discogs_command_8php_source" xml:lang="fr">
+<title>TestDiscogsCommand.php</title>
+<indexterm><primary>Command/TestDiscogsCommand.php</primary></indexterm>
+Aller à la documentation de ce fichier.<programlisting linenumbering="unnumbered"><anchor xml:id="__test_discogs_command_8php_source_1l00001"/>00001 &lt;?php
+<anchor xml:id="__test_discogs_command_8php_source_1l00002"/>00002 
+<anchor xml:id="__test_discogs_command_8php_source_1l00003"/><link linkend="_namespace_app_1_1_command">00003</link> <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespace_app_1_1_command">App\Command</link>;
+<anchor xml:id="__test_discogs_command_8php_source_1l00004"/>00004 
+<anchor xml:id="__test_discogs_command_8php_source_1l00005"/>00005 use&#32;Symfony\Component\Console\Attribute\AsCommand;
+<anchor xml:id="__test_discogs_command_8php_source_1l00006"/>00006 use&#32;Symfony\Component\Console\Command\Command;
+<anchor xml:id="__test_discogs_command_8php_source_1l00007"/>00007 use&#32;Symfony\Component\Console\Input\InputArgument;
+<anchor xml:id="__test_discogs_command_8php_source_1l00008"/>00008 use&#32;Symfony\Component\Console\Input\InputInterface;
+<anchor xml:id="__test_discogs_command_8php_source_1l00009"/>00009 use&#32;Symfony\Component\Console\Output\OutputInterface;
+<anchor xml:id="__test_discogs_command_8php_source_1l00010"/>00010 use&#32;Symfony\Contracts\HttpClient\HttpClientInterface;
+<anchor xml:id="__test_discogs_command_8php_source_1l00011"/>00011 
+<anchor xml:id="__test_discogs_command_8php_source_1l00016"/>00016 <emphasis role="preprocessor">#[AsCommand(name:&#32;&apos;app:test-discogs&apos;)]</emphasis>
+<anchor xml:id="__test_discogs_command_8php_source_1l00017"/><link linkend="_class_app_1_1_command_1_1_test_discogs_command">00017</link> <emphasis role="keyword">class&#32;</emphasis><link linkend="_class_app_1_1_command_1_1_test_discogs_command">TestDiscogsCommand</link>&#32;<emphasis role="keyword">extends</emphasis>&#32;Command
+<anchor xml:id="__test_discogs_command_8php_source_1l00018"/>00018 {
+<anchor xml:id="__test_discogs_command_8php_source_1l00024"/>00024 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;HttpClientInterface&#32;$httpClient;
+<anchor xml:id="__test_discogs_command_8php_source_1l00025"/>00025 
+<anchor xml:id="__test_discogs_command_8php_source_1l00031"/>00031 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;<emphasis role="keywordtype">string</emphasis>&#32;$discogsConsumerKey;
+<anchor xml:id="__test_discogs_command_8php_source_1l00032"/>00032 
+<anchor xml:id="__test_discogs_command_8php_source_1l00038"/>00038 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;<emphasis role="keywordtype">string</emphasis>&#32;$discogsConsumerSecret;
+<anchor xml:id="__test_discogs_command_8php_source_1l00039"/>00039 
+<anchor xml:id="__test_discogs_command_8php_source_1l00047"/><link linkend="_class_app_1_1_command_1_1_test_discogs_command_1afa9245fce697aa62d74b949139a10612">00047</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_command_1_1_test_discogs_command_1afa9245fce697aa62d74b949139a10612">__construct</link>(HttpClientInterface&#32;$httpClient)
+<anchor xml:id="__test_discogs_command_8php_source_1l00048"/>00048 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__test_discogs_command_8php_source_1l00049"/>00049 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$this-&gt;httpClient&#32;=&#32;$httpClient;
+<anchor xml:id="__test_discogs_command_8php_source_1l00050"/>00050 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$this-&gt;discogsConsumerKey&#32;=&#32;$_ENV[<emphasis role="stringliteral">&apos;DISCOGS_CONSUMER_KEY&apos;</emphasis>]&#32;??&#32;getenv(<emphasis role="stringliteral">&apos;DISCOGS_CONSUMER_KEY&apos;</emphasis>)&#32;??&#32;<emphasis role="stringliteral">&apos;&apos;</emphasis>;
+<anchor xml:id="__test_discogs_command_8php_source_1l00051"/>00051 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$this-&gt;discogsConsumerSecret&#32;=&#32;$_ENV[<emphasis role="stringliteral">&apos;DISCOGS_CONSUMER_SECRET&apos;</emphasis>]&#32;??&#32;getenv(<emphasis role="stringliteral">&apos;DISCOGS_CONSUMER_SECRET&apos;</emphasis>)&#32;??&#32;<emphasis role="stringliteral">&apos;&apos;</emphasis>;
+<anchor xml:id="__test_discogs_command_8php_source_1l00052"/>00052 
+<anchor xml:id="__test_discogs_command_8php_source_1l00053"/>00053 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!$this-&gt;discogsConsumerKey&#32;||&#32;!$this-&gt;discogsConsumerSecret)&#32;{
+<anchor xml:id="__test_discogs_command_8php_source_1l00054"/>00054 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;new&#32;\RuntimeException(<emphasis role="stringliteral">&apos;Les&#32;clés&#32;API&#32;Discogs&#32;(DISCOGS_CONSUMER_KEY&#32;et&#32;DISCOGS_CONSUMER_SECRET)&#32;ne&#32;sont&#32;pas&#32;définies.&apos;</emphasis>);
+<anchor xml:id="__test_discogs_command_8php_source_1l00055"/>00055 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__test_discogs_command_8php_source_1l00056"/>00056 
+<anchor xml:id="__test_discogs_command_8php_source_1l00057"/>00057 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;parent::__construct();
+<anchor xml:id="__test_discogs_command_8php_source_1l00058"/>00058 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__test_discogs_command_8php_source_1l00059"/>00059 
+<anchor xml:id="__test_discogs_command_8php_source_1l00063"/><link linkend="_class_app_1_1_command_1_1_test_discogs_command_1a9be5e0bdb5720efed6ddb6426c5c16ee">00063</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">protected</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_command_1_1_test_discogs_command_1a9be5e0bdb5720efed6ddb6426c5c16ee">configure</link>():&#32;void
+<anchor xml:id="__test_discogs_command_8php_source_1l00064"/>00064 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__test_discogs_command_8php_source_1l00065"/>00065 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$this
+<anchor xml:id="__test_discogs_command_8php_source_1l00066"/>00066 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;-&gt;setDescription(<emphasis role="stringliteral">&apos;Teste&#32;la&#32;connexion&#32;à&#32;l\&apos;API&#32;Discogs&#32;en&#32;effectuant&#32;une&#32;recherche.&apos;</emphasis>)
+<anchor xml:id="__test_discogs_command_8php_source_1l00067"/>00067 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;-&gt;addArgument(<emphasis role="stringliteral">&apos;page&apos;</emphasis>,&#32;InputArgument::OPTIONAL,&#32;<emphasis role="stringliteral">&apos;Numéro&#32;de&#32;la&#32;page&#32;à&#32;afficher&apos;</emphasis>,&#32;1);
+<anchor xml:id="__test_discogs_command_8php_source_1l00068"/>00068 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__test_discogs_command_8php_source_1l00069"/>00069 
+<anchor xml:id="__test_discogs_command_8php_source_1l00078"/><link linkend="_class_app_1_1_command_1_1_test_discogs_command_1ab31c72b72ddaf7116db5d84c055d3c0b">00078</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">protected</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_command_1_1_test_discogs_command_1ab31c72b72ddaf7116db5d84c055d3c0b">execute</link>(InputInterface&#32;$input,&#32;OutputInterface&#32;$output):&#32;int
+<anchor xml:id="__test_discogs_command_8php_source_1l00079"/>00079 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__test_discogs_command_8php_source_1l00080"/>00080 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$page&#32;=&#32;(int)&#32;$input-&gt;getArgument(<emphasis role="stringliteral">&apos;page&apos;</emphasis>);
+<anchor xml:id="__test_discogs_command_8php_source_1l00081"/>00081 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$perPage&#32;=&#32;10;&#32;<emphasis role="comment">//&#32;Nombre&#32;de&#32;résultats&#32;par&#32;page</emphasis>
+<anchor xml:id="__test_discogs_command_8php_source_1l00082"/>00082 
+<anchor xml:id="__test_discogs_command_8php_source_1l00083"/>00083 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">try</emphasis>&#32;{
+<anchor xml:id="__test_discogs_command_8php_source_1l00084"/>00084 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Effectue&#32;une&#32;requête&#32;GET&#32;à&#32;l&apos;API&#32;Discogs&#32;pour&#32;rechercher&#32;le&#32;mot-clé&#32;&apos;banana&apos;</emphasis>
+<anchor xml:id="__test_discogs_command_8php_source_1l00085"/>00085 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$response&#32;=&#32;$this-&gt;httpClient-&gt;request(<emphasis role="stringliteral">&apos;GET&apos;</emphasis>,&#32;<emphasis role="stringliteral">&apos;https://api.discogs.com/database/search&apos;</emphasis>,&#32;[
+<anchor xml:id="__test_discogs_command_8php_source_1l00086"/>00086 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;query&apos;</emphasis>&#32;=&gt;&#32;[
+<anchor xml:id="__test_discogs_command_8php_source_1l00087"/>00087 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="charliteral">&apos;q&apos;</emphasis>&#32;=&gt;&#32;<emphasis role="stringliteral">&apos;banana&apos;</emphasis>,&#32;&#32;<emphasis role="comment">//&#32;Mot-clé&#32;de&#32;recherche</emphasis>
+<anchor xml:id="__test_discogs_command_8php_source_1l00088"/>00088 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;key&apos;</emphasis>&#32;=&gt;&#32;$this-&gt;discogsConsumerKey,
+<anchor xml:id="__test_discogs_command_8php_source_1l00089"/>00089 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;secret&apos;</emphasis>&#32;=&gt;&#32;$this-&gt;discogsConsumerSecret,
+<anchor xml:id="__test_discogs_command_8php_source_1l00090"/>00090 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;page&apos;</emphasis>&#32;=&gt;&#32;$page,
+<anchor xml:id="__test_discogs_command_8php_source_1l00091"/>00091 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;per_page&apos;</emphasis>&#32;=&gt;&#32;$perPage,
+<anchor xml:id="__test_discogs_command_8php_source_1l00092"/>00092 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;],
+<anchor xml:id="__test_discogs_command_8php_source_1l00093"/>00093 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;]);
+<anchor xml:id="__test_discogs_command_8php_source_1l00094"/>00094 
+<anchor xml:id="__test_discogs_command_8php_source_1l00095"/>00095 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Convertit&#32;la&#32;réponse&#32;en&#32;tableau</emphasis>
+<anchor xml:id="__test_discogs_command_8php_source_1l00096"/>00096 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$data&#32;=&#32;$response-&gt;toArray();
+<anchor xml:id="__test_discogs_command_8php_source_1l00097"/>00097 
+<anchor xml:id="__test_discogs_command_8php_source_1l00098"/>00098 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Affiche&#32;les&#32;résultats&#32;de&#32;la&#32;recherche</emphasis>
+<anchor xml:id="__test_discogs_command_8php_source_1l00099"/>00099 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$output-&gt;writeln(<emphasis role="stringliteral">&quot;Résultats&#32;de&#32;recherche&#32;pour&#32;&apos;banana&apos;&#32;-&#32;Page&#32;$page:&quot;</emphasis>);
+<anchor xml:id="__test_discogs_command_8php_source_1l00100"/>00100 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">foreach</emphasis>&#32;($data[<emphasis role="stringliteral">&apos;results&apos;</emphasis>]&#32;as&#32;$result)&#32;{
+<anchor xml:id="__test_discogs_command_8php_source_1l00101"/>00101 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$output-&gt;writeln($result[<emphasis role="stringliteral">&apos;title&apos;</emphasis>]);
+<anchor xml:id="__test_discogs_command_8php_source_1l00102"/>00102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__test_discogs_command_8php_source_1l00103"/>00103 
+<anchor xml:id="__test_discogs_command_8php_source_1l00104"/>00104 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Affiche&#32;les&#32;informations&#32;de&#32;pagination</emphasis>
+<anchor xml:id="__test_discogs_command_8php_source_1l00105"/>00105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$output-&gt;writeln(<emphasis role="stringliteral">&quot;\nPage&#32;$page&#32;sur&#32;&quot;</emphasis>&#32;.&#32;$data[<emphasis role="stringliteral">&apos;pagination&apos;</emphasis>][<emphasis role="stringliteral">&apos;pages&apos;</emphasis>]);
+<anchor xml:id="__test_discogs_command_8php_source_1l00106"/>00106 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;($page&#32;&lt;&#32;$data[<emphasis role="stringliteral">&apos;pagination&apos;</emphasis>][<emphasis role="stringliteral">&apos;pages&apos;</emphasis>])&#32;{
+<anchor xml:id="__test_discogs_command_8php_source_1l00107"/>00107 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$output-&gt;writeln(<emphasis role="stringliteral">&apos;Pour&#32;voir&#32;la&#32;page&#32;suivante,&#32;lancez&#32;:&apos;</emphasis>);
+<anchor xml:id="__test_discogs_command_8php_source_1l00108"/>00108 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$output-&gt;writeln(<emphasis role="stringliteral">&apos;php&#32;bin/console&#32;app:test-discogs&#32;&apos;</emphasis>&#32;.&#32;($page&#32;+&#32;1));
+<anchor xml:id="__test_discogs_command_8php_source_1l00109"/>00109 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+<anchor xml:id="__test_discogs_command_8php_source_1l00110"/>00110 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$output-&gt;writeln(<emphasis role="stringliteral">&quot;Fin&#32;des&#32;résultats.&quot;</emphasis>);
+<anchor xml:id="__test_discogs_command_8php_source_1l00111"/>00111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__test_discogs_command_8php_source_1l00112"/>00112 
+<anchor xml:id="__test_discogs_command_8php_source_1l00113"/>00113 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;Command::SUCCESS;
+<anchor xml:id="__test_discogs_command_8php_source_1l00114"/>00114 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">catch</emphasis>&#32;(\Exception&#32;$e)&#32;{
+<anchor xml:id="__test_discogs_command_8php_source_1l00115"/>00115 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Gère&#32;les&#32;exceptions&#32;et&#32;affiche&#32;un&#32;message&#32;d&apos;erreur</emphasis>
+<anchor xml:id="__test_discogs_command_8php_source_1l00116"/>00116 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$output-&gt;writeln(<emphasis role="stringliteral">&apos;&lt;error&gt;Erreur&#32;lors&#32;de&#32;la&#32;communication&#32;avec&#32;l\&apos;API&#32;Discogs&#32;:&#32;&apos;</emphasis>&#32;.&#32;$e-&gt;getMessage()&#32;.&#32;<emphasis role="stringliteral">&apos;&lt;/error&gt;&apos;</emphasis>);
+<anchor xml:id="__test_discogs_command_8php_source_1l00117"/>00117 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;Command::FAILURE;
+<anchor xml:id="__test_discogs_command_8php_source_1l00118"/>00118 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__test_discogs_command_8php_source_1l00119"/>00119 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__test_discogs_command_8php_source_1l00120"/>00120 }
+</programlisting></section>

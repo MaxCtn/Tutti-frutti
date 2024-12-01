@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__discogs_test_controller_8php_source" xml:lang="fr">
+<title>DiscogsTestController.php</title>
+<indexterm><primary>Controller/DiscogsTestController.php</primary></indexterm>
+Aller à la documentation de ce fichier.<programlisting linenumbering="unnumbered"><anchor xml:id="__discogs_test_controller_8php_source_1l00001"/>00001 &lt;?php
+<anchor xml:id="__discogs_test_controller_8php_source_1l00002"/>00002 
+<anchor xml:id="__discogs_test_controller_8php_source_1l00003"/>00003 <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespace_app_1_1_controller">App\Controller</link>;
+<anchor xml:id="__discogs_test_controller_8php_source_1l00004"/>00004 
+<anchor xml:id="__discogs_test_controller_8php_source_1l00005"/>00005 use&#32;<link linkend="_class_app_1_1_service_1_1_discogs_service">App\Service\DiscogsService</link>;
+<anchor xml:id="__discogs_test_controller_8php_source_1l00006"/>00006 use&#32;Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+<anchor xml:id="__discogs_test_controller_8php_source_1l00007"/>00007 use&#32;Symfony\Component\HttpFoundation\Response;
+<anchor xml:id="__discogs_test_controller_8php_source_1l00008"/>00008 use&#32;Symfony\Component\Routing\Annotation\Route;
+<anchor xml:id="__discogs_test_controller_8php_source_1l00009"/>00009 
+<anchor xml:id="__discogs_test_controller_8php_source_1l00013"/><link linkend="_class_app_1_1_controller_1_1_discogs_test_controller">00013</link> <emphasis role="keyword">class&#32;</emphasis><link linkend="_class_app_1_1_controller_1_1_discogs_test_controller">DiscogsTestController</link>&#32;<emphasis role="keyword">extends</emphasis>&#32;AbstractController
+<anchor xml:id="__discogs_test_controller_8php_source_1l00014"/>00014 {
+<anchor xml:id="__discogs_test_controller_8php_source_1l00024"/>00024 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;#[Route(&apos;/test-discogs&apos;,&#32;name:&#32;&apos;test_discogs&apos;)]</emphasis>
+<anchor xml:id="__discogs_test_controller_8php_source_1l00025"/><link linkend="_class_app_1_1_controller_1_1_discogs_test_controller_1ac820e6682701feada0217b7e052e32bf">00025</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_controller_1_1_discogs_test_controller_1ac820e6682701feada0217b7e052e32bf">test</link>(<link linkend="_class_app_1_1_service_1_1_discogs_service">DiscogsService</link>&#32;$discogsService):&#32;Response
+<anchor xml:id="__discogs_test_controller_8php_source_1l00026"/>00026 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__discogs_test_controller_8php_source_1l00027"/>00027 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Effectue&#32;une&#32;recherche&#32;d&apos;albums&#32;avec&#32;le&#32;mot-clé&#32;&apos;banana&apos;</emphasis>
+<anchor xml:id="__discogs_test_controller_8php_source_1l00028"/>00028 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$results&#32;=&#32;$discogsService-&gt;<link linkend="_class_app_1_1_service_1_1_discogs_service_1a14e1e0b11d4e2976862f1f60e6a20b64">searchAlbums</link>(<emphasis role="stringliteral">&apos;banana&apos;</emphasis>);
+<anchor xml:id="__discogs_test_controller_8php_source_1l00029"/>00029 
+<anchor xml:id="__discogs_test_controller_8php_source_1l00030"/>00030 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Retourne&#32;les&#32;résultats&#32;au&#32;format&#32;JSON</emphasis>
+<anchor xml:id="__discogs_test_controller_8php_source_1l00031"/>00031 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this-&gt;json($results);
+<anchor xml:id="__discogs_test_controller_8php_source_1l00032"/>00032 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__discogs_test_controller_8php_source_1l00033"/>00033 }
+</programlisting></section>

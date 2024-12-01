@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="fr">
+  <compounddef id="class_app_1_1_controller_1_1_discogs_test_controller" kind="class" language="PHP" prot="public">
+    <compoundname>App::Controller::DiscogsTestController</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">AbstractController</basecompoundref>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_app_1_1_controller_1_1_discogs_test_controller_1ac820e6682701feada0217b7e052e32bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>test</definition>
+        <argsstring>(DiscogsService $discogsService)</argsstring>
+        <name>test</name>
+        <qualifiedname>App\Controller\DiscogsTestController\test</qualifiedname>
+        <param>
+          <type><ref refid="class_app_1_1_service_1_1_discogs_service" kindref="compound">DiscogsService</ref></type>
+          <declname>$discogsService</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Teste la recherche d&apos;albums en utilisant le service Discogs.</para>
+<para>@Route(&quot;/test-discogs&quot;, name=&quot;test_discogs&quot;, methods={&quot;GET&quot;})</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>DiscogsService</parametertype>
+<parametername>$discogsService</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Le service Discogs pour effectuer des requêtes à l&apos;API.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Response La réponse JSON contenant les résultats de la recherche. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Controller/DiscogsTestController.php" line="25" column="21" bodyfile="Controller/DiscogsTestController.php" bodystart="25" bodyend="32"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Contrôleur de test pour l&apos;interaction avec l&apos;API Discogs. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>DiscogsTestController</label>
+        <link refid="class_app_1_1_controller_1_1_discogs_test_controller"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>AbstractController</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>DiscogsTestController</label>
+        <link refid="class_app_1_1_controller_1_1_discogs_test_controller"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>AbstractController</label>
+      </node>
+    </collaborationgraph>
+    <location file="Controller/DiscogsTestController.php" line="13" column="1" bodyfile="Controller/DiscogsTestController.php" bodystart="14" bodyend="33"/>
+    <listofallmembers>
+      <member refid="class_app_1_1_controller_1_1_discogs_test_controller_1ac820e6682701feada0217b7e052e32bf" prot="public" virt="non-virtual"><scope>App::Controller::DiscogsTestController</scope><name>test</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

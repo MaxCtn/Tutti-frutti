@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="fr">
+  <compounddef id="dir_b500f500d6f9b315c95ab1cd4a3b5c0d" kind="dir">
+    <compoundname>Controller</compoundname>
+    <innerfile refid="_album_search_controller_8php">AlbumSearchController.php</innerfile>
+    <innerfile refid="_connexion_controller_8php">ConnexionController.php</innerfile>
+    <innerfile refid="_discogs_test_controller_8php">DiscogsTestController.php</innerfile>
+    <innerfile refid="_home_controller_8php">HomeController.php</innerfile>
+    <innerfile refid="_profile_controller_8php">ProfileController.php</innerfile>
+    <innerfile refid="_registration_controller_8php">RegistrationController.php</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Controller/"/>
+  </compounddef>
+</doxygen>

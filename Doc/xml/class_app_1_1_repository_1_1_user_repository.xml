@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="fr">
+  <compounddef id="class_app_1_1_repository_1_1_user_repository" kind="class" language="PHP" prot="public">
+    <compoundname>App::Repository::UserRepository</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">ServiceEntityRepository</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">PasswordUpgraderInterface</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">ServiceEntityRepository</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">PasswordUpgraderInterface</basecompoundref>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_app_1_1_repository_1_1_user_repository_1a38ea33dde11163765f358f5f10a3bc03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>__construct</definition>
+        <argsstring>(ManagerRegistry $registry)</argsstring>
+        <name>__construct</name>
+        <qualifiedname>App\Repository\UserRepository\__construct</qualifiedname>
+        <param>
+          <type>ManagerRegistry</type>
+          <declname>$registry</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructeur du repository.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>ManagerRegistry</parametertype>
+<parametername>$registry</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Le registre des gestionnaires d&apos;entités. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Repository/UserRepository.php" line="33" column="21" bodyfile="Repository/UserRepository.php" bodystart="33" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_repository_1_1_user_repository_1ac9400d686be3394bd280510b60ee642e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>upgradePassword</definition>
+        <argsstring>(PasswordAuthenticatedUserInterface $user, string $newHashedPassword)</argsstring>
+        <name>upgradePassword</name>
+        <qualifiedname>App\Repository\UserRepository\upgradePassword</qualifiedname>
+        <param>
+          <type>PasswordAuthenticatedUserInterface</type>
+          <declname>$user</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>$newHashedPassword</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Met à jour automatiquement le mot de passe (rehash) de l&apos;utilisateur.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>PasswordAuthenticatedUserInterface</parametertype>
+<parametername>$user</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>L&apos;utilisateur dont le mot de passe doit être mis à jour. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$newHashedPassword</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Le nouveau mot de passe hashé.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>UnsupportedUserException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Si l&apos;utilisateur n&apos;est pas une instance de User. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Repository/UserRepository.php" line="46" column="21" bodyfile="Repository/UserRepository.php" bodystart="46" bodyend="55"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Repository pour l&apos;entité User.</para>
+<para>Fournit des méthodes de base pour interagir avec les utilisateurs et permet d&apos;ajouter des fonctionnalités spécifiques à l&apos;entité User.</para>
+<para>&lt;User&gt; &lt;User&gt;</para>
+<para>@method User|null find($id, $lockMode = null, $lockVersion = null) @method User|null findOneBy(array $criteria, array $orderBy = null) @method User[] findAll() @method User[] findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null) </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>ServiceEntityRepository</label>
+      </node>
+      <node id="3">
+        <label>PasswordUpgraderInterface</label>
+      </node>
+      <node id="1">
+        <label>UserRepository</label>
+        <link refid="class_app_1_1_repository_1_1_user_repository"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>ServiceEntityRepository</label>
+      </node>
+      <node id="3">
+        <label>PasswordUpgraderInterface</label>
+      </node>
+      <node id="1">
+        <label>UserRepository</label>
+        <link refid="class_app_1_1_repository_1_1_user_repository"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Repository/UserRepository.php" line="26" column="1" bodyfile="Repository/UserRepository.php" bodystart="27" bodyend="58"/>
+    <listofallmembers>
+      <member refid="class_app_1_1_repository_1_1_user_repository_1a38ea33dde11163765f358f5f10a3bc03" prot="public" virt="non-virtual"><scope>App::Repository::UserRepository</scope><name>__construct</name></member>
+      <member refid="class_app_1_1_repository_1_1_user_repository_1ac9400d686be3394bd280510b60ee642e" prot="public" virt="non-virtual"><scope>App::Repository::UserRepository</scope><name>upgradePassword</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,68 @@
+.TH "GenreRepository" 3 "Tutti-frutti" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GenreRepository
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Est dérivée de ServiceEntityRepository, et ServiceEntityRepository\&.
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fB__construct\fP (ManagerRegistry $registry)"
+.br
+.ti -1c
+.RI "\fBfindByNamePart\fP (string $namePart)"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Repository pour l'entité Genre\&.
+
+.PP
+Fournit des méthodes de base pour interagir avec les genres musicaux et permet d'ajouter des méthodes personnalisées pour répondre à des besoins spécifiques\&.
+
+.PP
+<Genre> 
+.PP
+Définition à la ligne \fB19\fP du fichier \fBGenreRepository\&.php\fP\&.
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "__construct (ManagerRegistry $registry)"
+Constructeur du repository\&.
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$registry\fP Le registre des gestionnaires d'entités\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB26\fP du fichier \fBGenreRepository\&.php\fP\&.
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "findByNamePart (string $namePart)"
+Recherche des genres par nom partiel\&.
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$namePart\fP Le fragment du nom à rechercher\&. 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+Genre[] La liste des genres correspondants\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB39\fP du fichier \fBGenreRepository\&.php\fP\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Tutti-frutti à partir du code source\&.

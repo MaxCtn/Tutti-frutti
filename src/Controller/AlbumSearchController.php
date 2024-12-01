@@ -13,18 +13,46 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * Contrôleur pour la recherche et la gestion des albums.
+ */
 class AlbumSearchController extends AbstractController
 {
+    /**
+     * Service pour interagir avec l'API Discogs.
+     *
+     * @var DiscogsService
+     */
     private DiscogsService $discogsService;
+
+    /**
+     * Gestionnaire d'entités Doctrine.
+     *
+     * @var EntityManagerInterface
+     */
     private EntityManagerInterface $entityManager;
 
+    /**
+     * Constructeur du contrôleur.
+     *
+     * @param DiscogsService          $discogsService  Service Discogs.
+     * @param EntityManagerInterface $entityManager  Gestionnaire d'entités.
+     */
     public function __construct(DiscogsService $discogsService, EntityManagerInterface $entityManager)
     {
         $this->discogsService = $discogsService;
         $this->entityManager = $entityManager;
     }
 
-    #[Route('/album/search', name: 'album_search', methods: ['GET', 'POST'])]
+    /**
+     * Route pour la recherche d'albums.
+     *
+     * @Route("/album/search", name="album_search", methods={"GET", "POST"})
+     *
+     * @param Request $request La requête HTTP.
+     *
+     * @return Response La réponse HTTP.
+     */
     public function search(Request $request): Response
     {
         $form = $this->createForm(AlbumSearchType::class);
@@ -46,7 +74,16 @@ class AlbumSearchController extends AbstractController
         ]);
     }
 
-    #[Route('/album/details/{id}', name: 'album_details', methods: ['GET'])]
+    /**
+     * Route pour afficher les détails d'un album.
+     *
+     * @Route("/album/details/{id}", name="album_details", methods={"GET"})
+     *
+     * @param int     $id      L'ID de l'album.
+     * @param Request $request La requête HTTP.
+     *
+     * @return Response La réponse HTTP.
+     */
     public function showDetails(int $id, Request $request): Response
     {
         try {
@@ -69,7 +106,15 @@ class AlbumSearchController extends AbstractController
         ]);
     }
 
-    #[Route('/album/add-to-favorites/{id}', name: 'add_to_favorites', methods: ['POST'])]
+    /**
+     * Route pour ajouter un album aux favoris de l'utilisateur.
+     *
+     * @Route("/album/add-to-favorites/{id}", name="add_to_favorites", methods={"POST"})
+     *
+     * @param int $id L'ID de l'album.
+     *
+     * @return JsonResponse La réponse JSON.
+     */
     public function addToFavorites(int $id): JsonResponse
     {
         $user = $this->getUser();
@@ -99,7 +144,15 @@ class AlbumSearchController extends AbstractController
         }
     }
 
-    #[Route('/album/remove-from-favorites/{id}', name: 'remove_from_favorites', methods: ['POST'])]
+    /**
+     * Route pour retirer un album des favoris de l'utilisateur.
+     *
+     * @Route("/album/remove-from-favorites/{id}", name="remove_from_favorites", methods={"POST"})
+     *
+     * @param int $id L'ID de l'album.
+     *
+     * @return Response La réponse HTTP.
+     */
     public function removeFromFavorites(int $id): Response
     {
         $user = $this->getUser();
@@ -120,6 +173,11 @@ class AlbumSearchController extends AbstractController
 
     /**
      * Récupère un album favori par utilisateur et ID d'album.
+     *
+     * @param mixed $user    L'utilisateur courant.
+     * @param int   $albumId L'ID de l'album.
+     *
+     * @return FavoriteAlbum|null L'album favori ou null si non trouvé.
      */
     private function getFavoriteAlbumByUserAndId($user, int $albumId): ?FavoriteAlbum
     {
@@ -129,6 +187,9 @@ class AlbumSearchController extends AbstractController
 
     /**
      * Crée un album favori pour l'utilisateur.
+     *
+     * @param mixed $user         L'utilisateur courant.
+     * @param array $albumDetails Les détails de l'album.
      */
     private function createFavoriteAlbum($user, array $albumDetails): void
     {
@@ -139,6 +200,7 @@ class AlbumSearchController extends AbstractController
         $favoriteAlbum->setYear($albumDetails['year'] ?? null);
         $favoriteAlbum->setCoverImage($albumDetails['coverImage'] ?? '/images/placeholder.jpg');
 
+        // Associe les fruits pertinents à l'album favori
         foreach ($albumDetails['fruits'] as $fruitName) {
             $fruit = $this->findOrCreateEntity(Fruit::class, ['name' => $fruitName]);
             $favoriteAlbum->addFruit($fruit);
@@ -150,6 +212,11 @@ class AlbumSearchController extends AbstractController
 
     /**
      * Trouve ou crée une entité en fonction des critères donnés.
+     *
+     * @param string $entityClass Le nom de la classe de l'entité.
+     * @param array  $criteria    Les critères de recherche.
+     *
+     * @return object L'entité trouvée ou nouvellement créée.
      */
     private function findOrCreateEntity(string $entityClass, array $criteria)
     {
@@ -170,3 +237,4 @@ class AlbumSearchController extends AbstractController
         return $entity;
     }
 }
+

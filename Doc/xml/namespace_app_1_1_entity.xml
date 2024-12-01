@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="fr">
+  <compounddef id="namespace_app_1_1_entity" kind="namespace" language="PHP">
+    <compoundname>App::Entity</compoundname>
+    <innerclass refid="class_app_1_1_entity_1_1_favorite_album" prot="public">App::Entity::FavoriteAlbum</innerclass>
+    <innerclass refid="class_app_1_1_entity_1_1_format" prot="public">App::Entity::Format</innerclass>
+    <innerclass refid="class_app_1_1_entity_1_1_fruit" prot="public">App::Entity::Fruit</innerclass>
+    <innerclass refid="class_app_1_1_entity_1_1_genre" prot="public">App::Entity::Genre</innerclass>
+    <innerclass refid="class_app_1_1_entity_1_1_label" prot="public">App::Entity::Label</innerclass>
+    <innerclass refid="class_app_1_1_entity_1_1_track" prot="public">App::Entity::Track</innerclass>
+    <innerclass refid="class_app_1_1_entity_1_1_user" prot="public">App::Entity::User</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Entity/FavoriteAlbum.php" line="3" column="10"/>
+  </compounddef>
+</doxygen>

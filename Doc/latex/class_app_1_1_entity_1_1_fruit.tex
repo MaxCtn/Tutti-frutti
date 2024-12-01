@@ -1,0 +1,154 @@
+\doxysection{Référence de la classe Fruit}
+\hypertarget{class_app_1_1_entity_1_1_fruit}{}\label{class_app_1_1_entity_1_1_fruit}\index{Fruit@{Fruit}}
+\doxysubsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_fruit_a095c5d389db211932136b53f25f39685}{\+\_\+\+\_\+construct}} ()
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_fruit_a12251d0c022e9e21c137a105ff683f13}{get\+Id}} ()
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_fruit_a3d0963e68bb313b163a73f2803c64600}{get\+Name}} ()
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_fruit_a392752b62c4f6aacea5c269690921ef3}{set\+Name}} (string \$name)
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_fruit_a96732906856f5d0e08852d04b3e8b9ce}{get\+Albums}} ()
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_fruit_a79ad3ae17fa6347782039ba962fd4773}{add\+Album}} (\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album}{Favorite\+Album}} \$album)
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_fruit_a8ac4b6e0389eb502c205087d8cad7645}{remove\+Album}} (\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album}{Favorite\+Album}} \$album)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Entité représentant un fruit associé à des albums favoris.
+
+@\+ORM\textbackslash{}\+Entity(repository\+Class=Fruit\+Repository\+::class) 
+
+Définition à la ligne \mbox{\hyperlink{_fruit_8php_source_l00016}{16}} du fichier \mbox{\hyperlink{_fruit_8php_source}{Fruit.\+php}}.
+
+
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\Hypertarget{class_app_1_1_entity_1_1_fruit_a095c5d389db211932136b53f25f39685}\index{Fruit@{Fruit}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!Fruit@{Fruit}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_fruit_a095c5d389db211932136b53f25f39685} 
+\+\_\+\+\_\+construct (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Constructeur de la classe Fruit. Initialise la collection des albums favoris. 
+
+Définition à la ligne \mbox{\hyperlink{_fruit_8php_source_l00056}{56}} du fichier \mbox{\hyperlink{_fruit_8php_source}{Fruit.\+php}}.
+
+
+
+\doxysubsection{Documentation des fonctions membres}
+\Hypertarget{class_app_1_1_entity_1_1_fruit_a79ad3ae17fa6347782039ba962fd4773}\index{Fruit@{Fruit}!addAlbum@{addAlbum}}
+\index{addAlbum@{addAlbum}!Fruit@{Fruit}}
+\doxysubsubsection{\texorpdfstring{addAlbum()}{addAlbum()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_fruit_a79ad3ae17fa6347782039ba962fd4773} 
+add\+Album (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album}{Favorite\+Album}}}]{\$album}{}\end{DoxyParamCaption})}
+
+Ajoute un album favori à la collection associée à ce fruit.
+
+
+\begin{DoxyParams}[1]{Paramètres}
+Favorite\+Album & {\em \$album} & L\textquotesingle{}album favori à ajouter.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+self 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_fruit_8php_source_l00112}{112}} du fichier \mbox{\hyperlink{_fruit_8php_source}{Fruit.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_fruit_a96732906856f5d0e08852d04b3e8b9ce}\index{Fruit@{Fruit}!getAlbums@{getAlbums}}
+\index{getAlbums@{getAlbums}!Fruit@{Fruit}}
+\doxysubsubsection{\texorpdfstring{getAlbums()}{getAlbums()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_fruit_a96732906856f5d0e08852d04b3e8b9ce} 
+get\+Albums (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Obtient la collection des albums favoris associés à ce fruit.
+
+\begin{DoxyReturn}{Renvoie}
+Collection$<$int, Favorite\+Album$>$ La collection des albums favoris. 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_fruit_8php_source_l00100}{100}} du fichier \mbox{\hyperlink{_fruit_8php_source}{Fruit.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_fruit_a12251d0c022e9e21c137a105ff683f13}\index{Fruit@{Fruit}!getId@{getId}}
+\index{getId@{getId}!Fruit@{Fruit}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_fruit_a12251d0c022e9e21c137a105ff683f13} 
+get\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Obtient l\textquotesingle{}identifiant unique du fruit.
+
+\begin{DoxyReturn}{Renvoie}
+int\texorpdfstring{$\vert$}{|}null L\textquotesingle{}identifiant du fruit. 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_fruit_8php_source_l00066}{66}} du fichier \mbox{\hyperlink{_fruit_8php_source}{Fruit.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_fruit_a3d0963e68bb313b163a73f2803c64600}\index{Fruit@{Fruit}!getName@{getName}}
+\index{getName@{getName}!Fruit@{Fruit}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_fruit_a3d0963e68bb313b163a73f2803c64600} 
+get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Obtient le nom du fruit.
+
+\begin{DoxyReturn}{Renvoie}
+string\texorpdfstring{$\vert$}{|}null Le nom du fruit. 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_fruit_8php_source_l00076}{76}} du fichier \mbox{\hyperlink{_fruit_8php_source}{Fruit.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_fruit_a8ac4b6e0389eb502c205087d8cad7645}\index{Fruit@{Fruit}!removeAlbum@{removeAlbum}}
+\index{removeAlbum@{removeAlbum}!Fruit@{Fruit}}
+\doxysubsubsection{\texorpdfstring{removeAlbum()}{removeAlbum()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_fruit_a8ac4b6e0389eb502c205087d8cad7645} 
+remove\+Album (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album}{Favorite\+Album}}}]{\$album}{}\end{DoxyParamCaption})}
+
+Retire un album favori de la collection associée à ce fruit.
+
+
+\begin{DoxyParams}[1]{Paramètres}
+Favorite\+Album & {\em \$album} & L\textquotesingle{}album favori à retirer.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+self 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_fruit_8php_source_l00129}{129}} du fichier \mbox{\hyperlink{_fruit_8php_source}{Fruit.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_fruit_a392752b62c4f6aacea5c269690921ef3}\index{Fruit@{Fruit}!setName@{setName}}
+\index{setName@{setName}!Fruit@{Fruit}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_fruit_a392752b62c4f6aacea5c269690921ef3} 
+set\+Name (\begin{DoxyParamCaption}\item[{string}]{\$name}{}\end{DoxyParamCaption})}
+
+Définit le nom du fruit.
+
+
+\begin{DoxyParams}[1]{Paramètres}
+string & {\em \$name} & Le nom du fruit.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+self 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_fruit_8php_source_l00088}{88}} du fichier \mbox{\hyperlink{_fruit_8php_source}{Fruit.\+php}}.
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+Entity/\mbox{\hyperlink{_fruit_8php}{Fruit.\+php}}\end{DoxyCompactItemize}

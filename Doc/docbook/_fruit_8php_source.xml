@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__fruit_8php_source" xml:lang="fr">
+<title>Fruit.php</title>
+<indexterm><primary>Entity/Fruit.php</primary></indexterm>
+Aller à la documentation de ce fichier.<programlisting linenumbering="unnumbered"><anchor xml:id="__fruit_8php_source_1l00001"/>00001 &lt;?php
+<anchor xml:id="__fruit_8php_source_1l00002"/>00002 
+<anchor xml:id="__fruit_8php_source_1l00003"/>00003 <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespace_app_1_1_entity">App\Entity</link>;
+<anchor xml:id="__fruit_8php_source_1l00004"/>00004 
+<anchor xml:id="__fruit_8php_source_1l00005"/>00005 use&#32;<link linkend="_class_app_1_1_repository_1_1_fruit_repository">App\Repository\FruitRepository</link>;
+<anchor xml:id="__fruit_8php_source_1l00006"/>00006 use&#32;Doctrine\Common\Collections\ArrayCollection;
+<anchor xml:id="__fruit_8php_source_1l00007"/>00007 use&#32;Doctrine\Common\Collections\Collection;
+<anchor xml:id="__fruit_8php_source_1l00008"/>00008 use&#32;Doctrine\ORM\Mapping&#32;as&#32;ORM;
+<anchor xml:id="__fruit_8php_source_1l00009"/>00009 
+<anchor xml:id="__fruit_8php_source_1l00015"/>00015 <emphasis role="preprocessor">#[ORM\Entity(repositoryClass:&#32;FruitRepository::class)]</emphasis>
+<anchor xml:id="__fruit_8php_source_1l00016"/><link linkend="_class_app_1_1_entity_1_1_fruit">00016</link> <emphasis role="keyword">class&#32;</emphasis><link linkend="_class_app_1_1_entity_1_1_fruit">Fruit</link>
+<anchor xml:id="__fruit_8php_source_1l00017"/>00017 {
+<anchor xml:id="__fruit_8php_source_1l00027"/>00027 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;#[ORM\Id]</emphasis>
+<anchor xml:id="__fruit_8php_source_1l00028"/>00028 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;#[ORM\GeneratedValue]</emphasis>
+<anchor xml:id="__fruit_8php_source_1l00029"/>00029 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;#[ORM\Column]</emphasis>
+<anchor xml:id="__fruit_8php_source_1l00030"/>00030 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;?<emphasis role="keywordtype">int</emphasis>&#32;$id&#32;=&#32;<emphasis role="keyword">null</emphasis>;
+<anchor xml:id="__fruit_8php_source_1l00031"/>00031 
+<anchor xml:id="__fruit_8php_source_1l00039"/>00039 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;#[ORM\Column(length:&#32;255,&#32;unique:&#32;true)]</emphasis>
+<anchor xml:id="__fruit_8php_source_1l00040"/>00040 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;?<emphasis role="keywordtype">string</emphasis>&#32;$name&#32;=&#32;<emphasis role="keyword">null</emphasis>;
+<anchor xml:id="__fruit_8php_source_1l00041"/>00041 
+<anchor xml:id="__fruit_8php_source_1l00049"/>00049 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;#[ORM\ManyToMany(mappedBy:&#32;&apos;fruits&apos;,&#32;targetEntity:&#32;FavoriteAlbum::class)]</emphasis>
+<anchor xml:id="__fruit_8php_source_1l00050"/>00050 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;Collection&#32;$albums;
+<anchor xml:id="__fruit_8php_source_1l00051"/>00051 
+<anchor xml:id="__fruit_8php_source_1l00056"/><link linkend="_class_app_1_1_entity_1_1_fruit_1a095c5d389db211932136b53f25f39685">00056</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_fruit_1a095c5d389db211932136b53f25f39685">__construct</link>()
+<anchor xml:id="__fruit_8php_source_1l00057"/>00057 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__fruit_8php_source_1l00058"/>00058 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$this-&gt;albums&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;ArrayCollection();
+<anchor xml:id="__fruit_8php_source_1l00059"/>00059 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__fruit_8php_source_1l00060"/>00060 
+<anchor xml:id="__fruit_8php_source_1l00066"/><link linkend="_class_app_1_1_entity_1_1_fruit_1a12251d0c022e9e21c137a105ff683f13">00066</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_fruit_1a12251d0c022e9e21c137a105ff683f13">getId</link>():&#32;?int
+<anchor xml:id="__fruit_8php_source_1l00067"/>00067 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__fruit_8php_source_1l00068"/>00068 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this-&gt;id;
+<anchor xml:id="__fruit_8php_source_1l00069"/>00069 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__fruit_8php_source_1l00070"/>00070 
+<anchor xml:id="__fruit_8php_source_1l00076"/><link linkend="_class_app_1_1_entity_1_1_fruit_1a3d0963e68bb313b163a73f2803c64600">00076</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_fruit_1a3d0963e68bb313b163a73f2803c64600">getName</link>():&#32;?string
+<anchor xml:id="__fruit_8php_source_1l00077"/>00077 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__fruit_8php_source_1l00078"/>00078 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this-&gt;name;
+<anchor xml:id="__fruit_8php_source_1l00079"/>00079 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__fruit_8php_source_1l00080"/>00080 
+<anchor xml:id="__fruit_8php_source_1l00088"/><link linkend="_class_app_1_1_entity_1_1_fruit_1a392752b62c4f6aacea5c269690921ef3">00088</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_fruit_1a392752b62c4f6aacea5c269690921ef3">setName</link>(<emphasis role="keywordtype">string</emphasis>&#32;$name):&#32;self
+<anchor xml:id="__fruit_8php_source_1l00089"/>00089 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__fruit_8php_source_1l00090"/>00090 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$this-&gt;name&#32;=&#32;$name;
+<anchor xml:id="__fruit_8php_source_1l00091"/>00091 
+<anchor xml:id="__fruit_8php_source_1l00092"/>00092 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this;
+<anchor xml:id="__fruit_8php_source_1l00093"/>00093 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__fruit_8php_source_1l00094"/>00094 
+<anchor xml:id="__fruit_8php_source_1l00100"/><link linkend="_class_app_1_1_entity_1_1_fruit_1a96732906856f5d0e08852d04b3e8b9ce">00100</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_fruit_1a96732906856f5d0e08852d04b3e8b9ce">getAlbums</link>():&#32;Collection
+<anchor xml:id="__fruit_8php_source_1l00101"/>00101 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__fruit_8php_source_1l00102"/>00102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this-&gt;albums;
+<anchor xml:id="__fruit_8php_source_1l00103"/>00103 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__fruit_8php_source_1l00104"/>00104 
+<anchor xml:id="__fruit_8php_source_1l00112"/><link linkend="_class_app_1_1_entity_1_1_fruit_1a79ad3ae17fa6347782039ba962fd4773">00112</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_fruit_1a79ad3ae17fa6347782039ba962fd4773">addAlbum</link>(<link linkend="_class_app_1_1_entity_1_1_favorite_album">FavoriteAlbum</link>&#32;$album):&#32;self
+<anchor xml:id="__fruit_8php_source_1l00113"/>00113 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__fruit_8php_source_1l00114"/>00114 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!$this-&gt;albums-&gt;contains($album))&#32;{
+<anchor xml:id="__fruit_8php_source_1l00115"/>00115 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$this-&gt;albums-&gt;add($album);
+<anchor xml:id="__fruit_8php_source_1l00116"/>00116 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$album-&gt;<link linkend="_class_app_1_1_entity_1_1_favorite_album_1ab593ea8c6876813ebec46d18c928ee00">addFruit</link>($this);
+<anchor xml:id="__fruit_8php_source_1l00117"/>00117 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__fruit_8php_source_1l00118"/>00118 
+<anchor xml:id="__fruit_8php_source_1l00119"/>00119 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this;
+<anchor xml:id="__fruit_8php_source_1l00120"/>00120 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__fruit_8php_source_1l00121"/>00121 
+<anchor xml:id="__fruit_8php_source_1l00129"/><link linkend="_class_app_1_1_entity_1_1_fruit_1a8ac4b6e0389eb502c205087d8cad7645">00129</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_fruit_1a8ac4b6e0389eb502c205087d8cad7645">removeAlbum</link>(<link linkend="_class_app_1_1_entity_1_1_favorite_album">FavoriteAlbum</link>&#32;$album):&#32;self
+<anchor xml:id="__fruit_8php_source_1l00130"/>00130 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__fruit_8php_source_1l00131"/>00131 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;($this-&gt;albums-&gt;removeElement($album))&#32;{
+<anchor xml:id="__fruit_8php_source_1l00132"/>00132 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$album-&gt;<link linkend="_class_app_1_1_entity_1_1_favorite_album_1a41fda8af5652dd1f6a9af3c9886695d1">removeFruit</link>($this);
+<anchor xml:id="__fruit_8php_source_1l00133"/>00133 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__fruit_8php_source_1l00134"/>00134 
+<anchor xml:id="__fruit_8php_source_1l00135"/>00135 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this;
+<anchor xml:id="__fruit_8php_source_1l00136"/>00136 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__fruit_8php_source_1l00137"/>00137 }
+</programlisting></section>

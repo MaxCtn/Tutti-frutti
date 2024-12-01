@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__test_favorite_albums_command_8php_source" xml:lang="fr">
+<title>TestFavoriteAlbumsCommand.php</title>
+<indexterm><primary>Command/TestFavoriteAlbumsCommand.php</primary></indexterm>
+Aller à la documentation de ce fichier.<programlisting linenumbering="unnumbered"><anchor xml:id="__test_favorite_albums_command_8php_source_1l00001"/>00001 &lt;?php
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00002"/>00002 
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00003"/>00003 <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespace_app_1_1_command">App\Command</link>;
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00004"/>00004 
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00005"/>00005 use&#32;<link linkend="_class_app_1_1_repository_1_1_favorite_album_repository">App\Repository\FavoriteAlbumRepository</link>;
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00006"/>00006 use&#32;Symfony\Component\Console\Attribute\AsCommand;
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00007"/>00007 use&#32;Symfony\Component\Console\Command\Command;
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00008"/>00008 use&#32;Symfony\Component\Console\Input\InputArgument;
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00009"/>00009 use&#32;Symfony\Component\Console\Input\InputInterface;
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00010"/>00010 use&#32;Symfony\Component\Console\Output\OutputInterface;
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00011"/>00011 
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00015"/>00015 <emphasis role="preprocessor">#[AsCommand(name:&#32;&apos;app:test-favorite-albums&apos;)]</emphasis>
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00016"/><link linkend="_class_app_1_1_command_1_1_test_favorite_albums_command">00016</link> <emphasis role="keyword">class&#32;</emphasis><link linkend="_class_app_1_1_command_1_1_test_favorite_albums_command">TestFavoriteAlbumsCommand</link>&#32;<emphasis role="keyword">extends</emphasis>&#32;Command
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00017"/>00017 {
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00023"/>00023 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;<link linkend="_class_app_1_1_repository_1_1_favorite_album_repository">FavoriteAlbumRepository</link>&#32;$favoriteAlbumRepository;
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00024"/>00024 
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00030"/><link linkend="_class_app_1_1_command_1_1_test_favorite_albums_command_1af4472feaa287a5088cdbc624e9cf517e">00030</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_command_1_1_test_favorite_albums_command_1af4472feaa287a5088cdbc624e9cf517e">__construct</link>(<link linkend="_class_app_1_1_repository_1_1_favorite_album_repository">FavoriteAlbumRepository</link>&#32;$favoriteAlbumRepository)
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00031"/>00031 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00032"/>00032 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$this-&gt;favoriteAlbumRepository&#32;=&#32;$favoriteAlbumRepository;
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00033"/>00033 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;parent::__construct();
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00034"/>00034 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00035"/>00035 
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00039"/><link linkend="_class_app_1_1_command_1_1_test_favorite_albums_command_1a9be5e0bdb5720efed6ddb6426c5c16ee">00039</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">protected</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_command_1_1_test_favorite_albums_command_1a9be5e0bdb5720efed6ddb6426c5c16ee">configure</link>():&#32;void
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00040"/>00040 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00041"/>00041 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$this
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00042"/>00042 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;-&gt;setDescription(<emphasis role="stringliteral">&apos;Teste&#32;les&#32;albums&#32;favoris&#32;d\&apos;un&#32;utilisateur&apos;</emphasis>)
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00043"/>00043 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;-&gt;addArgument(<emphasis role="stringliteral">&apos;userId&apos;</emphasis>,&#32;InputArgument::REQUIRED,&#32;<emphasis role="stringliteral">&apos;ID&#32;de&#32;l\&apos;utilisateur&apos;</emphasis>);
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00044"/>00044 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00045"/>00045 
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00054"/><link linkend="_class_app_1_1_command_1_1_test_favorite_albums_command_1ab31c72b72ddaf7116db5d84c055d3c0b">00054</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">protected</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_command_1_1_test_favorite_albums_command_1ab31c72b72ddaf7116db5d84c055d3c0b">execute</link>(InputInterface&#32;$input,&#32;OutputInterface&#32;$output):&#32;int
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00055"/>00055 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00056"/>00056 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$userId&#32;=&#32;(int)&#32;$input-&gt;getArgument(<emphasis role="stringliteral">&apos;userId&apos;</emphasis>);
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00057"/>00057 
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00058"/>00058 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Récupère&#32;les&#32;albums&#32;favoris&#32;de&#32;l&apos;utilisateur</emphasis>
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00059"/>00059 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$favorites&#32;=&#32;$this-&gt;favoriteAlbumRepository-&gt;findBy([<emphasis role="stringliteral">&apos;user&apos;</emphasis>&#32;=&gt;&#32;$userId]);
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00060"/>00060 
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00061"/>00061 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(empty($favorites))&#32;{
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00062"/>00062 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$output-&gt;writeln(<emphasis role="stringliteral">&quot;Aucun&#32;album&#32;favori&#32;trouvé&#32;pour&#32;l&apos;utilisateur&#32;ID&#32;$userId.&quot;</emphasis>);
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00063"/>00063 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;Command::SUCCESS;
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00064"/>00064 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00065"/>00065 
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00066"/>00066 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Affiche&#32;les&#32;détails&#32;de&#32;chaque&#32;album&#32;favori</emphasis>
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00067"/>00067 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">foreach</emphasis>&#32;($favorites&#32;as&#32;$favorite)&#32;{
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00068"/>00068 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$output-&gt;writeln(sprintf(
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00069"/>00069 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;Album&#32;ID:&#32;%d&#32;|&#32;Titre:&#32;%s&#32;|&#32;Année:&#32;%s&#32;|&#32;Image:&#32;%s&quot;</emphasis>,
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00070"/>00070 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$favorite-&gt;getAlbumId(),
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00071"/>00071 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$favorite-&gt;getTitle()&#32;??&#32;<emphasis role="stringliteral">&apos;Non&#32;renseigné&apos;</emphasis>,
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00072"/>00072 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$favorite-&gt;getYear()&#32;??&#32;<emphasis role="stringliteral">&apos;Non&#32;renseignée&apos;</emphasis>,
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00073"/>00073 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$favorite-&gt;getCoverImage()&#32;??&#32;<emphasis role="stringliteral">&apos;Aucune&#32;image&apos;</emphasis>
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00074"/>00074 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;));
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00075"/>00075 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00076"/>00076 
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00077"/>00077 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;Command::SUCCESS;
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00078"/>00078 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__test_favorite_albums_command_8php_source_1l00079"/>00079 }
+</programlisting></section>

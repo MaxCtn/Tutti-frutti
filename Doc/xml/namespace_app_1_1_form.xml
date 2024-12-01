@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="fr">
+  <compounddef id="namespace_app_1_1_form" kind="namespace" language="PHP">
+    <compoundname>App::Form</compoundname>
+    <innerclass refid="class_app_1_1_form_1_1_album_search_type" prot="public">App::Form::AlbumSearchType</innerclass>
+    <innerclass refid="class_app_1_1_form_1_1_registration_form_type" prot="public">App::Form::RegistrationFormType</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Form/AlbumSearchType.php" line="5" column="10"/>
+  </compounddef>
+</doxygen>

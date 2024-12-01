@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__album_search_type_8php_source" xml:lang="fr">
+<title>AlbumSearchType.php</title>
+<indexterm><primary>Form/AlbumSearchType.php</primary></indexterm>
+Aller à la documentation de ce fichier.<programlisting linenumbering="unnumbered"><anchor xml:id="__album_search_type_8php_source_1l00001"/>00001 &lt;?php
+<anchor xml:id="__album_search_type_8php_source_1l00002"/>00002 
+<anchor xml:id="__album_search_type_8php_source_1l00003"/>00003 <emphasis role="comment">//&#32;src/Form/AlbumSearchType.php</emphasis>
+<anchor xml:id="__album_search_type_8php_source_1l00004"/>00004 
+<anchor xml:id="__album_search_type_8php_source_1l00005"/><link linkend="_namespace_app_1_1_form">00005</link> <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespace_app_1_1_form">App\Form</link>;
+<anchor xml:id="__album_search_type_8php_source_1l00006"/>00006 
+<anchor xml:id="__album_search_type_8php_source_1l00007"/>00007 use&#32;Symfony\Component\Form\AbstractType;
+<anchor xml:id="__album_search_type_8php_source_1l00008"/>00008 use&#32;Symfony\Component\Form\FormBuilderInterface;
+<anchor xml:id="__album_search_type_8php_source_1l00009"/>00009 use&#32;Symfony\Component\Form\Extension\Core\Type\SearchType;
+<anchor xml:id="__album_search_type_8php_source_1l00010"/>00010 use&#32;Symfony\Component\Form\Extension\Core\Type\SubmitType;
+<anchor xml:id="__album_search_type_8php_source_1l00011"/>00011 use&#32;Symfony\Component\OptionsResolver\OptionsResolver;
+<anchor xml:id="__album_search_type_8php_source_1l00012"/>00012 
+<anchor xml:id="__album_search_type_8php_source_1l00016"/><link linkend="_class_app_1_1_form_1_1_album_search_type">00016</link> <emphasis role="keyword">class&#32;</emphasis><link linkend="_class_app_1_1_form_1_1_album_search_type">AlbumSearchType</link>&#32;<emphasis role="keyword">extends</emphasis>&#32;AbstractType
+<anchor xml:id="__album_search_type_8php_source_1l00017"/>00017 {
+<anchor xml:id="__album_search_type_8php_source_1l00024"/><link linkend="_class_app_1_1_form_1_1_album_search_type_1a83c3745710374f9c5a1eb0686fe2dfab">00024</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_form_1_1_album_search_type_1a83c3745710374f9c5a1eb0686fe2dfab">buildForm</link>(FormBuilderInterface&#32;$builder,&#32;array&#32;$options):&#32;void
+<anchor xml:id="__album_search_type_8php_source_1l00025"/>00025 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__album_search_type_8php_source_1l00026"/>00026 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$builder
+<anchor xml:id="__album_search_type_8php_source_1l00027"/>00027 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;-&gt;add(<emphasis role="stringliteral">&apos;searchTerm&apos;</emphasis>,&#32;SearchType::class,&#32;[
+<anchor xml:id="__album_search_type_8php_source_1l00028"/>00028 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;label&apos;</emphasis>&#32;=&gt;&#32;<emphasis role="stringliteral">&apos;Recherche&#32;de&#32;fruits&apos;</emphasis>,
+<anchor xml:id="__album_search_type_8php_source_1l00029"/>00029 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;attr&apos;</emphasis>&#32;=&gt;&#32;[
+<anchor xml:id="__album_search_type_8php_source_1l00030"/>00030 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;placeholder&apos;</emphasis>&#32;=&gt;&#32;<emphasis role="stringliteral">&apos;Entrez&#32;un&#32;fruit&#32;(ex&#32;:&#32;banane,&#32;pomme,&#32;etc.)&apos;</emphasis>,
+<anchor xml:id="__album_search_type_8php_source_1l00031"/>00031 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;class&apos;</emphasis>&#32;=&gt;&#32;<emphasis role="stringliteral">&apos;form-control&apos;</emphasis>
+<anchor xml:id="__album_search_type_8php_source_1l00032"/>00032 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;]
+<anchor xml:id="__album_search_type_8php_source_1l00033"/>00033 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;])
+<anchor xml:id="__album_search_type_8php_source_1l00034"/>00034 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;-&gt;add(<emphasis role="stringliteral">&apos;search&apos;</emphasis>,&#32;SubmitType::class,&#32;[
+<anchor xml:id="__album_search_type_8php_source_1l00035"/>00035 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;label&apos;</emphasis>&#32;=&gt;&#32;<emphasis role="stringliteral">&apos;Rechercher&apos;</emphasis>,
+<anchor xml:id="__album_search_type_8php_source_1l00036"/>00036 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;attr&apos;</emphasis>&#32;=&gt;&#32;[
+<anchor xml:id="__album_search_type_8php_source_1l00037"/>00037 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;class&apos;</emphasis>&#32;=&gt;&#32;<emphasis role="stringliteral">&apos;btn&#32;btn-primary&apos;</emphasis>
+<anchor xml:id="__album_search_type_8php_source_1l00038"/>00038 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;]
+<anchor xml:id="__album_search_type_8php_source_1l00039"/>00039 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;]);
+<anchor xml:id="__album_search_type_8php_source_1l00040"/>00040 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__album_search_type_8php_source_1l00041"/>00041 
+<anchor xml:id="__album_search_type_8php_source_1l00047"/><link linkend="_class_app_1_1_form_1_1_album_search_type_1a8ff68a86f5090b5df973286836e46ead">00047</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_form_1_1_album_search_type_1a8ff68a86f5090b5df973286836e46ead">configureOptions</link>(OptionsResolver&#32;$resolver):&#32;void
+<anchor xml:id="__album_search_type_8php_source_1l00048"/>00048 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__album_search_type_8php_source_1l00049"/>00049 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$resolver-&gt;setDefaults([
+<anchor xml:id="__album_search_type_8php_source_1l00050"/>00050 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;csrf_protection&apos;</emphasis>&#32;=&gt;&#32;<emphasis role="keyword">true</emphasis>,&#32;<emphasis role="comment">//&#32;Active&#32;la&#32;protection&#32;CSRF.</emphasis>
+<anchor xml:id="__album_search_type_8php_source_1l00051"/>00051 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;]);
+<anchor xml:id="__album_search_type_8php_source_1l00052"/>00052 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__album_search_type_8php_source_1l00053"/>00053 }
+</programlisting></section>

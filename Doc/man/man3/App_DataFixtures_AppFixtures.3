@@ -1,0 +1,40 @@
+.TH "AppFixtures" 3 "Tutti-frutti" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AppFixtures
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Est dérivée de Fixture\&.
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBload\fP (ObjectManager $manager)"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Classe AppFixtures utilisée pour charger des données factices (fixtures) dans la base de données\&. Elle est exécutée lors de la commande \fRphp bin/console doctrine:fixtures:load\fP\&. 
+.PP
+Définition à la ligne \fB12\fP du fichier \fBAppFixtures\&.php\fP\&.
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "load (ObjectManager $manager)"
+Méthode chargée de créer et de persister les entités de test dans la base de données\&.
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$manager\fP Le gestionnaire d'entités Doctrine\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB19\fP du fichier \fBAppFixtures\&.php\fP\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Tutti-frutti à partir du code source\&.

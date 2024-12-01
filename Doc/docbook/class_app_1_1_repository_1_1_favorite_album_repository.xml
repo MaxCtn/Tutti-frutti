@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_app_1_1_repository_1_1_favorite_album_repository" xml:lang="fr">
+<title>Référence de la classe FavoriteAlbumRepository</title>
+<indexterm><primary>FavoriteAlbumRepository</primary></indexterm>
+Graphe d&apos;héritage de FavoriteAlbumRepository:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_app_1_1_repository_1_1_favorite_album_repository__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Graphe de collaboration de FavoriteAlbumRepository:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_app_1_1_repository_1_1_favorite_album_repository__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Fonctions membres publiques    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_app_1_1_repository_1_1_favorite_album_repository_1a38ea33dde11163765f358f5f10a3bc03">__construct</link> (ManagerRegistry $registry)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_repository_1_1_favorite_album_repository_1a1e89bed821646ae540cc6c84f28cd05b">findByUser</link> ($user, array $filters=[], string $sortBy=&apos;title&apos;, string $order=&apos;ASC&apos;)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Description détaillée</title>
+
+<para>Repository pour l&apos;entité FavoriteAlbum.</para>
+
+<para>Fournit des méthodes personnalisées pour interagir avec les albums favoris d&apos;un utilisateur.</para>
+
+<para>&lt;FavoriteAlbum&gt; </para>
+<para>
+Définition à la ligne <link linkend="__favorite_album_repository_8php_source_1l00016">16</link> du fichier <link linkend="__favorite_album_repository_8php_source">FavoriteAlbumRepository.php</link>.</para>
+</section>
+<section>
+<title>Documentation des constructeurs et destructeur</title>
+<anchor xml:id="_class_app_1_1_repository_1_1_favorite_album_repository_1a38ea33dde11163765f358f5f10a3bc03"/><section>
+    <title>__construct()</title>
+<indexterm><primary>__construct</primary><secondary>FavoriteAlbumRepository</secondary></indexterm>
+<indexterm><primary>FavoriteAlbumRepository</primary><secondary>__construct</secondary></indexterm>
+<para><computeroutput>__construct (ManagerRegistry $registry)</computeroutput></para>
+<para>Constructeur du repository.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Paramètres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>ManagerRegistry</entry><entry>$registry</entry><entry>
+<para>Le registre des gestionnaires d&apos;entités. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Définition à la ligne <link linkend="__favorite_album_repository_8php_source_1l00023">23</link> du fichier <link linkend="__favorite_album_repository_8php_source">FavoriteAlbumRepository.php</link>.</para>
+</section>
+</section>
+<section>
+<title>Documentation des fonctions membres</title>
+<anchor xml:id="_class_app_1_1_repository_1_1_favorite_album_repository_1a1e89bed821646ae540cc6c84f28cd05b"/><section>
+    <title>findByUser()</title>
+<indexterm><primary>findByUser</primary><secondary>FavoriteAlbumRepository</secondary></indexterm>
+<indexterm><primary>FavoriteAlbumRepository</primary><secondary>findByUser</secondary></indexterm>
+<para><computeroutput>findByUser ( $user, array $filters = <computeroutput>[]</computeroutput>
+, string $sortBy = <computeroutput>&apos;title&apos;</computeroutput>
+, string $order = <computeroutput>&apos;ASC&apos;</computeroutput>
+)</computeroutput></para>
+<para>Récupère les albums favoris spécifiques à un utilisateur avec des options de filtrage et de tri.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Paramètres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>mixed</entry><entry>$user</entry><entry>
+<para>L&apos;utilisateur pour lequel récupérer les albums favoris. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>array</entry><entry>$filters</entry><entry>
+<para>Les critères de filtrage (par exemple, &apos;title&apos;, &apos;fruit&apos;, &apos;year&apos;). </para>
+</entry>
+                            </row>
+                            <row>
+<entry>string</entry><entry>$sortBy</entry><entry>
+<para>Le champ sur lequel trier les résultats (par défaut : &apos;title&apos;). </para>
+</entry>
+                            </row>
+                            <row>
+<entry>string</entry><entry>$order</entry><entry>
+<para>L&apos;ordre du tri : &apos;ASC&apos; ou &apos;DESC&apos; (par défaut : &apos;ASC&apos;).</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Renvoie</title>
+
+<para>FavoriteAlbum[] La liste des albums favoris correspondant aux critères. </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__favorite_album_repository_8php_source_1l00038">38</link> du fichier <link linkend="__favorite_album_repository_8php_source">FavoriteAlbumRepository.php</link>.</para>
+</section>
+<para>
+La documentation de cette classe a été générée à partir du fichier suivant :</para>
+Repository/<link linkend="__favorite_album_repository_8php">FavoriteAlbumRepository.php</link></section>
+</section>

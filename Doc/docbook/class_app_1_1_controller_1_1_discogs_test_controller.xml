@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_app_1_1_controller_1_1_discogs_test_controller" xml:lang="fr">
+<title>Référence de la classe DiscogsTestController</title>
+<indexterm><primary>DiscogsTestController</primary></indexterm>
+Graphe d&apos;héritage de DiscogsTestController:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_app_1_1_controller_1_1_discogs_test_controller__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Graphe de collaboration de DiscogsTestController:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_app_1_1_controller_1_1_discogs_test_controller__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Fonctions membres publiques    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_app_1_1_controller_1_1_discogs_test_controller_1ac820e6682701feada0217b7e052e32bf">test</link> (<link linkend="_class_app_1_1_service_1_1_discogs_service">DiscogsService</link> $discogsService)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Description détaillée</title>
+
+<para>Contrôleur de test pour l&apos;interaction avec l&apos;API Discogs. </para>
+<para>
+Définition à la ligne <link linkend="__discogs_test_controller_8php_source_1l00013">13</link> du fichier <link linkend="__discogs_test_controller_8php_source">DiscogsTestController.php</link>.</para>
+</section>
+<section>
+<title>Documentation des fonctions membres</title>
+<anchor xml:id="_class_app_1_1_controller_1_1_discogs_test_controller_1ac820e6682701feada0217b7e052e32bf"/><section>
+    <title>test()</title>
+<indexterm><primary>test</primary><secondary>DiscogsTestController</secondary></indexterm>
+<indexterm><primary>DiscogsTestController</primary><secondary>test</secondary></indexterm>
+<para><computeroutput>test (<link linkend="_class_app_1_1_service_1_1_discogs_service">DiscogsService</link> $discogsService)</computeroutput></para>
+<para>Teste la recherche d&apos;albums en utilisant le service Discogs.</para>
+
+<para>@Route(&quot;/test-discogs&quot;, name=&quot;test_discogs&quot;, methods={&quot;GET&quot;})</para>
+
+<para>
+                <formalpara>
+                    <title>
+Paramètres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>DiscogsService</entry><entry>$discogsService</entry><entry>
+<para>Le service Discogs pour effectuer des requêtes à l&apos;API.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Renvoie</title>
+
+<para>Response La réponse JSON contenant les résultats de la recherche. </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__discogs_test_controller_8php_source_1l00025">25</link> du fichier <link linkend="__discogs_test_controller_8php_source">DiscogsTestController.php</link>.</para>
+</section>
+<para>
+La documentation de cette classe a été générée à partir du fichier suivant :</para>
+Controller/<link linkend="__discogs_test_controller_8php">DiscogsTestController.php</link></section>
+</section>

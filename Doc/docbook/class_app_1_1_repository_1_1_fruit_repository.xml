@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_app_1_1_repository_1_1_fruit_repository" xml:lang="fr">
+<title>Référence de la classe FruitRepository</title>
+<indexterm><primary>FruitRepository</primary></indexterm>
+Graphe d&apos;héritage de FruitRepository:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_app_1_1_repository_1_1_fruit_repository__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Graphe de collaboration de FruitRepository:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_app_1_1_repository_1_1_fruit_repository__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Fonctions membres publiques    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_app_1_1_repository_1_1_fruit_repository_1a38ea33dde11163765f358f5f10a3bc03">__construct</link> (ManagerRegistry $registry)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_repository_1_1_fruit_repository_1a75686a8dc64f97f7a8ea96a20997cf25">findOrCreate</link> (string $fruitName)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Description détaillée</title>
+
+<para>Repository pour l&apos;entité Fruit.</para>
+
+<para>Fournit des méthodes de base pour interagir avec les fruits et permet d&apos;ajouter des méthodes personnalisées pour répondre à des besoins spécifiques.</para>
+
+<para>&lt;Fruit&gt; </para>
+<para>
+Définition à la ligne <link linkend="__fruit_repository_8php_source_1l00017">17</link> du fichier <link linkend="__fruit_repository_8php_source">FruitRepository.php</link>.</para>
+</section>
+<section>
+<title>Documentation des constructeurs et destructeur</title>
+<anchor xml:id="_class_app_1_1_repository_1_1_fruit_repository_1a38ea33dde11163765f358f5f10a3bc03"/><section>
+    <title>__construct()</title>
+<indexterm><primary>__construct</primary><secondary>FruitRepository</secondary></indexterm>
+<indexterm><primary>FruitRepository</primary><secondary>__construct</secondary></indexterm>
+<para><computeroutput>__construct (ManagerRegistry $registry)</computeroutput></para>
+<para>Constructeur du repository.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Paramètres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>ManagerRegistry</entry><entry>$registry</entry><entry>
+<para>Le registre des gestionnaires d&apos;entités. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Définition à la ligne <link linkend="__fruit_repository_8php_source_1l00024">24</link> du fichier <link linkend="__fruit_repository_8php_source">FruitRepository.php</link>.</para>
+</section>
+</section>
+<section>
+<title>Documentation des fonctions membres</title>
+<anchor xml:id="_class_app_1_1_repository_1_1_fruit_repository_1a75686a8dc64f97f7a8ea96a20997cf25"/><section>
+    <title>findOrCreate()</title>
+<indexterm><primary>findOrCreate</primary><secondary>FruitRepository</secondary></indexterm>
+<indexterm><primary>FruitRepository</primary><secondary>findOrCreate</secondary></indexterm>
+<para><computeroutput>findOrCreate (string $fruitName)</computeroutput></para>
+<para>Trouve un fruit par son nom ou le crée s&apos;il n&apos;existe pas.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Paramètres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>string</entry><entry>$fruitName</entry><entry>
+<para>Le nom du fruit à rechercher ou à créer. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Renvoie</title>
+
+<para>Fruit Le fruit trouvé ou nouvellement créé. </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__fruit_repository_8php_source_1l00035">35</link> du fichier <link linkend="__fruit_repository_8php_source">FruitRepository.php</link>.</para>
+</section>
+<para>
+La documentation de cette classe a été générée à partir du fichier suivant :</para>
+Repository/<link linkend="__fruit_repository_8php">FruitRepository.php</link></section>
+</section>

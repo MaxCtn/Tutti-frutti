@@ -1,0 +1,73 @@
+\doxysection{Référence de la classe Connexion\+Controller}
+\hypertarget{class_app_1_1_controller_1_1_connexion_controller}{}\label{class_app_1_1_controller_1_1_connexion_controller}\index{ConnexionController@{ConnexionController}}
+
+
+Graphe d\textquotesingle{}héritage de Connexion\+Controller\+:
+% FIG 0
+
+
+Graphe de collaboration de Connexion\+Controller\+:
+% FIG 1
+\doxysubsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_app_1_1_controller_1_1_connexion_controller_a0c05ef8ddb2188649a9972a35f3c3512}{login}} (Authentication\+Utils \$authentication\+Utils)
+\item 
+\mbox{\hyperlink{class_app_1_1_controller_1_1_connexion_controller_a082405d89acd6835c3a7c7a08a7adbab}{logout}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Contrôleur gérant les actions de connexion et de déconnexion des utilisateurs. 
+
+Définition à la ligne \mbox{\hyperlink{_connexion_controller_8php_source_l00013}{13}} du fichier \mbox{\hyperlink{_connexion_controller_8php_source}{Connexion\+Controller.\+php}}.
+
+
+
+\doxysubsection{Documentation des fonctions membres}
+\Hypertarget{class_app_1_1_controller_1_1_connexion_controller_a0c05ef8ddb2188649a9972a35f3c3512}\index{ConnexionController@{ConnexionController}!login@{login}}
+\index{login@{login}!ConnexionController@{ConnexionController}}
+\doxysubsubsection{\texorpdfstring{login()}{login()}}
+{\footnotesize\ttfamily \label{class_app_1_1_controller_1_1_connexion_controller_a0c05ef8ddb2188649a9972a35f3c3512} 
+login (\begin{DoxyParamCaption}\item[{Authentication\+Utils}]{\$authentication\+Utils}{}\end{DoxyParamCaption})}
+
+Affiche le formulaire de connexion et traite les tentatives de connexion.
+
+@\+Route("{}/login"{}, name="{}app\+\_\+login"{}, methods=\{"{}\+GET"{}, "{}\+POST"{}\})
+
+
+\begin{DoxyParams}[1]{Paramètres}
+Authentication\+Utils & {\em \$authentication\+Utils} & Utilitaire d\textquotesingle{}authentification pour récupérer les erreurs et le dernier nom d\textquotesingle{}utilisateur saisi.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Response La réponse HTTP contenant le formulaire de connexion. 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_connexion_controller_8php_source_l00025}{25}} du fichier \mbox{\hyperlink{_connexion_controller_8php_source}{Connexion\+Controller.\+php}}.
+
+\Hypertarget{class_app_1_1_controller_1_1_connexion_controller_a082405d89acd6835c3a7c7a08a7adbab}\index{ConnexionController@{ConnexionController}!logout@{logout}}
+\index{logout@{logout}!ConnexionController@{ConnexionController}}
+\doxysubsubsection{\texorpdfstring{logout()}{logout()}}
+{\footnotesize\ttfamily \label{class_app_1_1_controller_1_1_connexion_controller_a082405d89acd6835c3a7c7a08a7adbab} 
+logout (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Point de déconnexion de l\textquotesingle{}application.
+
+@\+Route("{}/logout"{}, name="{}app\+\_\+logout"{}, methods=\{"{}\+GET"{}\})
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em } & \\
+\hline
+\end{DoxyExceptions}
+Logic\+Exception Cette méthode est interceptée par le pare-\/feu de sécurité et ne devrait pas être exécutée. 
+
+Définition à la ligne \mbox{\hyperlink{_connexion_controller_8php_source_l00047}{47}} du fichier \mbox{\hyperlink{_connexion_controller_8php_source}{Connexion\+Controller.\+php}}.
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+Controller/\mbox{\hyperlink{_connexion_controller_8php}{Connexion\+Controller.\+php}}\end{DoxyCompactItemize}

@@ -1,0 +1,698 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_app_1_1_entity_1_1_favorite_album" xml:lang="fr">
+<title>Référence de la classe FavoriteAlbum</title>
+<indexterm><primary>FavoriteAlbum</primary></indexterm>
+<simplesect>
+    <title>Fonctions membres publiques    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_favorite_album_1a095c5d389db211932136b53f25f39685">__construct</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_favorite_album_1a12251d0c022e9e21c137a105ff683f13">getId</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_favorite_album_1af25659d3cdc12b0faf5a2322241bf69a">getAlbumId</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_favorite_album_1a5616f9d98d68c2597046ef7d04d84f6f">setAlbumId</link> (int $albumId)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_favorite_album_1a95e859a4588a39a1824b717378a84c29">getTitle</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_favorite_album_1ac698bca9a4f3d5d9355ff023eee17285">setTitle</link> (?string $title)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_favorite_album_1ad0a298a1c3d30a5dff3278f1f5bb7d86">getYear</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_favorite_album_1a380136d26548fcfb8b3130250a42b9c2">setYear</link> (?string $year)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_favorite_album_1af68dead1965a2a3240f96ae558e355f8">getCoverImage</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_favorite_album_1a32e0a6523167ed7e60e5c30711dfe1fa">setCoverImage</link> (?string $coverImage)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_favorite_album_1a14c4e7420d903d3e40342266333d2ecf">getLabel</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_favorite_album_1a2a7c7c3195c43a32ab55f2fea78ba318">setLabel</link> (?<link linkend="_class_app_1_1_entity_1_1_label">Label</link> $label)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_favorite_album_1adc6f217756d49edbac6975e1f69485d5">getGenre</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_favorite_album_1a6fcf7c3ce3de45970b6f384c6c2c1e8c">setGenre</link> (?<link linkend="_class_app_1_1_entity_1_1_genre">Genre</link> $genre)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_favorite_album_1ae3c4fbe3e8eb0d6755694bc597d6c52f">getFormat</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_favorite_album_1ab8f9ee51eb3a4b472abe80f921676a8c">setFormat</link> (?<link linkend="_class_app_1_1_entity_1_1_format">Format</link> $format)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_favorite_album_1ae81b7186fb97a7c6457edcc68c9aa2ef">getUser</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_favorite_album_1a406a111868b45aad6d4c8ab5b0c5bcb9">setUser</link> (?<link linkend="_class_app_1_1_entity_1_1_user">User</link> $user)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_favorite_album_1a6c52b5b67bd8eb098d0bc259e86312ff">getFruits</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_favorite_album_1ab593ea8c6876813ebec46d18c928ee00">addFruit</link> (<link linkend="_class_app_1_1_entity_1_1_fruit">Fruit</link> $fruit)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_favorite_album_1a41fda8af5652dd1f6a9af3c9886695d1">removeFruit</link> (<link linkend="_class_app_1_1_entity_1_1_fruit">Fruit</link> $fruit)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_favorite_album_1a8dc1c9e8edd1295fd956a4eb3af053b2">getTracks</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_favorite_album_1af6a5b20e58074d84acb01c009b10d014">addTrack</link> (<link linkend="_class_app_1_1_entity_1_1_track">Track</link> $track)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_favorite_album_1a13b62bd4ee7d72e4c46354bdda6bcdf0">removeTrack</link> (<link linkend="_class_app_1_1_entity_1_1_track">Track</link> $track)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_entity_1_1_favorite_album_1ab2f077a347becc5f1c0446c975dec551">getAllFruits</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Description détaillée</title>
+
+<para>Entité représentant un album favori d&apos;un utilisateur.</para>
+
+<para>@ORM\Entity(repositoryClass=FavoriteAlbumRepository::class) @Broadcast </para>
+<para>
+Définition à la ligne <link linkend="__favorite_album_8php_source_1l00019">19</link> du fichier <link linkend="__favorite_album_8php_source">FavoriteAlbum.php</link>.</para>
+</section>
+<section>
+<title>Documentation des constructeurs et destructeur</title>
+<anchor xml:id="_class_app_1_1_entity_1_1_favorite_album_1a095c5d389db211932136b53f25f39685"/><section>
+    <title>__construct()</title>
+<indexterm><primary>__construct</primary><secondary>FavoriteAlbum</secondary></indexterm>
+<indexterm><primary>FavoriteAlbum</primary><secondary>__construct</secondary></indexterm>
+<para><computeroutput>__construct ( )</computeroutput></para>
+<para>Constructeur de la classe FavoriteAlbum. Initialise les collections de fruits et de pistes. </para>
+<para>
+Définition à la ligne <link linkend="__favorite_album_8php_source_1l00150">150</link> du fichier <link linkend="__favorite_album_8php_source">FavoriteAlbum.php</link>.</para>
+</section>
+</section>
+<section>
+<title>Documentation des fonctions membres</title>
+<anchor xml:id="_class_app_1_1_entity_1_1_favorite_album_1ab593ea8c6876813ebec46d18c928ee00"/><section>
+    <title>addFruit()</title>
+<indexterm><primary>addFruit</primary><secondary>FavoriteAlbum</secondary></indexterm>
+<indexterm><primary>FavoriteAlbum</primary><secondary>addFruit</secondary></indexterm>
+<para><computeroutput>addFruit (<link linkend="_class_app_1_1_entity_1_1_fruit">Fruit</link> $fruit)</computeroutput></para>
+<para>Ajoute un fruit à la collection des fruits associés.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Paramètres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>Fruit</entry><entry>$fruit</entry><entry>
+<para>Le fruit à ajouter.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Renvoie</title>
+
+<para>self </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__favorite_album_8php_source_1l00370">370</link> du fichier <link linkend="__favorite_album_8php_source">FavoriteAlbum.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_entity_1_1_favorite_album_1af6a5b20e58074d84acb01c009b10d014"/><section>
+    <title>addTrack()</title>
+<indexterm><primary>addTrack</primary><secondary>FavoriteAlbum</secondary></indexterm>
+<indexterm><primary>FavoriteAlbum</primary><secondary>addTrack</secondary></indexterm>
+<para><computeroutput>addTrack (<link linkend="_class_app_1_1_entity_1_1_track">Track</link> $track)</computeroutput></para>
+<para>Ajoute une piste à la collection des pistes associées.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Paramètres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>Track</entry><entry>$track</entry><entry>
+<para>La piste à ajouter.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Renvoie</title>
+
+<para>self </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__favorite_album_8php_source_1l00408">408</link> du fichier <link linkend="__favorite_album_8php_source">FavoriteAlbum.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_entity_1_1_favorite_album_1af25659d3cdc12b0faf5a2322241bf69a"/><section>
+    <title>getAlbumId()</title>
+<indexterm><primary>getAlbumId</primary><secondary>FavoriteAlbum</secondary></indexterm>
+<indexterm><primary>FavoriteAlbum</primary><secondary>getAlbumId</secondary></indexterm>
+<para><computeroutput>getAlbumId ( )</computeroutput></para>
+<para>Obtient l&apos;identifiant de l&apos;album dans le système externe.</para>
+
+<para><formalpara><title>Renvoie</title>
+
+<para>int|null L&apos;identifiant de l&apos;album. </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__favorite_album_8php_source_1l00173">173</link> du fichier <link linkend="__favorite_album_8php_source">FavoriteAlbum.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_entity_1_1_favorite_album_1ab2f077a347becc5f1c0446c975dec551"/><section>
+    <title>getAllFruits()</title>
+<indexterm><primary>getAllFruits</primary><secondary>FavoriteAlbum</secondary></indexterm>
+<indexterm><primary>FavoriteAlbum</primary><secondary>getAllFruits</secondary></indexterm>
+<para><computeroutput>getAllFruits ( )</computeroutput></para>
+<para>Récupère tous les fruits associés à l&apos;album et à ses morceaux.</para>
+
+<para><formalpara><title>Renvoie</title>
+
+<para>array La liste de tous les fruits associés. </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__favorite_album_8php_source_1l00440">440</link> du fichier <link linkend="__favorite_album_8php_source">FavoriteAlbum.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_entity_1_1_favorite_album_1af68dead1965a2a3240f96ae558e355f8"/><section>
+    <title>getCoverImage()</title>
+<indexterm><primary>getCoverImage</primary><secondary>FavoriteAlbum</secondary></indexterm>
+<indexterm><primary>FavoriteAlbum</primary><secondary>getCoverImage</secondary></indexterm>
+<para><computeroutput>getCoverImage ( )</computeroutput></para>
+<para>Obtient l&apos;URL de l&apos;image de couverture. Si aucune URL n&apos;est définie, retourne une image par défaut.</para>
+
+<para><formalpara><title>Renvoie</title>
+
+<para>string|null L&apos;URL de l&apos;image de couverture. </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__favorite_album_8php_source_1l00243">243</link> du fichier <link linkend="__favorite_album_8php_source">FavoriteAlbum.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_entity_1_1_favorite_album_1ae3c4fbe3e8eb0d6755694bc597d6c52f"/><section>
+    <title>getFormat()</title>
+<indexterm><primary>getFormat</primary><secondary>FavoriteAlbum</secondary></indexterm>
+<indexterm><primary>FavoriteAlbum</primary><secondary>getFormat</secondary></indexterm>
+<para><computeroutput>getFormat ( )</computeroutput></para>
+<para>Obtient le format de l&apos;album (vinyle, CD, etc.).</para>
+
+<para><formalpara><title>Renvoie</title>
+
+<para>Format|null Le format de l&apos;album. </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__favorite_album_8php_source_1l00312">312</link> du fichier <link linkend="__favorite_album_8php_source">FavoriteAlbum.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_entity_1_1_favorite_album_1a6c52b5b67bd8eb098d0bc259e86312ff"/><section>
+    <title>getFruits()</title>
+<indexterm><primary>getFruits</primary><secondary>FavoriteAlbum</secondary></indexterm>
+<indexterm><primary>FavoriteAlbum</primary><secondary>getFruits</secondary></indexterm>
+<para><computeroutput>getFruits ( )</computeroutput></para>
+<para>Obtient la collection des fruits associés à l&apos;album.</para>
+
+<para><formalpara><title>Renvoie</title>
+
+<para>Collection&lt;int, Fruit&gt; La collection de fruits. </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__favorite_album_8php_source_1l00358">358</link> du fichier <link linkend="__favorite_album_8php_source">FavoriteAlbum.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_entity_1_1_favorite_album_1adc6f217756d49edbac6975e1f69485d5"/><section>
+    <title>getGenre()</title>
+<indexterm><primary>getGenre</primary><secondary>FavoriteAlbum</secondary></indexterm>
+<indexterm><primary>FavoriteAlbum</primary><secondary>getGenre</secondary></indexterm>
+<para><computeroutput>getGenre ( )</computeroutput></para>
+<para>Obtient le genre musical de l&apos;album.</para>
+
+<para><formalpara><title>Renvoie</title>
+
+<para>Genre|null Le genre musical. </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__favorite_album_8php_source_1l00289">289</link> du fichier <link linkend="__favorite_album_8php_source">FavoriteAlbum.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_entity_1_1_favorite_album_1a12251d0c022e9e21c137a105ff683f13"/><section>
+    <title>getId()</title>
+<indexterm><primary>getId</primary><secondary>FavoriteAlbum</secondary></indexterm>
+<indexterm><primary>FavoriteAlbum</primary><secondary>getId</secondary></indexterm>
+<para><computeroutput>getId ( )</computeroutput></para>
+<para>Obtient l&apos;identifiant unique de l&apos;album favori.</para>
+
+<para><formalpara><title>Renvoie</title>
+
+<para>int|null L&apos;identifiant de l&apos;album favori. </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__favorite_album_8php_source_1l00163">163</link> du fichier <link linkend="__favorite_album_8php_source">FavoriteAlbum.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_entity_1_1_favorite_album_1a14c4e7420d903d3e40342266333d2ecf"/><section>
+    <title>getLabel()</title>
+<indexterm><primary>getLabel</primary><secondary>FavoriteAlbum</secondary></indexterm>
+<indexterm><primary>FavoriteAlbum</primary><secondary>getLabel</secondary></indexterm>
+<para><computeroutput>getLabel ( )</computeroutput></para>
+<para>Obtient le label de l&apos;album.</para>
+
+<para><formalpara><title>Renvoie</title>
+
+<para>Label|null Le label de l&apos;album. </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__favorite_album_8php_source_1l00266">266</link> du fichier <link linkend="__favorite_album_8php_source">FavoriteAlbum.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_entity_1_1_favorite_album_1a95e859a4588a39a1824b717378a84c29"/><section>
+    <title>getTitle()</title>
+<indexterm><primary>getTitle</primary><secondary>FavoriteAlbum</secondary></indexterm>
+<indexterm><primary>FavoriteAlbum</primary><secondary>getTitle</secondary></indexterm>
+<para><computeroutput>getTitle ( )</computeroutput></para>
+<para>Obtient le titre de l&apos;album.</para>
+
+<para><formalpara><title>Renvoie</title>
+
+<para>string|null Le titre de l&apos;album. </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__favorite_album_8php_source_1l00196">196</link> du fichier <link linkend="__favorite_album_8php_source">FavoriteAlbum.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_entity_1_1_favorite_album_1a8dc1c9e8edd1295fd956a4eb3af053b2"/><section>
+    <title>getTracks()</title>
+<indexterm><primary>getTracks</primary><secondary>FavoriteAlbum</secondary></indexterm>
+<indexterm><primary>FavoriteAlbum</primary><secondary>getTracks</secondary></indexterm>
+<para><computeroutput>getTracks ( )</computeroutput></para>
+<para>Obtient la collection des pistes associées à l&apos;album.</para>
+
+<para><formalpara><title>Renvoie</title>
+
+<para>Collection&lt;int, Track&gt; La collection de pistes. </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__favorite_album_8php_source_1l00396">396</link> du fichier <link linkend="__favorite_album_8php_source">FavoriteAlbum.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_entity_1_1_favorite_album_1ae81b7186fb97a7c6457edcc68c9aa2ef"/><section>
+    <title>getUser()</title>
+<indexterm><primary>getUser</primary><secondary>FavoriteAlbum</secondary></indexterm>
+<indexterm><primary>FavoriteAlbum</primary><secondary>getUser</secondary></indexterm>
+<para><computeroutput>getUser ( )</computeroutput></para>
+<para>Obtient l&apos;utilisateur propriétaire de l&apos;album favori.</para>
+
+<para><formalpara><title>Renvoie</title>
+
+<para>User|null L&apos;utilisateur. </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__favorite_album_8php_source_1l00335">335</link> du fichier <link linkend="__favorite_album_8php_source">FavoriteAlbum.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_entity_1_1_favorite_album_1ad0a298a1c3d30a5dff3278f1f5bb7d86"/><section>
+    <title>getYear()</title>
+<indexterm><primary>getYear</primary><secondary>FavoriteAlbum</secondary></indexterm>
+<indexterm><primary>FavoriteAlbum</primary><secondary>getYear</secondary></indexterm>
+<para><computeroutput>getYear ( )</computeroutput></para>
+<para>Obtient l&apos;année de sortie de l&apos;album.</para>
+
+<para><formalpara><title>Renvoie</title>
+
+<para>string|null L&apos;année de sortie. </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__favorite_album_8php_source_1l00219">219</link> du fichier <link linkend="__favorite_album_8php_source">FavoriteAlbum.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_entity_1_1_favorite_album_1a41fda8af5652dd1f6a9af3c9886695d1"/><section>
+    <title>removeFruit()</title>
+<indexterm><primary>removeFruit</primary><secondary>FavoriteAlbum</secondary></indexterm>
+<indexterm><primary>FavoriteAlbum</primary><secondary>removeFruit</secondary></indexterm>
+<para><computeroutput>removeFruit (<link linkend="_class_app_1_1_entity_1_1_fruit">Fruit</link> $fruit)</computeroutput></para>
+<para>Retire un fruit de la collection des fruits associés.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Paramètres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>Fruit</entry><entry>$fruit</entry><entry>
+<para>Le fruit à retirer.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Renvoie</title>
+
+<para>self </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__favorite_album_8php_source_1l00385">385</link> du fichier <link linkend="__favorite_album_8php_source">FavoriteAlbum.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_entity_1_1_favorite_album_1a13b62bd4ee7d72e4c46354bdda6bcdf0"/><section>
+    <title>removeTrack()</title>
+<indexterm><primary>removeTrack</primary><secondary>FavoriteAlbum</secondary></indexterm>
+<indexterm><primary>FavoriteAlbum</primary><secondary>removeTrack</secondary></indexterm>
+<para><computeroutput>removeTrack (<link linkend="_class_app_1_1_entity_1_1_track">Track</link> $track)</computeroutput></para>
+<para>Retire une piste de la collection des pistes associées.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Paramètres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>Track</entry><entry>$track</entry><entry>
+<para>La piste à retirer.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Renvoie</title>
+
+<para>self </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__favorite_album_8php_source_1l00424">424</link> du fichier <link linkend="__favorite_album_8php_source">FavoriteAlbum.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_entity_1_1_favorite_album_1a5616f9d98d68c2597046ef7d04d84f6f"/><section>
+    <title>setAlbumId()</title>
+<indexterm><primary>setAlbumId</primary><secondary>FavoriteAlbum</secondary></indexterm>
+<indexterm><primary>FavoriteAlbum</primary><secondary>setAlbumId</secondary></indexterm>
+<para><computeroutput>setAlbumId (int $albumId)</computeroutput></para>
+<para>Définit l&apos;identifiant de l&apos;album dans le système externe.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Paramètres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>int</entry><entry>$albumId</entry><entry>
+<para>L&apos;identifiant de l&apos;album.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Renvoie</title>
+
+<para>self </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__favorite_album_8php_source_1l00185">185</link> du fichier <link linkend="__favorite_album_8php_source">FavoriteAlbum.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_entity_1_1_favorite_album_1a32e0a6523167ed7e60e5c30711dfe1fa"/><section>
+    <title>setCoverImage()</title>
+<indexterm><primary>setCoverImage</primary><secondary>FavoriteAlbum</secondary></indexterm>
+<indexterm><primary>FavoriteAlbum</primary><secondary>setCoverImage</secondary></indexterm>
+<para><computeroutput>setCoverImage (?string $coverImage)</computeroutput></para>
+<para>Définit l&apos;URL de l&apos;image de couverture.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Paramètres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>string | null</entry><entry>$coverImage</entry><entry>
+<para>L&apos;URL de l&apos;image.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Renvoie</title>
+
+<para>self </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__favorite_album_8php_source_1l00255">255</link> du fichier <link linkend="__favorite_album_8php_source">FavoriteAlbum.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_entity_1_1_favorite_album_1ab8f9ee51eb3a4b472abe80f921676a8c"/><section>
+    <title>setFormat()</title>
+<indexterm><primary>setFormat</primary><secondary>FavoriteAlbum</secondary></indexterm>
+<indexterm><primary>FavoriteAlbum</primary><secondary>setFormat</secondary></indexterm>
+<para><computeroutput>setFormat (?<link linkend="_class_app_1_1_entity_1_1_format">Format</link> $format)</computeroutput></para>
+<para>Définit le format de l&apos;album.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Paramètres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>Format | null</entry><entry>$format</entry><entry>
+<para>Le format.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Renvoie</title>
+
+<para>self </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__favorite_album_8php_source_1l00324">324</link> du fichier <link linkend="__favorite_album_8php_source">FavoriteAlbum.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_entity_1_1_favorite_album_1a6fcf7c3ce3de45970b6f384c6c2c1e8c"/><section>
+    <title>setGenre()</title>
+<indexterm><primary>setGenre</primary><secondary>FavoriteAlbum</secondary></indexterm>
+<indexterm><primary>FavoriteAlbum</primary><secondary>setGenre</secondary></indexterm>
+<para><computeroutput>setGenre (?<link linkend="_class_app_1_1_entity_1_1_genre">Genre</link> $genre)</computeroutput></para>
+<para>Définit le genre musical de l&apos;album.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Paramètres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>Genre | null</entry><entry>$genre</entry><entry>
+<para>Le genre musical.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Renvoie</title>
+
+<para>self </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__favorite_album_8php_source_1l00301">301</link> du fichier <link linkend="__favorite_album_8php_source">FavoriteAlbum.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_entity_1_1_favorite_album_1a2a7c7c3195c43a32ab55f2fea78ba318"/><section>
+    <title>setLabel()</title>
+<indexterm><primary>setLabel</primary><secondary>FavoriteAlbum</secondary></indexterm>
+<indexterm><primary>FavoriteAlbum</primary><secondary>setLabel</secondary></indexterm>
+<para><computeroutput>setLabel (?<link linkend="_class_app_1_1_entity_1_1_label">Label</link> $label)</computeroutput></para>
+<para>Définit le label de l&apos;album.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Paramètres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>Label | null</entry><entry>$label</entry><entry>
+<para>Le label.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Renvoie</title>
+
+<para>self </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__favorite_album_8php_source_1l00278">278</link> du fichier <link linkend="__favorite_album_8php_source">FavoriteAlbum.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_entity_1_1_favorite_album_1ac698bca9a4f3d5d9355ff023eee17285"/><section>
+    <title>setTitle()</title>
+<indexterm><primary>setTitle</primary><secondary>FavoriteAlbum</secondary></indexterm>
+<indexterm><primary>FavoriteAlbum</primary><secondary>setTitle</secondary></indexterm>
+<para><computeroutput>setTitle (?string $title)</computeroutput></para>
+<para>Définit le titre de l&apos;album.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Paramètres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>string | null</entry><entry>$title</entry><entry>
+<para>Le titre de l&apos;album.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Renvoie</title>
+
+<para>self </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__favorite_album_8php_source_1l00208">208</link> du fichier <link linkend="__favorite_album_8php_source">FavoriteAlbum.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_entity_1_1_favorite_album_1a406a111868b45aad6d4c8ab5b0c5bcb9"/><section>
+    <title>setUser()</title>
+<indexterm><primary>setUser</primary><secondary>FavoriteAlbum</secondary></indexterm>
+<indexterm><primary>FavoriteAlbum</primary><secondary>setUser</secondary></indexterm>
+<para><computeroutput>setUser (?<link linkend="_class_app_1_1_entity_1_1_user">User</link> $user)</computeroutput></para>
+<para>Définit l&apos;utilisateur propriétaire de l&apos;album favori.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Paramètres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>User | null</entry><entry>$user</entry><entry>
+<para>L&apos;utilisateur.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Renvoie</title>
+
+<para>self </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__favorite_album_8php_source_1l00347">347</link> du fichier <link linkend="__favorite_album_8php_source">FavoriteAlbum.php</link>.</para>
+</section>
+<anchor xml:id="_class_app_1_1_entity_1_1_favorite_album_1a380136d26548fcfb8b3130250a42b9c2"/><section>
+    <title>setYear()</title>
+<indexterm><primary>setYear</primary><secondary>FavoriteAlbum</secondary></indexterm>
+<indexterm><primary>FavoriteAlbum</primary><secondary>setYear</secondary></indexterm>
+<para><computeroutput>setYear (?string $year)</computeroutput></para>
+<para>Définit l&apos;année de sortie de l&apos;album.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Paramètres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>string | null</entry><entry>$year</entry><entry>
+<para>L&apos;année de sortie.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Renvoie</title>
+
+<para>self </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__favorite_album_8php_source_1l00231">231</link> du fichier <link linkend="__favorite_album_8php_source">FavoriteAlbum.php</link>.</para>
+</section>
+<para>
+La documentation de cette classe a été générée à partir du fichier suivant :</para>
+Entity/<link linkend="__favorite_album_8php">FavoriteAlbum.php</link></section>
+</section>

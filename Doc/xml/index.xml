@@ -1,0 +1,481 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.12.0" xml:lang="fr">
+  <compound refid="class_app_1_1_controller_1_1_album_search_controller" kind="class"><name>App::Controller::AlbumSearchController</name>
+    <member refid="class_app_1_1_controller_1_1_album_search_controller_1a509a29f2d48543f9fd118b1a7032ebe8" kind="variable"><name>$discogsService</name></member>
+    <member refid="class_app_1_1_controller_1_1_album_search_controller_1ad004514ef999d76cb19ca6519b55a8c0" kind="variable"><name>$entityManager</name></member>
+    <member refid="class_app_1_1_controller_1_1_album_search_controller_1ae684060a647ec21f30e4cde445b19e61" kind="function"><name>__construct</name></member>
+    <member refid="class_app_1_1_controller_1_1_album_search_controller_1a32c26085cd6825224689fb8e12587e93" kind="function"><name>search</name></member>
+    <member refid="class_app_1_1_controller_1_1_album_search_controller_1a5f1ab14d454cb3fa1e76a480f999c5c9" kind="function"><name>showDetails</name></member>
+    <member refid="class_app_1_1_controller_1_1_album_search_controller_1a6c1bfe7b2f2ffe8e8e690e4172a381ed" kind="function"><name>addToFavorites</name></member>
+    <member refid="class_app_1_1_controller_1_1_album_search_controller_1af2a9aa2a4c124597835da76a98d258a1" kind="function"><name>removeFromFavorites</name></member>
+    <member refid="class_app_1_1_controller_1_1_album_search_controller_1a41edb67b5455da64a696b8b7265ce31c" kind="function"><name>getFavoriteAlbumByUserAndId</name></member>
+    <member refid="class_app_1_1_controller_1_1_album_search_controller_1a7956ef653347f0fa3deebbe207bcc540" kind="function"><name>createFavoriteAlbum</name></member>
+    <member refid="class_app_1_1_controller_1_1_album_search_controller_1a068ba1dd76954c3884d263bd5f1459f0" kind="function"><name>findOrCreateEntity</name></member>
+  </compound>
+  <compound refid="class_app_1_1_form_1_1_album_search_type" kind="class"><name>App::Form::AlbumSearchType</name>
+    <member refid="class_app_1_1_form_1_1_album_search_type_1a83c3745710374f9c5a1eb0686fe2dfab" kind="function"><name>buildForm</name></member>
+    <member refid="class_app_1_1_form_1_1_album_search_type_1a8ff68a86f5090b5df973286836e46ead" kind="function"><name>configureOptions</name></member>
+  </compound>
+  <compound refid="class_app_1_1_security_1_1_app_custom_authenticator" kind="class"><name>App::Security::AppCustomAuthenticator</name>
+    <member refid="class_app_1_1_security_1_1_app_custom_authenticator_1acefb6c1e88a6be21742efe1796c1b10a" kind="variable"><name>LOGIN_ROUTE</name></member>
+    <member refid="class_app_1_1_security_1_1_app_custom_authenticator_1aac6e730def6138bd753bf80f917642ad" kind="variable"><name>$urlGenerator</name></member>
+    <member refid="class_app_1_1_security_1_1_app_custom_authenticator_1aafc1eab4a8c8c05bc66d94041d739d0f" kind="function"><name>__construct</name></member>
+    <member refid="class_app_1_1_security_1_1_app_custom_authenticator_1acc8752684a58a442307c274100d77faf" kind="function"><name>authenticate</name></member>
+    <member refid="class_app_1_1_security_1_1_app_custom_authenticator_1a8c14d31ce5a6d2bec39798fa32dacc45" kind="function"><name>onAuthenticationSuccess</name></member>
+    <member refid="class_app_1_1_security_1_1_app_custom_authenticator_1a2ed952b0c2d4db67fb2fa26a2a01a923" kind="function"><name>getLoginUrl</name></member>
+  </compound>
+  <compound refid="class_app_1_1_data_fixtures_1_1_app_fixtures" kind="class"><name>App::DataFixtures::AppFixtures</name>
+    <member refid="class_app_1_1_data_fixtures_1_1_app_fixtures_1acb7929747e63056fbc9e2892615c18b2" kind="function"><name>load</name></member>
+  </compound>
+  <compound refid="class_app_1_1_controller_1_1_connexion_controller" kind="class"><name>App::Controller::ConnexionController</name>
+    <member refid="class_app_1_1_controller_1_1_connexion_controller_1a0c05ef8ddb2188649a9972a35f3c3512" kind="function"><name>login</name></member>
+    <member refid="class_app_1_1_controller_1_1_connexion_controller_1a082405d89acd6835c3a7c7a08a7adbab" kind="function"><name>logout</name></member>
+  </compound>
+  <compound refid="class_app_1_1_service_1_1_discogs_service" kind="class"><name>App::Service::DiscogsService</name>
+    <member refid="class_app_1_1_service_1_1_discogs_service_1a83e53bbb7a9d939afc568733c72f7a53" kind="variable"><name>$client</name></member>
+    <member refid="class_app_1_1_service_1_1_discogs_service_1ab90f584a514c19db3d82b9638b3efa26" kind="variable"><name>$consumerKey</name></member>
+    <member refid="class_app_1_1_service_1_1_discogs_service_1aaef19d2c6e2634d2556c354c4ae17b2d" kind="variable"><name>$consumerSecret</name></member>
+    <member refid="class_app_1_1_service_1_1_discogs_service_1a7040127be13abe00f2a4f152cbef129f" kind="variable"><name>$fruitKeywords</name></member>
+    <member refid="class_app_1_1_service_1_1_discogs_service_1ae1ee3eddd2a921ac5d35f71614386307" kind="function"><name>__construct</name></member>
+    <member refid="class_app_1_1_service_1_1_discogs_service_1a14e1e0b11d4e2976862f1f60e6a20b64" kind="function"><name>searchAlbums</name></member>
+    <member refid="class_app_1_1_service_1_1_discogs_service_1a59651c916adba385563e3ae914057b48" kind="function"><name>getAlbumDetails</name></member>
+    <member refid="class_app_1_1_service_1_1_discogs_service_1a989760a9b1092498cc9c2d4c432c1fa0" kind="function"><name>processAlbumData</name></member>
+    <member refid="class_app_1_1_service_1_1_discogs_service_1a626605e4656b9f6cd4eca396ab08228e" kind="function"><name>findFruitsInText</name></member>
+    <member refid="class_app_1_1_service_1_1_discogs_service_1a213b20a44cb9fd1c52c2962a885fbd67" kind="function"><name>makeRequest</name></member>
+    <member refid="class_app_1_1_service_1_1_discogs_service_1ab33f5219853f45610109e2065c3300e4" kind="function"><name>handleResponse</name></member>
+  </compound>
+  <compound refid="class_app_1_1_controller_1_1_discogs_test_controller" kind="class"><name>App::Controller::DiscogsTestController</name>
+    <member refid="class_app_1_1_controller_1_1_discogs_test_controller_1ac820e6682701feada0217b7e052e32bf" kind="function"><name>test</name></member>
+  </compound>
+  <compound refid="class_app_1_1_entity_1_1_favorite_album" kind="class"><name>App::Entity::FavoriteAlbum</name>
+    <member refid="class_app_1_1_entity_1_1_favorite_album_1a3587bd00e5602c1800515b6f9ffbebc5" kind="variable"><name>$id</name></member>
+    <member refid="class_app_1_1_entity_1_1_favorite_album_1afccf8b41bcc8d8cae21caf4c2dc4b0d7" kind="variable"><name>$albumId</name></member>
+    <member refid="class_app_1_1_entity_1_1_favorite_album_1a5ef02115477cfad473df2455da5a908e" kind="variable"><name>$title</name></member>
+    <member refid="class_app_1_1_entity_1_1_favorite_album_1a7e74723ffa758165f367cac6a1076bcf" kind="variable"><name>$year</name></member>
+    <member refid="class_app_1_1_entity_1_1_favorite_album_1a37aded84c1e67e6e4d4193b64bcce0bf" kind="variable"><name>$coverImage</name></member>
+    <member refid="class_app_1_1_entity_1_1_favorite_album_1abe61fe2e4d1565224b5dd35179523ae7" kind="variable"><name>$label</name></member>
+    <member refid="class_app_1_1_entity_1_1_favorite_album_1a43a7131911adccf24c35d0e6fbcaf658" kind="variable"><name>$genre</name></member>
+    <member refid="class_app_1_1_entity_1_1_favorite_album_1a3495330829518fe0d2bbbd96eb821f20" kind="variable"><name>$format</name></member>
+    <member refid="class_app_1_1_entity_1_1_favorite_album_1a35c45cc33d8d420da794514df59466b7" kind="variable"><name>$user</name></member>
+    <member refid="class_app_1_1_entity_1_1_favorite_album_1af3cf6e874ed7547d0371eea4733d3f8b" kind="variable"><name>$fruits</name></member>
+    <member refid="class_app_1_1_entity_1_1_favorite_album_1a74f5148f4946184ed830b1ab4207cbf6" kind="variable"><name>$tracks</name></member>
+    <member refid="class_app_1_1_entity_1_1_favorite_album_1a095c5d389db211932136b53f25f39685" kind="function"><name>__construct</name></member>
+    <member refid="class_app_1_1_entity_1_1_favorite_album_1a12251d0c022e9e21c137a105ff683f13" kind="function"><name>getId</name></member>
+    <member refid="class_app_1_1_entity_1_1_favorite_album_1af25659d3cdc12b0faf5a2322241bf69a" kind="function"><name>getAlbumId</name></member>
+    <member refid="class_app_1_1_entity_1_1_favorite_album_1a5616f9d98d68c2597046ef7d04d84f6f" kind="function"><name>setAlbumId</name></member>
+    <member refid="class_app_1_1_entity_1_1_favorite_album_1a95e859a4588a39a1824b717378a84c29" kind="function"><name>getTitle</name></member>
+    <member refid="class_app_1_1_entity_1_1_favorite_album_1ac698bca9a4f3d5d9355ff023eee17285" kind="function"><name>setTitle</name></member>
+    <member refid="class_app_1_1_entity_1_1_favorite_album_1ad0a298a1c3d30a5dff3278f1f5bb7d86" kind="function"><name>getYear</name></member>
+    <member refid="class_app_1_1_entity_1_1_favorite_album_1a380136d26548fcfb8b3130250a42b9c2" kind="function"><name>setYear</name></member>
+    <member refid="class_app_1_1_entity_1_1_favorite_album_1af68dead1965a2a3240f96ae558e355f8" kind="function"><name>getCoverImage</name></member>
+    <member refid="class_app_1_1_entity_1_1_favorite_album_1a32e0a6523167ed7e60e5c30711dfe1fa" kind="function"><name>setCoverImage</name></member>
+    <member refid="class_app_1_1_entity_1_1_favorite_album_1a14c4e7420d903d3e40342266333d2ecf" kind="function"><name>getLabel</name></member>
+    <member refid="class_app_1_1_entity_1_1_favorite_album_1a2a7c7c3195c43a32ab55f2fea78ba318" kind="function"><name>setLabel</name></member>
+    <member refid="class_app_1_1_entity_1_1_favorite_album_1adc6f217756d49edbac6975e1f69485d5" kind="function"><name>getGenre</name></member>
+    <member refid="class_app_1_1_entity_1_1_favorite_album_1a6fcf7c3ce3de45970b6f384c6c2c1e8c" kind="function"><name>setGenre</name></member>
+    <member refid="class_app_1_1_entity_1_1_favorite_album_1ae3c4fbe3e8eb0d6755694bc597d6c52f" kind="function"><name>getFormat</name></member>
+    <member refid="class_app_1_1_entity_1_1_favorite_album_1ab8f9ee51eb3a4b472abe80f921676a8c" kind="function"><name>setFormat</name></member>
+    <member refid="class_app_1_1_entity_1_1_favorite_album_1ae81b7186fb97a7c6457edcc68c9aa2ef" kind="function"><name>getUser</name></member>
+    <member refid="class_app_1_1_entity_1_1_favorite_album_1a406a111868b45aad6d4c8ab5b0c5bcb9" kind="function"><name>setUser</name></member>
+    <member refid="class_app_1_1_entity_1_1_favorite_album_1a6c52b5b67bd8eb098d0bc259e86312ff" kind="function"><name>getFruits</name></member>
+    <member refid="class_app_1_1_entity_1_1_favorite_album_1ab593ea8c6876813ebec46d18c928ee00" kind="function"><name>addFruit</name></member>
+    <member refid="class_app_1_1_entity_1_1_favorite_album_1a41fda8af5652dd1f6a9af3c9886695d1" kind="function"><name>removeFruit</name></member>
+    <member refid="class_app_1_1_entity_1_1_favorite_album_1a8dc1c9e8edd1295fd956a4eb3af053b2" kind="function"><name>getTracks</name></member>
+    <member refid="class_app_1_1_entity_1_1_favorite_album_1af6a5b20e58074d84acb01c009b10d014" kind="function"><name>addTrack</name></member>
+    <member refid="class_app_1_1_entity_1_1_favorite_album_1a13b62bd4ee7d72e4c46354bdda6bcdf0" kind="function"><name>removeTrack</name></member>
+    <member refid="class_app_1_1_entity_1_1_favorite_album_1ab2f077a347becc5f1c0446c975dec551" kind="function"><name>getAllFruits</name></member>
+  </compound>
+  <compound refid="class_app_1_1_repository_1_1_favorite_album_repository" kind="class"><name>App::Repository::FavoriteAlbumRepository</name>
+    <member refid="class_app_1_1_repository_1_1_favorite_album_repository_1a38ea33dde11163765f358f5f10a3bc03" kind="function"><name>__construct</name></member>
+    <member refid="class_app_1_1_repository_1_1_favorite_album_repository_1a1e89bed821646ae540cc6c84f28cd05b" kind="function"><name>findByUser</name></member>
+  </compound>
+  <compound refid="class_app_1_1_entity_1_1_format" kind="class"><name>App::Entity::Format</name>
+    <member refid="class_app_1_1_entity_1_1_format_1a3587bd00e5602c1800515b6f9ffbebc5" kind="variable"><name>$id</name></member>
+    <member refid="class_app_1_1_entity_1_1_format_1a58551b63ba97fb35b928f11f36b1fac6" kind="variable"><name>$name</name></member>
+    <member refid="class_app_1_1_entity_1_1_format_1a2b309438ce1715af608981bc378c8103" kind="variable"><name>$favoriteAlbums</name></member>
+    <member refid="class_app_1_1_entity_1_1_format_1a095c5d389db211932136b53f25f39685" kind="function"><name>__construct</name></member>
+    <member refid="class_app_1_1_entity_1_1_format_1a12251d0c022e9e21c137a105ff683f13" kind="function"><name>getId</name></member>
+    <member refid="class_app_1_1_entity_1_1_format_1a3d0963e68bb313b163a73f2803c64600" kind="function"><name>getName</name></member>
+    <member refid="class_app_1_1_entity_1_1_format_1a392752b62c4f6aacea5c269690921ef3" kind="function"><name>setName</name></member>
+    <member refid="class_app_1_1_entity_1_1_format_1ab755e2969ce6dd5719e19029a1f0ea98" kind="function"><name>getFavoriteAlbums</name></member>
+    <member refid="class_app_1_1_entity_1_1_format_1a352415541a6239312cd6abffdd2d3801" kind="function"><name>addFavoriteAlbum</name></member>
+    <member refid="class_app_1_1_entity_1_1_format_1a7e1f5b5a1259dcb9c2be49ae4e715a4c" kind="function"><name>removeFavoriteAlbum</name></member>
+  </compound>
+  <compound refid="class_app_1_1_repository_1_1_format_repository" kind="class"><name>App::Repository::FormatRepository</name>
+    <member refid="class_app_1_1_repository_1_1_format_repository_1a38ea33dde11163765f358f5f10a3bc03" kind="function"><name>__construct</name></member>
+  </compound>
+  <compound refid="class_app_1_1_entity_1_1_fruit" kind="class"><name>App::Entity::Fruit</name>
+    <member refid="class_app_1_1_entity_1_1_fruit_1a3587bd00e5602c1800515b6f9ffbebc5" kind="variable"><name>$id</name></member>
+    <member refid="class_app_1_1_entity_1_1_fruit_1a58551b63ba97fb35b928f11f36b1fac6" kind="variable"><name>$name</name></member>
+    <member refid="class_app_1_1_entity_1_1_fruit_1abdbe36cb1ca8c15cf9556617649a658e" kind="variable"><name>$albums</name></member>
+    <member refid="class_app_1_1_entity_1_1_fruit_1a095c5d389db211932136b53f25f39685" kind="function"><name>__construct</name></member>
+    <member refid="class_app_1_1_entity_1_1_fruit_1a12251d0c022e9e21c137a105ff683f13" kind="function"><name>getId</name></member>
+    <member refid="class_app_1_1_entity_1_1_fruit_1a3d0963e68bb313b163a73f2803c64600" kind="function"><name>getName</name></member>
+    <member refid="class_app_1_1_entity_1_1_fruit_1a392752b62c4f6aacea5c269690921ef3" kind="function"><name>setName</name></member>
+    <member refid="class_app_1_1_entity_1_1_fruit_1a96732906856f5d0e08852d04b3e8b9ce" kind="function"><name>getAlbums</name></member>
+    <member refid="class_app_1_1_entity_1_1_fruit_1a79ad3ae17fa6347782039ba962fd4773" kind="function"><name>addAlbum</name></member>
+    <member refid="class_app_1_1_entity_1_1_fruit_1a8ac4b6e0389eb502c205087d8cad7645" kind="function"><name>removeAlbum</name></member>
+  </compound>
+  <compound refid="class_app_1_1_repository_1_1_fruit_repository" kind="class"><name>App::Repository::FruitRepository</name>
+    <member refid="class_app_1_1_repository_1_1_fruit_repository_1a38ea33dde11163765f358f5f10a3bc03" kind="function"><name>__construct</name></member>
+    <member refid="class_app_1_1_repository_1_1_fruit_repository_1a75686a8dc64f97f7a8ea96a20997cf25" kind="function"><name>findOrCreate</name></member>
+  </compound>
+  <compound refid="class_app_1_1_entity_1_1_genre" kind="class"><name>App::Entity::Genre</name>
+    <member refid="class_app_1_1_entity_1_1_genre_1a3587bd00e5602c1800515b6f9ffbebc5" kind="variable"><name>$id</name></member>
+    <member refid="class_app_1_1_entity_1_1_genre_1a58551b63ba97fb35b928f11f36b1fac6" kind="variable"><name>$name</name></member>
+    <member refid="class_app_1_1_entity_1_1_genre_1a2b309438ce1715af608981bc378c8103" kind="variable"><name>$favoriteAlbums</name></member>
+    <member refid="class_app_1_1_entity_1_1_genre_1a095c5d389db211932136b53f25f39685" kind="function"><name>__construct</name></member>
+    <member refid="class_app_1_1_entity_1_1_genre_1a12251d0c022e9e21c137a105ff683f13" kind="function"><name>getId</name></member>
+    <member refid="class_app_1_1_entity_1_1_genre_1a3d0963e68bb313b163a73f2803c64600" kind="function"><name>getName</name></member>
+    <member refid="class_app_1_1_entity_1_1_genre_1a392752b62c4f6aacea5c269690921ef3" kind="function"><name>setName</name></member>
+    <member refid="class_app_1_1_entity_1_1_genre_1ab755e2969ce6dd5719e19029a1f0ea98" kind="function"><name>getFavoriteAlbums</name></member>
+    <member refid="class_app_1_1_entity_1_1_genre_1a352415541a6239312cd6abffdd2d3801" kind="function"><name>addFavoriteAlbum</name></member>
+    <member refid="class_app_1_1_entity_1_1_genre_1a7e1f5b5a1259dcb9c2be49ae4e715a4c" kind="function"><name>removeFavoriteAlbum</name></member>
+  </compound>
+  <compound refid="class_app_1_1_repository_1_1_genre_repository" kind="class"><name>App::Repository::GenreRepository</name>
+    <member refid="class_app_1_1_repository_1_1_genre_repository_1a38ea33dde11163765f358f5f10a3bc03" kind="function"><name>__construct</name></member>
+    <member refid="class_app_1_1_repository_1_1_genre_repository_1a5fc8877c3cb126ea03449bedd2b92092" kind="function"><name>findByNamePart</name></member>
+  </compound>
+  <compound refid="class_app_1_1_controller_1_1_home_controller" kind="class"><name>App::Controller::HomeController</name>
+    <member refid="class_app_1_1_controller_1_1_home_controller_1a149eb92716c1084a935e04a8d95f7347" kind="function"><name>index</name></member>
+  </compound>
+  <compound refid="class_app_1_1_kernel" kind="class"><name>App::Kernel</name>
+  </compound>
+  <compound refid="class_app_1_1_entity_1_1_label" kind="class"><name>App::Entity::Label</name>
+    <member refid="class_app_1_1_entity_1_1_label_1a3587bd00e5602c1800515b6f9ffbebc5" kind="variable"><name>$id</name></member>
+    <member refid="class_app_1_1_entity_1_1_label_1a58551b63ba97fb35b928f11f36b1fac6" kind="variable"><name>$name</name></member>
+    <member refid="class_app_1_1_entity_1_1_label_1a2b309438ce1715af608981bc378c8103" kind="variable"><name>$favoriteAlbums</name></member>
+    <member refid="class_app_1_1_entity_1_1_label_1a095c5d389db211932136b53f25f39685" kind="function"><name>__construct</name></member>
+    <member refid="class_app_1_1_entity_1_1_label_1a12251d0c022e9e21c137a105ff683f13" kind="function"><name>getId</name></member>
+    <member refid="class_app_1_1_entity_1_1_label_1a3d0963e68bb313b163a73f2803c64600" kind="function"><name>getName</name></member>
+    <member refid="class_app_1_1_entity_1_1_label_1a392752b62c4f6aacea5c269690921ef3" kind="function"><name>setName</name></member>
+    <member refid="class_app_1_1_entity_1_1_label_1ab755e2969ce6dd5719e19029a1f0ea98" kind="function"><name>getFavoriteAlbums</name></member>
+    <member refid="class_app_1_1_entity_1_1_label_1a352415541a6239312cd6abffdd2d3801" kind="function"><name>addFavoriteAlbum</name></member>
+    <member refid="class_app_1_1_entity_1_1_label_1a7e1f5b5a1259dcb9c2be49ae4e715a4c" kind="function"><name>removeFavoriteAlbum</name></member>
+  </compound>
+  <compound refid="class_app_1_1_repository_1_1_label_repository" kind="class"><name>App::Repository::LabelRepository</name>
+    <member refid="class_app_1_1_repository_1_1_label_repository_1a38ea33dde11163765f358f5f10a3bc03" kind="function"><name>__construct</name></member>
+    <member refid="class_app_1_1_repository_1_1_label_repository_1a5fc8877c3cb126ea03449bedd2b92092" kind="function"><name>findByNamePart</name></member>
+  </compound>
+  <compound refid="class_app_1_1_controller_1_1_profile_controller" kind="class"><name>App::Controller::ProfileController</name>
+    <member refid="class_app_1_1_controller_1_1_profile_controller_1ae1226a5f7b95e179ae1de18af8d815cd" kind="function"><name>userProfile</name></member>
+    <member refid="class_app_1_1_controller_1_1_profile_controller_1a89e46db9c473bd65d834d90e02bac17a" kind="function"><name>getFilteredFavorites</name></member>
+  </compound>
+  <compound refid="class_app_1_1_controller_1_1_registration_controller" kind="class"><name>App::Controller::RegistrationController</name>
+    <member refid="class_app_1_1_controller_1_1_registration_controller_1ac68d9d5ffe44c36291872b00abe85482" kind="function"><name>index</name></member>
+    <member refid="class_app_1_1_controller_1_1_registration_controller_1ae8c58c1801878cb6b248e70d99e51db6" kind="function"><name>isEmailAlreadyUsed</name></member>
+    <member refid="class_app_1_1_controller_1_1_registration_controller_1aac59e64e86d7eda25f080d15f316129a" kind="function"><name>handleProfilePicture</name></member>
+  </compound>
+  <compound refid="class_app_1_1_form_1_1_registration_form_type" kind="class"><name>App::Form::RegistrationFormType</name>
+    <member refid="class_app_1_1_form_1_1_registration_form_type_1a83c3745710374f9c5a1eb0686fe2dfab" kind="function"><name>buildForm</name></member>
+    <member refid="class_app_1_1_form_1_1_registration_form_type_1a8ff68a86f5090b5df973286836e46ead" kind="function"><name>configureOptions</name></member>
+  </compound>
+  <compound refid="class_app_1_1_command_1_1_test_discogs_command" kind="class"><name>App::Command::TestDiscogsCommand</name>
+    <member refid="class_app_1_1_command_1_1_test_discogs_command_1aaaf10de3cbbf06c43234aa5337d817dc" kind="variable"><name>$httpClient</name></member>
+    <member refid="class_app_1_1_command_1_1_test_discogs_command_1afd3effcf261345ecc70a58bddee38cd4" kind="variable"><name>$discogsConsumerKey</name></member>
+    <member refid="class_app_1_1_command_1_1_test_discogs_command_1a3ee1af322ddf1660c8c8803ca870c40d" kind="variable"><name>$discogsConsumerSecret</name></member>
+    <member refid="class_app_1_1_command_1_1_test_discogs_command_1afa9245fce697aa62d74b949139a10612" kind="function"><name>__construct</name></member>
+    <member refid="class_app_1_1_command_1_1_test_discogs_command_1a9be5e0bdb5720efed6ddb6426c5c16ee" kind="function"><name>configure</name></member>
+    <member refid="class_app_1_1_command_1_1_test_discogs_command_1ab31c72b72ddaf7116db5d84c055d3c0b" kind="function"><name>execute</name></member>
+  </compound>
+  <compound refid="class_app_1_1_command_1_1_test_favorite_albums_command" kind="class"><name>App::Command::TestFavoriteAlbumsCommand</name>
+    <member refid="class_app_1_1_command_1_1_test_favorite_albums_command_1a7751dad7a8a3d8836df35ce9024afb29" kind="variable"><name>$favoriteAlbumRepository</name></member>
+    <member refid="class_app_1_1_command_1_1_test_favorite_albums_command_1af4472feaa287a5088cdbc624e9cf517e" kind="function"><name>__construct</name></member>
+    <member refid="class_app_1_1_command_1_1_test_favorite_albums_command_1a9be5e0bdb5720efed6ddb6426c5c16ee" kind="function"><name>configure</name></member>
+    <member refid="class_app_1_1_command_1_1_test_favorite_albums_command_1ab31c72b72ddaf7116db5d84c055d3c0b" kind="function"><name>execute</name></member>
+  </compound>
+  <compound refid="class_app_1_1_entity_1_1_track" kind="class"><name>App::Entity::Track</name>
+    <member refid="class_app_1_1_entity_1_1_track_1a3587bd00e5602c1800515b6f9ffbebc5" kind="variable"><name>$id</name></member>
+    <member refid="class_app_1_1_entity_1_1_track_1a5ef02115477cfad473df2455da5a908e" kind="variable"><name>$title</name></member>
+    <member refid="class_app_1_1_entity_1_1_track_1ae540bfd1b3033e6ba55b5f42df843af3" kind="variable"><name>$duration</name></member>
+    <member refid="class_app_1_1_entity_1_1_track_1ac56949ecef6d1b57b2f4be2ba05e2d11" kind="variable"><name>$album</name></member>
+    <member refid="class_app_1_1_entity_1_1_track_1a12251d0c022e9e21c137a105ff683f13" kind="function"><name>getId</name></member>
+    <member refid="class_app_1_1_entity_1_1_track_1a95e859a4588a39a1824b717378a84c29" kind="function"><name>getTitle</name></member>
+    <member refid="class_app_1_1_entity_1_1_track_1a754ef3032cc3ffb25ad2d1a13720fc29" kind="function"><name>setTitle</name></member>
+    <member refid="class_app_1_1_entity_1_1_track_1ab46fe3d2750728c84bd71ae1bfd08ee8" kind="function"><name>getDuration</name></member>
+    <member refid="class_app_1_1_entity_1_1_track_1a65287da7b5aac781a43f0ed59b067985" kind="function"><name>setDuration</name></member>
+    <member refid="class_app_1_1_entity_1_1_track_1aee148d665bb21d0319499d90186605b2" kind="function"><name>getAlbum</name></member>
+    <member refid="class_app_1_1_entity_1_1_track_1a030b2e5bdc870ee346358efc28a59640" kind="function"><name>setAlbum</name></member>
+  </compound>
+  <compound refid="class_app_1_1_repository_1_1_track_repository" kind="class"><name>App::Repository::TrackRepository</name>
+    <member refid="class_app_1_1_repository_1_1_track_repository_1a38ea33dde11163765f358f5f10a3bc03" kind="function"><name>__construct</name></member>
+    <member refid="class_app_1_1_repository_1_1_track_repository_1a72e1e4ff53252e1b76b53b7b47178131" kind="function"><name>findByTitlePart</name></member>
+    <member refid="class_app_1_1_repository_1_1_track_repository_1ad4bfe6689e1b9adbe08de3be53c46d19" kind="function"><name>findByAlbumId</name></member>
+  </compound>
+  <compound refid="class_app_1_1_command_1_1_update_favorite_covers_command" kind="class"><name>App::Command::UpdateFavoriteCoversCommand</name>
+    <member refid="class_app_1_1_command_1_1_update_favorite_covers_command_1ad004514ef999d76cb19ca6519b55a8c0" kind="variable"><name>$entityManager</name></member>
+    <member refid="class_app_1_1_command_1_1_update_favorite_covers_command_1abb5fb9a65dd8a81e7482dddbf71c5177" kind="function"><name>__construct</name></member>
+    <member refid="class_app_1_1_command_1_1_update_favorite_covers_command_1ab31c72b72ddaf7116db5d84c055d3c0b" kind="function"><name>execute</name></member>
+  </compound>
+  <compound refid="class_app_1_1_entity_1_1_user" kind="class"><name>App::Entity::User</name>
+    <member refid="class_app_1_1_entity_1_1_user_1a3587bd00e5602c1800515b6f9ffbebc5" kind="variable"><name>$id</name></member>
+    <member refid="class_app_1_1_entity_1_1_user_1aa5809edde76526314aef4529d7d285e9" kind="variable"><name>$email</name></member>
+    <member refid="class_app_1_1_entity_1_1_user_1a43fc0494afc8bab25b913274b9411089" kind="variable"><name>$roles</name></member>
+    <member refid="class_app_1_1_entity_1_1_user_1a99f6264ab0c9eac3199f38350ea0703d" kind="variable"><name>$password</name></member>
+    <member refid="class_app_1_1_entity_1_1_user_1ae6275ae0662406a8a3f5117ba0984467" kind="variable"><name>$profilePicture</name></member>
+    <member refid="class_app_1_1_entity_1_1_user_1a2b309438ce1715af608981bc378c8103" kind="variable"><name>$favoriteAlbums</name></member>
+    <member refid="class_app_1_1_entity_1_1_user_1a095c5d389db211932136b53f25f39685" kind="function"><name>__construct</name></member>
+    <member refid="class_app_1_1_entity_1_1_user_1a12251d0c022e9e21c137a105ff683f13" kind="function"><name>getId</name></member>
+    <member refid="class_app_1_1_entity_1_1_user_1a02a01849f28e2535e888ae4ec87b20f2" kind="function"><name>getEmail</name></member>
+    <member refid="class_app_1_1_entity_1_1_user_1a2d22391fa86fa0eaf3b9d2a3c29880bc" kind="function"><name>setEmail</name></member>
+    <member refid="class_app_1_1_entity_1_1_user_1a189038d671f9143e20141026f1aa7969" kind="function"><name>getUserIdentifier</name></member>
+    <member refid="class_app_1_1_entity_1_1_user_1aa676cae5ee8d7fb6862a8724adc2660d" kind="function"><name>getRoles</name></member>
+    <member refid="class_app_1_1_entity_1_1_user_1aa3236c9c6688d04df16ea0ab3065530e" kind="function"><name>setRoles</name></member>
+    <member refid="class_app_1_1_entity_1_1_user_1a04e0957baeb7acde9c0c86556da2d43f" kind="function"><name>getPassword</name></member>
+    <member refid="class_app_1_1_entity_1_1_user_1a81e0f429784973551fb5417d5b92b0db" kind="function"><name>setPassword</name></member>
+    <member refid="class_app_1_1_entity_1_1_user_1ac565b8c00fe93ce673f8237849f072a6" kind="function"><name>eraseCredentials</name></member>
+    <member refid="class_app_1_1_entity_1_1_user_1ab755e2969ce6dd5719e19029a1f0ea98" kind="function"><name>getFavoriteAlbums</name></member>
+    <member refid="class_app_1_1_entity_1_1_user_1a352415541a6239312cd6abffdd2d3801" kind="function"><name>addFavoriteAlbum</name></member>
+    <member refid="class_app_1_1_entity_1_1_user_1a7e1f5b5a1259dcb9c2be49ae4e715a4c" kind="function"><name>removeFavoriteAlbum</name></member>
+    <member refid="class_app_1_1_entity_1_1_user_1a7ca895ce8dc567b19e85a982429c7c77" kind="function"><name>getProfilePicture</name></member>
+    <member refid="class_app_1_1_entity_1_1_user_1ab308055ea70f8f94a14d35a611a2086e" kind="function"><name>setProfilePicture</name></member>
+  </compound>
+  <compound refid="class_app_1_1_repository_1_1_user_repository" kind="class"><name>App::Repository::UserRepository</name>
+    <member refid="class_app_1_1_repository_1_1_user_repository_1a38ea33dde11163765f358f5f10a3bc03" kind="function"><name>__construct</name></member>
+    <member refid="class_app_1_1_repository_1_1_user_repository_1ac9400d686be3394bd280510b60ee642e" kind="function"><name>upgradePassword</name></member>
+  </compound>
+  <compound refid="namespace_app" kind="namespace"><name>App</name>
+  </compound>
+  <compound refid="namespace_app_1_1_command" kind="namespace"><name>App::Command</name>
+    <member refid="namespace_app_1_1_command_1a36342860613418f919ffbf3aa4246442" kind="variable"><name>__pad0__</name></member>
+    <member refid="namespace_app_1_1_command_1a019d6bb8fecdb887367f54757fa14d4d" kind="variable"><name>description</name></member>
+  </compound>
+  <compound refid="namespace_app_1_1_controller" kind="namespace"><name>App::Controller</name>
+  </compound>
+  <compound refid="namespace_app_1_1_data_fixtures" kind="namespace"><name>App::DataFixtures</name>
+  </compound>
+  <compound refid="namespace_app_1_1_entity" kind="namespace"><name>App::Entity</name>
+  </compound>
+  <compound refid="namespace_app_1_1_entity_1_1_favorite_album" kind="namespace"><name>App::Entity::FavoriteAlbum</name>
+  </compound>
+  <compound refid="namespace_app_1_1_entity_1_1_format" kind="namespace"><name>App::Entity::Format</name>
+  </compound>
+  <compound refid="namespace_app_1_1_entity_1_1_fruit" kind="namespace"><name>App::Entity::Fruit</name>
+  </compound>
+  <compound refid="namespace_app_1_1_entity_1_1_genre" kind="namespace"><name>App::Entity::Genre</name>
+  </compound>
+  <compound refid="namespace_app_1_1_entity_1_1_label" kind="namespace"><name>App::Entity::Label</name>
+  </compound>
+  <compound refid="namespace_app_1_1_entity_1_1_track" kind="namespace"><name>App::Entity::Track</name>
+  </compound>
+  <compound refid="namespace_app_1_1_entity_1_1_user" kind="namespace"><name>App::Entity::User</name>
+  </compound>
+  <compound refid="namespace_app_1_1_form" kind="namespace"><name>App::Form</name>
+  </compound>
+  <compound refid="namespace_app_1_1_form_1_1_album_search_type" kind="namespace"><name>App::Form::AlbumSearchType</name>
+  </compound>
+  <compound refid="namespace_app_1_1_form_1_1_registration_form_type" kind="namespace"><name>App::Form::RegistrationFormType</name>
+  </compound>
+  <compound refid="namespace_app_1_1_repository" kind="namespace"><name>App::Repository</name>
+  </compound>
+  <compound refid="namespace_app_1_1_repository_1_1_favorite_album_repository" kind="namespace"><name>App::Repository::FavoriteAlbumRepository</name>
+  </compound>
+  <compound refid="namespace_app_1_1_repository_1_1_format_repository" kind="namespace"><name>App::Repository::FormatRepository</name>
+  </compound>
+  <compound refid="namespace_app_1_1_repository_1_1_fruit_repository" kind="namespace"><name>App::Repository::FruitRepository</name>
+  </compound>
+  <compound refid="namespace_app_1_1_repository_1_1_genre_repository" kind="namespace"><name>App::Repository::GenreRepository</name>
+  </compound>
+  <compound refid="namespace_app_1_1_repository_1_1_label_repository" kind="namespace"><name>App::Repository::LabelRepository</name>
+  </compound>
+  <compound refid="namespace_app_1_1_repository_1_1_track_repository" kind="namespace"><name>App::Repository::TrackRepository</name>
+  </compound>
+  <compound refid="namespace_app_1_1_repository_1_1_user_repository" kind="namespace"><name>App::Repository::UserRepository</name>
+  </compound>
+  <compound refid="namespace_app_1_1_security" kind="namespace"><name>App::Security</name>
+  </compound>
+  <compound refid="namespace_app_1_1_security_1_1_app_custom_authenticator" kind="namespace"><name>App::Security::AppCustomAuthenticator</name>
+  </compound>
+  <compound refid="namespace_app_1_1_service" kind="namespace"><name>App::Service</name>
+  </compound>
+  <compound refid="namespace_app_1_1_service_1_1_discogs_service" kind="namespace"><name>App::Service::DiscogsService</name>
+  </compound>
+  <compound refid="namespace_doctrine_1_1_bundle_1_1_doctrine_bundle_1_1_repository_1_1_service_entity_repository" kind="namespace"><name>Doctrine::Bundle::DoctrineBundle::Repository::ServiceEntityRepository</name>
+  </compound>
+  <compound refid="namespace_doctrine_1_1_bundle_1_1_fixtures_bundle_1_1_fixture" kind="namespace"><name>Doctrine::Bundle::FixturesBundle::Fixture</name>
+  </compound>
+  <compound refid="namespace_doctrine_1_1_common_1_1_collections_1_1_array_collection" kind="namespace"><name>Doctrine::Common::Collections::ArrayCollection</name>
+  </compound>
+  <compound refid="namespace_doctrine_1_1_common_1_1_collections_1_1_collection" kind="namespace"><name>Doctrine::Common::Collections::Collection</name>
+  </compound>
+  <compound refid="namespace_doctrine_1_1_o_r_m_1_1_entity_manager_interface" kind="namespace"><name>Doctrine::ORM::EntityManagerInterface</name>
+  </compound>
+  <compound refid="namespace_doctrine_1_1_persistence_1_1_manager_registry" kind="namespace"><name>Doctrine::Persistence::ManagerRegistry</name>
+  </compound>
+  <compound refid="namespace_doctrine_1_1_persistence_1_1_object_manager" kind="namespace"><name>Doctrine::Persistence::ObjectManager</name>
+  </compound>
+  <compound refid="namespace_micro_kernel_trait" kind="namespace"><name>MicroKernelTrait</name>
+  </compound>
+  <compound refid="namespace_symfony_1_1_bundle_1_1_framework_bundle_1_1_controller_1_1_abstract_controller" kind="namespace"><name>Symfony::Bundle::FrameworkBundle::Controller::AbstractController</name>
+  </compound>
+  <compound refid="namespace_symfony_1_1_bundle_1_1_framework_bundle_1_1_kernel_1_1_micro_kernel_trait" kind="namespace"><name>Symfony::Bundle::FrameworkBundle::Kernel::MicroKernelTrait</name>
+  </compound>
+  <compound refid="namespace_symfony_1_1_bundle_1_1_security_bundle_1_1_security" kind="namespace"><name>Symfony::Bundle::SecurityBundle::Security</name>
+  </compound>
+  <compound refid="namespace_symfony_1_1_component_1_1_console_1_1_attribute_1_1_as_command" kind="namespace"><name>Symfony::Component::Console::Attribute::AsCommand</name>
+  </compound>
+  <compound refid="namespace_symfony_1_1_component_1_1_console_1_1_command_1_1_command" kind="namespace"><name>Symfony::Component::Console::Command::Command</name>
+  </compound>
+  <compound refid="namespace_symfony_1_1_component_1_1_console_1_1_input_1_1_input_argument" kind="namespace"><name>Symfony::Component::Console::Input::InputArgument</name>
+  </compound>
+  <compound refid="namespace_symfony_1_1_component_1_1_console_1_1_input_1_1_input_interface" kind="namespace"><name>Symfony::Component::Console::Input::InputInterface</name>
+  </compound>
+  <compound refid="namespace_symfony_1_1_component_1_1_console_1_1_output_1_1_output_interface" kind="namespace"><name>Symfony::Component::Console::Output::OutputInterface</name>
+  </compound>
+  <compound refid="namespace_symfony_1_1_component_1_1_form_1_1_abstract_type" kind="namespace"><name>Symfony::Component::Form::AbstractType</name>
+  </compound>
+  <compound refid="namespace_symfony_1_1_component_1_1_form_1_1_extension_1_1_core_1_1_type_1_1_email_type" kind="namespace"><name>Symfony::Component::Form::Extension::Core::Type::EmailType</name>
+  </compound>
+  <compound refid="namespace_symfony_1_1_component_1_1_form_1_1_extension_1_1_core_1_1_type_1_1_file_type" kind="namespace"><name>Symfony::Component::Form::Extension::Core::Type::FileType</name>
+  </compound>
+  <compound refid="namespace_symfony_1_1_component_1_1_form_1_1_extension_1_1_core_1_1_type_1_1_password_type" kind="namespace"><name>Symfony::Component::Form::Extension::Core::Type::PasswordType</name>
+  </compound>
+  <compound refid="namespace_symfony_1_1_component_1_1_form_1_1_extension_1_1_core_1_1_type_1_1_repeated_type" kind="namespace"><name>Symfony::Component::Form::Extension::Core::Type::RepeatedType</name>
+  </compound>
+  <compound refid="namespace_symfony_1_1_component_1_1_form_1_1_extension_1_1_core_1_1_type_1_1_search_type" kind="namespace"><name>Symfony::Component::Form::Extension::Core::Type::SearchType</name>
+  </compound>
+  <compound refid="namespace_symfony_1_1_component_1_1_form_1_1_extension_1_1_core_1_1_type_1_1_submit_type" kind="namespace"><name>Symfony::Component::Form::Extension::Core::Type::SubmitType</name>
+  </compound>
+  <compound refid="namespace_symfony_1_1_component_1_1_form_1_1_form_builder_interface" kind="namespace"><name>Symfony::Component::Form::FormBuilderInterface</name>
+  </compound>
+  <compound refid="namespace_symfony_1_1_component_1_1_form_1_1_form_error" kind="namespace"><name>Symfony::Component::Form::FormError</name>
+  </compound>
+  <compound refid="namespace_symfony_1_1_component_1_1_http_foundation_1_1_file_1_1_exception_1_1_file_exception" kind="namespace"><name>Symfony::Component::HttpFoundation::File::Exception::FileException</name>
+  </compound>
+  <compound refid="namespace_symfony_1_1_component_1_1_http_foundation_1_1_json_response" kind="namespace"><name>Symfony::Component::HttpFoundation::JsonResponse</name>
+  </compound>
+  <compound refid="namespace_symfony_1_1_component_1_1_http_foundation_1_1_redirect_response" kind="namespace"><name>Symfony::Component::HttpFoundation::RedirectResponse</name>
+  </compound>
+  <compound refid="namespace_symfony_1_1_component_1_1_http_foundation_1_1_request" kind="namespace"><name>Symfony::Component::HttpFoundation::Request</name>
+  </compound>
+  <compound refid="namespace_symfony_1_1_component_1_1_http_foundation_1_1_response" kind="namespace"><name>Symfony::Component::HttpFoundation::Response</name>
+  </compound>
+  <compound refid="namespace_symfony_1_1_component_1_1_options_resolver_1_1_options_resolver" kind="namespace"><name>Symfony::Component::OptionsResolver::OptionsResolver</name>
+  </compound>
+  <compound refid="namespace_symfony_1_1_component_1_1_password_hasher_1_1_hasher_1_1_user_password_hasher_interface" kind="namespace"><name>Symfony::Component::PasswordHasher::Hasher::UserPasswordHasherInterface</name>
+  </compound>
+  <compound refid="namespace_symfony_1_1_component_1_1_routing_1_1_annotation_1_1_route" kind="namespace"><name>Symfony::Component::Routing::Annotation::Route</name>
+  </compound>
+  <compound refid="namespace_symfony_1_1_component_1_1_routing_1_1_generator_1_1_url_generator_interface" kind="namespace"><name>Symfony::Component::Routing::Generator::UrlGeneratorInterface</name>
+  </compound>
+  <compound refid="namespace_symfony_1_1_component_1_1_security_1_1_core_1_1_authentication_1_1_token_1_1_token_interface" kind="namespace"><name>Symfony::Component::Security::Core::Authentication::Token::TokenInterface</name>
+  </compound>
+  <compound refid="namespace_symfony_1_1_component_1_1_security_1_1_core_1_1_exception_1_1_unsupported_user_exception" kind="namespace"><name>Symfony::Component::Security::Core::Exception::UnsupportedUserException</name>
+  </compound>
+  <compound refid="namespace_symfony_1_1_component_1_1_security_1_1_core_1_1_user_1_1_password_authenticated_user_interface" kind="namespace"><name>Symfony::Component::Security::Core::User::PasswordAuthenticatedUserInterface</name>
+  </compound>
+  <compound refid="namespace_symfony_1_1_component_1_1_security_1_1_core_1_1_user_1_1_password_upgrader_interface" kind="namespace"><name>Symfony::Component::Security::Core::User::PasswordUpgraderInterface</name>
+  </compound>
+  <compound refid="namespace_symfony_1_1_component_1_1_security_1_1_core_1_1_user_1_1_user_interface" kind="namespace"><name>Symfony::Component::Security::Core::User::UserInterface</name>
+  </compound>
+  <compound refid="namespace_symfony_1_1_component_1_1_security_1_1_http_1_1_authentication_1_1_authentication_utils" kind="namespace"><name>Symfony::Component::Security::Http::Authentication::AuthenticationUtils</name>
+  </compound>
+  <compound refid="namespace_symfony_1_1_component_1_1_security_1_1_http_1_1_authentication_1_1_user_authenticator_interface" kind="namespace"><name>Symfony::Component::Security::Http::Authentication::UserAuthenticatorInterface</name>
+  </compound>
+  <compound refid="namespace_symfony_1_1_component_1_1_security_1_1_http_1_1_authenticator_1_1_abstract_login_form_authenticator" kind="namespace"><name>Symfony::Component::Security::Http::Authenticator::AbstractLoginFormAuthenticator</name>
+  </compound>
+  <compound refid="namespace_symfony_1_1_component_1_1_security_1_1_http_1_1_authenticator_1_1_passport_1_1_badge_1_1_csrf_token_badge" kind="namespace"><name>Symfony::Component::Security::Http::Authenticator::Passport::Badge::CsrfTokenBadge</name>
+  </compound>
+  <compound refid="namespace_symfony_1_1_component_1_1_security_1_1_http_1_1_authenticator_1_1_passport_1_1_badge_1_1_remember_me_badge" kind="namespace"><name>Symfony::Component::Security::Http::Authenticator::Passport::Badge::RememberMeBadge</name>
+  </compound>
+  <compound refid="namespace_symfony_1_1_component_1_1_security_1_1_http_1_1_authenticator_1_1_passport_1_1_badge_1_1_user_badge" kind="namespace"><name>Symfony::Component::Security::Http::Authenticator::Passport::Badge::UserBadge</name>
+  </compound>
+  <compound refid="namespace_symfony_1_1_component_1_1_security_1_1_http_1_1_authenticator_1_1_passport_1_1_credentials_1_1_password_credentials" kind="namespace"><name>Symfony::Component::Security::Http::Authenticator::Passport::Credentials::PasswordCredentials</name>
+  </compound>
+  <compound refid="namespace_symfony_1_1_component_1_1_security_1_1_http_1_1_authenticator_1_1_passport_1_1_passport" kind="namespace"><name>Symfony::Component::Security::Http::Authenticator::Passport::Passport</name>
+  </compound>
+  <compound refid="namespace_symfony_1_1_component_1_1_security_1_1_http_1_1_util_1_1_target_path_trait" kind="namespace"><name>Symfony::Component::Security::Http::Util::TargetPathTrait</name>
+  </compound>
+  <compound refid="namespace_symfony_1_1_component_1_1_string_1_1_slugger_1_1_slugger_interface" kind="namespace"><name>Symfony::Component::String::Slugger::SluggerInterface</name>
+  </compound>
+  <compound refid="namespace_symfony_1_1_component_1_1_validator_1_1_constraints_1_1_email" kind="namespace"><name>Symfony::Component::Validator::Constraints::Email</name>
+  </compound>
+  <compound refid="namespace_symfony_1_1_component_1_1_validator_1_1_constraints_1_1_file" kind="namespace"><name>Symfony::Component::Validator::Constraints::File</name>
+  </compound>
+  <compound refid="namespace_symfony_1_1_component_1_1_validator_1_1_constraints_1_1_not_blank" kind="namespace"><name>Symfony::Component::Validator::Constraints::NotBlank</name>
+  </compound>
+  <compound refid="namespace_symfony_1_1_contracts_1_1_http_client_1_1_exception_1_1_transport_exception_interface" kind="namespace"><name>Symfony::Contracts::HttpClient::Exception::TransportExceptionInterface</name>
+  </compound>
+  <compound refid="namespace_symfony_1_1_contracts_1_1_http_client_1_1_http_client_interface" kind="namespace"><name>Symfony::Contracts::HttpClient::HttpClientInterface</name>
+  </compound>
+  <compound refid="namespace_symfony_1_1_contracts_1_1_http_client_1_1_response_interface" kind="namespace"><name>Symfony::Contracts::HttpClient::ResponseInterface</name>
+  </compound>
+  <compound refid="namespace_symfony_1_1_u_x_1_1_turbo_1_1_attribute_1_1_broadcast" kind="namespace"><name>Symfony::UX::Turbo::Attribute::Broadcast</name>
+  </compound>
+  <compound refid="namespace_target_path_trait" kind="namespace"><name>TargetPathTrait</name>
+  </compound>
+  <compound refid="_test_discogs_command_8php" kind="file"><name>TestDiscogsCommand.php</name>
+  </compound>
+  <compound refid="_test_favorite_albums_command_8php" kind="file"><name>TestFavoriteAlbumsCommand.php</name>
+  </compound>
+  <compound refid="_update_favorite_covers_command_8php" kind="file"><name>UpdateFavoriteCoversCommand.php</name>
+  </compound>
+  <compound refid="_album_search_controller_8php" kind="file"><name>AlbumSearchController.php</name>
+  </compound>
+  <compound refid="_connexion_controller_8php" kind="file"><name>ConnexionController.php</name>
+  </compound>
+  <compound refid="_discogs_test_controller_8php" kind="file"><name>DiscogsTestController.php</name>
+  </compound>
+  <compound refid="_home_controller_8php" kind="file"><name>HomeController.php</name>
+  </compound>
+  <compound refid="_profile_controller_8php" kind="file"><name>ProfileController.php</name>
+  </compound>
+  <compound refid="_registration_controller_8php" kind="file"><name>RegistrationController.php</name>
+  </compound>
+  <compound refid="_app_fixtures_8php" kind="file"><name>AppFixtures.php</name>
+  </compound>
+  <compound refid="_favorite_album_8php" kind="file"><name>FavoriteAlbum.php</name>
+  </compound>
+  <compound refid="_format_8php" kind="file"><name>Format.php</name>
+  </compound>
+  <compound refid="_fruit_8php" kind="file"><name>Fruit.php</name>
+  </compound>
+  <compound refid="_genre_8php" kind="file"><name>Genre.php</name>
+  </compound>
+  <compound refid="_label_8php" kind="file"><name>Label.php</name>
+  </compound>
+  <compound refid="_track_8php" kind="file"><name>Track.php</name>
+  </compound>
+  <compound refid="_user_8php" kind="file"><name>User.php</name>
+  </compound>
+  <compound refid="_album_search_type_8php" kind="file"><name>AlbumSearchType.php</name>
+  </compound>
+  <compound refid="_registration_form_type_8php" kind="file"><name>RegistrationFormType.php</name>
+  </compound>
+  <compound refid="_kernel_8php" kind="file"><name>Kernel.php</name>
+  </compound>
+  <compound refid="_favorite_album_repository_8php" kind="file"><name>FavoriteAlbumRepository.php</name>
+  </compound>
+  <compound refid="_format_repository_8php" kind="file"><name>FormatRepository.php</name>
+  </compound>
+  <compound refid="_fruit_repository_8php" kind="file"><name>FruitRepository.php</name>
+  </compound>
+  <compound refid="_genre_repository_8php" kind="file"><name>GenreRepository.php</name>
+  </compound>
+  <compound refid="_label_repository_8php" kind="file"><name>LabelRepository.php</name>
+  </compound>
+  <compound refid="_track_repository_8php" kind="file"><name>TrackRepository.php</name>
+  </compound>
+  <compound refid="_user_repository_8php" kind="file"><name>UserRepository.php</name>
+  </compound>
+  <compound refid="_app_custom_authenticator_8php" kind="file"><name>AppCustomAuthenticator.php</name>
+  </compound>
+  <compound refid="_discogs_service_8php" kind="file"><name>DiscogsService.php</name>
+  </compound>
+  <compound refid="dir_308c8686e6bb6a50475f85d5ec3ea9a1" kind="dir"><name>Command</name>
+  </compound>
+  <compound refid="dir_b500f500d6f9b315c95ab1cd4a3b5c0d" kind="dir"><name>Controller</name>
+  </compound>
+  <compound refid="dir_00a30287902f50652ec40a6d0547fabd" kind="dir"><name>DataFixtures</name>
+  </compound>
+  <compound refid="dir_a625c670f828dfaff80322b07e1365a6" kind="dir"><name>Entity</name>
+  </compound>
+  <compound refid="dir_451a86ffe8fdc7a5622702c5c623a9c5" kind="dir"><name>Form</name>
+  </compound>
+  <compound refid="dir_aba90b35e24959ac76847a6aefcf5530" kind="dir"><name>Repository</name>
+  </compound>
+  <compound refid="dir_271c2be70a3c3f212e660df03cd55696" kind="dir"><name>Security</name>
+  </compound>
+  <compound refid="dir_44eb20806aaf8411decdc863bb791107" kind="dir"><name>Service</name>
+  </compound>
+</doxygenindex>

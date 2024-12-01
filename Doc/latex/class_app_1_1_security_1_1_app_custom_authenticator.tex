@@ -1,0 +1,141 @@
+\doxysection{Référence de la classe App\+Custom\+Authenticator}
+\hypertarget{class_app_1_1_security_1_1_app_custom_authenticator}{}\label{class_app_1_1_security_1_1_app_custom_authenticator}\index{AppCustomAuthenticator@{AppCustomAuthenticator}}
+
+
+Graphe d\textquotesingle{}héritage de App\+Custom\+Authenticator\+:
+% FIG 0
+
+
+Graphe de collaboration de App\+Custom\+Authenticator\+:
+% FIG 1
+\doxysubsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_app_1_1_security_1_1_app_custom_authenticator_aafc1eab4a8c8c05bc66d94041d739d0f}{\+\_\+\+\_\+construct}} (Url\+Generator\+Interface \$url\+Generator)
+\item 
+\mbox{\hyperlink{class_app_1_1_security_1_1_app_custom_authenticator_acc8752684a58a442307c274100d77faf}{authenticate}} (Request \$request)
+\item 
+\mbox{\hyperlink{class_app_1_1_security_1_1_app_custom_authenticator_a8c14d31ce5a6d2bec39798fa32dacc45}{on\+Authentication\+Success}} (Request \$request, Token\+Interface \$token, string \$firewall\+Name)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Attributs publics}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{class_app_1_1_security_1_1_app_custom_authenticator_acefb6c1e88a6be21742efe1796c1b10a}{LOGIN\+\_\+\+ROUTE}} = \textquotesingle{}app\+\_\+login\textquotesingle{}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Fonctions membres protégées}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_app_1_1_security_1_1_app_custom_authenticator_a2ed952b0c2d4db67fb2fa26a2a01a923}{get\+Login\+Url}} (Request \$request)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Authentificateur personnalisé pour gérer l\textquotesingle{}authentification des utilisateurs. 
+
+Définition à la ligne \mbox{\hyperlink{_app_custom_authenticator_8php_source_l00022}{22}} du fichier \mbox{\hyperlink{_app_custom_authenticator_8php_source}{App\+Custom\+Authenticator.\+php}}.
+
+
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\Hypertarget{class_app_1_1_security_1_1_app_custom_authenticator_aafc1eab4a8c8c05bc66d94041d739d0f}\index{AppCustomAuthenticator@{AppCustomAuthenticator}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!AppCustomAuthenticator@{AppCustomAuthenticator}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily \label{class_app_1_1_security_1_1_app_custom_authenticator_aafc1eab4a8c8c05bc66d94041d739d0f} 
+\+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{Url\+Generator\+Interface}]{\$url\+Generator}{}\end{DoxyParamCaption})}
+
+Constructeur de l\textquotesingle{}authentificateur.
+
+
+\begin{DoxyParams}[1]{Paramètres}
+Url\+Generator\+Interface & {\em \$url\+Generator} & Générateur d\textquotesingle{}URL pour les redirections. \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \mbox{\hyperlink{_app_custom_authenticator_8php_source_l00038}{38}} du fichier \mbox{\hyperlink{_app_custom_authenticator_8php_source}{App\+Custom\+Authenticator.\+php}}.
+
+
+
+\doxysubsection{Documentation des fonctions membres}
+\Hypertarget{class_app_1_1_security_1_1_app_custom_authenticator_acc8752684a58a442307c274100d77faf}\index{AppCustomAuthenticator@{AppCustomAuthenticator}!authenticate@{authenticate}}
+\index{authenticate@{authenticate}!AppCustomAuthenticator@{AppCustomAuthenticator}}
+\doxysubsubsection{\texorpdfstring{authenticate()}{authenticate()}}
+{\footnotesize\ttfamily \label{class_app_1_1_security_1_1_app_custom_authenticator_acc8752684a58a442307c274100d77faf} 
+authenticate (\begin{DoxyParamCaption}\item[{Request}]{\$request}{}\end{DoxyParamCaption})}
+
+Authentifie une requête utilisateur.
+
+
+\begin{DoxyParams}[1]{Paramètres}
+Request & {\em \$request} & La requête HTTP. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Passport Un objet Passport contenant les informations d\textquotesingle{}identification et les badges. 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_app_custom_authenticator_8php_source_l00049}{49}} du fichier \mbox{\hyperlink{_app_custom_authenticator_8php_source}{App\+Custom\+Authenticator.\+php}}.
+
+\Hypertarget{class_app_1_1_security_1_1_app_custom_authenticator_a2ed952b0c2d4db67fb2fa26a2a01a923}\index{AppCustomAuthenticator@{AppCustomAuthenticator}!getLoginUrl@{getLoginUrl}}
+\index{getLoginUrl@{getLoginUrl}!AppCustomAuthenticator@{AppCustomAuthenticator}}
+\doxysubsubsection{\texorpdfstring{getLoginUrl()}{getLoginUrl()}}
+{\footnotesize\ttfamily \label{class_app_1_1_security_1_1_app_custom_authenticator_a2ed952b0c2d4db67fb2fa26a2a01a923} 
+get\+Login\+Url (\begin{DoxyParamCaption}\item[{Request}]{\$request}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Renvoie l\textquotesingle{}URL de connexion.
+
+
+\begin{DoxyParams}[1]{Paramètres}
+Request & {\em \$request} & La requête HTTP. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+string L\textquotesingle{}URL de la page de connexion. 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_app_custom_authenticator_8php_source_l00090}{90}} du fichier \mbox{\hyperlink{_app_custom_authenticator_8php_source}{App\+Custom\+Authenticator.\+php}}.
+
+\Hypertarget{class_app_1_1_security_1_1_app_custom_authenticator_a8c14d31ce5a6d2bec39798fa32dacc45}\index{AppCustomAuthenticator@{AppCustomAuthenticator}!onAuthenticationSuccess@{onAuthenticationSuccess}}
+\index{onAuthenticationSuccess@{onAuthenticationSuccess}!AppCustomAuthenticator@{AppCustomAuthenticator}}
+\doxysubsubsection{\texorpdfstring{onAuthenticationSuccess()}{onAuthenticationSuccess()}}
+{\footnotesize\ttfamily \label{class_app_1_1_security_1_1_app_custom_authenticator_a8c14d31ce5a6d2bec39798fa32dacc45} 
+on\+Authentication\+Success (\begin{DoxyParamCaption}\item[{Request}]{\$request}{, }\item[{Token\+Interface}]{\$token}{, }\item[{string}]{\$firewall\+Name}{}\end{DoxyParamCaption})}
+
+Gère la redirection après une authentification réussie.
+
+
+\begin{DoxyParams}[1]{Paramètres}
+Request & {\em \$request} & La requête HTTP. \\
+\hline
+Token\+Interface & {\em \$token} & Le token d\textquotesingle{}authentification. \\
+\hline
+string & {\em \$firewall\+Name} & Le nom du pare-\/feu. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Response\texorpdfstring{$\vert$}{|}null Une réponse HTTP ou null. 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_app_custom_authenticator_8php_source_l00074}{74}} du fichier \mbox{\hyperlink{_app_custom_authenticator_8php_source}{App\+Custom\+Authenticator.\+php}}.
+
+
+
+\doxysubsection{Documentation des données membres}
+\Hypertarget{class_app_1_1_security_1_1_app_custom_authenticator_acefb6c1e88a6be21742efe1796c1b10a}\index{AppCustomAuthenticator@{AppCustomAuthenticator}!LOGIN\_ROUTE@{LOGIN\_ROUTE}}
+\index{LOGIN\_ROUTE@{LOGIN\_ROUTE}!AppCustomAuthenticator@{AppCustomAuthenticator}}
+\doxysubsubsection{\texorpdfstring{LOGIN\_ROUTE}{LOGIN\_ROUTE}}
+{\footnotesize\ttfamily \label{class_app_1_1_security_1_1_app_custom_authenticator_acefb6c1e88a6be21742efe1796c1b10a} 
+const LOGIN\+\_\+\+ROUTE = \textquotesingle{}app\+\_\+login\textquotesingle{}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_app_custom_authenticator_8php_source_l00026}{26}} du fichier \mbox{\hyperlink{_app_custom_authenticator_8php_source}{App\+Custom\+Authenticator.\+php}}.
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+Security/\mbox{\hyperlink{_app_custom_authenticator_8php}{App\+Custom\+Authenticator.\+php}}\end{DoxyCompactItemize}

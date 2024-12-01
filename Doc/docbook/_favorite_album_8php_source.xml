@@ -1,0 +1,219 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__favorite_album_8php_source" xml:lang="fr">
+<title>FavoriteAlbum.php</title>
+<indexterm><primary>Entity/FavoriteAlbum.php</primary></indexterm>
+Aller à la documentation de ce fichier.<programlisting linenumbering="unnumbered"><anchor xml:id="__favorite_album_8php_source_1l00001"/>00001 &lt;?php
+<anchor xml:id="__favorite_album_8php_source_1l00002"/>00002 
+<anchor xml:id="__favorite_album_8php_source_1l00003"/><link linkend="_namespace_app_1_1_entity">00003</link> <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespace_app_1_1_entity">App\Entity</link>;
+<anchor xml:id="__favorite_album_8php_source_1l00004"/>00004 
+<anchor xml:id="__favorite_album_8php_source_1l00005"/>00005 use&#32;<link linkend="_class_app_1_1_repository_1_1_favorite_album_repository">App\Repository\FavoriteAlbumRepository</link>;
+<anchor xml:id="__favorite_album_8php_source_1l00006"/>00006 use&#32;Doctrine\Common\Collections\ArrayCollection;
+<anchor xml:id="__favorite_album_8php_source_1l00007"/>00007 use&#32;Doctrine\Common\Collections\Collection;
+<anchor xml:id="__favorite_album_8php_source_1l00008"/>00008 use&#32;Doctrine\ORM\Mapping&#32;as&#32;ORM;
+<anchor xml:id="__favorite_album_8php_source_1l00009"/>00009 use&#32;Symfony\UX\Turbo\Attribute\Broadcast;
+<anchor xml:id="__favorite_album_8php_source_1l00010"/>00010 
+<anchor xml:id="__favorite_album_8php_source_1l00017"/>00017 <emphasis role="preprocessor">#[ORM\Entity(repositoryClass:&#32;FavoriteAlbumRepository::class)]</emphasis>
+<anchor xml:id="__favorite_album_8php_source_1l00018"/>00018 <emphasis role="preprocessor">#[Broadcast]</emphasis>
+<anchor xml:id="__favorite_album_8php_source_1l00019"/><link linkend="_class_app_1_1_entity_1_1_favorite_album">00019</link> <emphasis role="keyword">class&#32;</emphasis><link linkend="_class_app_1_1_entity_1_1_favorite_album">FavoriteAlbum</link>
+<anchor xml:id="__favorite_album_8php_source_1l00020"/>00020 {
+<anchor xml:id="__favorite_album_8php_source_1l00030"/>00030 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;#[ORM\Id]</emphasis>
+<anchor xml:id="__favorite_album_8php_source_1l00031"/>00031 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;#[ORM\GeneratedValue]</emphasis>
+<anchor xml:id="__favorite_album_8php_source_1l00032"/>00032 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;#[ORM\Column]</emphasis>
+<anchor xml:id="__favorite_album_8php_source_1l00033"/>00033 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;?<emphasis role="keywordtype">int</emphasis>&#32;$id&#32;=&#32;<emphasis role="keyword">null</emphasis>;
+<anchor xml:id="__favorite_album_8php_source_1l00034"/>00034 
+<anchor xml:id="__favorite_album_8php_source_1l00042"/>00042 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;#[ORM\Column(type:&#32;&apos;integer&apos;)]</emphasis>
+<anchor xml:id="__favorite_album_8php_source_1l00043"/>00043 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;?<emphasis role="keywordtype">int</emphasis>&#32;$albumId&#32;=&#32;<emphasis role="keyword">null</emphasis>;
+<anchor xml:id="__favorite_album_8php_source_1l00044"/>00044 
+<anchor xml:id="__favorite_album_8php_source_1l00052"/>00052 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;#[ORM\Column(type:&#32;&apos;string&apos;,&#32;length:&#32;255,&#32;nullable:&#32;true)]</emphasis>
+<anchor xml:id="__favorite_album_8php_source_1l00053"/>00053 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;?<emphasis role="keywordtype">string</emphasis>&#32;$title&#32;=&#32;<emphasis role="keyword">null</emphasis>;
+<anchor xml:id="__favorite_album_8php_source_1l00054"/>00054 
+<anchor xml:id="__favorite_album_8php_source_1l00062"/>00062 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;#[ORM\Column(type:&#32;&apos;string&apos;,&#32;length:&#32;255,&#32;nullable:&#32;true)]</emphasis>
+<anchor xml:id="__favorite_album_8php_source_1l00063"/>00063 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;?<emphasis role="keywordtype">string</emphasis>&#32;$year&#32;=&#32;<emphasis role="keyword">null</emphasis>;
+<anchor xml:id="__favorite_album_8php_source_1l00064"/>00064 
+<anchor xml:id="__favorite_album_8php_source_1l00073"/>00073 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;#[ORM\Column(type:&#32;&apos;string&apos;,&#32;length:&#32;255,&#32;nullable:&#32;true)]</emphasis>
+<anchor xml:id="__favorite_album_8php_source_1l00074"/>00074 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;?<emphasis role="keywordtype">string</emphasis>&#32;$coverImage&#32;=&#32;<emphasis role="stringliteral">&apos;/images/placeholder.jpg&apos;</emphasis>;
+<anchor xml:id="__favorite_album_8php_source_1l00075"/>00075 
+<anchor xml:id="__favorite_album_8php_source_1l00084"/>00084 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;#[ORM\ManyToOne(targetEntity:&#32;Label::class)]</emphasis>
+<anchor xml:id="__favorite_album_8php_source_1l00085"/>00085 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;#[ORM\JoinColumn(nullable:&#32;true,&#32;onDelete:&#32;&apos;SET&#32;NULL&apos;)]</emphasis>
+<anchor xml:id="__favorite_album_8php_source_1l00086"/>00086 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;?<link linkend="_class_app_1_1_entity_1_1_label">Label</link>&#32;$label&#32;=&#32;<emphasis role="keyword">null</emphasis>;
+<anchor xml:id="__favorite_album_8php_source_1l00087"/>00087 
+<anchor xml:id="__favorite_album_8php_source_1l00096"/>00096 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;#[ORM\ManyToOne(targetEntity:&#32;Genre::class)]</emphasis>
+<anchor xml:id="__favorite_album_8php_source_1l00097"/>00097 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;#[ORM\JoinColumn(nullable:&#32;true,&#32;onDelete:&#32;&apos;SET&#32;NULL&apos;)]</emphasis>
+<anchor xml:id="__favorite_album_8php_source_1l00098"/>00098 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;?<link linkend="_class_app_1_1_entity_1_1_genre">Genre</link>&#32;$genre&#32;=&#32;<emphasis role="keyword">null</emphasis>;
+<anchor xml:id="__favorite_album_8php_source_1l00099"/>00099 
+<anchor xml:id="__favorite_album_8php_source_1l00108"/>00108 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;#[ORM\ManyToOne(targetEntity:&#32;Format::class)]</emphasis>
+<anchor xml:id="__favorite_album_8php_source_1l00109"/>00109 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;#[ORM\JoinColumn(nullable:&#32;true,&#32;onDelete:&#32;&apos;SET&#32;NULL&apos;)]</emphasis>
+<anchor xml:id="__favorite_album_8php_source_1l00110"/>00110 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;?<link linkend="_class_app_1_1_entity_1_1_format">Format</link>&#32;$format&#32;=&#32;<emphasis role="keyword">null</emphasis>;
+<anchor xml:id="__favorite_album_8php_source_1l00111"/>00111 
+<anchor xml:id="__favorite_album_8php_source_1l00120"/>00120 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;#[ORM\ManyToOne(targetEntity:&#32;User::class,&#32;inversedBy:&#32;&apos;favoriteAlbums&apos;)]</emphasis>
+<anchor xml:id="__favorite_album_8php_source_1l00121"/>00121 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;#[ORM\JoinColumn(nullable:&#32;false,&#32;onDelete:&#32;&apos;CASCADE&apos;)]</emphasis>
+<anchor xml:id="__favorite_album_8php_source_1l00122"/>00122 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;?<link linkend="_class_app_1_1_entity_1_1_user">User</link>&#32;$user&#32;=&#32;<emphasis role="keyword">null</emphasis>;
+<anchor xml:id="__favorite_album_8php_source_1l00123"/>00123 
+<anchor xml:id="__favorite_album_8php_source_1l00132"/>00132 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;#[ORM\ManyToMany(targetEntity:&#32;Fruit::class,&#32;cascade:&#32;[&apos;persist&apos;,&#32;&apos;remove&apos;])]</emphasis>
+<anchor xml:id="__favorite_album_8php_source_1l00133"/>00133 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;#[ORM\JoinTable(name:&#32;&apos;favorite_album_fruit&apos;)]</emphasis>
+<anchor xml:id="__favorite_album_8php_source_1l00134"/>00134 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;Collection&#32;$fruits;
+<anchor xml:id="__favorite_album_8php_source_1l00135"/>00135 
+<anchor xml:id="__favorite_album_8php_source_1l00143"/>00143 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;#[ORM\OneToMany(mappedBy:&#32;&apos;album&apos;,&#32;targetEntity:&#32;Track::class,&#32;cascade:&#32;[&apos;persist&apos;,&#32;&apos;remove&apos;])]</emphasis>
+<anchor xml:id="__favorite_album_8php_source_1l00144"/>00144 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;Collection&#32;$tracks;
+<anchor xml:id="__favorite_album_8php_source_1l00145"/>00145 
+<anchor xml:id="__favorite_album_8php_source_1l00150"/><link linkend="_class_app_1_1_entity_1_1_favorite_album_1a095c5d389db211932136b53f25f39685">00150</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_favorite_album_1a095c5d389db211932136b53f25f39685">__construct</link>()
+<anchor xml:id="__favorite_album_8php_source_1l00151"/>00151 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__favorite_album_8php_source_1l00152"/>00152 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$this-&gt;fruits&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;ArrayCollection();
+<anchor xml:id="__favorite_album_8php_source_1l00153"/>00153 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$this-&gt;tracks&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;ArrayCollection();
+<anchor xml:id="__favorite_album_8php_source_1l00154"/>00154 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__favorite_album_8php_source_1l00155"/>00155 
+<anchor xml:id="__favorite_album_8php_source_1l00156"/>00156 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Getters&#32;et&#32;setters&#32;avec&#32;documentation</emphasis>
+<anchor xml:id="__favorite_album_8php_source_1l00157"/>00157 
+<anchor xml:id="__favorite_album_8php_source_1l00163"/><link linkend="_class_app_1_1_entity_1_1_favorite_album_1a12251d0c022e9e21c137a105ff683f13">00163</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_favorite_album_1a12251d0c022e9e21c137a105ff683f13">getId</link>():&#32;?int
+<anchor xml:id="__favorite_album_8php_source_1l00164"/>00164 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__favorite_album_8php_source_1l00165"/>00165 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this-&gt;id;
+<anchor xml:id="__favorite_album_8php_source_1l00166"/>00166 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__favorite_album_8php_source_1l00167"/>00167 
+<anchor xml:id="__favorite_album_8php_source_1l00173"/><link linkend="_class_app_1_1_entity_1_1_favorite_album_1af25659d3cdc12b0faf5a2322241bf69a">00173</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_favorite_album_1af25659d3cdc12b0faf5a2322241bf69a">getAlbumId</link>():&#32;?int
+<anchor xml:id="__favorite_album_8php_source_1l00174"/>00174 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__favorite_album_8php_source_1l00175"/>00175 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this-&gt;albumId;
+<anchor xml:id="__favorite_album_8php_source_1l00176"/>00176 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__favorite_album_8php_source_1l00177"/>00177 
+<anchor xml:id="__favorite_album_8php_source_1l00185"/><link linkend="_class_app_1_1_entity_1_1_favorite_album_1a5616f9d98d68c2597046ef7d04d84f6f">00185</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_favorite_album_1a5616f9d98d68c2597046ef7d04d84f6f">setAlbumId</link>(<emphasis role="keywordtype">int</emphasis>&#32;$albumId):&#32;self
+<anchor xml:id="__favorite_album_8php_source_1l00186"/>00186 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__favorite_album_8php_source_1l00187"/>00187 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$this-&gt;albumId&#32;=&#32;$albumId;
+<anchor xml:id="__favorite_album_8php_source_1l00188"/>00188 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this;
+<anchor xml:id="__favorite_album_8php_source_1l00189"/>00189 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__favorite_album_8php_source_1l00190"/>00190 
+<anchor xml:id="__favorite_album_8php_source_1l00196"/><link linkend="_class_app_1_1_entity_1_1_favorite_album_1a95e859a4588a39a1824b717378a84c29">00196</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_favorite_album_1a95e859a4588a39a1824b717378a84c29">getTitle</link>():&#32;?string
+<anchor xml:id="__favorite_album_8php_source_1l00197"/>00197 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__favorite_album_8php_source_1l00198"/>00198 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this-&gt;title;
+<anchor xml:id="__favorite_album_8php_source_1l00199"/>00199 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__favorite_album_8php_source_1l00200"/>00200 
+<anchor xml:id="__favorite_album_8php_source_1l00208"/><link linkend="_class_app_1_1_entity_1_1_favorite_album_1ac698bca9a4f3d5d9355ff023eee17285">00208</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_favorite_album_1ac698bca9a4f3d5d9355ff023eee17285">setTitle</link>(?<emphasis role="keywordtype">string</emphasis>&#32;$title):&#32;self
+<anchor xml:id="__favorite_album_8php_source_1l00209"/>00209 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__favorite_album_8php_source_1l00210"/>00210 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$this-&gt;title&#32;=&#32;$title;
+<anchor xml:id="__favorite_album_8php_source_1l00211"/>00211 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this;
+<anchor xml:id="__favorite_album_8php_source_1l00212"/>00212 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__favorite_album_8php_source_1l00213"/>00213 
+<anchor xml:id="__favorite_album_8php_source_1l00219"/><link linkend="_class_app_1_1_entity_1_1_favorite_album_1ad0a298a1c3d30a5dff3278f1f5bb7d86">00219</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_favorite_album_1ad0a298a1c3d30a5dff3278f1f5bb7d86">getYear</link>():&#32;?string
+<anchor xml:id="__favorite_album_8php_source_1l00220"/>00220 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__favorite_album_8php_source_1l00221"/>00221 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this-&gt;year;
+<anchor xml:id="__favorite_album_8php_source_1l00222"/>00222 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__favorite_album_8php_source_1l00223"/>00223 
+<anchor xml:id="__favorite_album_8php_source_1l00231"/><link linkend="_class_app_1_1_entity_1_1_favorite_album_1a380136d26548fcfb8b3130250a42b9c2">00231</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_favorite_album_1a380136d26548fcfb8b3130250a42b9c2">setYear</link>(?<emphasis role="keywordtype">string</emphasis>&#32;$year):&#32;self
+<anchor xml:id="__favorite_album_8php_source_1l00232"/>00232 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__favorite_album_8php_source_1l00233"/>00233 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$this-&gt;year&#32;=&#32;$year;
+<anchor xml:id="__favorite_album_8php_source_1l00234"/>00234 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this;
+<anchor xml:id="__favorite_album_8php_source_1l00235"/>00235 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__favorite_album_8php_source_1l00236"/>00236 
+<anchor xml:id="__favorite_album_8php_source_1l00243"/><link linkend="_class_app_1_1_entity_1_1_favorite_album_1af68dead1965a2a3240f96ae558e355f8">00243</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_favorite_album_1af68dead1965a2a3240f96ae558e355f8">getCoverImage</link>():&#32;?string
+<anchor xml:id="__favorite_album_8php_source_1l00244"/>00244 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__favorite_album_8php_source_1l00245"/>00245 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this-&gt;coverImage&#32;??&#32;<emphasis role="stringliteral">&apos;/images/placeholder.jpg&apos;</emphasis>;
+<anchor xml:id="__favorite_album_8php_source_1l00246"/>00246 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__favorite_album_8php_source_1l00247"/>00247 
+<anchor xml:id="__favorite_album_8php_source_1l00255"/><link linkend="_class_app_1_1_entity_1_1_favorite_album_1a32e0a6523167ed7e60e5c30711dfe1fa">00255</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_favorite_album_1a32e0a6523167ed7e60e5c30711dfe1fa">setCoverImage</link>(?<emphasis role="keywordtype">string</emphasis>&#32;$coverImage):&#32;self
+<anchor xml:id="__favorite_album_8php_source_1l00256"/>00256 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__favorite_album_8php_source_1l00257"/>00257 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$this-&gt;coverImage&#32;=&#32;$coverImage;
+<anchor xml:id="__favorite_album_8php_source_1l00258"/>00258 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this;
+<anchor xml:id="__favorite_album_8php_source_1l00259"/>00259 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__favorite_album_8php_source_1l00260"/>00260 
+<anchor xml:id="__favorite_album_8php_source_1l00266"/><link linkend="_class_app_1_1_entity_1_1_favorite_album_1a14c4e7420d903d3e40342266333d2ecf">00266</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_favorite_album_1a14c4e7420d903d3e40342266333d2ecf">getLabel</link>():&#32;?<link linkend="_class_app_1_1_entity_1_1_label">Label</link>
+<anchor xml:id="__favorite_album_8php_source_1l00267"/>00267 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__favorite_album_8php_source_1l00268"/>00268 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this-&gt;label;
+<anchor xml:id="__favorite_album_8php_source_1l00269"/>00269 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__favorite_album_8php_source_1l00270"/>00270 
+<anchor xml:id="__favorite_album_8php_source_1l00278"/><link linkend="_class_app_1_1_entity_1_1_favorite_album_1a2a7c7c3195c43a32ab55f2fea78ba318">00278</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_favorite_album_1a2a7c7c3195c43a32ab55f2fea78ba318">setLabel</link>(?<link linkend="_class_app_1_1_entity_1_1_label">Label</link>&#32;$label):&#32;self
+<anchor xml:id="__favorite_album_8php_source_1l00279"/>00279 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__favorite_album_8php_source_1l00280"/>00280 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$this-&gt;label&#32;=&#32;$label;
+<anchor xml:id="__favorite_album_8php_source_1l00281"/>00281 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this;
+<anchor xml:id="__favorite_album_8php_source_1l00282"/>00282 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__favorite_album_8php_source_1l00283"/>00283 
+<anchor xml:id="__favorite_album_8php_source_1l00289"/><link linkend="_class_app_1_1_entity_1_1_favorite_album_1adc6f217756d49edbac6975e1f69485d5">00289</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_favorite_album_1adc6f217756d49edbac6975e1f69485d5">getGenre</link>():&#32;?<link linkend="_class_app_1_1_entity_1_1_genre">Genre</link>
+<anchor xml:id="__favorite_album_8php_source_1l00290"/>00290 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__favorite_album_8php_source_1l00291"/>00291 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this-&gt;genre;
+<anchor xml:id="__favorite_album_8php_source_1l00292"/>00292 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__favorite_album_8php_source_1l00293"/>00293 
+<anchor xml:id="__favorite_album_8php_source_1l00301"/><link linkend="_class_app_1_1_entity_1_1_favorite_album_1a6fcf7c3ce3de45970b6f384c6c2c1e8c">00301</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_favorite_album_1a6fcf7c3ce3de45970b6f384c6c2c1e8c">setGenre</link>(?<link linkend="_class_app_1_1_entity_1_1_genre">Genre</link>&#32;$genre):&#32;self
+<anchor xml:id="__favorite_album_8php_source_1l00302"/>00302 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__favorite_album_8php_source_1l00303"/>00303 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$this-&gt;genre&#32;=&#32;$genre;
+<anchor xml:id="__favorite_album_8php_source_1l00304"/>00304 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this;
+<anchor xml:id="__favorite_album_8php_source_1l00305"/>00305 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__favorite_album_8php_source_1l00306"/>00306 
+<anchor xml:id="__favorite_album_8php_source_1l00312"/><link linkend="_class_app_1_1_entity_1_1_favorite_album_1ae3c4fbe3e8eb0d6755694bc597d6c52f">00312</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_favorite_album_1ae3c4fbe3e8eb0d6755694bc597d6c52f">getFormat</link>():&#32;?<link linkend="_class_app_1_1_entity_1_1_format">Format</link>
+<anchor xml:id="__favorite_album_8php_source_1l00313"/>00313 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__favorite_album_8php_source_1l00314"/>00314 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this-&gt;format;
+<anchor xml:id="__favorite_album_8php_source_1l00315"/>00315 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__favorite_album_8php_source_1l00316"/>00316 
+<anchor xml:id="__favorite_album_8php_source_1l00324"/><link linkend="_class_app_1_1_entity_1_1_favorite_album_1ab8f9ee51eb3a4b472abe80f921676a8c">00324</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_favorite_album_1ab8f9ee51eb3a4b472abe80f921676a8c">setFormat</link>(?<link linkend="_class_app_1_1_entity_1_1_format">Format</link>&#32;$format):&#32;self
+<anchor xml:id="__favorite_album_8php_source_1l00325"/>00325 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__favorite_album_8php_source_1l00326"/>00326 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$this-&gt;format&#32;=&#32;$format;
+<anchor xml:id="__favorite_album_8php_source_1l00327"/>00327 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this;
+<anchor xml:id="__favorite_album_8php_source_1l00328"/>00328 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__favorite_album_8php_source_1l00329"/>00329 
+<anchor xml:id="__favorite_album_8php_source_1l00335"/><link linkend="_class_app_1_1_entity_1_1_favorite_album_1ae81b7186fb97a7c6457edcc68c9aa2ef">00335</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_favorite_album_1ae81b7186fb97a7c6457edcc68c9aa2ef">getUser</link>():&#32;?<link linkend="_class_app_1_1_entity_1_1_user">User</link>
+<anchor xml:id="__favorite_album_8php_source_1l00336"/>00336 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__favorite_album_8php_source_1l00337"/>00337 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this-&gt;user;
+<anchor xml:id="__favorite_album_8php_source_1l00338"/>00338 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__favorite_album_8php_source_1l00339"/>00339 
+<anchor xml:id="__favorite_album_8php_source_1l00347"/><link linkend="_class_app_1_1_entity_1_1_favorite_album_1a406a111868b45aad6d4c8ab5b0c5bcb9">00347</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_favorite_album_1a406a111868b45aad6d4c8ab5b0c5bcb9">setUser</link>(?<link linkend="_class_app_1_1_entity_1_1_user">User</link>&#32;$user):&#32;self
+<anchor xml:id="__favorite_album_8php_source_1l00348"/>00348 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__favorite_album_8php_source_1l00349"/>00349 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$this-&gt;user&#32;=&#32;$user;
+<anchor xml:id="__favorite_album_8php_source_1l00350"/>00350 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this;
+<anchor xml:id="__favorite_album_8php_source_1l00351"/>00351 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__favorite_album_8php_source_1l00352"/>00352 
+<anchor xml:id="__favorite_album_8php_source_1l00358"/><link linkend="_class_app_1_1_entity_1_1_favorite_album_1a6c52b5b67bd8eb098d0bc259e86312ff">00358</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_favorite_album_1a6c52b5b67bd8eb098d0bc259e86312ff">getFruits</link>():&#32;Collection
+<anchor xml:id="__favorite_album_8php_source_1l00359"/>00359 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__favorite_album_8php_source_1l00360"/>00360 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this-&gt;fruits;
+<anchor xml:id="__favorite_album_8php_source_1l00361"/>00361 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__favorite_album_8php_source_1l00362"/>00362 
+<anchor xml:id="__favorite_album_8php_source_1l00370"/><link linkend="_class_app_1_1_entity_1_1_favorite_album_1ab593ea8c6876813ebec46d18c928ee00">00370</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_favorite_album_1ab593ea8c6876813ebec46d18c928ee00">addFruit</link>(<link linkend="_class_app_1_1_entity_1_1_fruit">Fruit</link>&#32;$fruit):&#32;self
+<anchor xml:id="__favorite_album_8php_source_1l00371"/>00371 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__favorite_album_8php_source_1l00372"/>00372 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!$this-&gt;fruits-&gt;contains($fruit))&#32;{
+<anchor xml:id="__favorite_album_8php_source_1l00373"/>00373 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$this-&gt;fruits[]&#32;=&#32;$fruit;
+<anchor xml:id="__favorite_album_8php_source_1l00374"/>00374 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__favorite_album_8php_source_1l00375"/>00375 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this;
+<anchor xml:id="__favorite_album_8php_source_1l00376"/>00376 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__favorite_album_8php_source_1l00377"/>00377 
+<anchor xml:id="__favorite_album_8php_source_1l00385"/><link linkend="_class_app_1_1_entity_1_1_favorite_album_1a41fda8af5652dd1f6a9af3c9886695d1">00385</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_favorite_album_1a41fda8af5652dd1f6a9af3c9886695d1">removeFruit</link>(<link linkend="_class_app_1_1_entity_1_1_fruit">Fruit</link>&#32;$fruit):&#32;self
+<anchor xml:id="__favorite_album_8php_source_1l00386"/>00386 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__favorite_album_8php_source_1l00387"/>00387 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$this-&gt;fruits-&gt;removeElement($fruit);
+<anchor xml:id="__favorite_album_8php_source_1l00388"/>00388 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this;
+<anchor xml:id="__favorite_album_8php_source_1l00389"/>00389 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__favorite_album_8php_source_1l00390"/>00390 
+<anchor xml:id="__favorite_album_8php_source_1l00396"/><link linkend="_class_app_1_1_entity_1_1_favorite_album_1a8dc1c9e8edd1295fd956a4eb3af053b2">00396</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_favorite_album_1a8dc1c9e8edd1295fd956a4eb3af053b2">getTracks</link>():&#32;Collection
+<anchor xml:id="__favorite_album_8php_source_1l00397"/>00397 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__favorite_album_8php_source_1l00398"/>00398 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this-&gt;tracks;
+<anchor xml:id="__favorite_album_8php_source_1l00399"/>00399 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__favorite_album_8php_source_1l00400"/>00400 
+<anchor xml:id="__favorite_album_8php_source_1l00408"/><link linkend="_class_app_1_1_entity_1_1_favorite_album_1af6a5b20e58074d84acb01c009b10d014">00408</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_favorite_album_1af6a5b20e58074d84acb01c009b10d014">addTrack</link>(<link linkend="_class_app_1_1_entity_1_1_track">Track</link>&#32;$track):&#32;self
+<anchor xml:id="__favorite_album_8php_source_1l00409"/>00409 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__favorite_album_8php_source_1l00410"/>00410 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!$this-&gt;tracks-&gt;contains($track))&#32;{
+<anchor xml:id="__favorite_album_8php_source_1l00411"/>00411 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$this-&gt;tracks[]&#32;=&#32;$track;
+<anchor xml:id="__favorite_album_8php_source_1l00412"/>00412 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$track-&gt;<link linkend="_class_app_1_1_entity_1_1_track_1a030b2e5bdc870ee346358efc28a59640">setAlbum</link>($this);
+<anchor xml:id="__favorite_album_8php_source_1l00413"/>00413 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__favorite_album_8php_source_1l00414"/>00414 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this;
+<anchor xml:id="__favorite_album_8php_source_1l00415"/>00415 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__favorite_album_8php_source_1l00416"/>00416 
+<anchor xml:id="__favorite_album_8php_source_1l00424"/><link linkend="_class_app_1_1_entity_1_1_favorite_album_1a13b62bd4ee7d72e4c46354bdda6bcdf0">00424</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_favorite_album_1a13b62bd4ee7d72e4c46354bdda6bcdf0">removeTrack</link>(<link linkend="_class_app_1_1_entity_1_1_track">Track</link>&#32;$track):&#32;self
+<anchor xml:id="__favorite_album_8php_source_1l00425"/>00425 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__favorite_album_8php_source_1l00426"/>00426 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;($this-&gt;tracks-&gt;removeElement($track))&#32;{
+<anchor xml:id="__favorite_album_8php_source_1l00427"/>00427 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Définir&#32;le&#32;côté&#32;propriétaire&#32;de&#32;la&#32;relation&#32;à&#32;null</emphasis>
+<anchor xml:id="__favorite_album_8php_source_1l00428"/>00428 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;($track-&gt;<link linkend="_class_app_1_1_entity_1_1_track_1aee148d665bb21d0319499d90186605b2">getAlbum</link>()&#32;===&#32;$this)&#32;{
+<anchor xml:id="__favorite_album_8php_source_1l00429"/>00429 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$track-&gt;<link linkend="_class_app_1_1_entity_1_1_track_1a030b2e5bdc870ee346358efc28a59640">setAlbum</link>(<emphasis role="keyword">null</emphasis>);
+<anchor xml:id="__favorite_album_8php_source_1l00430"/>00430 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__favorite_album_8php_source_1l00431"/>00431 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__favorite_album_8php_source_1l00432"/>00432 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this;
+<anchor xml:id="__favorite_album_8php_source_1l00433"/>00433 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__favorite_album_8php_source_1l00434"/>00434 
+<anchor xml:id="__favorite_album_8php_source_1l00440"/><link linkend="_class_app_1_1_entity_1_1_favorite_album_1ab2f077a347becc5f1c0446c975dec551">00440</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_favorite_album_1ab2f077a347becc5f1c0446c975dec551">getAllFruits</link>():&#32;array
+<anchor xml:id="__favorite_album_8php_source_1l00441"/>00441 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__favorite_album_8php_source_1l00442"/>00442 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$allFruits&#32;=&#32;$this-&gt;fruits-&gt;toArray();
+<anchor xml:id="__favorite_album_8php_source_1l00443"/>00443 
+<anchor xml:id="__favorite_album_8php_source_1l00444"/>00444 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">foreach</emphasis>&#32;($this-&gt;tracks&#32;as&#32;$track)&#32;{
+<anchor xml:id="__favorite_album_8php_source_1l00445"/>00445 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">foreach</emphasis>&#32;($track-&gt;getFruits()&#32;as&#32;$fruit)&#32;{
+<anchor xml:id="__favorite_album_8php_source_1l00446"/>00446 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!in_array($fruit,&#32;$allFruits,&#32;<emphasis role="keyword">true</emphasis>))&#32;{
+<anchor xml:id="__favorite_album_8php_source_1l00447"/>00447 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$allFruits[]&#32;=&#32;$fruit;
+<anchor xml:id="__favorite_album_8php_source_1l00448"/>00448 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__favorite_album_8php_source_1l00449"/>00449 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__favorite_album_8php_source_1l00450"/>00450 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__favorite_album_8php_source_1l00451"/>00451 
+<anchor xml:id="__favorite_album_8php_source_1l00452"/>00452 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$allFruits;
+<anchor xml:id="__favorite_album_8php_source_1l00453"/>00453 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__favorite_album_8php_source_1l00454"/>00454 }
+</programlisting></section>

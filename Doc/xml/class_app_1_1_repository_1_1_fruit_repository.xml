@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="fr">
+  <compounddef id="class_app_1_1_repository_1_1_fruit_repository" kind="class" language="PHP" prot="public">
+    <compoundname>App::Repository::FruitRepository</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">ServiceEntityRepository</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">ServiceEntityRepository</basecompoundref>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_app_1_1_repository_1_1_fruit_repository_1a38ea33dde11163765f358f5f10a3bc03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>__construct</definition>
+        <argsstring>(ManagerRegistry $registry)</argsstring>
+        <name>__construct</name>
+        <qualifiedname>App\Repository\FruitRepository\__construct</qualifiedname>
+        <param>
+          <type>ManagerRegistry</type>
+          <declname>$registry</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructeur du repository.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>ManagerRegistry</parametertype>
+<parametername>$registry</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Le registre des gestionnaires d&apos;entités. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Repository/FruitRepository.php" line="24" column="21" bodyfile="Repository/FruitRepository.php" bodystart="24" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_repository_1_1_fruit_repository_1a75686a8dc64f97f7a8ea96a20997cf25" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>findOrCreate</definition>
+        <argsstring>(string $fruitName)</argsstring>
+        <name>findOrCreate</name>
+        <qualifiedname>App\Repository\FruitRepository\findOrCreate</qualifiedname>
+        <param>
+          <type>string</type>
+          <declname>$fruitName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Trouve un fruit par son nom ou le crée s&apos;il n&apos;existe pas.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$fruitName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Le nom du fruit à rechercher ou à créer. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Fruit Le fruit trouvé ou nouvellement créé. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Repository/FruitRepository.php" line="35" column="21" bodyfile="Repository/FruitRepository.php" bodystart="35" bodyend="47"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Repository pour l&apos;entité Fruit.</para>
+<para>Fournit des méthodes de base pour interagir avec les fruits et permet d&apos;ajouter des méthodes personnalisées pour répondre à des besoins spécifiques.</para>
+<para>&lt;Fruit&gt; </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>ServiceEntityRepository</label>
+      </node>
+      <node id="1">
+        <label>FruitRepository</label>
+        <link refid="class_app_1_1_repository_1_1_fruit_repository"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>ServiceEntityRepository</label>
+      </node>
+      <node id="1">
+        <label>FruitRepository</label>
+        <link refid="class_app_1_1_repository_1_1_fruit_repository"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Repository/FruitRepository.php" line="17" column="1" bodyfile="Repository/FruitRepository.php" bodystart="18" bodyend="50"/>
+    <listofallmembers>
+      <member refid="class_app_1_1_repository_1_1_fruit_repository_1a38ea33dde11163765f358f5f10a3bc03" prot="public" virt="non-virtual"><scope>App::Repository::FruitRepository</scope><name>__construct</name></member>
+      <member refid="class_app_1_1_repository_1_1_fruit_repository_1a75686a8dc64f97f7a8ea96a20997cf25" prot="public" virt="non-virtual"><scope>App::Repository::FruitRepository</scope><name>findOrCreate</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

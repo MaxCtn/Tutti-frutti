@@ -1,0 +1,90 @@
+\doxysection{Référence de la classe Discogs\+Service}
+\hypertarget{class_app_1_1_service_1_1_discogs_service}{}\label{class_app_1_1_service_1_1_discogs_service}\index{DiscogsService@{DiscogsService}}
+\doxysubsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_app_1_1_service_1_1_discogs_service_ae1ee3eddd2a921ac5d35f71614386307}{\+\_\+\+\_\+construct}} (Http\+Client\+Interface \$client, string \$consumer\+Key, string \$consumer\+Secret)
+\item 
+\mbox{\hyperlink{class_app_1_1_service_1_1_discogs_service_a14e1e0b11d4e2976862f1f60e6a20b64}{search\+Albums}} (string \$search\+Term)
+\item 
+\mbox{\hyperlink{class_app_1_1_service_1_1_discogs_service_a59651c916adba385563e3ae914057b48}{get\+Album\+Details}} (int \$id)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Service pour interagir avec l\textquotesingle{}API Discogs. Fournit des fonctionnalités pour rechercher des albums et obtenir leurs détails. 
+
+Définition à la ligne \mbox{\hyperlink{_discogs_service_8php_source_l00013}{13}} du fichier \mbox{\hyperlink{_discogs_service_8php_source}{Discogs\+Service.\+php}}.
+
+
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\Hypertarget{class_app_1_1_service_1_1_discogs_service_ae1ee3eddd2a921ac5d35f71614386307}\index{DiscogsService@{DiscogsService}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!DiscogsService@{DiscogsService}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily \label{class_app_1_1_service_1_1_discogs_service_ae1ee3eddd2a921ac5d35f71614386307} 
+\+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{Http\+Client\+Interface}]{\$client}{, }\item[{string}]{\$consumer\+Key}{, }\item[{string}]{\$consumer\+Secret}{}\end{DoxyParamCaption})}
+
+Constructeur du service Discogs.
+
+
+\begin{DoxyParams}[1]{Paramètres}
+Http\+Client\+Interface & {\em \$client} & Client HTTP pour effectuer des requêtes. \\
+\hline
+string & {\em \$consumer\+Key} & Clé API Discogs. \\
+\hline
+string & {\em \$consumer\+Secret} & Secret API Discogs. \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \mbox{\hyperlink{_discogs_service_8php_source_l00040}{40}} du fichier \mbox{\hyperlink{_discogs_service_8php_source}{Discogs\+Service.\+php}}.
+
+
+
+\doxysubsection{Documentation des fonctions membres}
+\Hypertarget{class_app_1_1_service_1_1_discogs_service_a59651c916adba385563e3ae914057b48}\index{DiscogsService@{DiscogsService}!getAlbumDetails@{getAlbumDetails}}
+\index{getAlbumDetails@{getAlbumDetails}!DiscogsService@{DiscogsService}}
+\doxysubsubsection{\texorpdfstring{getAlbumDetails()}{getAlbumDetails()}}
+{\footnotesize\ttfamily \label{class_app_1_1_service_1_1_discogs_service_a59651c916adba385563e3ae914057b48} 
+get\+Album\+Details (\begin{DoxyParamCaption}\item[{int}]{\$id}{}\end{DoxyParamCaption})}
+
+Récupère les détails d\textquotesingle{}un album par son ID.
+
+
+\begin{DoxyParams}[1]{Paramètres}
+int & {\em \$id} & L\textquotesingle{}identifiant de l\textquotesingle{}album. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+array Les détails de l\textquotesingle{}album. 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_discogs_service_8php_source_l00075}{75}} du fichier \mbox{\hyperlink{_discogs_service_8php_source}{Discogs\+Service.\+php}}.
+
+\Hypertarget{class_app_1_1_service_1_1_discogs_service_a14e1e0b11d4e2976862f1f60e6a20b64}\index{DiscogsService@{DiscogsService}!searchAlbums@{searchAlbums}}
+\index{searchAlbums@{searchAlbums}!DiscogsService@{DiscogsService}}
+\doxysubsubsection{\texorpdfstring{searchAlbums()}{searchAlbums()}}
+{\footnotesize\ttfamily \label{class_app_1_1_service_1_1_discogs_service_a14e1e0b11d4e2976862f1f60e6a20b64} 
+search\+Albums (\begin{DoxyParamCaption}\item[{string}]{\$search\+Term}{}\end{DoxyParamCaption})}
+
+Recherche des albums correspondant à un terme.
+
+
+\begin{DoxyParams}[1]{Paramètres}
+string & {\em \$search\+Term} & Le terme de recherche. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+array Une liste d\textquotesingle{}albums correspondant au terme. 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_discogs_service_8php_source_l00053}{53}} du fichier \mbox{\hyperlink{_discogs_service_8php_source}{Discogs\+Service.\+php}}.
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+Service/\mbox{\hyperlink{_discogs_service_8php}{Discogs\+Service.\+php}}\end{DoxyCompactItemize}

@@ -1,0 +1,250 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="fr">
+  <compounddef id="class_app_1_1_controller_1_1_registration_controller" kind="class" language="PHP" prot="public">
+    <compoundname>App::Controller::RegistrationController</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">AbstractController</basecompoundref>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_app_1_1_controller_1_1_registration_controller_1ac68d9d5ffe44c36291872b00abe85482" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>index</definition>
+        <argsstring>(Request $request, EntityManagerInterface $entityManager, UserPasswordHasherInterface $passwordHasher, UserAuthenticatorInterface $userAuthenticator, SluggerInterface $slugger, AppCustomAuthenticator $authenticator)</argsstring>
+        <name>index</name>
+        <qualifiedname>App\Controller\RegistrationController\index</qualifiedname>
+        <param>
+          <type>Request</type>
+          <declname>$request</declname>
+        </param>
+        <param>
+          <type>EntityManagerInterface</type>
+          <declname>$entityManager</declname>
+        </param>
+        <param>
+          <type>UserPasswordHasherInterface</type>
+          <declname>$passwordHasher</declname>
+        </param>
+        <param>
+          <type>UserAuthenticatorInterface</type>
+          <declname>$userAuthenticator</declname>
+        </param>
+        <param>
+          <type>SluggerInterface</type>
+          <declname>$slugger</declname>
+        </param>
+        <param>
+          <type><ref refid="class_app_1_1_security_1_1_app_custom_authenticator" kindref="compound">AppCustomAuthenticator</ref></type>
+          <declname>$authenticator</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Affiche le formulaire d&apos;inscription et traite les données soumises.</para>
+<para>@Route(&quot;/registration&quot;, name=&quot;app_registration&quot;, methods={&quot;GET&quot;, &quot;POST&quot;})</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>Request</parametertype>
+<parametername>$request</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>La requête HTTP. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>EntityManagerInterface</parametertype>
+<parametername>$entityManager</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Le gestionnaire d&apos;entités. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>UserPasswordHasherInterface</parametertype>
+<parametername>$passwordHasher</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Le service de hashage de mot de passe. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>UserAuthenticatorInterface</parametertype>
+<parametername>$userAuthenticator</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Le service d&apos;authentification utilisateur. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>SluggerInterface</parametertype>
+<parametername>$slugger</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Le service de slugification. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>AppCustomAuthenticator</parametertype>
+<parametername>$authenticator</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Votre authentificateur personnalisé.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Response La réponse HTTP. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Controller/RegistrationController.php" line="39" column="21" bodyfile="Controller/RegistrationController.php" bodystart="39" bodyend="84"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_app_1_1_controller_1_1_registration_controller_1ae8c58c1801878cb6b248e70d99e51db6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>isEmailAlreadyUsed</definition>
+        <argsstring>(string $email, EntityManagerInterface $entityManager)</argsstring>
+        <name>isEmailAlreadyUsed</name>
+        <qualifiedname>App\Controller\RegistrationController\isEmailAlreadyUsed</qualifiedname>
+        <param>
+          <type>string</type>
+          <declname>$email</declname>
+        </param>
+        <param>
+          <type>EntityManagerInterface</type>
+          <declname>$entityManager</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Vérifie si l&apos;e-mail est déjà utilisé par un autre utilisateur.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$email</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>L&apos;adresse e-mail à vérifier. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>EntityManagerInterface</parametertype>
+<parametername>$entityManager</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Le gestionnaire d&apos;entités.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool True si l&apos;e-mail est déjà utilisé, false sinon. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Controller/RegistrationController.php" line="94" column="22" bodyfile="Controller/RegistrationController.php" bodystart="94" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_controller_1_1_registration_controller_1aac59e64e86d7eda25f080d15f316129a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>handleProfilePicture</definition>
+        <argsstring>($profilePictureFile, User $user, SluggerInterface $slugger)</argsstring>
+        <name>handleProfilePicture</name>
+        <qualifiedname>App\Controller\RegistrationController\handleProfilePicture</qualifiedname>
+        <param>
+          <declname>$profilePictureFile</declname>
+        </param>
+        <param>
+          <type><ref refid="class_app_1_1_entity_1_1_user" kindref="compound">User</ref></type>
+          <declname>$user</declname>
+        </param>
+        <param>
+          <type>SluggerInterface</type>
+          <declname>$slugger</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gère l&apos;upload de la photo de profil.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>UploadedFile</parametertype>
+<parametertype>null</parametertype>
+<parametername>$profilePictureFile</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Le fichier de la photo de profil. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>User</parametertype>
+<parametername>$user</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>L&apos;utilisateur en cours d&apos;inscription. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>SluggerInterface</parametertype>
+<parametername>$slugger</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Le service de slugification.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+RuntimeException Si une erreur survient lors de l&apos;upload. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Controller/RegistrationController.php" line="108" column="22" bodyfile="Controller/RegistrationController.php" bodystart="108" bodyend="125"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Contrôleur gérant l&apos;inscription des utilisateurs. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>RegistrationController</label>
+        <link refid="class_app_1_1_controller_1_1_registration_controller"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>AbstractController</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>RegistrationController</label>
+        <link refid="class_app_1_1_controller_1_1_registration_controller"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>AbstractController</label>
+      </node>
+    </collaborationgraph>
+    <location file="Controller/RegistrationController.php" line="22" column="1" bodyfile="Controller/RegistrationController.php" bodystart="23" bodyend="126"/>
+    <listofallmembers>
+      <member refid="class_app_1_1_controller_1_1_registration_controller_1aac59e64e86d7eda25f080d15f316129a" prot="private" virt="non-virtual"><scope>App::Controller::RegistrationController</scope><name>handleProfilePicture</name></member>
+      <member refid="class_app_1_1_controller_1_1_registration_controller_1ac68d9d5ffe44c36291872b00abe85482" prot="public" virt="non-virtual"><scope>App::Controller::RegistrationController</scope><name>index</name></member>
+      <member refid="class_app_1_1_controller_1_1_registration_controller_1ae8c58c1801878cb6b248e70d99e51db6" prot="private" virt="non-virtual"><scope>App::Controller::RegistrationController</scope><name>isEmailAlreadyUsed</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

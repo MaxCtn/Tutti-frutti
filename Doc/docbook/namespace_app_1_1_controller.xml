@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespace_app_1_1_controller" xml:lang="fr">
+<title>Référence de l&apos;espace de nommage App\Controller</title>
+<indexterm><primary>App\Controller</primary></indexterm>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_class_app_1_1_controller_1_1_album_search_controller">AlbumSearchController</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_class_app_1_1_controller_1_1_connexion_controller">ConnexionController</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_class_app_1_1_controller_1_1_discogs_test_controller">DiscogsTestController</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_class_app_1_1_controller_1_1_home_controller">HomeController</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_class_app_1_1_controller_1_1_profile_controller">ProfileController</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_class_app_1_1_controller_1_1_registration_controller">RegistrationController</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

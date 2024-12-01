@@ -1,0 +1,138 @@
+.TH "AlbumSearchController" 3 "Tutti-frutti" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AlbumSearchController
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Est dérivée de AbstractController\&.
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fB__construct\fP (\fBDiscogsService\fP $discogsService, EntityManagerInterface $entityManager)"
+.br
+.ti -1c
+.RI "\fBsearch\fP (Request $request)"
+.br
+.ti -1c
+.RI "\fBshowDetails\fP (int $id, Request $request)"
+.br
+.ti -1c
+.RI "\fBaddToFavorites\fP (int $id)"
+.br
+.ti -1c
+.RI "\fBremoveFromFavorites\fP (int $id)"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Contrôleur pour la recherche et la gestion des albums\&. 
+.PP
+Définition à la ligne \fB19\fP du fichier \fBAlbumSearchController\&.php\fP\&.
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "__construct (\fBDiscogsService\fP $discogsService, EntityManagerInterface $entityManager)"
+Constructeur du contrôleur\&.
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$discogsService\fP Service Discogs\&. 
+.br
+\fI$entityManager\fP Gestionnaire d'entités\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB41\fP du fichier \fBAlbumSearchController\&.php\fP\&.
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "addToFavorites (int $id)"
+Route pour ajouter un album aux favoris de l'utilisateur\&.
+
+.PP
+@Route('/album/add-to-favorites/{id}', name='add_to_favorites', methods={'POST'})
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$id\fP L'ID de l'album\&.
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+JsonResponse La réponse JSON\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB118\fP du fichier \fBAlbumSearchController\&.php\fP\&.
+.SS "removeFromFavorites (int $id)"
+Route pour retirer un album des favoris de l'utilisateur\&.
+
+.PP
+@Route('/album/remove-from-favorites/{id}', name='remove_from_favorites', methods={'POST'})
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$id\fP L'ID de l'album\&.
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+Response La réponse HTTP\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB156\fP du fichier \fBAlbumSearchController\&.php\fP\&.
+.SS "search (Request $request)"
+Route pour la recherche d'albums\&.
+
+.PP
+@Route('/album/search', name='album_search', methods={'GET', 'POST'})
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$request\fP La requête HTTP\&.
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+Response La réponse HTTP\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB56\fP du fichier \fBAlbumSearchController\&.php\fP\&.
+.SS "showDetails (int $id, Request $request)"
+Route pour afficher les détails d'un album\&.
+
+.PP
+@Route('/album/details/{id}', name='album_details', methods={'GET'})
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$id\fP L'ID de l'album\&. 
+.br
+\fI$request\fP La requête HTTP\&.
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+Response La réponse HTTP\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB87\fP du fichier \fBAlbumSearchController\&.php\fP\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Tutti-frutti à partir du code source\&.

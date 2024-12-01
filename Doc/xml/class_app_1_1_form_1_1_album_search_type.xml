@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="fr">
+  <compounddef id="class_app_1_1_form_1_1_album_search_type" kind="class" language="PHP" prot="public">
+    <compoundname>App::Form::AlbumSearchType</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">AbstractType</basecompoundref>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_app_1_1_form_1_1_album_search_type_1a83c3745710374f9c5a1eb0686fe2dfab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>buildForm</definition>
+        <argsstring>(FormBuilderInterface $builder, array $options)</argsstring>
+        <name>buildForm</name>
+        <qualifiedname>App\Form\AlbumSearchType\buildForm</qualifiedname>
+        <param>
+          <type>FormBuilderInterface</type>
+          <declname>$builder</declname>
+        </param>
+        <param>
+          <type>array</type>
+          <declname>$options</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Construit le formulaire de recherche d&apos;albums.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>FormBuilderInterface</parametertype>
+<parametername>$builder</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Le constructeur de formulaire. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>array</parametertype>
+<parametername>$options</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Les options supplémentaires pour le formulaire. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Form/AlbumSearchType.php" line="24" column="21" bodyfile="Form/AlbumSearchType.php" bodystart="24" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_form_1_1_album_search_type_1a8ff68a86f5090b5df973286836e46ead" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>configureOptions</definition>
+        <argsstring>(OptionsResolver $resolver)</argsstring>
+        <name>configureOptions</name>
+        <qualifiedname>App\Form\AlbumSearchType\configureOptions</qualifiedname>
+        <param>
+          <type>OptionsResolver</type>
+          <declname>$resolver</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Configure les options par défaut du formulaire.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>OptionsResolver</parametertype>
+<parametername>$resolver</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Le résolveur d&apos;options. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Form/AlbumSearchType.php" line="47" column="21" bodyfile="Form/AlbumSearchType.php" bodystart="47" bodyend="52"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Formulaire de recherche d&apos;albums à partir de fruits. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>AlbumSearchType</label>
+        <link refid="class_app_1_1_form_1_1_album_search_type"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>AbstractType</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>AlbumSearchType</label>
+        <link refid="class_app_1_1_form_1_1_album_search_type"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>AbstractType</label>
+      </node>
+    </collaborationgraph>
+    <location file="Form/AlbumSearchType.php" line="16" column="1" bodyfile="Form/AlbumSearchType.php" bodystart="17" bodyend="53"/>
+    <listofallmembers>
+      <member refid="class_app_1_1_form_1_1_album_search_type_1a83c3745710374f9c5a1eb0686fe2dfab" prot="public" virt="non-virtual"><scope>App::Form::AlbumSearchType</scope><name>buildForm</name></member>
+      <member refid="class_app_1_1_form_1_1_album_search_type_1a8ff68a86f5090b5df973286836e46ead" prot="public" virt="non-virtual"><scope>App::Form::AlbumSearchType</scope><name>configureOptions</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,75 @@
+.TH "TestFavoriteAlbumsCommand" 3 "Tutti-frutti" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TestFavoriteAlbumsCommand
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Est dérivée de Command\&.
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fB__construct\fP (\fBFavoriteAlbumRepository\fP $favoriteAlbumRepository)"
+.br
+.in -1c
+.SS "Fonctions membres protégées"
+
+.in +1c
+.ti -1c
+.RI "\fBconfigure\fP ()"
+.br
+.ti -1c
+.RI "\fBexecute\fP (InputInterface $input, OutputInterface $output)"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Cette commande permet de tester et d'afficher les albums favoris d'un utilisateur spécifique\&. 
+.PP
+Définition à la ligne \fB16\fP du fichier \fBTestFavoriteAlbumsCommand\&.php\fP\&.
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "__construct (\fBFavoriteAlbumRepository\fP $favoriteAlbumRepository)"
+Constructeur de la commande\&.
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$favoriteAlbumRepository\fP Le repository des albums favoris\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB30\fP du fichier \fBTestFavoriteAlbumsCommand\&.php\fP\&.
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "configure ()\fR [protected]\fP"
+Configure la commande en définissant sa description et ses arguments\&. 
+.PP
+Définition à la ligne \fB39\fP du fichier \fBTestFavoriteAlbumsCommand\&.php\fP\&.
+.SS "execute (InputInterface $input, OutputInterface $output)\fR [protected]\fP"
+Exécute la commande pour afficher les albums favoris de l'utilisateur spécifié\&.
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$input\fP L'interface d'entrée de la commande\&. 
+.br
+\fI$output\fP L'interface de sortie de la commande\&.
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+int Le code de statut de la commande (succès ou échec)\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB54\fP du fichier \fBTestFavoriteAlbumsCommand\&.php\fP\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Tutti-frutti à partir du code source\&.

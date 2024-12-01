@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Tutti-frutti:  Fichier source de Repository/FavoriteAlbumRepository.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="IconFraise.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Tutti-frutti
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_aba90b35e24959ac76847a6aefcf5530.html">Repository</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">FavoriteAlbumRepository.php</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_favorite_album_repository_8php.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>&lt;?php</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="namespace_app_1_1_repository.html">    3</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_app_1_1_repository.html">App\Repository</a>;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>use <a class="code hl_class" href="class_app_1_1_entity_1_1_favorite_album.html">App\Entity\FavoriteAlbum</a>;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>use Doctrine\Persistence\ManagerRegistry;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="foldopen" id="foldopen00016" data-start="{" data-end="};">
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="class_app_1_1_repository_1_1_favorite_album_repository.html">   16</a></span><span class="keyword">class </span><a class="code hl_class" href="class_app_1_1_repository_1_1_favorite_album_repository.html">FavoriteAlbumRepository</a> <span class="keyword">extends</span> ServiceEntityRepository</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>{</div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="}">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_app_1_1_repository_1_1_favorite_album_repository.html#a38ea33dde11163765f358f5f10a3bc03">   23</a></span>    <span class="keyword">public</span> <span class="keyword">function</span> <a class="code hl_function" href="class_app_1_1_repository_1_1_favorite_album_repository.html#a38ea33dde11163765f358f5f10a3bc03">__construct</a>(ManagerRegistry $registry)</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        parent::__construct($registry, FavoriteAlbum::class);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    }</div>
+</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="foldopen" id="foldopen00038" data-start="{" data-end="}">
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="class_app_1_1_repository_1_1_favorite_album_repository.html#a1e89bed821646ae540cc6c84f28cd05b">   38</a></span>    <span class="keyword">public</span> <span class="keyword">function</span> <a class="code hl_function" href="class_app_1_1_repository_1_1_favorite_album_repository.html#a1e89bed821646ae540cc6c84f28cd05b">findByUser</a>($user, array $filters = [], <span class="keywordtype">string</span> $sortBy = <span class="stringliteral">&#39;title&#39;</span>, <span class="keywordtype">string</span> $order = <span class="stringliteral">&#39;ASC&#39;</span>): array</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        $qb = $this-&gt;createQueryBuilder(<span class="stringliteral">&#39;fa&#39;</span>)</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            -&gt;where(<span class="stringliteral">&#39;fa.user = :user&#39;</span>)</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            -&gt;setParameter(<span class="stringliteral">&#39;user&#39;</span>, $user)</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            -&gt;leftJoin(<span class="stringliteral">&#39;fa.fruits&#39;</span>, <span class="stringliteral">&#39;fruit&#39;</span>) <span class="comment">// Jointure avec les fruits</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            -&gt;addSelect(<span class="stringliteral">&#39;fruit&#39;</span>);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="comment">// Application des filtres</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordflow">foreach</span> ($filters as $field =&gt; $value) {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            <span class="keywordflow">if</span> (!empty($value)) {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                <span class="keywordflow">if</span> ($field === <span class="stringliteral">&#39;title&#39;</span>) {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                    $qb-&gt;andWhere(<span class="stringliteral">&#39;fa.title LIKE :title&#39;</span>)</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                        -&gt;setParameter(<span class="stringliteral">&#39;title&#39;</span>, <span class="charliteral">&#39;%&#39;</span> . $value . <span class="charliteral">&#39;%&#39;</span>);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                } elseif ($field === <span class="stringliteral">&#39;fruit&#39;</span>) {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                    $qb-&gt;andWhere(<span class="stringliteral">&#39;fruit.name LIKE :fruit&#39;</span>)</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                        -&gt;setParameter(<span class="stringliteral">&#39;fruit&#39;</span>, <span class="charliteral">&#39;%&#39;</span> . $value . <span class="charliteral">&#39;%&#39;</span>);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                } elseif ($field === <span class="stringliteral">&#39;year&#39;</span>) {</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                    $qb-&gt;andWhere(<span class="stringliteral">&#39;fa.year = :year&#39;</span>)</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                        -&gt;setParameter(<span class="stringliteral">&#39;year&#39;</span>, $value);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                }</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            }</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        }</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="comment">// Application du tri</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        $sortByField = in_array($sortBy, [<span class="stringliteral">&#39;title&#39;</span>, <span class="stringliteral">&#39;year&#39;</span>], <span class="keyword">true</span>) ? <span class="stringliteral">&quot;fa.$sortBy&quot;</span> : <span class="stringliteral">&#39;fa.title&#39;</span>;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        $qb-&gt;orderBy($sortByField, strtoupper($order) === <span class="stringliteral">&#39;DESC&#39;</span> ? <span class="stringliteral">&#39;DESC&#39;</span> : <span class="stringliteral">&#39;ASC&#39;</span>);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        <span class="comment">// Retourne les résultats</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="keywordflow">return</span> $qb-&gt;getQuery()-&gt;getResult();</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    }</div>
+</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>}</div>
+</div>
+<div class="ttc" id="aclass_app_1_1_entity_1_1_favorite_album_html"><div class="ttname"><a href="class_app_1_1_entity_1_1_favorite_album.html">App\Entity\FavoriteAlbum</a></div><div class="ttdef"><b>Definition</b> <a href="_favorite_album_8php_source.html#l00019">FavoriteAlbum.php:20</a></div></div>
+<div class="ttc" id="aclass_app_1_1_repository_1_1_favorite_album_repository_html"><div class="ttname"><a href="class_app_1_1_repository_1_1_favorite_album_repository.html">App\Repository\FavoriteAlbumRepository</a></div><div class="ttdef"><b>Definition</b> <a href="#l00016">FavoriteAlbumRepository.php:17</a></div></div>
+<div class="ttc" id="aclass_app_1_1_repository_1_1_favorite_album_repository_html_a1e89bed821646ae540cc6c84f28cd05b"><div class="ttname"><a href="class_app_1_1_repository_1_1_favorite_album_repository.html#a1e89bed821646ae540cc6c84f28cd05b">App\Repository\FavoriteAlbumRepository\findByUser</a></div><div class="ttdeci">findByUser($user, array $filters=[], string $sortBy='title', string $order='ASC')</div><div class="ttdef"><b>Definition</b> <a href="#l00038">FavoriteAlbumRepository.php:38</a></div></div>
+<div class="ttc" id="aclass_app_1_1_repository_1_1_favorite_album_repository_html_a38ea33dde11163765f358f5f10a3bc03"><div class="ttname"><a href="class_app_1_1_repository_1_1_favorite_album_repository.html#a38ea33dde11163765f358f5f10a3bc03">App\Repository\FavoriteAlbumRepository\__construct</a></div><div class="ttdeci">__construct(ManagerRegistry $registry)</div><div class="ttdef"><b>Definition</b> <a href="#l00023">FavoriteAlbumRepository.php:23</a></div></div>
+<div class="ttc" id="anamespace_app_1_1_repository_html"><div class="ttname"><a href="namespace_app_1_1_repository.html">App\Repository</a></div><div class="ttdef"><b>Definition</b> <a href="#l00003">FavoriteAlbumRepository.php:3</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

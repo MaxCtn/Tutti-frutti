@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_308c8686e6bb6a50475f85d5ec3ea9a1" xml:lang="fr">
+<title>Répertoire de référence de Command</title>
+<indexterm><primary>Répertoire de référence de Command</primary></indexterm>
+<simplesect>
+    <title>Fichiers    </title>
+        <itemizedlist>
+            <listitem><para>fichier <link linkend="__test_discogs_command_8php">TestDiscogsCommand.php</link></para>
+</listitem>
+            <listitem><para>fichier <link linkend="__test_favorite_albums_command_8php">TestFavoriteAlbumsCommand.php</link></para>
+</listitem>
+            <listitem><para>fichier <link linkend="__update_favorite_covers_command_8php">UpdateFavoriteCoversCommand.php</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

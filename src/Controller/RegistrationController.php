@@ -4,29 +4,45 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\RegistrationFormType;
+use App\Security\AppCustomAuthenticator;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
-use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
-use Symfony\Component\HttpFoundation\Session\SessionInterface;
-use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
+use Symfony\Component\Security\Http\Authentication\UserAuthenticatorInterface;
 use Symfony\Component\Form\FormError;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\String\Slugger\SluggerInterface;
 
+/**
+ * Contrôleur gérant l'inscription des utilisateurs.
+ */
 class RegistrationController extends AbstractController
 {
-    #[Route('/registration', name: 'app_registration')]
+    /**
+     * Affiche le formulaire d'inscription et traite les données soumises.
+     *
+     * @Route("/registration", name="app_registration", methods={"GET", "POST"})
+     *
+     * @param Request                      $request           La requête HTTP.
+     * @param EntityManagerInterface       $entityManager     Le gestionnaire d'entités.
+     * @param UserPasswordHasherInterface  $passwordHasher    Le service de hashage de mot de passe.
+     * @param UserAuthenticatorInterface   $userAuthenticator Le service d'authentification utilisateur.
+     * @param SluggerInterface             $slugger           Le service de slugification.
+     * @param AppCustomAuthenticator       $authenticator     Votre authentificateur personnalisé.
+     *
+     * @return Response La réponse HTTP.
+     */
+    #[Route('/registration', name: 'app_registration', methods: ['GET', 'POST'])]
     public function index(
         Request $request,
         EntityManagerInterface $entityManager,
         UserPasswordHasherInterface $passwordHasher,
-        TokenStorageInterface $tokenStorage,
-        SessionInterface $session,
-        SluggerInterface $slugger
+        UserAuthenticatorInterface $userAuthenticator,
+        SluggerInterface $slugger,
+        AppCustomAuthenticator $authenticator
     ): Response {
         $user = new User();
         $form = $this->createForm(RegistrationFormType::class, $user);
@@ -40,7 +56,7 @@ class RegistrationController extends AbstractController
             } else {
                 try {
                     // Hashage du mot de passe
-                    $hashedPassword = $passwordHasher->hashPassword($user, $user->getPassword());
+                    $hashedPassword = $passwordHasher->hashPassword($user, $user->getPlainPassword());
                     $user->setPassword($hashedPassword);
 
                     // Gestion de l'upload de la photo de profil
@@ -51,10 +67,11 @@ class RegistrationController extends AbstractController
                     $entityManager->flush();
 
                     // Authentifier automatiquement l'utilisateur
-                    $this->authenticateUser($user, $tokenStorage, $session);
-
-                    // Redirection après inscription réussie
-                    return $this->redirectToRoute('album_search');
+                    return $userAuthenticator->authenticateUser(
+                        $user,
+                        $authenticator,
+                        $request
+                    );
                 } catch (\Exception $e) {
                     $this->addFlash('error', 'Une erreur est survenue lors de votre inscription.');
                 }
@@ -68,6 +85,11 @@ class RegistrationController extends AbstractController
 
     /**
      * Vérifie si l'e-mail est déjà utilisé par un autre utilisateur.
+     *
+     * @param string                $email         L'adresse e-mail à vérifier.
+     * @param EntityManagerInterface $entityManager Le gestionnaire d'entités.
+     *
+     * @return bool True si l'e-mail est déjà utilisé, false sinon.
      */
     private function isEmailAlreadyUsed(string $email, EntityManagerInterface $entityManager): bool
     {
@@ -76,13 +98,19 @@ class RegistrationController extends AbstractController
 
     /**
      * Gère l'upload de la photo de profil.
+     *
+     * @param UploadedFile|null $profilePictureFile Le fichier de la photo de profil.
+     * @param User              $user               L'utilisateur en cours d'inscription.
+     * @param SluggerInterface  $slugger            Le service de slugification.
+     *
+     * @throws \RuntimeException Si une erreur survient lors de l'upload.
      */
     private function handleProfilePicture($profilePictureFile, User $user, SluggerInterface $slugger): void
     {
         if ($profilePictureFile) {
             $originalFilename = pathinfo($profilePictureFile->getClientOriginalName(), PATHINFO_FILENAME);
             $safeFilename = $slugger->slug($originalFilename);
-            $newFilename = $safeFilename . '-' . uniqid() . '.' . $profilePictureFile->guessExtension();
+            $newFilename = $safeFilename . '-' . uniqid('', true) . '.' . $profilePictureFile->guessExtension();
 
             try {
                 $profilePictureFile->move(
@@ -94,15 +122,5 @@ class RegistrationController extends AbstractController
                 throw new \RuntimeException('Erreur lors de l\'upload de la photo : ' . $e->getMessage());
             }
         }
-    }
-
-    /**
-     * Authentifie l'utilisateur automatiquement après inscription.
-     */
-    private function authenticateUser(User $user, TokenStorageInterface $tokenStorage, SessionInterface $session): void
-    {
-        $token = new UsernamePasswordToken($user, 'main', $user->getRoles());
-        $tokenStorage->setToken($token);
-        $session->set('_security_main', serialize($token));
     }
 }

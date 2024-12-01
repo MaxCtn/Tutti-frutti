@@ -1,0 +1,308 @@
+\doxysection{Référence de la classe User}
+\hypertarget{class_app_1_1_entity_1_1_user}{}\label{class_app_1_1_entity_1_1_user}\index{User@{User}}
+
+
+Graphe d\textquotesingle{}héritage de User\+:
+% FIG 0
+
+
+Graphe de collaboration de User\+:
+% FIG 1
+\doxysubsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_user_a095c5d389db211932136b53f25f39685}{\+\_\+\+\_\+construct}} ()
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_user_a12251d0c022e9e21c137a105ff683f13}{get\+Id}} ()
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_user_a02a01849f28e2535e888ae4ec87b20f2}{get\+Email}} ()
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_user_a2d22391fa86fa0eaf3b9d2a3c29880bc}{set\+Email}} (string \$email)
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_user_a189038d671f9143e20141026f1aa7969}{get\+User\+Identifier}} ()
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_user_aa676cae5ee8d7fb6862a8724adc2660d}{get\+Roles}} ()
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_user_aa3236c9c6688d04df16ea0ab3065530e}{set\+Roles}} (array \$roles)
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_user_a04e0957baeb7acde9c0c86556da2d43f}{get\+Password}} ()
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_user_a81e0f429784973551fb5417d5b92b0db}{set\+Password}} (string \$password)
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_user_ac565b8c00fe93ce673f8237849f072a6}{erase\+Credentials}} ()
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_user_ab755e2969ce6dd5719e19029a1f0ea98}{get\+Favorite\+Albums}} ()
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_user_a352415541a6239312cd6abffdd2d3801}{add\+Favorite\+Album}} (\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album}{Favorite\+Album}} \$favorite\+Album)
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_user_a7e1f5b5a1259dcb9c2be49ae4e715a4c}{remove\+Favorite\+Album}} (\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album}{Favorite\+Album}} \$favorite\+Album)
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_user_a7ca895ce8dc567b19e85a982429c7c77}{get\+Profile\+Picture}} ()
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_user_ab308055ea70f8f94a14d35a611a2086e}{set\+Profile\+Picture}} (?string \$profile\+Picture)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Entité représentant un utilisateur de l\textquotesingle{}application.
+
+@\+ORM\textbackslash{}\+Entity(repository\+Class=User\+Repository\+::class) 
+
+Définition à la ligne \mbox{\hyperlink{_user_8php_source_l00018}{18}} du fichier \mbox{\hyperlink{_user_8php_source}{User.\+php}}.
+
+
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\Hypertarget{class_app_1_1_entity_1_1_user_a095c5d389db211932136b53f25f39685}\index{User@{User}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!User@{User}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_user_a095c5d389db211932136b53f25f39685} 
+\+\_\+\+\_\+construct (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Constructeur de la classe User. Initialise la collection des albums favoris. 
+
+Définition à la ligne \mbox{\hyperlink{_user_8php_source_l00088}{88}} du fichier \mbox{\hyperlink{_user_8php_source}{User.\+php}}.
+
+
+
+\doxysubsection{Documentation des fonctions membres}
+\Hypertarget{class_app_1_1_entity_1_1_user_a352415541a6239312cd6abffdd2d3801}\index{User@{User}!addFavoriteAlbum@{addFavoriteAlbum}}
+\index{addFavoriteAlbum@{addFavoriteAlbum}!User@{User}}
+\doxysubsubsection{\texorpdfstring{addFavoriteAlbum()}{addFavoriteAlbum()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_user_a352415541a6239312cd6abffdd2d3801} 
+add\+Favorite\+Album (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album}{Favorite\+Album}}}]{\$favorite\+Album}{}\end{DoxyParamCaption})}
+
+Ajoute un album favori à la collection de l\textquotesingle{}utilisateur.
+
+
+\begin{DoxyParams}[1]{Paramètres}
+Favorite\+Album & {\em \$favorite\+Album} & L\textquotesingle{}album favori à ajouter.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+self 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_user_8php_source_l00213}{213}} du fichier \mbox{\hyperlink{_user_8php_source}{User.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_user_ac565b8c00fe93ce673f8237849f072a6}\index{User@{User}!eraseCredentials@{eraseCredentials}}
+\index{eraseCredentials@{eraseCredentials}!User@{User}}
+\doxysubsubsection{\texorpdfstring{eraseCredentials()}{eraseCredentials()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_user_ac565b8c00fe93ce673f8237849f072a6} 
+erase\+Credentials (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Efface les données sensibles de l\textquotesingle{}utilisateur (non utilisé ici). 
+
+Définition à la ligne \mbox{\hyperlink{_user_8php_source_l00191}{191}} du fichier \mbox{\hyperlink{_user_8php_source}{User.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_user_a02a01849f28e2535e888ae4ec87b20f2}\index{User@{User}!getEmail@{getEmail}}
+\index{getEmail@{getEmail}!User@{User}}
+\doxysubsubsection{\texorpdfstring{getEmail()}{getEmail()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_user_a02a01849f28e2535e888ae4ec87b20f2} 
+get\+Email (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Obtient l\textquotesingle{}adresse e-\/mail de l\textquotesingle{}utilisateur.
+
+\begin{DoxyReturn}{Renvoie}
+string\texorpdfstring{$\vert$}{|}null L\textquotesingle{}adresse e-\/mail. 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_user_8php_source_l00108}{108}} du fichier \mbox{\hyperlink{_user_8php_source}{User.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_user_ab755e2969ce6dd5719e19029a1f0ea98}\index{User@{User}!getFavoriteAlbums@{getFavoriteAlbums}}
+\index{getFavoriteAlbums@{getFavoriteAlbums}!User@{User}}
+\doxysubsubsection{\texorpdfstring{getFavoriteAlbums()}{getFavoriteAlbums()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_user_ab755e2969ce6dd5719e19029a1f0ea98} 
+get\+Favorite\+Albums (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Obtient la collection des albums favoris de l\textquotesingle{}utilisateur.
+
+\begin{DoxyReturn}{Renvoie}
+Collection$<$int, Favorite\+Album$>$ La collection des albums favoris. 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_user_8php_source_l00201}{201}} du fichier \mbox{\hyperlink{_user_8php_source}{User.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_user_a12251d0c022e9e21c137a105ff683f13}\index{User@{User}!getId@{getId}}
+\index{getId@{getId}!User@{User}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_user_a12251d0c022e9e21c137a105ff683f13} 
+get\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Obtient l\textquotesingle{}identifiant unique de l\textquotesingle{}utilisateur.
+
+\begin{DoxyReturn}{Renvoie}
+int\texorpdfstring{$\vert$}{|}null L\textquotesingle{}identifiant de l\textquotesingle{}utilisateur. 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_user_8php_source_l00098}{98}} du fichier \mbox{\hyperlink{_user_8php_source}{User.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_user_a04e0957baeb7acde9c0c86556da2d43f}\index{User@{User}!getPassword@{getPassword}}
+\index{getPassword@{getPassword}!User@{User}}
+\doxysubsubsection{\texorpdfstring{getPassword()}{getPassword()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_user_a04e0957baeb7acde9c0c86556da2d43f} 
+get\+Password (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Obtient le mot de passe hashé de l\textquotesingle{}utilisateur.
+
+\begin{DoxyReturn}{Renvoie}
+string Le mot de passe hashé. 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_user_8php_source_l00169}{169}} du fichier \mbox{\hyperlink{_user_8php_source}{User.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_user_a7ca895ce8dc567b19e85a982429c7c77}\index{User@{User}!getProfilePicture@{getProfilePicture}}
+\index{getProfilePicture@{getProfilePicture}!User@{User}}
+\doxysubsubsection{\texorpdfstring{getProfilePicture()}{getProfilePicture()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_user_a7ca895ce8dc567b19e85a982429c7c77} 
+get\+Profile\+Picture (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Obtient l\textquotesingle{}URL de la photo de profil de l\textquotesingle{}utilisateur.
+
+\begin{DoxyReturn}{Renvoie}
+string\texorpdfstring{$\vert$}{|}null L\textquotesingle{}URL de la photo de profil. 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_user_8php_source_l00246}{246}} du fichier \mbox{\hyperlink{_user_8php_source}{User.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_user_aa676cae5ee8d7fb6862a8724adc2660d}\index{User@{User}!getRoles@{getRoles}}
+\index{getRoles@{getRoles}!User@{User}}
+\doxysubsubsection{\texorpdfstring{getRoles()}{getRoles()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_user_aa676cae5ee8d7fb6862a8724adc2660d} 
+get\+Roles (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Obtient les rôles de l\textquotesingle{}utilisateur.
+
+\begin{DoxyReturn}{Renvoie}
+array Les rôles uniques de l\textquotesingle{}utilisateur. 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_user_8php_source_l00142}{142}} du fichier \mbox{\hyperlink{_user_8php_source}{User.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_user_a189038d671f9143e20141026f1aa7969}\index{User@{User}!getUserIdentifier@{getUserIdentifier}}
+\index{getUserIdentifier@{getUserIdentifier}!User@{User}}
+\doxysubsubsection{\texorpdfstring{getUserIdentifier()}{getUserIdentifier()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_user_a189038d671f9143e20141026f1aa7969} 
+get\+User\+Identifier (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Obtient l\textquotesingle{}identifiant unique de l\textquotesingle{}utilisateur (utilisé par le composant de sécurité).
+
+\begin{DoxyReturn}{Renvoie}
+string L\textquotesingle{}identifiant unique (adresse e-\/mail). 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_user_8php_source_l00132}{132}} du fichier \mbox{\hyperlink{_user_8php_source}{User.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_user_a7e1f5b5a1259dcb9c2be49ae4e715a4c}\index{User@{User}!removeFavoriteAlbum@{removeFavoriteAlbum}}
+\index{removeFavoriteAlbum@{removeFavoriteAlbum}!User@{User}}
+\doxysubsubsection{\texorpdfstring{removeFavoriteAlbum()}{removeFavoriteAlbum()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_user_a7e1f5b5a1259dcb9c2be49ae4e715a4c} 
+remove\+Favorite\+Album (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album}{Favorite\+Album}}}]{\$favorite\+Album}{}\end{DoxyParamCaption})}
+
+Retire un album favori de la collection de l\textquotesingle{}utilisateur.
+
+
+\begin{DoxyParams}[1]{Paramètres}
+Favorite\+Album & {\em \$favorite\+Album} & L\textquotesingle{}album favori à retirer.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+self 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_user_8php_source_l00230}{230}} du fichier \mbox{\hyperlink{_user_8php_source}{User.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_user_a2d22391fa86fa0eaf3b9d2a3c29880bc}\index{User@{User}!setEmail@{setEmail}}
+\index{setEmail@{setEmail}!User@{User}}
+\doxysubsubsection{\texorpdfstring{setEmail()}{setEmail()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_user_a2d22391fa86fa0eaf3b9d2a3c29880bc} 
+set\+Email (\begin{DoxyParamCaption}\item[{string}]{\$email}{}\end{DoxyParamCaption})}
+
+Définit l\textquotesingle{}adresse e-\/mail de l\textquotesingle{}utilisateur.
+
+
+\begin{DoxyParams}[1]{Paramètres}
+string & {\em \$email} & L\textquotesingle{}adresse e-\/mail.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+self 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_user_8php_source_l00120}{120}} du fichier \mbox{\hyperlink{_user_8php_source}{User.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_user_a81e0f429784973551fb5417d5b92b0db}\index{User@{User}!setPassword@{setPassword}}
+\index{setPassword@{setPassword}!User@{User}}
+\doxysubsubsection{\texorpdfstring{setPassword()}{setPassword()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_user_a81e0f429784973551fb5417d5b92b0db} 
+set\+Password (\begin{DoxyParamCaption}\item[{string}]{\$password}{}\end{DoxyParamCaption})}
+
+Définit le mot de passe hashé de l\textquotesingle{}utilisateur.
+
+
+\begin{DoxyParams}[1]{Paramètres}
+string & {\em \$password} & Le mot de passe hashé.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+self 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_user_8php_source_l00181}{181}} du fichier \mbox{\hyperlink{_user_8php_source}{User.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_user_ab308055ea70f8f94a14d35a611a2086e}\index{User@{User}!setProfilePicture@{setProfilePicture}}
+\index{setProfilePicture@{setProfilePicture}!User@{User}}
+\doxysubsubsection{\texorpdfstring{setProfilePicture()}{setProfilePicture()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_user_ab308055ea70f8f94a14d35a611a2086e} 
+set\+Profile\+Picture (\begin{DoxyParamCaption}\item[{?string}]{\$profile\+Picture}{}\end{DoxyParamCaption})}
+
+Définit l\textquotesingle{}URL de la photo de profil de l\textquotesingle{}utilisateur.
+
+
+\begin{DoxyParams}[1]{Paramètres}
+string | null & {\em \$profile\+Picture} & L\textquotesingle{}URL de la photo de profil.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+self 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_user_8php_source_l00258}{258}} du fichier \mbox{\hyperlink{_user_8php_source}{User.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_user_aa3236c9c6688d04df16ea0ab3065530e}\index{User@{User}!setRoles@{setRoles}}
+\index{setRoles@{setRoles}!User@{User}}
+\doxysubsubsection{\texorpdfstring{setRoles()}{setRoles()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_user_aa3236c9c6688d04df16ea0ab3065530e} 
+set\+Roles (\begin{DoxyParamCaption}\item[{array}]{\$roles}{}\end{DoxyParamCaption})}
+
+Définit les rôles de l\textquotesingle{}utilisateur.
+
+
+\begin{DoxyParams}[1]{Paramètres}
+array & {\em \$roles} & Les rôles de l\textquotesingle{}utilisateur.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+self 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_user_8php_source_l00157}{157}} du fichier \mbox{\hyperlink{_user_8php_source}{User.\+php}}.
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+Entity/\mbox{\hyperlink{_user_8php}{User.\+php}}\end{DoxyCompactItemize}

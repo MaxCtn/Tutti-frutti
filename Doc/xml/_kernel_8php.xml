@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="fr">
+  <compounddef id="_kernel_8php" kind="file" language="PHP">
+    <compoundname>Kernel.php</compoundname>
+    <innerclass refid="class_app_1_1_kernel" prot="public">App::Kernel</innerclass>
+    <innernamespace refid="namespace_app">App</innernamespace>
+    <innernamespace refid="namespace_symfony_1_1_bundle_1_1_framework_bundle_1_1_kernel_1_1_micro_kernel_trait">Symfony::Bundle::FrameworkBundle::Kernel::MicroKernelTrait</innernamespace>
+    <innernamespace refid="namespace_micro_kernel_trait">MicroKernelTrait</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;?php</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_app" kindref="compound">App</ref>;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal">use<sp/>Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal">use<sp/>Symfony\Component\HttpKernel\Kernel<sp/>as<sp/>BaseKernel;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="class_app_1_1_kernel" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_app_1_1_kernel" kindref="compound">Kernel</ref><sp/></highlight><highlight class="keyword">extends</highlight><highlight class="normal"><sp/>BaseKernel</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>use<sp/>MicroKernelTrait;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Kernel.php"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,76 @@
+\doxysection{Référence de la classe Genre\+Repository}
+\hypertarget{class_app_1_1_repository_1_1_genre_repository}{}\label{class_app_1_1_repository_1_1_genre_repository}\index{GenreRepository@{GenreRepository}}
+
+
+Graphe d\textquotesingle{}héritage de Genre\+Repository\+:
+% FIG 0
+
+
+Graphe de collaboration de Genre\+Repository\+:
+% FIG 1
+\doxysubsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_app_1_1_repository_1_1_genre_repository_a38ea33dde11163765f358f5f10a3bc03}{\+\_\+\+\_\+construct}} (Manager\+Registry \$registry)
+\item 
+\mbox{\hyperlink{class_app_1_1_repository_1_1_genre_repository_a5fc8877c3cb126ea03449bedd2b92092}{find\+By\+Name\+Part}} (string \$name\+Part)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Repository pour l\textquotesingle{}entité Genre.
+
+Fournit des méthodes de base pour interagir avec les genres musicaux et permet d\textquotesingle{}ajouter des méthodes personnalisées pour répondre à des besoins spécifiques.
+
+$<$\+Genre$>$ 
+
+Définition à la ligne \mbox{\hyperlink{_genre_repository_8php_source_l00019}{19}} du fichier \mbox{\hyperlink{_genre_repository_8php_source}{Genre\+Repository.\+php}}.
+
+
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\Hypertarget{class_app_1_1_repository_1_1_genre_repository_a38ea33dde11163765f358f5f10a3bc03}\index{GenreRepository@{GenreRepository}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!GenreRepository@{GenreRepository}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily \label{class_app_1_1_repository_1_1_genre_repository_a38ea33dde11163765f358f5f10a3bc03} 
+\+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{Manager\+Registry}]{\$registry}{}\end{DoxyParamCaption})}
+
+Constructeur du repository.
+
+
+\begin{DoxyParams}[1]{Paramètres}
+Manager\+Registry & {\em \$registry} & Le registre des gestionnaires d\textquotesingle{}entités. \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \mbox{\hyperlink{_genre_repository_8php_source_l00026}{26}} du fichier \mbox{\hyperlink{_genre_repository_8php_source}{Genre\+Repository.\+php}}.
+
+
+
+\doxysubsection{Documentation des fonctions membres}
+\Hypertarget{class_app_1_1_repository_1_1_genre_repository_a5fc8877c3cb126ea03449bedd2b92092}\index{GenreRepository@{GenreRepository}!findByNamePart@{findByNamePart}}
+\index{findByNamePart@{findByNamePart}!GenreRepository@{GenreRepository}}
+\doxysubsubsection{\texorpdfstring{findByNamePart()}{findByNamePart()}}
+{\footnotesize\ttfamily \label{class_app_1_1_repository_1_1_genre_repository_a5fc8877c3cb126ea03449bedd2b92092} 
+find\+By\+Name\+Part (\begin{DoxyParamCaption}\item[{string}]{\$name\+Part}{}\end{DoxyParamCaption})}
+
+Recherche des genres par nom partiel.
+
+
+\begin{DoxyParams}[1]{Paramètres}
+string & {\em \$name\+Part} & Le fragment du nom à rechercher. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Genre\mbox{[}\mbox{]} La liste des genres correspondants. 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_genre_repository_8php_source_l00039}{39}} du fichier \mbox{\hyperlink{_genre_repository_8php_source}{Genre\+Repository.\+php}}.
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+Repository/\mbox{\hyperlink{_genre_repository_8php}{Genre\+Repository.\+php}}\end{DoxyCompactItemize}

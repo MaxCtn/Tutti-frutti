@@ -1,0 +1,156 @@
+\doxysection{Référence de la classe Track}
+\hypertarget{class_app_1_1_entity_1_1_track}{}\label{class_app_1_1_entity_1_1_track}\index{Track@{Track}}
+\doxysubsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_track_a12251d0c022e9e21c137a105ff683f13}{get\+Id}} ()
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_track_a95e859a4588a39a1824b717378a84c29}{get\+Title}} ()
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_track_a754ef3032cc3ffb25ad2d1a13720fc29}{set\+Title}} (string \$title)
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_track_ab46fe3d2750728c84bd71ae1bfd08ee8}{get\+Duration}} ()
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_track_a65287da7b5aac781a43f0ed59b067985}{set\+Duration}} (?string \$duration)
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_track_aee148d665bb21d0319499d90186605b2}{get\+Album}} ()
+\item 
+\mbox{\hyperlink{class_app_1_1_entity_1_1_track_a030b2e5bdc870ee346358efc28a59640}{set\+Album}} (?\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album}{Favorite\+Album}} \$album)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Entité représentant une piste (track) d\textquotesingle{}un album favori.
+
+@\+ORM\textbackslash{}\+Entity(repository\+Class=Track\+Repository\+::class) 
+
+Définition à la ligne \mbox{\hyperlink{_track_8php_source_l00014}{14}} du fichier \mbox{\hyperlink{_track_8php_source}{Track.\+php}}.
+
+
+
+\doxysubsection{Documentation des fonctions membres}
+\Hypertarget{class_app_1_1_entity_1_1_track_aee148d665bb21d0319499d90186605b2}\index{Track@{Track}!getAlbum@{getAlbum}}
+\index{getAlbum@{getAlbum}!Track@{Track}}
+\doxysubsubsection{\texorpdfstring{getAlbum()}{getAlbum()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_track_aee148d665bb21d0319499d90186605b2} 
+get\+Album (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Obtient l\textquotesingle{}album favori auquel appartient la piste.
+
+\begin{DoxyReturn}{Renvoie}
+Favorite\+Album\texorpdfstring{$\vert$}{|}null L\textquotesingle{}album favori. 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_track_8php_source_l00125}{125}} du fichier \mbox{\hyperlink{_track_8php_source}{Track.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_track_ab46fe3d2750728c84bd71ae1bfd08ee8}\index{Track@{Track}!getDuration@{getDuration}}
+\index{getDuration@{getDuration}!Track@{Track}}
+\doxysubsubsection{\texorpdfstring{getDuration()}{getDuration()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_track_ab46fe3d2750728c84bd71ae1bfd08ee8} 
+get\+Duration (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Obtient la durée de la piste au format "{}mm\+:ss"{}.
+
+\begin{DoxyReturn}{Renvoie}
+string\texorpdfstring{$\vert$}{|}null La durée de la piste. 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_track_8php_source_l00101}{101}} du fichier \mbox{\hyperlink{_track_8php_source}{Track.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_track_a12251d0c022e9e21c137a105ff683f13}\index{Track@{Track}!getId@{getId}}
+\index{getId@{getId}!Track@{Track}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_track_a12251d0c022e9e21c137a105ff683f13} 
+get\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Obtient l\textquotesingle{}identifiant unique de la piste.
+
+\begin{DoxyReturn}{Renvoie}
+int\texorpdfstring{$\vert$}{|}null L\textquotesingle{}identifiant de la piste. 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_track_8php_source_l00067}{67}} du fichier \mbox{\hyperlink{_track_8php_source}{Track.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_track_a95e859a4588a39a1824b717378a84c29}\index{Track@{Track}!getTitle@{getTitle}}
+\index{getTitle@{getTitle}!Track@{Track}}
+\doxysubsubsection{\texorpdfstring{getTitle()}{getTitle()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_track_a95e859a4588a39a1824b717378a84c29} 
+get\+Title (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Obtient le titre de la piste.
+
+\begin{DoxyReturn}{Renvoie}
+string\texorpdfstring{$\vert$}{|}null Le titre de la piste. 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_track_8php_source_l00077}{77}} du fichier \mbox{\hyperlink{_track_8php_source}{Track.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_track_a030b2e5bdc870ee346358efc28a59640}\index{Track@{Track}!setAlbum@{setAlbum}}
+\index{setAlbum@{setAlbum}!Track@{Track}}
+\doxysubsubsection{\texorpdfstring{setAlbum()}{setAlbum()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_track_a030b2e5bdc870ee346358efc28a59640} 
+set\+Album (\begin{DoxyParamCaption}\item[{?\mbox{\hyperlink{class_app_1_1_entity_1_1_favorite_album}{Favorite\+Album}}}]{\$album}{}\end{DoxyParamCaption})}
+
+Définit l\textquotesingle{}album favori auquel appartient la piste.
+
+
+\begin{DoxyParams}[1]{Paramètres}
+Favorite\+Album | null & {\em \$album} & L\textquotesingle{}album favori.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+self 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_track_8php_source_l00137}{137}} du fichier \mbox{\hyperlink{_track_8php_source}{Track.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_track_a65287da7b5aac781a43f0ed59b067985}\index{Track@{Track}!setDuration@{setDuration}}
+\index{setDuration@{setDuration}!Track@{Track}}
+\doxysubsubsection{\texorpdfstring{setDuration()}{setDuration()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_track_a65287da7b5aac781a43f0ed59b067985} 
+set\+Duration (\begin{DoxyParamCaption}\item[{?string}]{\$duration}{}\end{DoxyParamCaption})}
+
+Définit la durée de la piste au format "{}mm\+:ss"{}.
+
+
+\begin{DoxyParams}[1]{Paramètres}
+string | null & {\em \$duration} & La durée de la piste.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+self 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_track_8php_source_l00113}{113}} du fichier \mbox{\hyperlink{_track_8php_source}{Track.\+php}}.
+
+\Hypertarget{class_app_1_1_entity_1_1_track_a754ef3032cc3ffb25ad2d1a13720fc29}\index{Track@{Track}!setTitle@{setTitle}}
+\index{setTitle@{setTitle}!Track@{Track}}
+\doxysubsubsection{\texorpdfstring{setTitle()}{setTitle()}}
+{\footnotesize\ttfamily \label{class_app_1_1_entity_1_1_track_a754ef3032cc3ffb25ad2d1a13720fc29} 
+set\+Title (\begin{DoxyParamCaption}\item[{string}]{\$title}{}\end{DoxyParamCaption})}
+
+Définit le titre de la piste.
+
+
+\begin{DoxyParams}[1]{Paramètres}
+string & {\em \$title} & Le titre de la piste.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+self 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_track_8php_source_l00089}{89}} du fichier \mbox{\hyperlink{_track_8php_source}{Track.\+php}}.
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+Entity/\mbox{\hyperlink{_track_8php}{Track.\+php}}\end{DoxyCompactItemize}

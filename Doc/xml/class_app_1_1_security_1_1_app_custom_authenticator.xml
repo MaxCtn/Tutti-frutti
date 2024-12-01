@@ -1,0 +1,232 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="fr">
+  <compounddef id="class_app_1_1_security_1_1_app_custom_authenticator" kind="class" language="PHP" prot="public">
+    <compoundname>App::Security::AppCustomAuthenticator</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">AbstractLoginFormAuthenticator</basecompoundref>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_app_1_1_security_1_1_app_custom_authenticator_1acefb6c1e88a6be21742efe1796c1b10a" prot="public" static="no" mutable="no">
+        <type>const</type>
+        <definition>const LOGIN_ROUTE</definition>
+        <argsstring></argsstring>
+        <name>LOGIN_ROUTE</name>
+        <qualifiedname>App\Security\AppCustomAuthenticator\LOGIN_ROUTE</qualifiedname>
+        <initializer>= &apos;app_login&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Security/AppCustomAuthenticator.php" line="26" column="18" bodyfile="Security/AppCustomAuthenticator.php" bodystart="26" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_app_1_1_security_1_1_app_custom_authenticator_1aac6e730def6138bd753bf80f917642ad" prot="private" static="no" mutable="no">
+        <type>UrlGeneratorInterface</type>
+        <definition>UrlGeneratorInterface $urlGenerator</definition>
+        <argsstring></argsstring>
+        <name>$urlGenerator</name>
+        <qualifiedname>App\Security\AppCustomAuthenticator\$urlGenerator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Security/AppCustomAuthenticator.php" line="31" column="35" bodyfile="Security/AppCustomAuthenticator.php" bodystart="31" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_app_1_1_security_1_1_app_custom_authenticator_1aafc1eab4a8c8c05bc66d94041d739d0f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>__construct</definition>
+        <argsstring>(UrlGeneratorInterface $urlGenerator)</argsstring>
+        <name>__construct</name>
+        <qualifiedname>App\Security\AppCustomAuthenticator\__construct</qualifiedname>
+        <param>
+          <type>UrlGeneratorInterface</type>
+          <declname>$urlGenerator</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructeur de l&apos;authentificateur.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>UrlGeneratorInterface</parametertype>
+<parametername>$urlGenerator</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Générateur d&apos;URL pour les redirections. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Security/AppCustomAuthenticator.php" line="38" column="21" bodyfile="Security/AppCustomAuthenticator.php" bodystart="38" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_security_1_1_app_custom_authenticator_1acc8752684a58a442307c274100d77faf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>authenticate</definition>
+        <argsstring>(Request $request)</argsstring>
+        <name>authenticate</name>
+        <qualifiedname>App\Security\AppCustomAuthenticator\authenticate</qualifiedname>
+        <param>
+          <type>Request</type>
+          <declname>$request</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Authentifie une requête utilisateur.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>Request</parametertype>
+<parametername>$request</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>La requête HTTP. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Passport Un objet Passport contenant les informations d&apos;identification et les badges. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Security/AppCustomAuthenticator.php" line="49" column="21" bodyfile="Security/AppCustomAuthenticator.php" bodystart="49" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_security_1_1_app_custom_authenticator_1a8c14d31ce5a6d2bec39798fa32dacc45" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>onAuthenticationSuccess</definition>
+        <argsstring>(Request $request, TokenInterface $token, string $firewallName)</argsstring>
+        <name>onAuthenticationSuccess</name>
+        <qualifiedname>App\Security\AppCustomAuthenticator\onAuthenticationSuccess</qualifiedname>
+        <param>
+          <type>Request</type>
+          <declname>$request</declname>
+        </param>
+        <param>
+          <type>TokenInterface</type>
+          <declname>$token</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>$firewallName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gère la redirection après une authentification réussie.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>Request</parametertype>
+<parametername>$request</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>La requête HTTP. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>TokenInterface</parametertype>
+<parametername>$token</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Le token d&apos;authentification. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$firewallName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Le nom du pare-feu. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Response|null Une réponse HTTP ou null. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Security/AppCustomAuthenticator.php" line="74" column="21" bodyfile="Security/AppCustomAuthenticator.php" bodystart="74" bodyend="82"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_app_1_1_security_1_1_app_custom_authenticator_1a2ed952b0c2d4db67fb2fa26a2a01a923" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>getLoginUrl</definition>
+        <argsstring>(Request $request)</argsstring>
+        <name>getLoginUrl</name>
+        <qualifiedname>App\Security\AppCustomAuthenticator\getLoginUrl</qualifiedname>
+        <param>
+          <type>Request</type>
+          <declname>$request</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Renvoie l&apos;URL de connexion.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>Request</parametertype>
+<parametername>$request</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>La requête HTTP. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>string L&apos;URL de la page de connexion. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Security/AppCustomAuthenticator.php" line="90" column="24" bodyfile="Security/AppCustomAuthenticator.php" bodystart="90" bodyend="93"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Authentificateur personnalisé pour gérer l&apos;authentification des utilisateurs. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>AppCustomAuthenticator</label>
+        <link refid="class_app_1_1_security_1_1_app_custom_authenticator"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>AbstractLoginFormAuthenticator</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>AppCustomAuthenticator</label>
+        <link refid="class_app_1_1_security_1_1_app_custom_authenticator"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>AbstractLoginFormAuthenticator</label>
+      </node>
+    </collaborationgraph>
+    <location file="Security/AppCustomAuthenticator.php" line="22" column="1" bodyfile="Security/AppCustomAuthenticator.php" bodystart="23" bodyend="94"/>
+    <listofallmembers>
+      <member refid="class_app_1_1_security_1_1_app_custom_authenticator_1aac6e730def6138bd753bf80f917642ad" prot="private" virt="non-virtual"><scope>App::Security::AppCustomAuthenticator</scope><name>$urlGenerator</name></member>
+      <member refid="class_app_1_1_security_1_1_app_custom_authenticator_1aafc1eab4a8c8c05bc66d94041d739d0f" prot="public" virt="non-virtual"><scope>App::Security::AppCustomAuthenticator</scope><name>__construct</name></member>
+      <member refid="class_app_1_1_security_1_1_app_custom_authenticator_1acc8752684a58a442307c274100d77faf" prot="public" virt="non-virtual"><scope>App::Security::AppCustomAuthenticator</scope><name>authenticate</name></member>
+      <member refid="class_app_1_1_security_1_1_app_custom_authenticator_1a2ed952b0c2d4db67fb2fa26a2a01a923" prot="protected" virt="non-virtual"><scope>App::Security::AppCustomAuthenticator</scope><name>getLoginUrl</name></member>
+      <member refid="class_app_1_1_security_1_1_app_custom_authenticator_1acefb6c1e88a6be21742efe1796c1b10a" prot="public" virt="non-virtual"><scope>App::Security::AppCustomAuthenticator</scope><name>LOGIN_ROUTE</name></member>
+      <member refid="class_app_1_1_security_1_1_app_custom_authenticator_1a8c14d31ce5a6d2bec39798fa32dacc45" prot="public" virt="non-virtual"><scope>App::Security::AppCustomAuthenticator</scope><name>onAuthenticationSuccess</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__update_favorite_covers_command_8php" xml:lang="fr">
+<title>Référence du fichier Command/UpdateFavoriteCoversCommand.php</title>
+<indexterm><primary>Command/UpdateFavoriteCoversCommand.php</primary></indexterm>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_class_app_1_1_command_1_1_update_favorite_covers_command">UpdateFavoriteCoversCommand</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Espaces de nommage    </title>
+        <itemizedlist>
+            <listitem><para>namespace <link linkend="_namespace_app_1_1_command">App\Command</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>name <link linkend="_namespace_app_1_1_command_1a36342860613418f919ffbf3aa4246442">__pad0__</link></para>
+</listitem>
+            <listitem><para>name <link linkend="_namespace_app_1_1_command_1a019d6bb8fecdb887367f54757fa14d4d">description</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

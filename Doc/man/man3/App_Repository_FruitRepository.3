@@ -1,0 +1,68 @@
+.TH "FruitRepository" 3 "Tutti-frutti" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+FruitRepository
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Est dérivée de ServiceEntityRepository, et ServiceEntityRepository\&.
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fB__construct\fP (ManagerRegistry $registry)"
+.br
+.ti -1c
+.RI "\fBfindOrCreate\fP (string $fruitName)"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Repository pour l'entité Fruit\&.
+
+.PP
+Fournit des méthodes de base pour interagir avec les fruits et permet d'ajouter des méthodes personnalisées pour répondre à des besoins spécifiques\&.
+
+.PP
+<Fruit> 
+.PP
+Définition à la ligne \fB17\fP du fichier \fBFruitRepository\&.php\fP\&.
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "__construct (ManagerRegistry $registry)"
+Constructeur du repository\&.
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$registry\fP Le registre des gestionnaires d'entités\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB24\fP du fichier \fBFruitRepository\&.php\fP\&.
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "findOrCreate (string $fruitName)"
+Trouve un fruit par son nom ou le crée s'il n'existe pas\&.
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fI$fruitName\fP Le nom du fruit à rechercher ou à créer\&. 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+Fruit Le fruit trouvé ou nouvellement créé\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB35\fP du fichier \fBFruitRepository\&.php\fP\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Tutti-frutti à partir du code source\&.

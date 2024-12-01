@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__user_8php_source" xml:lang="fr">
+<title>User.php</title>
+<indexterm><primary>Entity/User.php</primary></indexterm>
+Aller à la documentation de ce fichier.<programlisting linenumbering="unnumbered"><anchor xml:id="__user_8php_source_1l00001"/>00001 &lt;?php
+<anchor xml:id="__user_8php_source_1l00002"/>00002 
+<anchor xml:id="__user_8php_source_1l00003"/>00003 <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespace_app_1_1_entity">App\Entity</link>;
+<anchor xml:id="__user_8php_source_1l00004"/>00004 
+<anchor xml:id="__user_8php_source_1l00005"/>00005 use&#32;<link linkend="_class_app_1_1_repository_1_1_user_repository">App\Repository\UserRepository</link>;
+<anchor xml:id="__user_8php_source_1l00006"/>00006 use&#32;Doctrine\ORM\Mapping&#32;as&#32;ORM;
+<anchor xml:id="__user_8php_source_1l00007"/>00007 use&#32;Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
+<anchor xml:id="__user_8php_source_1l00008"/>00008 use&#32;Symfony\Component\Security\Core\User\UserInterface;
+<anchor xml:id="__user_8php_source_1l00009"/>00009 use&#32;Doctrine\Common\Collections\ArrayCollection;
+<anchor xml:id="__user_8php_source_1l00010"/>00010 use&#32;Doctrine\Common\Collections\Collection;
+<anchor xml:id="__user_8php_source_1l00011"/>00011 
+<anchor xml:id="__user_8php_source_1l00017"/>00017 <emphasis role="preprocessor">#[ORM\Entity(repositoryClass:&#32;UserRepository::class)]</emphasis>
+<anchor xml:id="__user_8php_source_1l00018"/><link linkend="_class_app_1_1_entity_1_1_user">00018</link> <emphasis role="keyword">class&#32;</emphasis><link linkend="_class_app_1_1_entity_1_1_user">User</link>&#32;<emphasis role="keyword">implements</emphasis>&#32;UserInterface,&#32;PasswordAuthenticatedUserInterface
+<anchor xml:id="__user_8php_source_1l00019"/>00019 {
+<anchor xml:id="__user_8php_source_1l00029"/>00029 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;#[ORM\Id]</emphasis>
+<anchor xml:id="__user_8php_source_1l00030"/>00030 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;#[ORM\GeneratedValue]</emphasis>
+<anchor xml:id="__user_8php_source_1l00031"/>00031 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;#[ORM\Column]</emphasis>
+<anchor xml:id="__user_8php_source_1l00032"/>00032 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;?<emphasis role="keywordtype">int</emphasis>&#32;$id&#32;=&#32;<emphasis role="keyword">null</emphasis>;
+<anchor xml:id="__user_8php_source_1l00033"/>00033 
+<anchor xml:id="__user_8php_source_1l00041"/>00041 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;#[ORM\Column(length:&#32;180,&#32;unique:&#32;true)]</emphasis>
+<anchor xml:id="__user_8php_source_1l00042"/>00042 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;?<emphasis role="keywordtype">string</emphasis>&#32;$email&#32;=&#32;<emphasis role="keyword">null</emphasis>;
+<anchor xml:id="__user_8php_source_1l00043"/>00043 
+<anchor xml:id="__user_8php_source_1l00051"/>00051 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;#[ORM\Column]</emphasis>
+<anchor xml:id="__user_8php_source_1l00052"/>00052 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;array&#32;$roles&#32;=&#32;[];
+<anchor xml:id="__user_8php_source_1l00053"/>00053 
+<anchor xml:id="__user_8php_source_1l00061"/>00061 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;#[ORM\Column]</emphasis>
+<anchor xml:id="__user_8php_source_1l00062"/>00062 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;?<emphasis role="keywordtype">string</emphasis>&#32;$password&#32;=&#32;<emphasis role="keyword">null</emphasis>;
+<anchor xml:id="__user_8php_source_1l00063"/>00063 
+<anchor xml:id="__user_8php_source_1l00071"/>00071 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;#[ORM\Column(type:&#32;&apos;string&apos;,&#32;length:&#32;255,&#32;nullable:&#32;true)]</emphasis>
+<anchor xml:id="__user_8php_source_1l00072"/>00072 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;?<emphasis role="keywordtype">string</emphasis>&#32;$profilePicture&#32;=&#32;<emphasis role="keyword">null</emphasis>;
+<anchor xml:id="__user_8php_source_1l00073"/>00073 
+<anchor xml:id="__user_8php_source_1l00081"/>00081 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;#[ORM\OneToMany(mappedBy:&#32;&apos;user&apos;,&#32;targetEntity:&#32;FavoriteAlbum::class,&#32;cascade:&#32;[&apos;persist&apos;])]</emphasis>
+<anchor xml:id="__user_8php_source_1l00082"/>00082 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;Collection&#32;$favoriteAlbums;
+<anchor xml:id="__user_8php_source_1l00083"/>00083 
+<anchor xml:id="__user_8php_source_1l00088"/><link linkend="_class_app_1_1_entity_1_1_user_1a095c5d389db211932136b53f25f39685">00088</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_user_1a095c5d389db211932136b53f25f39685">__construct</link>()
+<anchor xml:id="__user_8php_source_1l00089"/>00089 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__user_8php_source_1l00090"/>00090 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$this-&gt;favoriteAlbums&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;ArrayCollection();
+<anchor xml:id="__user_8php_source_1l00091"/>00091 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__user_8php_source_1l00092"/>00092 
+<anchor xml:id="__user_8php_source_1l00098"/><link linkend="_class_app_1_1_entity_1_1_user_1a12251d0c022e9e21c137a105ff683f13">00098</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_user_1a12251d0c022e9e21c137a105ff683f13">getId</link>():&#32;?int
+<anchor xml:id="__user_8php_source_1l00099"/>00099 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__user_8php_source_1l00100"/>00100 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this-&gt;id;
+<anchor xml:id="__user_8php_source_1l00101"/>00101 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__user_8php_source_1l00102"/>00102 
+<anchor xml:id="__user_8php_source_1l00108"/><link linkend="_class_app_1_1_entity_1_1_user_1a02a01849f28e2535e888ae4ec87b20f2">00108</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_user_1a02a01849f28e2535e888ae4ec87b20f2">getEmail</link>():&#32;?string
+<anchor xml:id="__user_8php_source_1l00109"/>00109 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__user_8php_source_1l00110"/>00110 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this-&gt;email;
+<anchor xml:id="__user_8php_source_1l00111"/>00111 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__user_8php_source_1l00112"/>00112 
+<anchor xml:id="__user_8php_source_1l00120"/><link linkend="_class_app_1_1_entity_1_1_user_1a2d22391fa86fa0eaf3b9d2a3c29880bc">00120</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_user_1a2d22391fa86fa0eaf3b9d2a3c29880bc">setEmail</link>(<emphasis role="keywordtype">string</emphasis>&#32;$email):&#32;static
+<anchor xml:id="__user_8php_source_1l00121"/>00121 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__user_8php_source_1l00122"/>00122 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$this-&gt;email&#32;=&#32;$email;
+<anchor xml:id="__user_8php_source_1l00123"/>00123 
+<anchor xml:id="__user_8php_source_1l00124"/>00124 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this;
+<anchor xml:id="__user_8php_source_1l00125"/>00125 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__user_8php_source_1l00126"/>00126 
+<anchor xml:id="__user_8php_source_1l00132"/><link linkend="_class_app_1_1_entity_1_1_user_1a189038d671f9143e20141026f1aa7969">00132</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_user_1a189038d671f9143e20141026f1aa7969">getUserIdentifier</link>():&#32;string
+<anchor xml:id="__user_8php_source_1l00133"/>00133 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__user_8php_source_1l00134"/>00134 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(<emphasis role="keywordtype">string</emphasis>)&#32;$this-&gt;email;
+<anchor xml:id="__user_8php_source_1l00135"/>00135 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__user_8php_source_1l00136"/>00136 
+<anchor xml:id="__user_8php_source_1l00142"/><link linkend="_class_app_1_1_entity_1_1_user_1aa676cae5ee8d7fb6862a8724adc2660d">00142</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_user_1aa676cae5ee8d7fb6862a8724adc2660d">getRoles</link>():&#32;array
+<anchor xml:id="__user_8php_source_1l00143"/>00143 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__user_8php_source_1l00144"/>00144 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$roles&#32;=&#32;$this-&gt;roles;
+<anchor xml:id="__user_8php_source_1l00145"/>00145 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$roles[]&#32;=&#32;<emphasis role="stringliteral">&apos;ROLE_USER&apos;</emphasis>;
+<anchor xml:id="__user_8php_source_1l00146"/>00146 
+<anchor xml:id="__user_8php_source_1l00147"/>00147 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;array_unique($roles);
+<anchor xml:id="__user_8php_source_1l00148"/>00148 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__user_8php_source_1l00149"/>00149 
+<anchor xml:id="__user_8php_source_1l00157"/><link linkend="_class_app_1_1_entity_1_1_user_1aa3236c9c6688d04df16ea0ab3065530e">00157</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_user_1aa3236c9c6688d04df16ea0ab3065530e">setRoles</link>(array&#32;$roles):&#32;static
+<anchor xml:id="__user_8php_source_1l00158"/>00158 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__user_8php_source_1l00159"/>00159 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$this-&gt;roles&#32;=&#32;$roles;
+<anchor xml:id="__user_8php_source_1l00160"/>00160 
+<anchor xml:id="__user_8php_source_1l00161"/>00161 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this;
+<anchor xml:id="__user_8php_source_1l00162"/>00162 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__user_8php_source_1l00163"/>00163 
+<anchor xml:id="__user_8php_source_1l00169"/><link linkend="_class_app_1_1_entity_1_1_user_1a04e0957baeb7acde9c0c86556da2d43f">00169</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_user_1a04e0957baeb7acde9c0c86556da2d43f">getPassword</link>():&#32;string
+<anchor xml:id="__user_8php_source_1l00170"/>00170 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__user_8php_source_1l00171"/>00171 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this-&gt;password;
+<anchor xml:id="__user_8php_source_1l00172"/>00172 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__user_8php_source_1l00173"/>00173 
+<anchor xml:id="__user_8php_source_1l00181"/><link linkend="_class_app_1_1_entity_1_1_user_1a81e0f429784973551fb5417d5b92b0db">00181</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_user_1a81e0f429784973551fb5417d5b92b0db">setPassword</link>(<emphasis role="keywordtype">string</emphasis>&#32;$password):&#32;static
+<anchor xml:id="__user_8php_source_1l00182"/>00182 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__user_8php_source_1l00183"/>00183 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$this-&gt;password&#32;=&#32;$password;
+<anchor xml:id="__user_8php_source_1l00184"/>00184 
+<anchor xml:id="__user_8php_source_1l00185"/>00185 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this;
+<anchor xml:id="__user_8php_source_1l00186"/>00186 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__user_8php_source_1l00187"/>00187 
+<anchor xml:id="__user_8php_source_1l00191"/><link linkend="_class_app_1_1_entity_1_1_user_1ac565b8c00fe93ce673f8237849f072a6">00191</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_user_1ac565b8c00fe93ce673f8237849f072a6">eraseCredentials</link>():&#32;void
+<anchor xml:id="__user_8php_source_1l00192"/>00192 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__user_8php_source_1l00193"/>00193 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Implémentation&#32;vide&#32;pour&#32;le&#32;composant&#32;de&#32;sécurité.</emphasis>
+<anchor xml:id="__user_8php_source_1l00194"/>00194 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__user_8php_source_1l00195"/>00195 
+<anchor xml:id="__user_8php_source_1l00201"/><link linkend="_class_app_1_1_entity_1_1_user_1ab755e2969ce6dd5719e19029a1f0ea98">00201</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_user_1ab755e2969ce6dd5719e19029a1f0ea98">getFavoriteAlbums</link>():&#32;Collection
+<anchor xml:id="__user_8php_source_1l00202"/>00202 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__user_8php_source_1l00203"/>00203 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this-&gt;favoriteAlbums;
+<anchor xml:id="__user_8php_source_1l00204"/>00204 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__user_8php_source_1l00205"/>00205 
+<anchor xml:id="__user_8php_source_1l00213"/><link linkend="_class_app_1_1_entity_1_1_user_1a352415541a6239312cd6abffdd2d3801">00213</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_user_1a352415541a6239312cd6abffdd2d3801">addFavoriteAlbum</link>(<link linkend="_class_app_1_1_entity_1_1_favorite_album">FavoriteAlbum</link>&#32;$favoriteAlbum):&#32;self
+<anchor xml:id="__user_8php_source_1l00214"/>00214 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__user_8php_source_1l00215"/>00215 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!$this-&gt;favoriteAlbums-&gt;contains($favoriteAlbum))&#32;{
+<anchor xml:id="__user_8php_source_1l00216"/>00216 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$this-&gt;favoriteAlbums[]&#32;=&#32;$favoriteAlbum;
+<anchor xml:id="__user_8php_source_1l00217"/>00217 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$favoriteAlbum-&gt;<link linkend="_class_app_1_1_entity_1_1_favorite_album_1a406a111868b45aad6d4c8ab5b0c5bcb9">setUser</link>($this);
+<anchor xml:id="__user_8php_source_1l00218"/>00218 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__user_8php_source_1l00219"/>00219 
+<anchor xml:id="__user_8php_source_1l00220"/>00220 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this;
+<anchor xml:id="__user_8php_source_1l00221"/>00221 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__user_8php_source_1l00222"/>00222 
+<anchor xml:id="__user_8php_source_1l00230"/><link linkend="_class_app_1_1_entity_1_1_user_1a7e1f5b5a1259dcb9c2be49ae4e715a4c">00230</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_user_1a7e1f5b5a1259dcb9c2be49ae4e715a4c">removeFavoriteAlbum</link>(<link linkend="_class_app_1_1_entity_1_1_favorite_album">FavoriteAlbum</link>&#32;$favoriteAlbum):&#32;self
+<anchor xml:id="__user_8php_source_1l00231"/>00231 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__user_8php_source_1l00232"/>00232 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;($this-&gt;favoriteAlbums-&gt;removeElement($favoriteAlbum))&#32;{
+<anchor xml:id="__user_8php_source_1l00233"/>00233 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;($favoriteAlbum-&gt;<link linkend="_class_app_1_1_entity_1_1_favorite_album_1ae81b7186fb97a7c6457edcc68c9aa2ef">getUser</link>()&#32;===&#32;$this)&#32;{
+<anchor xml:id="__user_8php_source_1l00234"/>00234 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$favoriteAlbum-&gt;<link linkend="_class_app_1_1_entity_1_1_favorite_album_1a406a111868b45aad6d4c8ab5b0c5bcb9">setUser</link>(<emphasis role="keyword">null</emphasis>);
+<anchor xml:id="__user_8php_source_1l00235"/>00235 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__user_8php_source_1l00236"/>00236 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__user_8php_source_1l00237"/>00237 
+<anchor xml:id="__user_8php_source_1l00238"/>00238 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this;
+<anchor xml:id="__user_8php_source_1l00239"/>00239 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__user_8php_source_1l00240"/>00240 
+<anchor xml:id="__user_8php_source_1l00246"/><link linkend="_class_app_1_1_entity_1_1_user_1a7ca895ce8dc567b19e85a982429c7c77">00246</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_user_1a7ca895ce8dc567b19e85a982429c7c77">getProfilePicture</link>():&#32;?string
+<anchor xml:id="__user_8php_source_1l00247"/>00247 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__user_8php_source_1l00248"/>00248 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this-&gt;profilePicture;
+<anchor xml:id="__user_8php_source_1l00249"/>00249 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__user_8php_source_1l00250"/>00250 
+<anchor xml:id="__user_8php_source_1l00258"/><link linkend="_class_app_1_1_entity_1_1_user_1ab308055ea70f8f94a14d35a611a2086e">00258</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">function</emphasis>&#32;<link linkend="_class_app_1_1_entity_1_1_user_1ab308055ea70f8f94a14d35a611a2086e">setProfilePicture</link>(?<emphasis role="keywordtype">string</emphasis>&#32;$profilePicture):&#32;static
+<anchor xml:id="__user_8php_source_1l00259"/>00259 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__user_8php_source_1l00260"/>00260 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;$this-&gt;profilePicture&#32;=&#32;$profilePicture;
+<anchor xml:id="__user_8php_source_1l00261"/>00261 
+<anchor xml:id="__user_8php_source_1l00262"/>00262 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;$this;
+<anchor xml:id="__user_8php_source_1l00263"/>00263 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__user_8php_source_1l00264"/>00264 }
+</programlisting></section>

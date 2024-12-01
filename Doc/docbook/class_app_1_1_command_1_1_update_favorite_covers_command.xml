@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_app_1_1_command_1_1_update_favorite_covers_command" xml:lang="fr">
+<title>Référence de la classe UpdateFavoriteCoversCommand</title>
+<indexterm><primary>UpdateFavoriteCoversCommand</primary></indexterm>
+Graphe d&apos;héritage de UpdateFavoriteCoversCommand:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_app_1_1_command_1_1_update_favorite_covers_command__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Graphe de collaboration de UpdateFavoriteCoversCommand:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_app_1_1_command_1_1_update_favorite_covers_command__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Fonctions membres publiques    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_app_1_1_command_1_1_update_favorite_covers_command_1abb5fb9a65dd8a81e7482dddbf71c5177">__construct</link> (EntityManagerInterface $entityManager)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Fonctions membres protégées    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_app_1_1_command_1_1_update_favorite_covers_command_1ab31c72b72ddaf7116db5d84c055d3c0b">execute</link> (InputInterface $input, OutputInterface $output)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Description détaillée</title>
+<para>
+Définition à la ligne <link linkend="__update_favorite_covers_command_8php_source_1l00018">18</link> du fichier <link linkend="__update_favorite_covers_command_8php_source">UpdateFavoriteCoversCommand.php</link>.</para>
+</section>
+<section>
+<title>Documentation des constructeurs et destructeur</title>
+<anchor xml:id="_class_app_1_1_command_1_1_update_favorite_covers_command_1abb5fb9a65dd8a81e7482dddbf71c5177"/><section>
+    <title>__construct()</title>
+<indexterm><primary>__construct</primary><secondary>UpdateFavoriteCoversCommand</secondary></indexterm>
+<indexterm><primary>UpdateFavoriteCoversCommand</primary><secondary>__construct</secondary></indexterm>
+<para><computeroutput>__construct (EntityManagerInterface $entityManager)</computeroutput></para>
+<para>Constructeur de la commande.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Paramètres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>EntityManagerInterface</entry><entry>$entityManager</entry><entry>
+<para>Le gestionnaire d&apos;entités. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Définition à la ligne <link linkend="__update_favorite_covers_command_8php_source_1l00032">32</link> du fichier <link linkend="__update_favorite_covers_command_8php_source">UpdateFavoriteCoversCommand.php</link>.</para>
+</section>
+</section>
+<section>
+<title>Documentation des fonctions membres</title>
+<anchor xml:id="_class_app_1_1_command_1_1_update_favorite_covers_command_1ab31c72b72ddaf7116db5d84c055d3c0b"/><section>
+    <title>execute()</title>
+<indexterm><primary>execute</primary><secondary>UpdateFavoriteCoversCommand</secondary></indexterm>
+<indexterm><primary>UpdateFavoriteCoversCommand</primary><secondary>execute</secondary></indexterm>
+<para><computeroutput>execute (InputInterface $input, OutputInterface $output)<computeroutput>[protected]</computeroutput></computeroutput></para>
+<para>Exécute la commande pour mettre à jour les images par défaut des albums favoris.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Paramètres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>InputInterface</entry><entry>$input</entry><entry>
+<para>Interface d&apos;entrée. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>OutputInterface</entry><entry>$output</entry><entry>
+<para>Interface de sortie.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Renvoie</title>
+
+<para>int Code de statut de la commande. </para>
+</formalpara>
+</para>
+<para>
+Définition à la ligne <link linkend="__update_favorite_covers_command_8php_source_1l00046">46</link> du fichier <link linkend="__update_favorite_covers_command_8php_source">UpdateFavoriteCoversCommand.php</link>.</para>
+</section>
+<para>
+La documentation de cette classe a été générée à partir du fichier suivant :</para>
+Command/<link linkend="__update_favorite_covers_command_8php">UpdateFavoriteCoversCommand.php</link></section>
+</section>

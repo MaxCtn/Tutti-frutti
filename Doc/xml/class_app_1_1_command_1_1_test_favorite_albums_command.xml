@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="fr">
+  <compounddef id="class_app_1_1_command_1_1_test_favorite_albums_command" kind="class" language="PHP" prot="public">
+    <compoundname>App::Command::TestFavoriteAlbumsCommand</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Command</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_app_1_1_command_1_1_test_favorite_albums_command_1a7751dad7a8a3d8836df35ce9024afb29" prot="private" static="no" mutable="no">
+        <type><ref refid="class_app_1_1_repository_1_1_favorite_album_repository" kindref="compound">FavoriteAlbumRepository</ref></type>
+        <definition>FavoriteAlbumRepository $favoriteAlbumRepository</definition>
+        <argsstring></argsstring>
+        <name>$favoriteAlbumRepository</name>
+        <qualifiedname>App\Command\TestFavoriteAlbumsCommand\$favoriteAlbumRepository</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Command/TestFavoriteAlbumsCommand.php" line="23" column="37" bodyfile="Command/TestFavoriteAlbumsCommand.php" bodystart="23" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_app_1_1_command_1_1_test_favorite_albums_command_1af4472feaa287a5088cdbc624e9cf517e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>__construct</definition>
+        <argsstring>(FavoriteAlbumRepository $favoriteAlbumRepository)</argsstring>
+        <name>__construct</name>
+        <qualifiedname>App\Command\TestFavoriteAlbumsCommand\__construct</qualifiedname>
+        <param>
+          <type><ref refid="class_app_1_1_repository_1_1_favorite_album_repository" kindref="compound">FavoriteAlbumRepository</ref></type>
+          <declname>$favoriteAlbumRepository</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructeur de la commande.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>FavoriteAlbumRepository</parametertype>
+<parametername>$favoriteAlbumRepository</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Le repository des albums favoris. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Command/TestFavoriteAlbumsCommand.php" line="30" column="21" bodyfile="Command/TestFavoriteAlbumsCommand.php" bodystart="30" bodyend="34"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_app_1_1_command_1_1_test_favorite_albums_command_1a9be5e0bdb5720efed6ddb6426c5c16ee" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>configure</definition>
+        <argsstring>()</argsstring>
+        <name>configure</name>
+        <qualifiedname>App\Command\TestFavoriteAlbumsCommand\configure</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Configure la commande en définissant sa description et ses arguments. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Command/TestFavoriteAlbumsCommand.php" line="39" column="24" bodyfile="Command/TestFavoriteAlbumsCommand.php" bodystart="39" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="class_app_1_1_command_1_1_test_favorite_albums_command_1ab31c72b72ddaf7116db5d84c055d3c0b" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>execute</definition>
+        <argsstring>(InputInterface $input, OutputInterface $output)</argsstring>
+        <name>execute</name>
+        <qualifiedname>App\Command\TestFavoriteAlbumsCommand\execute</qualifiedname>
+        <param>
+          <type>InputInterface</type>
+          <declname>$input</declname>
+        </param>
+        <param>
+          <type>OutputInterface</type>
+          <declname>$output</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Exécute la commande pour afficher les albums favoris de l&apos;utilisateur spécifié.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>InputInterface</parametertype>
+<parametername>$input</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>L&apos;interface d&apos;entrée de la commande. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>OutputInterface</parametertype>
+<parametername>$output</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>L&apos;interface de sortie de la commande.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>int Le code de statut de la commande (succès ou échec). </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Command/TestFavoriteAlbumsCommand.php" line="54" column="24" bodyfile="Command/TestFavoriteAlbumsCommand.php" bodystart="54" bodyend="78"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Cette commande permet de tester et d&apos;afficher les albums favoris d&apos;un utilisateur spécifique. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Command</label>
+      </node>
+      <node id="1">
+        <label>TestFavoriteAlbumsCommand</label>
+        <link refid="class_app_1_1_command_1_1_test_favorite_albums_command"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Command</label>
+      </node>
+      <node id="1">
+        <label>TestFavoriteAlbumsCommand</label>
+        <link refid="class_app_1_1_command_1_1_test_favorite_albums_command"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Command/TestFavoriteAlbumsCommand.php" line="16" column="1" bodyfile="Command/TestFavoriteAlbumsCommand.php" bodystart="17" bodyend="79"/>
+    <listofallmembers>
+      <member refid="class_app_1_1_command_1_1_test_favorite_albums_command_1a7751dad7a8a3d8836df35ce9024afb29" prot="private" virt="non-virtual"><scope>App::Command::TestFavoriteAlbumsCommand</scope><name>$favoriteAlbumRepository</name></member>
+      <member refid="class_app_1_1_command_1_1_test_favorite_albums_command_1af4472feaa287a5088cdbc624e9cf517e" prot="public" virt="non-virtual"><scope>App::Command::TestFavoriteAlbumsCommand</scope><name>__construct</name></member>
+      <member refid="class_app_1_1_command_1_1_test_favorite_albums_command_1a9be5e0bdb5720efed6ddb6426c5c16ee" prot="protected" virt="non-virtual"><scope>App::Command::TestFavoriteAlbumsCommand</scope><name>configure</name></member>
+      <member refid="class_app_1_1_command_1_1_test_favorite_albums_command_1ab31c72b72ddaf7116db5d84c055d3c0b" prot="protected" virt="non-virtual"><scope>App::Command::TestFavoriteAlbumsCommand</scope><name>execute</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
